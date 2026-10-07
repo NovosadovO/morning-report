@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:03:53.072845",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pixory</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «free shipping sitewide + 50% off»\n\n<i>«[Pixory](https://www.pixoryofficial.com/)\r\n\r\n[Pixory](https://www.pixoryofficial.com/)\r\n\r\n[free shipping on everything | shop all templates](https://www.pixoryofficial.com/)\r\n\r\n[everything means everything | start your book](https://www.pixoryofficial.com/collections/all)\r\n\r\n[paris 1](https://www.pi...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80400"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80400"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80400"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80400"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80400"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80400"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:03:55.553771",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-07T15:09:02.627161",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:09:06.769593",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.9% за 24г</b>\n\nЗараз: 0.4624 $\n24г тому: 0.4965 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
