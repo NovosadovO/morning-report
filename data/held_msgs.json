@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:46:24.332325",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>(Junior) Business Operations Manager Austria в Scalable Capi</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80370"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80370"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80370"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80370"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80370"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80370"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T10:46:26.497739",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Reserved\n📋 Rozšírená ponuka a ešte nižšie ceny.\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-07T10:58:52.934404",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:00:00.895165",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
