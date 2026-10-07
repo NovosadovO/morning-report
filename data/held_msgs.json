@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:30:57.849413",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 7</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80396"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80396"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80396"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80396"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80396"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80396"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:31:00.586435",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📉 Bitcoin breaks down as S&amp;P hits new highs</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-10-07T14:35:14.522854",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4632 $\n24г тому: 0.4971 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:36:29.640831",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
