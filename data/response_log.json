@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-15T10:26:29.730598+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_7021c67354"
-    },
-    {
       "ts": "2026-08-15T10:27:10.639864+00:00",
       "category": "confirm",
       "question": "gate_calrem_add: Постав нагадування",
@@ -13784,6 +13778,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-10-07T23:29:04.671986+00:00",
+      "category": "event_done",
+      "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
+      "answer": "yes"
     }
   ]
 }
