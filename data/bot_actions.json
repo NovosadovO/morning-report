@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Чи бажаєш, щоб я перевірив деталі вакансії 'Manager Digital",
-      "detail": "Свіжі листи: Олег отримав сповіщення про вакансію Manager Digital Operations Support в Caterpillar Inc. у Кошице, що може бути для нього цікавим.",
-      "module": "selfact",
-      "ts": "2026-09-25T12:30:08"
-    },
-    {
       "kind": "notify",
       "what": "Oura IPO на Kraken",
       "detail": "Свіжі листи: Kraken інформує про можливість отримати доступ до Oura IPO.",
@@ -2799,6 +2792,13 @@
       "detail": "148 год мовчання",
       "module": "healthai",
       "ts": "2026-10-07T20:45:40"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 12039 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-10-07T20:53:13"
     }
   ]
 }
