@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:16:14.211587",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80341"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80341"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80341"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80341"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80341"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80341"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T10:16:17.547093",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Reserved\n📋 Rozšírená ponuka a ešte nižšie ceny.\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-07T10:28:40.822138",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T10:29:47.779071",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
