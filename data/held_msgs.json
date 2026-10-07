@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:16:48.284484",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_80397"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80397"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:16:50.886949",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-10-07T15:23:04.093385",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -7.2% за 24г</b>\n\nЗараз: 0.4612 $\n24г тому: 0.4972 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:23:05.132979",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -7.2% за 24г\n\nЗараз: 0.4612 $\n24г тому: 0.4972 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
