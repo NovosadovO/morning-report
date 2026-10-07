@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:16:12.821916",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Kalshi Lists a US Stock Index Perpetual Future</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80368"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80368"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80368"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80368"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80368"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80368"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T10:16:14.211587",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-10-07T10:28:39.970796",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T10:28:40.822138",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
