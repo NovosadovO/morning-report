@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:20:13.853120",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T10:21:28.032072",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80377"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T10:31:15.981456",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80374"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80374"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80374"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80374"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80374"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80374"
             }
           ]
         ]
