@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:11:33.335557",
-      "kind": "calendar",
-      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T09:12:14.709460",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80373"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T09:17:17.325703",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>(Junior) Business Operations Manager Austria в Scalable Capi</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80370"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80370"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80370"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80370"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80370"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80370"
             }
           ]
         ]
