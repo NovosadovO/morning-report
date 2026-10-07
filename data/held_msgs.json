@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:30:41.117090",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80374"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80374"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80374"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80374"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80374"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80374"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T11:30:42.870553",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-07T11:37:18.938894",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.6% за 24г</b>\n\nЗараз: 0.4652 $\n24г тому: 0.4928 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:37:19.748849",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.6% за 24г\n\nЗараз: 0.4652 $\n24г тому: 0.4928 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
