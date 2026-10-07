@@ -1,6 +1,51 @@
 {
   "items": [
     {
+      "ts": "2026-10-07T09:22:21.556701",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Parfuméria Douglas</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «💫Staňte sa súčasťou osláv a nájdite svoj dokonalý jas!💫»\n\n<i>«Zľava 25 % na obľúbené značky. Vyberte si z ponuky svojich\r\nnajobľúbenejších\r\nproduktov!\r\n\r\nNezobrazuje se vám e-mail správne?\r\nKliknite sem\r\nhttps://link.beautynews.douglas.sk/u/gm.php?prm=68XCaFju6y_790569522_1019945_110402&amp;_esuh=_11_f23a08d365d3e75ed23dfe6fdac07f195fcde653353aebc5216f6c2f95851c7f...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80376"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80376"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80376"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80376"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80376"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80376"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T09:22:38.454930",
+      "kind": "calendar",
+      "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Конференція NBS: Slovenský finančný trh a inovácie 2026</b>\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
       "ts": "2026-10-07T09:22:39.338885",
       "kind": "calendar",
       "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
