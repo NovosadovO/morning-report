@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:11:52.837881",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ETH -5.3% за 24г</b>\n\nЗараз: 2567.43 $\n24г тому: 2711.60 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T15:11:54.322503",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ETH -5.3% за 24г\n\nЗараз: 2567.43 $\n24г тому: 2711.60 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:16:36.781226",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 7</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80398"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80398"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80398"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80398"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80398"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80398"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
