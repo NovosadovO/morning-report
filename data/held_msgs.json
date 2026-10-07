@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:11:40.898493",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -7.4% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-07T14:11:41.759827",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -7.4% за 24г\n\nЗараз: 0.4627 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:11:43.987715",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.7% за 24г</b>\n\nЗараз: 11.00 $\n24г тому: 11.66 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +136,51 @@
       "ts": "2026-10-07T14:15:43.201851",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:15:44.531031",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>MONETA Money Bank наймає: Application &amp; System Specialist</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80394"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80394"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80394"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80394"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80394"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80394"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T14:15:44.979676",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.9% за 24г</b>\n\nЗараз: 0.4645 $\n24г тому: 0.4988 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
