@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:16:01.074742",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 OKX\n📋 Web withdrawal protection\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 7. okt 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: OKX",
-              "callback_data": "email_reply_80393"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_80392"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_80391"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80393"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80393"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:16:04.000210",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 OKX\n📋 Web withdrawal protection\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 7. okt 2026\n📝 (AI-аналіз тимчасово недоступний)",
@@ -212,6 +175,12 @@
       "ts": "2026-10-07T14:22:22.077233",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.7% за 24г\n\nЗараз: 0.4632 $\n24г тому: 0.4966 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:23:33.936453",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
