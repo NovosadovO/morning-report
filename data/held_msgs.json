@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:01:07.558843",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80379"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80379"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80379"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80379"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80379"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80379"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:01:09.715019",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -233,6 +194,12 @@
       "ts": "2026-10-07T13:08:26.103600",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:08:26.989210",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
