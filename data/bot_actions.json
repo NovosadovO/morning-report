@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Oura IPO на Kraken",
-      "detail": "Свіжі листи: Kraken інформує про можливість отримати доступ до Oura IPO.",
-      "module": "selfact",
-      "ts": "2026-09-25T12:30:13"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від Linas's Newsletter: «The Clau",
       "detail": "Свіжий лист про використання Claude AI як 'Chief of Staff' може бути дуже цікавим та корисним для Олега, враховуючи його інтерес до AI (про що свідчить підписка на ChatGPT Go).",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "🚶 Кроки за тиждень у середньому 12039 — ціль 8000 досягнута",
       "module": "healthai",
       "ts": "2026-10-07T20:53:13"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 69",
+      "module": "selfact",
+      "ts": "2026-10-07T21:20:51"
     }
   ]
 }
