@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:36:29.858232",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ETH -5.5% за 24г\n\nЗараз: 2564.87 $\n24г тому: 2715.64 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T15:37:39.058240",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-07T15:41:20.611876",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ETH -5.9% за 24г\n\nЗараз: 2555.27 $\n24г тому: 2715.69 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:41:23.765018",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>XRP -5.7% за 24г</b>\n\nЗараз: 1.4281 $\n24г тому: 1.5145 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
