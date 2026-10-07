@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:04:54.559708",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Marionnaud</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «K-BEAUTY: 2 + 1 ZADARMO ✨»\n\n<i>«https://t.msk.marionnaud.com/r/?id=tf1d46cb,713248a8,68882bdb Vaše must-have beauty produkty na dosah. \t\r\n https://t.msk.marionnaud.com/r/?id=tf1d46cb,713248a8,68882bdc ----------------------------------------------------------------------------\r\nAk sa Vám tento e-mail nezobrazuje správne, kliknite...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80384"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80384"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80384"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80384"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80384"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80384"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T12:05:12.467686",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -214,6 +175,12 @@
       "ts": "2026-10-07T12:11:29.992925",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.4% за 24г</b>\n\nЗараз: 0.4664 $\n24г тому: 0.4985 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:11:30.845742",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.4% за 24г\n\nЗараз: 0.4664 $\n24г тому: 0.4985 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
