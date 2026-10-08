@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:16:34.110799",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pixory</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «what shipping normally costs you»\n\n<i>«[Pixory](https://www.pixoryofficial.com/)\r\n\r\n[shipping's on us. here's what that's actually worth. no code, no minimum, every order ships free until sunday. up to 50% off + free shipping](https://www.pixoryofficial.com/collections/all)\r\n\r\n[what you'd normally pay](https://www.pixoryofficial.com/coll...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80443"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80443"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80443"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80443"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80443"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80443"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T10:17:25.438017",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -214,6 +175,12 @@
       "ts": "2026-10-08T10:21:47.256317",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Час вирушати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:21:48.424538",
+      "kind": "calendar",
+      "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЧас вирушати.",
       "keyboard": null
     }
   ]
