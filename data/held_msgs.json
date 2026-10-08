@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:09:22.768406",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T12:09:55.391046",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Generative AI</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «⚡ Claude's cheapest model beat GPT-6 Luna»\n\n<i>«----------\r\n######           [Subscribe](https://academynews.genai.works/)   -    [Collaborate with us](https://utm.genai.works/r/cq9vsh4)\r\n\r\n\r\n--------------------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8776fa6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -179,6 +173,12 @@
     },
     {
       "ts": "2026-10-08T12:13:13.860618",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:13:16.116555",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
