@@ -859,21 +859,38 @@ def run_astro_alert_watcher():
                 text = header + "\n\n".join(alerts)
                 # AI-розбір самої події: що це означає саме для Олега
                 # (зміна, локація, реакції — усе підмішує _gem_post усередині).
+                # 08.10.2026 (запит Олега, "астро прийшло двічі"): цей AI-розбір
+                # і AI-розбір у годинному звіті рахувались НЕЗАЛЕЖНО — обидва
+                # шляхи могли смикнути Gemini в межах кількох хвилин одне від
+                # одного, і Олег бачив 2 повних астро-АІ-розбори поспіль.
+                # Тепер обидва шляхи ділять ОДИН hourgate("astro_ai", 12) —
+                # хто перший встиг за 12-годинне вікно, той і дав AI-текст,
+                # другий шле тільки факти без розбору.
                 try:
-                    import monitor as _m_ai
-                    _key_ai = _os.environ.get("GEMINI_API_KEY", "")
-                    if _key_ai:
-                        _ai = _m_ai._get_astro_ai_analysis(
-                            text, _key_ai, shift_hint="астро-алерт")
-                        if _ai and len(_ai) > 80:
-                            text += "\n\n🧠 <b>ЩО ЦЕ ОЗНАЧАЄ</b>\n" + _ai
-                            print(f"[astro_alert] AI-розбір додано "
-                                  f"({len(_ai)} симв.)", flush=True)
-                        else:
-                            print("[astro_alert] AI порожній — шлю без розбору",
-                                  flush=True)
-                except Exception as _e_ai:
-                    print(f"[astro_alert] AI error: {_e_ai}", flush=True)
+                    import hourgate as _hg_aa
+                    _astro_ai_slot_free = _hg_aa.allow_every("astro_ai", 12)
+                except Exception as _e_hg_aa:
+                    print(f"[astro_alert] hourgate error: {_e_hg_aa}", flush=True)
+                    _astro_ai_slot_free = True
+                if not _astro_ai_slot_free:
+                    print("[astro_alert] AI-розбір пропущено — вже був "
+                          "в межах 12г (2х/день), шлю тільки факти", flush=True)
+                else:
+                    try:
+                        import monitor as _m_ai
+                        _key_ai = _os.environ.get("GEMINI_API_KEY", "")
+                        if _key_ai:
+                            _ai = _m_ai._get_astro_ai_analysis(
+                                text, _key_ai, shift_hint="астро-алерт")
+                            if _ai and len(_ai) > 80:
+                                text += "\n\n🧠 <b>ЩО ЦЕ ОЗНАЧАЄ</b>\n" + _ai
+                                print(f"[astro_alert] AI-розбір додано "
+                                      f"({len(_ai)} симв.)", flush=True)
+                            else:
+                                print("[astro_alert] AI порожній — шлю без розбору",
+                                      flush=True)
+                    except Exception as _e_ai:
+                        print(f"[astro_alert] AI error: {_e_ai}", flush=True)
                 chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
                 msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
                 for chunk in chunks:
