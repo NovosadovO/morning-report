@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:40:14.264363",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T09:40:15.097570",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80387"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T09:46:27.820925",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80386"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80386"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80386"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80386"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80386"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80386"
             }
           ]
         ]
