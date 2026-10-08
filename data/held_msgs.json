@@ -1,49 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:16:29.620415",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 carVertical\n📋 Знижка зараз, ім’я потім\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: carVertical",
-              "callback_data": "email_reply_80476"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_80397"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Garmin",
-              "callback_data": "email_reply_80341"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Garmin",
-              "callback_data": "email_reply_80331"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80476"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80476"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:16:32.538340",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 carVertical\n📋 Знижка зараз, ім’я потім\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)",
@@ -185,6 +142,12 @@
       "ts": "2026-10-08T15:20:25.011176",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:20:25.722304",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
