@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:15:39.343906",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>ICE Just Bought A Hacking Tool Cops Use To Break A Major App</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80504"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80504"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80504"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80504"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80504"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80504"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T01:15:40.862222",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin's Q4 forecast</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-09T01:19:14.904208",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Google Payments <payments-noreply@google.com> → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin <alerts@account.garmin.com> → New Sign-in to Your Account\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T01:19:15.692364",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Google Payments  → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin  → New Sign-in to Your Account\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
