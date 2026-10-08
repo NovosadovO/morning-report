@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:41:58.279149",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T12:41:59.380357",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80454"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T12:45:50.609900",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Office Manager &amp; HR Administrat</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80452"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80452"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80452"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80452"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80452"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80452"
             }
           ]
         ]
