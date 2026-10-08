@@ -1,14 +1,4 @@
 {
-  "80042": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-10-01T08:47:45.641784+00:00"
-  },
-  "80043": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Volkswagen Group через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-01T09:20:17.706240+00:00"
-  },
   "80045": {
     "sender": "newsletter@pelikan.sk",
     "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
@@ -1503,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-08T21:26:31.202143+00:00"
+  },
+  "80505": {
+    "sender": "payments-noreply@google.com",
+    "sender_raw": "Google Payments <payments-noreply@google.com>",
+    "seen_ts": "2026-10-08T21:56:07.885957+00:00"
   }
 }
