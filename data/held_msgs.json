@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T23:26:34.255028",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «ICE Just Bought A Hacking Tool Cops Use To Break A Major Apple\r\n Secur»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ice-just-bought-hacking-tool-cops-use-break-major-apple-gdqxe?lipi=urn%3Ali%3Apage%3Aemail_email_series_foll...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80504"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80504"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80504"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80504"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80504"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80504"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T23:26:37.754805",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-08T23:41:16.981959",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T23:42:23.604242",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
