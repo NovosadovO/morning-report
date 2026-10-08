@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:58:14.595633",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:58:15.429598",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -417,6 +411,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-08T15:01:24.174149",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ruslana Kozanchyn\n📋 Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
