@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нова вакансія від Caterpillar Inc.",
-      "detail": "Свіжий лист від LinkedIn: Сповіщення про вакансії LinkedIn | Manager Digital Operations Support в Caterpillar Inc.",
-      "module": "selfact",
-      "ts": "2026-09-25T15:37:10"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег прямо запитав про можливість інтеграції з Garmin Connect, і йому потрібно надати інформацію про необхідні кроки.",
       "module": "selfact",
       "ts": "2026-10-08T21:05:08"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-08T21:06:29"
     }
   ]
 }
