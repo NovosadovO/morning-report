@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:39.207066",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or</b>\n👤 Ruslana Kozanchyn &lt;ruslanakozancin@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80304"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80304"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80304"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80304"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80304"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80304"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:41.555527",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 carVertical\n📋 Знижка зараз, ім’я потім\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -218,6 +179,12 @@
       "ts": "2026-10-08T15:34:54.773239",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:34:59.162966",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.60 $\n24г тому: 11.19 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
