@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T00:56:23.775335",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 10.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T00:56:26.482465",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80507"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T01:00:40.854549",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Thursday links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80506"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80506"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80506"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80506"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80506"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80506"
             }
           ]
         ]
