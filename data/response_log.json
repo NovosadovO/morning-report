@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-17T10:00:32.209753+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-17T10:52:12.853188+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -13811,6 +13805,12 @@
         "kind": "note",
         "date": "2026-10-08"
       }
+    },
+    {
+      "ts": "2026-10-08T22:37:10.324094+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_note_a62dd81742"
     }
   ]
 }
