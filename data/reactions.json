@@ -6678,5 +6678,16 @@
     "state": "snoozed",
     "ts": "2026-10-08T02:37:51",
     "until": "2026-10-08T08:37:51"
+  },
+  "generic|t|підписка garmin connect": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "підписка garmin connect",
+    "title": "Підписка Garmin Connect+",
+    "action": "ok",
+    "label": "👌 Прийняв",
+    "about": "Підписка Garmin Connect+",
+    "state": "open",
+    "ts": "2026-10-08T21:17:07"
   }
 }
