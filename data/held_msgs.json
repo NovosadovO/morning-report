@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:13:32.688310",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -5.2% за 24г</b>\n\nЗараз: 10.58 $\n24г тому: 11.16 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T15:13:33.553137",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.2% за 24г\n\nЗараз: 10.58 $\n24г тому: 11.16 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80341"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T15:16:24.801118",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80331"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80331"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80331"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80331"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80331"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80331"
             }
           ]
         ]
