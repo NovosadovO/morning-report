@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, нагадую, що 30 вересня закінчується термін дії підпис",
-      "detail": "Подія 'Підписка Apple — закінчення терміну дії' у календарі на 30.09.",
-      "module": "selfact",
-      "ts": "2026-09-25T17:57:22"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation",
       "module": "selfact",
       "ts": "2026-10-08T22:23:30"
+    },
+    {
+      "kind": "notify",
+      "what": "Новий вхід до Garmin облікового запису",
+      "detail": "Надійшов лист 'New Sign-in to Your Account' від Garmin, що може свідчити про несанкціонований доступ.",
+      "module": "selfact",
+      "ts": "2026-10-08T22:38:46"
     }
   ]
 }
