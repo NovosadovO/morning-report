@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T08:56:58.641078",
-      "kind": "calendar",
-      "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЗаклади 10 хв на дорогу і документи.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T08:57:02.146648",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80397"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T09:01:19.998142",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80387"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80387"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80387"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80387"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80387"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80387"
             }
           ]
         ]
