@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T13:01:18.643922",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Deletion notice for your Google Cloud Shell home directory</b>\n👤 noreply-cloudshell@google.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80456"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80456"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80456"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80456"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80456"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80456"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T13:01:19.954388",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dostali ste: 19,99 € ponuku</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-10-08T13:04:48.817959",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T13:04:56.262826",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
