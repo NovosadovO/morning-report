@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T13:16:37.339430",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Temu\n📋 Dostali ste: 19,99 € ponuku\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T13:16:44.023843",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T13:21:33.166503",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Trump's Stablecoin Is About to Be Spendable at Merchants»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/2BZuMbVhKcRKl2i39wkd0Q~~/AAQRxRA~/Ie7-wRSXNaHNaoqLD0P4R8117rrKpooJpVNMOlrYy2mHcNGexAXMKoq1eKI41EYwEVGM8nGQWsz3NZXoLq4sKbjGcdndWrA_58apxKE1v4RT_JEG7...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80458"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80458"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80458"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80458"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80458"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80458"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
