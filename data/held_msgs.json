@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:13:12.284519",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T15:13:28.861621",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80477"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T15:16:20.252323",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Знижка зараз, ім’я потім</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80476"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80476"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80476"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80476"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80476"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80476"
             }
           ]
         ]
