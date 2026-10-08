@@ -1085,7 +1085,12 @@ def run_planet_ingress_watcher():
         time.sleep(1800)
 
 
-threading.Thread(target=run_planet_ingress_watcher, daemon=True).start()
+# ВИМКНЕНО (08.10.2026, запит Олега: "бот пише одні і ті самі повідомлення").
+# check_planet_ingress() рахує ТЕ САМЕ (зміна знаку/дому планети), що й
+# astro.get_astro_alerts() у run_astro_alert_watcher нижче — обидва
+# незалежно детектили один і той самий транзит і слали 2 окремих алерти
+# про одну подію. astro_alert_watcher лишається єдиним джерелом + має AI-розбір.
+# threading.Thread(target=run_planet_ingress_watcher, daemon=True).start()
 
 
 def run_transit_aspects_watcher():
@@ -1099,7 +1104,10 @@ def run_transit_aspects_watcher():
             print(f"Transit aspects watcher error: {e}", flush=True)
         time.sleep(1800)
 
-threading.Thread(target=run_transit_aspects_watcher, daemon=True).start()
+# ВИМКНЕНО (08.10.2026, той самий дублікат, що й planet_ingress — див. коментар
+# вище). check_transit_aspects() рахує ТЕ САМЕ (нові аспекти між транзитними
+# планетами), що astro.get_astro_alerts() в run_astro_alert_watcher.
+# threading.Thread(target=run_transit_aspects_watcher, daemon=True).start()
 
 
 def run_proactive_watcher():
