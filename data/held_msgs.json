@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "ts": "2026-10-08T10:41:11.018003",
+      "kind": "calendar",
+      "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Час вирушати.</i>",
+      "keyboard": null
+    },
+    {
       "ts": "2026-10-08T10:41:12.060249",
       "kind": "calendar",
       "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЧас вирушати.",
@@ -238,78 +244,39 @@
       }
     },
     {
-      "ts": "2026-10-08T10:45:53.986249",
+      "ts": "2026-10-08T10:45:57.027919",
       "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Investment Manager (gn) Venture</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80436"
+              "callback_data": "email_reply_80387"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_80436"
+              "callback_data": "email_describe_80387"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_80436"
+              "callback_data": "email_star_80387"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_80436"
+              "callback_data": "email_cal_80387"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_80436"
+              "callback_data": "email_keep_80387"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_80436"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-10-08T10:45:55.467374",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80397"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80397"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80397"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80397"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80397"
+              "callback_data": "email_delete_80387"
             }
           ]
         ]
