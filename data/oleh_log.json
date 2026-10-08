@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_later_58e1b0798c",
-      "label": "⏰ Пізніше",
-      "ts": "2026-09-16T19:42:53"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_m8dd2ubne6rqg4bbes6nlbngm4_2026-09-16",
       "label": "✅ Виконано",
       "ts": "2026-09-16T19:42:55"
@@ -7199,6 +7193,12 @@
       "data": "rx_mute_53a20cd656",
       "label": "🙈 Не нагадуй",
       "ts": "2026-10-08T20:27:09"
+    },
+    {
+      "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-10-08T20:27:14"
     }
   ]
 }
