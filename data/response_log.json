@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-17T10:52:12.853188+00:00",
-      "category": "event_done",
-      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-18T20:14:55.172434+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13811,6 +13805,15 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_note_a62dd81742"
+    },
+    {
+      "ts": "2026-10-08T22:44:15.145733+00:00",
+      "category": "deadline_found",
+      "question": "Garmin Connect+ підписка — скасування",
+      "answer": "2026-11-04",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
