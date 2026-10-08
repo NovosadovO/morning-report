@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:16:40.416002",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Dostali ste: 19,99 € ponuku</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80455"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80455"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80455"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80455"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80455"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80455"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T14:16:41.996232",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -333,6 +294,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-08T14:21:33.921495",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
     }
   ]
 }
