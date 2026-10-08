@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T13:12:31.905414",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T13:12:32.947346",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80448"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T13:16:32.439820",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80447"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80447"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80447"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80447"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80447"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80447"
             }
           ]
         ]
