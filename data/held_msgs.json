@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:15:48.215596",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80386"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80386"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80386"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80386"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80386"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80386"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T10:15:50.333273",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Ukončenie posielania ponúk emailom\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -273,6 +234,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-08T10:20:46.546195",
+      "kind": "calendar",
+      "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Час вирушати.</i>",
+      "keyboard": null
     }
   ]
 }
