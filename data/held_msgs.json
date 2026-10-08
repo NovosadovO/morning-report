@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:19:00.663268",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T15:19:05.390674",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.57 $\n24г тому: 11.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-08T15:22:04.715664",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +5.1% за 24г\n\nЗараз: 0.4851 $\n24г тому: 0.4616 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:23:08.406118",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
