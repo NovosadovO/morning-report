@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:58:01.589392",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:58:14.595633",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -376,6 +370,49 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80251"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T15:01:21.131319",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ruslana Kozanchyn\n📋 Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: ehuman",
+              "callback_data": "email_reply_80397"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Garmin",
+              "callback_data": "email_reply_80341"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Garmin",
+              "callback_data": "email_reply_80331"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Ruslana Kozanchyn",
+              "callback_data": "email_reply_80304"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80397"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80397"
             }
           ]
         ]
