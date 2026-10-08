@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:24:58.791844",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .header { background-color: #f4f4f4; padding: 20px; text-align: center; border-bottom: 2px solid #ddd; } .card { border: 1px solid #ddd; margin: 20px 0; padding: 15px; border-radius: 8px; display: flex; flex-wrap: wrap; } .card...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80465"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80465"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80465"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80465"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80465"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80465"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T14:25:38.015926",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -247,6 +208,12 @@
       "ts": "2026-10-08T14:29:34.214364",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T14:29:50.562347",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
