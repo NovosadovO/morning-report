@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:01:21.419978",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80386"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80386"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80386"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80386"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80386"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80386"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T09:01:22.747149",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-10-08T09:06:49.181909",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T09:07:02.822913",
+      "kind": "calendar",
+      "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
       "keyboard": null
     }
   ]
