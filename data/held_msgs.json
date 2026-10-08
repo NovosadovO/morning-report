@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:37.708785",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Faktúra k Vašej objednávke 380760071938</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80316"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80316"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80316"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80316"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80316"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80316"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:39.207066",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or</b>\n👤 Ruslana Kozanchyn &lt;ruslanakozancin@gmail.com&gt;",
@@ -251,6 +212,12 @@
       "ts": "2026-10-08T15:34:53.637613",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:34:54.773239",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
