@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T13:45:47.252319",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Meta’s Personal Agent Protocol just opened the fight over wh</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80448"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80448"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80448"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80448"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80448"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80448"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T13:45:52.326134",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Temu\n📋 Dostali ste: 19,99 € ponuku\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
@@ -181,6 +142,12 @@
       "ts": "2026-10-08T13:50:17.746131",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T13:51:21.680048",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
