@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:13:39.481865",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:13:40.733932",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -409,6 +403,31 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80452"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T14:16:46.267180",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dostali ste: 19,99 € ponuku\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_80455"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80455"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80455"
             }
           ]
         ]
