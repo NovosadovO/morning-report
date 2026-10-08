@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:27:06.737330",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «😱 AI math advancements cause crypto panic»\n\n<i>«———————————————————————————\r\n\r\n## Top Stories\r\n\r\n**BTC** $82,364 (-1.4%) | **ETH** $2,533 (-1.7%) | **SOL** $113 (-3.5%)\r\n\r\n* US spot Bitcoin ETFs post [$484.9M net outflow](https://www.chooserich.live/story/us-spot-bitcoin-etfs-outflows-5a52sn4), largest single-day exit in over three months as cryp...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80466"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80466"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80466"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80466"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80466"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80466"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T14:27:09.004026",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -442,6 +403,31 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80442"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T14:30:51.407390",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80454"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80454"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80454"
             }
           ]
         ]
