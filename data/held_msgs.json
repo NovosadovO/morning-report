@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:15:46.715994",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80387"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80387"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80387"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80387"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80387"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80387"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T10:15:48.215596",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
@@ -273,6 +234,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:20:40.668919",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Lidl</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Z lásky to najlepšie do misky 🐶🐱»\n\n<i>«Objav Max &amp; Mila´s World: kvalitnú výživu pre domácich maznáčikov.Objav Max &amp; Mila´s World: kvalitnú výživu pre domácich maznáčikov.\r\n\r\n \r\n  \r\n\r\nhttps://click.mail.lidlplus.sk/?qs=ABl7ImQiOjUwMjMsInQiOjE1NSwicyI6NTB9ADIAAAAAAiCEAaDzIoQ82gIi2iZ3Ojv12vthR-y_oXGkp5pMNZQ79l403YAD3k1XZ6HlGu_RMfYEbSTf...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80444"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80444"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80444"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80444"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80444"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80444"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
