@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:45:50.609900",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Office Manager &amp; HR Administrat</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80452"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80452"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80452"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80452"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80452"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80452"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:45:51.923427",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>⚡ Claude's cheapest model beat GPT-6 Luna</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-10-08T12:48:58.325411",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:48:59.319323",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
