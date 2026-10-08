@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:34.896378",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80341"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80341"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80341"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80341"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80341"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80341"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:36.282865",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
@@ -315,6 +276,12 @@
     },
     {
       "ts": "2026-10-08T15:34:45.148368",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:34:46.590790",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
