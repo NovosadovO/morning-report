@@ -2,6 +2,12 @@
   "items": [
     {
       "t": "btn",
+      "data": "habit_no_run",
+      "label": "❌ Ні",
+      "ts": "2026-09-16T19:16:50"
+    },
+    {
+      "t": "btn",
       "data": "email_delete_79215",
       "label": "🗑 Видалити",
       "ts": "2026-09-16T19:17:16"
