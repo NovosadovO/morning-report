@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:01:40.098622",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Sprawdź najświeższe oferty w Biedronce od czwartku 8.10!»\n\n<i>«Sprawdź najświeższe oferty w Biedronce od czwartku 8.10! \nW promocji m.in. banan na wagę, winogrono jasne na wagę, łopatka wieprzowa bez kości pakowana próżniowo Kraina Mięs i wiele innych!\n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/jGF/tnsSPJfqqb8rob4Fx6g...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80450"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80450"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80450"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80450"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80450"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80450"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:01:45.031869",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 83.1 кг, ціль 75 кг (тренд +0.3 кг за останні 5 замірів). Кроки: 17592 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 Конференція NBS: Slovenský finančný trh a inovácie 2026, 11:00 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -200,6 +161,12 @@
       "ts": "2026-10-08T12:04:54.208219",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:04:57.736528",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
