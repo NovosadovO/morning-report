@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:16:17.553425",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T15:16:18.834721",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ви надали сервісу DefiLlama деякі дані свого облікового запи</b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
@@ -416,6 +410,12 @@
       "ts": "2026-10-08T15:19:05.390674",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.57 $\n24г тому: 11.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:19:06.367168",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.3% за 24г\n\nЗараз: 10.57 $\n24г тому: 11.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
