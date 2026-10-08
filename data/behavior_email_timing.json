@@ -1,9 +1,4 @@
 {
-  "80002": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-09-30T15:13:31.426346+00:00"
-  },
   "80003": {
     "sender": "slovnaftmove@mail.loyaltyteam.com",
     "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@pelikan.sk",
     "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
     "seen_ts": "2026-10-08T12:00:13.086906+00:00"
+  },
+  "80460": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "AI NOW & BEYOND через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-08T12:02:19.045950+00:00"
   }
 }
