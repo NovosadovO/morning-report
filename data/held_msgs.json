@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:01:18.557246",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80397"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80397"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80397"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80397"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80397"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T09:01:19.998142",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -332,6 +293,12 @@
       "ts": "2026-10-08T09:06:02.171549",
       "kind": "calendar",
       "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЗаклади 10 хв на дорогу і документи.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T09:06:48.339556",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
