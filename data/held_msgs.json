@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:20:40.668919",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Lidl</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Z lásky to najlepšie do misky 🐶🐱»\n\n<i>«Objav Max &amp; Mila´s World: kvalitnú výživu pre domácich maznáčikov.Objav Max &amp; Mila´s World: kvalitnú výživu pre domácich maznáčikov.\r\n\r\n \r\n  \r\n\r\nhttps://click.mail.lidlplus.sk/?qs=ABl7ImQiOjUwMjMsInQiOjE1NSwicyI6NTB9ADIAAAAAAiCEAaDzIoQ82gIi2iZ3Ojv12vthR-y_oXGkp5pMNZQ79l403YAD3k1XZ6HlGu_RMfYEbSTf...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80444"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80444"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80444"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80444"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80444"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80444"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T10:20:46.546195",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Час вирушати.</i>",
@@ -212,6 +173,12 @@
     },
     {
       "ts": "2026-10-08T10:25:13.929903",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:25:14.948605",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
