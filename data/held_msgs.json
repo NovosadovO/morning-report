@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T23:53:06.190486",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T23:54:13.321214",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -182,6 +176,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T00:01:31.412582",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80505"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80505"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80505"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80505"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80505"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80505"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
