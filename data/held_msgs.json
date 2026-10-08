@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:13:40.733932",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:14:34.227889",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Product Manager (M/Ž) в Tatra banka»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nProduct Manager (M/Ž)\r\nTatra banka\r\nBratislava, Slovakia\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4475790452/?trackingId=jfEMt%2Fk...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -432,6 +426,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-08T14:16:49.206824",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dostali ste: 19,99 € ponuku\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
