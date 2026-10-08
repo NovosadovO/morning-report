@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-09-16T19:16:50"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_79215",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-16T19:17:16"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79203",
       "label": "🗑 Видалити",
       "ts": "2026-09-16T19:22:23"
@@ -7205,6 +7193,12 @@
       "data": "rx_bought_3a298fd735",
       "label": "📈 Купив",
       "ts": "2026-10-08T15:42:30"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_skip_done_u0fheki5vshi45e9p5o2lapjis_2026-10-08",
+      "label": "⏭ Перенести",
+      "ts": "2026-10-08T15:42:55"
     }
   ]
 }
