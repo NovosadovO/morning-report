@@ -1,9 +1,4 @@
 {
-  "80010": {
-    "sender": "support@pixoryofficial.com",
-    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
-    "seen_ts": "2026-09-30T17:31:40.949589+00:00"
-  },
   "80013": {
     "sender": "no-reply@google.com",
     "sender_raw": "Google <no-reply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-08T12:22:53.124217+00:00"
+  },
+  "80465": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-10-08T12:24:57.686863+00:00"
   }
 }
