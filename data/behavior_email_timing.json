@@ -1,9 +1,4 @@
 {
-  "80040": {
-    "sender": "nike@official.nike.com",
-    "sender_raw": "Nike <nike@official.nike.com>",
-    "seen_ts": "2026-10-01T08:16:57.536992+00:00"
-  },
   "80041": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
     "seen_ts": "2026-10-08T18:37:06.677767+00:00"
+  },
+  "80500": {
+    "sender": "newsletter@email.blockchain.com",
+    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
+    "seen_ts": "2026-10-08T19:06:14.666024+00:00"
   }
 }
