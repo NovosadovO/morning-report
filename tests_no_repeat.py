@@ -113,7 +113,9 @@ src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "monitor.py"
 i = src.find("def apply_action_suggestion")
 _end = src.find("\ndef ", i + 10)
 body = src[i:_end if _end > 0 else i + 8000]
-ok("date.today().isoformat()" in body, "є фільтр дат у минулому")
+ok("_today_aa" in body and "action_date" in body, "є фільтр дат у минулому")
+ok("_when_aa" in body and "action_time" in body,
+   "є фільтр часу сьогодні, що вже минув")
 ok("already_offered" in body, "є перевірка журналу пропозицій")
 ok("mark_offered" in body, "після відправки фіксує пропозицію")
 ok(body.find("already_offered") < body.find("_send_telegram_text_with_keyboard"),

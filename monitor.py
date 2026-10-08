@@ -2788,11 +2788,29 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
         # («поїздка на Корфу вже пройшла», «страховка до 15.08» коли вже 20.08).
         if action_date:
             try:
-                import datetime as _dt_pa
-                if str(action_date) < _dt_pa.date.today().isoformat():
+                _now_loc_aa = datetime.now(timezone.utc) + timedelta(hours=2)
+                _today_aa = _now_loc_aa.date().isoformat()
+                if str(action_date) < _today_aa:
                     print(f"[action] ⏮ дата {action_date} у минулому "
                           f"— «{action_title[:40]}» не пропоную", flush=True)
                     return
+                # Запит Олега 08.10: дата = сьогодні, а конкретний час (якщо
+                # є) уже минув — пропозиція вже не актуальна («подзвонити
+                # сьогодні о 10:00», коли зараз 18:00).
+                if action_time and str(action_date) == _today_aa:
+                    try:
+                        _h_aa, _m_aa = (int(x) for x in
+                                       str(action_time).split(":")[:2])
+                        _when_aa = _now_loc_aa.replace(
+                            hour=_h_aa, minute=_m_aa, second=0,
+                            microsecond=0)
+                        if _when_aa < _now_loc_aa - timedelta(minutes=15):
+                            print(f"[action] ⏮ час {action_time} сьогодні "
+                                  f"вже минув — «{action_title[:40]}» не "
+                                  f"пропоную", flush=True)
+                            return
+                    except Exception:
+                        pass
             except Exception:
                 pass
 

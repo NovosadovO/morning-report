@@ -183,6 +183,24 @@ def gate(summary: str, start_dt=None, end_dt=None, description: str = "",
         if A.answered(key):
             _log("уже відповідав про цю подію — не питаю вдруге: " + s[:60])
             return {"ok": False, "error": "calgate: already answered"}
+        # Та сама перевірка, що й у gate_write() — інакше календарні
+        # питання (на відміну від нагадувань/нотаток) лишались без
+        # захисту від повторів при іншому формулюванні тієї ж події.
+        try:
+            _sim_old = A.answered_similar(s)
+        except Exception:
+            _sim_old = ""
+        if _sim_old:
+            _log("на схоже питання вже є відповідь (" + _sim_old[:40]
+                 + ") — не перепитую: " + s[:60])
+            return {"ok": False, "error": "calgate: answered similar"}
+        if _similar_asked(s):
+            _log("про цю саму подію вже питав днями — не повторююсь: "
+                 + s[:60])
+            return {"ok": False, "error": "calgate: similar asked"}
+        if not _ask_budget_ok():
+            _log("ліміт питань на добу — тихо відкидаю: " + s[:60])
+            return {"ok": False, "error": "calgate: ask budget"}
         A.ask(q, kind="plan", key=key, meta=meta,
               tag="MSG_CAL_ASK_" + str(source or "bot"))
         _log("запитав дозвіл на запис: " + s[:70])

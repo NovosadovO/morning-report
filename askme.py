@@ -135,29 +135,34 @@ def answered(key: str) -> bool:
     return bool(answer_of(key))
 
 
+def _words(t) -> set:
+    t = str(t or "").lower()
+    return set(x for x in "".join(
+        (c if (c.isalnum() or c == " ") else " ") for c in t).split()
+        if len(x) > 2)
+
+
 def answered_similar(title: str, thresh: float = 0.6) -> str:
     """Ключ питання, на яке Олег УЖЕ відповів і яке значить те саме.
 
     Пам'ять назавжди: формулювання щоразу інше («Зібрати речі на Малагу» /
     «Зібрати речі: Málaga»), а справа одна — і перепитувати її не можна.
+    Порівнюємо з РЕАЛЬНИМ текстом питання (поле q), а не лише з технічним
+    ключем — так ловимо більше справжніх перефразувань.
     """
-    def _w(t):
-        t = str(t or "").lower()
-        return set(x for x in "".join(
-            (c if (c.isalnum() or c == " ") else " ") for c in t).split()
-            if len(x) > 2)
-    w = _w(title)
+    w = _words(title)
     if not w:
         return ""
     try:
         data = _load() or {}
     except Exception:
         return ""
-    for k in list(data)[:400]:
+    for k, r in list(data.items())[:400]:
         try:
-            if not answer_of(k):
+            if not (r or {}).get("action"):
                 continue
-            ow = _w(k)
+            cand = str((r or {}).get("q") or k)
+            ow = _words(cand)
             if ow and len(w & ow) / max(1, min(len(w), len(ow))) >= thresh:
                 return str(k)
         except Exception:
@@ -207,6 +212,26 @@ def ask(question: str, kind: str = "confirm", key: str = "",
             return False
         if _asked_recently(key):
             return False
+        # Запит Олега 08.10: не питати знову, якщо він УЖЕ відповідав на
+        # питання, що означає те саме (інше формулювання/ключ, та сама суть).
+        # Центрально тут — щоб усі викликачі (foresight/money/monitor/...)
+        # отримали цей захист одразу, без правок у кожному з них.
+        _sim = answered_similar(q)
+        if _sim:
+            _log("схоже питання вже мало відповідь (" + _sim[:40] +
+                 ") — не питаю вдруге: " + key[:50])
+            return False
+        # Запит Олега 08.10: питання має розуміти, чи воно ще актуальне.
+        # Якщо meta несе конкретний час (meta["start"]) і він уже минув —
+        # пропозиція вже не має сенсу, питати про неї пізно.
+        try:
+            _st = _dt((meta or {}).get("start"))
+            if _st and _st < _now() - timedelta(minutes=15):
+                _log("час пропозиції вже минув — не питаю: " + key[:50] +
+                     " (" + str(_st)[:16] + ")")
+                return False
+        except Exception:
+            pass
     opts = list(options or SETS.get(kind) or SETS["confirm"])
     try:
         pid = _store.put({"key": key, "q": q[:400], "kind": kind,

@@ -350,6 +350,20 @@ def offer(item: dict) -> bool:
     tm = (item.get("time") or "").strip()
     if not re.match(r"^\d{1,2}:\d{2}$", tm):
         tm = ""
+    # Запит Олега 08.10: пропозиція має розуміти, чи вона ще актуальна.
+    # Дата = сьогодні і конкретний час уже минув — пропонувати це пізно,
+    # ТАК само відкидаємо, як при даті в минулому.
+    if date and tm and date == _now().strftime("%Y-%m-%d"):
+        try:
+            h, mi = (int(x) for x in tm.split(":"))
+            when_dt = _now().replace(hour=h, minute=mi, second=0,
+                                     microsecond=0)
+            if when_dt < _now() - timedelta(minutes=15):
+                _log(f"skip stale time ({kind}): {title[:40]} "
+                     f"{date} {tm} вже минув")
+                return False
+        except Exception:
+            pass
     message = (item.get("message") or "").strip()
     email_uid = str(item.get("email_uid") or "").strip()
     # AI іноді пише email-адресу замість IMAP UID — така кнопка була б мертвою

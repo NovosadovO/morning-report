@@ -493,6 +493,11 @@ def _shift_brief() -> str:
             import askme as A
             when = (_now() + timedelta(days=max(0, left - 1))).replace(
                 hour=10, minute=0, second=0, microsecond=0)
+            # Запит Олега 08.10: якщо бриф пішов пізніше, ніж 10:00 (вікно
+            # вже минуло того ж дня) — пропонуємо нагадати найближчим часом,
+            # а не про вже минулу годину.
+            if when < _now():
+                when = _now() + timedelta(minutes=30)
             first = items[0].split(" — ")[-1][:70]
             A.ask("🔔 До нічних лишилось " + str(max(0, left)) +
                   " дн. Нагадати « " + first + " » " +
