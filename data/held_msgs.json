@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:06:01.716285",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T12:06:09.731825",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:09:55.391046",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Generative AI</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «⚡ Claude's cheapest model beat GPT-6 Luna»\n\n<i>«----------\r\n######           [Subscribe](https://academynews.genai.works/)   -    [Collaborate with us](https://utm.genai.works/r/cq9vsh4)\r\n\r\n\r\n--------------------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8776fa6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80451"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80451"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80451"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80451"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80451"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80451"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
