@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T13:57:04.013710",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T13:57:04.869617",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80452"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T14:01:10.575398",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>⚡ Claude's cheapest model beat GPT-6 Luna</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80451"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80451"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80451"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80451"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80451"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80451"
             }
           ]
         ]
