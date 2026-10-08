@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:22:08.644718",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n🕐 09:00–12:00\n📍 Онлайн\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T12:22:19.309307",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 2 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; color: #333; } .listing { border-bottom: 1px solid #ccc; padding: 15px 0; display: flex; align-items: flex-start; } .listing img { margin-right: 15px; border-radius: 4px; } .details { flex-grow: 1; } .title { font-size: 18px; font-weight: bold; margin-bottom: 5...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-10-08T12:25:53.707065",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:25:54.472577",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
