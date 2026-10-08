@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T23:56:09.017626",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google Payments</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для домену 01FB74»\n\n<i>«Google Cloud Platform &amp; APIs\r\n\r\n\r\nПлатіж отримано\r\n\r\nВаш платіж у розмірі 10,00 EUR (призначення платежу: CLOUD WxM24V, Visa  •  \r\n• • • 0311) додано в обліковий запис Google Cloud Platform &amp; APIs 8 жовт.  \r\n2026 р..\r\n\r\n\r\n----------------------------------------------------------------------------...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80505"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80505"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80505"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80505"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80505"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80505"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T23:56:38.643078",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -343,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80397"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T00:01:39.611552",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80341"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80341"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80341"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80341"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80341"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80341"
             }
           ]
         ]
