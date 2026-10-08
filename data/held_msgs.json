@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:30:41.520345",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80454"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80454"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80454"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80454"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80454"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80454"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T14:30:42.985779",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Office Manager &amp; HR Administrat</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -365,6 +326,12 @@
       "ts": "2026-10-08T14:33:39.432521",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T14:33:40.509682",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
