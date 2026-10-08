@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Лист від The Block",
-      "detail": "Свіжий лист від The Block з темою '🔔 Action needed: The Block newsletters' прямо вказує на необхідність дії.",
-      "module": "selfact",
-      "ts": "2026-09-25T19:31:42"
-    },
-    {
-      "kind": "notify",
       "what": "The Innovators Fund & OpenAI",
       "detail": "Свіжий лист від Ben at StartEngine з темою 'Deadline Today: The Innovators Fund & Exposure to OpenAI' містить важливий дедлайн.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від ehuman@minebeamitsumi.eu про виплатну відомість є важливою інформацією, яку Олег має побачити.",
       "module": "selfact",
       "ts": "2026-10-08T22:55:01"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-08T23:06:07"
     }
   ]
 }
