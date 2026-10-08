@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-25T19:06:11"
-    },
-    {
       "kind": "notify",
       "what": "Лист від The Block",
       "detail": "Свіжий лист від The Block з темою '🔔 Action needed: The Block newsletters' прямо вказує на необхідність дії.",
@@ -2799,6 +2792,13 @@
       "detail": "Оскільки підписка Garmin Connect+ автоматично стане платною з 5 листопада, важливо дізнатися наміри Олега щодо неї.",
       "module": "selfact",
       "ts": "2026-10-08T22:54:55"
+    },
+    {
+      "kind": "notify",
+      "what": "Виплатна відомість Minebea",
+      "detail": "Лист від ehuman@minebeamitsumi.eu про виплатну відомість є важливою інформацією, яку Олег має побачити.",
+      "module": "selfact",
+      "ts": "2026-10-08T22:55:01"
     }
   ]
 }
