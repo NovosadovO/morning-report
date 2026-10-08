@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверніть увагу: сьогодні о 23:00 починається Соляр — 5",
-      "detail": "Інформація про Соляр є в календарі на сьогодні, і це важлива астрологічна подія, яка може вплинути на Олега.",
-      "module": "selfact",
-      "ts": "2026-09-25T20:18:03"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, The Block просить відкрити їхній лист, щоб продовжуват",
       "detail": "У свіжих листах є лист від The Block з темою '🔔 Action needed: The Block newsletters' та проханням відкрити лист.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-08T23:30:10"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-08",
+      "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-09T01:30:15"
     }
   ]
 }
