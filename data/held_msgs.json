@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:31:27.603087",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Google Payments  → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin  → New Sign-in to Your Account\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T01:31:30.605140",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
@@ -379,6 +373,12 @@
       "ts": "2026-10-09T01:33:19.604251",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.1% за 24г\n\nЗараз: 10.15 $\n24г тому: 11.16 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T01:33:22.090916",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 110.30 $\n24г тому: 116.30 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
