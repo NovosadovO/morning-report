@@ -13941,7 +13941,23 @@
     "pid": "cal_skip_botsend_1791491830322",
     "subject": "Підтвердження підписки Garmin Connect+",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Підтвердження підписки Garmin Connect+», 2026-10-08\nПідтвердити підписку Garmin Connect+ до 2026-10-08.\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Підтвердження підписки Garmin Connect+», 2026-10-08\nПідтвердити підписку Garmin Connect+ до 2026-10-08.\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 112012,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_botsend_1791491830322"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_botsend_1791491830322"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-08T22:37:21.422864+00:00"
   }
