@@ -244,39 +244,39 @@
       }
     },
     {
-      "ts": "2026-10-08T13:45:42.908729",
+      "ts": "2026-10-08T13:45:44.429300",
       "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Office Manager &amp; HR Administrat</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80454"
+              "callback_data": "email_reply_80452"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_80454"
+              "callback_data": "email_describe_80452"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_80454"
+              "callback_data": "email_star_80452"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_80454"
+              "callback_data": "email_cal_80452"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_80454"
+              "callback_data": "email_keep_80452"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_80454"
+              "callback_data": "email_delete_80452"
             }
           ]
         ]
