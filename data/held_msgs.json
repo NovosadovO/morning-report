@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:01:30.932865",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Kraken наймає: Software Engineer - Rust - Payward Services</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80442"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80442"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80442"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80442"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80442"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80442"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:01:32.231375",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ukončenie posielania ponúk emailom</b>\n👤 \"Profesia.sk\" &lt;profesia@profesia.sk&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-10-08T12:03:47.066895",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:03:48.001117",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
