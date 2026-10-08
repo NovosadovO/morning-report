@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:20:13.456570",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🎟️ Exkluzívny prednostný predaj»\n\n<i>«Získajte vstupenky na Pink Floyd LEGACY show s vizuálmi, ktoré vytvoril sám Roger Waters, v exkluzívnom prednostnom predaji. Použite heslo LEGACY27 a rezervujte si tie najlepšie miesta.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/yIX_fnB4Sz0KkmT6mIsxQg~~/AAA-fBA~/BvoSbnTIJk8ClseTUeHV6IuA...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80453"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80453"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80453"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80453"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80453"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80453"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:20:15.494150",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -212,6 +173,12 @@
     },
     {
       "ts": "2026-10-08T12:23:57.849997",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:23:58.733659",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
