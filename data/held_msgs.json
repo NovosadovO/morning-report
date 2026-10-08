@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:58:08.708738",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-08T09:58:09.615160",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T09:58:19.182732",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -399,6 +387,51 @@
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:02:01.387403",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:02:02.014895",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Ukončenie posielania ponúk emailom»\n\n<i>«Dobrý deň,\r\n&lt;br&gt;\r\n&lt;br&gt;\r\nvšimli sme si, že ste za posledných 6 mesiacov neklikli na žiadnu z pracovných ponúk, ktoré Vám posielame. Mrzí nás, že Vás ponuky na Profesia.sk nezaujali. Z tohto dôvodu Vám preto posielanie ponúk e-mailom s názvom Pracovné ponuky e-mailom\r\n Košice, na dohodu (brigády),  vy...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80441"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80441"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80441"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80441"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80441"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80441"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
