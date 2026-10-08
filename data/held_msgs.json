@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T00:34:03.968904",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T00:34:07.255392",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -8.5% за 24г</b>\n\nЗараз: 10.11 $\n24г тому: 11.05 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-09T00:37:20.614588",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.0% за 24г\n\nЗараз: 110.10 $\n24г тому: 115.96 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T00:37:23.049066",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -5.0% за 24г</b>\n\nЗараз: 0.0843 $\n24г тому: 0.0887 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
