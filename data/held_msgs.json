@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:33.356900",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80397"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80397"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80397"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80397"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80397"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:34.896378",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
@@ -350,6 +311,12 @@
       "ts": "2026-10-08T15:34:42.261451",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:34:45.148368",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
