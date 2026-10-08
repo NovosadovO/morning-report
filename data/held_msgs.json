@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:31.797263",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Знижка зараз, ім’я потім</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80476"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80476"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80476"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80476"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80476"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80476"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:33.356900",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -381,6 +342,12 @@
     },
     {
       "ts": "2026-10-08T15:34:41.307944",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:34:42.261451",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
