@@ -1,9 +1,4 @@
 {
-  "80014": {
-    "sender": "no-reply@abacus.ai",
-    "sender_raw": "no-reply@abacus.ai",
-    "seen_ts": "2026-09-30T18:02:11.090544+00:00"
-  },
   "80015": {
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
     "seen_ts": "2026-10-08T12:27:05.689003+00:00"
+  },
+  "80468": {
+    "sender": "slovnaftmove@mail.loyaltyteam.com",
+    "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
+    "seen_ts": "2026-10-08T12:29:11.998870+00:00"
   }
 }
