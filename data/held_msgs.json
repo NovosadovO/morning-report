@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:10:55.232303",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T10:11:06.782731",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80387"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T10:15:48.215596",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80386"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80386"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80386"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80386"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80386"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80386"
             }
           ]
         ]
