@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:16:39.080051",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Deletion notice for your Google Cloud Shell home directory</b>\n👤 noreply-cloudshell@google.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80456"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80456"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80456"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80456"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80456"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80456"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T14:16:40.416002",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dostali ste: 19,99 € ponuku</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -333,6 +294,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T14:20:46.897471",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Aave App</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Now Live: Deposits on BNB»\n\n<i>«Now Live: Deposits on BNB Chain table { border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { border: 0; outline: none; -ms-interpolation-mode: bicubic; } @media only screen and (max-width: 520px) { .page-padding { padding: 32px 16px !important; } .card-content { padding: 24px 24p...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80463"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80463"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80463"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80463"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80463"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80463"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
