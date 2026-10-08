@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:15:36.479360",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Thursday links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80506"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80506"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80506"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80506"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80506"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80506"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T01:15:37.912403",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-09T01:18:01.516534",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.1% за 24г</b>\n\nЗараз: 110.22 $\n24г тому: 116.18 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T01:18:02.437022",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ SOL -5.1% за 24г\n\nЗараз: 110.22 $\n24г тому: 116.18 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
