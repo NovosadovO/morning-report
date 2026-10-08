@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T11:01:05.321695",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80387"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80387"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80387"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80387"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80387"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80387"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T11:01:06.276704",
       "kind": "chunk",
       "text": "😴 Привіт, Олеже. Після нічної — не поспішай.\n\n🛋 Вчора була <b>нічна зміна</b> — сьогодні відпочиваєш. Нічого зайвого не планувати.\n\n🌤 🌤 <b>ПОГОДА — Košice</b>\n\n📅 <b>Календар на сьогодні:</b>\n📅 <b>КАЛЕНДАР</b>\n<b>Сьогодні 08.10.2026:</b>\n• 09:00 — <b>Конференція NBS: Slovenský finančný trh a inovácie 2026</b>\n• 11:00 — <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n\n<b>Завтра 09.10.2026:</b>\nНічого не заплановано\n\n💹 🔴 BTC $82,799 (-1.4%)  🔴 ETH $2,558 (-2.0%)  🔴 BNB $767 (-0.8%)  🔴 XRP $1 (-3.6%)  🔴 SOL $115 (-2.9%)  🟢 TRX $0 (+0.7%)  🔴 FIGR_HELOC $1 (-2.0%)  🔴 ZEC $1,234 (-6.4%)  🔴 HYPE $87 (-4.2%)  🔴 DOGE $0 (-3.1%)  🔴 XMR $557 (-1.2%)  🔴 LINK $13 (-4.5%)  🔴 WBT $83 (-1.2%)  🔴 ADA $0 (-1.7%)  🟢 LEO $9 (+0.3%)  🔴 RAIN $0 (-3.1%)  🔴 XLM $0 (-2.8%)  🟢 NEAR $5 (+1.0%)  🔴 BCH $297 (-3.4%)  🔴 LTC $64 (-4.4%)\n\n",
@@ -198,6 +159,12 @@
     },
     {
       "ts": "2026-10-08T11:07:56.990859",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T11:07:57.918075",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
