@@ -642,11 +642,22 @@ def _gap_brief() -> str:
             continue
         win = max(wins, key=lambda w: (w[1] - w[0]))
         a, b = win
-        mins = int((b - a).total_seconds() / 60)
         key = ("gap|" + day.strftime("%Y%m%d") + "|" + a.strftime("%H%M")
                + "-" + b.strftime("%H%M"))
         if _seen(key):
             continue
+        # 08.10.2026 (запит Олега): вікно рахувалось від початку дня, а не від
+        # "зараз" — під кінець дня бот пропонував "вільно 11:00-22:00", хоча
+        # реально лишалось 40 хв. Відрізаємо все, що вже минуло.
+        if offset == 0:
+            now_dt = _now()
+            if now_dt >= b:
+                continue  # вікно вже повністю минуло
+            if now_dt > a:
+                a = now_dt
+        mins = int((b - a).total_seconds() / 60)
+        if mins < _GAP_MIN_MIN:
+            continue  # лишилось замало часу, щоб це було реальною пропозицією
         open_items = _open_items(4)
         oi_txt = ("\n".join("- " + i for i in open_items) if open_items
                   else "(незакритих справ немає)")
