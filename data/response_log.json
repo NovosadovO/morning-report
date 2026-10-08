@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-15T22:06:21.973506+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-08-16T20:31:15.438793+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13784,6 +13778,12 @@
       "category": "event_done",
       "question": "📅 Конференція NBS: Slovenský finančný trh a inovácie 2026\nПланувалась до 13:00 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-08T20:25:56.739814+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
