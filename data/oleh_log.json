@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_79204",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-16T19:22:25"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_79206",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-16T19:22:32"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79210",
       "label": "🗑 Видалити",
       "ts": "2026-09-16T19:22:37"
@@ -7199,6 +7187,18 @@
       "data": "evdone_yes_done_p0n9hh8lq8448eifai528o4l7k_2026-10-08",
       "label": "✅ Виконано",
       "ts": "2026-10-08T15:42:57"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-10-08T20:25:55"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-08T20:25:55"
     }
   ]
 }
