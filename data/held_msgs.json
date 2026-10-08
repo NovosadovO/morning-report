@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:15:46.437355",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Office Manager &amp; HR Administrat</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80452"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80452"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80452"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80452"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80452"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80452"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:15:47.838518",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>⚡ Claude's cheapest model beat GPT-6 Luna</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-08T12:18:07.190486",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n🕐 09:00–12:00\n📍 Онлайн\n\nВідповідь збережу — це піде в аналітику тижня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:18:32.613946",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
