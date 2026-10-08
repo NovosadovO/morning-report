@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:31:30.605140",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T01:31:32.056852",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Service Designer (M/Ž) в Tatra banka</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-10-09T01:33:22.090916",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 110.30 $\n24г тому: 116.30 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T01:33:22.979591",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ SOL -5.2% за 24г\n\nЗараз: 110.30 $\n24г тому: 116.30 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
