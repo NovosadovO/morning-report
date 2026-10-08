@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:26:49.560547",
-      "kind": "calendar",
-      "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЧас вирушати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T10:27:45.979836",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80441"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T10:30:46.503962",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>SVP, Product в Toptal та ще 28 вакансій, які можуть вас заці</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80439"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80439"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80439"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80439"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80439"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80439"
             }
           ]
         ]
