@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:01:22.747149",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T09:01:24.131260",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-10-08T09:07:02.822913",
       "kind": "calendar",
       "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T09:07:03.738476",
+      "kind": "calendar",
+      "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.\n🕐 11:00–11:30\n\nЗаклади 10 хв на дорогу і документи.",
       "keyboard": null
     }
   ]
