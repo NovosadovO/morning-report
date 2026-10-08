@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T09:07:59.702927",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T09:08:02.556120",
       "kind": "calendar",
       "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T09:16:14.466049",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>SVP, Product в Toptal та ще 28 вакансій, які можуть вас заці</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80439"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80439"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80439"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80439"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80439"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80439"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
