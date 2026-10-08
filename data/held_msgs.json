@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:27:04.786445",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:27:06.737330",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «😱 AI math advancements cause crypto panic»\n\n<i>«———————————————————————————\r\n\r\n## Top Stories\r\n\r\n**BTC** $82,364 (-1.4%) | **ETH** $2,533 (-1.7%) | **SOL** $113 (-3.5%)\r\n\r\n* US spot Bitcoin ETFs post [$484.9M net outflow](https://www.chooserich.live/story/us-spot-bitcoin-etfs-outflows-5a52sn4), largest single-day exit in over three months as cryp...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -409,6 +403,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80447"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T14:30:49.063496",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Kraken наймає: Software Engineer - Rust - Payward Services</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80442"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80442"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80442"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80442"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80442"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80442"
             }
           ]
         ]
