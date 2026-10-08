@@ -686,6 +686,25 @@ def run_health_remind_watcher():
 threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 
+def run_garmin_sync_watcher():
+    """Пряме підтягування з Garmin Connect (HRV/Body Battery/стрес/SpO2/VO2max),
+    яких немає в Apple Health export (запит Олега, 08.10). Кожні 2 години —
+    дані оновлюються протягом дня, частіше немає смислу й зайве навантаження
+    на Garmin API (ризик rate-limit)."""
+    print("=== Starting Garmin Connect sync watcher (every 2h) ===", flush=True)
+    time.sleep(150)
+    while True:
+        try:
+            import garmin_sync
+            garmin_sync.sync_once()
+        except Exception as e:
+            print(f"[garmin_sync] watcher error: {e}", flush=True)
+        time.sleep(7200)
+
+
+threading.Thread(target=run_garmin_sync_watcher, daemon=True).start()
+
+
 def run_astro_watcher():
     """ВИМКНЕНО — астро вбудовано в годинний звіт. Залишено лише алерти (run_astro_alert_watcher)."""
     return

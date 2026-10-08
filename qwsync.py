@@ -36,6 +36,7 @@ _ALIASES = {
     "health_score": ("health_score", "score", "оцінка"),
     "body_battery": ("body_battery", "battery", "енергія"),
     "stress": ("stress", "стрес"),
+    "vo2max": ("vo2max", "vo2_max", "vo2maxvalue"),
 }
 
 
@@ -96,9 +97,9 @@ def normalize(payload: dict) -> dict:
               "body_battery", "stress"):
         if k in rec and rec[k] is not None:
             rec[k] = int(round(rec[k]))
-    for k in ("weight_kg", "distance_km"):
+    for k in ("weight_kg", "distance_km", "vo2max"):
         if k in rec and rec[k] is not None:
-            rec[k] = round(float(rec[k]), 2)
+            rec[k] = round(float(rec[k]), 1 if k == "vo2max" else 2)
 
     # відсіюємо явне сміття, щоб не забруднити історію
     if rec.get("steps") is not None and not (0 <= rec["steps"] <= 100000):
@@ -110,6 +111,8 @@ def normalize(payload: dict) -> dict:
         rec.pop("sleep_hours", None)
     if rec.get("weight_kg") is not None and not (35 <= rec["weight_kg"] <= 250):
         rec.pop("weight_kg")
+    if rec.get("vo2max") is not None and not (15 <= rec["vo2max"] <= 95):
+        rec.pop("vo2max")
 
     if not rec:
         return {}
@@ -157,6 +160,8 @@ def _fmt(rec: dict) -> str:
         bits.append("🫁 SpO2: <b>" + str(rec["spo2"]) + "%</b>")
     if rec.get("body_battery") is not None:
         bits.append("🔋 Body Battery: <b>" + str(rec["body_battery"]) + "</b>")
+    if rec.get("vo2max") is not None:
+        bits.append("🫀 VO2max: <b>" + str(rec["vo2max"]) + "</b>")
     return "\n".join(bits)
 
 

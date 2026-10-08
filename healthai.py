@@ -321,7 +321,8 @@ def analytics(days: int = 30) -> dict:
 
     spec = [("weight_kg", "weight"), ("sleep_hours", "sleep"), ("steps", "steps"),
             ("hr_avg", "hr"), ("hrv", "hrv"), ("calories", "calories"),
-            ("body_battery", "energy"), ("stress", "stress")]
+            ("body_battery", "energy"), ("stress", "stress"), ("spo2", "spo2"),
+            ("vo2max", "vo2max")]
     for field, name in spec:
         if field == "weight_kg":
             pairs = _weight_series(days)
@@ -463,6 +464,8 @@ def facts_block(a: dict) -> str:
         line("Калорії", a.get("calories"), " ккал"),
         line("Енергія (body battery)", a.get("energy")),
         line("Стрес (з годинника)", a.get("stress")),
+        line("SpO2", a.get("spo2"), "%"),
+        line("VO2max", a.get("vo2max")),
     ]
     sq = a.get("sleep_quality") or {}
     if sq.get("std") is not None:
