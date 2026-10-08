@@ -1,9 +1,4 @@
 {
-  "79999": {
-    "sender": "team@ship.emergent.sh",
-    "sender_raw": "Emergent <team@ship.emergent.sh>",
-    "seen_ts": "2026-09-30T14:28:51.357144+00:00"
-  },
   "80002": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-10-08T11:21:32.026232+00:00"
+  },
+  "80459": {
+    "sender": "newsletter@pelikan.sk",
+    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
+    "seen_ts": "2026-10-08T12:00:13.086906+00:00"
   }
 }
