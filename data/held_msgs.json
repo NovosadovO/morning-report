@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:13:28.861621",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T15:13:29.659937",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80476"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T15:16:21.689625",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80397"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80397"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80397"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80397"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80397"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80397"
             }
           ]
         ]
