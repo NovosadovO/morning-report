@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:26:40.280746",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T10:26:48.536964",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.</b>\n🕐 11:00–11:30\n\n<i>Час вирушати.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80447"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T10:30:43.707511",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Kraken наймає: Software Engineer - Rust - Payward Services</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80442"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80442"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80442"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80442"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80442"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80442"
             }
           ]
         ]
