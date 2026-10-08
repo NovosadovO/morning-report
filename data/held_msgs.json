@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:58:00.684989",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:58:01.589392",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80263"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-08T15:01:18.682854",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE SEPTEMBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80251"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80251"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80251"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80251"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80251"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80251"
             }
           ]
         ]
