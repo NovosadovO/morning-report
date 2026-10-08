@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-16T21:52:03.619276+00:00",
-      "category": "event_done",
-      "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-17T10:00:32.209753+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13806,6 +13800,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-09"
+      }
+    },
+    {
+      "ts": "2026-10-08T22:36:46.261398+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Garmin Connect+ Subscription Confirmation",
+      "extra": {
+        "kind": "note",
+        "date": "2026-10-08"
       }
     }
   ]
