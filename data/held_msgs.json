@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T12:45:53.227147",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Meta’s Personal Agent Protocol just opened the fight over wh</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80448"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80448"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80448"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80448"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80448"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80448"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T12:45:54.904090",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -297,6 +258,12 @@
     },
     {
       "ts": "2026-10-08T12:50:02.560264",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T12:50:03.416292",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Конференція NBS: Slovenský finančný trh a inovácie 2026 » було 08.10 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
