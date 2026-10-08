@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T14:00:07.480149",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-08T14:00:14.135106",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Roland z Pelikána</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «-40% zľava 🤯 na Thajsko, Bali, Hainan...»\n\n<i>«Zobraziť email v prehliadači [https://cdn2.pelikan.sk/pelikan-sk/e/.eJwTUni0U9OJKy9lVtDUKMmbFpqbH26MsPINuvu6JYhvKXNCp7PUZMaMkpKCYit9_eSUPCO9gtSczOzEPL3ibH0oUxfITNV3Tq_IKqhKdc739c7NDCx0rAqODPb09zb1DvX0TsoNTgwtCEt0T8k28U4KyCgOSzcLCfNJMTMJCnYpDHWJ9Mxx8U3SNY4y9sgoTilwSk6vKKwwiXDL8s4x03WsiPLxc9QzsCz2zDQq...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -468,6 +462,12 @@
     },
     {
       "ts": "2026-10-08T14:02:38.409638",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T14:02:39.453891",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Вільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку. » було 08.10 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
