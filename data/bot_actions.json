@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-25T16:06:08"
-    },
-    {
       "kind": "notify",
       "what": "Нові квартири у Кошице",
       "detail": "З листів від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-08T21:06:29"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 13934 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-10-08T21:09:45"
     }
   ]
 }
