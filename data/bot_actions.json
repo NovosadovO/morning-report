@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Оновлення Helicon на Avalanche Mainnet",
-      "detail": "Свіжий лист від Avalanche Team1 про запуск Helicon.",
-      "module": "selfact",
-      "ts": "2026-09-25T17:10:19"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що 30 вересня закінчується термін дії підпис",
       "detail": "Подія 'Підписка Apple — закінчення терміну дії' у календарі на 30.09.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-08T22:06:03"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, твій безкоштовний пробний період Garmin Connect+ Mont",
+      "detail": "З листа від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation",
+      "module": "selfact",
+      "ts": "2026-10-08T22:23:30"
     }
   ]
 }
