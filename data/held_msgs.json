@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T00:27:39.666900",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 10.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T00:27:42.901977",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80503"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T00:30:49.022386",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>New Sign-in to Your Account</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80502"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80502"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80502"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80502"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80502"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80502"
             }
           ]
         ]
