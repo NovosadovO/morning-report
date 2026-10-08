@@ -1,49 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T15:31:41.555527",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 carVertical\n📋 Знижка зараз, ім’я потім\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: carVertical",
-              "callback_data": "email_reply_80476"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_80397"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Garmin",
-              "callback_data": "email_reply_80341"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Garmin",
-              "callback_data": "email_reply_80331"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80476"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80476"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T15:31:45.966313",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 carVertical\n📋 Знижка зараз, ім’я потім\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)",
@@ -185,6 +142,12 @@
       "ts": "2026-10-08T15:34:59.162966",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.60 $\n24г тому: 11.19 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T15:35:00.155966",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.3% за 24г\n\nЗараз: 10.60 $\n24г тому: 11.19 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
