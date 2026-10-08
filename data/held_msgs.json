@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:49:09.961627",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0844 $\n24г тому: 0.0890 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T01:50:21.906397",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Google Payments <payments-noreply@google.com> → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin <alerts@account.garmin.com> → New Sign-in to Your Account\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.2% за 24г\n\nЗараз: 0.0843 $\n24г тому: 0.0890 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T01:52:37.984736",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Defiant</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Coinbase's Top Cryptographer Calls 'Bunker Mode' FUD»\n\n<i>«**gm, Defiers!**\n\nThese are the biggest stories in DeFi and crypto:\n\n* **[Coinbase](https://thedefiant.io/news/security/coinbase-cryptographer-calls-drake-bunker-mode-warning-definition-of-fud)**[’s top cryptographer calls Drake’s bunker-mode warning the definition of FUD](https://thedefiant.io/news...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80509"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80509"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80509"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80509"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80509"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80509"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
