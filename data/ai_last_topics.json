@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-08t22_15_24_333727": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії, які можуть зацікавити Олега, зокрема позиції 'Director of Operations' в HUMAIN та ",
+    "ts": "2026-10-08T22:15:24.333727"
+  },
   "healthai|2026-10-08t22_05_48_531470": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що ти щойно зареєстрував новий Garmin Venu X, і це чудовий крок, адже ти сам питав про можливість з'єднання з Garmin Connect. З огляду на це, і т",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Треба купити гель.\"}",
     "ts": "2026-09-28T23:01:59.274176"
-  },
-  "action_detect|2026-09-28t23_01_48_212176": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-28T23:01:48.212176"
   }
 }
