@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-08T10:01:38.082637",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Investment Manager (gn) Venture</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80436"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80436"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80436"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80436"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80436"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80436"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-08T10:01:39.686013",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -398,6 +359,12 @@
       "ts": "2026-10-08T10:05:59.945831",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-08T10:06:00.736454",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
