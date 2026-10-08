@@ -1,9 +1,4 @@
 {
-  "80045": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-10-01T09:24:24.072673+00:00"
-  },
   "80046": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "payments-noreply@google.com",
     "sender_raw": "Google Payments <payments-noreply@google.com>",
     "seen_ts": "2026-10-08T21:56:07.885957+00:00"
+  },
+  "80509": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-10-08T23:52:36.868349+00:00"
   }
 }
