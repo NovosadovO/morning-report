@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T00:43:06.774476",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Google Payments <payments-noreply@google.com> → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin <alerts@account.garmin.com> → New Sign-in to Your Account\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T00:43:07.595086",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Google Payments  → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n• Garmin  → New Sign-in to Your Account\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 4 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80502"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T00:45:49.561525",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80397"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80397"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80397"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80397"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80397"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80397"
             }
           ]
         ]
