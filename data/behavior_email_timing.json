@@ -1,9 +1,4 @@
 {
-  "80097": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-10-02T00:14:12.961687+00:00"
-  },
   "80101": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "invitations@linkedin.com",
     "sender_raw": "Oleksandra Morekit <invitations@linkedin.com>",
     "seen_ts": "2026-10-09T18:14:03.518568+00:00"
+  },
+  "80565": {
+    "sender": "info@upland.me",
+    "sender_raw": "Upland Community <info@upland.me>",
+    "seen_ts": "2026-10-09T19:21:30.457775+00:00"
   }
 }
