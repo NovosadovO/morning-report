@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-19T12:08:06.518389+00:00",
-      "category": "event_done",
-      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-19T19:17:52.499111+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13856,6 +13850,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути виплатну відомість за вересень",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-10"
+      }
+    },
+    {
+      "ts": "2026-10-10T00:00:15.703791+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Ознайомитись з новинами Avalanche",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-10"
