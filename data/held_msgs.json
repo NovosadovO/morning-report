@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:31:37.903464",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_80511"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80511"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80511"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:31:38.395694",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.4% за 24г</b>\n\nЗараз: 0.0844 $\n24г тому: 0.0892 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -167,6 +142,12 @@
       "ts": "2026-10-09T03:34:50.863162",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.2% за 24г\n\nЗараз: 10.15 $\n24г тому: 11.18 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:34:52.814042",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -6.3% за 24г</b>\n\nЗараз: 109.15 $\n24г тому: 116.50 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
