@@ -1,14 +1,4 @@
 {
-  "80103": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-10-02T05:48:51.431163+00:00"
-  },
-  "80104": {
-    "sender": "noreply@newsletter.austrian.com",
-    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
-    "seen_ts": "2026-10-02T06:23:24.888565+00:00"
-  },
   "80105": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "TREND.sk через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1503,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-10-09T21:10:15.988909+00:00"
+  },
+  "80571": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-09T21:26:53.071229+00:00"
   }
 }
