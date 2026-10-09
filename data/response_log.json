@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-18T20:14:58.826517+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_water"
-    },
-    {
       "ts": "2026-08-18T20:14:59.625893+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13825,6 +13819,16 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-10-10"
+      }
+    },
+    {
+      "ts": "2026-10-09T06:06:36.235087+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-09"
       }
     }
   ]
