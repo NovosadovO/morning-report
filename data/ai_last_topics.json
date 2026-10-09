@@ -1,4 +1,44 @@
 {
+  "healthai|2026-10-09t09_06_02_011790": {
+    "topic": "healthai",
+    "gist": "🤔 Бачу, що оцінка дня за сьогодні — 29, це значно нижче, ніж 100 вчора. За сьогодні вага та сон ще не приходили, але останні відомі дані по вазі — 83.1 кг за 6 ",
+    "ts": "2026-10-09T09:06:02.011790"
+  },
+  "selfact|2026-10-09t09_03_52_626725": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava: Blood, Sweat & MiCA\",     \"text\": \"Олеже, зверни увагу, що 13.10 о 12:45 у тебе запланован",
+    "ts": "2026-10-09T09:03:52.626725"
+  },
+  "proactive_ai|2026-10-09t09_02_15_219267": {
+    "topic": "proactive_ai",
+    "gist": "Привіт! Сьогодні ж у тебе вихідний, як щодо пробіжки? Бачу, кроків поки небагато.",
+    "ts": "2026-10-09T09:02:15.219267"
+  },
+  "action_detect|2026-10-09t09_01_16_933128": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T09:01:16.933128"
+  },
+  "action_detect|2026-10-09t09_01_02_202034": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T09:01:02.202034"
+  },
+  "action_detect|2026-10-09t09_00_51_498912": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T09:00:51.498912"
+  },
+  "email_ai_item|2026-10-09t09_00_40_917134": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Temu інформує про те, що тепер доступна оплата при доставці (dobierka), хоча в деяких випадках вона може бути недоступною або стяг",
+    "ts": "2026-10-09T09:00:40.917134"
+  },
+  "assistant|2026-10-09t09_00_35_478955": {
+    "topic": "assistant",
+    "gist": "Сьогодні, у вільний день перед ранковими, а потім нічними змінами, є кілька корисних справ, які можна додати до календаря, враховуючи дані та незавершені цикли:",
+    "ts": "2026-10-09T09:00:35.478955"
+  },
   "action_detect|2026-10-09t09_00_24_458543": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить загальні поради щодо сніданку та інформ",
@@ -258,45 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії в Кошице\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Service Designer (",
     "ts": "2026-10-09T06:29:46.191639"
-  },
-  "foresight_truthfix|2026-10-09t06_21_14_924031": {
-    "topic": "foresight/truthfix",
-    "gist": "Вага 83.1 кг, зафіксована 3 дні тому (6 жовтня), показує +8.1 кг до цілі 75 кг, а бігових тренувань цього тижня (з 5 жовтня) немає. Оскільки сьогодні, 9 жовтня,",
-    "ts": "2026-10-09T06:21:14.924031"
-  },
-  "foresight|2026-10-09t06_21_04_094926": {
-    "topic": "foresight",
-    "gist": "Привіт, Олеже!  Твоя вага тримається на 83.1 кг вже кілька днів, а збіг за тиждень нульовий, хоча ціль у 75 кг все ще актуальна. Оскільки сьогодні в тебе вільни",
-    "ts": "2026-10-09T06:21:04.094926"
-  },
-  "mailcal_extract|2026-10-09t06_15_28_288613": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-09T06:15:28.288613"
-  },
-  "selfact|2026-10-09t06_14_15_148767": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплатити квартиру\",     \"text\": \"Олеже, нагадую, що 15 жовтня потрібно буде оплатити квартиру (€500).\",     \"w",
-    "ts": "2026-10-09T06:14:15.148767"
-  },
-  "proactive_actions|2026-10-09t06_06_31_038787": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії\",     \"date\": \"2026-10-09\",     \"time\": \"18:00\",     \"message\": \"Олеже, у тебе 20 ",
-    "ts": "2026-10-09T06:06:31.038787"
-  },
-  "action_detect|2026-10-09t06_02_31_554568": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Finweek Bratislava\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Перевірити стрім або запи",
-    "ts": "2026-10-09T06:02:31.554568"
-  },
-  "action_detect|2026-10-09t06_02_22_801853": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T06:02:22.801853"
-  },
-  "action_detect|2026-10-09t06_02_09_665450": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати кореляцію ETH/AVAX/ONDO\", \"action_date\": \"2026-10-09\", \"action_time\": null, \"action_summary\": \"Проан",
-    "ts": "2026-10-09T06:02:09.665450"
   }
 }
