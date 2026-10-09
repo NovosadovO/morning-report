@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-09t10_53_29_871368": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, на 13 жовтня у тебе заплановано дві нічні зміни та конференція Finweek Bratislava: “Blood, Sweat & MiCA”",
+    "ts": "2026-10-09T10:53:29.871368"
+  },
+  "email_ai_item|2026-10-09t10_52_56_790880": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від CMC Market Pulse є щотижневим крипто-брифінгом, що надає аналітичні дані та ключові події на ринку криптовалют. Він містить огляд ",
+    "ts": "2026-10-09T10:52:56.790880"
+  },
   "mailcal_extract|2026-10-09t10_48_58_543666": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2026-09-27\", \"action_time\": null, \"action_summary\": \"Виділити 90 хвилин на пробіжку сьог",
     "ts": "2026-10-09T08:01:56.634754"
-  },
-  "action_detect|2026-10-09t08_01_42_973743": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T08:01:42.973743"
-  },
-  "action_detect|2026-10-09t08_01_33_553633": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка або прогулянка\", \"action_date\": \"2026-10-09\", \"action_time\": \"12:00\", \"action_summary\": \"Вийди на пробіжку",
-    "ts": "2026-10-09T08:01:33.553633"
   }
 }
