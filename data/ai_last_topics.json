@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-09t05_42_31_769571": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сплата квартири\",     \"text\": \"Олеже, нагадую, що 15 жовтня тобі потрібно оплатити квартиру — €500.\",     \"why",
+    "ts": "2026-10-09T05:42:31.769571"
+  },
+  "foresight_truthfix|2026-10-09t05_34_54_717191": {
+    "topic": "foresight/truthfix",
+    "gist": "Що змінилось з останнього повідомлення? Дані по крипторинку за 7 днів показують падіння майже по всьому ТОП-20, крім FIGR_HELOC (+1.0%) та LEO (-0.2%). Твій пор",
+    "ts": "2026-10-09T05:34:54.717191"
+  },
   "foresight|2026-10-09t05_34_43_533482": {
     "topic": "foresight",
     "gist": "Привіт, Олеже!  Щодо нового підходу до інвест-аналізу: зараз гарний час, бо ринок крипти просідає (майже весь топ-20 мінус за 7 днів), а це часто дає більше сиг",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз фінансового портфеля\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу варто провести ана",
     "ts": "2026-10-08T22:02:36.986601"
-  },
-  "action_detect|2026-10-08t22_02_25_813734": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-08T22:02:25.813734"
-  },
-  "action_detect|2026-10-08t22_02_15_040163": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Конференція NBS\", \"action_date\": \"2026-10-08\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні о 09:00 відбудет",
-    "ts": "2026-10-08T22:02:15.040163"
   }
 }
