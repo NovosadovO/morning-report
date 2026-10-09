@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:59:00.097932",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -5.8% за 24г</b>\n\nЗараз: 109.49 $\n24г тому: 116.25 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T01:59:01.034296",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.8% за 24г\n\nЗараз: 109.49 $\n24г тому: 116.25 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80503"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T02:01:44.058882",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>New Sign-in to Your Account</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80502"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80502"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80502"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80502"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80502"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80502"
             }
           ]
         ]
