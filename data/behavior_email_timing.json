@@ -1,9 +1,4 @@
 {
-  "80102": {
-    "sender": "oleg.novosadov@minebeamitsumi.eu",
-    "sender_raw": "Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>",
-    "seen_ts": "2026-10-02T04:29:49.214809+00:00"
-  },
   "80103": {
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-09T20:14:32.327930+00:00"
+  },
+  "80568": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-09T20:51:39.318062+00:00"
   }
 }
