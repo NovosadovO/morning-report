@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T02:45:40.694806",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Wall Street just moved onchain</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80508"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80508"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80508"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80508"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80508"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80508"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T02:45:42.195648",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Service Designer (M/Ž) в Tatra banka</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -346,6 +307,12 @@
       "ts": "2026-10-09T02:47:48.865803",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -9.1% за 24г</b>\n\nЗараз: 10.06 $\n24г тому: 11.07 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T02:47:49.694968",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -9.1% за 24г\n\nЗараз: 10.06 $\n24г тому: 11.07 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
