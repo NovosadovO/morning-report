@@ -1,9 +1,4 @@
 {
-  "80090": {
-    "sender": "newsletter@email.blockchain.com",
-    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
-    "seen_ts": "2026-10-01T19:58:34.000094+00:00"
-  },
   "80093": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "AI NOW & BEYOND через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "team@ua-news.mail.sweet.tv",
     "sender_raw": "SWEET.TV <team@ua-news.mail.sweet.tv>",
     "seen_ts": "2026-10-09T15:55:13.460307+00:00"
+  },
+  "80560": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "J.P. Morgan через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-09T16:03:27.129719+00:00"
   }
 }
