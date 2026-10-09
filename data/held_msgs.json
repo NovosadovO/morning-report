@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:53:12.844675",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:53:16.916846",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -7.8% за 24г</b>\n\nЗараз: 10.21 $\n24г тому: 11.08 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.8% за 24г\n\nЗараз: 109.34 $\n24г тому: 116.12 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:56:51.948389",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>PLUNGE</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Plunge Club: Understanding Cold Exposure &amp; Winter Immune Readiness»\n\n<i>«Get 0% APR for 36 mo | [Shop Now](https://plunge.com/pages/financing)\r\n\r\nGet 0% APR for 36 mo | [Shop Now](https://plunge.com/pages/financing)\r\n\r\n[Understanding Cold Exposure &amp; Winter Immune Readiness](https://plunge.com/blogs/blog/cold-exposure-and-winter-immune-readiness)\r\n\r\n[As temperatures drop,...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80512"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80512"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80512"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80512"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80512"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80512"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
