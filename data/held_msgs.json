@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:29:42.133915",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-09T03:29:44.595548",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:29:45.500596",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -347,6 +335,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-09T03:31:32.699387",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>ICE Just Bought A Hacking Tool Cops Use To Break A Major App</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80504"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80504"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80504"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80504"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80504"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80504"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T03:31:33.506625",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -6.3% за 24г</b>\n\nЗараз: 109.04 $\n24г тому: 116.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
     }
   ]
 }
