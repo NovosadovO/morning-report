@@ -1,4 +1,29 @@
 {
+  "mailcal_extract|2026-10-09t18_31_27_487789": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80540\",     \"title\": \"Maple Q3 Ecosystem Update\",     \"date\": \"2026-10-13\",     \"time\": \"11:00\",     \"kind\": \"meeting\",     \"why\": \"Jo",
+    "ts": "2026-10-09T18:31:27.487789"
+  },
+  "action_detect|2026-10-09t18_25_46_973447": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-09T18:25:46.973447"
+  },
+  "action_detect|2026-10-09t18_25_22_588143": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-09T18:25:22.588143"
+  },
+  "action_detect|2026-10-09t18_25_11_663116": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-09T18:25:11.663116"
+  },
+  "action_detect|2026-10-09t18_24_51_325278": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-09T18:24:51.325278"
+  },
   "selfact|2026-10-09t18_23_44_267394": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно цікавиться крипторинком та DeFi, про що свідчать отримані листи від 0xResearch, The Economist Today,",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
     "ts": "2026-10-09T16:03:57.206762"
-  },
-  "action_detect|2026-10-09t16_02_23_400599": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Займись простроченою підпис",
-    "ts": "2026-10-09T16:02:23.400599"
-  },
-  "action_detect|2026-10-09t16_02_10_814671": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T16:02:10.814671"
-  },
-  "action_detect|2026-10-09t16_01_59_876408": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Оплатити квартиру (€500) д",
-    "ts": "2026-10-09T16:01:59.876408"
-  },
-  "briefing_truthfix|2026-10-09t16_01_53_626833": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, сьогоднішня оцінка дня різко просіла до 37/100, хоча ще вчора було 100/100. Це помітний контраст, особливо з огляду на те, що ти пройшов лише 832 кроки, ",
-    "ts": "2026-10-09T16:01:53.626833"
-  },
-  "briefing|2026-10-09t16_01_47_994941": {
-    "topic": "briefing",
-    "gist": "Олеже, сьогоднішня оцінка дня різко просіла до 37/100, що є помітним контрастом після вчорашніх 100/100 балів. Це свідчить про те, що, попри зовнішні можливості",
-    "ts": "2026-10-09T16:01:47.994941"
   }
 }
