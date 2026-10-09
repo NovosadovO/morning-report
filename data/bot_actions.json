@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, у тебе заплановані нічні зміни 27, 28, 29 та 30 верес",
-      "detail": "У календарі чітко вказані нічні зміни, і Олег раніше виявляв зацікавленість у своєму здоров'ї та сні.",
-      "module": "selfact",
-      "ts": "2026-09-26T19:38:33"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, надійшло сповіщення від LinkedIn про вакансію 'Manage",
       "detail": "Олег раніше виявляв інтерес до вакансій (наприклад, Regionalny kierownik sprzedaży), і ця вакансія може відповідати його інтересам.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-09T23:05:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Виплата зарплати Minebea",
+      "detail": "Лист від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026",
+      "module": "selfact",
+      "ts": "2026-10-09T23:16:58"
     }
   ]
 }
