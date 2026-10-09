@@ -1,9 +1,4 @@
 {
-  "80053": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-10-01T11:49:15.997043+00:00"
-  },
   "80054": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "airBaltic <news@flights.airbaltic.com>",
     "seen_ts": "2026-10-09T06:43:36.630297+00:00"
+  },
+  "80520": {
+    "sender": "newsletter.sk@email.pepco.eu",
+    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
+    "seen_ts": "2026-10-09T06:45:44.160148+00:00"
   }
 }
