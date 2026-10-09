@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T02:45:39.210340",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Senior Enterprise Sales Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80510"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80510"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80510"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80510"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80510"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80510"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T02:45:40.694806",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Wall Street just moved onchain</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-09T02:47:46.261923",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T02:47:48.865803",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -9.1% за 24г</b>\n\nЗараз: 10.06 $\n24г тому: 11.07 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
