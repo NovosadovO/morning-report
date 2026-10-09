@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cfm_y_4a3c612352",
-      "label": "✅ Так, не нагадуй",
-      "ts": "2026-09-17T08:43:56"
-    },
-    {
-      "t": "btn",
-      "data": "cal_skip_gen_1789614030280",
-      "label": "",
-      "ts": "2026-09-17T08:44:10"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79232",
       "label": "🗑 Видалити",
       "ts": "2026-09-17T08:53:36"
@@ -7199,6 +7187,24 @@
       "data": "evdone_yes_done_4a9fk8qf98gltdr775knra6djg_2026-10-09",
       "label": "✅ Виконано",
       "ts": "2026-10-09T21:04:11"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_7b7eepuf20nlfamtf37gjofuvk_2026-10-09",
+      "label": "✅ Виконано",
+      "ts": "2026-10-09T21:04:12"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_tblpe6gk860p3gn7m23mi4a7n4_2026-10-09",
+      "label": "❌ Не виконано",
+      "ts": "2026-10-09T21:04:13"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_vl55v63ik7tga0f02o7dpq4fck_2026-10-09",
+      "label": "❌ Не виконано",
+      "ts": "2026-10-09T21:04:13"
     }
   ]
 }
