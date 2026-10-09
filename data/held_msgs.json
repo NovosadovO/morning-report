@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T01:58:52.179357",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T01:58:52.992400",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80507"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T02:01:38.141186",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Thursday links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80506"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80506"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80506"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80506"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80506"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80506"
             }
           ]
         ]
