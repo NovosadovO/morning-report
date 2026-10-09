@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-09t09_00_24_458543": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить загальні поради щодо сніданку та інформ",
+    "ts": "2026-10-09T09:00:24.458543"
+  },
   "email_ai_item|2026-10-09t08_53_57_412726": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Temu інформує про доступність післяплати (dobierka) як способу оплати. Зазначається, що післяплата може бути недоступно",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати кореляцію ETH/AVAX/ONDO\", \"action_date\": \"2026-10-09\", \"action_time\": null, \"action_summary\": \"Проан",
     "ts": "2026-10-09T06:02:09.665450"
-  },
-  "briefing_truthfix|2026-10-09t06_02_02_807754": {
-    "topic": "briefing/truthfix",
-    "gist": "Що змінилось з останнього повідомлення?  Твій портфель втратив $224 за останню добу, при цьому ETH впав на 3.2%, AVAX на 6.5%, а ONDO, навпаки, зріс на 1.1%. Це",
-    "ts": "2026-10-09T06:02:02.807754"
   }
 }
