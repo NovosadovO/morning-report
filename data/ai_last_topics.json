@@ -1,4 +1,14 @@
 {
+  "money|2026-10-09t23_32_23_917881": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-09T23:32:23.917881"
+  },
+  "people|2026-10-09t23_27_56_733514": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"листування з собою",
+    "ts": "2026-10-09T23:27:56.733514"
+  },
   "email_ai_item|2026-10-09t23_26_49_593127": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn містить статтю про стартап, який розробляє бейсболку для читання думок, що перетворює нейронні си",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
     "ts": "2026-10-09T21:03:59.365831"
-  },
-  "healthai|2026-10-09t21_02_57_738661": {
-    "topic": "healthai",
-    "gist": "Олеже, дані показують, що твоя оцінка дня сьогодні впала до 46 балів, що є найнижчим показником за останній тиждень.  *   Вага за 06.10 була 83.1 кг, що на 8.1 ",
-    "ts": "2026-10-09T21:02:57.738661"
-  },
-  "action_detect|2026-10-09t21_02_01_207087": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T21:02:01.207087"
   }
 }
