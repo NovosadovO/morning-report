@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T02:01:44.058882",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>New Sign-in to Your Account</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80502"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80502"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80502"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80502"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80502"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80502"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T02:01:48.040677",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 83.1 кг, ціль 75 кг (тренд +0.3 кг за останні 5 замірів). Кроки: 14739 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: нічого не заплановано",
@@ -181,6 +142,12 @@
       "ts": "2026-10-09T02:04:21.791911",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.6% за 24г</b>\n\nЗараз: 0.0840 $\n24г тому: 0.0889 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T02:04:22.704697",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.6% за 24г\n\nЗараз: 0.0840 $\n24г тому: 0.0889 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
