@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-09t17_37_26_888580": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає нові квартири у Кошице, про що свідчать свіжі листи з оголошеннями.\",     \"why\": \"Наявність дв",
+    "ts": "2026-10-09T17:37:26.888580"
+  },
   "selfact|2026-10-09t17_21_40_867880": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири\",     \"text\": \"Олеже, є нові оголошення про квартири у Кошице (7 нових оголошень у двох листах).",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-09T15:01:09.116163"
-  },
-  "action_detect|2026-10-09t15_00_58_207037": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зробити відкладену річ\", \"action_date\": \"2026-10-09\", \"action_time\": null, \"action_summary\": \"Зробити одну річ, яку",
-    "ts": "2026-10-09T15:00:58.207037"
   }
 }
