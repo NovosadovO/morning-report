@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:15:56.821952",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Service Designer (M/Ž) в Tatra banka</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80507"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80507"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80507"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80507"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80507"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80507"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:15:58.299805",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Thursday links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-09T03:18:24.777113",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:18:25.612471",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
