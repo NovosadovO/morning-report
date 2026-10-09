@@ -20,7 +20,7 @@
     },
     "astro_ai": {
       "checked": 321,
-      "issues": 108,
+      "issues": 109,
       "fixed": 45,
       "cut": 22
     },
@@ -557,6 +557,7 @@
     "fixed": 38
   },
   "2026-10-10": {
-    "checked": 1
+    "checked": 1,
+    "issues": 1
   }
 }
