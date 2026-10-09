@@ -1,9 +1,4 @@
 {
-  "80060": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-01T12:20:12.065508+00:00"
-  },
   "80061": {
     "sender": "pullandbear@news.pullandbear.com",
     "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-10-09T08:24:08.821573+00:00"
+  },
+  "80529": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-10-09T08:42:38.134348+00:00"
   }
 }
