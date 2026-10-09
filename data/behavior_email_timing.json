@@ -1,9 +1,4 @@
 {
-  "80106": {
-    "sender": "support@pixoryofficial.com",
-    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
-    "seen_ts": "2026-10-02T07:16:49.447722+00:00"
-  },
   "80107": {
     "sender": "no-reply@abacus.ai",
     "sender_raw": "no-reply@abacus.ai",
@@ -1498,5 +1493,10 @@
     "sender": "team@ship.emergent.sh",
     "sender_raw": "Emergent <team@ship.emergent.sh>",
     "seen_ts": "2026-10-09T21:49:19.572427+00:00"
+  },
+  "80573": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-09T22:15:44.578428+00:00"
   }
 }
