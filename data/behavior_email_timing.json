@@ -1,9 +1,4 @@
 {
-  "80066": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-10-01T13:54:13.783352+00:00"
-  },
   "80068": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@eznamka.sk",
     "sender_raw": "<noreply@eznamka.sk>",
     "seen_ts": "2026-10-09T10:09:24.275683+00:00"
+  },
+  "80536": {
+    "sender": "avalancheteam1@substack.com",
+    "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
+    "seen_ts": "2026-10-09T10:15:47.584953+00:00"
   }
 }
