@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T02:58:30.521075",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T02:58:32.807652",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80510"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T03:01:39.654869",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Wall Street just moved onchain</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80508"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80508"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80508"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80508"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80508"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80508"
             }
           ]
         ]
