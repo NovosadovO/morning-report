@@ -1,9 +1,4 @@
 {
-  "80064": {
-    "sender": "newsletter.sk@email.pepco.eu",
-    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
-    "seen_ts": "2026-10-01T13:47:59.502684+00:00"
-  },
   "80065": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
     "seen_ts": "2026-10-09T09:32:04.739554+00:00"
+  },
+  "80534": {
+    "sender": "newsletter@ticketportal.sk",
+    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
+    "seen_ts": "2026-10-09T09:59:03.045949+00:00"
   }
 }
