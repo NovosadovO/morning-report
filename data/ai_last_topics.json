@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-09t15_48_30_574755": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, 13 жовтня о 12:45 відбудеться Finweek Bratislava: “Blood, Sweat & MiC",
+    "ts": "2026-10-09T15:48:30.574755"
+  },
   "openloop_promises|2026-10-09t15_37_55_437118": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня відбудеться Finweek Bratislava: “Blood, Sw",
     "ts": "2026-10-09T13:29:13.826567"
-  },
-  "email_ai_item|2026-10-09t13_27_07_042871": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від CoinMarketCap Spotlight є інформаційним бюлетенем, що містить останні новини криптоіндустрії, аналітичні дані та оновлення",
-    "ts": "2026-10-09T13:27:07.042871"
   }
 }
