@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-10-09t15_54_58_139730": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Kaufland Card XTRA є вибаченням за вчорашній збій у роботі сервісу. Він не містить жодних конкретних дій, дат чи сум, а ли",
+    "ts": "2026-10-09T15:54:58.139730"
+  },
+  "email_ai_item|2026-10-09t15_50_47_458188": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn інформує про активність у групі \\\"Artificial Intelligence, Machine Learning, Data Science & Robotics\\\" та запрошу",
+    "ts": "2026-10-09T15:50:47.458188"
+  },
   "selfact|2026-10-09t15_48_30_574755": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, 13 жовтня о 12:45 відбудеться Finweek Bratislava: “Blood, Sweat & MiC",
@@ -288,15 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE/truthfix",
     "gist": "Ринок криптовалют демонструє зниження, і твій портфель втратив $125 за останні 24 години. Наприклад, ADA впала на -4.8%, NEAR – на -6.9%, а BNB – на -2.9% за до",
     "ts": "2026-10-09T13:39:34.922159"
-  },
-  "msg_crypto_move|2026-10-09t13_39_24_184509": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  Ринок криптовалют демонструє помітне зниження, і твій портфель також відчуває цей тиск. За останню добу показники такі: ADA впала на -5.9%, NEA",
-    "ts": "2026-10-09T13:39:24.184509"
-  },
-  "selfact|2026-10-09t13_29_13_826567": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня відбудеться Finweek Bratislava: “Blood, Sw",
-    "ts": "2026-10-09T13:29:13.826567"
   }
 }
