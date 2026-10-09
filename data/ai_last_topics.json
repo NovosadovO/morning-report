@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-09t04_24_01_614899": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться вакансіями у сфері Service Design, про що свідчить лист від LinkedIn про вакансію Service Designe",
+    "ts": "2026-10-09T04:24:01.614899"
+  },
   "selfact|2026-10-09t04_08_18_726765": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня о 12:45 відбудеться Finweek Bratislava: “B",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 2 дні з",
     "ts": "2026-10-08T21:30:40.992139"
-  },
-  "action_detect|2026-10-08t21_30_18_885509": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
-    "ts": "2026-10-08T21:30:18.885509"
   }
 }
