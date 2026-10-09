@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-09t07_52_39_707405": {
+    "topic": "foresight",
+    "gist": "Олеже, бачу, ти активно реєструєш нові Garmin пристрої, а ось дані по вазі та сну востаннє оновлювалися 3 дні тому, і це при тому, що твоя ціль в 75 кг (+8.1 кг",
+    "ts": "2026-10-09T07:52:39.707405"
+  },
   "selfact|2026-10-09t07_48_03_638601": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava: \\\"Blood, Sweat & MiCA\\\"\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня о 12:45 у тебе за",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня відбудеться Finweek Bratislava з темою “Bl",
     "ts": "2026-10-09T04:39:35.541115"
-  },
-  "action_detect|2026-10-09t04_38_59_681931": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені рахунки та документи\", \"action_date\": \"2026-10-09\", \"action_time\": null, \"action_summary\": ",
-    "ts": "2026-10-09T04:38:59.681931"
   }
 }
