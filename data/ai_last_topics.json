@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-09t12_20_26_479687": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80535\",     \"title\": \"Дійсна оплачена електронна віньєтка для авто LE066BI\",     \"date\": \"2026-10-09\",     \"time\": null,     \"kind\": \"",
+    "ts": "2026-10-09T12:20:26.479687"
+  },
   "email_ai_item|2026-10-09t12_15_44_669443": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Avalanche Team1 інформує про те, як Avalanche входить у нову еру токенізованих фінансів. Зокрема, йдеться про запуск новог",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
     "ts": "2026-10-09T10:01:45.304587"
-  },
-  "action_detect|2026-10-09t10_01_34_546205": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до Finweek Bratislava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сфокусуватися на фі",
-    "ts": "2026-10-09T10:01:34.546205"
   }
 }
