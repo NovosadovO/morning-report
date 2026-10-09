@@ -1,9 +1,4 @@
 {
-  "80071": {
-    "sender": "newsletter@blockworks.com",
-    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
-    "seen_ts": "2026-10-01T14:17:01.605859+00:00"
-  },
   "80073": {
     "sender": "no-reply@email.kraken.com",
     "sender_raw": "\"Kraken\" <no-reply@email.kraken.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-10-09T11:51:58.379042+00:00"
+  },
+  "80540": {
+    "sender": "hello@maple.finance",
+    "sender_raw": "Maple <hello@maple.finance>",
+    "seen_ts": "2026-10-09T12:03:38.214831+00:00"
   }
 }
