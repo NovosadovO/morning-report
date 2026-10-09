@@ -1,9 +1,4 @@
 {
-  "80063": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-10-01T13:37:46.486013+00:00"
-  },
   "80064": {
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
     "seen_ts": "2026-10-09T09:31:53.731196+00:00"
+  },
+  "80532": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-10-09T09:32:04.739554+00:00"
   }
 }
