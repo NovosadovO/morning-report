@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:42:43.631437",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>BNB -5.2% за 24г</b>\n\nЗараз: 733.66 $\n24г тому: 773.70 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:42:44.571766",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ BNB -5.2% за 24г\n\nЗараз: 733.66 $\n24г тому: 773.70 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-09T03:45:44.372516",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -8.0% за 24г</b>\n\nЗараз: 10.22 $\n24г тому: 11.11 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:45:45.388497",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -8.0% за 24г\n\nЗараз: 10.22 $\n24г тому: 11.11 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
