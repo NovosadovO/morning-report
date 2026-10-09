@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "нагадування надіслати дані",
-      "detail": "25 год мовчання",
-      "module": "healthai",
-      "ts": "2026-09-26T12:01:32"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-09T13:30:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Сплата діальнічної знаки",
+      "detail": "Отримано лист від noreply@eznamka.sk про автоматичну сплату діальнічної знаки, яка дійсна лише сьогодні.",
+      "module": "selfact",
+      "ts": "2026-10-09T13:44:23"
     }
   ]
 }
