@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:01:50.952252",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin's Q4 forecast</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80503"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80503"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80503"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80503"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80503"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80503"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:01:54.851488",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Senior Enterprise Sales Manager, Stores в Bolt – Активно набирає персонал\n• Google Payments <payments-noreply@google.com> → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-09T03:03:51.164532",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.9% за 24г\n\nЗараз: 0.0842 $\n24г тому: 0.0895 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:03:53.366292",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>BNB -5.2% за 24г</b>\n\nЗараз: 734.73 $\n24г тому: 775.09 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
