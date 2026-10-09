@@ -1,9 +1,4 @@
 {
-  "80062": {
-    "sender": "info@sk.edenred.info",
-    "sender_raw": "Edenred Slovakia <info@sk.edenred.info>",
-    "seen_ts": "2026-10-01T12:53:03.072123+00:00"
-  },
   "80063": {
     "sender": "events@blockworks.com",
     "sender_raw": "Blockworks <events@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "marketpulse@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-10-09T08:53:01.200343+00:00"
+  },
+  "80531": {
+    "sender": "newsletter@genai.works",
+    "sender_raw": "Generative AI <newsletter@genai.works>",
+    "seen_ts": "2026-10-09T09:31:53.731196+00:00"
   }
 }
