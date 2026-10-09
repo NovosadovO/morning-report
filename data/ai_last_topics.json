@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-09t09_18_30_501869": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-09T09:18:30.501869"
+  },
   "action_detect|2026-10-09t09_10_33_333176": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, звернув увагу на кілька нових вакансій, які можуть бути цікавими: Project ",
     "ts": "2026-10-09T06:45:51.467449"
-  },
-  "openloop_promises|2026-10-09t06_34_07_221172": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-09T06:34:07.221172"
   }
 }
