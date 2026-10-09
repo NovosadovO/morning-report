@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-10-09t22_22_15_758029": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-09T22:22:15.758029"
+  },
+  "selfact|2026-10-09t22_14_38_954553": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій безкоштовний пробний період Garmin Connect+ закінчується 10/11/2026. Якщо не скасуєш до 11/5/2026, ",
+    "ts": "2026-10-09T22:14:38.954553"
+  },
   "email_ai_item|2026-10-09t22_14_26_633406": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії в Кошице. Зокрема, згадано вакансію Junior Product Consultant в GymBeam та T",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-09T20:03:32.727195"
-  },
-  "action_detect|2026-10-09t20_02_43_468335": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Завтра, 10 жовтня, у Олега рання",
-    "ts": "2026-10-09T20:02:43.468335"
-  },
-  "action_detect|2026-10-09t20_02_32_564327": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
-    "ts": "2026-10-09T20:02:32.564327"
   }
 }
