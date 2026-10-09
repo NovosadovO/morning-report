@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на новини криптосвіту: за останній тижден",
-      "detail": "З листа від The Defiant <no-reply@mail.thedefiant.io> | Weekly Recap: Bitget's $387.5 Million Hack",
-      "module": "selfact",
-      "ts": "2026-09-26T14:13:25"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, твої щотижневі кроки продовжують зростати: за період 1",
       "detail": "З листа від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег має дві нічні зміни перед подією Finweek Bratislava, і йому було б корисно дізнатися про можливість перегляду онлайн. Питання дозволить уточнити його потреби.",
       "module": "selfact",
       "ts": "2026-10-09T15:01:59"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-09T15:05:44"
     }
   ]
 }
