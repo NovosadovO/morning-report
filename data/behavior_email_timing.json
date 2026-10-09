@@ -1,9 +1,4 @@
 {
-  "80076": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-01T16:16:50.220012+00:00"
-  },
   "80077": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-09T12:29:16.560338+00:00"
+  },
+  "80543": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-09T12:39:34.628211+00:00"
   }
 }
