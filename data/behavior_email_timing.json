@@ -1,9 +1,4 @@
 {
-  "80065": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-10-01T13:52:08.050285+00:00"
-  },
   "80066": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-10-09T09:59:03.045949+00:00"
+  },
+  "80535": {
+    "sender": "noreply@eznamka.sk",
+    "sender_raw": "<noreply@eznamka.sk>",
+    "seen_ts": "2026-10-09T10:09:24.275683+00:00"
   }
 }
