@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-19T19:17:53.094021+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-19T19:17:55.490778+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13871,6 +13865,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-11"
+      }
+    },
+    {
+      "ts": "2026-10-10T01:30:28.885697+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Невиконані звички",
+      "extra": {
+        "kind": "note",
+        "date": "2026-10-10"
       }
     }
   ]
