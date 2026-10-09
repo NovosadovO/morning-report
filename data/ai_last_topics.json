@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-09t19_25_27_344530": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-09T19:25:27.344530"
+  },
   "mailcal_extract|2026-10-09t19_16_56_056431": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"80540\",     \"title\": \"Maple Q3 Ecosystem Update\",     \"date\": \"2026-10-13\",     \"time\": \"11:00\",     \"kind\": \"meeting\",     \"why\": \"Jo",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зробити відкладену річ\", \"action_date\": \"2026-10-09\", \"action_time\": \"17:00\", \"action_summary\": \"Зробити 1 річ, яку",
     "ts": "2026-10-09T17:03:22.999354"
-  },
-  "email_ai_item|2026-10-09t17_03_12_858736": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від AllEvents інформує Олега про популярні події у Жиліні та її околицях на ці вихідні та наступний тиждень. Серед подій на ці",
-    "ts": "2026-10-09T17:03:12.858736"
   }
 }
