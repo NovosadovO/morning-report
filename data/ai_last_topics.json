@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-10-10t00_39_50_637225": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Цієї ночі, коли більшість ринків вже закриті, крипто-світ живе своїм життям, і ми бачимо цікаві рухи, зокрема значне зростання NEAR на +7.2% за",
+    "ts": "2026-10-10T00:39:50.637225"
+  },
   "selfact|2026-10-10t00_35_41_991679": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Потрібно оплатити квартиру",
     "ts": "2026-10-09T22:02:31.874083"
-  },
-  "action_detect|2026-10-09t22_02_15_629577": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T22:02:15.629577"
   }
 }
