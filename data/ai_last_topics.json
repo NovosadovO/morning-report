@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-09t04_36_29_537457": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії на Profesia.sk\",     \"date\": \"2026-10-09\",     \"time\": \"18:00\",     \"message\": \"Ол",
+    "ts": "2026-10-09T04:36:29.537457"
+  },
   "selfact|2026-10-09t04_24_01_614899": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться вакансіями у сфері Service Design, про що свідчить лист від LinkedIn про вакансію Service Designe",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 2 дні з останнь",
     "ts": "2026-10-08T21:32:06.300574"
-  },
-  "action_detect|2026-10-08t21_30_40_992139": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 2 дні з",
-    "ts": "2026-10-08T21:30:40.992139"
   }
 }
