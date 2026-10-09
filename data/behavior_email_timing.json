@@ -1,9 +1,4 @@
 {
-  "80089": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-10-01T19:56:27.762744+00:00"
-  },
   "80090": {
     "sender": "newsletter@email.blockchain.com",
     "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-09T15:42:56.840936+00:00"
+  },
+  "80559": {
+    "sender": "team@ua-news.mail.sweet.tv",
+    "sender_raw": "SWEET.TV <team@ua-news.mail.sweet.tv>",
+    "seen_ts": "2026-10-09T15:55:13.460307+00:00"
   }
 }
