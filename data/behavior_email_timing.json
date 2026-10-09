@@ -1,9 +1,4 @@
 {
-  "80069": {
-    "sender": "no-reply@abacus.ai",
-    "sender_raw": "no-reply@abacus.ai",
-    "seen_ts": "2026-10-01T14:10:39.210597+00:00"
-  },
   "80071": {
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-10-09T11:27:10.486075+00:00"
+  },
+  "80539": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-10-09T11:51:58.379042+00:00"
   }
 }
