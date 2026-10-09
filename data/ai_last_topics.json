@@ -1,4 +1,24 @@
 {
+  "foresight|2026-10-09t11_43_34_390782": {
+    "topic": "foresight",
+    "gist": "Ти зараз на зміні чи вдома?  Сьогодні в тебе вільний день, але оцінка дня вже 29, а вчора була 100. Це великий стрибок вниз, і з такими старими даними по вазі (",
+    "ts": "2026-10-09T11:43:34.390782"
+  },
+  "selfact|2026-10-09t11_40_18_450865": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-09T11:40:18.450865"
+  },
+  "action_detect|2026-10-09t11_39_21_463345": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Finweek Bratislava\", \"action_date\": \"2024-10-13\", \"action_time\": \"13:45\", \"action_summary\": \"Переглянути програму F",
+    "ts": "2026-10-09T11:39:21.463345"
+  },
+  "msg_crypto_move_truthfix|2026-10-09t11_39_11_128040": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Які твої дії сьогодні?  Крипто: дані CoinGecko недоступні, тому оцінити волатильність ринку зараз неможливо. Твій портфель втратив $119 за 24 години, але загаль",
+    "ts": "2026-10-09T11:39:11.128040"
+  },
   "msg_crypto_move|2026-10-09t11_39_00_131278": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "Привіт Олеже! ⚠️  Ринок криптовалют знову демонструє значну волатильність, і сьогоднішній ранок не став винятком. Твої основні активи, такі як BTC, ETH та BNB, ",
@@ -278,25 +298,5 @@
     "topic": "proactive_ai",
     "gist": "Привіт! Сьогодні ж у тебе вихідний, як щодо пробіжки? Бачу, кроків поки небагато.",
     "ts": "2026-10-09T09:02:15.219267"
-  },
-  "action_detect|2026-10-09t09_01_16_933128": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T09:01:16.933128"
-  },
-  "action_detect|2026-10-09t09_01_02_202034": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T09:01:02.202034"
-  },
-  "action_detect|2026-10-09t09_00_51_498912": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T09:00:51.498912"
-  },
-  "email_ai_item|2026-10-09t09_00_40_917134": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Temu інформує про те, що тепер доступна оплата при доставці (dobierka), хоча в деяких випадках вона може бути недоступною або стяг",
-    "ts": "2026-10-09T09:00:40.917134"
   }
 }
