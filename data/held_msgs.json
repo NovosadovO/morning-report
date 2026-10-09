@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:44:12.324255",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>BNB -5.2% за 24г</b>\n\nЗараз: 733.66 $\n24г тому: 773.63 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:44:13.055249",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ BNB -5.2% за 24г\n\nЗараз: 733.66 $\n24г тому: 773.63 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -399,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-09T03:46:42.427581",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
