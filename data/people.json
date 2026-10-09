@@ -490,18 +490,20 @@
   },
   "oleg.novosadov@nmb-minebea.com": {
     "name": "Oleg Novosadov",
-    "relation": "робота",
+    "relation": "особисте",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "листування з собою"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Написати Олегу Новосадову, щоб дізнатися, що означає його лист з темою \"Д\".",
-    "ping_in_days": 0,
+    "next_step": "Олег надіслав собі листа з темою 'Д' 15 днів тому і не отримав відповіді. Можливо, це нагадування або чернетка, яку варто перевірити.",
+    "ping_in_days": -1,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-09-24",
-    "updated": "2026-09-28",
+    "updated": "2026-10-09",
     "pinged_at": ""
   }
 }
