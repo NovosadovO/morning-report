@@ -1,4 +1,39 @@
 {
+  "healthai|2026-10-09t13_09_35_477454": {
+    "topic": "healthai",
+    "gist": "🤔 Олеже, сьогодні вже 13:05, а даних про вагу та сон за сьогодні ще немає, хоча остання інформація по вазі – 83.1 кг – була 3 дні тому, 6 жовтня, а по сну (18.5",
+    "ts": "2026-10-09T13:09:35.477454"
+  },
+  "action_detect|2026-10-09t13_01_47_096244": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T13:01:47.096244"
+  },
+  "action_detect|2026-10-09t13_01_36_102547": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T13:01:36.102547"
+  },
+  "email_ai_item|2026-10-09t13_01_25_754300": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є сповіщенням від TikTok про те, що користувач Erik Balla надіслав повідомлення. Лист містить лише загальну інформацію про нов",
+    "ts": "2026-10-09T13:01:25.754300"
+  },
+  "email_ai_item|2026-10-09t13_01_15_237289": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист від Avalanche Team1 інформує про розвиток токенізованих фінансів, зокрема про запуск нового фонду Neuberger Securitize High I",
+    "ts": "2026-10-09T13:01:15.237289"
+  },
+  "action_detect|2026-10-09t13_00_59_165461": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2026-09-27\", \"action_time\": null, \"action_summary\": \"Зробити 20 хв бігу після обіду.\"}",
+    "ts": "2026-10-09T13:00:59.165461"
+  },
+  "action_detect|2026-10-09t13_00_35_446212": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-09T13:00:35.446212"
+  },
   "selfact|2026-10-09t12_57_50_821636": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Дійсна діагональна марка\",     \"text\": \"Олеже, твоя діагональна марка для авто LE066BI дійсна лише до кінця сь",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, на 13 жовтня у тебе заплановано дві нічні зміни та конференція Finweek Bratislava: “Blood, Sweat & MiCA”",
     "ts": "2026-10-09T10:53:29.871368"
-  },
-  "email_ai_item|2026-10-09t10_52_56_790880": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від CMC Market Pulse є щотижневим крипто-брифінгом, що надає аналітичні дані та ключові події на ринку криптовалют. Він містить огляд ",
-    "ts": "2026-10-09T10:52:56.790880"
-  },
-  "mailcal_extract|2026-10-09t10_48_58_543666": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-09T10:48:58.543666"
-  },
-  "email_ai_item|2026-10-09t10_42_34_375828": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить інформацію про нове оголошення щодо продажу 3-кімнатної квартири у Кошіце (Словаччина) за ціною 189 900 €. Звіт сформовано",
-    "ts": "2026-10-09T10:42:34.375828"
-  },
-  "selfact|2026-10-09t10_37_34_946289": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava: \\\"Blood, Sweat & MiCA\\\"\",     \"text\": \"Олеже, зверни увагу, 13 жовтня о 12:45 відбудеться ",
-    "ts": "2026-10-09T10:37:34.946289"
-  },
-  "proactive_actions|2026-10-09t10_36_31_967641": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути оголошення про квартири\",     \"date\": \"2026-10-09\",     \"time\": \"11:00\",     \"message\": \"Олеже, ",
-    "ts": "2026-10-09T10:36:31.967641"
-  },
-  "email_ai_item|2026-10-09t10_24_05_844624": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Discord інформує про пропущені повідомлення в StoryChain. Лист містить великий обсяг внутрішньої інформації про взаємод",
-    "ts": "2026-10-09T10:24:05.844624"
-  },
-  "selfact|2026-10-09t10_21_36_746281": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня о 12:45 відбудеться Finweek Bratislava: “B",
-    "ts": "2026-10-09T10:21:36.746281"
   }
 }
