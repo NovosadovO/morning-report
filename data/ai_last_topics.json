@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-10-09t06_34_07_221172": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-09T06:34:07.221172"
+  },
+  "morning_ai|2026-10-09t06_30_57_227451": {
+    "topic": "MORNING_AI",
+    "gist": "Привіт, Олеже!  Сподіваюся, ти добре відпочив цієї ночі, адже статус вказує на нічний відпочинок. Нехай цей ранок стане чудовим початком дня, навіть якщо він ро",
+    "ts": "2026-10-09T06:30:57.227451"
+  },
   "selfact|2026-10-09t06_29_46_191639": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії в Кошице\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Service Designer (",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-08T23:02:11.072152"
-  },
-  "action_detect|2026-10-08t23_02_00_025392": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-08T23:02:00.025392"
-  },
-  "email_ai_item|2026-10-08t23_01_50_414062": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є підтвердженням реєстрації пристрою Garmin Venu X1. Він не містить жодних конкретних дій або дедлайнів для одержувача, а є ли",
-    "ts": "2026-10-08T23:01:50.414062"
   }
 }
