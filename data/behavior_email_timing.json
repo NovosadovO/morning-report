@@ -1,9 +1,4 @@
 {
-  "80054": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-10-01T11:51:21.436111+00:00"
-  },
   "80056": {
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
     "seen_ts": "2026-10-09T06:45:44.160148+00:00"
+  },
+  "80521": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-10-09T06:54:01.007811+00:00"
   }
 }
