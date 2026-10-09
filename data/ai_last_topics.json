@@ -298,5 +298,10 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-09T20:03:32.727195"
+  },
+  "action_detect|2026-10-09t22_28_21_281035": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-09T22:28:21.281035"
   }
 }
