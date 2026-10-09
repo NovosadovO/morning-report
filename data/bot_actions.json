@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, The Block просить відкрити їхній лист, щоб продовжуват",
-      "detail": "У свіжих листах є лист від The Block з темою '🔔 Action needed: The Block newsletters' та проханням відкрити лист.",
-      "module": "selfact",
-      "ts": "2026-09-25T20:18:15"
-    },
-    {
-      "kind": "notify",
       "what": "Дії з розсилками The Block",
       "detail": "Свіжі листи: від The Block | 🔔 Action needed: The Block newsletters",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-09T01:30:15"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-09",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-09T03:30:19"
     }
   ]
 }
