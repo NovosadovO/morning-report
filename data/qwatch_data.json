@@ -1537,14 +1537,15 @@
     "saved_at": "2026-10-09 01:30"
   },
   "2026-10-09": {
-    "steps": 1932,
+    "steps": 11325,
     "hr_avg": 44,
     "spo2": 97,
-    "body_battery": 67,
-    "stress": 14,
+    "body_battery": 35,
+    "stress": 19,
     "date": "2026-10-09",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-09 19:30",
-    "hrv": 61
+    "saved_at": "2026-10-09 21:30",
+    "hrv": 61,
+    "vo2max": 41.7
   }
 }
