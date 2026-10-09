@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-19T11:02:13.746475+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_68c26b3e66"
-    },
-    {
       "ts": "2026-08-19T11:02:14.878737+00:00",
       "category": "confirm",
       "question": "email_delete: Digitálna transformácia nezačína novým systémom. Začína dátami",
@@ -13853,6 +13847,12 @@
       "category": "event_done",
       "question": "📅 💈 Спрей для волосся ❌\nПланувалась до 20:40 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-10-09T21:37:26.102427+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
