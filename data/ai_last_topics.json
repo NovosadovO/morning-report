@@ -1,4 +1,29 @@
 {
+  "mailcal_extract|2026-10-09t04_44_58_072531": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-10-09T04:44:58.072531"
+  },
+  "selfact|2026-10-09t04_39_35_541115": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня відбудеться Finweek Bratislava з темою “Bl",
+    "ts": "2026-10-09T04:39:35.541115"
+  },
+  "action_detect|2026-10-09t04_38_59_681931": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені рахунки та документи\", \"action_date\": \"2026-10-09\", \"action_time\": null, \"action_summary\": ",
+    "ts": "2026-10-09T04:38:59.681931"
+  },
+  "msg_crypto_move_truthfix|2026-10-09t04_38_51_760099": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Олеже,  Дані про крипторинок наразі недоступні, тому оцінити поточні коливання складно. Однак, твій портфель показує зниження на $248 за 24 години, з ETH (-3.7%",
+    "ts": "2026-10-09T04:38:51.760099"
+  },
+  "msg_crypto_move|2026-10-09t04_38_41_512117": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 📈  Ринок криптовалют демонструє помітне зниження протягом останньої доби, що може викликати занепокоєння, але враховуючи твій статус \"спить / нічн",
+    "ts": "2026-10-09T04:38:41.512117"
+  },
   "proactive_actions|2026-10-09t04_36_29_537457": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії на Profesia.sk\",     \"date\": \"2026-10-09\",     \"time\": \"18:00\",     \"message\": \"Ол",
@@ -273,30 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin Connect+\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"EUR4369771\",     \"due\": \"2026",
     "ts": "2026-10-08T21:37:13.425216"
-  },
-  "selfact|2026-10-08t21_36_15_394098": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan під",
-    "ts": "2026-10-08T21:36:15.394098"
-  },
-  "action_detect|2026-10-08t21_32_52_875667": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до Finweek Bratislava\", \"action_date\": \"2026-10-13\", \"action_time\": \"13:45\", \"action_summary\": \"Підготув",
-    "ts": "2026-10-08T21:32:52.875667"
-  },
-  "msg_crypto_move_truthfix|2026-10-08t21_32_41_800730": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже!  На ринку криптовалют спостерігається значний спад. Bitcoin знизився на 2.1% за 24 години, досягнувши позначки $81,637. Ethereum втратив 4.3%, тор",
-    "ts": "2026-10-08T21:32:41.800730"
-  },
-  "msg_crypto_move|2026-10-08t21_32_31_788674": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  На ринку криптовалют сьогодні спостерігається значний спад, що зачіпає більшість ключових активів. Bitcoin знизився на 2.3% за останні 24 годин",
-    "ts": "2026-10-08T21:32:31.788674"
-  },
-  "action_detect|2026-10-08t21_32_06_300574": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 2 дні з останнь",
-    "ts": "2026-10-08T21:32:06.300574"
   }
 }
