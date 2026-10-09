@@ -1,9 +1,4 @@
 {
-  "80068": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-10-01T14:06:26.966081+00:00"
-  },
   "80069": {
     "sender": "no-reply@abacus.ai",
     "sender_raw": "no-reply@abacus.ai",
@@ -1498,5 +1493,10 @@
     "sender": "avalancheteam1@substack.com",
     "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
     "seen_ts": "2026-10-09T10:15:47.584953+00:00"
+  },
+  "80538": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-10-09T11:27:10.486075+00:00"
   }
 }
