@@ -1,9 +1,4 @@
 {
-  "80056": {
-    "sender": "newsletter@myclaw.ai",
-    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
-    "seen_ts": "2026-10-01T11:55:29.850227+00:00"
-  },
   "80057": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-10-09T06:54:01.007811+00:00"
+  },
+  "80522": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-09T07:26:31.200481+00:00"
   }
 }
