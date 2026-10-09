@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:13:38.903847",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -9.1% за 24г\n\nЗараз: 10.10 $\n24г тому: 11.11 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:13:41.332535",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -6.5% за 24г</b>\n\nЗараз: 109.04 $\n24г тому: 116.58 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80511"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T03:15:54.107512",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Senior Enterprise Sales Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80510"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80510"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80510"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80510"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80510"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80510"
             }
           ]
         ]
