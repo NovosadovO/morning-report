@@ -1,9 +1,4 @@
 {
-  "80046": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-10-01T09:34:35.526288+00:00"
-  },
   "80047": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-10-08T23:52:36.868349+00:00"
+  },
+  "80512": {
+    "sender": "hello@plunge.com",
+    "sender_raw": "PLUNGE <hello@plunge.com>",
+    "seen_ts": "2026-10-09T01:56:51.040727+00:00"
   }
 }
