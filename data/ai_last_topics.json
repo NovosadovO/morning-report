@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-10-09t15_28_26_398318": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80550\",     \"title\": \"Garmin Beh Súľovskými skalami - Memoriál Janka Búša\",     \"date\": \"2026-10-10\",     \"time\": null,     \"kind\": \"o",
+    "ts": "2026-10-09T15:28:26.398318"
+  },
+  "people|2026-10-09t15_27_56_385951": {
+    "topic": "people",
+    "gist": "```json [] ```",
+    "ts": "2026-10-09T15:27:56.385951"
+  },
   "email_ai_item|2026-10-09t15_24_13_861567": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від iStores Apple Premium Partner є рекламною розсилкою, що пропонує Mac як ідеального помічника для навчання. Він містить посилання н",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-09T13:01:47.096244"
-  },
-  "action_detect|2026-10-09t13_01_36_102547": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-09T13:01:36.102547"
-  },
-  "email_ai_item|2026-10-09t13_01_25_754300": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є сповіщенням від TikTok про те, що користувач Erik Balla надіслав повідомлення. Лист містить лише загальну інформацію про нов",
-    "ts": "2026-10-09T13:01:25.754300"
   }
 }
