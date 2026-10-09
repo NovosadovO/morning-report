@@ -1,4 +1,14 @@
 {
+  "people|2026-10-09t07_27_58_646861": {
+    "topic": "people",
+    "gist": "```json [] ```",
+    "ts": "2026-10-09T07:27:58.646861"
+  },
+  "email_ai_item|2026-10-09t07_17_48_395734": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Bybit через LinkedIn інформує про запуск Bybit AI — розмовного помічника, вбудованого в платформу Bybit. Він дозволяє кори",
+    "ts": "2026-10-09T07:17:48.395734"
+  },
   "selfact|2026-10-09t07_16_50_232321": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, зверни увагу, що 13 жовтня о 12:45 відбудеться Finweek Bratislava: “B",
@@ -288,15 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "Олеже, доброго ранку!  Як твій сон сьогодні, враховуючи, що завтра теж вихідний? — Дані про сон за сьогодні, 9 жовтня, відсутні. Останні дані за 6 жовтня показу",
     "ts": "2026-10-09T04:02:37.190788"
-  },
-  "action_detect|2026-10-09t04_02_29_151063": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунки та підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити 431.15€",
-    "ts": "2026-10-09T04:02:29.151063"
-  },
-  "foresight|2026-10-09t04_02_24_188144": {
-    "topic": "foresight",
-    "gist": "📬 від Profesia.sk → 20 нових пропозицій роботи. Переглянути пізніше, коли буде час. 📬 від LinkedIn → Позиція Senior Enterprise Sales Manager, Stores в Bolt. Вар",
-    "ts": "2026-10-09T04:02:24.188144"
   }
 }
