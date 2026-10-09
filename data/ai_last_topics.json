@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-09t05_34_43_533482": {
+    "topic": "foresight",
+    "gist": "Привіт, Олеже!  Щодо нового підходу до інвест-аналізу: зараз гарний час, бо ринок крипти просідає (майже весь топ-20 мінус за 7 днів), а це часто дає більше сиг",
+    "ts": "2026-10-09T05:34:43.533482"
+  },
   "selfact|2026-10-09t05_26_51_129781": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, з'явилися нові вакансії, які відповідають твоїм налаштуванням: SPECIALISTA",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Конференція NBS\", \"action_date\": \"2026-10-08\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні о 09:00 відбудет",
     "ts": "2026-10-08T22:02:15.040163"
-  },
-  "action_detect|2026-10-08t22_02_03_942441": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-08T22:02:03.942441"
   }
 }
