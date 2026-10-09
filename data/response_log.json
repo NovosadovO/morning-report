@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-18T22:08:01.433775+00:00",
-      "category": "event_done",
-      "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-19T11:00:55.838199+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13853,6 +13847,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_run"
+    },
+    {
+      "ts": "2026-10-09T21:01:32.364495+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
