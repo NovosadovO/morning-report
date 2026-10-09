@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, надійшло сповіщення від LinkedIn про вакансію 'Line L",
-      "detail": "Олег раніше виявляв інтерес до вакансій, і ця вакансія може бути актуальною, особливо з огляду на активний найм.",
-      "module": "selfact",
-      "ts": "2026-09-26T19:53:35"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, надійшов лист від Investing.com з темою 'Is the AI tr",
       "detail": "Олег отримує та читає 'AI-curated Daily Crypto Digest' та 'Daily Crypto Digest', що свідчить про його інтерес до крипто та AI тем.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-10-09T23:30:59"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, надійшла виплатна відомість за вересень від Minebea.",
+      "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026', що є важливою фінансовою інформацією.",
+      "module": "selfact",
+      "ts": "2026-10-09T23:32:45"
     }
   ]
 }
