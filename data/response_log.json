@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-18T20:14:57.133505+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_tea"
-    },
-    {
       "ts": "2026-08-18T20:14:58.826517+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13821,6 +13815,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-09"
+      }
+    },
+    {
+      "ts": "2026-10-09T04:36:43.882438+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Запланувати сауну",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-10"
       }
     }
   ]
