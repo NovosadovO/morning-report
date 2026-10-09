@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:31:41.610384",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>BNB -5.1% за 24г</b>\n\nЗараз: 733.95 $\n24г тому: 773.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:31:45.833434",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-09T03:34:55.572645",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.4% за 24г</b>\n\nЗараз: 0.0846 $\n24г тому: 0.0894 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:34:56.567973",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.4% за 24г\n\nЗараз: 0.0846 $\n24г тому: 0.0894 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
