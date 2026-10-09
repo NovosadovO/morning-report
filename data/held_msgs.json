@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:01:37.322826",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Senior Enterprise Sales Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80510"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80510"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80510"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80510"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80510"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80510"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:01:39.654869",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Wall Street just moved onchain</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-09T03:03:38.393820",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:03:41.268967",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
