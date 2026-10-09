@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-18T20:15:05.330254+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-18T22:07:59.932315+00:00",
       "category": "event_done",
       "question": "📅 🍵 Трав'яний чай ❌\nПланувалась до 20:40 — виконано?",
@@ -13834,6 +13828,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "ts": "2026-10-09T10:36:43.333954+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відповісти на лист від Reserved",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-09"
