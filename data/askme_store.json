@@ -6415,5 +6415,33 @@
       "start": "2026-10-15T08:00:00"
     },
     "ts": "2026-10-09T04:08:28.688660+00:00"
+  },
+  "030a3a32f7": {
+    "key": "reminder|finweek bratislava blood sweat  mica",
+    "q": "🔔 Хочу поставити нагадування:\n\n« Finweek Bratislava: Blood, Sweat & MiCA »\n🕐 13.10 о 12:45\n\nОлеже, 13 жовтня о 12:45 відбудеться Finweek Bratislava: “Blood, Sweat & MiCA”. Перевір можливість перегляду прямої трансляції або запису.\n\nПоставити?",
+    "kind": "remind",
+    "opts": [
+      [
+        "save",
+        "🔔 Так, нагадай"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Finweek Bratislava: Blood, Sweat & MiCA",
+      "desc": "Олеже, 13 жовтня о 12:45 відбудеться Finweek Bratislava: “Blood, Sweat & MiCA”. Перевір можливість перегляду прямої трансляції або запису.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "reminder",
+      "start": "2026-10-13T12:45:00"
+    },
+    "ts": "2026-10-09T05:11:06.675684+00:00"
   }
 }
