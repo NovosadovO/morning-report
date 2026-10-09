@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T02:13:09.915133",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -6.0% за 24г</b>\n\nЗараз: 109.33 $\n24г тому: 116.25 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T02:13:10.865812",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -6.0% за 24г\n\nЗараз: 109.33 $\n24г тому: 116.25 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80504"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-09T02:15:46.100440",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin's Q4 forecast</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80503"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80503"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80503"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80503"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80503"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80503"
             }
           ]
         ]
