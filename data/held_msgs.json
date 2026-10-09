@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:31:12.718412",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Senior Enterprise Sales Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80510"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80510"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80510"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80510"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80510"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80510"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:31:15.657158",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Wall Street just moved onchain</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-10-09T03:33:17.450370",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -6.2% за 24г</b>\n\nЗараз: 109.15 $\n24г тому: 116.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:33:18.411012",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ SOL -6.2% за 24г\n\nЗараз: 109.15 $\n24г тому: 116.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
