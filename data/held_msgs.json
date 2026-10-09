@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:15:59.667223",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80505"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80505"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80505"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80505"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80505"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80505"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-09T03:16:01.073284",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>ICE Just Bought A Hacking Tool Cops Use To Break A Major App</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -233,6 +194,12 @@
       "ts": "2026-10-09T03:18:28.585435",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -9.4% за 24г</b>\n\nЗараз: 10.09 $\n24г тому: 11.14 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:18:29.485809",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -9.4% за 24г\n\nЗараз: 10.09 $\n24г тому: 11.14 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
