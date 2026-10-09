@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-09T03:15:05.090125",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-09T03:15:07.491174",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -9.2% за 24г</b>\n\nЗараз: 10.10 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -398,6 +392,12 @@
       "ts": "2026-10-09T03:16:46.982457",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn → Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-09T03:16:49.386285",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
