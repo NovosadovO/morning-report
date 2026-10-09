@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-19T11:02:12.640527+00:00",
-      "category": "confirm",
-      "question": "email_delete: AWS Partner Operations Specialist в Trustsoft",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-19T11:02:13.746475+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13853,6 +13847,12 @@
       "category": "event_done",
       "question": "📅 🏃 Біг ✅\nПланувалась до 20:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-09T21:04:22.257025+00:00",
+      "category": "event_done",
+      "question": "📅 💈 Спрей для волосся ❌\nПланувалась до 20:40 — виконано?",
+      "answer": "no"
     }
   ]
 }
