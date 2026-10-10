@@ -1,9 +1,4 @@
 {
-  "80131": {
-    "sender": "noreply@travel.mail.flixbus.com",
-    "sender_raw": "\"FlixBus\" <noreply@travel.mail.flixbus.com>",
-    "seen_ts": "2026-10-02T12:30:12.878157+00:00"
-  },
   "80132": {
     "sender": "oleg.novosadov@minebeamitsumi.eu",
     "sender_raw": "Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-10-10T18:54:36.901424+00:00"
+  },
+  "80609": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-10T20:15:34.804625+00:00"
   }
 }
