@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-10t13_17_48_815923": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег зареєстрував новий пристрій Garmin Venu X1, про що свідчить лист 'Thanks for Registering Your Venu X1'.\",   ",
+    "ts": "2026-10-10T13:17:48.815923"
+  },
+  "email_ai_item|2026-10-10t13_15_19_199909": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від The Economist є інформаційним бюлетенем за 10 жовтня 2026 року, що містить статтю «Why children become fussy eaters». Лист",
+    "ts": "2026-10-10T13:15:19.199909"
+  },
+  "foresight_truthfix|2026-10-10t13_13_23_370634": {
+    "topic": "foresight/truthfix",
+    "gist": "Зараз, 10 жовтня 2026 року, ти на ранній зміні, яка триває до 18:00. Дані про сон, зафіксовані о 11:23, показують 4.4 години. Це може бути часткове вимірювання.",
+    "ts": "2026-10-10T13:13:23.370634"
+  },
   "foresight|2026-10-10t13_13_12_586162": {
     "topic": "foresight",
     "gist": "Зараз, поки ти на ранній зміні, є сенс подумати про розклад: до 12 жовтня ти на ранній, потім п'ять нічних поспіль. Зміни ритму впливають на сон, який сьогодні ",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "😴 Олеже, бачу, що за сьогодні поки зафіксовано 4.4 години сну, але годинник ще може дослати повніше число, адже зараз лише 11:05, а ти на ранній зміні до 18:00.",
     "ts": "2026-10-10T11:05:46.001590"
-  },
-  "action_detect|2026-10-10t11_01_30_129340": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T11:01:30.129340"
-  },
-  "action_detect|2026-10-10t11_01_18_753407": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T11:01:18.753407"
-  },
-  "email_ai_item|2026-10-10t11_01_09_167348": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є пересланим повідомленням від Pénzeš Peter щодо конференції «Slovenský finančný trh a inovácie 2026». У ньому містяться орган",
-    "ts": "2026-10-10T11:01:09.167348"
   }
 }
