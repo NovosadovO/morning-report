@@ -8228,60 +8228,16 @@ def check_day_summary():
     except Exception:
         pass
 
-    # ── Apple Health ─────────────────────────────────────────────────────────
-    try:
-        from storage import load_health as _lhealth
-        health_db = _lhealth()
-        td = health_db.get(today, {})
-        if td:
-            h_parts = []
-            steps = td.get("steps")
-            if steps:
-                step_goal = 10000
-                s_pct = int(steps / step_goal * 100)
-                step_bar_f = int(s_pct / 100 * 8)
-                step_bar = "🟩" * step_bar_f + "⬜" * (8 - step_bar_f)
-                step_ico = "✅" if steps >= step_goal else ("⚠️" if steps >= 6000 else "❌")
-                h_parts.append(f"👟 {steps:,} кроків {step_ico} {step_bar}")
-            if td.get("sleep_hours"):
-                sh = td["sleep_hours"]
-                sh_ico = "✅" if sh >= 7.5 else ("⚠️" if sh >= 6 else "❌")
-                h_parts.append(f"😴 Сон {sh}г {sh_ico}")
-            if td.get("heart_rate"):
-                h_parts.append(f"❤️ ЧСС {td['heart_rate']} bpm")
-            if td.get("hrv"):
-                h_parts.append(f"💓 HRV {td['hrv']}")
-            if td.get("calories"):
-                cal = td["calories"]
-                cal_ico = "✅" if cal >= 400 else "📉"
-                h_parts.append(f"🔥 {cal} ккал {cal_ico}")
-            sc = td.get("health_score")
-            if sc:
-                sc_bar = "🟢" * int(sc/100*10) + "⬜" * (10 - int(sc/100*10))
-                sc_ico = "🟢" if sc >= 75 else ("🟡" if sc >= 55 else "🔴")
-                h_parts.append(f"{sc_ico} Score {sc}/100 [{sc_bar}]")
-
-            if h_parts:
-                lines_out.append("🍎 <b>Apple Health</b>")
-                for hp in h_parts:
-                    lines_out.append(f"   {hp}")
-                lines_out.append("")
-        else:
-            lines_out.append("🍎 <b>Apple Health</b>  <i>немає даних — /зд для запису</i>")
-            lines_out.append("")
-    except Exception:
-        pass
-
-    # ── QWatch Pro ────────────────────────────────────────────────────────────
+    # ── Garmin Connect (єдине джерело даних здоров'я, запит Олега 09.10) ──────
     try:
         import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
-        from qwatch import format_day_block as _qw_block
-        qw = _qw_block(today)
-        if qw:
-            lines_out.append(qw)
+        from healthai import garmin_block as _garmin_block
+        gb = _garmin_block()
+        if gb:
+            lines_out.append(gb)
             lines_out.append("")
     except Exception as _e:
-        print(f"day summary qwatch error: {_e}")
+        print(f"day summary garmin error: {_e}")
 
     # ── AI персональний підсумок ──────────────────────────────────────────────
     try:
@@ -8578,54 +8534,12 @@ HEALTH_REMIND_FILE = os.path.join(_DATA_DIR, "monitor_health_remind.json")
 
 def check_health_data_reminder():
     """
-    Нагадування надіслати дані з QWatch Pro.
-    Час залежить від зміни: нічна → 23:30, рання/вихідний → 21:30
+    ВИМКНЕНО (запит Олега, 09.10): раніше нагадувало вручну надіслати
+    QWatch Pro/Apple Health дані. Тепер дані здоров'я синкаються автоматично
+    з Garmin Connect (garmin_sync.py, кожні 3 год) — ручне нагадування
+    більше не потрібне.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    h, m = now_local.hour, now_local.minute
-
-    # Визначаємо час залежно від зміни
-    try:
-        _gst_hr = _get_today_shift_type
-        _shift_hr = _gst_hr()
-    except Exception:
-        _shift_hr = "weekend"
-    send_hour, send_min = (23, 50) if _shift_hr == "night" else (21, 30)
-
-    if not (h == send_hour and send_min <= m < send_min + 5):
-        return
-
-    today = now_local.strftime("%Y-%m-%d")
-    state = load_json_file(HEALTH_REMIND_FILE, default={})
-    if state.get(today):
-        return
-
-    try:
-        import sys as _sys, os as _os
-        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-        from storage import load_health as _lh
-        health = _lh()
-        today_data = health.get(today, {})
-
-        if today_data and today_data.get("steps"):
-            return  # вже є дані
-
-        msg = (
-            "⌚ <b>Надішли дані з QWatch Pro!</b>\n\n"
-            "Відкрий додаток QWatch Pro → зроби скрін або надішли вручну:\n\n"
-            "<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>"
-        )
-        send_telegram(msg)
-        print(f"QWatch/Health data reminder sent (shift={_shift_hr}, time={send_hour}:{send_min:02d})")
-
-        state[today] = True
-        save_json_file(HEALTH_REMIND_FILE, state)
-
-    except Exception as e:
-        print(f"check_health_data_reminder error: {e}")
-
-    # 4. Все інше — promo
-    return "promo"
+    return
 
 
 def check_crypto_weekly_summary():
@@ -10261,8 +10175,8 @@ def check_step_goal():
         if not steps:
             send_telegram(
                 "👟 <b>Кроки сьогодні</b>\n\n"
-                "Не бачу даних Apple Health 😅\n"
-                "Скільки пройшов? Надішли /зд щоб записати!\n\n"
+                "Не бачу даних з Garmin Connect 😅\n"
+                "Перевір /гармін або чи синхронізований годинник.\n\n"
                 "<i>Ціль: 10 000 кроків на день</i>"
             )
             state[today] = True
@@ -11557,10 +11471,10 @@ def check_monthly_summary():
     except Exception:
         pass
 
-    # Кроки
+    # Кроки (тільки Garmin Connect — запит Олега, 09.10)
     try:
-        from steps import load_steps_data as _lsd_ms
-        sdata = _lsd_ms()
+        from storage import load_health as _lh_ms
+        sdata = _lh_ms()
         month_prefix = prev_month_end.strftime("%Y-%m")
         month_steps = [v.get("steps", 0) for k, v in sdata.items() if k.startswith(month_prefix) and isinstance(v, dict)]
         if month_steps:
@@ -11699,10 +11613,10 @@ def get_weekly_dashboard() -> str:
     except Exception:
         pass
 
-    # 4. Кроки
+    # 4. Кроки (тільки Garmin Connect — запит Олега, 09.10)
     try:
-        from steps import load_steps_data as _lsd_wd
-        sdata = _lsd_wd()
+        from storage import load_health as _lh_wd
+        sdata = _lh_wd()
         week_days = [(week_start + timedelta(days=i)).strftime("%Y-%m-%d")
                      for i in range(now_local.weekday() + 1)]
         step_vals = [sdata.get(d, {}).get("steps", 0) for d in week_days if isinstance(sdata.get(d), dict)]

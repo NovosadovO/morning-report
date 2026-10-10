@@ -316,16 +316,16 @@ def load_health():
     """
     Завантажує щоденні health дані. Структура: {"2026-04-29": {steps, sleep_hours, ...}}
 
-    Канонічне джерело кроків/сну — qwatch_data.json (пише годинник, оновлюється
-    щодня). health.json — старий Apple Health формат, востаннє оновлювався
-    2026-05-11 і більше не пишеться, тому раніше steps/sleep завжди виходили
-    None у звітах/AI-контекстах. Тут мерджимо qwatch поверх health.json
-    (qwatch виграє при перетині дат), конвертуючи поля під очікувану схему
-    (sleep_total_min -> sleep_hours, weight_kg лишається як є).
+    ЄДИНЕ джерело — qwatch_data.json, яке пише ВИКЛЮЧНО garmin_sync.py
+    (запит Олега, 09.10: «дані здоров'я тільки з Garmin Connect, всі інші
+    джерела видалити»). health.json — старий формат з Apple Health/OCR/
+    ручного /зд, востаннє писався до цього фіксу і містив застарілі та іноді
+    биті записи (напр. «сон 18.5 год» — явний сміттєвий парсинг), які AI
+    показував як «старі дані» замість нічого. Тепер він НЕ читається взагалі,
+    щоб жоден старий запис не просочувався в звіти/AI-контексти.
     """
-    legacy = _load_github("health.json") or {}
     qwatch = _load_github("qwatch_data.json") or {}
-    merged = dict(legacy)
+    merged = {}
     for day, e in qwatch.items():
         if not isinstance(e, dict):
             continue
@@ -350,6 +350,10 @@ def load_health():
             conv["distance_km"] = e["distance_km"]
         if e.get("body_battery"):
             conv["body_battery"] = e["body_battery"]
+        if e.get("vo2max"):
+            conv["vo2max"] = e["vo2max"]
+        if e.get("saved_at"):
+            conv["saved_at"] = e["saved_at"]
         merged[day] = conv
     return merged
 

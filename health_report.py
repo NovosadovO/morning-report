@@ -35,7 +35,7 @@ def get_health_week_report():
     """Тижневий health звіт — середні показники + тренди за 7 днів."""
     health = load_health()
     if not health:
-        return "⚠️ Health даних немає. Введи: /здоров'я [кроки] [сон] [ЧСС] [калорії] [score]"
+        return "⚠️ Health даних немає. Дані синкаються з Garmin Connect — спробуй /гармін."
 
     now = now_local()
     days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]

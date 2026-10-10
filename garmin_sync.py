@@ -1,12 +1,22 @@
 """
-garmin_sync.py — пряме підключення бота до Garmin Connect (запит Олега, 08.10).
+garmin_sync.py — ЄДИНЕ джерело даних здоров'я бота (запит Олега, 08.10 і 09.10).
 
-Навіщо, якщо дані вже йдуть через Apple Health → Health Auto Export → /upload:
-Garmin Connect має деталі, яких немає в Apple Health export — HRV за ніч
-(hrvSummary), Body Battery у реальному часі, стрес (avgStressLevel), SpO2
-за ніч, VO2max. Цей модуль ЛИШЕ ДОДАЄ ці поля в той самий канонічний
-qwatch_data.json (через qwsync.save), нічого не дублює і не замінює
-Apple Health як основне джерело кроків/сну/ваги.
+З 09.10 всі інші джерела (Apple Health ZIP/export, Health Auto Export,
+StepsApp, OCR фото, QWatch Pro текст/команди) ВИДАЛЕНІ з коду — Олег прямо
+попросив "дані... тільки із Garmin Connect, всі інші джерела видали".
+Цей модуль — ЄДИНИЙ писач у канонічний qwatch_data.json (через qwsync.save):
+steps, sleep, resting HR, HRV (hrvSummary), Body Battery, стрес
+(avgStressLevel), SpO2, VO2max, вага (weigh-ins, якщо Олег її й там вносить —
+пріоритет Garmin над ручним /вага, див. healthai._weight_series).
+
+Два шляхи отримання даних (обидва через fetch_live — живий запит, не кеш):
+  1. Фоновий синк — run_garmin_sync_watcher() у monitor_loop.py, раз на
+     SYNC_EVERY_MIN (180 хв = 3 год). Викликає healthai.garmin_periodic_notify(),
+     яка через fetch_live() бере свіжі дані, зберігає і ОДРАЗУ надсилає Олегу
+     блок + короткі AI-рекомендації (запит Олега, 09.10 — "оновлює кожні 3 год
+     і надсилає з AI рекомендаціями").
+  2. Жива команда — /гармін у bot.py, викликає fetch_live() напряму, без AI
+     (швидка відповідь, тільки блок даних) — не чекає 3-годинний цикл.
 
 Офіційного Garmin Health API для одного користувача немає (програма
 розробника Garmin зараз закрита для нових заявок) — використовуємо
@@ -26,7 +36,10 @@ TAG = "garmin_sync"
 
 # як часто реально тягнути (watcher у monitor_loop.py викликає з таким кроком) —
 # дані оновлюються протягом дня, але немає смислу бити Garmin API частіше.
-SYNC_EVERY_MIN = 120
+# З 09.10 (запит Олега) — раз на 3 години, і кожен такий синк тепер ЖИВИЙ
+# (fetch_live) і одразу надсилається Олегу з AI-рекомендаціями, а не тихо
+# в кеш (див. healthai.garmin_periodic_notify, викликає run_garmin_sync_watcher).
+SYNC_EVERY_MIN = 180
 
 
 def _get_client():
@@ -135,13 +148,83 @@ def _fetch_today(client, day: str) -> dict:
     except Exception as e:
         print(f"[{TAG}] sleep error: {e}", flush=True)
 
+    try:
+        wi = client.get_daily_weigh_ins(day) or {}
+        avg = wi.get("totalAverage") or {}
+        grams = avg.get("weight")
+        if not grams:
+            entries = wi.get("dateWeightList") or []
+            if entries:
+                grams = (entries[-1] or {}).get("weight")
+        if grams:
+            payload["weight_kg"] = round(grams / 1000.0, 1)
+    except Exception as e:
+        print(f"[{TAG}] weight error: {e}", flush=True)
+
     return payload
 
 
+# ── поля, які реально вміє бачити Garmin (для /гармін — показуємо ВСІ,
+# навіть якщо порожні, щоб Олег бачив що саме не прийшло) ──
+FIELDS = [
+    ("steps",           "👟 Кроки",          ""),
+    ("hr_avg",          "❤️ Пульс спокою",   " уд/хв"),
+    ("sleep_total_min", "😴 Сон",            "_mins"),
+    ("hrv",             "💓 HRV (за ніч)",   " мс"),
+    ("body_battery",    "🔋 Body Battery",   ""),
+    ("stress",          "😤 Стрес",          ""),
+    ("spo2",            "🫁 SpO2 (за ніч)",  "%"),
+    ("vo2max",          "🫀 VO2max",         ""),
+    ("weight_kg",       "⚖️ Вага",           " кг"),
+]
+
+
+def format_block(payload: dict, day: str, live: bool) -> str:
+    """Текстовий блок усіх полів Garmin — навіть відсутні показуються як
+    'немає даних' (Олег просив ВСІ дані, щоб було видно прогалини)."""
+    from datetime import datetime, timezone, timedelta
+    now = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m.%Y %H:%M")
+    tag = "⚡ живий запит до Garmin саме зараз" if live else "з кешу (фоновий синк кожні 2г)"
+    lines = [f"⌚ <b>Garmin Connect — {day}</b>", f"<i>{tag}, {now}</i>", ""]
+    for key, label, unit in FIELDS:
+        v = payload.get(key)
+        if v is None:
+            lines.append(f"{label}: <i>немає даних</i>")
+            continue
+        if unit == "_mins":
+            h, m = divmod(int(v), 60)
+            lines.append(f"{label}: <b>{h}г {m:02d}хв</b>")
+        else:
+            lines.append(f"{label}: <b>{v}{unit}</b>")
+    return "\n".join(lines)
+
+
+def fetch_live(day: str = None) -> dict:
+    """Живий запит до Garmin Connect (не кеш) — для команди /гармін.
+    Повертає {'ok', 'record', 'text'} або {'ok': False, 'error': ...}."""
+    day = day or date.today().isoformat()
+    client = _get_client()
+    if client is None:
+        return {"ok": False, "error": "Немає підключення до Garmin Connect "
+                 "(перевір GARMIN_EMAIL/GARMIN_PASSWORD або бібліотеку garminconnect)"}
+
+    payload = _fetch_today(client, day)
+    try:
+        import qwsync
+        res = qwsync.save(payload, notify=False)
+        record = res.get("record") or payload
+    except Exception as e:
+        print(f"[{TAG}] live save error: {e}", flush=True)
+        record = payload
+
+    text = format_block(record, day, live=True)
+    return {"ok": True, "record": record, "text": text}
+
+
 def sync_once() -> bool:
-    """Один прохід: тягне сьогоднішні дані з Garmin Connect, мерджить у
-    qwatch_data.json (той самий файл, що й Apple Health/вручну). Повертає
-    True якщо хоч щось нове збережено."""
+    """Один прохід (фоновий, кожні SYNC_EVERY_MIN хв): тягне сьогоднішні дані
+    з Garmin Connect, мерджить у qwatch_data.json. Повертає True якщо хоч
+    щось нове збережено."""
     client = _get_client()
     if client is None:
         return False

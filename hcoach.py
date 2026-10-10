@@ -291,6 +291,7 @@ def morning_plan(send: bool = True) -> str:
     tomorrow = _shift_for(1)
     yest = (_now().date() - timedelta(days=1)).strftime("%Y-%m-%d")
     yrec = _day_rec(yest)
+    garmin_txt = HA.garmin_block()
 
     ctx = [
         "СЬОГОДНІ: " + _now().strftime("%d.%m.%Y (%a)"),
@@ -298,6 +299,8 @@ def morning_plan(send: bool = True) -> str:
         "ЗМІНА завтра: " + _SHIFT_UA.get(tomorrow, tomorrow),
         "",
         HA.facts_block(a),
+        "",
+        garmin_txt,
         "",
         "ВЧОРА: сон " + str(yrec.get("sleep_hours") or "—") + " год, кроки "
         + str(yrec.get("steps") or "—") + ", вага " + str(_weight_for(yest) or "—") + " кг",
@@ -326,7 +329,7 @@ def morning_plan(send: bool = True) -> str:
                 "(AI недоступний — базовий план за цілями)")
 
     txt = ("🌅 <b>ПЛАН ДНЯ — ЗДОРОВ'Я</b>\n"
-           + _SHIFT_UA.get(today, today) + "\n\n" + body)
+           + _SHIFT_UA.get(today, today) + "\n\n" + garmin_txt + "\n\n" + body)
     if send:
         K.send_card(txt, _kb(), tag=TAG)
         _journal("morning_plan", "ранковий план здоров'я")

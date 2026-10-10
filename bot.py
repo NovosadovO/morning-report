@@ -2173,347 +2173,23 @@ def handle_habit_callback(callback_query):
     return True
 
 
-def _parse_apple_health_xml(zip_bytes):
-    """Парсить Apple Health export.zip — повертає dict {date: {steps, sleep_hours, heart_rate, ...}}"""
-    import zipfile, io, re as _re, xml.etree.ElementTree as ET
-    from datetime import datetime, timezone, timedelta
-    try:
-        with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
-            xml_name = next((n for n in zf.namelist() if n.endswith("export.xml")), None)
-            if not xml_name:
-                return None
-            xml_bytes = zf.read(xml_name)
-
-        # Парсимо XML потоково щоб не вантажити весь в пам'ять
-        daily = {}
-
-        def add(date, key, val):
-            if date not in daily:
-                daily[date] = {}
-            if key not in daily[date]:
-                daily[date][key] = []
-            daily[date][key].append(val)
-
-        context = ET.iterparse(io.BytesIO(xml_bytes), events=("end",))
-        for event, elem in context:
-            if elem.tag != "Record":
-                elem.clear()
-                continue
-            rtype = elem.get("type", "")
-            start = elem.get("startDate", "")[:10]
-            val_str = elem.get("value", "")
-            try:
-                val = float(val_str)
-            except:
-                elem.clear()
-                continue
-
-            if "StepCount" in rtype:
-                add(start, "steps", val)
-            elif "HeartRate" in rtype and "Variability" not in rtype:
-                add(start, "heart_rate", val)
-            elif "ActiveEnergyBurned" in rtype:
-                add(start, "calories_active", val)
-            elif "BasalEnergyBurned" in rtype:
-                add(start, "calories_basal", val)
-            elif "DistanceWalkingRunning" in rtype:
-                add(start, "distance_km", val)
-            elif "SleepAnalysis" in rtype and elem.get("value","") == "HKCategoryValueSleepAnalysisAsleepUnspecified":
-                # Розрахунок тривалості сну
-                try:
-                    s = datetime.fromisoformat(elem.get("startDate","").replace(" ", "T")[:19])
-                    e = datetime.fromisoformat(elem.get("endDate","").replace(" ", "T")[:19])
-                    hours = (e - s).total_seconds() / 3600
-                    add(start, "sleep_hours", hours)
-                except:
-                    pass
-            elif "HeartRateVariability" in rtype:
-                add(start, "hrv", val)
-            elif "FlightsClimbed" in rtype:
-                add(start, "flights_climbed", val)
-            elif "DietaryWater" in rtype:
-                # Apple Health зберігає в літрах або мл — перевіряємо
-                add(start, "water_ml", val * 1000 if val < 20 else val)
-
-            elem.clear()
-
-        # Агрегуємо
-        result = {}
-        for date, vals in daily.items():
-            entry = {}
-            if "steps" in vals:          entry["steps"]           = int(sum(vals["steps"]))
-            if "heart_rate" in vals:     entry["heart_rate"]      = int(sum(vals["heart_rate"]) / len(vals["heart_rate"]))
-            if "calories_active" in vals:entry["calories_active"] = int(sum(vals["calories_active"]))
-            if "calories_basal" in vals: entry["calories"]        = int(sum(vals.get("calories_active",[0])) + sum(vals["calories_basal"]))
-            if "distance_km" in vals:    entry["distance_km"]     = round(sum(vals["distance_km"]) / 1000, 2)  # метри -> км
-            if "sleep_hours" in vals:    entry["sleep_hours"]     = round(sum(vals["sleep_hours"]), 1)
-            if "hrv" in vals:            entry["hrv"]             = round(sum(vals["hrv"]) / len(vals["hrv"]), 1)
-            if "flights_climbed" in vals:entry["flights_climbed"] = int(sum(vals["flights_climbed"]))
-            if "water_ml" in vals:       entry["water_ml"]        = int(sum(vals["water_ml"]))
-            if entry:
-                result[date] = entry
-
-        return result if result else None
-    except Exception as e:
-        print(f"_parse_apple_health_xml error: {e}")
-        return None
-
-
 def handle_health_zip(chat_id, doc):
-    """Обробляє ZIP файл — Apple Health export або Health Auto Export."""
-    try:
-        send(chat_id, "⏳ Обробляю ZIP файл...")
-
-        file_id = doc["file_id"]
-        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getFile?file_id={file_id}"
-        import urllib.request as _ur
-        req = _ur.Request(url)
-        with _ur.urlopen(req, timeout=15) as r:
-            file_info = json.loads(r.read())
-
-        file_path = file_info["result"]["file_path"]
-        file_url = f"https://api.telegram.org/file/bot{TELEGRAM_TOKEN}/{file_path}"
-
-        req2 = _ur.Request(file_url)
-        with _ur.urlopen(req2, timeout=60) as r:
-            zip_bytes = r.read()
-
-        import zipfile, io as _io
-        # Визначаємо тип ZIP
-        with zipfile.ZipFile(_io.BytesIO(zip_bytes)) as zf:
-            names = zf.namelist()
-
-        is_apple_health = any("export.xml" in n for n in names)
-        is_hae = any(n.startswith("HealthAutoExport-") and n.endswith(".csv") for n in names)
-        # StepsApp ZIP: містить CSV файли з крапкою з комою, без export.xml
-        is_stepsapp = (
-            not is_apple_health and not is_hae and
-            any(n.endswith(".csv") for n in names) and
-            not any("HealthAutoExport" in n for n in names)
-        )
-
-        if is_stepsapp:
-            # StepsApp export
-            send(chat_id, "👟 Знайдено StepsApp export — парсю...")
-            try:
-                import sys as _sys, os as _os
-                _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-                import steps as _steps
-                result = _steps.parse_zip(zip_bytes)
-                send(chat_id, result)
-            except Exception as _se:
-                send(chat_id, f"❌ Помилка парсингу StepsApp: {_se}")
-            return
-
-        if is_apple_health:
-            # Apple Health export
-            send(chat_id, "🍎 Знайдено Apple Health export.xml — парсю...")
-            daily_data = _parse_apple_health_xml(zip_bytes)
-            if not daily_data:
-                send(chat_id, "❌ Не вдалось розпарсити XML.")
-                return
-
-            from storage import load_health, save_health
-            health_db = load_health()
-            new_days = 0
-            for date, entry in daily_data.items():
-                if entry:
-                    existing = health_db.get(date, {})
-                    existing.update(entry)
-                    health_db[date] = existing
-                    new_days += 1
-
-            save_health(health_db)
-
-            # Показуємо дані за сьогодні або вчора
-            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
-            yesterday = (datetime.now(timezone.utc) + timedelta(hours=2) - timedelta(days=1)).strftime("%Y-%m-%d")
-            show_date = today if today in daily_data else yesterday
-            d = daily_data.get(show_date, {})
-
-            lines = [
-                f"✅ <b>Apple Health — оновлено {new_days} днів!</b>\n",
-                f"📅 Останні дані ({show_date[5:].replace('-', '.')}):",
-            ]
-            if d.get("steps"):        lines.append(f"  👟 Кроки: <b>{d['steps']:,}</b>".replace(",", " "))
-            if d.get("distance_km"):  lines.append(f"  📏 Дистанція: <b>{d['distance_km']} км</b>")
-            if d.get("heart_rate"):   lines.append(f"  ❤️ Пульс: <b>{d['heart_rate']} уд/хв</b>")
-            if d.get("calories_active"): lines.append(f"  🔥 Калорії: <b>{d['calories_active']} ккал</b>")
-            if d.get("sleep_hours"):  lines.append(f"  😴 Сон: <b>{d['sleep_hours']} год</b>")
-            if d.get("hrv"):          lines.append(f"  💓 HRV: <b>{d['hrv']}</b>")
-            send(chat_id, "\n".join(lines))
-            try:
-                from health_report import generate_health_trend_chart
-                _chart = generate_health_trend_chart(14)
-                if _chart:
-                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
-            except Exception as _ce:
-                print(f"[health chart] {_ce}", flush=True)
-
-        elif is_hae:
-            # Health Auto Export
-            import sys as _sys, os as _os
-            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            from health_webhook import analyze_hae_zip, format_hae_report
-
-            stats = analyze_hae_zip(zip_bytes)
-            if not stats:
-                send(chat_id, "❌ Не вдалось розпарсити HAE ZIP.")
-                return
-
-            from storage import load_health, save_health
-            health_db = load_health()
-            last_date = stats.get("period_end") or stats.get("period_start")
-            if last_date:
-                entry = health_db.get(last_date, {})
-                if stats.get("avg_steps"):   entry["steps"]       = int(stats["avg_steps"])
-                if stats.get("avg_sleep"):   entry["sleep_hours"] = round(stats["avg_sleep"], 1)
-                if stats.get("avg_dist_km"): entry["distance_km"] = round(stats["avg_dist_km"], 1)
-                if stats.get("hrv_avg"):     entry["hrv"]         = int(stats["hrv_avg"])
-                health_db[last_date] = entry
-                save_health(health_db)
-
-            report = format_hae_report(stats) + "\n\n✅ <b>Дані збережено!</b>"
-            send(chat_id, report)
-            try:
-                from health_report import generate_health_trend_chart
-                _chart = generate_health_trend_chart(14)
-                if _chart:
-                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
-            except Exception as _ce:
-                print(f"[health chart] {_ce}", flush=True)
-        else:
-            send(chat_id, "❌ Невідомий формат ZIP.\n\nОчікується:\n• <b>Apple Health</b> export (export.zip з iPhone)\n• <b>Health Auto Export</b> app")
-
-    except Exception as e:
-        print(f"handle_health_zip error: {e}", flush=True)
-        send(chat_id, f"❌ Помилка: {e}\n\nВведи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал]</code>")
+    """ZIP-джерела (Apple Health / Health Auto Export / StepsApp) видалені —
+    дані здоров'я тільки з Garmin Connect (запит Олега, 09.10)."""
+    send(chat_id, "⚠️ Прийом ZIP-файлів здоров'я вимкнено.\n\n"
+         "Дані тепер синкаються автоматично тільки з <b>Garmin Connect</b> "
+         "(кожні 3 години) — нічого завантажувати не треба.\n"
+         "Свіжі дані прямо зараз: /гармін")
 
 
 def handle_health_photo(chat_id, msg):
-    """Обробляє фото з Apple Health скріну — OCR через Google Vision API."""
-    caption = msg.get("caption", "").strip()
-    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    """OCR-скріни Apple Health видалені — дані здоров'я тільки з Garmin
+    Connect (запит Олега, 09.10)."""
+    send(chat_id, "⚠️ Розпізнавання скрінів здоров'я вимкнено.\n\n"
+         "Дані тепер синкаються автоматично тільки з <b>Garmin Connect</b> "
+         "(кожні 3 години) — нічого надсилати не треба.\n"
+         "Свіжі дані прямо зараз: /гармін")
 
-    # Якщо caption містить числа — парсимо вручну (старий формат)
-    parts = caption.split() if caption else []
-    if len(parts) >= 4:
-        try:
-            from storage import load_health, save_health
-            health = load_health()
-            entry = health.get(today, {})
-            entry["steps"]       = int(parts[0])
-            entry["sleep_hours"] = float(parts[1])
-            entry["heart_rate"]  = int(parts[2])
-            entry["calories"]    = int(parts[3])
-            if len(parts) >= 5:
-                entry["health_score"] = int(parts[4])
-            health[today] = entry
-            save_health(health)
-            # Дублюємо в канонічний qwatch_data.json (MERGE полів, не
-            # затираючи інше). Без цього storage.load_health() завжди
-            # віддає перевагу qwatch_data.json навіть якщо там лежить
-            # старий/неповний автосинк з годинника — ручні дані просто
-            # ігнорувались у звітах/AI-аналізі, хоч і зберігались тут.
-            try:
-                import qwsync
-                _sync_payload = {
-                    "date": today, "steps": entry["steps"],
-                    "sleep_hours": entry["sleep_hours"], "hr_avg": entry["heart_rate"],
-                    "calories": entry["calories"],
-                }
-                if entry.get("health_score"):
-                    _sync_payload["health_score"] = entry["health_score"]
-                qwsync.save(_sync_payload, notify=False)
-            except Exception as _qse:
-                print(f"[health->qwatch] sync error: {_qse}", flush=True)
-            reply = f"✅ <b>Health дані {today} збережено!</b>\n\n"
-            reply += f"👟 Кроки: {entry.get('steps','—')}\n"
-            reply += f"😴 Сон: {entry.get('sleep_hours','—')} год\n"
-            reply += f"❤️ ЧСС: {entry.get('heart_rate','—')} bpm\n"
-            if entry.get("health_score"):
-                reply += f"💚 Health Score: {entry['health_score']}/100"
-            send(chat_id, reply)
-            try:
-                from health_report import generate_health_trend_chart
-                _chart = generate_health_trend_chart(14)
-                if _chart:
-                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
-            except Exception as _ce:
-                print(f"[health chart] {_ce}", flush=True)
-            return
-        except (ValueError, IndexError):
-            pass
-
-    # OCR через Google Vision
-    send(chat_id, "🔍 Читаю скрін...")
-    try:
-        from health_ocr import parse_health_photo
-        # Беремо найбільше фото
-        photos = msg.get("photo", [])
-        if not photos:
-            send(chat_id, "⚠️ Фото не знайдено")
-            return
-        file_id = photos[-1]["file_id"]
-
-        data, raw = parse_health_photo(file_id, TELEGRAM_TOKEN)
-
-        if data and len(data) >= 2:
-            from storage import load_health, save_health
-            health = load_health()
-            entry = health.get(today, {})
-            entry.update(data)
-            health[today] = entry
-            save_health(health)
-            # Дублюємо в канонічний qwatch_data.json (MERGE) — інакше
-            # storage.load_health() пізніше може показати старий/неповний
-            # автосинк з годинника замість цих щойно розпізнаних даних.
-            try:
-                import qwsync
-                _sync_payload = dict(entry)
-                _sync_payload["date"] = today
-                qwsync.save(_sync_payload, notify=False)
-            except Exception as _qse:
-                print(f"[health->qwatch] sync error: {_qse}", flush=True)
-
-            reply = f"✅ <b>Health дані {today} зчитано автоматично!</b>\n\n"
-            if entry.get("steps"):       reply += f"👟 Кроки: <b>{entry['steps']:,}</b>\n"
-            if entry.get("sleep_hours"): reply += f"😴 Сон: <b>{entry['sleep_hours']}г</b>\n"
-            if entry.get("heart_rate"):  reply += f"❤️ ЧСС: <b>{entry['heart_rate']} bpm</b>\n"
-            if entry.get("calories"):    reply += f"🔥 Калорії: <b>{entry['calories']:,}</b>\n"
-            if entry.get("hrv"):         reply += f"💓 HRV: <b>{entry['hrv']} ms</b>\n"
-            if entry.get("stress_max"):  reply += f"😤 Стрес: <b>{entry.get('stress_min','?')}–{entry['stress_max']}</b>\n"
-            if entry.get("health_score"):reply += f"💚 Health Score: <b>{entry['health_score']}/100</b>\n"
-
-            missing = []
-            for k, label in [("steps","кроки"),("sleep_hours","сон"),("heart_rate","ЧСС"),("health_score","score")]:
-                if not entry.get(k):
-                    missing.append(label)
-            if missing:
-                reply += f"\n<i>Не знайдено: {', '.join(missing)}</i>\n"
-                reply += f"Доповни: <code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>"
-
-            send(chat_id, reply)
-            try:
-                from health_report import generate_health_trend_chart
-                _chart = generate_health_trend_chart(14)
-                if _chart:
-                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
-            except Exception as _ce:
-                print(f"[health chart] {_ce}", flush=True)
-        else:
-            # OCR не спрацював — просимо вручну
-            send(chat_id, (
-                f"📸 Фото отримано, але не вдалось прочитати дані автоматично.\n\n"
-                f"Введи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>\n\n"
-                f"Наприклад:\n<code>/зд 10476 7.5 85 2500 75</code>"
-            ))
-    except Exception as e:
-        print(f"handle_health_photo error: {e}", flush=True)
-        send(chat_id, (
-            f"⚠️ OCR помилка. Введи вручну:\n"
-            f"<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>"
-        ))
 
 
 _CONFLICT_409 = object()  # маркер: інший інстанс polling-ить
@@ -2808,23 +2484,14 @@ HELP_TEXT = """
 /тиша — увімкнути тишу до 04:00 (о 04:00 сам відновлюсь)
 /тиша_статус — чи зараз тиша і скільки в черзі
 /покажи_відкладене — віддати те, що я притримав поки ти спав
-/зд — health дані (7 днів)
-/зд т — тижневий health звіт
-/зд м — місячний health звіт
-/зд [кроки] [сон] [ЧСС] [кал] [score] — записати
 
-<b>👟 Кроки (StepsApp)</b>
-Надішли ZIP з StepsApp — збережу автоматично
-/кроки — підсумок кроків сьогодні
-/кроки тиждень — тижневий звіт з графіком
-/кроки місяць — місячний звіт з графіком
-/пробіжки — історія пробіжок
-
-<b>⌚ QWatch Pro</b>
-Надішли текст з QWatch Pro — збережу автоматично
-/qwatch — дані за сьогодні
-/qwatch тиждень — тижневий звіт
-/qwatch місяць — місячний звіт
+<b>⌚ Здоров'я (тільки Garmin Connect)</b>
+Дані синкаються автоматично кожні 3 години — нічого вводити не треба.
+/гармін — живі дані з Garmin прямо зараз (кроки, сон, пульс, HRV, body battery, стрес, SpO2, VO2max, вага)
+/здоров'я — повний AI health-звіт (включає Garmin-блок)
+/здоров'я тиждень — тижневий health звіт
+/здоров'я місяць — місячний health звіт
+Напиши просто число (напр. 82.5) — записати вагу вручну (Garmin має пріоритет, якщо є його дані за день)
 
 <b>💰 Крипто-портфель</b>
 /портфель — повний портфель з P&L
@@ -4626,45 +4293,6 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    # ─── КРОКИ (StepsApp) ──────────────────────────────────────────────────────
-    elif text in ["/кроки", "кроки"]:
-        try:
-            import sys as _sys, os as _os
-            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            import steps as _steps
-            send(chat_id, _steps.get_steps_summary())
-        except Exception as e:
-            send(chat_id, f"⚠️ Помилка: {e}")
-
-    elif text in ["/кроки тиждень", "кроки тиждень", "/кт"]:
-        send(chat_id, "⏳ Готую тижневий звіт кроків...")
-        try:
-            import sys as _sys, os as _os
-            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            import steps as _steps
-            _steps.send_weekly_report()
-        except Exception as e:
-            send(chat_id, f"⚠️ Помилка: {e}")
-
-    elif text in ["/кроки місяць", "кроки місяць", "/км"]:
-        send(chat_id, "⏳ Готую місячний звіт кроків...")
-        try:
-            import sys as _sys, os as _os
-            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            import steps as _steps
-            _steps.send_monthly_report()
-        except Exception as e:
-            send(chat_id, f"⚠️ Помилка: {e}")
-
-    elif text in ["/пробіжки", "пробіжки"]:
-        try:
-            import sys as _sys, os as _os
-            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            import steps as _steps
-            _steps.send_run_history()
-        except Exception as e:
-            send(chat_id, f"⚠️ Помилка: {e}")
-
     elif any(x in text for x in ["/здоров'я тиждень", "здоров'я тиждень", "/health week", "здоров'я тиждень"]) or text in ["/здоровя тиждень", "здоровя тиждень", "/зд т", "зд т", "/здт"]:
         send(chat_id, "⏳ Готую тижневий health звіт...")
         try:
@@ -4691,113 +4319,26 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text in ["/зд", "зд"]:
-        # Швидкий перегляд останніх 7 днів
+    elif text in ["/гармін", "гармін", "/garmin", "garmin"]:
+        # Живий запит до Garmin Connect ЗАРАЗ (не кеш) — запит Олега, 09.10.
+        send(chat_id, "⏳ Йду в Garmin Connect прямо зараз...")
         try:
-            from storage import load_health
-            health = load_health()
-            if health:
-                sorted_days = sorted(health.keys(), reverse=True)[:7]
-                reply = "💚 <b>Health (7 днів)</b>\n\n"
-                for d in sorted_days:
-                    h = health[d]
-                    score = f" 💚{h['health_score']}" if h.get("health_score") else ""
-                    steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
-                    sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
-                    hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
-                    parts = [x for x in [steps, sleep, hr] if x]
-                    reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
-                send(chat_id, reply)
-            else:
-                send(chat_id, "Немає health даних.\n\nДодай: /зд [кроки] [сон] [ЧСС] [калорії] [score]")
+            import threading as _th_gl
+
+            def _gl_work():
+                try:
+                    import garmin_sync
+                    res = garmin_sync.fetch_live()
+                    if res.get("ok"):
+                        send(chat_id, res["text"])
+                    else:
+                        send(chat_id, f"⚠️ {res.get('error', 'не вдалось отримати дані з Garmin')}")
+                except Exception as _gle:
+                    send(chat_id, f"⚠️ Помилка Garmin: {_gle}")
+
+            _th_gl.Thread(target=_gl_work, daemon=True, name="garmin-live").start()
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
-
-    elif text.startswith("/здоров'я") or text.startswith("/health") or text.startswith("/здоровя") or text.startswith("/зд"):
-        # /здоров'я [кроки] [сон] [ЧСС] [калорії]
-        try:
-            parts = text.split()[1:]
-            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
-            from storage import load_health, save_health
-            health = load_health()
-            entry = health.get(today, {})
-            if len(parts) >= 4:
-                entry["steps"]       = int(parts[0])
-                entry["sleep_hours"] = float(parts[1])
-                entry["heart_rate"]  = int(parts[2])
-                entry["calories"]    = int(parts[3])
-                if len(parts) >= 5:
-                    entry["health_score"] = int(parts[4])
-                health[today] = entry
-                save_health(health)
-                reply = f"✅ <b>Health дані {today} збережено!</b>\n\n"
-                reply += f"👟 Кроки: {entry.get('steps','—')}\n"
-                reply += f"😴 Сон: {entry.get('sleep_hours','—')} год\n"
-                reply += f"❤️ ЧСС: {entry.get('heart_rate','—')} bpm\n"
-                reply += f"🔥 Калорії: {entry.get('calories','—')}\n"
-                if entry.get("health_score"):
-                    reply += f"💚 Health Score: {entry['health_score']}/100"
-                send(chat_id, reply)
-                try:
-                    from health_report import generate_health_trend_chart
-                    _chart = generate_health_trend_chart(14)
-                    if _chart:
-                        send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
-                except Exception as _ce:
-                    print(f"[health chart] {_ce}", flush=True)
-            else:
-                # Показати поточні дані
-                if health:
-                    sorted_days = sorted(health.keys(), reverse=True)[:7]
-                    reply = "💚 <b>Health дані (останні 7 днів)</b>\n\n"
-                    for d in sorted_days:
-                        h = health[d]
-                        score = f" | Score: {h['health_score']}/100" if h.get("health_score") else ""
-                        reply += f"<b>{d}</b>{score}\n"
-                        reply += f"  👟 {h.get('steps','—')} | 😴 {h.get('sleep_hours','—')}г | ❤️ {h.get('heart_rate','—')} bpm\n"
-                    send(chat_id, reply)
-                else:
-                    send(chat_id, "Немає health даних. Введи: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
-        except Exception as e:
-            send(chat_id, f"⚠️ Помилка: {e}\nФормат: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
-
-    elif text in ["/qwatch", "qwatch", "/qs"]:
-        try:
-            from qwatch import report_weekly, _load
-            from datetime import datetime, timezone, timedelta
-            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
-            db = _load()
-            if today in db:
-                from qwatch import format_day_block
-                send(chat_id, format_day_block(today) or "QWatch: немає даних за сьогодні.")
-            else:
-                send(chat_id, "⌚ Даних QWatch за сьогодні ще немає.\nНадішли текст з QWatch Pro.")
-        except Exception as e:
-            send(chat_id, f"⚠️ {e}")
-
-    elif text in ["/qwatch тиждень", "qwatch тиждень", "/qст", "qст"]:
-        send(chat_id, "⏳ Готую тижневий QWatch звіт...")
-        try:
-            from qwatch import report_weekly
-            rtext, rchart = report_weekly()
-            if rchart:
-                send_photo(chat_id, rchart, rtext)
-            else:
-                send(chat_id, rtext)
-        except Exception as e:
-            send(chat_id, f"⚠️ {e}")
-
-    elif text in ["/qwatch місяць", "qwatch місяць", "/qм", "qм"]:
-        send(chat_id, "⏳ Готую місячний QWatch звіт...")
-        try:
-            from qwatch import report_monthly
-            rtext, rchart = report_monthly()
-            if rchart:
-                send_photo(chat_id, rchart, rtext)
-            else:
-                send(chat_id, rtext)
-        except Exception as e:
-            send(chat_id, f"⚠️ {e}")
 
     elif text in ["/забути", "забути", "/clear", "/скинути"]:
         from context import clear_history
@@ -4956,19 +4497,8 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ {e}")
 
     else:
-        # Розпізнавання тексту QWatch Pro
-        raw_text = original_text
-        if ("health score" in raw_text.lower() or "оцінка здоров" in raw_text.lower()
-                or ("hrv" in raw_text.lower() and ("сон" in raw_text.lower() or "кроки" in raw_text.lower() or "пульс" in raw_text.lower()))):
-            try:
-                api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
-                from qwatch import parse_and_save, send_confirmation
-                record = parse_and_save(raw_text)
-                send_confirmation(record)
-                return
-            except Exception as e:
-                send(chat_id, f"⚠️ QWatch помилка: {e}")
-                return
+        # Ручний paste QWatch-тексту видалено (запит Олега, 09.10) — дані
+        # здоров'я тільки з Garmin Connect.
 
         # Спроба розпізнати вагу (число типу 82 або 82.5)
         try:
@@ -6728,27 +6258,15 @@ def _route_callback(cb, confirmed: bool = False):
                 pass
             send(chat_id, f"✅ Сон записано: <b>{label}</b>")
         elif data == "reminder_health_photo":
-            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Надішли фото 📸"})
-            send(chat_id, "📸 Надішли скрін Apple Health — прочитаю автоматично!")
+            # Фото/скріни видалені (запит Олега, 09.10) — дані тільки з Garmin.
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
+            send(chat_id, "⌚ Дані здоров'я синкаються автоматично з <b>Garmin Connect</b> "
+                 "(кожні 3 години) — нічого надсилати не треба.\nСвіжі дані прямо зараз: /гармін")
         elif data == "reminder_health_view":
             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
             try:
-                from storage import load_health
-                health = load_health()
-                if health:
-                    sorted_days = sorted(health.keys(), reverse=True)[:7]
-                    reply = "💚 <b>Health (7 днів)</b>\n\n"
-                    for d in sorted_days:
-                        h = health[d]
-                        score = f" 💚{h['health_score']}" if h.get("health_score") else ""
-                        steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
-                        sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
-                        hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
-                        parts = [x for x in [steps, sleep, hr] if x]
-                        reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
-                    send(chat_id, reply)
-                else:
-                    send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
+                from healthai import garmin_block
+                send(chat_id, garmin_block())
             except Exception as e:
                 send(chat_id, f"⚠️ {e}")
         elif data == "cal_all_done_today":
@@ -7355,36 +6873,9 @@ def process_update(update):
         try:
             from planner import get_state as _gs, clear_state as _cs
             _st = _gs()
-            # QWatch/health текст — ніколи не йде в список покупок
-            _is_qwatch = ("health score" in text.lower() or "оцінка здоров" in text.lower()
-                          or ("hrv" in text.lower() and ("сон" in text.lower() or "кроки" in text.lower() or "пульс" in text.lower()))
-                          or "qwatch" in text.lower())
-
-            # ── ПАРСИМО ЗДОРОВ'Я ТЕКСТ ──
-            # ЄДИНЕ канонічне місце запису — qwatch.py → data/qwatch_data.json
-            # (саме його читає storage.load_health(), тому саме на ньому
-            # будуються всі AI-сповіщення/звіти про сон, кроки, пульс тощо).
-            # Раніше тут стояв health_parser.save_daily_health(), який писав
-            # у ЛОКАЛЬНИЙ файл data/daily_health.json на диску контейнера —
-            # він НЕ синхронізований з GitHub і зникає при кожному redeploy,
-            # і головне — його ніхто з модулів "сон впав до X годин" не читає.
-            # Через це виходило: юзер бачить "✅ Записано", дані реально
-            # летять у мертвий файл, а на аналіз/сповіщення далі впливає лише
-            # qwatch_data.json — який тим часом міг ще нести старе/часткове
-            # значення з автосинку годинника (qwatch_auto). Тепер пишемо
-            # напряму в канонічне джерело й одразу віддаємо return, щоб
-            # handle_command() нижче не обробив той самий текст ще раз.
-            if _is_qwatch:
-                try:
-                    from qwatch import parse_and_save, send_confirmation
-                    _record = parse_and_save(text)
-                    send_confirmation(_record)
-                except Exception as _hp_err:
-                    print(f"[Health] qwatch parse error: {_hp_err}", flush=True)
-                    send(chat_id, f"⚠️ QWatch помилка: {_hp_err}")
-                if _st.get("mode") == "awaiting_shopping":
-                    _cs()
-                return
+            # Ручний paste QWatch/health-тексту видалено (запит Олега, 09.10) —
+            # дані здоров'я тепер тільки з Garmin Connect (garmin_sync.py,
+            # автосинк кожні 3 год + /гармін для живого запиту).
 
             # ── ВІЛЬНИЙ ТЕКСТ ПРО ПРОБІЖКУ (замінює Strava) ──
             # Strava з 2026 вимагає платну підписку API — застосунок Олега
@@ -7414,9 +6905,7 @@ def process_update(update):
                     _cs()
                 return
 
-            if _is_qwatch and _st.get("mode") == "awaiting_shopping":
-                _cs()  # скидаємо shopping mode
-            if _st.get("mode") == "awaiting_shopping" and not _is_qwatch:
+            if _st.get("mode") == "awaiting_shopping":
                 import shopping as _sh_inp
                 _cs()
                 # Замінюємо переноси рядків на коми і передаємо в add_items

@@ -264,12 +264,14 @@ def _trend(pairs):
 
 
 def _weight_series(days: int):
-    """[(день, вага)] — weight_data.json (канонічний, пише /вага) виграє для
-    кожного дня; qwatch weight_kg використовується ЛИШЕ для днів, яких немає
-    у weight_data.json. Раніше analytics() брав вагу тільки з qwatch weight_kg
-    через storage.load_health(), тому показував застарілі/чужі числа (24.09 —
-    сказав "83.0 кг за 22.09", хоча weight_data.json уже мав 84.1 за 24.09 і
-    82.3 за 22.09 — 83.0 було старим значенням із qwatch за 21-22.09)."""
+    """[(день, вага)] — ПРІОРИТЕТ GARMIN (запит Олега, 09.10): якщо за день є
+    вага з Garmin Connect (qwatch_data.json -> weight_kg, пише garmin_sync.py),
+    вона виграє. weight_data.json (ручний /вага, бот розпізнає "82" чи "82.5"
+    у чаті) лишається — Олег явно попросив тримати обидва джерела — але
+    використовується ЛИШЕ для днів, яких немає з Garmin.
+    (Раніше тут було навпаки — ручне перекривало qwatch, бо qwatch міг нести
+    застарілий автосинк з Apple Health/годинника; тепер qwatch_data.json
+    пишеться виключно Garmin-ом, тож він надійніший за ручний ввід.)"""
     import storage
     try:
         wd = storage.load_weight() or {}
@@ -283,15 +285,15 @@ def _weight_series(days: int):
 
     today = _now().date()
     merged = {}
+    for day, v in (wd or {}).items():
+        if v not in (None, "", 0):
+            merged[day] = v  # базовий шар — ручний ввід
     for day, rec in (health or {}).items():
         if not isinstance(rec, dict):
             continue
         v = rec.get("weight_kg")
         if v not in (None, "", 0):
-            merged[day] = v
-    for day, v in (wd or {}).items():
-        if v not in (None, "", 0):
-            merged[day] = v  # канонічне джерело перекриває qwatch
+            merged[day] = v  # Garmin (qwatch_data.json) перекриває ручний
 
     out = []
     for day, v in merged.items():
@@ -553,10 +555,111 @@ def _kb():
     ]]
 
 
+def garmin_block() -> str:
+    """Окремий блок 'тільки Garmin Connect' (запит Олега, 09.10) — автоматично
+    додається в /здоров'я (stats_report) і ранковий коуч (hcoach.morning_plan).
+    Читає КЕШ qwatch_data.json (фоновий синк кожні 3г, пише лише garmin_sync.py
+    з 09.10, коли всі інші джерела прибрано). Для свіжого живого запиту саме
+    в момент натискання — команда /гармін (garmin_sync.fetch_live)."""
+    try:
+        import storage
+        import garmin_sync
+        db = storage.load("qwatch_data.json", default={}) or {}
+        day = _now().strftime("%Y-%m-%d")
+        rec = db.get(day) or {}
+        if not rec:
+            days = sorted(d for d in db.keys() if isinstance(db.get(d), dict))
+            if days:
+                day = days[-1]
+                rec = db.get(day) or {}
+        return garmin_sync.format_block(rec, day, live=False)
+    except Exception as e:
+        K.log(TAG, f"garmin_block error: {e}")
+        return "⌚ <b>Garmin Connect</b>\n<i>немає даних (помилка читання кешу)</i>"
+
+
+def garmin_periodic_notify() -> bool:
+    """Кожні 3 год (run_garmin_sync_watcher у monitor_loop.py): живий запит
+    до Garmin Connect + коротке AI-повідомлення з рекомендаціями саме на
+    основі ЦИХ поточних показників (не повний денний аналіз — це проміжне
+    сповіщення раз на 3 години) (запит Олега, 09.10)."""
+    if _muted():
+        return False
+
+    try:
+        import garmin_sync
+    except Exception as e:
+        K.log(TAG, f"garmin_periodic_notify import error: {e}")
+        return False
+
+    try:
+        res = garmin_sync.fetch_live()
+    except Exception as e:
+        K.log(TAG, f"garmin_periodic_notify fetch error: {e}")
+        return False
+
+    if not res.get("ok"):
+        K.log(TAG, f"garmin_periodic_notify: {res.get('error')}")
+        return False
+
+    record = res.get("record") or {}
+    block = res.get("text") or ""
+
+    ai_txt = ""
+    try:
+        ctx_parts = []
+        if record.get("steps") is not None:
+            ctx_parts.append(f"кроки зараз: {record['steps']}")
+        if record.get("hr_avg") is not None:
+            ctx_parts.append(f"пульс спокою: {record['hr_avg']}")
+        if record.get("sleep_total_min") is not None:
+            hh, mm = divmod(int(record["sleep_total_min"]), 60)
+            ctx_parts.append(f"сон минулої ночі: {hh}г{mm:02d}хв")
+        if record.get("hrv") is not None:
+            ctx_parts.append(f"HRV: {record['hrv']} мс")
+        if record.get("body_battery") is not None:
+            ctx_parts.append(f"Body Battery: {record['body_battery']}/100")
+        if record.get("stress") is not None:
+            ctx_parts.append(f"стрес: {record['stress']}/100")
+        if record.get("spo2") is not None:
+            ctx_parts.append(f"SpO2: {record['spo2']}%")
+        if record.get("vo2max") is not None:
+            ctx_parts.append(f"VO2max: {record['vo2max']}")
+        if record.get("weight_kg") is not None:
+            ctx_parts.append(f"вага: {record['weight_kg']} кг")
+
+        if ctx_parts:
+            prompt = (
+                f"{_STYLE}\n\nПоточні живі показники з Garmin Connect (саме зараз): "
+                + ", ".join(ctx_parts) + ".\n\n"
+                "Дай 2-4 короткі конкретні рекомендації на найближчі години — це "
+                "проміжне сповіщення раз на 3 години, НЕ повний звіт дня, тому "
+                "коротко і по дії. Кожна — окремий рядок з емодзі, без вступу, без "
+                "загальних порад типу «більше рухайся». Якщо показники в нормі і "
+                "конкретно радити нічого — напиши один короткий рядок підтримки, "
+                "без вигаданих порад."
+            )
+            ai_txt = (K.gemini_text(prompt, max_tokens=500, temperature=0.6, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"garmin_periodic_notify ai error: {e}")
+
+    text = block
+    if ai_txt:
+        text += "\n\n🎯 <b>AI-рекомендації</b>\n" + ai_txt
+
+    try:
+        K.send_card(text, _kb(), tag=TAG)
+        _journal("garmin_periodic", "Garmin: 3-годинне оновлення + AI-рекомендації")
+    except Exception as e:
+        K.log(TAG, f"garmin_periodic_notify send error: {e}")
+        return False
+    return True
+
+
 def coach_report(send: bool = True) -> str:
     """AI-КОУЧ — ранок. План на день на основі свіжих даних."""
     a = analytics(30)
-    parts = ["💪 <b>AI-КОУЧ — план на день</b>", "", facts_block(a)]
+    parts = ["💪 <b>AI-КОУЧ — план на день</b>", "", facts_block(a), "", garmin_block()]
     an = ai_analysis(a)
     if an:
         parts += ["", "🧠 <b>Аналіз</b>", an]
@@ -628,7 +731,7 @@ def stats_report() -> str:
     (не шаблонний фіксований список).
     """
     a = analytics(30)
-    parts = ["📊 <b>Здоров'я — факти, аналіз і дії</b>", "", facts_block(a)]
+    parts = ["📊 <b>Здоров'я — факти, аналіз і дії</b>", "", facts_block(a), "", garmin_block()]
     an = ai_analysis(a)
     if an:
         parts += ["", "🧠 <b>Глибокий аналіз</b>", an]

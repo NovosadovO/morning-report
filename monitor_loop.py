@@ -687,19 +687,20 @@ threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 
 def run_garmin_sync_watcher():
-    """Пряме підтягування з Garmin Connect (HRV/Body Battery/стрес/SpO2/VO2max),
-    яких немає в Apple Health export (запит Олега, 08.10). Кожні 2 години —
-    дані оновлюються протягом дня, частіше немає смислу й зайве навантаження
-    на Garmin API (ризик rate-limit)."""
-    print("=== Starting Garmin Connect sync watcher (every 2h) ===", flush=True)
+    """Пряме підтягування з Garmin Connect (кроки/сон/пульс/HRV/Body Battery/
+    стрес/SpO2/VO2max/вага) — ЄДИНЕ джерело даних здоров'я (запит Олега,
+    08.10 і 09.10). Кожні 3 години: живий запит (fetch_live) + одразу
+    надсилає Олегу блок даних з AI-рекомендаціями (healthai.garmin_periodic_notify).
+    Частіше немає смислу й зайве навантаження на Garmin API (ризик rate-limit)."""
+    print("=== Starting Garmin Connect sync watcher (every 3h) ===", flush=True)
     time.sleep(150)
     while True:
         try:
-            import garmin_sync
-            garmin_sync.sync_once()
+            import healthai
+            healthai.garmin_periodic_notify()
         except Exception as e:
             print(f"[garmin_sync] watcher error: {e}", flush=True)
-        time.sleep(7200)
+        time.sleep(10800)
 
 
 threading.Thread(target=run_garmin_sync_watcher, daemon=True).start()
@@ -1173,105 +1174,11 @@ def run_proactive_watcher():
 threading.Thread(target=run_proactive_watcher, daemon=True).start()
 
 
-def run_steps_watcher():
-    """StepsApp сповіщення + тижневий/місячний звіт кроків."""
-    print("=== Starting steps watcher ===", flush=True)
-    time.sleep(220)
-    import importlib.util, os as _os
-    spec = importlib.util.spec_from_file_location(
-        "steps", _os.path.join(_os.path.dirname(__file__), "steps.py"))
-    _steps_mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(_steps_mod)
+# StepsApp watcher видалено (запит Олега, 09.10) — дані здоров'я тільки
+# з Garmin Connect (run_garmin_sync_watcher вище, кожні 3 год).
 
-    # In-memory cache (після рестарту читаємо з GitHub через _steps_mod)
-    _sent_weekly  = None
-    _sent_monthly = None
-
-    while True:
-        try:
-            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-            h, m = now_local.hour, now_local.minute
-            weekday = now_local.weekday()  # 0=Mon, 6=Sun
-
-            # Щоденні сповіщення — кожну хвилину
-            _steps_mod.check_steps_notifications()
-
-            # Тижневий звіт — щонеділі о 20:00
-            week_key = now_local.strftime("%Y-W%W")
-            if weekday == 6 and h == 20 and m < 5 and _sent_weekly != week_key:
-                # Перевіряємо persistent state через GitHub щоб уникнути дублів після рестарту
-                try:
-                    _st, _ = _steps_mod._gh_load("steps_state.json")
-                    _st = _st or {}
-                except Exception:
-                    _st = {}
-                if _st.get("weekly_sent") == week_key:
-                    _sent_weekly = week_key  # синхронізуємо in-memory
-                else:
-                    print(f"[Steps] Sending weekly report...", flush=True)
-                    _steps_mod.send_weekly_report()
-                    _sent_weekly = week_key
-                    # Зберігаємо в GitHub
-                    try:
-                        _st["weekly_sent"] = week_key
-                        _, _sha = _steps_mod._gh_load("steps_state.json")
-                        _steps_mod._gh_save("steps_state.json", _st, _sha)
-                    except Exception as _e_sw:
-                        print(f"[Steps] save weekly state error: {_e_sw}", flush=True)
-                time.sleep(360)
-                continue
-
-            # Місячний звіт — 1-го числа о 10:00
-            month_key = now_local.strftime("%Y-%m")
-            if now_local.day == 1 and h == 10 and m < 5 and _sent_monthly != month_key:
-                try:
-                    _st2, _ = _steps_mod._gh_load("steps_state.json")
-                    _st2 = _st2 or {}
-                except Exception:
-                    _st2 = {}
-                if _st2.get("monthly_sent") == month_key:
-                    _sent_monthly = month_key
-                else:
-                    print(f"[Steps] Sending monthly report...", flush=True)
-                    _steps_mod.send_monthly_report()
-                    _sent_monthly = month_key
-                    try:
-                        _st2["monthly_sent"] = month_key
-                        _, _sha2 = _steps_mod._gh_load("steps_state.json")
-                        _steps_mod._gh_save("steps_state.json", _st2, _sha2)
-                    except Exception as _e_sm:
-                        print(f"[Steps] save monthly state error: {_e_sm}", flush=True)
-                time.sleep(360)
-                continue
-
-        except Exception as e:
-            print(f"Steps watcher error: {e}", flush=True)
-        time.sleep(60)
-
-
-threading.Thread(target=run_steps_watcher, daemon=True).start()
-
-
-# ─── QWatch watcher ───────────────────────────────────────────────────────────
-def run_qwatch_watcher():
-    """QWatch: нагадування о 19:02, тижневий (нд 20:30), місячний (1-го 09:05)."""
-    print("=== Starting QWatch watcher ===", flush=True)
-    time.sleep(70)
-    while True:
-        try:
-            import importlib.util, os as _os
-            spec = importlib.util.spec_from_file_location(
-                "qwatch", _os.path.join(_os.path.dirname(__file__), "qwatch.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            mod.check_qwatch_reminder()
-            mod.check_qwatch_weekly()
-            mod.check_qwatch_monthly()
-        except Exception as e:
-            print(f"QWatch watcher error: {e}", flush=True)
-        time.sleep(60)
-
-threading.Thread(target=run_qwatch_watcher, daemon=True).start()
+# QWatch watcher видалено (запит Олега, 09.10) — ручний paste QWatch-тексту
+# більше не підтримується, дані тільки з Garmin Connect.
 
 
 # ─── Assistant watcher (10хв/1г нагадування + вечір завтра + пропозиції) ─────

@@ -476,17 +476,21 @@ def _get_health_context():
         return "health дані недоступні"
 
 def _get_weight_context():
+    """09.10: раніше викликала weight.load_weight_data() — функції НЕ ІСНУЄ
+    в weight.py (тихо падало в except, завжди повертало "вага невідома" —
+    allctx вкидав цей рядок у КОЖЕН AI-промпт замарно). Тепер бере вагу через
+    healthai._weight_series() — той самий мердж, де Garmin Connect (qwatch_data.json)
+    перекриває ручний ввід (weight_data.json), запит Олега 09.10."""
     try:
         import sys
         sys.path.insert(0, os.path.dirname(__file__))
-        from weight import load_weight_data
-        data = load_weight_data()
-        if not data:
+        from healthai import _weight_series
+        series = _weight_series(30)
+        if not series:
             return "вага невідома"
-        last = sorted(data.keys())[-1]
-        w = data[last]["weight"]
-        diff = round(w - 78.0, 1)
-        return f"вага {w} кг (ціль 75 кг, залишилось -{diff} кг)"
+        last_day, w = series[-1]
+        diff = round(w - 75.0, 1)
+        return f"вага {w} кг за {last_day} (ціль 75 кг, залишилось {diff:+} кг)"
     except Exception:
         return "вага невідома"
 
