@@ -91,7 +91,8 @@
     "assistant": {
       "checked": 50,
       "issues": 17,
-      "fixed": 7
+      "fixed": 7,
+      "cut": 1
     },
     "proactive_ai": {
       "checked": 79,
@@ -559,6 +560,6 @@
     "checked": 100,
     "issues": 61,
     "fixed": 35,
-    "cut": 1
+    "cut": 2
   }
 }
