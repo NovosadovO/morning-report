@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-10t15_46_20_700025": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-10T15:46:20.700025"
+  },
   "selfact|2026-10-10t15_37_47_956559": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка Garmin Connect+ Monthly Plan р",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Buzz Sneaker Station інформує про оновлення пропозиції S&B для членів, що включає 20% знижку на оновлений вибір кросівок та од",
     "ts": "2026-10-10T13:03:05.843393"
-  },
-  "selfact|2026-10-10t13_02_00_789212": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Pla",
-    "ts": "2026-10-10T13:02:00.789212"
   }
 }
