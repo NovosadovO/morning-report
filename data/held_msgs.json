@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-10T23:01:25.480022",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-10T23:01:26.680600",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Deprecation] Gemini 3.5 Flash has been deprecated and auto-</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
@@ -431,6 +425,12 @@
       "ts": "2026-10-10T23:08:43.566563",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-10T23:10:01.267073",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
