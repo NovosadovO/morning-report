@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Невиконані звички за 27.09",
-      "detail": "КАЛЕНДАР НА 7 ДНІВ: 27.09: ... 18:10 💧 Вода (2л+) ❌; 18:10 🧖 Сауна ❌; 18:10 💈 Спрей для волосся ❌",
-      "module": "selfact",
-      "ts": "2026-09-27T23:08:34"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, сьогодні, 27.09, о 23:00 розпочався Соляр — 7-й дім:",
       "detail": "У календарі на 27.09 зазначено '23:00 Соляр — 7-й дім: Партнерство', і поточний час вже після 23:00.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026",
       "module": "selfact",
       "ts": "2026-10-10T19:16:48"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, оскільки ти зареєстрував Garmin Venu X1 та підписався",
+      "detail": "Лист від Garmin <garmin@registration.garmin.com> | Thanks for Registering Your Venu X1, Лист від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation, а також його запит 'Ти можеш зєднатися із моїм garmin connect для збору даних про здоров’я?'",
+      "module": "selfact",
+      "ts": "2026-10-10T19:16:53"
     }
   ]
 }
