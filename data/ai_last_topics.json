@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-10t10_53_27_343127": {
+    "topic": "foresight",
+    "gist": "Цілі за вагою та пробіжками зараз розходяться з діями. При вазі 83.6 кг (до цілі +8.6 кг) за цей тиждень пробіжок не було. До того ж, сьогодні зафіксовано лише ",
+    "ts": "2026-10-10T10:53:27.343127"
+  },
   "selfact|2026-10-10t10_42_38_137682": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan поч",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-10T08:08:57.080676"
-  },
-  "action_detect|2026-10-10t08_08_46_223350": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T08:08:46.223350"
   }
 }
