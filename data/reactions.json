@@ -6996,5 +6996,16 @@
     "about": "Олеже, чи потрібно мені додати нагадування про продовження п",
     "state": "closed",
     "ts": "2026-10-10T10:23:01"
+  },
+  "generic|t|підписка garmin connect активована": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "підписка garmin connect активована",
+    "title": "Підписка Garmin Connect+ активована",
+    "action": "ok",
+    "label": "👌 Прийняв",
+    "about": "Підписка Garmin Connect+ активована",
+    "state": "open",
+    "ts": "2026-10-10T11:33:08"
   }
 }
