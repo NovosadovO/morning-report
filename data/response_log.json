@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T18:03:01.828515+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-20"
-      }
-    },
-    {
       "ts": "2026-08-20T19:33:05.982575+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13899,6 +13889,12 @@
       "category": "confirm",
       "question": "gate_dl_cal: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-10T08:16:50.311508+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_cal_daac77c7ef"
     }
   ]
 }
