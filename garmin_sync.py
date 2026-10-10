@@ -145,6 +145,18 @@ def _fetch_today(client, day: str) -> dict:
         secs = dto.get("sleepTimeSeconds")
         if secs:
             payload["sleep_total_min"] = round(secs / 60)
+        deep_s  = dto.get("deepSleepSeconds")
+        rem_s   = dto.get("remSleepSeconds")
+        light_s = dto.get("lightSleepSeconds")
+        awake_s = dto.get("awakeSleepSeconds")
+        if deep_s is not None:
+            payload["sleep_deep_min"] = round(deep_s / 60)
+        if rem_s is not None:
+            payload["sleep_rem_min"] = round(rem_s / 60)
+        if light_s is not None:
+            payload["sleep_light_min"] = round(light_s / 60)
+        if awake_s is not None:
+            payload["sleep_awake_min"] = round(awake_s / 60)
     except Exception as e:
         print(f"[{TAG}] sleep error: {e}", flush=True)
 
@@ -184,7 +196,7 @@ def format_block(payload: dict, day: str, live: bool) -> str:
     'немає даних' (Олег просив ВСІ дані, щоб було видно прогалини)."""
     from datetime import datetime, timezone, timedelta
     now = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m.%Y %H:%M")
-    tag = "⚡ живий запит до Garmin саме зараз" if live else "з кешу (фоновий синк кожні 2г)"
+    tag = "⚡ живий запит до Garmin саме зараз" if live else "з кешу (фоновий синк кожні 3г)"
     lines = [f"⌚ <b>Garmin Connect — {day}</b>", f"<i>{tag}, {now}</i>", ""]
     for key, label, unit in FIELDS:
         v = payload.get(key)

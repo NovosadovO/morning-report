@@ -1,131 +1,70 @@
 #!/usr/bin/env python3
 """
-Трекер сну — парсить Apple Health XML (Sleep Cycle дані).
-Надає:
-  - get_last_night_sleep()  → рядок для ранкового звіту
-  - get_weekly_sleep_stats() → дані для тижневого підсумку
-  - parse_sleep_records()   → всі записи [{date, total_min, deep_min, rem_min, awake_min}]
-"""
+sleep.py — звіти по сну. ЄДИНЕ джерело — Garmin Connect (запит Олега, 09-10.10:
+"дані... тільки із Garmin Connect, всі інші джерела видали").
 
-import re
+Раніше парсив Apple Health XML (/tmp/health_export/apple_health_export/export.xml,
+джерело "Sleep Cycle") — цей код повністю видалений. Тепер читає qwatch_data.json
+через storage.load_health() — єдиний писач туди це garmin_sync.py (живий запит до
+Garmin Connect, фоновий синк кожні 3 год або команда /гармін).
+
+Надає (сигнатури незмінні — щоб bot.py / monitor.py / weekly_report.py / allctx.py
+працювали без правок):
+  - get_last_night_sleep()   → рядок для ранкового звіту, або None
+  - get_weekly_sleep_stats() → статистика за N днів для тижневого звіту, або None
+  - format_sleep_week_block() → готовий HTML-блок
+  - parse_sleep_records()    → всі дні з Garmin-даними по сну
+"""
 from datetime import datetime, timezone, timedelta
 
-HEALTH_XML = "/tmp/health_export/apple_health_export/export.xml"
 
-# Типи сну
-ASLEEP_TYPES = {
-    "HKCategoryValueSleepAnalysisAsleepCore",
-    "HKCategoryValueSleepAnalysisAsleepREM",
-    "HKCategoryValueSleepAnalysisAsleepDeep",
-}
-AWAKE_TYPE = "HKCategoryValueSleepAnalysisAwake"
-INBED_TYPE = "HKCategoryValueSleepAnalysisInBed"
-
-SLEEP_PATTERN = re.compile(
-    r'type="HKCategoryTypeIdentifierSleepAnalysis"[^>]*'
-    r'sourceName="Sleep Cycle"[^>]*'
-    r'startDate="([^"]+)"[^>]*'
-    r'endDate="([^"]+)"[^>]*'
-    r'value="([^"]+)"'
-)
-
-
-def _parse_dt(s):
-    """Парсить '2026-04-27 01:23:45 +0200' → datetime UTC."""
-    s = s.strip()
-    # Замінюємо пробіл перед timezone на +
-    s = re.sub(r' ([+-]\d{4})$', r'\1', s)
-    s = s.replace(' ', 'T', 1)
-    return datetime.fromisoformat(s).astimezone(timezone.utc)
+def _now_local():
+    return datetime.now(timezone.utc) + timedelta(hours=2)
 
 
 def parse_sleep_records():
     """
-    Парсить XML і повертає список записів:
+    Garmin-дані (qwatch_data.json) → список записів, тільки дні де Garmin
+    реально віддав сон:
     [{
-        'date': '2026-04-27',   # дата засипання (local)
-        'total_min': 420,       # загальний час у ліжку (хв)
-        'asleep_min': 380,      # реально спав (Core+REM+Deep)
-        'deep_min': 45,
-        'rem_min': 90,
-        'core_min': 245,
-        'awake_min': 40,
-        'bed_start': datetime,
-        'bed_end': datetime,
+        'date': '2026-10-10',
+        'total_min':  420,   # = asleep_min (Garmin sleepTimeSeconds — вже без "awake")
+        'asleep_min': 420,
+        'deep_min':   45,
+        'rem_min':    90,
+        'core_min':   245,   # light sleep
+        'awake_min':  10,
     }]
     """
     try:
-        with open(HEALTH_XML, "r", encoding="utf-8", errors="replace") as f:
-            content = f.read()
+        import storage
+        health = storage.load_health() or {}
     except Exception as e:
-        print(f"sleep.py: cannot read XML: {e}")
+        print(f"sleep.py: storage.load_health error: {e}")
+        return []
+    if not isinstance(health, dict):
         return []
 
-    # Групуємо записи по ночах
-    # Вважаємо "нова ніч" якщо > 3г перерва або дата змінилась після 12:00
-    sessions = {}  # date_str → list of (start, end, value)
-
-    for m in SLEEP_PATTERN.finditer(content):
-        start_s, end_s, value = m.groups()
-        try:
-            start = _parse_dt(start_s)
-            end   = _parse_dt(end_s)
-        except Exception:
-            continue
-
-        # Визначаємо дату "ночі": якщо засинаємо після 12:00 — це ніч поточного дня
-        # якщо до 12:00 — це продовження ночі попереднього дня
-        local_start = start + timedelta(hours=2)
-        if local_start.hour < 12:
-            night_date = (local_start - timedelta(days=1)).strftime("%Y-%m-%d")
-        else:
-            night_date = local_start.strftime("%Y-%m-%d")
-
-        if night_date not in sessions:
-            sessions[night_date] = []
-        sessions[night_date].append((start, end, value))
-
     records = []
-    for date_str, segs in sorted(sessions.items()):
-        if not segs:
+    for date_str, rec in sorted(health.items()):
+        if not isinstance(rec, dict):
             continue
-
-        asleep_min = 0
-        deep_min   = 0
-        rem_min    = 0
-        core_min   = 0
-        awake_min  = 0
-
-        bed_start = min(s for s, e, v in segs)
-        bed_end   = max(e for s, e, v in segs)
-        total_min = int((bed_end - bed_start).total_seconds() / 60)
-
-        for start, end, value in segs:
-            dur = int((end - start).total_seconds() / 60)
-            if value == "HKCategoryValueSleepAnalysisAsleepCore":
-                core_min   += dur
-                asleep_min += dur
-            elif value == "HKCategoryValueSleepAnalysisAsleepREM":
-                rem_min    += dur
-                asleep_min += dur
-            elif value == "HKCategoryValueSleepAnalysisAsleepDeep":
-                deep_min   += dur
-                asleep_min += dur
-            elif value == AWAKE_TYPE:
-                awake_min  += dur
-
+        total = rec.get("sleep_total_min")
+        if not total:
+            continue
+        deep  = rec.get("sleep_deep_min") or 0
+        rem   = rec.get("sleep_rem_min") or 0
+        core  = rec.get("sleep_light_min") or 0
+        awake = rec.get("sleep_awake_min") or 0
         records.append({
             "date":       date_str,
-            "total_min":  total_min,
-            "asleep_min": asleep_min,
-            "deep_min":   deep_min,
-            "rem_min":    rem_min,
-            "core_min":   core_min,
-            "awake_min":  awake_min,
-            "bed_start":  bed_start,
-            "bed_end":    bed_end,
+            "total_min":  int(total),
+            "asleep_min": int(total),
+            "deep_min":   int(deep),
+            "rem_min":    int(rem),
+            "core_min":   int(core),
+            "awake_min":  int(awake),
         })
-
     return records
 
 
@@ -140,17 +79,16 @@ def get_last_night_sleep():
     """
     Повертає рядок для ранкового звіту:
     '😴 Сон: 7г 15хв  (глибокий: 52хв, REM: 1г 30хв)'
+    None якщо Garmin ще не віддав дані по сну за сьогодні/вчора.
     """
     records = parse_sleep_records()
     if not records:
         return None
 
-    # Беремо найостанніший запис
     rec = records[-1]
-    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
-    yesterday = (datetime.now(timezone.utc) + timedelta(hours=2) - timedelta(days=1)).strftime("%Y-%m-%d")
+    today = _now_local().strftime("%Y-%m-%d")
+    yesterday = (_now_local() - timedelta(days=1)).strftime("%Y-%m-%d")
 
-    # Беремо тільки якщо це вчорашня або сьогоднішня ніч
     if rec["date"] not in (today, yesterday):
         return None
 
@@ -180,7 +118,7 @@ def get_last_night_sleep():
 
 def get_weekly_sleep_stats(days=7):
     """
-    Повертає статистику сну за останні N днів:
+    Статистика сну за останні N днів (тільки дні з Garmin-даними):
     {
         'records': [...],
         'avg_min': 420,
@@ -190,9 +128,10 @@ def get_weekly_sleep_stats(days=7):
         'best': {...},
         'worst': {...},
     }
+    None якщо за період взагалі немає Garmin-даних по сну.
     """
     records = parse_sleep_records()
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = _now_local()
     cutoff = (now_local - timedelta(days=days)).strftime("%Y-%m-%d")
 
     week_recs = [r for r in records if r["date"] >= cutoff]
@@ -217,14 +156,13 @@ def get_weekly_sleep_stats(days=7):
 
 
 def format_sleep_week_block():
-    """Повертає HTML-блок для тижневого звіту."""
+    """Готовий HTML-блок для тижневого звіту."""
     stats = get_weekly_sleep_stats(7)
     if not stats:
-        return "😴 <b>Сон</b>\nДані відсутні"
+        return "😴 <b>Сон</b>\nДані відсутні (Garmin ще не синхронізував сон за цей тиждень)"
 
     lines = ["😴 <b>СОН — тиждень</b>\n"]
 
-    # Середнє
     avg = stats["avg_min"]
     quality = "😊" if avg >= 480 else ("🙂" if avg >= 420 else ("😐" if avg >= 360 else "😩"))
     lines.append(f"Середній сон: <b>{_fmt_dur(avg)}</b>  {quality}")
@@ -232,7 +170,6 @@ def format_sleep_week_block():
     if stats["avg_deep"] > 0:
         lines.append(f"Глибокий: <b>{_fmt_dur(stats['avg_deep'])}</b>  |  REM: <b>{_fmt_dur(stats['avg_rem'])}</b>")
 
-    # Графік по днях
     lines.append("\n<b>По днях:</b>")
     for r in stats["records"]:
         h = r["asleep_min"] // 60
@@ -242,7 +179,6 @@ def format_sleep_week_block():
         date_short = r["date"][5:]  # MM-DD
         lines.append(f"<code>{date_short} {bar}</code> {_fmt_dur(r['asleep_min'])} {emoji}")
 
-    # Найкращий/найгірший
     lines.append(f"\n🏆 Найкраще: {_fmt_dur(stats['best']['asleep_min'])} ({stats['best']['date'][5:]})")
     lines.append(f"😩 Найгірше: {_fmt_dur(stats['worst']['asleep_min'])} ({stats['worst']['date'][5:]})")
 
@@ -250,7 +186,6 @@ def format_sleep_week_block():
 
 
 if __name__ == "__main__":
-    # Тест
     print(get_last_night_sleep())
     print()
     print(format_sleep_week_block())

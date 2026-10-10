@@ -25,8 +25,12 @@ TAG = "qwsync"
 # ── назви полів, які можуть прийти від Shortcuts / Health Auto Export ──
 _ALIASES = {
     "steps": ("steps", "step", "stepcount", "step_count", "кроки", "kroky"),
-    "sleep_total_min": ("sleep_min", "sleepminutes", "sleep_minutes", "sleepmin"),
+    "sleep_total_min": ("sleep_total_min", "sleep_min", "sleepminutes", "sleep_minutes", "sleepmin"),
     "sleep_hours": ("sleep_h", "sleep_hours", "sleephours", "sleep", "сон"),
+    "sleep_deep_min": ("sleep_deep_min", "deep_min", "deepsleepmin"),
+    "sleep_rem_min": ("sleep_rem_min", "rem_min", "remsleepmin"),
+    "sleep_light_min": ("sleep_light_min", "light_min", "lightsleepmin"),
+    "sleep_awake_min": ("sleep_awake_min", "awake_min", "awakesleepmin"),
     "hr_avg": ("hr", "hr_avg", "heart_rate", "heartrate", "bpm", "пульс"),
     "calories": ("calories", "kcal", "energy", "active_energy", "калорії"),
     "distance_km": ("distance_km", "distance", "km", "дистанція"),
@@ -94,7 +98,8 @@ def normalize(payload: dict) -> dict:
         rec["sleep_hours"] = round(rec["sleep_total_min"] / 60.0, 2)
 
     for k in ("steps", "hr_avg", "calories", "hrv", "spo2", "health_score",
-              "body_battery", "stress"):
+              "body_battery", "stress", "sleep_deep_min", "sleep_rem_min",
+              "sleep_light_min", "sleep_awake_min"):
         if k in rec and rec[k] is not None:
             rec[k] = int(round(rec[k]))
     for k in ("weight_kg", "distance_km", "vo2max"):
@@ -113,6 +118,9 @@ def normalize(payload: dict) -> dict:
         rec.pop("weight_kg")
     if rec.get("vo2max") is not None and not (15 <= rec["vo2max"] <= 95):
         rec.pop("vo2max")
+    for k in ("sleep_deep_min", "sleep_rem_min", "sleep_light_min", "sleep_awake_min"):
+        if rec.get(k) is not None and not (0 <= rec[k] <= 1080):
+            rec.pop(k)
 
     if not rec:
         return {}

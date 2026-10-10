@@ -924,11 +924,13 @@ def initiative(force: bool = False) -> int:
     return sent
 
 
-# ─── НАГАДУВАННЯ «НАДІШЛИ ДАНІ» ───────────────────────────────────────────────
-# Олег сам оновлює дані ~3 рази на день, але може забути. Якщо пройшло довше
-# REMINDER_STALE_HOURS без жодного нового запису (не день без даних узагалі —
-# саме мовчання від останнього повідомлення) — коуч сам просить скинути цифри,
-# поки день ще активний. Дедуп: не частіше REMINDER_GAP_HOURS, щоб не спамити.
+# ─── НАГАДУВАННЯ «НАДІШЛИ ДАНІ» — ВИМКНЕНО (запит Олега, 10.10.2026) ─────────
+# Раніше нагадувало вручну скинути цифри (вага/сон/кроки/пульс), якщо Олег
+# довго не писав у журнал ручного вводу (load_journal() — _hours_since_last_
+# capture). Тепер дані здоров'я повністю автоматичні з Garmin Connect
+# (garmin_sync.py, живий синк кожні 3 год + /гармін) — Олег НЕ повинен вручну
+# вводити дані, тож це нагадування тільки спамило й збивало з пантелику
+# (писало "давно тебе не бачив" одночасно з актуальним Garmin-блоком).
 
 def _hours_since_last_capture() -> float:
     items = load_journal()
@@ -942,38 +944,9 @@ def _hours_since_last_capture() -> float:
 
 
 def data_reminder(force: bool = False) -> bool:
-    """Сам нагадує надіслати дані, якщо довго мовчав. True — надіслано."""
-    if not force and _muted():
-        return False
-    now = _now()
-    if not force and not (HOURLY_START <= now.hour <= HOURLY_END):
-        return False
-
-    hours = _hours_since_last_capture()
-    if hours < REMINDER_STALE_HOURS:
-        return False
-
-    state = K.load(STATE_FILE, default={}) or {}
-    last = state.get("last_reminder")
-    if not force and last:
-        try:
-            gap = (now - datetime.fromisoformat(last)).total_seconds() / 3600
-            if gap < REMINDER_GAP_HOURS:
-                return False
-        except Exception:
-            pass
-
-    text = (
-        "📵 <b>Давно тебе не бачив у даних здоров'я</b>\n\n"
-        f"Останній запис — {hours:.0f} год тому. Ти зазвичай оновлюєш "
-        "приблизно 3 рази на день — скинь актуальні цифри (вага, сон, кроки, "
-        "пульс), щоб я не рахував аналіз і план дня на застарілому."
-    )
-    if K.send_card(text, _kb(), tag=TAG):
-        state["last_reminder"] = now.isoformat(timespec="seconds")
-        K.save(STATE_FILE, state)
-        _journal("reminder", "нагадування надіслати дані", f"{hours:.0f} год мовчання")
-        return True
+    """ВИМКНЕНО — Garmin Connect синкає дані автоматично, ручне нагадування
+    більше не потрібне (і було хибним — рахувало мовчання в ручному журналі,
+    а не свіжість Garmin-даних)."""
     return False
 
 

@@ -1,7 +1,7 @@
 """
-Офлайн-тест нових функцій healthai.py (запит Олега 21.09.2026):
-  1. data_reminder() — нагадування "надішли дані", якщо мовчав довше
-     REMINDER_STALE_HOURS, у активний час, не частіше REMINDER_GAP_HOURS.
+Офлайн-тест функцій healthai.py:
+  1. data_reminder() — ВИМКНЕНО (запит Олега, 10.10.2026, Garmin Connect синкає
+     дані автоматично) — перевіряємо, що завжди повертає False і нічого не шле.
   2. _health_emails()/health_mail_check() — фільтр листів про здоров'я
      (лікар/аптека/страхова/аналізи) і сповіщення про новий, з дедупом.
 
@@ -64,39 +64,15 @@ def _patch_common(monkeypatch=None):
 _patch_common()
 
 
-# ─── 1. data_reminder ───────────────────────────────────────────────────────
+# ─── 1. data_reminder — вимкнено ─────────────────────────────────────────────
 
-print("\n1. data_reminder() — мовчав менше REMINDER_STALE_HOURS → тиша")
-_store.data = {}
-_sent_cards.clear()
-H.load_journal = lambda: [{"ts": (_fixed_now[0] - timedelta(hours=2)).isoformat()}]
-check("не спрацьовує (2 год < 5)", H.data_reminder() is False)
-check("картку не надіслано", len(_sent_cards) == 0)
-
-print("\n2. data_reminder() — мовчав 6 год у активний час → нагадує")
-_store.data = {}
-_sent_cards.clear()
-H.load_journal = lambda: [{"ts": (_fixed_now[0] - timedelta(hours=6)).isoformat()}]
-check("спрацьовує", H.data_reminder() is True)
-check("картку надіслано", len(_sent_cards) == 1)
-check("текст згадує години", "6" in _sent_cards[0])
-
-print("\n3. data_reminder() — дедуп: повторно не частіше REMINDER_GAP_HOURS")
-check("повторний виклик одразу — тиша", H.data_reminder() is False)
-
-print("\n4. data_reminder() — поза активним часом (03:00) → тиша навіть якщо давно мовчав")
-_store.data = {}
-_sent_cards.clear()
-_fixed_now[0] = datetime(2026, 9, 21, 3, 0, 0)
-H.load_journal = lambda: [{"ts": (_fixed_now[0] - timedelta(hours=10)).isoformat()}]
-check("не спрацьовує вночі", H.data_reminder() is False)
-_fixed_now[0] = datetime(2026, 9, 21, 15, 0, 0)
-
-print("\n5. data_reminder() — жодного запису взагалі (порожній журнал) → все одно нагадує")
+print("\n1. data_reminder() — ВИМКНЕНО, завжди False, нічого не шле (навіть при 999г мовчання)")
 _store.data = {}
 _sent_cards.clear()
 H.load_journal = lambda: []
-check("порожній журнал теж триггерить", H.data_reminder() is True)
+check("завжди False", H.data_reminder() is False)
+check("force=True теж False", H.data_reminder(force=True) is False)
+check("картку не надіслано", len(_sent_cards) == 0)
 
 
 # ─── 2. листи про здоров'я ───────────────────────────────────────────────────
