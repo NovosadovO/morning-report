@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, нагадую, що сьогодні о 23:00 починається Соляр — 7-й",
-      "detail": "Подія '23:00 Соляр — 7-й дім: Партнерство' сьогодні, 27.09, є важливою і Олег міг її пропустити серед інших завдань.",
-      "module": "selfact",
-      "ts": "2026-09-27T20:01:41"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, також є нова вакансія Deputy Chief Technology Officer",
       "detail": "Нова вакансія від LinkedIn 'Deputy Chief Technology Officer - Trading Firm в Stealth' у Словаччині, яка стосується криптовалют, може бути актуальною для Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026', що є важливою фінансовою інформацією.",
       "module": "selfact",
       "ts": "2026-10-10T14:05:18"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-10T14:06:40"
     }
   ]
 }
