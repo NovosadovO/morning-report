@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T16:36:55.934433+00:00",
-      "category": "event_done",
-      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T16:36:56.660457+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -13896,6 +13890,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: 📝 Пропоную занотувати",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-10T08:07:12.342754+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_382d69a321"
     }
   ]
 }
