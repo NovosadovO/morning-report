@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-10t16_29_20_949931": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-10T16:29:20.949931"
+  },
+  "selfact|2026-10-10t16_25_31_093463": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка на Garmin Connect+ Monthly Pla",
+    "ts": "2026-10-10T16:25:31.093463"
+  },
   "email_ai_item|2026-10-10t16_24_20_500550": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від Investing.com є інформаційним бюлетенем, який обговорює пошук компаній-переможців у третьому кварталі до того, як вони оп",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
     "ts": "2026-10-10T14:02:20.678776"
-  },
-  "action_detect|2026-10-10t14_02_09_744543": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист та запланувати вечірній біг\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"actio",
-    "ts": "2026-10-10T14:02:09.744543"
-  },
-  "briefing_truthfix|2026-10-10t14_02_05_523355": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 14:02, ти на ранній зміні на заводі Minebea Mitsumi до 18:00.  **Що змінилось з моменту останнього повідомлення?** Ти натиснув «👀 Спостерігаю» на с",
-    "ts": "2026-10-10T14:02:05.523355"
   }
 }
