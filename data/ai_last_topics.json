@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-10-10t12_50_54_357795": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-10T12:50:54.357795"
+  },
+  "selfact|2026-10-10t12_46_39_388044": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan під",
+    "ts": "2026-10-10T12:46:39.388044"
+  },
   "openloop_promises|2026-10-10t12_45_23_112171": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від NAY Extra klub є подякою за останнє замовлення та пропозицією активувати членство в NAY Extra klub. Лист містить посилання",
     "ts": "2026-10-10T10:15:29.116311"
-  },
-  "email_ai_item|2026-10-10t10_14_13_818728": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Словаччині, зокрема дві позиції в компанії Bitcoin Suisse: Digital Asset Custod",
-    "ts": "2026-10-10T10:14:13.818728"
-  },
-  "selfact|2026-10-10t10_10_40_382480": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег підтвердив підписку на Garmin Connect+ Monthly Plan, яка почалася 10/6/2026 і буде коштувати €8.99 на місяць",
-    "ts": "2026-10-10T10:10:40.382480"
   }
 }
