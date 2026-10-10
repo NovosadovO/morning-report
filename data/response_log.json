@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:18:23.536886+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_7c77516d05"
-    },
-    {
       "ts": "2026-08-20T20:18:47.754189+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити листи Pelikan та Ionian Cruises",
@@ -13894,6 +13888,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-10T20:23:39.031867+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
