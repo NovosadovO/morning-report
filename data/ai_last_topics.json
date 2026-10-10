@@ -1,4 +1,54 @@
 {
+  "healthai|2026-10-10t08_05_26_689494": {
+    "topic": "healthai",
+    "gist": "☀️ Олеже, зараз 08:05, а ти на ранній зміні, тому свіжих даних по сну за сьогодні ще немає, останній відомий показник аж за 6 жовтня, 4 дні тому — це 18.5 годин",
+    "ts": "2026-10-10T08:05:26.689494"
+  },
+  "action_detect|2026-10-10t08_02_39_378062": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"До 15 жовтня потрібно опла",
+    "ts": "2026-10-10T08:02:39.378062"
+  },
+  "action_detect|2026-10-10t08_02_24_038430": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T08:02:24.038430"
+  },
+  "action_detect|2026-10-10t08_02_13_253142": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Фізична активність\", \"action_date\": \"2026-10-10\", \"action_time\": \"18:00\", \"action_summary\": \"Заплануй 20 хвилин фіз",
+    "ts": "2026-10-10T08:02:13.253142"
+  },
+  "briefing_truthfix|2026-10-10t08_02_07_910520": {
+    "topic": "briefing/truthfix",
+    "gist": "Сьогодні, 10 жовтня 2026 року, ти на ранній зміні (06:00–18:00), і це обмежує можливості для активних дій, але не для аналізу. Твоя вага 83.6 кг, що на 8.6 кг б",
+    "ts": "2026-10-10T08:02:07.910520"
+  },
+  "briefing|2026-10-10t08_02_02_281347": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Сьогоднішня рання зміна на заводі Minebea Mitsumi (06:00–18:00) не дозволяє активних дій, але є важливим фоном для твоїх цілей. Твоя вага 83.6 кг з",
+    "ts": "2026-10-10T08:02:02.281347"
+  },
+  "themes_ai_truthfix|2026-10-10t08_01_51_843458": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, на 08:01 10 жовтня 2026 року твій інвестиційний портфель показує зростання на $107 за останні 24 години, досягнувши $5,857. Це відбувається на тлі падінн",
+    "ts": "2026-10-10T08:01:51.843458"
+  },
+  "themes_ai|2026-10-10t08_01_46_669611": {
+    "topic": "themes_ai",
+    "gist": "Олеже, на 08:01 твій інвестиційний портфель показує зростання на $107 за останні 24 години, досягнувши $5,857, що є позитивним трендом на тлі загальної стагнаці",
+    "ts": "2026-10-10T08:01:46.669611"
+  },
+  "email_ai_item|2026-10-10t08_01_26_601689": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Railway є щотижневим оновленням продукту, що містить інформацію про зміни та нові функції, такі як спрощена назва додатку ",
+    "ts": "2026-10-10T08:01:26.601689"
+  },
+  "email_ai_item|2026-10-10t08_01_15_632263": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить 20 нових персоналізованих вакансій. Він пропонує переглянути їх та, за бажанням, змінити критерії пошу",
+    "ts": "2026-10-10T08:01:15.632263"
+  },
   "bills|2026-10-10t07_59_05_858919": {
     "topic": "bills",
     "gist": "[]",
@@ -248,55 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-10-10T05:13:25.527343"
-  },
-  "action_detect|2026-10-10t05_10_21_369285": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T05:10:21.369285"
-  },
-  "action_detect|2026-10-10t05_10_11_035480": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
-    "ts": "2026-10-10T05:10:11.035480"
-  },
-  "action_detect|2026-10-10t05_09_57_373638": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T05:09:57.373638"
-  },
-  "action_detect|2026-10-10t05_09_46_161801": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T05:09:46.161801"
-  },
-  "action_detect|2026-10-10t05_01_13_886450": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сплатити за квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Не забудь, що 15 жовтня",
-    "ts": "2026-10-10T05:01:13.886450"
-  },
-  "action_detect|2026-10-10t05_01_02_721136": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T05:01:02.721136"
-  },
-  "selfact|2026-10-10t05_00_58_832351": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, є нові сповіщення про вакансії від LinkedIn та Profesia.sk. Зокрема, може ",
-    "ts": "2026-10-10T05:00:58.832351"
-  },
-  "action_detect|2026-10-10t05_00_52_093862": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T05:00:52.093862"
-  },
-  "email_ai_item|2026-10-10t05_00_41_657139": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є щотижневим оновленням від Railway, що інформує про нові функції та зміни, які були впроваджені цього тижня. Серед оновлень: ",
-    "ts": "2026-10-10T05:00:41.657139"
-  },
-  "email_ai_item|2026-10-10t05_00_30_515451": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить 20 нових персоналізованих пропозицій роботи. Він також пропонує можливість змінити критерії пошуку або",
-    "ts": "2026-10-10T05:00:30.515451"
   }
 }
