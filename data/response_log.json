@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T16:50:59.621894+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T16:51:00.567360+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13896,6 +13890,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_note_198aceb382"
+    },
+    {
+      "ts": "2026-10-10T08:07:50.319930+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Переглянути прострочені дедлайни",
+      "answer": "yes"
     }
   ]
 }
