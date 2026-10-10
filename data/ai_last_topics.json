@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-10t17_51_41_899997": {
+    "topic": "foresight",
+    "gist": "Олеже, бачу, що твоя рання зміна добігає кінця (залишилося 9 хвилин). Вага хоч і падає за тиждень на 0.3 кг, все ще на 8.6 кг вище цілі 75 кг, а бігу цього тижн",
+    "ts": "2026-10-10T17:51:41.899997"
+  },
   "selfact|2026-10-10t17_43_50_589903": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan поч",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-10T15:01:59.822589"
-  },
-  "action_detect|2026-10-10t15_01_48_646568": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T15:01:48.646568"
   }
 }
