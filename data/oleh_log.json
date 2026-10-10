@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_d8bbuf9ks0sf1vuc2higie8lig_2026-09-17",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-17T21:11:39"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_6hairadt7nqsutaao4ee8o7984_2026-09-17",
       "label": "✅ Виконано",
       "ts": "2026-09-17T21:11:40"
@@ -7199,6 +7193,12 @@
       "data": "pa_skip_382d69a321",
       "label": "❌ Не треба",
       "ts": "2026-10-10T08:06:42"
+    },
+    {
+      "t": "btn",
+      "data": "cfm_y_b8ae957969",
+      "label": "✅ Так, відхили",
+      "ts": "2026-10-10T08:06:45"
     }
   ]
 }
