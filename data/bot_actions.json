@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "Зарас день. Я просто спав перед нічною зміною",
-      "module": "healthai",
-      "ts": "2026-09-27T15:51:10"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу, що сьогодні, 27.09, о 23:00 починається",
       "detail": "Подія в календарі: 27.09: 23:00 Соляр — 7-й дім: Партнерство. Олег міг не помітити цю астрологічну подію, яка може бути для нього важливою.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026",
       "module": "selfact",
       "ts": "2026-10-10T09:08:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, команда Avalanche опублікувала пост про те, як Avalan",
+      "detail": "Лист від Avalanche Team1 <avalancheteam1@substack.com> | How Avalanche Is Entering the Next Era of Tokenized Finance",
+      "module": "selfact",
+      "ts": "2026-10-10T09:08:09"
     }
   ]
 }
