@@ -1,4 +1,14 @@
 {
+  "proactive_ai|2026-10-10t18_56_04_176362": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Як зміна пройшла? Сподіваюсь, поїв добре після неї? Що цікавого плануєш на вечір?",
+    "ts": "2026-10-10T18:56:04.176362"
+  },
+  "openloop_promises|2026-10-10t18_47_23_380966": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-10T18:47:23.380966"
+  },
   "selfact|2026-10-10t18_46_10_214996": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка на Garmin Connect+ Monthly Pla",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Привіт, Олеже!  Бачу, ти досі на ранній зміні, і в цей час твій портфель зріс на $85, а NEAR показує вражаюче +13.1% за добу. На відміну від крипторинку, твоя в",
     "ts": "2026-10-10T16:18:47.135275"
-  },
-  "email_ai_item|2026-10-10t16_14_02_980829": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію Technical Project & Release Manager (m/f/d) - Hybrid у компанії Siemens Healthineers в",
-    "ts": "2026-10-10T16:14:02.980829"
-  },
-  "selfact|2026-10-10t16_09_48_585317": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав виплатну картку Minebea за вересень 2026 року. Лист від ehuman@minebeamitsumi.eu з темою '[WA",
-    "ts": "2026-10-10T16:09:48.585317"
   }
 }
