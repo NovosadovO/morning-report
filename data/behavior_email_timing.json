@@ -1,9 +1,4 @@
 {
-  "80109": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-10-02T08:03:41.573183+00:00"
-  },
   "80110": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.railway.app",
     "sender_raw": "Railway <hello@news.railway.app>",
     "seen_ts": "2026-10-09T23:04:28.068609+00:00"
+  },
+  "80575": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-10T00:15:41.945500+00:00"
   }
 }
