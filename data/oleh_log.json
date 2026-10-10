@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_a1oq0tmcm9h2bg1t6rn8e4a2i4_2026-09-19",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-19T20:35:31"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_cnvcg7pndkv6p7ceqq9aha9vok_2026-09-19",
       "label": "❌ Не виконано",
       "ts": "2026-09-19T20:35:33"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-10-10T20:23:37"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-10-10T20:23:59"
     }
   ]
 }
