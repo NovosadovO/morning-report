@@ -1,4 +1,14 @@
 {
+  "subs|2026-10-10t15_20_32_254844": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
+    "ts": "2026-10-10T15:20:32.254844"
+  },
+  "selfact|2026-10-10t15_06_41_219885": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка Garmin Connect+ Monthly Plan п",
+    "ts": "2026-10-10T15:06:41.219885"
+  },
   "healthai|2026-10-10t15_06_17_875711": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, сьогоднішня рання зміна (до 18:00) збігається з низьким показником енергії (body battery 29) та помірним стресом (28), що є нормальним для робочо",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-10T12:51:16.224655"
-  },
-  "mailcal_extract|2026-10-10t12_50_54_357795": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-10T12:50:54.357795"
-  },
-  "selfact|2026-10-10t12_46_39_388044": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan під",
-    "ts": "2026-10-10T12:46:39.388044"
   }
 }
