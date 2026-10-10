@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-10t12_26_49_518008": {
+    "topic": "foresight",
+    "gist": "Привіт, Олеже! Бачу, ти ще на ранковій зміні, але вже з понеділка починаються нічні, тому саме зараз важливо налаштуватися на новий рутин. Спробуй після сьогодн",
+    "ts": "2026-10-10T12:26:49.518008"
+  },
   "subs|2026-10-10t12_20_28_487117": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Оплатити квартиру (€500) до ",
     "ts": "2026-10-10T10:03:02.005922"
-  },
-  "action_detect|2026-10-10t10_02_50_892885": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T10:02:50.892885"
   }
 }
