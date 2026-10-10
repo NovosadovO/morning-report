@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:18:10.666919+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_8831a9e0cf"
-    },
-    {
       "ts": "2026-08-20T20:18:22.291904+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити лист від Pelikan.sk",
@@ -13894,6 +13888,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-10T20:23:31.406641+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
