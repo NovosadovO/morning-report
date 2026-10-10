@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-10t16_14_02_980829": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію Technical Project & Release Manager (m/f/d) - Hybrid у компанії Siemens Healthineers в",
+    "ts": "2026-10-10T16:14:02.980829"
+  },
   "selfact|2026-10-10t16_09_48_585317": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав виплатну картку Minebea за вересень 2026 року. Лист від ehuman@minebeamitsumi.eu з темою '[WA",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від відділу кадрів Minebea Slovakia s.r.o. містить виплатну відомість за вересень 2026 року в додатку. Це стандартна інформаці",
     "ts": "2026-10-10T14:01:14.386171"
-  },
-  "email_ai_item|2026-10-10t14_01_03_561547": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Temu є рекламною розсилкою, яка пропонує відвідати їхній вебсайт для перегляду рекомендованих товарів. У листі згадуєть",
-    "ts": "2026-10-10T14:01:03.561547"
   }
 }
