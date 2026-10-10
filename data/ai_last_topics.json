@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-10-10t03_00_57_226633": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Новий рахунок у пошті\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити новий рахун",
+    "ts": "2026-10-10T03:00:57.226633"
+  },
+  "action_detect|2026-10-10t03_00_46_176932": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T03:00:46.176932"
+  },
+  "email_ai_item|2026-10-10t03_00_36_090958": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Railway є щотижневим оновленням продукту, що містить інформацію про зміни та нові функції, такі як оновлення назви додатку",
+    "ts": "2026-10-10T03:00:36.090958"
+  },
+  "proactive_actions|2026-10-10t03_00_08_449016": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути новини Railway\",     \"date\": \"2026-10-10\",     \"time\": \"18:00\",     \"message\": \"Олеже, ти отрима",
+    "ts": "2026-10-10T03:00:08.449016"
+  },
+  "selfact|2026-10-10t02_57_47_844594": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверни увагу на листа від The Defiant. Там йдеться про заморожування Tether USDT, пов'язаних з крадіжкам",
+    "ts": "2026-10-10T02:57:47.844594"
+  },
   "mailcal_extract|2026-10-10t02_56_57_039773": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -273,30 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути виплатну відомість за вересень\",     \"date\": \"2026-10-10\",     \"time\": \"18:00\",     \"message\": \"",
     "ts": "2026-10-10T00:00:07.847330"
-  },
-  "subs|2026-10-09t23_58_44_775332": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
-    "ts": "2026-10-09T23:58:44.775332"
-  },
-  "mailcal_extract|2026-10-09t23_54_12_769813": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-09T23:54:12.769813"
-  },
-  "email_ai_item|2026-10-09t23_49_16_626975": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Emergent пропонує ідею проекту: створити редактор шаблонів для соціальних мереж за 30 хвилин. Лист містить лише технічн",
-    "ts": "2026-10-09T23:49:16.626975"
-  },
-  "selfact|2026-10-09t23_47_53_187761": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сауна не виконана\",     \"text\": \"Олеже, бачу, що сьогоднішня сауна (09.10) не була виконана. Можливо, ти захоч",
-    "ts": "2026-10-09T23:47:53.187761"
-  },
-  "bills|2026-10-09t23_44_32_258771": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"EUR4369771\",     \"due\": \"2026-11-05\", ",
-    "ts": "2026-10-09T23:44:32.258771"
   }
 }
