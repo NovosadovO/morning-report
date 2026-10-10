@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cw_moved_3c158c3db5",
-      "label": "⏭ Перенесли",
-      "ts": "2026-09-17T11:52:00"
-    },
-    {
-      "t": "btn",
       "data": "evdone_skip_done_2ama6jphv3edgnmhfhctvclbu8_2026-09-17",
       "label": "⏭ Перенести",
       "ts": "2026-09-17T11:52:08"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-10-10T05:10:53"
+    },
+    {
+      "t": "btn",
+      "data": "pa_skip_117215541d",
+      "label": "❌ Не треба",
+      "ts": "2026-10-10T05:11:53"
     }
   ]
 }
