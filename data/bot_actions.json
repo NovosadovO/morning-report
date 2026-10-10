@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, тобі надійшло нове сповіщення про вакансію Director,",
-      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Director, Operational Excellence' в Adven.",
-      "module": "selfact",
-      "ts": "2026-09-27T16:39:39"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, тобі надійшло нове сповіщення про вакансію Deputy Chi",
       "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Deputy Chief Technology Officer - Trading Firm'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Інформація про автоматичне продовження підписки на Garmin Connect+ та її вартість з 11/5/2026.",
       "module": "selfact",
       "ts": "2026-10-10T10:10:55"
+    },
+    {
+      "kind": "notify",
+      "what": "Виплата зарплати",
+      "detail": "Лист 'Minebea, Výplatná páska/Payslip 09/2026' є важливою фінансовою інформацією, яку Олег має переглянути.",
+      "module": "selfact",
+      "ts": "2026-10-10T10:42:43"
     }
   ]
 }
