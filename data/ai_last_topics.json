@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-10t10_01_25_203258": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від NAY Extra klub дякує за останнє замовлення та пропонує активувати членство в клубі. Це інформаційний лист без конкретних дат ч",
+    "ts": "2026-10-10T10:01:25.203258"
+  },
   "selfact|2026-10-10t09_55_22_583003": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan під",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає вакансії в крипто-сфері та у сфері Digital Asset Custody, про що свідчить отримання листа від ",
     "ts": "2026-10-10T07:36:32.121589"
-  },
-  "action_detect|2026-10-10t07_34_26_237809": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T07:34:26.237809"
   }
 }
