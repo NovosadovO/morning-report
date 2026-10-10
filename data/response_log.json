@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:18:57.455111+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити лист від Pelikan.sk",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T20:18:58.408126+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13894,6 +13888,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_1c3e714115"
+    },
+    {
+      "ts": "2026-10-10T20:32:34.616753+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_later_d94391d005"
     }
   ]
 }
