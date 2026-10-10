@@ -1,36 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-10T23:49:24.662434",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-10T23:50:32.372542",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-10T23:50:33.078974",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-10T23:51:47.112342",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-10T23:51:47.905290",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-10T23:52:58.700808",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -268,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80607"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T00:01:38.234613",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nagging people to eat healthily does not work</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80603"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80603"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80603"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80603"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80603"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80603"
             }
           ]
         ]
