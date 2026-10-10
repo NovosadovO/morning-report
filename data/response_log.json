@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T16:36:56.660457+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T16:36:57.637666+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13896,6 +13890,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_382d69a321"
+    },
+    {
+      "ts": "2026-10-10T08:07:12.343156+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_df47d47730"
     }
   ]
 }
