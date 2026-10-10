@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-10t18_30_52_456741": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій Garmin Connect+ Monthly Plan розпочався 6 жовтня і автоматично продовжиться після безкоштовного пер",
+    "ts": "2026-10-10T18:30:52.456741"
+  },
   "subs|2026-10-10t18_20_42_147517": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
     "ts": "2026-10-10T16:02:08.641481"
-  },
-  "action_detect|2026-10-10t16_01_57_903127": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд непрочитаних листів\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Сьогоднішня клю",
-    "ts": "2026-10-10T16:01:57.903127"
   }
 }
