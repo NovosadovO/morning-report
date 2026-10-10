@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Кроки за 29.09",
-      "detail": "У календарі на 29.09 є запис '08:38 аналіз основних даних кроки: сьогоднішній результат складає 4414 крокі'.",
-      "module": "selfact",
-      "ts": "2026-09-27T18:12:59"
-    },
-    {
-      "kind": "notify",
       "what": "Оновлення щодо підписки Runable",
       "detail": "Є інформація про невдалий платіж за підписку Runable, що вимагає уваги Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-10T11:23:12"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-10T11:23:41"
     }
   ]
 }
