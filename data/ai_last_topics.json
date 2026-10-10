@@ -1,4 +1,14 @@
 {
+  "subs|2026-10-10t12_20_28_487117": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
+    "ts": "2026-10-10T12:20:28.487117"
+  },
+  "selfact|2026-10-10t12_15_04_943682": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Garmin Connect+ підписка\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка на Garmin Connect+ Monthly Pla",
+    "ts": "2026-10-10T12:15:04.943682"
+  },
   "email_ai_item|2026-10-10t12_14_18_507770": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії Senior Project Manager (m/w/d) у Відні від компаній zerothird та FOUR PAWS.",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-10T10:02:50.892885"
-  },
-  "action_detect|2026-10-10t10_02_40_670625": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
-    "ts": "2026-10-10T10:02:40.670625"
-  },
-  "action_detect|2026-10-10t10_02_29_072563": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист у пошті\", \"action_date\": \"2026-10-10\", \"action_time\": \"10:00\", \"action_summary\": \"Пере",
-    "ts": "2026-10-10T10:02:29.072563"
   }
 }
