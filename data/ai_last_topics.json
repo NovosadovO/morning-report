@@ -1,4 +1,14 @@
 {
+  "healthai|2026-10-10t12_59_29_966666": {
+    "topic": "healthai",
+    "gist": "Привіт, Олеже!  Бачу, твоя вага зараз 83.6 кг, що на 8.6 кг більше від цільових 75 кг. За останні 30 днів вага зросла на 0.1 кг, і це відбувається на тлі дуже н",
+    "ts": "2026-10-10T12:59:29.966666"
+  },
+  "action_detect|2026-10-10t12_51_16_224655": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T12:51:16.224655"
+  },
   "mailcal_extract|2026-10-10t12_50_54_357795": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про здоров'я, біговий трекер",
     "ts": "2026-10-10T10:15:50.753460"
-  },
-  "action_detect|2026-10-10t10_15_39_592919": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T10:15:39.592919"
-  },
-  "email_ai_item|2026-10-10t10_15_29_116311": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від NAY Extra klub є подякою за останнє замовлення та пропозицією активувати членство в NAY Extra klub. Лист містить посилання",
-    "ts": "2026-10-10T10:15:29.116311"
   }
 }
