@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, твій сьогоднішній результат кроків складає 4414. Це по",
-      "detail": "У календарі на 29.09 зазначено: '08:38 аналіз основних даних кроки: сьогоднішній результат складає 4414 крокі'.",
-      "module": "selfact",
-      "ts": "2026-09-28T03:34:20"
-    },
-    {
-      "kind": "notify",
       "what": "Нові вакансії Production Supervisor",
       "detail": "Отримано лист від Сповіщення про вакансії LinkedIn <jobalerts-noreply@linkedin.com> про вакансію Production Supervisor в Convatec.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-10T20:24:48"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-10T20:25:18"
     }
   ]
 }
