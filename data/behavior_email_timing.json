@@ -1,9 +1,4 @@
 {
-  "80121": {
-    "sender": "noreply@mail.wirexapp.com",
-    "sender_raw": "Team Wirex <noreply@mail.wirexapp.com>",
-    "seen_ts": "2026-10-02T10:24:03.457382+00:00"
-  },
   "80120": {
     "sender": "updates@allevents.in",
     "sender_raw": "AllEvents <updates@allevents.in>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-10-10T11:53:52.678716+00:00"
+  },
+  "80596": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-10T12:14:20.521204+00:00"
   }
 }
