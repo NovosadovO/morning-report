@@ -1,4 +1,29 @@
 {
+  "calendar|2026-10-10t05_15_00_183230": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, ти вже прокинувся та готуєшся до ранньої зміни, що розпочнеться о 06:00. Це чудово, що ти не відкладаєш підйом, особливо зважаючи на твою м",
+    "ts": "2026-10-10T05:15:00.183230"
+  },
+  "openloop_promises|2026-10-10t05_13_25_527343": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-10T05:13:25.527343"
+  },
+  "action_detect|2026-10-10t05_10_21_369285": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T05:10:21.369285"
+  },
+  "action_detect|2026-10-10t05_10_11_035480": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
+    "ts": "2026-10-10T05:10:11.035480"
+  },
+  "action_detect|2026-10-10t05_09_57_373638": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-10T05:09:57.373638"
+  },
   "action_detect|2026-10-10t05_09_46_161801": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -273,30 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Словаччині. Зокрема, пропонується позиція Supply Chain Co-Founder / Head of Gro",
     "ts": "2026-10-10T02:15:38.856712"
-  },
-  "openloop_promises|2026-10-10t02_11_53_321562": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-10T02:11:53.321562"
-  },
-  "selfact|2026-10-10t02_10_34_636445": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу: платіж до Runable на $10.00 був невдалим. Потрібно ",
-    "ts": "2026-10-10T02:10:34.636445"
-  },
-  "action_detect|2026-10-10t02_01_47_476528": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Перевірити, чи є €500 на рах",
-    "ts": "2026-10-10T02:01:47.476528"
-  },
-  "action_detect|2026-10-10t02_01_35_302366": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T02:01:35.302366"
-  },
-  "action_detect|2026-10-10t02_01_24_360130": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати прострочені підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізувати п",
-    "ts": "2026-10-10T02:01:24.360130"
   }
 }
