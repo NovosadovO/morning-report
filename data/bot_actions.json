@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-27T20:01:20"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, нагадую, що сьогодні о 23:00 починається Соляр — 7-й",
       "detail": "Подія '23:00 Соляр — 7-й дім: Партнерство' сьогодні, 27.09, є важливою і Олег міг її пропустити серед інших завдань.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від OpenAI <noreply@tm.openai.com> | New sign-in to your OpenAI account та від ChatGPT <noreply@tm.openai.com> | Ваш тимчасовий код для входу в ChatGPT",
       "module": "selfact",
       "ts": "2026-10-10T13:49:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, тобі прийшов лист від Minebea з виплатною квитанцією/",
+      "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026', що є важливою фінансовою інформацією.",
+      "module": "selfact",
+      "ts": "2026-10-10T14:05:18"
     }
   ]
 }
