@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:18:08.428591+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T20:18:09.368426+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13894,6 +13888,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Перегляд непрочитаних листів",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-10T16:21:07.068168+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_51de9993a7"
     }
   ]
 }
