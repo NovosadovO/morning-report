@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Звичка: Спрей для волосся",
-      "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.09: 18:10 💈 Спрей для волосся ❌",
-      "module": "selfact",
-      "ts": "2026-09-28T01:13:44"
-    },
-    {
-      "kind": "notify",
       "what": "Отримано $53 на Aave",
       "detail": "Лист від Aave <no-reply@aave.com> | Ви отримали $53",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 09/2026'.",
       "module": "selfact",
       "ts": "2026-10-10T20:19:13"
+    },
+    {
+      "kind": "notify",
+      "what": "Оплатити квартиру 15.10",
+      "detail": "У календарі на 15.10 є запис '08:00 Оплатити квартиру — €500'.",
+      "module": "selfact",
+      "ts": "2026-10-10T20:19:17"
     }
   ]
 }
