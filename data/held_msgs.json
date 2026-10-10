@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-10T22:01:44.702457",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-10T22:02:07.073911",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-10T22:15:35.927388",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Key account Manager – Západné Slovensko в Sandoz – вакансія, яка може »\n\n<i>«Сповіщення про вакансії за запитом Менеджер з продажу в Bratislava Metropolitan AreaКерувати сповіщеннями про вакансії: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3B7JRMnXT5RZGZQgTUsINEpA%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=3px_-vkg6ZFcs1&amp;trk=em...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80609"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80609"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80609"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80609"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80609"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80609"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
