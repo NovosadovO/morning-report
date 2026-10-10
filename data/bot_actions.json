@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, також є нова вакансія Deputy Chief Technology Officer",
-      "detail": "Нова вакансія від LinkedIn 'Deputy Chief Technology Officer - Trading Firm в Stealth' у Словаччині, яка стосується криптовалют, може бути актуальною для Олега.",
-      "module": "selfact",
-      "ts": "2026-09-27T20:02:09"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-10T14:06:40"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-10",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-10T14:23:44"
     }
   ]
 }
