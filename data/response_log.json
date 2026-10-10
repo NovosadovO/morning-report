@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T16:51:01.692127+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_3ef3cc1a43"
-    },
-    {
       "ts": "2026-08-20T16:57:17.469686+00:00",
       "category": "chat",
       "question": "перевірка памяті: я на нічній зміні цього тижня, біг переношу на субботу",
@@ -13896,6 +13890,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_b0892e5028"
+    },
+    {
+      "ts": "2026-10-10T08:14:12.542021+00:00",
+      "category": "deadline_found",
+      "question": "Garmin Connect+ — скасування підписки",
+      "answer": "2026-11-04",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
