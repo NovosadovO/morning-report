@@ -14400,7 +14400,24 @@
     "action": "calrem_skip",
     "pid": "gen_1791626586454",
     "subject": "Перевірити прострочену оплату",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 113146,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1791626586454"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1791626586454"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-10-10T12:51:35.754011+00:00"
   }
 }
