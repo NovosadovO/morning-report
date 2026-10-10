@@ -2,24 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-09-19T20:35:16"
-    },
-    {
-      "t": "btn",
-      "data": "cal_all_done_today",
-      "label": "✅ Виконано",
-      "ts": "2026-09-19T20:35:19"
-    },
-    {
-      "t": "btn",
-      "data": "evdone_no_done_1ia51i1cs6ll4tgl956spc7a3k_2026-09-19",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-19T20:35:30"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_a1oq0tmcm9h2bg1t6rn8e4a2i4_2026-09-19",
       "label": "❌ Не виконано",
       "ts": "2026-09-19T20:35:31"
@@ -7199,6 +7181,24 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-10-10T20:23:23"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-10-10T20:23:23"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-10-10T20:23:26"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-10T20:23:27"
     }
   ]
 }
