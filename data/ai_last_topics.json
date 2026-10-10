@@ -1,4 +1,34 @@
 {
+  "healthai|2026-10-10t19_05_51_213736": {
+    "topic": "healthai",
+    "gist": "📉 Бачу, що вага сьогодні, 83.6 кг, продовжує триматися вище цілі у 75 кг, а падіння лише на 0.3 кг за тиждень є дуже повільним. Чи розглядаєш ти зміну харчуванн",
+    "ts": "2026-10-10T19:05:51.213736"
+  },
+  "action_detect|2026-10-10t19_01_32_437577": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є зведенням даних про здоров'я, біговий тре",
+    "ts": "2026-10-10T19:01:32.437577"
+  },
+  "selfact|2026-10-10t19_01_26_298555": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка на Garmin Connect+ Monthl",
+    "ts": "2026-10-10T19:01:26.298555"
+  },
+  "action_detect|2026-10-10t19_01_21_294806": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стратегія\", \"action_date\": \"2026-10-10\", \"action_time\": \"19:00\", \"action_summary\": \"Вечір для стратегії, оскільки З",
+    "ts": "2026-10-10T19:01:21.294806"
+  },
+  "action_detect|2026-10-10t19_01_10_478736": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T19:01:10.478736"
+  },
+  "email_ai_item|2026-10-10t19_01_00_819045": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист підтверджує активацію безкоштовного пробного періоду місячного плану Garmin Connect+, який розпочався 6 жовтня 2026 року. П",
+    "ts": "2026-10-10T19:01:00.819045"
+  },
   "email_ai_item|2026-10-10t19_00_49_107780": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист містить виплатну відомість за вересень 2026 року від Minebea Slovakia s.r.o. Вона знаходиться у вкладенні до листа. Лист є ста",
@@ -268,35 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE/truthfix",
     "gist": "Олеже, бачу, що зараз, поки ти на ранковій зміні до 18:00, ринок показує цікаві рухи, але дані застарілі, оскільки вони з кешу. Твій портфель, який становить $5",
     "ts": "2026-10-10T16:31:22.958860"
-  },
-  "msg_crypto_move|2026-10-10t16_31_12_198835": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  Схоже, поки ти на ранковій зміні, ринок криптовалют відзначився цікавими рухами, що потребують уваги. Особливо виділяються ADA, яка підскочила ",
-    "ts": "2026-10-10T16:31:12.198835"
-  },
-  "action_detect|2026-10-10t16_29_20_949931": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T16:29:20.949931"
-  },
-  "selfact|2026-10-10t16_25_31_093463": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна підписка на Garmin Connect+ Monthly Pla",
-    "ts": "2026-10-10T16:25:31.093463"
-  },
-  "email_ai_item|2026-10-10t16_24_20_500550": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист від Investing.com є інформаційним бюлетенем, який обговорює пошук компаній-переможців у третьому кварталі до того, як вони оп",
-    "ts": "2026-10-10T16:24:20.500550"
-  },
-  "people|2026-10-10t16_20_26_264204": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"ruslanakozancin@gmail.com\",     \"name\": \"Ruslana Kozanchyn\",     \"relation\": \"інше\",     \"topics\": [       \"конференція фінансовий р",
-    "ts": "2026-10-10T16:20:26.264204"
-  },
-  "action_detect|2026-10-10t16_20_12_917988": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про вакансію, пам'ять про Ол",
-    "ts": "2026-10-10T16:20:12.917988"
   }
 }
