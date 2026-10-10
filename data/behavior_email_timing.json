@@ -1,9 +1,4 @@
 {
-  "80116": {
-    "sender": "linas@substack.com",
-    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
-    "seen_ts": "2026-10-02T09:33:17.247130+00:00"
-  },
   "80117": {
     "sender": "marketpulse@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-10T10:14:21.901541+00:00"
+  },
+  "80590": {
+    "sender": "newsletter@buzzsneakers-promo.com",
+    "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
+    "seen_ts": "2026-10-10T11:03:06.629813+00:00"
   }
 }
