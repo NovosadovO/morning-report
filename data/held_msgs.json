@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-10T23:04:04.650113",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-10T23:04:11.056549",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Bolt Global</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Book smart, book ahead»\n\n<i>«Plan ahead, travel\nconfidently      96             Bolt ( # )\n\n******************************\nPlan ahead, travel confidently\n******************************\n\nWhen being on time matters, schedule your ride ahead of time —\nfrom 30 minutes to 90 days in advance.\n\nSchedule a ride \n( https:...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -182,6 +176,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-10T23:16:24.843215",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[Deprecation] Gemini 3.5 Flash has been deprecated and auto-</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80610"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80610"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80610"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80610"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80610"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80610"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
