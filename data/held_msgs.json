@@ -211,39 +211,39 @@
       }
     },
     {
-      "ts": "2026-10-10T23:31:28.434347",
+      "ts": "2026-10-10T23:31:29.869677",
       "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80608"
+              "callback_data": "email_reply_80607"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_80608"
+              "callback_data": "email_describe_80607"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_80608"
+              "callback_data": "email_star_80607"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_80608"
+              "callback_data": "email_cal_80607"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_80608"
+              "callback_data": "email_keep_80607"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_80608"
+              "callback_data": "email_delete_80607"
             }
           ]
         ]
