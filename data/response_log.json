@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:19:08.547450+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T20:19:09.796249+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13894,6 +13888,12 @@
       "category": "confirm",
       "question": "gx_later: здоров'я і вага",
       "answer": "no"
+    },
+    {
+      "ts": "2026-10-10T20:32:44.156030+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_dbe2b6c88c"
     }
   ]
 }
