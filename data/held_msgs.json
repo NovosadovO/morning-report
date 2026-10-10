@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T01:16:04.013618",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80605"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80605"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80605"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80605"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80605"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80605"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T01:16:05.335876",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Crypto Biz: Wealthy investors are moving ahead of their cryp</b>\n👤 Cointelegraph через LinkedIn&lt;newsletters-noreply@l",
@@ -233,6 +194,12 @@
       "ts": "2026-10-11T01:19:45.789264",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 12.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T01:19:46.647490",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 12.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
