@@ -1,4 +1,19 @@
 {
+  "deadlines|2026-10-10t14_20_32_362901": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80341\",     \"kind\": \"contract\",     \"title\": \"Garmin Connect+ - скасування підписки\",     \"org\": \"Garmin\",     \"deadline\": \"2026-11-04",
+    "ts": "2026-10-10T14:20:32.362901"
+  },
+  "openloop_promises|2026-10-10t14_15_25_735587": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-10T14:15:25.735587"
+  },
+  "email_ai_item|2026-10-10t14_14_28_376399": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію Technical Project & Release Manager (m/f/d) - Hybrid - Bratislava/Žilina/Košice в комп",
+    "ts": "2026-10-10T14:14:28.376399"
+  },
   "email_ai_item|2026-10-10t14_14_17_534094": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є щоденним крипто-дайджестом від Олега Безуглого через LinkedIn за 10 жовтня. Він містить новини про криптовалюти, зокрема про",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-10T12:03:23.434891"
-  },
-  "action_detect|2026-10-10t12_03_12_816728": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити прострочену оплату\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"До кінця зміни, під ча",
-    "ts": "2026-10-10T12:03:12.816728"
-  },
-  "action_detect|2026-10-10t12_03_01_714851": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є зведенням даних про здоров'я, біговий тре",
-    "ts": "2026-10-10T12:03:01.714851"
-  },
-  "action_detect|2026-10-10t12_02_50_568202": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
-    "ts": "2026-10-10T12:02:50.568202"
   }
 }
