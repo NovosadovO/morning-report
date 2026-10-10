@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-10T22:56:55.567665",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-10T22:58:07.990890",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -399,6 +393,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-10T23:04:11.056549",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Bolt Global</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Book smart, book ahead»\n\n<i>«Plan ahead, travel\nconfidently      96             Bolt ( # )\n\n******************************\nPlan ahead, travel confidently\n******************************\n\nWhen being on time matters, schedule your ride ahead of time —\nfrom 30 minutes to 90 days in advance.\n\nSchedule a ride \n( https:...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80611"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80611"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80611"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80611"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80611"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80611"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
