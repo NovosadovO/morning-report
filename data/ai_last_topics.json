@@ -1,4 +1,29 @@
 {
+  "selfact|2026-10-10t10_42_38_137682": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan поч",
+    "ts": "2026-10-10T10:42:38.137682"
+  },
+  "selfact|2026-10-10t10_26_40_916527": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Garmin Connect+\",     \"text\": \"Олеже, твоя безкоштовна пробна версія Garmin Connect+ Monthly Plan поч",
+    "ts": "2026-10-10T10:26:40.916527"
+  },
+  "action_detect|2026-10-10t10_23_07_352826": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-10T10:23:07.352826"
+  },
+  "action_detect|2026-10-10t10_15_50_753460": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про здоров'я, біговий трекер",
+    "ts": "2026-10-10T10:15:50.753460"
+  },
+  "action_detect|2026-10-10t10_15_39_592919": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T10:15:39.592919"
+  },
   "email_ai_item|2026-10-10t10_15_29_116311": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від NAY Extra klub є подякою за останнє замовлення та пропозицією активувати членство в NAY Extra klub. Лист містить посилання",
@@ -273,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
     "ts": "2026-10-10T08:08:46.223350"
-  },
-  "action_detect|2026-10-10t08_08_35_014244": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T08:08:35.014244"
-  },
-  "action_detect|2026-10-10t08_08_24_322793": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T08:08:24.322793"
-  },
-  "action_detect|2026-10-10t08_08_13_109580": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T08:08:13.109580"
-  },
-  "action_detect|2026-10-10t08_07_24_442134": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 10 жо",
-    "ts": "2026-10-10T08:07:24.442134"
-  },
-  "selfact|2026-10-10t08_07_03_866832": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, є нові вакансії, які можуть тебе зацікавити:\\n- Junior Product Consultant ",
-    "ts": "2026-10-10T08:07:03.866832"
-  },
-  "action_detect|2026-10-10t10_23_07_352826": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-10T10:23:07.352826"
-  },
-  "action_detect|2026-10-10t10_15_50_753460": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про здоров'я, біговий трекер",
-    "ts": "2026-10-10T10:15:50.753460"
-  },
-  "action_detect|2026-10-10t10_15_39_592919": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T10:15:39.592919"
   }
 }
