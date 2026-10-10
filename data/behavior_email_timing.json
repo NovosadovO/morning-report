@@ -1,9 +1,4 @@
 {
-  "80113": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-10-02T09:02:32.038118+00:00"
-  },
   "80114": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@news.crypto.com",
     "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
     "seen_ts": "2026-10-10T06:26:45.390345+00:00"
+  },
+  "80584": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Financial Times через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-10T07:45:51.511374+00:00"
   }
 }
