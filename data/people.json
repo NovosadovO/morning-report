@@ -489,15 +489,17 @@
     "pinged_at": ""
   },
   "oleg.novosadov@nmb-minebea.com": {
-    "name": "Олег Новосадов",
+    "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "робота Minebea"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Оскільки Олег сам собі надіслав листа з темою 'Д' і не отримав відповіді, а зміст листа невідомий, подальші дії неможливі.",
-    "ping_in_days": -1,
+    "next_step": "Запитати Олега, що він мав на увазі, надіславши лист з темою 'Д'.",
+    "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-09-24",
