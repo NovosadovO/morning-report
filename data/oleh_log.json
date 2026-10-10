@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_stn1e6cav6c7c3urebaobtvol8_2026-09-18",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-18T20:03:17"
-    },
-    {
-      "t": "btn",
       "data": "rx_bought_e9f1aa9023",
       "label": "📈 Купив",
       "ts": "2026-09-18T21:23:46"
@@ -7199,6 +7193,12 @@
       "data": "rx_ok_f30da4bcb8",
       "label": "👌 Прийняв",
       "ts": "2026-10-10T16:20:15"
+    },
+    {
+      "t": "btn",
+      "data": "rx_done_2cf2c72249",
+      "label": "✅ Зробив",
+      "ts": "2026-10-10T16:20:22"
     }
   ]
 }
