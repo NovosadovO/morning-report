@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, тобі надійшло нове сповіщення про вакансію Deputy Chi",
-      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Deputy Chief Technology Officer - Trading Firm'.",
-      "module": "selfact",
-      "ts": "2026-09-27T16:39:44"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Лист 'Minebea, Výplatná páska/Payslip 09/2026' є важливою фінансовою інформацією, яку Олег має переглянути.",
       "module": "selfact",
       "ts": "2026-10-10T10:42:43"
+    },
+    {
+      "kind": "notify",
+      "what": "Підписка Garmin Connect+ активована",
+      "detail": "Отримано лист від Garmin <GarminServicesBilling@garmin.com> з темою 'Garmin Connect+ Subscription Confirmation', де вказано дату початку підписки та майбутні списання.",
+      "module": "selfact",
+      "ts": "2026-10-10T10:58:11"
     }
   ]
 }
