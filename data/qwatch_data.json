@@ -1549,12 +1549,14 @@
     "vo2max": 41.7
   },
   "2026-10-10": {
-    "hr_avg": 56,
+    "hr_avg": 53,
     "spo2": 97,
-    "body_battery": 36,
-    "stress": 24,
+    "body_battery": 64,
+    "stress": 20,
     "date": "2026-10-10",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-10 03:31"
+    "saved_at": "2026-10-10 05:31",
+    "steps": 224,
+    "hrv": 42
   }
 }
