@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу, що платіж до Runable на $10.00 був невда",
-      "detail": "У підписках є запис про невдалий платіж Runable з приміткою 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.'.",
-      "module": "selfact",
-      "ts": "2026-09-27T19:45:10"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 13.10 є дві події, що стосуються Finweek Bratislava, і Олег зазначив, що хоче перевірити можливість перегляду онлайн.",
       "module": "selfact",
       "ts": "2026-10-10T13:33:52"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на листи від OpenAI та ChatGPT про новий",
+      "detail": "Свіжі листи від OpenAI <noreply@tm.openai.com> | New sign-in to your OpenAI account та від ChatGPT <noreply@tm.openai.com> | Ваш тимчасовий код для входу в ChatGPT",
+      "module": "selfact",
+      "ts": "2026-10-10T13:49:46"
     }
   ]
 }
