@@ -1,4 +1,24 @@
 {
+  "selfact|2026-10-10t16_41_20_098842": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій безкоштовний пробний період Garmin Connect+ розпочався 6 жовтня 2026 року і автоматично продовжитьс",
+    "ts": "2026-10-10T16:41:20.098842"
+  },
+  "action_detect|2026-10-10t16_31_31_022908": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Оплатити квартиру ",
+    "ts": "2026-10-10T16:31:31.022908"
+  },
+  "msg_crypto_move_truthfix|2026-10-10t16_31_22_958860": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Олеже, бачу, що зараз, поки ти на ранковій зміні до 18:00, ринок показує цікаві рухи, але дані застарілі, оскільки вони з кешу. Твій портфель, який становить $5",
+    "ts": "2026-10-10T16:31:22.958860"
+  },
+  "msg_crypto_move|2026-10-10t16_31_12_198835": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 📈  Схоже, поки ти на ранковій зміні, ринок криптовалют відзначився цікавими рухами, що потребують уваги. Особливо виділяються ADA, яка підскочила ",
+    "ts": "2026-10-10T16:31:12.198835"
+  },
   "action_detect|2026-10-10t16_29_20_949931": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
@@ -278,25 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin Connect+\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"EUR4369771\",     \"due\": \"2026",
     "ts": "2026-10-10T14:05:45.010920"
-  },
-  "selfact|2026-10-10t14_05_12_269364": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі прийшов лист від Minebea з виплатною квитанцією/payslip за вересень 2026 року.\",     \"why\": \"Надійш",
-    "ts": "2026-10-10T14:05:12.269364"
-  },
-  "action_detect|2026-10-10t14_02_42_605002": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пройтися після зміни\", \"action_date\": \"2026-10-10\", \"action_time\": \"18:00\", \"action_summary\": \"Після закінчення змі",
-    "ts": "2026-10-10T14:02:42.605002"
-  },
-  "action_detect|2026-10-10t14_02_34_656739": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є зведенням даних про здоров'я, біговий тре",
-    "ts": "2026-10-10T14:02:34.656739"
-  },
-  "action_detect|2026-10-10t14_02_20_678776": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити квартиру на су",
-    "ts": "2026-10-10T14:02:20.678776"
   }
 }
