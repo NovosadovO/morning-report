@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T00:01:31.269583",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Key account Manager – Západné Slovensko в Sandoz – вакансія,</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80609"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80609"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80609"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80609"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80609"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80609"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T00:01:33.968582",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -266,6 +227,12 @@
       "ts": "2026-10-11T00:04:38.378489",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T00:05:48.718290",
+      "kind": "MSG_FORESIGHT_TRIP",
+      "text": "✈️ <b>ПОЇЗДКА: Bratislava</b> — через 3 дн. (14.10–17.10)\n\n🧳 <b>ЩО ВЗЯТИ</b>\n• одяг на 1…20°C\n• кофта, вітровка, закрите взуття\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 <b>ПОГОДА</b>\n• 14.10: 15°/4°; 15.10: 19°/6°; 16.10: 19°/1°; 17.10: 20°/5°\n\n✅ <b>ДО ВИЛЬОТУ</b>\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
       "keyboard": null
     }
   ]
