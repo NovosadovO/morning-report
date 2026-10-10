@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-09-18T20:02:16"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-09-18T20:02:17"
@@ -7199,6 +7193,12 @@
       "data": "calrem_skip_crypto_move_1791624647",
       "label": "❌ Не треба",
       "ts": "2026-10-10T11:34:35"
+    },
+    {
+      "t": "btn",
+      "data": "am_later_409ad5f680",
+      "label": "⏰ Пізніше",
+      "ts": "2026-10-10T12:51:07"
     }
   ]
 }
