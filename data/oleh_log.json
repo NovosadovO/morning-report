@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_all_done_today",
-      "label": "✅ Виконано",
-      "ts": "2026-09-19T20:35:19"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_1ia51i1cs6ll4tgl956spc7a3k_2026-09-19",
       "label": "❌ Не виконано",
       "ts": "2026-09-19T20:35:30"
@@ -7205,12 +7199,6 @@
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-10-10T20:23:26"
-    },
-    {
-      "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-10-10T20:23:27"
     }
   ]
 }
