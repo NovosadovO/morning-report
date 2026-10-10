@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, сьогодні, 27.09, о 23:00 розпочався Соляр — 7-й дім:",
-      "detail": "У календарі на 27.09 зазначено '23:00 Соляр — 7-й дім: Партнерство', і поточний час вже після 23:00.",
-      "module": "selfact",
-      "ts": "2026-09-27T23:24:31"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверни увагу, що 28.09 ти не виконав звички: 💧 Вода (",
       "detail": "Календар на 7 днів: 28.09: 18:10 💧 Вода (2л+) ❌; 18:10 🧖 Сауна ❌; 18:10 💈 Спрей для волосся ❌",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Garmin <garmin@registration.garmin.com> | Thanks for Registering Your Venu X1, Лист від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation, а також його запит 'Ти можеш зєднатися із моїм garmin connect для збору даних про здоров’я?'",
       "module": "selfact",
       "ts": "2026-10-10T19:16:53"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-10T20:01:09"
     }
   ]
 }
