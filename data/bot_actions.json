@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Звичка: Сауна",
-      "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.09: 18:10 🧖 Сауна ❌",
-      "module": "selfact",
-      "ts": "2026-09-28T01:13:39"
-    },
-    {
-      "kind": "notify",
       "what": "Звичка: Спрей для волосся",
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.09: 18:10 💈 Спрей для волосся ❌",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-10T20:05:42"
+    },
+    {
+      "kind": "notify",
+      "what": "Новий пейсліп від Minebea",
+      "detail": "Олег отримав лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 09/2026'.",
+      "module": "selfact",
+      "ts": "2026-10-10T20:19:13"
     }
   ]
 }
