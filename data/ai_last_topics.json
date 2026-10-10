@@ -298,5 +298,20 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, є нові вакансії, які можуть тебе зацікавити:\\n- Junior Product Consultant ",
     "ts": "2026-10-10T08:07:03.866832"
+  },
+  "action_detect|2026-10-10t10_23_07_352826": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-10T10:23:07.352826"
+  },
+  "action_detect|2026-10-10t10_15_50_753460": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про здоров'я, біговий трекер",
+    "ts": "2026-10-10T10:15:50.753460"
+  },
+  "action_detect|2026-10-10t10_15_39_592919": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-10T10:15:39.592919"
   }
 }
