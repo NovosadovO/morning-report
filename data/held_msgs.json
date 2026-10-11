@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:01:18.579623",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Crypto Biz: Wealthy investors are moving ahead of their cryp</b>\n👤 Cointelegraph через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80604"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80604"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80604"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80604"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80604"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80604"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T02:01:22.227580",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 83.6 кг, ціль 75 кг (тренд -0.6 кг за останні 5 замірів). Кроки: 17861 (ціль 10000). Сон: 4.4г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: нічого не заплановано",
@@ -200,6 +161,12 @@
       "ts": "2026-10-11T02:08:25.976578",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:08:26.733217",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
