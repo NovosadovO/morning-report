@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Соляр 8-й дім",
-      "detail": "Подія в календарі на сьогодні, 28.09, о 23:00: Соляр — 8-й дім.",
-      "module": "selfact",
-      "ts": "2026-09-28T22:57:43"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, ти бачив нові оголошення про 3-кімнатні квартири у Ко",
       "detail": "Свіжий лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 2 нових оголошень.",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 09/2026', що є важливою фінансовою інформацією.",
       "module": "selfact",
       "ts": "2026-10-11T20:17:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, тобі прийшов рахунок від Mariia Ovsiienko. Його можна",
+      "detail": "Надійшов лист від Mariia Ovsiienko <masyastadnikova@gmail.com> з темою 'Faktúra od Mariia Ovsiienko', що містить посилання на оплату.",
+      "module": "selfact",
+      "ts": "2026-10-11T20:17:16"
     }
   ]
 }
