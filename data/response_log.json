@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:24:45.679990+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e6add40c8c"
-    },
-    {
       "ts": "2026-08-20T21:24:49.796617+00:00",
       "category": "confirm",
       "question": "gx_mute: календар",
@@ -13898,6 +13892,17 @@
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-11T06:00:37.097280+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "noted",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": "/спати (подія: agenda)"
+      }
     }
   ]
 }
