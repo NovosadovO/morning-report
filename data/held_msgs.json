@@ -1,51 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T10:16:05.709752",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-11T10:16:07.039842",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80623"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80623"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80623"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80623"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80623"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80623"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T10:16:08.553317",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -404,6 +359,18 @@
       "ts": "2026-10-11T10:19:38.445830",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:19:39.267658",
+      "kind": "calendar",
+      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:19:39.753796",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
