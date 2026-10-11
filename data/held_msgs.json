@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T08:31:08.931811",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nagging people to eat healthily does not work</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80603"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80603"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80603"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80603"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80603"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80603"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T08:31:11.021179",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-11T08:40:48.951446",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T08:42:00.692485",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
