@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:51:54.455019+00:00",
-      "category": "confirm",
-      "question": "gate_lc_add: Страховка авто (тест маршруту)",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T20:51:56.024628+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13898,6 +13892,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-11T05:12:01.241325+00:00",
+      "category": "confirm",
+      "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (18 дн.)",
+      "answer": "no"
     }
   ]
 }
