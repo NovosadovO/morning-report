@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:25:14.501195",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T11:26:08.448234",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80625"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T11:31:00.439313",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80624"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80624"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80624"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80624"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80624"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80624"
             }
           ]
         ]
