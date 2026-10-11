@@ -1,9 +1,4 @@
 {
-  "80141": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-10-02T14:26:44.015252+00:00"
-  },
   "80142": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-11T07:43:27.310336+00:00"
+  },
+  "80623": {
+    "sender": "notification@service.tiktok.com",
+    "sender_raw": "Erik Balla у TikTok <notification@service.tiktok.com>",
+    "seen_ts": "2026-10-11T07:49:35.344692+00:00"
   }
 }
