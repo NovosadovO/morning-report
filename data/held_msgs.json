@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T22:23:54.131456",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T22:23:54.984542",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -405,6 +399,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T22:31:30.741829",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
