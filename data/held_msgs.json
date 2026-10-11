@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T08:14:11.205774",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f/d) в EWOR»\n\n<i>«Сповіщення про вакансії в SlovakiaКерувати сповіщеннями про вакансії: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BzL43uLu%2BTBmuRehmZMAe%2BQ%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=3kGdtFAHQlFYs1&amp;trk=eml-email_job_alert_digest_01-primary_job_list-0...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80619"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80619"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80619"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80619"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80619"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80619"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T08:14:24.255040",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -431,6 +392,12 @@
       "ts": "2026-10-11T08:19:21.372028",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T08:20:28.726065",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
