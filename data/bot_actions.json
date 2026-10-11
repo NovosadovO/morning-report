@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії та конференція по AI",
-      "detail": "Свіжі листи від 'Сповіщення про вакансії LinkedIn' та 'AI Evolution через LinkedIn'.",
-      "module": "selfact",
-      "ts": "2026-09-28T20:23:27"
-    },
-    {
-      "kind": "notify",
       "what": "Новини про крипторинки та геополітику",
       "detail": "Свіжі листи від 'The Daily Degen' та 'The Economist'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Важливий фінансовий документ, який потребує уваги Олега, і про який він ще не реагував.",
       "module": "selfact",
       "ts": "2026-10-11T18:58:58"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-11T19:05:53"
     }
   ]
 }
