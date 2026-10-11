@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-11t19_56_00_155334": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії в Словаччині, зокрема CTM/Sr CTM - FSP - EMEA в Thermo Fisher Scientific та AI Solutio",
+    "ts": "2026-10-11T19:56:00.155334"
+  },
   "selfact|2026-10-11t19_45_07_363232": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Новий лист від Mariia Ovsiienko\",     \"text\": \"Олеже, тобі прийшов лист від Mariia Ovsiienko з фактурою. Це мо",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є підтвердженням реєстрації пристрою Garmin Venu X1. Він інформує користувача про успішну реєстрацію нового пристрою Garmin.\",",
     "ts": "2026-10-11T18:01:45.843999"
-  },
-  "action_detect|2026-10-11t18_01_33_265387": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-11T18:01:33.265387"
   }
 }
