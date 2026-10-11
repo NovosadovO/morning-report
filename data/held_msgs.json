@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:40:22.336452",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T11:40:23.093855",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T11:45:54.003839",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Agentic Bank Run is coming for banking’s cheapest money </b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80625"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80625"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80625"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80625"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80625"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80625"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
