@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:51:56.024628+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "lc_add_zzz404"
-    },
-    {
       "ts": "2026-08-20T20:51:56.024893+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13898,6 +13892,12 @@
       "category": "confirm",
       "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (18 дн.)",
       "answer": "no"
+    },
+    {
+      "ts": "2026-10-11T05:12:01.580417+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_8ba821d091"
     }
   ]
 }
