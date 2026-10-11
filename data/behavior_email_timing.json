@@ -1,9 +1,4 @@
 {
-  "80153": {
-    "sender": "email@info.temuemail.com",
-    "sender_raw": "Temu <email@info.temuemail.com>",
-    "seen_ts": "2026-10-02T18:53:27.760045+00:00"
-  },
   "80154": {
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
@@ -1498,5 +1493,10 @@
     "sender": "ogn.applications@gmail.com",
     "sender_raw": "OGN APPS <ogn.applications@gmail.com>",
     "seen_ts": "2026-10-11T12:44:29.481647+00:00"
+  },
+  "80637": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-10-11T12:52:42.583449+00:00"
   }
 }
