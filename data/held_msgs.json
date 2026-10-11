@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T21:02:06.414181",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80331"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80331"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80331"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80331"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80331"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80331"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T21:02:08.389112",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Faktúra k Vašej objednávke 380760071938</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
@@ -615,6 +576,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80646"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T21:31:06.971435",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80397"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80397"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80397"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80397"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80397"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80397"
             }
           ]
         ]
