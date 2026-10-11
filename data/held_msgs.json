@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T03:39:37.129088",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T03:39:38.092048",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T03:46:37.373756",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How Bryan Johnson Uses His Sauna</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80615"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80615"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80615"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80615"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80615"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80615"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
