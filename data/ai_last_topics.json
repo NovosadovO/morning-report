@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-10-11t14_21_40_655517": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від CryptoBeholder.com за 11 жовтня, сформованим штучним інтелектом. Він містить короткий",
+    "ts": "2026-10-11T14:21:40.655517"
+  },
+  "action_detect|2026-10-11t14_16_38_317426": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T14:16:38.317426"
+  },
+  "selfact|2026-10-11t14_15_47_362328": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Виплатна картка Minebea\",     \"text\": \"Олеже, надійшла виплатна картка за вересень 2026 від Minebea. Перевір ї",
+    "ts": "2026-10-11T14:15:47.362328"
+  },
   "email_ai_item|2026-10-11t14_15_27_653985": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Oleh Bezuhlyi через LinkedIn є щоденним дайджестом новин про криптовалюти за 11 жовтня. Він містить інформацію про проб",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "Олеже, за сьогодні поки зафіксовано 7.1 год сну, що є нижче твоїх середніх показників за тиждень (10.0 год) та за місяць (8.3 год). З огляду на те, що сьогодні ",
     "ts": "2026-10-11T12:22:57.147318"
-  },
-  "action_detect|2026-10-11t12_22_22_459506": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-11T12:22:22.459506"
-  },
-  "action_detect|2026-10-11t06_00_42_324572": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-11T06:00:42.324572"
-  },
-  "proactive_actions|2026-10-11t06_00_09_081214": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити нові оголошення про квартири\",     \"date\": \"2026-10-11\",     \"time\": \"\",     \"message\": \"Олеже, т",
-    "ts": "2026-10-11T06:00:09.081214"
   }
 }
