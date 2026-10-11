@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T21:31:13.748082",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Oznámenie o prijatí objednávky 8807654472</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80263"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80263"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80263"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80263"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80263"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80263"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T21:31:15.882993",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -252,6 +213,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T21:46:06.686189",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80654"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80654"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80654"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80654"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80654"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80654"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
