@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:37:16.588683",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T09:38:16.197299",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T09:43:28.216037",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Reserved</b>\n📋 Тема: «Nové produkty už čakajú»\n\n<i>«Email table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; } body { margin: 0; padding: 0; background-color: #ffffff; } a { text-decoration: none; } .keep-white { mso-style-textfill-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80622"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80622"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80622"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80622"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80622"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80622"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
