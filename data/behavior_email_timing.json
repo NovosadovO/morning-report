@@ -1,9 +1,4 @@
 {
-  "80144": {
-    "sender": "noreply@mailing.fifa.com",
-    "sender_raw": "FIFA <noreply@mailing.fifa.com>",
-    "seen_ts": "2026-10-02T15:42:14.138401+00:00"
-  },
   "80145": {
     "sender": "card@kcard.kaufland.sk",
     "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-10-11T10:51:54.458181+00:00"
+  },
+  "80628": {
+    "sender": "noreply@e.economist.com",
+    "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
+    "seen_ts": "2026-10-11T11:16:17.841627+00:00"
   }
 }
