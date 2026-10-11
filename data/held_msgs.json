@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T01:00:55.201126",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>UNIQA Group Services наймає: Risikoprüfer:in in der Krankenv</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80658"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80658"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80658"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80658"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80658"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80658"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T01:00:56.684296",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 11th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-10-12T01:03:29.165645",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.2% за 24г\n\nЗараз: 10.91 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T01:04:43.232190",
+      "kind": "MSG_FORESIGHT_TRIP",
+      "text": "✈️ <b>ПОЇЗДКА: Bratislava</b> — через 2 дн. (14.10–17.10)\n\n🧳 <b>ЩО ВЗЯТИ</b>\n• одяг на 3…17°C\n• кофта, вітровка, закрите взуття\n• парасоля/дощовик — дощових днів: 1\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 <b>ПОГОДА</b>\n• 14.10: 17°/7° 🌧1.4мм; 15.10: 13°/7°; 16.10: 15°/3°; 17.10: 13°/5°\n\n✅ <b>ДО ВИЛЬОТУ</b>\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
       "keyboard": null
     }
   ]
