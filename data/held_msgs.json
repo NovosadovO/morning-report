@@ -618,6 +618,31 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T06:16:42.523264",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_80608"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80608"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80608"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
