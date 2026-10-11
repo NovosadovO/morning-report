@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:31:16.178448+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_d623f7e64c"
-    },
-    {
       "ts": "2026-08-20T20:51:54.455019+00:00",
       "category": "confirm",
       "question": "gate_lc_add: Страховка авто (тест маршруту)",
@@ -13898,6 +13892,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_note_cfb6ee05b2"
+    },
+    {
+      "ts": "2026-10-11T05:11:50.744353+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
