@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, ти отримав нові пропозиції роботи від Profesia.sk – 2",
-      "detail": "У свіжих листах є лист від 'Profesia.sk' <support@profesia.sk> | 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk'.",
-      "module": "selfact",
-      "ts": "2026-09-28T17:49:46"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-11T17:05:33"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи потрібна тобі допомога з переглядом нових вакансій",
+      "detail": "Олег активно шукає роботу, і прийшло нове сповіщення про вакансію Director of Operations від LinkedIn.",
+      "module": "selfact",
+      "ts": "2026-10-11T17:08:55"
     }
   ]
 }
