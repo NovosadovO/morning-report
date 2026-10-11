@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T20:19:09.796249+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_2e0a15eb77"
-    },
-    {
       "ts": "2026-08-20T20:31:12.106245+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Тест блок-листа 20.08",
@@ -13894,6 +13888,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_dbe2b6c88c"
+    },
+    {
+      "ts": "2026-10-11T04:30:14.629789+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-11"
+      }
     }
   ]
 }
