@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:46:19.603841",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T02:46:20.859132",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Oleh, хочете й далі отримувати сповіщення про вакансії щодо </b>\n👤 LinkedIn &lt;jobalerts-noreply@linkedin.com&gt;",
@@ -431,6 +425,12 @@
       "ts": "2026-10-11T02:51:14.105216",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu  → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:51:16.986752",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
