@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, я бачу, що 29 вересня о 10:00 у тебе Марс на асценден",
-      "detail": "У календарі на 29.09 є подія: «10:00 Марс на асценденті».",
-      "module": "selfact",
-      "ts": "2026-09-28T08:29:45"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, я бачу, що 29 вересня о 17:00 у тебе починається нічн",
       "detail": "У календарі на 29.09 і 30.09 є події: «17:00 🌙 Нічна зміна (18:00-06:00)».",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Подія в календарі: 13.10: 12:45 Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor",
       "module": "selfact",
       "ts": "2026-10-11T14:31:01"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи потрібна допомога з відповіддю на лист від OGN APP",
+      "detail": "Лист від OGN APPS <ogn.applications@gmail.com> | ALLTELEGRAM з питанням про труднощі з оплатою.",
+      "module": "selfact",
+      "ts": "2026-10-11T14:46:27"
     }
   ]
 }
