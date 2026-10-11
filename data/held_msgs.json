@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:27:05.762564",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T02:28:18.654245",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -398,6 +392,12 @@
       "ts": "2026-10-11T02:31:34.407621",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:32:54.403876",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
