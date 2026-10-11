@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:16.784600+00:00",
-      "category": "confirm",
-      "question": "email_delete: 📰 AI-curated Daily Crypto Digest - August 20",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T21:25:17.184395+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13920,6 +13914,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути виплатну відомість",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-12"
+      }
+    },
+    {
+      "ts": "2026-10-11T18:00:38.263353+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Прочитати лист від Garmin про реєстрацію Venu X1",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-12"
