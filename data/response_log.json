@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:24:58.357480+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-20T21:25:08.526731+00:00",
       "category": "confirm",
       "question": "calrem_skip: Прийняти Armolopid",
@@ -13912,6 +13906,12 @@
         "when": "09:00–09:15",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-11T13:32:28.554443+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_c3444f13b0"
     }
   ]
 }
