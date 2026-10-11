@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T21:31:17.929179",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T21:33:57.223639",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Nubank walks away from £10B Monzo deal after 10% share drop 👋📉; Did Am»\n\n<i>«View this post on the web at https://linas.substack.com/p/weeklyfintechpulse419\r\n\r\n👋 Hey, Linas here! Welcome back to a 🔓 weekly free edition 🔓 of my daily newsletter. Each day, I focus on 3 stories that are making a difference in the financial technology space. Coupled with things worth watching &amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80653"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T21:46:09.235578",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80646"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80646"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80646"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80646"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80646"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80646"
             }
           ]
         ]
