@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T08:38:53.587816",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T08:38:54.546228",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80604"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T08:46:08.471895",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nagging people to eat healthily does not work</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80603"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80603"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80603"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80603"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80603"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80603"
             }
           ]
         ]
