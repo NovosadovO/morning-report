@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T08:00:58.092522",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80607"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80607"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80607"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80607"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80607"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80607"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T08:00:59.402034",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -332,6 +293,12 @@
       "ts": "2026-10-11T08:08:50.402345",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T08:08:51.315023",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
