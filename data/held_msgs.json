@@ -128,6 +128,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T21:02:06.414181",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80331"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80331"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80331"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80331"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80331"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80331"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
