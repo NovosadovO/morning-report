@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T22:01:15.763330",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T22:01:17.179822",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -410,6 +404,12 @@
       "ts": "2026-10-11T22:08:30.332658",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T22:09:39.582301",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
