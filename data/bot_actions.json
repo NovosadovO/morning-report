@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, я бачу, що 28.09.2026 о 23:00 у тебе Соляр — 8-й дім:",
-      "detail": "У календарі на 28.09 є подія: «23:00 Соляр — 8-й дім: Трансформація й спільні ресурси».",
-      "module": "selfact",
-      "ts": "2026-09-28T08:29:35"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, я бачу, що 29 вересня о 08:38 заплановано аналіз осно",
       "detail": "У календарі на 29.09 є подія: «08:38 аналіз основних даних кроки: сьогоднішній результат складає 4414 крокі».",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-11T14:25:57"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-11T14:26:29"
     }
   ]
 }
