@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:24:51.145146+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_7c48f1c070"
-    },
-    {
       "ts": "2026-08-20T21:24:54.817136+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13903,6 +13897,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_051f9b5ce1"
+    },
+    {
+      "ts": "2026-10-11T06:00:48.803340+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_6c98e412f7"
     }
   ]
 }
