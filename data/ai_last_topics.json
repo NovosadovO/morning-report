@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-11t20_00_11_181021": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T20:00:11.181021"
+  },
   "email_ai_item|2026-10-11t19_56_00_155334": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії в Словаччині, зокрема CTM/Sr CTM - FSP - EMEA в Thermo Fisher Scientific та AI Solutio",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є пересланим повідомленням від Національного банку Словаччини (NBS) щодо онлайн-конференції «Словацький фінансовий ринок та ін",
     "ts": "2026-10-11T18:01:56.480326"
-  },
-  "email_ai_item|2026-10-11t18_01_45_843999": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є підтвердженням реєстрації пристрою Garmin Venu X1. Він інформує користувача про успішну реєстрацію нового пристрою Garmin.\",",
-    "ts": "2026-10-11T18:01:45.843999"
   }
 }
