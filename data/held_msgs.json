@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:11:34.429217",
-      "kind": "chunk",
-      "text": "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n\nЗваж себе зараз і запиши в Apple Health.\n\nПотім надішли мені свою вагу, наприклад:\n<code>82.5</code>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T11:11:52.422410",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80617"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T11:16:05.452781",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80608"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80608"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80608"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80608"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80608"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80608"
             }
           ]
         ]
