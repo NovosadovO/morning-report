@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.08 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-09-28T07:14:42"
-    },
-    {
-      "kind": "notify",
       "what": "Нові пропозиції квартир у Кошице",
       "detail": "Олег отримав свіжі листи від себе ж ('Oleg Novosadov') з новими оголошеннями про квартири у Кошице.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від 'NAY' <noreply@nay.sk> | Faktúra k Vašej objednávke 380760071938.",
       "module": "selfact",
       "ts": "2026-10-11T13:29:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, тобі прийшов лист від NAY з повідомленням про прийнят",
+      "detail": "Лист від 'NAY' <noreply@nay.sk> | Oznámenie o prijatí objednávky 8807654472.",
+      "module": "selfact",
+      "ts": "2026-10-11T13:29:26"
     }
   ]
 }
