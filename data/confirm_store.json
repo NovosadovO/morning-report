@@ -14656,5 +14656,14 @@
     },
     "ts": "2026-10-11T13:30:38.531551+00:00",
     "answered": "yes"
+  },
+  "3f496688fc": {
+    "action": "gate_cal_add",
+    "pid": "cal_add_gen_1791720150540",
+    "subject": "Дослідити Finweek Bratislava",
+    "extra": {
+      "msg": "📅 АІ помітив дію:\n«Дослідити Finweek Bratislava», 2026-10-13\nДослідити можливості Finweek Bratislava, перевірити livestream або запис, та спланувати час для перегляду ключових секцій.\n\nДодати в Google Calendar?"
+    },
+    "ts": "2026-10-11T14:20:04.652462+00:00"
   }
 }
