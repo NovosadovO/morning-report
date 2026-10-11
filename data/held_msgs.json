@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T10:31:05.275750",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80619"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80619"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80619"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80619"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80619"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80619"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T10:31:06.478647",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>RENOMIA наймає: SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-10-11T10:34:59.849664",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:35:00.685652",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
