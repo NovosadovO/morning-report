@@ -1,4 +1,39 @@
 {
+  "weekly_report_truthfix|2026-10-11t18_47_01_505860": {
+    "topic": "weekly_report/truthfix",
+    "gist": "Олеже, ти зараз на зміні чи вдома? Бачу, що сьогодні, 11 жовтня 2026 року, вага 83.7 кг, що на 0.2 кг більше за середню за 7 днів, і це при нульових пробіжках ц",
+    "ts": "2026-10-11T18:47:01.505860"
+  },
+  "weekly_report|2026-10-11t18_46_54_621296": {
+    "topic": "weekly_report",
+    "gist": "Ти зараз на нічній зміні, як і більшу частину цього тижня, а біг так і не вийшло додати до графіка, мабуть, через це і вага трохи зросла до 83.7 кг. Спроба ново",
+    "ts": "2026-10-11T18:46:54.621296"
+  },
+  "action_detect|2026-10-11t18_46_38_859704": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-11T18:46:38.859704"
+  },
+  "action_detect|2026-10-11t18_46_27_916854": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T18:46:27.916854"
+  },
+  "action_detect|2026-10-11t18_46_16_865650": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T18:46:16.865650"
+  },
+  "action_detect|2026-10-11t18_46_05_847662": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-11T18:46:05.847662"
+  },
+  "action_detect|2026-10-11t18_45_54_798461": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T18:45:54.798461"
+  },
   "selfact|2026-10-11t18_42_58_359260": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова виплатна відомість\",     \"text\": \"Олеже, тобі прийшов лист від Minebea Slovakia s.r.o. з твоєю виплатною ",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Finweek Bratislava\", \"action_date\": \"2026-10-13\", \"action_time\": \"13:45\", \"action_summary\": \"Відбудеться Finweek Br",
     "ts": "2026-10-11T16:33:08.275298"
-  },
-  "msg_crypto_move_truthfix|2026-10-11t16_32_59_759897": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Олеже,  Ринок криптовалют сьогодні, 11 жовтня 2026 року, показує змішану динаміку. FIGR_HELOC вирізняється зростанням на +5.5% за останні 24 години, досягнувши ",
-    "ts": "2026-10-11T16:32:59.759897"
-  },
-  "msg_crypto_move|2026-10-11t16_32_46_774355": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  Ринок криптовалют сьогодні демонструє змішану динаміку, але є один актив, який виділяється суттєвим зростанням – FIGR_HELOC. Він додав +5.5% за",
-    "ts": "2026-10-11T16:32:46.774355"
-  },
-  "proactive_actions|2026-10-11t16_30_13_725326": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-10-11\",     \"time\": \"\",     \"message\": \"Олеже, ти раніш",
-    "ts": "2026-10-11T16:30:13.725326"
-  },
-  "selfact|2026-10-11t16_21_26_492686": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершене завдання Abacus AI\",     \"text\": \"Олеже, твоє заплановане завдання 'DeFiLlama — огляд і зміни' на ",
-    "ts": "2026-10-11T16:21:26.492686"
-  },
-  "mailcal_extract|2026-10-11t16_17_08_191732": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"80634\",     \"title\": \"Вхід в Sorare через Google\",     \"date\": \"2026-10-11\",     \"time\": \"14:26\",     \"kind\": \"other\",     \"why\": \"Ви ",
-    "ts": "2026-10-11T16:17:08.191732"
-  },
-  "foresight_truthfix|2026-10-11t16_14_37_800445": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, дані за 11 жовтня 2026 року показують, що твоя вага зросла до 83.7 кг, що на 0.2 кг більше, ніж у середньому за 7 днів, і на 8.7 кг більше від цілі 75 кг",
-    "ts": "2026-10-11T16:14:37.800445"
-  },
-  "foresight|2026-10-11t16_14_26_316126": {
-    "topic": "foresight",
-    "gist": "Олеже, вага зросла до 83.7 кг, тренд +0.2 кг, і до цілі 75 кг залишилось +8.7 кг, при цьому кроки стрімко падають — сьогодні лише 1606 кроків, а середній показн",
-    "ts": "2026-10-11T16:14:26.316126"
   }
 }
