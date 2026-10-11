@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:49:36.358197",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Erik Balla у TikTok</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Erik Ballaнадіслав(-ла) тобі повідомлення»\n\n<i>«u + .body .blend-wrapper { background-color: #161616 !important; background-image: linear-gradient(#161616, #161616) !important; } u + .body .blend-container { background-color: #ff3459 !important; background-image: linear-gradient(#ff3459, #ff3459) !important; } u + .body .emailx-gmail-blend-screen...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80623"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80623"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80623"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80623"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80623"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80623"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T09:50:04.497424",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-11T09:55:27.383689",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T09:56:07.628886",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
