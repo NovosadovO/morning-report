@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-11t18_27_02_401023": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплата Garmin Connect+\",     \"text\": \"Олеже, нагадую, що 11/5/2026 з тебе буде списано €8.99 за підписку Garmi",
+    "ts": "2026-10-11T18:27:02.401023"
+  },
   "subs|2026-10-11t18_21_52_499773": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"80341\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-11T16:02:22.866699"
-  },
-  "action_detect|2026-10-11t16_02_11_954033": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Сьогодні, перед нічними змін",
-    "ts": "2026-10-11T16:02:11.954033"
   }
 }
