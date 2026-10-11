@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Запрошення в Aave App",
-      "detail": "У свіжих листах є лист від Aave <no-reply@aave.com> з темою 'Запросіть друга за допомогою свого Ghost Pass' та текстом 'У вас є один Ghost Pass, який можна подарувати другу. Надішліть його тому, кого хочете запросити до Aave App, і ця людина повністю омине список очікування'.",
-      "module": "selfact",
-      "ts": "2026-09-28T18:35:45"
-    },
-    {
-      "kind": "notify",
       "what": "Нові квартири у Кошіце",
       "detail": "Є свіжий лист від Oleg Novosadov <novosadovoleg@gmail.com> з темою '🏠 Нові квартири у Кошіці — 3 нових оголошень'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-11T17:26:33"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-11T17:26:48"
     }
   ]
 }
