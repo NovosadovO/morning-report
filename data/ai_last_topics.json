@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-11t16_52_53_301297": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Abacus AI: DeFiLlama — огляд і зміни\",     \"text\": \"Олеже, твоє заплановане завдання \\\"DeFiLlama — огляд і змі",
+    "ts": "2026-10-11T16:52:53.301297"
+  },
   "selfact|2026-10-11t16_37_05_333070": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові оголошення про квартири\",     \"text\": \"Олеже, тобі прийшов лист від Oleg Novosadov з 2 новими оголошенням",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-11T14:16:38.317426"
-  },
-  "selfact|2026-10-11t14_15_47_362328": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Виплатна картка Minebea\",     \"text\": \"Олеже, надійшла виплатна картка за вересень 2026 від Minebea. Перевір ї",
-    "ts": "2026-10-11T14:15:47.362328"
   }
 }
