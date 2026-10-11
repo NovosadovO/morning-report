@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T00:16:36.085940",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - October 11th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T00:16:38.118916",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -148,6 +142,12 @@
       "ts": "2026-10-12T00:21:56.892739",
       "kind": "bills",
       "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (19 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 CapCut\n💰 сума не вказана\n📆 до 2026-09-23\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T00:22:00.975559",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 11th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko <masyastadnikova@gmail.com> → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
