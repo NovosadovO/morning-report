@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:29:13.059062",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-11T09:29:13.803451",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T09:30:04.787917",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -398,6 +386,51 @@
       "ts": "2026-10-11T09:32:24.831653",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T09:33:16.053367",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Cropp</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: « Priprav sa na pokles teplôt 🍂🍁🥶»\n\n<i>«Priprav sa na pokles teplôt 🍂🍁🥶 #outlook a { padding:0; } span.MsoHyperlink, span.MsoHyperlinkFollowed { color:inherit; mso-style-priority:99; } a.es-button { mso-style-priority:100!important; text-decoration:none!important; } a[x-apple-data-detectors], #MessageViewBody a { color:inherit!important;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80621"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80621"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80621"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80621"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80621"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80621"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T09:33:16.744097",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
