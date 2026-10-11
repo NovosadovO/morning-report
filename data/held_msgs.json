@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:16:22.147227",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80605"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80605"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80605"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80605"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80605"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80605"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T02:16:22.767363",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -200,6 +161,12 @@
       "ts": "2026-10-11T02:23:11.922756",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:23:14.864797",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
