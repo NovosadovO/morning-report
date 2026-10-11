@@ -7753,28 +7753,5 @@
       "desc": "Запропонував бот: вільний день, ціль 75 кг."
     },
     "ts": "2026-10-11T20:30:52.074673+00:00"
-  },
-  "e1532ea68a": {
-    "key": "note|олег користується garmin connect та має пристрій garmin ven",
-    "q": "📝 Хочу записати нотатку:\n\n« Олег користується Garmin Connect+ та має пристрій Garmin Ven »\n\nОлег користується Garmin Connect+ та має пристрій Garmin Venu X1.\n\nПоставити?",
-    "kind": "write",
-    "opts": [
-      [
-        "save",
-        "💾 Так, запиши"
-      ],
-      [
-        "no",
-        "🚫 Не треба"
-      ]
-    ],
-    "meta": {
-      "summary": "Олег користується Garmin Connect+ та має пристрій Garmin Ven",
-      "desc": "Олег користується Garmin Connect+ та має пристрій Garmin Venu X1.",
-      "minutes": 30,
-      "calendar": true,
-      "kind": "note"
-    },
-    "ts": "2026-10-11T20:32:12.552510+00:00"
   }
 }
