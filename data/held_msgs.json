@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T10:55:59.190584",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T10:56:32.635091",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80624"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T11:01:04.983239",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80623"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80623"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80623"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80623"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80623"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80623"
             }
           ]
         ]
