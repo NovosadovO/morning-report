@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T03:26:48.266284",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T03:27:58.749970",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• PLUNGE <hello@plunge.com> → How Bryan Johnson Uses His Sauna\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -404,6 +398,12 @@
       "ts": "2026-10-11T03:31:35.180911",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 PLUNGE\n📋 How Bryan Johnson Uses His Sauna\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T03:31:50.731084",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• PLUNGE <hello@plunge.com> → How Bryan Johnson Uses His Sauna\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
