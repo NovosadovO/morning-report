@@ -1,9 +1,4 @@
 {
-  "80140": {
-    "sender": "newsletter@mail.theblock.co",
-    "sender_raw": "The Block <newsletter@mail.theblock.co>",
-    "seen_ts": "2026-10-02T14:14:26.589624+00:00"
-  },
   "80141": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
     "seen_ts": "2026-10-11T07:33:15.029819+00:00"
+  },
+  "80622": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-11T07:43:27.310336+00:00"
   }
 }
