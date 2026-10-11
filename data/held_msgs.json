@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T01:31:09.873996",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - October 11th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T01:31:12.381894",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 11th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-12T01:34:28.523073",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.5% за 24г</b>\n\nЗараз: 10.93 $\n24г тому: 10.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T01:34:29.327599",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.5% за 24г\n\nЗараз: 10.93 $\n24г тому: 10.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
