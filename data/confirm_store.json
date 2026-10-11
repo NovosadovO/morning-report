@@ -14662,7 +14662,23 @@
     "pid": "cal_add_gen_1791720150540",
     "subject": "Дослідити Finweek Bratislava",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Дослідити Finweek Bratislava», 2026-10-13\nДослідити можливості Finweek Bratislava, перевірити livestream або запис, та спланувати час для перегляду ключових секцій.\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Дослідити Finweek Bratislava», 2026-10-13\nДослідити можливості Finweek Bratislava, перевірити livestream або запис, та спланувати час для перегляду ключових секцій.\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 113673,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_gen_1791720150540"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_gen_1791720150540"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-11T14:20:04.652462+00:00"
   }
