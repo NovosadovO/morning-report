@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-11t13_00_37_909481": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T13:00:37.909481"
+  },
+  "selfact|2026-10-11t12_57_31_468339": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava: \\\"Blood, Sweat & MiCA\\\"\",     \"text\": \"Олеже, завтра, 13 жовтня о 12:45, відбудеться Finwe",
+    "ts": "2026-10-11T12:57:31.468339"
+  },
   "openloop_promises|2026-10-11t12_56_16_654684": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати біг та оплатити Strava\", \"action_date\": \"2026-10-11\", \"action_time\": \"06:00\", \"action_summary\": \"Спланув",
     "ts": "2026-10-11T04:02:08.983097"
-  },
-  "action_detect|2026-10-11t04_01_57_957547": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування до Поліції Руслані\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action_summary\": \"Нагадування д",
-    "ts": "2026-10-11T04:01:57.957547"
-  },
-  "foresight|2026-10-11t04_01_56_008150": {
-    "topic": "foresight",
-    "gist": "Олеже, зараз 04:01, і ти, найімовірніше, вдома. Вага 83.6 кг (за вчора, 10.10) тримається, а до цілі все ще 8.6 кг. Сьогодні ти вихідний, але вже з понеділка на",
-    "ts": "2026-10-11T04:01:56.008150"
   }
 }
