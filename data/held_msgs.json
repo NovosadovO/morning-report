@@ -624,6 +624,49 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T21:16:14.024184",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Mariia Ovsiienko",
+              "callback_data": "email_reply_80646"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: ehuman",
+              "callback_data": "email_reply_80397"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Garmin",
+              "callback_data": "email_reply_80341"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Garmin",
+              "callback_data": "email_reply_80331"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80646"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80646"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
