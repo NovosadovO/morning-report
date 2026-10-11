@@ -1,4 +1,39 @@
 {
+  "deadlines|2026-10-11t05_20_58_338828": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-11T05:20:58.338828"
+  },
+  "selfact|2026-10-11t05_12_29_898355": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплатити квартиру\",     \"text\": \"Олеже, нагадую, що 15 жовтня потрібно оплатити квартиру — €500. Це важливо зр",
+    "ts": "2026-10-11T05:12:29.898355"
+  },
+  "action_detect|2026-10-11t05_11_36_599876": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-11T05:11:36.599876"
+  },
+  "action_detect|2026-10-11t05_11_25_635174": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
+    "ts": "2026-10-11T05:11:25.635174"
+  },
+  "action_detect|2026-10-11t05_11_14_513890": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T05:11:14.513890"
+  },
+  "action_detect|2026-10-11t05_11_03_518425": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T05:11:03.518425"
+  },
+  "action_detect|2026-10-11t05_10_52_492484": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T05:10:52.492484"
+  },
   "action_detect|2026-10-11t05_10_41_586127": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
@@ -263,40 +298,5 @@
     "topic": "EVENING_AI",
     "gist": "Олеже, вечір суботи, 10 жовтня 2026 року, настає, і це чудовий час, щоб підбити підсумки дня, який завершується. Як і було заплановано, ти вдома, відпочиваєш пі",
     "ts": "2026-10-10T20:30:37.342711"
-  },
-  "mailcal_extract|2026-10-10t20_27_38_212688": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-10-10T20:27:38.212688"
-  },
-  "healthai_truthfix|2026-10-10t20_25_14_973692": {
-    "topic": "healthai/truthfix",
-    "gist": "Дані, які я використовую, зафіксовані сьогодні, 10 жовтня 2026 року, о 20:25, і можуть бути неповними, оскільки годинник ще може дослати повніші дані пізніше.  ",
-    "ts": "2026-10-10T20:25:14.973692"
-  },
-  "healthai|2026-10-10t20_25_04_641787": {
-    "topic": "healthai",
-    "gist": "Вага 83.6 кг сьогодні фіксує падіння тренду на 0.3 кг за 7 днів, але до цілі 75 кг ще 8.6 кг.  Наразі, 20:24, пріоритет у відновленні після ранньої зміни, особл",
-    "ts": "2026-10-10T20:25:04.641787"
-  },
-  "deadlines|2026-10-10t20_20_43_077786": {
-    "topic": "deadlines",
-    "gist": "```json [] ```",
-    "ts": "2026-10-10T20:20:43.077786"
-  },
-  "selfact|2026-10-10t20_19_09_392647": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Новий пейсліп від Minebea\",     \"text\": \"Олеже, надійшла виплатна квитанція (пейсліп) за вересень 2026 року ві",
-    "ts": "2026-10-10T20:19:09.392647"
-  },
-  "openloop_promises|2026-10-10t20_17_57_167021": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-10T20:17:57.167021"
-  },
-  "email_ai_item|2026-10-10t20_15_57_256956": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію 'Technical Project & Release Manager (m/f/d) - Hybrid' у компанії Siemens Healthine",
-    "ts": "2026-10-10T20:15:57.256956"
   }
 }
