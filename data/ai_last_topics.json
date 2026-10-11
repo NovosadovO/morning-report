@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-11t21_00_56_041122": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T21:00:56.041122"
+  },
   "mailcal_extract|2026-10-11t20_51_49_768870": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "🧐 Сьогодні, 11 жовтня, поки що зафіксовано 7.1 години сну, хоча годинник ще може додати дані; враховуючи, що завтра у тебе починається нічна зміна (з 18:00), це",
     "ts": "2026-10-11T19:05:38.772800"
-  },
-  "action_detect|2026-10-11t19_01_46_393428": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є зведенням даних про здоров'я, біговий тре",
-    "ts": "2026-10-11T19:01:46.393428"
   }
 }
