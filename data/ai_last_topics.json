@@ -1,4 +1,14 @@
 {
+  "proactive_actions|2026-10-11t18_00_23_083697": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути виплатну відомість\",     \"date\": \"2026-10-12\",     \"time\": \"09:00\",     \"message\": \"Олеже, у теб",
+    "ts": "2026-10-11T18:00:23.083697"
+  },
+  "run_planner|2026-10-11t18_00_06_519927": {
+    "topic": "run_planner",
+    "gist": "```json [   {     \"date\": \"2026-10-11\",     \"time\": \"09:30\",     \"type\": \"легкий\",     \"dist_km\": 5.0,     \"why\": \"Олег, сьогодні вихідний, і є можливість зроби",
+    "ts": "2026-10-11T18:00:06.519927"
+  },
   "selfact|2026-10-11t17_56_19_857881": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Виплатна картка Minebea\",     \"text\": \"Олеже, надійшла виплатна картка за вересень від Minebea.\",     \"why\": \"",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири у Кошице\",     \"text\": \"Олеже, тобі прийшов лист від Oleg Novosadov з 2 новими оголошеннями про ",
     "ts": "2026-10-11T15:02:02.417243"
-  },
-  "action_detect|2026-10-11t15_01_23_404245": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-11T15:01:23.404245"
-  },
-  "action_detect|2026-10-11t15_01_12_519632": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз InterFin\", \"action_date\": \"2026-10-11\", \"action_time\": \"15:00\", \"action_summary\": \"Після обіду мозок на піку",
-    "ts": "2026-10-11T15:01:12.519632"
   }
 }
