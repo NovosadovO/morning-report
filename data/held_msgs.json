@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T23:31:11.684983",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T23:31:13.274830",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 11th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-10-11T23:39:45.427928",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T23:39:46.358809",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
