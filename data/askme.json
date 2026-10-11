@@ -7876,6 +7876,17 @@
   "note|олег користується garmin connect та має пристрій garmin ven": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег користується Garmin Connect+ та має пристрій Garmin Ven »\n\nОлег користується Garmin Connect+ та має пристрій Garmin Venu X1.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-10-11T20:32:14"
+    "asked_at": "2026-10-11T20:32:14",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-10-11T20:32:54",
+    "meta": {
+      "summary": "Олег користується Garmin Connect+ та має пристрій Garmin Ven",
+      "desc": "Олег користується Garmin Connect+ та має пристрій Garmin Venu X1.",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
