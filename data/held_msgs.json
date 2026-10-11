@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:56:07.628886",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T09:56:08.396999",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:01:07.973037",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80623"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80623"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80623"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80623"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80623"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80623"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
