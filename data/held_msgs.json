@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T06:16:45.135611",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T06:19:56.758998",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80617"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T06:31:30.766061",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80608"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80608"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80608"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80608"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80608"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80608"
             }
           ]
         ]
