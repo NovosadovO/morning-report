@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T01:01:03.430645",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80646"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80646"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80646"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80646"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80646"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80646"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T01:01:05.632961",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 11th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-10-12T01:04:54.364585",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T01:04:57.641190",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.2% за 24г</b>\n\nЗараз: 10.91 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
