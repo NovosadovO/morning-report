@@ -540,6 +540,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T06:16:38.988744",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nagging people to eat healthily does not work</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80603"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80603"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80603"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80603"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80603"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80603"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
