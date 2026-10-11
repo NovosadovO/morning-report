@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:08.526731+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Прийняти Armolopid",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T21:25:14.178631+00:00",
       "category": "confirm",
       "question": "email_delete: 🔷 The Daily: Democrats say White House keeps stonewalling on crypto ethics",
@@ -13912,6 +13906,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_c3444f13b0"
+    },
+    {
+      "ts": "2026-10-11T15:00:19.982803+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-11"
+      }
     }
   ]
 }
