@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava: \\\"Blood, Sweat & MiCA\\\"\",     \"text\": \"Олеже, завтра, 13 жовтня о 12:45, відбудеться Finwe",
     "ts": "2026-10-11T12:41:47.577015"
+  },
+  "proactive_actions|2026-10-11t15_00_13_815245": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-10-11\",     \"time\": \"\",     \"message\": \"Олеже, надійшли",
+    "ts": "2026-10-11T15:00:13.815245"
   }
 }
