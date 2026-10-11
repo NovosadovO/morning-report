@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T21:16:11.880517",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Oznámenie o prijatí objednávky 8807654472</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80263"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80263"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80263"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80263"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80263"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80263"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T21:16:14.024184",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Garmin Connect+ Subscription Confirmation\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Garmin\n📋 Thanks for Registering Your Venu X1\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -519,6 +480,12 @@
       "ts": "2026-10-11T21:38:41.627193",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T21:39:51.071805",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
