@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:55:09.512313",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T02:55:10.288320",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80613"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T03:01:24.056700",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80612"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80612"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80612"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80612"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80612"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80612"
             }
           ]
         ]
