@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:26:09.207284",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T11:26:14.293421",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80623"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T11:31:03.036763",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80619"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80619"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80619"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80619"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80619"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80619"
             }
           ]
         ]
