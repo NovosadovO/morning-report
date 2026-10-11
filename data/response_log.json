@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:14.178631+00:00",
-      "category": "confirm",
-      "question": "email_delete: 🔷 The Daily: Democrats say White House keeps stonewalling on crypto ethics",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T21:25:14.729545+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13912,6 +13906,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-11"
+      }
+    },
+    {
+      "ts": "2026-10-11T15:00:24.506434+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити виплатну картку Minebea Mitsumi",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-11"
