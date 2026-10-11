@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:26.061109+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_5be693de5a"
-    },
-    {
       "ts": "2026-08-20T21:25:31.186184+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13935,6 +13929,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-10-11T20:28:35.717159+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
