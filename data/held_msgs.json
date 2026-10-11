@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T22:53:26.654787",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T22:53:27.590359",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -409,6 +403,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80341"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T23:01:25.494717",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Mariia Ovsiienko\n📋 Faktúra od Mariia Ovsiienko\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80656"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Mariia Ovsiienko",
+              "callback_data": "email_reply_80646"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80656"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80656"
             }
           ]
         ]
