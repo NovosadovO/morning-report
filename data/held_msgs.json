@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:16:00.244682",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80624"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80624"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80624"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80624"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80624"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80624"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T11:16:01.583280",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
@@ -365,6 +326,12 @@
       "ts": "2026-10-11T11:20:11.853670",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Оплатити квартиру — €500</b>\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T11:20:12.675120",
+      "kind": "calendar",
+      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
     }
   ]
