@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:31:25.966373",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Key account Manager – Západné Slovensko в Sandoz – вакансія,</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80609"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80609"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80609"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80609"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80609"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80609"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T02:31:27.309785",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-11T02:38:14.071403",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:38:14.849077",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
