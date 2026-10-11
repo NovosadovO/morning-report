@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:13:27.742374",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T09:13:57.254179",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -399,6 +393,45 @@
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T09:17:00.688180",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pixory</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «last day for free shipping»\n\n<i>«[free shipping](https://www.pixoryofficial.com/collections/all)\r\n\r\n[Pixory](https://www.pixoryofficial.com/collections/all)\r\n\r\n[limited time offer | shope before tonight](https://www.pixoryofficial.com/collections/all)\r\n\r\n[paris 1 ](https://www.pixoryofficial.com/travel/custom-photobook/the-travel-s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80620"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80620"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80620"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80620"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80620"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80620"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
