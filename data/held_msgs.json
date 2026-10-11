@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T03:31:29.681844",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80608"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80608"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80608"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80608"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80608"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80608"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T03:31:32.628245",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 PLUNGE\n📋 How Bryan Johnson Uses His Sauna\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-10-11T03:38:20.922396",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → How Bryan Johnson Uses His Sauna\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu  → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T03:38:23.616390",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
