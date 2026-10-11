@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T06:01:23.411743",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80607"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80607"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80607"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80607"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80607"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80607"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T06:01:24.844600",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -615,6 +576,12 @@
       "ts": "2026-10-11T06:21:07.035991",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T06:22:14.565921",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
