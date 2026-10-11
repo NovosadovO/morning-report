@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:55:06.841041",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu  → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T02:55:09.512313",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80614"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T03:01:22.719133",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Oleh, хочете й далі отримувати сповіщення про вакансії щодо </b>\n👤 LinkedIn &lt;jobalerts-noreply@linkedin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80613"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80613"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80613"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80613"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80613"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80613"
             }
           ]
         ]
