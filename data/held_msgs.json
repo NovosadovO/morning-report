@@ -1,6 +1,84 @@
 {
   "items": [
     {
+      "ts": "2026-10-11T10:16:07.039842",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80623"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80623"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80623"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80623"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80623"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80623"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T10:16:08.553317",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80619"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80619"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80619"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80619"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80619"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80619"
+            }
+          ]
+        ]
+      }
+    },
+    {
       "ts": "2026-10-11T10:16:09.934433",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>RENOMIA наймає: SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
