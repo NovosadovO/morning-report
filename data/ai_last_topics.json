@@ -1,4 +1,14 @@
 {
+  "healthai|2026-10-11t20_27_12_006620": {
+    "topic": "healthai",
+    "gist": "Привіт, Олеже!  Твоя вага сьогодні 83.7 кг, що на 8.7 кг вище цільових 75 кг, при цьому за 7 днів тренд зростає (+0.2 кг). Сон минулої ночі зафіксовано на рівні",
+    "ts": "2026-10-11T20:27:12.006620"
+  },
+  "deadlines|2026-10-11t20_21_57_356601": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80341\",     \"kind\": \"contract\",     \"title\": \"Garmin Connect+ підписка — скасування\",     \"org\": \"Garmin\",     \"deadline\": \"2026-11-04",
+    "ts": "2026-10-11T20:21:57.356601"
+  },
   "people|2026-10-11t20_21_43_430562": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"інше\",     \"topics\": [\"рахунок-фактура\"],     \"my_promi",
@@ -288,15 +298,5 @@
     "topic": "weekly_report",
     "gist": "Ти зараз на нічній зміні, як і більшу частину цього тижня, а біг так і не вийшло додати до графіка, мабуть, через це і вага трохи зросла до 83.7 кг. Спроба ново",
     "ts": "2026-10-11T18:46:54.621296"
-  },
-  "action_detect|2026-10-11t18_46_38_859704": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити нові оголошення про квартири\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Пере",
-    "ts": "2026-10-11T18:46:38.859704"
-  },
-  "action_detect|2026-10-11t18_46_27_916854": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-11T18:46:27.916854"
   }
 }
