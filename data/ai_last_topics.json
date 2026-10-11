@@ -1,4 +1,9 @@
 {
+  "money|2026-10-11t15_41_14_120286": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-11T15:41:14.120286"
+  },
   "selfact|2026-10-11t15_33_56_196195": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підтвердження підписки Garmin Connect+\",     \"text\": \"Олеже, тобі прийшов лист від Garmin з підтвердженням без",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі прийшов лист від Garmin з підтвердженням підписки Garmin Connect+ та інформацією про початок платно",
     "ts": "2026-10-11T13:45:03.371457"
-  },
-  "action_detect|2026-10-11t13_33_11_984961": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
-    "ts": "2026-10-11T13:33:11.984961"
   }
 }
