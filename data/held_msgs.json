@@ -89,6 +89,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T21:02:05.065255",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80341"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80341"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80341"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80341"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80341"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80341"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
