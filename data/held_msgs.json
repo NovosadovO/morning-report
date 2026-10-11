@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T09:27:13.628363",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-11T09:27:47.844449",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T09:27:48.759218",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -346,6 +334,51 @@
       "ts": "2026-10-11T09:31:12.071895",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T09:31:13.234410",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nagging people to eat healthily does not work</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80603"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80603"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80603"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80603"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80603"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80603"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-11T09:31:13.775371",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
