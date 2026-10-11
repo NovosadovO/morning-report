@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T12:16:08.437975",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Erik Ballaнадіслав(-ла) тобі повідомлення</b>\n👤 Erik Balla у TikTok &lt;notification@service.tiktok.c",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80623"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80623"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80623"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80623"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80623"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80623"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T12:16:09.795480",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Supply Chain Co-Founder / Head of Growth (100 % remote) (m/f</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -332,6 +293,12 @@
       "ts": "2026-10-11T12:20:43.976777",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T12:21:39.348588",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
