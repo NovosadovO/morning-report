@@ -1,9 +1,4 @@
 {
-  "80146": {
-    "sender": "updates@okx.com",
-    "sender_raw": "OKX <updates@okx.com>",
-    "seen_ts": "2026-10-02T16:04:51.258225+00:00"
-  },
   "80147": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-10-11T11:52:55.032645+00:00"
+  },
+  "80630": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-10-11T11:55:01.509488+00:00"
   }
 }
