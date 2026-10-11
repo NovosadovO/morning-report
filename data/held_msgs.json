@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T00:09:36.779130",
-      "kind": "MSG_FORESIGHT_TRIP",
-      "text": "✈️ ПОЇЗДКА: Bratislava — через 2 дн. (14.10–17.10)\n\n🧳 ЩО ВЗЯТИ\n• одяг на 3…17°C\n• кофта, вітровка, закрите взуття\n• парасоля/дощовик — дощових днів: 1\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 ПОГОДА\n• 14.10: 17°/7° 🌧1.4мм; 15.10: 13°/7°; 16.10: 15°/3°; 17.10: 13°/5°\n\n✅ ДО ВИЛЬОТУ\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T00:09:43.492342",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 11th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko <masyastadnikova@gmail.com> → Faktúra od Mariia Ovsiienko\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026 \n\n🧹 Реклама: 3 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRIP",
       "text": "✈️ ПОЇЗДКА: Bratislava — через 2 дн. (14.10–17.10)\n\n🧳 ЩО ВЗЯТИ\n• одяг на 3…17°C\n• кофта, вітровка, закрите взуття\n• парасоля/дощовик — дощових днів: 1\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 ПОГОДА\n• 14.10: 17°/7° 🌧1.4мм; 15.10: 13°/7°; 16.10: 15°/3°; 17.10: 13°/5°\n\n✅ ДО ВИЛЬОТУ\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T00:15:08.654536",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «UNIQA Group Services наймає: Risikoprüfer:in in der Krankenversicherun»\n\n<i>«Сповіщення про вакансії в KošiceКерувати сповіщеннями про вакансії: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BzImOiImLR%2FeByf3j0xRNYQ%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=28OqmT5f_lGIs1&amp;trk=eml-email_job_alert_digest_01-primary_job_list-0-man...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80658"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80658"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80658"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80658"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80658"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80658"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
