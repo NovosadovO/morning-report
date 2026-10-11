@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T01:43:02.390138",
-      "kind": "money",
-      "text": "🔴 <b>Прострочені рахунки: 1</b>\nCapCut (0.00€)\n\nДедлайн уже минув. Ти їх оплатив і я просто не бачив підтвердження, чи вони справді висять?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T01:43:03.103450",
       "kind": "money",
       "text": "🔴 Прострочені рахунки: 1\nCapCut (0.00€)\n\nДедлайн уже минув. Ти їх оплатив і я просто не бачив підтвердження, чи вони справді висять?",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T01:45:56.846477",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>UNIQA Group Services наймає: Risikoprüfer:in in der Krankenv</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80658"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80658"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80658"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80658"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80658"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80658"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
