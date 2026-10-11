@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:24:57.921310+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_b4528b296e"
-    },
-    {
       "ts": "2026-08-20T21:24:58.357480+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13907,6 +13901,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_cddc2fa9bd"
+    },
+    {
+      "ts": "2026-10-11T13:32:28.166287+00:00",
+      "category": "calendar_button",
+      "question": "Оплатити квартиру — €500",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "09:00–09:15",
+        "note": null
+      }
     }
   ]
 }
