@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T06:01:28.505567",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>HAPIC наймає: Head of Operations</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80602"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80602"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80602"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80602"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80602"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80602"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T06:01:29.759428",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 10</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -483,6 +444,12 @@
       "ts": "2026-10-11T06:23:28.072282",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T06:24:35.490348",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
