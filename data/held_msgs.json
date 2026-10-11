@@ -245,6 +245,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T21:02:11.024245",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Oznámenie o prijatí objednávky 8807654472</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80263"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80263"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80263"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80263"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80263"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80263"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
