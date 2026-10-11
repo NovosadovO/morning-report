@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:48.352541+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Переглянути стратегію ONDO/AVAX",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T21:25:52.880496+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13935,6 +13929,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-11T20:32:41.702616+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
