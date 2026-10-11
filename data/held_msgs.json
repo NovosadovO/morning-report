@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:31:32.041840",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_80608"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80608"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80608"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T02:31:34.407621",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobierka je teraz k dispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-10-11T02:39:31.396115",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:39:32.274173",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
