@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:52:32.909640",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-11T02:53:49.049942",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T03:00:49.960048",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>PLUNGE</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «How Bryan Johnson Uses His Sauna»\n\n<i>«Up to 20% off Saunas | [Shop Now](https://plunge.com/pages/product-lineup-hot)\r\n\r\nUp to 20% off Saunas | [Shop Now](https://plunge.com/pages/product-lineup-hot)\r\n\r\n[Plunge Logo](https://plunge.com)\r\n\r\n[Inside the Plunge x Blueprint Protocol](https://plunge.com/blogs/blog/plunge-blueprint-inside-brya...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80615"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80615"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80615"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80615"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80615"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80615"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
