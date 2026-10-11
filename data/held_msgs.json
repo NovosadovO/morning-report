@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T03:31:25.675578",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80612"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80612"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80612"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80612"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80612"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80612"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T03:31:26.949380",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Deprecation] Gemini 3.5 Flash has been deprecated and auto-</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
@@ -305,6 +266,12 @@
       "ts": "2026-10-11T03:37:02.009382",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T03:37:02.800897",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
