@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T01:16:00.003845",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank walks away from £10B Monzo deal after 10% share drop </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80653"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80653"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80653"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80653"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80653"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80653"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T01:16:01.364865",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-10-12T01:19:08.574729",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 11th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko <masyastadnikova@gmail.com> → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T01:19:09.386143",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - October 11th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
