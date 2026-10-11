@@ -546,6 +546,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-11T21:16:10.434727",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or</b>\n👤 Ruslana Kozanchyn &lt;ruslanakozancin@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80304"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80304"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80304"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80304"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80304"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80304"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
