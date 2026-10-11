@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-10-11t12_22_22_459506": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T12:22:22.459506"
+  },
+  "action_detect|2026-10-11t06_00_42_324572": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-11T06:00:42.324572"
+  },
+  "proactive_actions|2026-10-11t06_00_09_081214": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити нові оголошення про квартири\",     \"date\": \"2026-10-11\",     \"time\": \"\",     \"message\": \"Олеже, т",
+    "ts": "2026-10-11T06:00:09.081214"
+  },
   "selfact|2026-10-11t05_59_02_805260": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату квартири\",     \"text\": \"Олеже, нагадую, що 15 жовтня тобі потрібно оплатити квартиру — ",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "😴 Оскільки сьогодні зафіксовано лише 4.4 год сну, це може вплинути на відновлення після ранньої зміни. Враховуючи, що завтра вихідний, а потім починається п'ять",
     "ts": "2026-10-10T21:06:00.383833"
-  },
-  "action_detect|2026-10-10t21_01_26_603653": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T21:01:26.603653"
-  },
-  "action_detect|2026-10-10t21_01_15_498486": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T21:01:15.498486"
-  },
-  "action_detect|2026-10-10t21_01_04_709729": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Щоденник\", \"action_date\": \"2026-10-10\", \"action_time\": null, \"action_summary\": \"Заповнити щоденник, відповівши на 3",
-    "ts": "2026-10-10T21:01:04.709729"
   }
 }
