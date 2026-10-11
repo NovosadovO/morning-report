@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T10:46:10.233495",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80605"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80605"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80605"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80605"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80605"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80605"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T10:46:11.576360",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Crypto Biz: Wealthy investors are moving ahead of their cryp</b>\n👤 Cointelegraph через LinkedIn&lt;newsletters-noreply@l",
@@ -272,6 +233,12 @@
       "ts": "2026-10-11T10:50:56.117061",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:51:43.011741",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
