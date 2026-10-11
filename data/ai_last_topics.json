@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-11t05_00_56_041321": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від PLUNGE рекламує сауни та холодні ванни зі знижками до 20%, а також пропонує безкоштовну доставку, розширену гарантію та",
+    "ts": "2026-10-11T05:00:56.041321"
+  },
   "selfact|2026-10-11t04_56_44_054030": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn повідомив, що сповіщення про вакансії «Маркети",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сплатити прострочений рахунок Strava\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Сплатити пр",
     "ts": "2026-10-10T20:02:09.216807"
-  },
-  "action_detect|2026-10-10t20_01_58_160370": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-10T20:01:58.160370"
   }
 }
