@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T11:31:04.338089",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>RENOMIA наймає: SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80617"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80617"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80617"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80617"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80617"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80617"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T11:31:05.614997",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dobierka je teraz k dispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-10-11T11:36:23.138709",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T11:36:37.968480",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
