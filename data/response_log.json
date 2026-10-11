@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:24:49.796617+00:00",
-      "category": "confirm",
-      "question": "gx_mute: календар",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-20T21:24:51.145146+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13903,6 +13897,12 @@
         "when": "",
         "note": "/спати (подія: agenda)"
       }
+    },
+    {
+      "ts": "2026-10-11T06:00:48.803010+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_051f9b5ce1"
     }
   ]
 }
