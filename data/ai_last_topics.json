@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-11t20_47_42_888096": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі прийшов лист від Garmin щодо підтвердження підписки Garmin Connect+ Monthly Plan. З 11.05.2026 почн",
+    "ts": "2026-10-11T20:47:42.888096"
+  },
   "money|2026-10-11t20_42_19_779138": {
     "topic": "money",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є тижневим аналізом здоров'я Олега, де зазн",
     "ts": "2026-10-11T19:01:02.305781"
-  },
-  "email_ai_item|2026-10-11t19_00_51_760877": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від відділу кадрів Minebea Slovakia s.r.o. містить виплатну відомість Олега за вересень 2026 року у вкладенні. Це стандартне і",
-    "ts": "2026-10-11T19:00:51.760877"
   }
 }
