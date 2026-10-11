@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T10:31:08.999899",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80607"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80607"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80607"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80607"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80607"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80607"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T10:31:10.370877",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -272,6 +233,12 @@
       "ts": "2026-10-11T10:35:51.091802",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Оплатити квартиру — €500\n📅 15.10 (Thu) — через 4 дн.\n🕐 09:00–09:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T10:36:07.959206",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
