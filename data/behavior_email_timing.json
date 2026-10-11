@@ -1,9 +1,4 @@
 {
-  "80148": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-10-02T16:19:11.482269+00:00"
-  },
   "80149": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-11T12:15:31.341536+00:00"
+  },
+  "80632": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-11T12:21:43.780371+00:00"
   }
 }
