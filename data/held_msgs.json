@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-11T02:46:27.344897",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Project &amp; Release Manager (m/f/d) - Hybrid - Brati</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80607"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80607"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80607"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80607"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80607"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80607"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-11T02:46:28.724966",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Business Intelligence Analyst</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -266,6 +227,12 @@
       "ts": "2026-10-11T02:52:32.909640",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-11T02:53:49.049942",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Temu <temu@eu.temuemail.com> → Dobierka je teraz k dispozícii!\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
