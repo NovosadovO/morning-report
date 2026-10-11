@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T21:25:23.839146+00:00",
-      "category": "confirm",
-      "question": "email_delete: There may be some good news on global warming",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-20T21:25:24.864415+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити пошту",
@@ -13931,6 +13925,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-12"
+      }
+    },
+    {
+      "ts": "2026-10-11T20:07:17.751903+00:00",
+      "category": "bill_found",
+      "question": "Mariia Ovsiienko",
+      "answer": "сума не вказана",
+      "extra": {
+        "due": ""
       }
     }
   ]
