@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:16:32.838741",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>UNIQA Group Services наймає: Risikoprüfer:in in der Krankenv</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80658"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80658"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80658"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80658"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80658"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80658"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T03:16:34.195628",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 11th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -311,6 +272,12 @@
       "ts": "2026-10-12T03:19:29.505239",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:19:30.301156",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
