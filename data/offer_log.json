@@ -14760,12 +14760,12 @@
     "norm": "аналіз figr heloc"
   },
   "o:04ac9d4c3be3": {
-    "kind": "calendar",
+    "kind": "calrem_skip",
     "key": "crypto_move_1791815679",
     "title": "Аналіз FIGR_HELOC",
-    "decided": false,
-    "ts": "2026-10-12T16:34:42.812352+00:00",
-    "until": "2026-10-19T16:34:42.812319+00:00",
+    "decided": true,
+    "ts": "2026-10-12T18:02:32.738303+00:00",
+    "until": "2026-12-11T18:02:32.738272+00:00",
     "norm": "аналіз figr heloc"
   }
 }
