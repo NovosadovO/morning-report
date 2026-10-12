@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "нагадування надіслати дані",
-      "detail": "24 год мовчання",
-      "module": "healthai",
-      "ts": "2026-10-02T17:01:36"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від Profesia.sk та LinkedIn, а також його інтерес до вакансій Engineering Manager та Regionalny kierownik sprzedaży, що було зазначено в нотатках.",
       "module": "selfact",
       "ts": "2026-10-12T08:43:18"
+    },
+    {
+      "kind": "notify",
+      "what": "Подія Finweek Bratislava",
+      "detail": "У календарі на 13.10 запланована подія Finweek Bratislava, яка може бути цікава Олегу, враховуючи його інтерес до криптовалют.",
+      "module": "selfact",
+      "ts": "2026-10-12T08:58:16"
     }
   ]
 }
