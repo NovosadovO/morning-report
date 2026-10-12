@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T23:55:25.176323",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.4836 $\n24г тому: 0.5091 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T23:55:26.055754",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.0% за 24г\n\nЗараз: 0.4836 $\n24г тому: 0.5091 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80397"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T00:01:13.677497",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80341"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80341"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80341"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80341"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80341"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80341"
             }
           ]
         ]
