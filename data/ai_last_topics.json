@@ -1,4 +1,29 @@
 {
+  "healthai|2026-10-12t11_05_33_236614": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, твоя вага 83.9 кг тримається, але кроки знизились на 1873.1 за 7 днів. Це не сприяє досягненню цілі 75 кг, адже для цього потрібно більше руху. Після р",
+    "ts": "2026-10-12T11:05:33.236614"
+  },
+  "selfact|2026-10-12t11_03_19_095172": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-12T11:03:19.095172"
+  },
+  "action_detect|2026-10-12t11_01_34_337562": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"План на сьогодні\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Виконати план на сьогодні: прогулян",
+    "ts": "2026-10-12T11:01:34.337562"
+  },
+  "action_detect|2026-10-12t11_01_20_122355": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-12T11:01:20.122355"
+  },
+  "action_detect|2026-10-12t11_01_09_201586": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-10-12\", \"action_time\": \"09:30\", \"action_summary\": \"Нагадування про ранню зміну н",
+    "ts": "2026-10-12T11:01:09.201586"
+  },
   "email_ai_item|2026-10-12t11_00_59_049574": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від Temu підтверджує замовлення Олега Novosadov з ID PO-180-0831592. Замовлення готується до відправлення, очікувана дата доставки — з",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-12T09:00:17.745309"
-  },
-  "proactive_actions|2026-10-12t09_00_09_852740": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-10-12\",     \"time\": \"10:00\",     \"message\": \"Ол",
-    "ts": "2026-10-12T09:00:09.852740"
-  },
-  "selfact|2026-10-12t08_58_10_632996": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від Kraken\",     \"text\": \"Олеже, у тебе є два нових сповіщення про вакансії Senior Software Engi",
-    "ts": "2026-10-12T08:58:10.632996"
-  },
-  "selfact|2026-10-12t08_43_05_341264": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії React Native\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії Senior Software Engineer - Re",
-    "ts": "2026-10-12T08:43:05.341264"
-  },
-  "foresight|2026-10-12t08_37_35_678384": {
-    "topic": "foresight",
-    "gist": "Олеже, бачу, що твої показники кроків останнім часом падають (-1873.1 за 14 днів), а це впливає на ціль по вазі (все ще +8.7 кг до 75 кг) і на загальний фінансо",
-    "ts": "2026-10-12T08:37:35.678384"
-  },
-  "openloop_promises|2026-10-12t08_33_02_836165": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-12T08:33:02.836165"
   }
 }
