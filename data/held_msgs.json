@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T23:24:48.027526",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «AI-Powered Bond Rating Startup Says OpenAI Debt Is Junk And\r\n Anthropi»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-powered-bond-rating-startup-says-openai-debt-junk-anthropic-cnkhe?lipi=urn%3Ali%3Apage%3Aemail_email_seri...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80714"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80714"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80714"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80714"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80714"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80714"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T23:25:09.018178",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -181,6 +142,12 @@
       "ts": "2026-10-12T23:39:15.587548",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T23:40:27.977518",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
