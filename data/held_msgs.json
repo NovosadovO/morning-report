@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:16:10.966245",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Arcondis Group наймає: Domain Specialist – Clinical Data Sci</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80655"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80655"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80655"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80655"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80655"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80655"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T02:16:12.266049",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -272,6 +233,12 @@
       "ts": "2026-10-12T02:18:07.725236",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T02:18:10.297466",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.9% за 24г</b>\n\nЗараз: 10.98 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
