@@ -688,9 +688,11 @@ threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 def run_garmin_sync_watcher():
     """Пряме підтягування з Garmin Connect (кроки/сон/пульс/HRV/Body Battery/
-    стрес/SpO2/VO2max/вага) — ЄДИНЕ джерело даних здоров'я (запит Олега,
-    08.10 і 09.10). Кожні 3 години: живий запит (fetch_live) + одразу
-    надсилає Олегу блок даних з AI-рекомендаціями (healthai.garmin_periodic_notify).
+    стрес/SpO2/VO2max/вага/пробіжки) — ЄДИНЕ джерело даних здоров'я (запит
+    Олега, 08.10, 09.10, 12.10 — "всі дані від гармін... і біг... все").
+    Кожні 3 години: живий запит (fetch_live, тягне й пробіжки через
+    sync_running_activities) + одразу надсилає Олегу блок даних з
+    AI-рекомендаціями (healthai.garmin_periodic_notify).
     Частіше немає смислу й зайве навантаження на Garmin API (ризик rate-limit)."""
     print("=== Starting Garmin Connect sync watcher (every 3h) ===", flush=True)
     time.sleep(150)

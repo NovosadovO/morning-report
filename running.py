@@ -1,15 +1,24 @@
 """
-running.py — РУЧНИЙ трекер бігу. Замінює Strava.
+running.py — трекер бігу. Замінює Strava.
 
 Strava з 2026 вимагає платну підписку API (403 Application/Inactive —
 застосунок Олега деактивовано політикою Strava, не баг токена), тому
-автоматичне підтягування пробіжок видалене. Замість цього Олег сам пише
-в Telegram щось типу "Пробіжав 5.2 км за 28 хвилин, пульс 145" — і саме
-Gemini (AI), а не крихкий regex, вирішує що там написано і зберігає це.
+автоматичне підтягування пробіжок зі Strava видалене. Замість цього Олег
+сам пише в Telegram щось типу "Пробіжав 5.2 км за 28 хвилин, пульс 145" —
+і саме Gemini (AI), а не крихкий regex, вирішує що там написано і зберігає це.
 Regex лишається лише дешевою попередньою спробою й аварійним fallback-ом,
 якщо AI недоступний — точно та ж філософія, що і в qwatch.py після фіксу
 "AI — головне джерело правди для чисел" (26.09.2026, запит Олега: "тільки
 аі слідкує за актуальністю даних").
+
+З 12.10 (запит Олега: "всі дані від гармін брав бот та аі. Всі і біг
+сон все!") пробіжки/хода ТАКОЖ автопідтягуються з Garmin Connect —
+save_from_garmin(), яку кожні 3 год (і при /гармін) викликає
+garmin_sync.sync_running_activities(). Це ДОПОВНЕННЯ до ручного вводу
+нижче, не заміна: якщо Олег уже сам написав про цю пробіжку текстом,
+Garmin-дублікат з того ж +-90хв вікна пропускається (інакше кілометраж
+рахувався б двічі в тижневих/місячних звітах). Записи з Garmin мають
+"source": "garmin" і ключ "garmin_<activity_id>" замість ISO-часу.
 
 Flow:
   1. Олег пише вільний текст про пробіжку в Telegram
@@ -213,6 +222,63 @@ def parse_and_save(text: str) -> dict:
     _save_key(start_date_local, record)
     print(f"running: saved manual run {start_date_local} ({distance_km} km)")
     return record
+
+
+def save_from_garmin(a: dict) -> bool:
+    """Зберігає пробіжку/ходу, автопідтягнуту з Garmin Connect
+    (garmin_sync.sync_running_activities) — ДОПОВНЕННЯ до ручного AI-тексту,
+    не заміна (запит Олега 12.10: "всі дані від гармін... і біг... все").
+
+    Дедуп у два боки:
+      1. activity_id Garmin — ключ "garmin_<id>", повторний синк тієї ж
+         активності просто перезапише той самий запис (ідемпотентно).
+      2. Якщо Олег уже сам написав про цю пробіжку текстом (ручний запис
+         "manual"/"manual_ai" у тому ж +-90 хв вікні старту) — НЕ додаємо
+         другий запис, інакше тижневий/місячний км рахувався б двічі.
+
+    Повертає True лише якщо реально збережено НОВИЙ запис.
+    """
+    aid = a.get("activity_id")
+    start = a.get("start_date_local") or ""
+    if not aid or not start:
+        return False
+    try:
+        start_dt = datetime.fromisoformat(start)
+    except Exception:
+        return False
+
+    data = _load()
+    key = f"garmin_{aid}"
+    if key in data:
+        return False  # цю активність уже синкали раніше
+
+    for rec in data.values():
+        if not isinstance(rec, dict) or not str(rec.get("source", "")).startswith("manual"):
+            continue
+        try:
+            rd = datetime.fromisoformat(rec.get("start_date_local", ""))
+        except Exception:
+            continue
+        if abs((rd - start_dt).total_seconds()) <= 90 * 60:
+            return False  # Олег уже сам записав цю ж пробіжку текстом
+
+    record = {
+        "type": a.get("type") or "Run",
+        "distance": a.get("distance") or 0,
+        "moving_time": a.get("moving_time") or 0,
+        "start_date_local": start,
+        "start_date": start,  # alias для strava_charts.py
+        "average_heartrate": a.get("average_heartrate"),
+        "total_elevation_gain": a.get("total_elevation_gain") or 0,
+        "name": a.get("name") or "Активність (Garmin)",
+        "notes": "авто з Garmin Connect",
+        "source": "garmin",
+        "saved_at": _now_local().strftime("%Y-%m-%d %H:%M"),
+    }
+    ok = bool(_save_key(key, record))
+    if ok:
+        print(f"running: saved garmin activity {key} ({record['distance']} m)")
+    return ok
 
 # ─── ЧИТАННЯ / АНАЛІТИКА (перенесено зі strava.py, тепер без HTTP/токенів) ───
 

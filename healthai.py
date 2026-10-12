@@ -628,6 +628,13 @@ def garmin_periodic_notify() -> bool:
         if record.get("weight_kg") is not None:
             ctx_parts.append(f"вага: {record['weight_kg']} кг")
 
+        new_runs = res.get("new_runs") or []
+        if new_runs:
+            for _r in new_runs:
+                _dkm = round((_r.get("distance") or 0) / 1000.0, 2)
+                _dmin = int((_r.get("moving_time") or 0) // 60)
+                ctx_parts.append(f"щойно автопідхоплено з Garmin пробіжку/ходу: {_dkm} км за {_dmin} хв")
+
         if ctx_parts:
             prompt = (
                 f"{_STYLE}\n\nПоточні живі показники з Garmin Connect (саме зараз): "

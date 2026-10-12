@@ -28,6 +28,15 @@ steps, sleep, resting HR, HRV (hrvSummary), Body Battery, стрес
 НЕ логінитись паролем щоразу (повторні логіни ризикують rate-limit/
 блокуванням на боці Garmin). Пароль використовується лише коли кеш
 відсутній або протух.
+
+З 12.10 (запит Олега: "всі дані від гармін брав бот та аі. Всі і біг
+сон все!") цей модуль ТАКОЖ автопідтягує пробіжки/ходу з Garmin Connect
+(sync_running_activities → running.save_from_garmin) при кожному
+fetch_live — тобто і в 3-годинному фоновому синку, і при /гармін.
+Це ДОПОВНЕННЯ до ручного AI-текстового вводу в running.py, не заміна:
+якщо Олег сам написав про пробіжку в Telegram, Garmin-дублікат з того
+ж вікна часу пропускається (дедуп у running.save_from_garmin), щоб
+кілометраж не рахувався двічі в тижневих/місячних звітах.
 """
 import os
 from datetime import date
@@ -191,6 +200,108 @@ FIELDS = [
 ]
 
 
+# ── Пробіжки/хода напряму з Garmin Connect (запит Олега 12.10: "всі дані
+# від гармін... і біг... все") — ДОПОВНЮЄ, не замінює ручний AI-текстовий
+# ввід у running.py. Якщо Олег не написав про пробіжку сам, годинник її
+# однаково підхопить; якщо написав — дублікат не рахується (running.py
+# дедуплікує за часом старту). ──
+_RUN_TYPE_MAP = {
+    "running":           "Run",
+    "track_running":     "Run",
+    "treadmill_running": "Run",
+    "indoor_running":    "Run",
+    "street_running":    "Run",
+    "obstacle_run":      "Run",
+    "trail_running":     "TrailRun",
+    "ultra_run":         "TrailRun",
+    "virtual_run":       "VirtualRun",
+    "walking":           "Walk",
+    "casual_walking":    "Walk",
+    "speed_walking":     "Walk",
+}
+
+
+def _fetch_run_activities(client, day: str) -> list:
+    """Пробіжки/хода саме за `day` з останніх активностей Garmin (беремо
+    останні 20 — за 3-годинний цикл синку більше одного дня туди точно
+    не набіжить)."""
+    out = []
+    try:
+        acts = client.get_activities(0, 20) or []
+    except Exception as e:
+        print(f"[{TAG}] get_activities error: {e}", flush=True)
+        return out
+    if not isinstance(acts, list):
+        return out
+    for a in acts:
+        try:
+            start = a.get("startTimeLocal") or ""
+            if not start.startswith(day):
+                continue
+            type_key = ((a.get("activityType") or {}).get("typeKey") or "").lower()
+            mapped = _RUN_TYPE_MAP.get(type_key)
+            if not mapped:
+                continue
+            out.append({
+                "activity_id": a.get("activityId"),
+                "type": mapped,
+                "distance": a.get("distance"),
+                "moving_time": a.get("movingDuration") or a.get("duration") or a.get("elapsedDuration"),
+                "start_date_local": start.replace(" ", "T"),
+                "average_heartrate": a.get("averageHR"),
+                "total_elevation_gain": a.get("elevationGain"),
+                "name": a.get("activityName") or mapped,
+            })
+        except Exception as e:
+            print(f"[{TAG}] activity parse error: {e}", flush=True)
+    return out
+
+
+def sync_running_activities(day: str = None, client=None) -> list:
+    """Автопідтягує пробіжки/ходу з Garmin Connect у running_data.json
+    (через running.save_from_garmin — там дедуп проти ручних записів).
+    Повертає список щойно ЗБЕРЕЖЕНИХ (нових) активностей."""
+    day = day or date.today().isoformat()
+    if client is None:
+        client = _get_client()
+    if client is None:
+        return []
+    acts = _fetch_run_activities(client, day)
+    if not acts:
+        return []
+    try:
+        import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
+        import running as _running
+    except Exception as e:
+        print(f"[{TAG}] running import error: {e}", flush=True)
+        return []
+    saved = []
+    for a in acts:
+        try:
+            if _running.save_from_garmin(a):
+                saved.append(a)
+        except Exception as e:
+            print(f"[{TAG}] save_from_garmin error: {e}", flush=True)
+    if saved:
+        print(f"[{TAG}] автопідтягнуто {len(saved)} пробіжок/ходи за {day}", flush=True)
+    return saved
+
+
+def format_run_lines(saved: list) -> str:
+    """Короткий текстовий блок щойно автопідтягнутих пробіжок — для картки
+    /гармін і для 3-годинного AI-сповіщення."""
+    if not saved:
+        return ""
+    lines = ["🏃 <b>Нове з Garmin (авто, без ручного вводу)</b>"]
+    for a in saved:
+        dist_km = round((a.get("distance") or 0) / 1000.0, 2)
+        secs = a.get("moving_time") or 0
+        mm = int(secs // 60)
+        label = {"Run": "Біг", "TrailRun": "Трейл", "VirtualRun": "Віртуальний біг", "Walk": "Хода"}.get(a.get("type"), a.get("type"))
+        lines.append(f"  • {label}: <b>{dist_km} км</b> за {mm} хв  ({a.get('name') or ''})".rstrip())
+    return "\n".join(lines)
+
+
 def format_block(payload: dict, day: str, live: bool) -> str:
     """Текстовий блок усіх полів Garmin — навіть відсутні показуються як
     'немає даних' (Олег просив ВСІ дані, щоб було видно прогалини)."""
@@ -230,7 +341,17 @@ def fetch_live(day: str = None) -> dict:
         record = payload
 
     text = format_block(record, day, live=True)
-    return {"ok": True, "record": record, "text": text}
+
+    new_runs = []
+    try:
+        new_runs = sync_running_activities(day, client=client)
+        run_lines = format_run_lines(new_runs)
+        if run_lines:
+            text += "\n\n" + run_lines
+    except Exception as e:
+        print(f"[{TAG}] sync_running_activities error: {e}", flush=True)
+
+    return {"ok": True, "record": record, "text": text, "new_runs": new_runs}
 
 
 def sync_once() -> bool:
