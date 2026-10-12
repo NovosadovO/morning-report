@@ -164,6 +164,19 @@ def _mail_block() -> str:
             continue
         subj = _short(em.get("subject") or em.get("тема"), 110)
         frm = _short(em.get("from") or em.get("sender"), 70)
+        # Промо/спам листи сюди не пускаємо (10.10.2026, запит Олега): без
+        # цього AI бачив рекламу/розсилки нарівні з реальними листами й сам
+        # генерував "notify" про конкурси Kraken/вакансії/OKX — а оскільки
+        # заголовок notify щоразу інший (AI переформулює), rx_mute на нього
+        # не ловив наступний такий самий за змістом спам іншими словами.
+        # Простіше не давати AI це бачити взагалі, ніж ганятись за кожним
+        # перефразуванням.
+        try:
+            import monitor as _mon_cls
+            if _mon_cls._classify_email(frm, subj) in ("promo", "spam"):
+                continue
+        except Exception:
+            pass
         uid = str(em.get("uid") or em.get("id") or "")
         body = ""
         rec = cache.get(uid) if isinstance(cache, dict) else None

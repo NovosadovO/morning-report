@@ -61,8 +61,8 @@ MUTED = []
 
 class _FakeDismissed:
     @staticmethod
-    def mute(kind, key=None, title=None, note=""):
-        MUTED.append({"kind": kind, "key": key, "title": title})
+    def mute(kind, key=None, title=None, note="", keyword=None):
+        MUTED.append({"kind": kind, "key": key, "title": title, "keyword": keyword})
         return {"ok": True}
 
 
@@ -160,6 +160,20 @@ press("crypto", "watch", key="btc", title="BTC -6%")
 ok(R.is_closed("crypto", key="btc") is False, "спостереження не глушить тему")
 ok(STORE[R.FILE][list(STORE[R.FILE])[0]]["state"] == "open", "стан open")
 ok(not MUTED, "у блок-лист нічого не пішло")
+
+# ─── 6b. «не нагадуй» несе ключове слово для ловлі перефразувань AI ─────────
+print("\n=== 6b. mute несе keyword (переформульовані нотифікації AI) ===")
+reset()
+press("crypto", "mute", key="okx1",
+      title="Можливість виграти 1,000 SOL від Kraken")
+m = next(x for x in MUTED if x["kind"] == "crypto")
+ok(bool(m["keyword"]), "mute передав непорожнє keyword у dismissed")
+ok(m["keyword"] not in ("", None), "keyword не пустий рядок")
+reset()
+press("bill", "paid", key="b2", title="Faktúra O2 24 EUR")
+m2 = next(x for x in MUTED if x["kind"] == "bill")
+ok(m2["keyword"] is None,
+   "інші закриваючі дії (не mute) не вигадують keyword")
 
 # ─── 7. AI бачить реакції ────────────────────────────────────────────────────
 print("\n=== 7. AI розуміє реакції ===")

@@ -267,6 +267,31 @@ def _first_line(text: str) -> str:
 
 # ─── ЗАПИС РЕАКЦІЇ ───────────────────────────────────────────────────────────
 
+# Слова, які нічого не кажуть про тему — для вибору ключового слова при
+# "🙈 Не нагадуй" (щоб "олеже"/"сьогодні"/"треба" не ставали keyword-ом).
+_MUTE_KW_STOP = {
+    "олег", "олега", "олеже", "олегу", "сьогодні", "завтра", "зараз",
+    "треба", "можна", "потрібно", "мене", "мені", "тобі", "твій", "твоя",
+    "твоє", "нове", "нова", "новий", "після", "перед", "разом", "буде",
+    "було", "тому", "дуже", "просто", "трохи", "знову", "знову",
+}
+
+
+def _mute_keyword(title: str) -> str:
+    """Одне найзначуще слово з назви — для 'Не нагадуй' (10.10.2026, запит
+    Олега): AI щоразу переформульовує нотифікацію про ту саму тему іншими
+    словами, тому точний/нечіткий збіг заголовка часто не ловить повтор.
+    Один стабільний термін із суті (напр. "страховка", "garmin", "вакансії")
+    ширше матчить майбутні перефразування того самого."""
+    n = _norm(title)
+    if not n:
+        return ""
+    words = [w for w in n.split() if len(w) >= 5 and w not in _MUTE_KW_STOP]
+    if not words:
+        return ""
+    return max(words, key=len)
+
+
 def mark(kind: str, action: str, key: str = "", title: str = "",
          label: str = "", about: str = "") -> dict:
     """Пише реакцію назавжди. Закриття теми дублює в dismissed (глобальна тиша)."""
@@ -295,8 +320,10 @@ def mark(kind: str, action: str, key: str = "", title: str = "",
     if state == "closed":
         try:
             import dismissed as D
+            kw = _mute_keyword(title) if action == "mute" else None
             D.mute(kind, key=key or None, title=title or None,
-                   note="реакція: " + str(SAID.get(action, action)))
+                   note="реакція: " + str(SAID.get(action, action)),
+                   keyword=kw)
         except Exception as e:
             _log("dismissed skip: " + str(e))
     _log("реакція: " + kind + " → " + str(SAID.get(action, action)) +
