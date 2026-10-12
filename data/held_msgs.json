@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:14:45.420335",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +7.1% за 24г</b>\n\nЗараз: 0.5243 $\n24г тому: 0.4895 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:14:46.288623",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +7.1% за 24г\n\nЗараз: 0.5243 $\n24г тому: 0.4895 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80655"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-12T03:16:38.988618",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 11th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80661"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_80660"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: The Daily Degen",
+              "callback_data": "email_reply_80657"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80661"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80661"
             }
           ]
         ]
