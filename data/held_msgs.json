@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:46:33.789526",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:46:35.093438",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Action Needed: Privacy Wall - Blocked Communications Digest</b>\n👤 EtherMail &lt;ethermail@ethermail.io&gt;",
@@ -410,6 +404,12 @@
       "ts": "2026-10-12T03:48:17.942028",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 10.92 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:48:18.913540",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.3% за 24г\n\nЗараз: 10.92 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
