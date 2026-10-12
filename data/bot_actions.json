@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.36 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-10-04T04:42:10"
-    },
-    {
       "kind": "reminder",
       "what": "нагадування надіслати дані",
       "detail": "62 год мовчання",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-12T14:05:47"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-12",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-12T14:29:15"
     }
   ]
 }
