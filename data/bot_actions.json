@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: steps_good",
-      "detail": "🚶 Кроки за тиждень у середньому 14893 — ціль 8000 досягнута",
-      "module": "healthai",
-      "ts": "2026-10-04T20:28:03"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±5.15 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-12T17:30:16"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на лист від OKX: 'OKX Shield: Verify eve",
+      "detail": "Свіжий лист від OKX <updates@okx.com> | OKX Shield: Verify every transaction. Це важливе сповіщення щодо безпеки фінансових операцій.",
+      "module": "selfact",
+      "ts": "2026-10-12T18:04:53"
     }
   ]
 }
