@@ -51,7 +51,50 @@ TAG = "garmin_sync"
 SYNC_EVERY_MIN = 180
 
 
+# ── Моніторинг самого з'єднання з Garmin (запит Олега 12.10, пункт 2) ──
+# Токен/сесія іноді протухає — раніше це тихо падало в лог кожні 3 години,
+# і Олег міг днями не знати, що дані перестали йти. Тепер: 2+ невдалих
+# спроби підряд → одне попередження (кулдаун 6 год, щоб не спамити).
+_CONSEC_FAILS = [0]
+_LAST_FAIL_ALERT = [0.0]
+
+
+def _note_client_result(ok: bool):
+    import time as _time
+    if ok:
+        _CONSEC_FAILS[0] = 0
+        return
+    _CONSEC_FAILS[0] += 1
+    if _CONSEC_FAILS[0] < 2:
+        return
+    if _time.time() - _LAST_FAIL_ALERT[0] < 6 * 3600:
+        return
+    _LAST_FAIL_ALERT[0] = _time.time()
+    try:
+        import json as _json, urllib.request as _ur
+        token = os.environ.get("TELEGRAM_TOKEN", "")
+        chat = os.environ.get("TELEGRAM_CHAT_ID", "") or os.environ.get("TELEGRAM_CHAT", "")
+        if not token or not chat:
+            return
+        text = (f"🔴 <b>Garmin Connect відвалився</b>\n\n"
+                f"{_CONSEC_FAILS[0]} невдалих спроб підряд підключитись — дані "
+                f"здоров'я і пробіжки не оновлюються. Схоже сесія/токен протух "
+                f"або пароль змінився. Перевір GARMIN_EMAIL/GARMIN_PASSWORD.")
+        body = _json.dumps({"chat_id": chat, "text": text, "parse_mode": "HTML"}).encode()
+        req = _ur.Request(f"https://api.telegram.org/bot{token}/sendMessage",
+                           data=body, headers={"Content-Type": "application/json"})
+        _ur.urlopen(req, timeout=15)
+    except Exception as e:
+        print(f"[{TAG}] fail-alert send error: {e}", flush=True)
+
+
 def _get_client():
+    client = _get_client_inner()
+    _note_client_result(client is not None)
+    return client
+
+
+def _get_client_inner():
     try:
         import garminconnect
     except Exception as e:
@@ -218,7 +261,22 @@ _RUN_TYPE_MAP = {
     "walking":           "Walk",
     "casual_walking":    "Walk",
     "speed_walking":     "Walk",
+    # Велосипед (запит Олега 12.10, пункт 5 — "можу додати, якщо актуально")
+    # — зберігається, щоб не загубити дані, але НЕ потрапляє в бігові
+    # тижневі/місячні звіти (running.get_runs фільтрує лише Run/TrailRun/
+    # VirtualRun) і не ставить галочку звички "Біг".
+    "cycling":           "Ride",
+    "road_biking":       "Ride",
+    "mountain_biking":   "Ride",
+    "gravel_cycling":    "Ride",
+    "indoor_cycling":    "Ride",
+    "virtual_ride":      "Ride",
+    "e_biking":          "Ride",
 }
+
+# Типи, що рахуються як "біг" для автопозначення звички "🏃 Біг" — НЕ хода
+# і не велосипед, щоб звичка відображала саме біг, як і задумано в habits.py.
+_RUN_HABIT_TYPES = ("Run", "TrailRun", "VirtualRun")
 
 
 def _fetch_run_activities(client, day: str) -> list:
@@ -284,7 +342,27 @@ def sync_running_activities(day: str = None, client=None) -> list:
             print(f"[{TAG}] save_from_garmin error: {e}", flush=True)
     if saved:
         print(f"[{TAG}] автопідтягнуто {len(saved)} пробіжок/ходи за {day}", flush=True)
+        if any(a.get("type") in _RUN_HABIT_TYPES for a in saved):
+            _auto_mark_run_habit(day)
     return saved
+
+
+def _auto_mark_run_habit(day: str):
+    """Якщо Garmin сам побачив біг за `day` — ставимо галочку звички 🏃 Біг,
+    щоб Олегу не треба було тиснути кнопку вручну (запит Олега 12.10, пункт
+    1). НЕ перезаписуємо, якщо він уже сам явно відповів True/False на цю
+    звичку за цей день — лише заповнюємо, коли там None (ще не відповідав)."""
+    try:
+        import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
+        import habits as _habits
+        db = _habits.load_data()
+        day_data = db.setdefault(day, {})
+        if day_data.get("run") is None:
+            day_data["run"] = True
+            _habits.save_data(db)
+            print(f"[{TAG}] звичка 'Біг' автопозначена ✅ за {day} (з Garmin)", flush=True)
+    except Exception as e:
+        print(f"[{TAG}] auto_mark_run_habit error: {e}", flush=True)
 
 
 def format_run_lines(saved: list) -> str:
@@ -297,7 +375,8 @@ def format_run_lines(saved: list) -> str:
         dist_km = round((a.get("distance") or 0) / 1000.0, 2)
         secs = a.get("moving_time") or 0
         mm = int(secs // 60)
-        label = {"Run": "Біг", "TrailRun": "Трейл", "VirtualRun": "Віртуальний біг", "Walk": "Хода"}.get(a.get("type"), a.get("type"))
+        label = {"Run": "Біг", "TrailRun": "Трейл", "VirtualRun": "Віртуальний біг",
+                 "Walk": "Хода", "Ride": "Велосипед"}.get(a.get("type"), a.get("type"))
         lines.append(f"  • {label}: <b>{dist_km} км</b> за {mm} хв  ({a.get('name') or ''})".rstrip())
     return "\n".join(lines)
 

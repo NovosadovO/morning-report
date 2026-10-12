@@ -24,11 +24,83 @@ _GEMINI_RESULTS = []   # список bool (True=успіх, False=провал)
 _LAST_EMAIL_CHECK_OK = [None]  # timestamp останньої УСПІШНОЇ перевірки пошти
 _LAST_ALERT_SENT = {}  # {"gemini": ts, "email": ts} — dedup щоб не спамити
 
+# ── Лічильник викликів Gemini по днях (запит Олега 12.10, пункт 4 —
+# самоконтроль витрат AI, щоб бачити чи скорочення звітів реально тримається,
+# а не лише здається). In-memory за ПОТОЧНИЙ день (без GitHub-запису на
+# КОЖЕН виклик — це саме те, від чого ми економимо), раз на день
+# flush_daily_count() дописує підсумок в storage (ai_usage_daily.json)
+# для історії за тиждень/місяць.
+_TODAY_CALLS = {"day": None, "n": 0}
+_LAST_FLUSHED_DAY = [None]
+
+
+def _today_str():
+    return (datetime.now(timezone.utc) + _TZ_OFFSET).strftime("%Y-%m-%d")
+
 
 def record_gemini_result(ok: bool):
     _GEMINI_RESULTS.append(ok)
     if len(_GEMINI_RESULTS) > 30:
         _GEMINI_RESULTS.pop(0)
+
+    today = _today_str()
+    if _TODAY_CALLS["day"] != today:
+        _TODAY_CALLS["day"] = today
+        _TODAY_CALLS["n"] = 0
+    _TODAY_CALLS["n"] += 1
+
+
+def flush_daily_count(force: bool = False):
+    """Раз на день (викликається з check_self_health) дописує сьогоднішній
+    підсумок викликів Gemini в storage — щоб був історичний ряд для
+    тижневого звіту витрат, без запису в GitHub на кожен окремий виклик."""
+    now = datetime.now(timezone.utc) + _TZ_OFFSET
+    today = now.strftime("%Y-%m-%d")
+    if not force and not (now.hour == 23 and now.minute >= 50):
+        return
+    if _LAST_FLUSHED_DAY[0] == today:
+        return
+    if _TODAY_CALLS["day"] != today or _TODAY_CALLS["n"] == 0:
+        return
+    try:
+        import storage
+        hist = storage.load("ai_usage_daily.json", default={}) or {}
+        if not isinstance(hist, dict):
+            hist = {}
+        hist[today] = _TODAY_CALLS["n"]
+        # тримаємо лише останні 60 днів, щоб файл не ріс нескінченно
+        cutoff = (now - timedelta(days=60)).strftime("%Y-%m-%d")
+        hist = {d: v for d, v in hist.items() if d >= cutoff}
+        storage.save("ai_usage_daily.json", hist)
+        _LAST_FLUSHED_DAY[0] = today
+        print(f"[self_diag] flushed AI usage {today}: {_TODAY_CALLS['n']} викликів", flush=True)
+    except Exception as e:
+        print(f"[self_diag] flush_daily_count error: {e}", flush=True)
+
+
+def weekly_usage_report() -> str:
+    """Короткий текст: скільки викликів Gemini за останні 7 днів + середнє/день.
+    Для вставки в недільний підсумок дня (check_day_summary), не окремий звіт."""
+    try:
+        import storage
+        hist = storage.load("ai_usage_daily.json", default={}) or {}
+        if not isinstance(hist, dict):
+            hist = {}
+    except Exception:
+        hist = {}
+    now = datetime.now(timezone.utc) + _TZ_OFFSET
+    today = now.strftime("%Y-%m-%d")
+    hist = dict(hist)
+    if _TODAY_CALLS["day"] == today and _TODAY_CALLS["n"] > 0:
+        hist[today] = _TODAY_CALLS["n"]  # сьогоднішнє — ще не "флашене", беремо з пам'яті
+
+    days7 = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(7)]
+    vals = [hist.get(d) for d in days7 if hist.get(d) is not None]
+    if not vals:
+        return ""
+    total = sum(vals)
+    avg = round(total / len(vals), 1)
+    return f"🤖 <b>AI-виклики за тиждень:</b> {total} (середнє {avg}/день, {len(vals)} днів даних)"
 
 
 def record_email_check_ok():
@@ -54,6 +126,11 @@ def _should_alert(key: str, min_hours: float = 3.0) -> bool:
 def check_self_health():
     """Головна перевірка — викликається періодично з monitor_loop.py.
     Якщо щось зламане — шле Олегу зрозуміле повідомлення (не технічний трейсбек)."""
+    try:
+        flush_daily_count()
+    except Exception as e:
+        print(f"[self_diag] flush_daily_count call error: {e}", flush=True)
+
     try:
         import monitor as _mon
     except Exception as e:

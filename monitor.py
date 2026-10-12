@@ -8374,6 +8374,19 @@ def check_day_summary():
     else:
         lines_out.append("💤 Сьогодні не вийшло — завтра новий шанс. Без самобичування, просто зробимо.")
 
+    # ── Тижневий самоконтроль витрат AI (неділя, запит Олега 12.10, пункт 4) ──
+    # Вставляємо в ЦЕЙ вже існуючий недільний підсумок, а не окремий звіт —
+    # щоб не плодити ще одну розсилку.
+    if now_local.weekday() == 6:
+        try:
+            import self_diagnostics as _sd_ws
+            usage_line = _sd_ws.weekly_usage_report()
+            if usage_line:
+                lines_out.append("")
+                lines_out.append(usage_line)
+        except Exception as e:
+            print(f"day summary AI usage error: {e}")
+
     # Save-before-send (GitHub) — prevents duplicate on Railway restart
     _day_summary_gh_mark(today)
     send_telegram("\n".join(lines_out))
@@ -11203,14 +11216,51 @@ def check_strava_weekly_report():
     """
     Тижневий звіт бігу — відправляється по неділях в 20:00.
     Повний аналіз + графік за останні 8 тижнів.
-    """
+
+    З 12.10 (запит Олега: тижневий синтез "сон+стрес+біг") сюди ж додається
+    коротка AI-вставка, що зводить разом біг цього тижня з HRV/стресом/сном
+    із Garmin за той самий період — ОДНЕ повідомлення, не новий окремий звіт
+    (щоб не плодити ще одну неділю-20:00 розсилку поруч з hcoach.weekly_report
+    о 19:30, яка вже є)."""
     try:
         import sys as _sys_sr
         _sys_sr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from running import format_weekly_run_report
+        from running import format_weekly_run_report, get_week_stats
         from strava_charts import plot_week_chart
 
         text = format_weekly_run_report()
+
+        try:
+            import healthai as _hai_wk
+            a7 = _hai_wk.analytics(7)
+            wk = get_week_stats() or {}
+            km = wk.get("distance_km") or wk.get("km") or 0
+            runs_n = wk.get("runs") or 0
+            if km or runs_n:
+                ctx = [f"біг за тиждень: {runs_n} пробіжок, {km} км"]
+                for key, label, unit in (
+                    ("sleep", "сон", "г"), ("stress", "стрес", ""),
+                    ("hrv", "HRV", " мс"), ("energy", "Body Battery", ""),
+                ):
+                    v = (a7.get(key) or {}).get("avg7")
+                    if v is not None:
+                        ctx.append(f"середній {label} за тиждень: {round(v,1)}{unit}")
+                if len(ctx) > 1:
+                    prompt = (
+                        f"{_hai_wk._STYLE}\n\nДані за тиждень з Garmin: " + "; ".join(ctx) + ".\n\n"
+                        "В 2-3 коротких реченнях скажи, чи видно зв'язок між бігом і "
+                        "сном/стресом/відновленням ЦЬОГО тижня — тільки якщо дані це "
+                        "реально показують (напр. менше сну в дні після довгих пробіжок). "
+                        "Якщо даних замало або зв'язку не видно — чесно напиши одне "
+                        "коротке речення про це, нічого не вигадуй."
+                    )
+                    import ai_kit as _K_wk
+                    synth = (_K_wk.gemini_text(prompt, max_tokens=300, temperature=0.6, tag="run_week_synth") or "").strip()
+                    if synth:
+                        text += "\n\n🧠 <b>Біг і відновлення цього тижня</b>\n" + synth
+        except Exception as _e_syn:
+            print(f"check_strava_weekly_report synth error: {_e_syn}")
+
         send_telegram(text)
 
         # Графік
