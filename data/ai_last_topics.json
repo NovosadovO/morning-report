@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-12t11_19_07_271149": {
+    "topic": "mailcal_extract",
+    "gist": "```json [  {   \"uid\": \"80673\",   \"title\": \"Підтвердження замовлення Temu (#PO-180-08315922862710256)\",   \"date\": \"2026-10-12\",   \"time\": null,   \"kind\": \"delive",
+    "ts": "2026-10-12T11:19:07.271149"
+  },
   "healthai|2026-10-12t11_05_33_236614": {
     "topic": "healthai",
     "gist": "👋 Олеже, твоя вага 83.9 кг тримається, але кроки знизились на 1873.1 за 7 днів. Це не сприяє досягненню цілі 75 кг, адже для цього потрібно більше руху. Після р",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить загальні поради щодо сніданку та інформ",
     "ts": "2026-10-12T09:00:28.497871"
-  },
-  "action_detect|2026-10-12t09_00_17_745309": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-12T09:00:17.745309"
   }
 }
