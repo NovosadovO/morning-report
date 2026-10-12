@@ -1,9 +1,4 @@
 {
-  "80216": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-10-04T08:39:12.104202+00:00"
-  },
   "80219": {
     "sender": "hello@notify.railway.app",
     "sender_raw": "Railway <hello@notify.railway.app>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T14:14:25.964523+00:00"
+  },
+  "80691": {
+    "sender": "newsletter@ticketportal.sk",
+    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
+    "seen_ts": "2026-10-12T14:22:36.944845+00:00"
   }
 }
