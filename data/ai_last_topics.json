@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-12t19_00_29_919200": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Останній прийом їжі\", \"action_date\": null, \"action_time\": \"20:00\", \"action_summary\": \"Якщо практикуєш 16:8, останні",
+    "ts": "2026-10-12T19:00:29.919200"
+  },
+  "mailcal_extract|2026-10-12t18_54_10_183666": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80673\",     \"title\": \"Отримання кредиту 5,00 € за замовлення Temu\",     \"date\": \"2026-10-25\",     \"time\": null,     \"kind\": \"payment\",",
+    "ts": "2026-10-12T18:54:10.183666"
+  },
   "selfact|2026-10-12t18_51_51_925052": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова фактура від Mariia Ovsiienko\",     \"text\": \"Олеже, надійшла нова фактура від Mariia Ovsiienko на пошту. В",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "Олег не надав жодних явних обіцянок у наведених листах. Усі листи є автоматичними сповіщеннями або інформаційними повідомленнями, а його власні висловлювання (к",
     "ts": "2026-10-12T16:05:04.109119"
-  },
-  "action_detect|2026-10-12t16_02_17_510868": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-12T16:02:17.510868"
-  },
-  "email_ai_item|2026-10-12t16_02_06_938856": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від 0xResearch інформує про запуск PaperTrade 10 жовтня та його швидкий розвиток. За два дні обсяги торгів досягли $804 млрд, пере",
-    "ts": "2026-10-12T16:02:06.938856"
   }
 }
