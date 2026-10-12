@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:42:58.837637",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -6.2% за 24г\n\nЗараз: 0.4835 $\n24г тому: 0.5156 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-13T00:43:01.604056",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -5.5% за 24г</b>\n\nЗараз: 10.31 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T00:43:02.460424",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.5% за 24г\n\nЗараз: 10.31 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -214,6 +202,51 @@
       "ts": "2026-10-13T00:46:05.119984",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Manažér obchodnej agentúry v Košiciach в UNIQA CZ\n• Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Temu <temu@orders.temu.com> → Potvrdenie vašej objednávky Temu (#PO-180-08315922862710256)\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:46:06.347201",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 How LLMs might make crypto mining useful</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80715"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80715"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80715"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80715"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80715"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80715"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T00:46:06.898522",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Temu  → Potvrdenie vašej objednávky Temu (#PO-180-08315922862710256)\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
