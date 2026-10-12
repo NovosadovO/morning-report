@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:43:21.520428",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +5.1% за 24г</b>\n\nЗараз: 10.92 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:43:22.466017",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.1% за 24г\n\nЗараз: 10.92 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:46:35.093438",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Action Needed: Privacy Wall - Blocked Communications Digest</b>\n👤 EtherMail &lt;ethermail@ethermail.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80662"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80662"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80662"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80662"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80662"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80662"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
