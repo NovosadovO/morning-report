@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:46:03.571286",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Manažér obchodnej agentúry v Ko</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80717"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80717"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80717"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80717"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80717"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80717"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:46:04.926349",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Action Required] Mark AI agent OAuth clients as agentic for</b>\n👤 Google Cloud &lt;CloudPlatform-noreply@google.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-13T00:47:58.393364",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.4% за 24г</b>\n\nЗараз: 10.34 $\n24г тому: 10.93 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:47:59.360069",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.4% за 24г\n\nЗараз: 10.34 $\n24г тому: 10.93 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
