@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: energy_low",
-      "detail": "🔋 Енергія (body battery) за тиждень у середньому 26.0 — нижче за 30, організм виснажений",
-      "module": "healthai",
-      "ts": "2026-10-06T13:35:07"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.41 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-10-12T20:25:31"
+    },
+    {
+      "kind": "notify",
+      "what": "Нова вакансія Senior Solution Owner - Digital Identity",
+      "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від LinkedIn, і ця вакансія відповідає його профілю (Digital Identity, висока зарплата).",
+      "module": "selfact",
+      "ts": "2026-10-12T20:25:41"
     }
   ]
 }
