@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:44:44.374252",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• EtherMail  → Action Needed: Privacy Wall - Blocked Communications Digest\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen  → The Daily Degen - October 11th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 2 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:44:47.141054",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80658"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-12T03:46:44.710445",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - October 11th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80657"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80657"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80657"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80657"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80657"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80657"
             }
           ]
         ]
