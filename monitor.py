@@ -2951,10 +2951,15 @@ def check_new_emails():
             newly_seen.add(uid_str)
 
             # Пропускаємо ТІЛЬКИ явний системний список (youtube/duolingo/medium тощо).
-            # Олег хоче знати про ВСІ інші листи — навіть промо/рекламу — з AI-аналізом.
+            # Класифікуємо тут, щоб спам/розсилки (promo/spam) взагалі не доходили
+            # до AI-аналізу й Telegram — Олег попросив (10.10.2026) повну тишу по
+            # них, щоб не витрачати AI-кредити на вакансії LinkedIn/рекламу/розсилки.
             if ea not in _SKIP_EMAILS:
                 category = _classify_email(sender, subject)
-                to_alert.append((uid_str, subject, sender, body, category))
+                if category in ("promo", "spam"):
+                    print(f"[email] silent skip {category}: {sender[:50]} / {subject[:40]}")
+                else:
+                    to_alert.append((uid_str, subject, sender, body, category))
             else:
                 print(f"[email] skip system junk: {sender[:50]} / {subject[:40]}")
 
@@ -2965,11 +2970,10 @@ def check_new_emails():
             sent_ids.update(newly_seen)
             _email_save_ids(sent_ids)
 
-        # Сортуємо: 'real' першими, потім promo/spam
-        to_alert.sort(key=lambda x: 0 if x[4] == "real" else 1)
-
+        # to_alert тут лишились тільки 'real' (promo/spam відсіяні вище,
+        # тиша по них — AI-аналіз на них більше не витрачається)
         for uid_str, subject, sender, body, category in to_alert:
-            # AI аналіз листа — ЗАВЖДИ, для КОЖНОГО листа (не тільки 'real')
+            # AI аналіз листа — для кожного 'real' листа
             full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
             print(f"[email] analyzing uid={uid_str} subject={subject[:40]} category={category}")
             ai = _gemini_email_analysis(full_text)
@@ -2987,9 +2991,8 @@ def check_new_emails():
                 print(f"[email] behavior_patterns record error: {_e_bp}")
 
             # 2. Текст з AI аналізом + кнопки окремим повідомленням (розмовний, "живий" стиль)
-            _cat_tag = {"real": "", "promo": " 📢<i>(промо)</i>", "spam": " 🗑<i>(схоже на розсилку)</i>"}.get(category, "")
             sender_short = esc(sender.split("<")[0].strip().strip('"') or sender[:40])
-            text = f"Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>{sender_short}</b>{_cat_tag}\n"
+            text = f"Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>{sender_short}</b>\n"
             text += f"📋 Тема: «{esc(subject[:70])}»\n"
 
             if ai:
