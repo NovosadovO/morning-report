@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "monthly",
-      "detail": "Місячний звіт по здоров'ю",
-      "module": "selfact",
-      "ts": "2026-10-01T10:01:18"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: stale",
       "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-30). Автосинк із годинника міг зламатись",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від EtherMail <ethermail@ethermail.io> | Action Needed: Privacy Wall - Blocked Communications Digest.",
       "module": "selfact",
       "ts": "2026-10-12T05:51:38"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, 15 жовтня тобі потрібно сплатити за квартиру €500. Це",
+      "detail": "Подія в календарі 'Оплатити квартиру' на 15.10.2026.",
+      "module": "selfact",
+      "ts": "2026-10-12T06:07:18"
     }
   ]
 }
