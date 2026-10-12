@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:31:07.404566",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 How LLMs might make crypto mining useful</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80715"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80715"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80715"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80715"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80715"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80715"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:31:08.808574",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AI-Powered Bond Rating Startup Says OpenAI Debt Is Junk And\r</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-10-13T00:33:16.268437",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:33:19.220352",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -5.3% за 24г</b>\n\nЗараз: 0.4839 $\n24г тому: 0.5110 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
