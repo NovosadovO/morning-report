@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_field_stale",
-      "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-09-27 (2 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
-      "module": "healthai",
-      "ts": "2026-09-29T22:53:19"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.28 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Новий лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення",
       "module": "selfact",
       "ts": "2026-10-12T04:33:47"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, надійшло 20 нових персоналізованих вакансій від Profe",
+      "detail": "Новий лист від \"Profesia.sk\" <support@profesia.sk> | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
+      "module": "selfact",
+      "ts": "2026-10-12T04:33:52"
     }
   ]
 }
