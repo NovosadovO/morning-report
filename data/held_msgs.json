@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:59:06.898504",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +5.5% за 24г</b>\n\nЗараз: 10.90 $\n24г тому: 10.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T02:59:07.677718",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.5% за 24г\n\nЗараз: 10.90 $\n24г тому: 10.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -411,6 +405,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-12T03:01:29.980618",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 11th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
