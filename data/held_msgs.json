@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:46:31.245009",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:46:33.789526",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
@@ -410,6 +404,12 @@
       "ts": "2026-10-12T03:48:15.542588",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +6.3% за 24г\n\nЗараз: 0.5236 $\n24г тому: 0.4924 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:48:17.942028",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 10.92 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
