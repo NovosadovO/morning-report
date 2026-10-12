@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:06:59.127683",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.8% за 24г\n\nЗараз: 10.94 $\n24г тому: 10.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T03:07:04.403797",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нове оголошення»\n\n<i>«body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; } .listing { border: 1px solid #ddd; margin-bottom: 20px; padding: 15px; border-radius: 8px; display: flex; flex-wrap: wrap; } .listing img { max-width: 200px; height: auto; border-radius: 4px; margin-right: 20px; margin-bottom: 1...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-10-12T03:10:02.665730",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.8% за 24г</b>\n\nЗараз: 10.94 $\n24г тому: 10.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:10:03.725229",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.8% за 24г\n\nЗараз: 10.94 $\n24г тому: 10.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
