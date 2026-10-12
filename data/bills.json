@@ -400,5 +400,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-10-11"
+  },
+  "nay||": {
+    "vendor": "NAY",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "380760071938",
+    "due": "",
+    "uid": "80316",
+    "sender": "\"NAY\" <noreply@nay.sk>",
+    "subject": "Faktúra k Vašej objednávke 380760071938",
+    "note": "Рахунок до замовлення в магазині NAY.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-10-12"
   }
 }
