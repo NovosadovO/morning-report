@@ -1,9 +1,4 @@
 {
-  "80202": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-10-04T02:14:11.961071+00:00"
-  },
   "80204": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@orders.temu.com",
     "sender_raw": "Temu <temu@orders.temu.com>",
     "seen_ts": "2026-10-12T08:03:40.265189+00:00"
+  },
+  "80676": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-10-12T10:11:27.380049+00:00"
   }
 }
