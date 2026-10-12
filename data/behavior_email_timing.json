@@ -1,9 +1,4 @@
 {
-  "80213": {
-    "sender": "no-reply@abacus.ai",
-    "sender_raw": "no-reply@abacus.ai",
-    "seen_ts": "2026-10-04T07:31:29.402532+00:00"
-  },
   "80214": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T12:32:46.382002+00:00"
+  },
+  "80687": {
+    "sender": "team@ua-4u.mail.sweet.tv",
+    "sender_raw": "SWEET.TV <team@ua-4u.mail.sweet.tv>",
+    "seen_ts": "2026-10-12T13:03:12.971731+00:00"
   }
 }
