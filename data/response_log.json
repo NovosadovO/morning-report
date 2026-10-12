@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T23:53:53.940192+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_d1758c233c"
-    },
-    {
       "ts": "2026-08-20T23:54:03.756295+00:00",
       "category": "confirm",
       "question": "calrem_skip: Надіслати дані з QWatch Pro",
@@ -13950,6 +13944,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-12"
+      }
+    },
+    {
+      "ts": "2026-10-12T10:30:26.198474+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Finweek Bratislava",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-13"
       }
     }
   ]
