@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:29:13.297768",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T02:29:18.547569",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +6.1% за 24г</b>\n\nЗараз: 0.5231 $\n24г тому: 0.4931 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80655"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-12T02:31:19.479679",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80654"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80654"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80654"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80654"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80654"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80654"
             }
           ]
         ]
