@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 36",
-      "module": "selfact",
-      "ts": "2026-10-05T21:20:19"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.45 год) — тіло не встигає підлаштуватись під ритм",
@@ -2799,6 +2792,13 @@
       "detail": "Подія в календарі 15.10: 08:00 Оплатити квартиру — €500",
       "module": "selfact",
       "ts": "2026-10-12T19:54:27"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-12",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-10-12T20:00:39"
     }
   ]
 }
