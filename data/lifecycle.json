@@ -142,5 +142,16 @@
     "keyword": "diaľničná známka",
     "source": "email:80535",
     "ts": "2026-10-09T12:09:25.973273+00:00"
+  },
+  "замовлення temu": {
+    "entity": "Замовлення Temu",
+    "kind": "other",
+    "state": "paid",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "Temu замовлення",
+    "source": "email:80673",
+    "ts": "2026-10-12T10:03:41.534388+00:00"
   }
 }
