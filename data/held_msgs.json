@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:16:19.063007",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80711"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80711"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80711"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80711"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80711"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80711"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:16:20.390194",
       "kind": "offer",
       "text": "📦 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie vašej objednávky Temu (#PO-180-08315922862710256)</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-13T00:20:02.044338",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:20:02.838989",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
