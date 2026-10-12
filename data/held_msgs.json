@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:46:18.282781",
-      "kind": "offer",
-      "text": "📦 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie vašej objednávky Temu (#PO-180-08315922862710256)</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80673"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80673"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80673"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80673"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80673"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80673"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:46:18.695178",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.7% за 24г</b>\n\nЗараз: 0.4847 $\n24г тому: 0.5138 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -181,6 +142,12 @@
       "ts": "2026-10-13T00:49:26.927786",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.9% за 24г</b>\n\nЗараз: 0.4837 $\n24г тому: 0.5139 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:49:27.799956",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.9% за 24г\n\nЗараз: 0.4837 $\n24г тому: 0.5139 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
