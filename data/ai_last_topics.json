@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-12t08_27_44_201162": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі прийшли нові сповіщення про вакансії від LinkedIn та Profesia.sk, зокрема Senior Software Engineer ",
+    "ts": "2026-10-12T08:27:44.201162"
+  },
   "deadlines|2026-10-12t08_22_16_289604": {
     "topic": "deadlines",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від EtherMail інформує про наявність непрочитаних повідомлень на Privacy Wall, які потребують дії. Для перегляду та взаємодії з ними н",
     "ts": "2026-10-12T06:01:07.119469"
-  },
-  "proactive_actions|2026-10-12t06_00_12_356814": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-10-12\",     \"time\": \"\",     \"message\": \"Олеже, ",
-    "ts": "2026-10-12T06:00:12.356814"
   }
 }
