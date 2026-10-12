@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:31:30.635176",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Operations &amp; Project Coordinator (m/w/d) в ISG International</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80659"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80659"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80659"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80659"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80659"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80659"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T03:31:31.968573",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>UNIQA Group Services наймає: Risikoprüfer:in in der Krankenv</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -311,6 +272,12 @@
       "ts": "2026-10-12T03:33:44.394860",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:33:45.099755",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
