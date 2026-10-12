@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:44:26.437175",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T00:44:29.299878",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.0% за 24г</b>\n\nЗараз: 0.4835 $\n24г тому: 0.5146 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -379,6 +373,12 @@
       "ts": "2026-10-13T00:46:19.626961",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.7% за 24г\n\nЗараз: 0.4847 $\n24г тому: 0.5138 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:46:21.826951",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.4% за 24г</b>\n\nЗараз: 10.34 $\n24г тому: 10.93 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
