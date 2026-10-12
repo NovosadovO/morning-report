@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:10:26.697005",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-12T02:10:30.280979",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +6.0% за 24г</b>\n\nЗараз: 10.98 $\n24г тому: 10.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.9% за 24г\n\nЗараз: 10.98 $\n24г тому: 10.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T02:14:28.639944",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Operations &amp; Project Coordinator (m/w/d) в ISG International Service G»\n\n<i>«Сповіщення про вакансії в ViennaКерувати сповіщеннями про вакансії: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BARe3NBthRBm5RQEaGFEUAw%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=3u9KGr54tdGYs1&amp;trk=eml-email_job_alert_digest_01-primary_job_list-0-manag...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80659"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80659"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80659"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80659"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80659"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80659"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
