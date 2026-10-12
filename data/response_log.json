@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T22:33:17.289000+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-20"
-      }
-    },
-    {
       "ts": "2026-08-20T22:33:21.567102+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13942,6 +13932,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-12"
+      }
+    },
+    {
+      "ts": "2026-10-12T04:30:20.122379+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Finweek Bratislava: BLOOD, SWEAT & MiCA",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-13"
       }
     }
   ]
