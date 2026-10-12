@@ -1,9 +1,4 @@
 {
-  "80240": {
-    "sender": "slovakia@rides-marketing.bolt.eu",
-    "sender_raw": "\"Bolt Global\" <slovakia@rides-marketing.bolt.eu>",
-    "seen_ts": "2026-10-05T06:04:41.642199+00:00"
-  },
   "80241": {
     "sender": "no-reply@news.crypto.com",
     "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
@@ -1498,5 +1493,10 @@
     "sender": "notifikacie@ekooperativa.sk",
     "sender_raw": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
     "seen_ts": "2026-10-12T19:58:17.796399+00:00"
+  },
+  "80714": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-12T21:24:46.755058+00:00"
   }
 }
