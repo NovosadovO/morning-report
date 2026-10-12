@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:32:34.460250+00:00",
-      "category": "deadline_found",
-      "question": "Видалення облікового запису Philips",
-      "answer": "2026-09-04",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-21T03:47:07.925858+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -13949,6 +13940,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-12T21:22:53.070747+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
