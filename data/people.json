@@ -488,14 +488,16 @@
     "pinged_at": ""
   },
   "oleg.novosadov@nmb-minebea.com": {
-    "name": "Oleg Novosadov",
+    "name": "Олег Новосадов",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "робота"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Написати Олегу на корпоративну пошту, оскільки він не відповів на попередній лист протягом 17 днів.",
+    "next_step": "Написати Олегу Новосадову на робочу пошту, щоб дізнатися, що означає його лист з темою 'Д'.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
