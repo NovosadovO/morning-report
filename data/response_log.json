@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T22:38:03.839324+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_note_d4b4b1b058"
-    },
-    {
       "ts": "2026-08-20T23:53:52.139819+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -13947,6 +13941,12 @@
         "kind": "calendar",
         "date": "2026-10-12"
       }
+    },
+    {
+      "ts": "2026-10-12T10:06:11.279573+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "lc_skip_7e4a8e494f"
     }
   ]
 }
