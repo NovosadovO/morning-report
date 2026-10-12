@@ -1,9 +1,4 @@
 {
-  "80222": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-10-04T11:53:59.350313+00:00"
-  },
   "80223": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T14:28:50.736331+00:00"
+  },
+  "80693": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-12T14:51:14.059556+00:00"
   }
 }
