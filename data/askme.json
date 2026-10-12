@@ -7951,6 +7951,17 @@
   "note|олег підписався на garmin connect monthly plan з 0511202": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег підписався на Garmin Connect+ Monthly Plan, з 05.11.202 »\n\nОлег підписався на Garmin Connect+ Monthly Plan, з 05.11.2026 почнеться автоматичне списання €8.99 щомісяця.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-10-12T18:36:06"
+    "asked_at": "2026-10-12T18:36:06",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-10-12T18:38:14",
+    "meta": {
+      "summary": "Олег підписався на Garmin Connect+ Monthly Plan, з 05.11.202",
+      "desc": "Олег підписався на Garmin Connect+ Monthly Plan, з 05.11.2026 почнеться автомати",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
