@@ -9629,10 +9629,14 @@ def check_run_coach():
 
     # Перевіримо скільки днів без бігу
     days_without = 0
+    # Чи вже бігав СЬОГОДНІ (ручна відмітка або автопозначення з Garmin) —
+    # запит Олега 12.10: не нагадувати бігати, якщо вже відомо, що бігав.
+    already_ran_today = False
     try:
         import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from habits import load_data as _load_habits
         db = _load_habits()
+        already_ran_today = db.get(today, {}).get("run") is True
         for i in range(1, 8):
             d = (now_local - timedelta(days=i)).strftime("%Y-%m-%d")
             if db.get(d, {}).get("run") is True:
@@ -9640,6 +9644,9 @@ def check_run_coach():
             days_without += 1
     except Exception:
         days_without = 0
+
+    if already_ran_today:
+        return  # вже бігав сьогодні — не нагадуємо, "план на день" теж не потрібен
 
     try:
         from context import get_shift_from_calendar

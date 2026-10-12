@@ -537,11 +537,24 @@ def run():
 
         # Перевіряємо чи час надсилати питання про звички
         cur_min_abs = now.hour * 60 + now.minute
+        # Актуальні відповіді за сьогодні — читаємо ОДИН раз на ітерацію, не
+        # всередині try_acquire_reminder_lock, щоб не бити storage зайвий раз
+        # на кожну звичку (запит Олега 12.10: "пам'ятати... чи я вже
+        # відповідав" — stosuje się це і до відповіді, яку поставив НЕ сам
+        # Олег кнопкою, а напр. Garmin автоматично (звичка 'run')).
+        today_answers = load_data().get(today, {})
         for h in HABITS:
             if h.get("id") == "shower":
                 continue  # shower handled by check_shower_reminder
             key = f"{today}_{h['id']}"
             if sent.get(key):
+                continue
+            # Баг 12.10: відповідь на цю звичку могла вже з'явитись НЕ через
+            # кнопку (напр. Garmin сам підтвердив пробіжку) — тоді питати
+            # вдруге безглуздо і дратує. Перевіряємо РЕАЛЬНУ відповідь, а не
+            # лише "чи вже питали", так само як вже робить check_shower_reminder.
+            if today_answers.get(h["id"]) is not None:
+                sent[key] = True  # щоб більше не перевіряти цю звичку сьогодні
                 continue
             h_trigger = h["hour"] * 60 + h["minute"]
             if h_trigger <= cur_min_abs <= h_trigger + 1:  # вікно 1 хв (60 сек loop)
