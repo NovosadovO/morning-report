@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:49:45.535100+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T03:49:53.091105+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13946,6 +13940,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-12T21:23:16.896948+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
