@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T00:32:25.869921+00:00",
-      "category": "deadline_found",
-      "question": "Видалення неактивного облікового запису Philips",
-      "answer": "2026-09-04",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-21T01:33:30.341920+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13960,6 +13951,12 @@
       "extra": {
         "kind": "contract"
       }
+    },
+    {
+      "ts": "2026-10-12T20:26:13.619217+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_note_d67cf19573"
     }
   ]
 }
