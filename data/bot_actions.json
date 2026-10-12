@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "нагадування надіслати дані",
-      "detail": "72 год мовчання",
-      "module": "healthai",
-      "ts": "2026-09-30T16:05:53"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_field_stale",
       "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-09-27 (3 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег активно шукає нові квартири, про що свідчить лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення.",
       "module": "selfact",
       "ts": "2026-10-12T05:05:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, у тебе є заблоковані повідомлення на Privacy Wall від",
+      "detail": "Лист від EtherMail <ethermail@ethermail.io> | Action Needed: Privacy Wall - Blocked Communications Digest вказує на необхідність дії.",
+      "module": "selfact",
+      "ts": "2026-10-12T05:05:09"
     }
   ]
 }
