@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T01:33:34.830048+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Перенести біг та сауну",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-21"
-      }
-    },
-    {
       "ts": "2026-08-21T03:32:34.460250+00:00",
       "category": "deadline_found",
       "question": "Видалення облікового запису Philips",
@@ -13953,6 +13943,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-12T21:22:50.597351+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
