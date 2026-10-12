@@ -448,16 +448,10 @@ def check_proactive():
     elif False and status == "pre_shift" and not _already_sent("pre_shift_reminder"):
         slot = None  # відключено
 
-    # ── Обідній check-in (12:00–13:00, тільки вдома/вільний день) ───────────
-    elif 12 <= h < 13 and status in ("home", "post_shift") and not _already_sent("midday_checkin"):
-        slot = "midday_checkin"
-        activity = state.get("activity", "")
-        prompt = (
-            f"Зараз обідній час ({now.strftime('%H:%M')}), Олег вдома / після зміни. "
-            f"{'Останнє що знаю: він ' + activity + '. ' if activity else ''}"
-            f"Спитай як пройшов ранок, чи поїв нормально (ціль 75 кг, дієта 16:8). "
-            f"Можливо нагадати про воду або прогулянку. Одне питання."
-        )
+    # ── Обідній check-in — ВИДАЛЕНО (12.10.2026, запит Олега: об'єднати/
+    # скоротити проактивні повідомлення, лишити тільки важливе). Ранок +
+    # после-зміни + вечір + аномалії/календар покривають день без зайвого
+    # routine-чату в обід.
 
     # ── Після зміни check-in (рання: 18:30–20:00, нічна: 06:30–08:00) ───────
     elif status == "post_shift" and not _already_sent("post_shift_checkin"):
@@ -486,49 +480,37 @@ def check_proactive():
                 f"Коротко і з турботою."
             )
 
-    # ── Вечірній check-in (19:00–20:00, вдома) ───────────────────────────────
-    elif 19 <= h < 20 and status in ("home",) and not _already_sent("evening_checkin"):
+    # ── Вечірній check-in (19:00–22:30, вдома) — ОБ'ЄДНАНО з "night_summary"
+    # (12.10.2026, запит Олега: об'єднати/скоротити, тільки важливе). Один
+    # вечірній слот замість двох (19:00 + 22:00): день-рекап + завтрашня
+    # зміна + побажання ночі в одному повідомленні. Вікно розширене до
+    # 22:30, щоб наздогнати слот навіть якщо check_proactive пропустив 19г.
+    elif 19 <= h < 23 and status in ("home",) and not _already_sent("evening_checkin"):
         slot = "evening_checkin"
         cal = ctx.get("calendar", "")
         weight_ctx = ctx.get("weight", "")
         habits_ctx = ctx.get("habits", "")
         activity = state.get("activity", "")
-        prompt = (
-            f"Зараз вечір ({now.strftime('%H:%M')}), Олег вдома. "
-            f"{'Знаю що він ' + activity + '. ' if activity else ''}"
-            f"Вага: {weight_ctx}. Звички сьогодні: {habits_ctx}. "
-            f"Зроби короткий вечірній check-in: як день, що вдалось, "
-            f"чи не забув записати вагу / відмітити звички. "
-            f"Питання про плани на завтра. Одне питання, дружньо."
-        )
-
-    # ── Нагадування про воду — ВИДАЛЕНО (обробляється check_water_reminder() в monitor.py) ──
-
-    # ── Питання про пробіжку (вільний день, 09:00–11:00) ─────────────────────
-    elif 9 <= h < 11 and status == "home" and ctx.get("shift_today") == "free" and not _already_sent("run_question"):
-        slot = "run_question"
-        prompt = (
-            f"Зараз {now.strftime('%H:%M')}, у Олега вільний день. "
-            f"Він давно не бігав (або бігає нерегулярно). Погода: {ctx.get('weather_hint', 'невідома')}. "
-            f"Спитай чи планує сьогодні пробіжку — легко і без тиску. 1-2 речення."
-        )
-
-    # ── Пізній вечір (22:00–22:30) — коротке побажання ночі
-    # НЕ 21:00 щоб не дублювати check_day_summary і check_mood_evening
-    elif h == 22 and 0 <= m < 30 and not _already_sent("night_summary"):
-        slot = "night_summary"
         mood = state.get("mood", "")
         last_msg = state.get("last_message_from_oleg", "")
         shift_tomorrow = ctx.get("shift_tomorrow", "невідомо")
         prompt = (
-            f"Зараз {now.strftime('%H:%M')} {now.strftime('%d.%m.%Y')}, вечір. "
-            f"{'Олег казав: «' + last_msg + '». ' if last_msg else ''}"
+            f"Зараз {now.strftime('%H:%M')} {now.strftime('%d.%m.%Y')}, вечір, Олег вдома. "
+            f"{'Знаю що він ' + activity + '. ' if activity else ''}"
+            f"Вага: {weight_ctx}. Звички сьогодні: {habits_ctx}. "
             f"{'Настрій: ' + mood + '. ' if mood else ''}"
+            f"{'Олег казав: «' + last_msg + '». ' if last_msg else ''}"
             f"Зміна завтра: {shift_tomorrow}. "
-            f"Напиши Олегу КОРОТКЕ (2-3 речення) і ТЕПЛЕ побажання доброї ночі. "
-            f"Обов'язково згадай завтрашню зміну і що варто взяти/підготувати. "
-            f"Без загальних фраз — конкретно і по-дружньому."
+            f"Зроби ОДИН короткий вечірній check-in (не більше 3-4 речень): як день, "
+            f"що вдалось, чи не забув записати вагу / відмітити звички, і наприкінці — "
+            f"тепле побажання доброї ночі з конкретним нагадуванням про завтрашню зміну "
+            f"(що взяти/підготувати). Без загальних шаблонних фраз, одне питання максимум."
         )
+
+    # ── Нагадування про воду — ВИДАЛЕНО (обробляється check_water_reminder() в monitor.py) ──
+
+    # ── Питання про пробіжку — ВИДАЛЕНО (12.10.2026, запит Олега: тільки
+    # важливе). Пробіжки й так видно в тематичному AI-блоці звіту (біг).
 
     # ── Anomaly detection (вага/біг/сон) ────────────────────────────────────
     if slot is None:

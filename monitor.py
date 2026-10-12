@@ -2523,16 +2523,56 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
         print(f"[email AI] error: {type(e).__name__}: {e}")
         return None
 
+_EMAIL_AI_SEEN_FILE = "monitor_email_ai_seen.json"
+
+
+def _email_ai_load_seen() -> dict:
+    try:
+        return load_json_file(_EMAIL_AI_SEEN_FILE, default={}) or {}
+    except Exception:
+        return {}
+
+
+def _email_ai_mark_seen(uids: list):
+    """Персистентно позначає UID як вже проаналізовані AI (переживає рестарт/деплой)."""
+    if not uids:
+        return
+    try:
+        seen = _email_ai_load_seen()
+        now_iso = datetime.now(timezone.utc).isoformat()
+        for u in uids:
+            seen[str(u)] = now_iso
+        # Прибираємо записи старші 21 дня — щоб файл не ріс нескінченно
+        _cutoff = datetime.now(timezone.utc) - timedelta(days=21)
+        _pruned = {}
+        for k, v in seen.items():
+            try:
+                if datetime.fromisoformat(v) >= _cutoff:
+                    _pruned[k] = v
+            except Exception:
+                _pruned[k] = v
+        save_json_file(_EMAIL_AI_SEEN_FILE, _pruned)
+    except Exception as e:
+        print(f"[email_ai_seen] save error: {e}", flush=True)
+
+
 def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: str = "") -> str:
     """
     Аналізує КЛЮЧЕВІ листи з email блока для звіту.
     Проглядає найважливіші листи (без реклами/newsletter), робить глибокий AI аналіз.
     health_context: додатковий контекст про здоров'я (кроки, сон, вага) для AI аналізу
     Повертає форматований текстовий блок для звіту або порожну строку.
+
+    12.10.2026 (запит Олега): персистентний дедуп по UID — лист аналізується
+    AI РІВНО ОДИН раз. Якщо серед непрочитаних немає жодного НОВОГО (ще не
+    проаналізованого) листа — повертає "" (мовчки, без повтору опису того ж
+    самого листа щогодини/щозвіту).
     """
     if not email_items_dict or not email_items_dict.get("items"):
         return ""
-    
+
+    _seen_uids = _email_ai_load_seen()
+
     try:
         mail = _imap_connect()
         mail.select("INBOX")
@@ -2543,6 +2583,10 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
             uid = item.get("uid", "")
             subject = item.get("subject", "")
             sender = item.get("sender", "")
+
+            # Вже аналізували цей UID раніше — пропускаємо (без повторного опису)
+            if uid and str(uid) in _seen_uids:
+                continue
             
             # Пропускаємо очевидні newsletter/реклама
             subject_lower = subject.lower()
@@ -2572,6 +2616,7 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
         mail.logout()
         
         if not to_analyze:
+            # Немає НОВИХ листів для AI-аналізу — тиша, без фейкового "немає актуальних"
             return ""
         
         # Робимо AI аналіз для кожного листа
@@ -2615,6 +2660,8 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
         # Кнопки відповіді формуються з цього списку — щоб під AI-аналізом
         # пошти були РОБОЧІ клавіші, а не просто текст.
         _get_email_ai_analysis_for_report.last_uids = _analyzed_uids
+        # Персистентний дедуп: ці UID більше не підуть на повторний AI-аналіз.
+        _email_ai_mark_seen([u for u, _s, _sd in _analyzed_uids if u])
         return "\n".join(analysis_lines)
     
     except Exception as e:
@@ -3563,16 +3610,26 @@ def _gh_save_sent(data, sha):
     except Exception as e:
         print(f"_gh_save_sent error: {e}")
 
+# 12.10.2026 (запит Олега): звіт раз на 3 години (00/03/06/09/12/15/18/21),
+# а не щогодини — "зроби рідше, але завжди актуально". Повний AI-контент
+# (брифінг + теми) лише у 3 з цих 8 слотів/день — див. _FULL_AI_HOURS.
+_REPORT_SLOT_HOURS = (0, 3, 6, 9, 12, 15, 18, 21)
+# 3 слоти/день з повним AI (брифінг, тематичний аналіз, email AI, астро-AI
+# прив'язаний до цих же годин). Ранок/день/вечір — рівномірно по дню.
+_FULL_AI_HOURS = (9, 15, 21)
+
+
 def _get_report_slot(now_local):
     """
-    1 слот на годину: тільки :00
+    1 слот кожні 3 години (00/03/06/09/12/15/18/21).
     Повертає ключ слоту або None якщо ми не у вікні.
-    Вікно: 0-2хв кожної години (звужено з 5 до 3 — антидубль)
     """
     h = now_local.hour
+    if h not in _REPORT_SLOT_HOURS:
+        return None
     date_str = now_local.strftime("%Y-%m-%d")
-    # Слот = поточна година, у будь-яку хвилину. Дедуп за sent_slot лишає
-    # рівно ОДИН звіт на годину, але дозволяє догнати пропущену годину.
+    # Слот = поточна година (з переліку вище). Дедуп за sent_slot лишає
+    # рівно ОДИН звіт на слот, але дозволяє догнати пропущений слот.
     return f"{date_str}T{h:02d}:00"
 
 
@@ -4374,6 +4431,7 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         return ""
     try:
         now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        _weekday_ua_th = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"][now_local.weekday()]
 
         # Збираємо реальний контекст у текст
         def _g(k, default="немає даних"):
@@ -4382,8 +4440,11 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
                 return default
             return str(v)
 
+        # 12.10.2026 (запит Олега): перед тим як писати — точні дата/час/день
+        # тижня/календар, щоб AI не вигадував і не плутав контекст доби.
         data_block = (
-            f"ЧАС: {now_local.strftime('%H:%M %d.%m.%Y')} (Кошице, UTC+2)\n"
+            f"ЧАС: {now_local.strftime('%H:%M %d.%m.%Y')}, {_weekday_ua_th} (Кошице, UTC+2) — "
+            f"звіряйся ТІЛЬКИ з цим часом, не вигадуй інший.\n"
             f"ЗМІНА/СТАТУС: {_g('shift_hint')}\n"
             f"--- ФІНАНСИ/ІНВЕСТИЦІЇ ---\n{_g('finance')}\n"
             f"--- БІГ / STRAVA ---\n{_g('running')}\n"
@@ -4524,11 +4585,14 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         ingress_block = ""
 
     # ПРОМПТ З НАТАЛЬНОЮ КАРТОЮ + ТРАНЗИТАМИ
-    # Динамічна дата
-    today_str = datetime.now(timezone.utc).strftime("%d.%m.%Y")
+    # Динамічна дата. 12.10.2026 (запит Олега): локальний час (UTC+2), а не
+    # UTC — "перевіряти дату, годину" точно, без зсуву доби.
+    _now_local_astro = datetime.now(timezone.utc) + timedelta(hours=2)
+    _weekday_ua_astro = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"][_now_local_astro.weekday()]
+    today_str = _now_local_astro.strftime("%d.%m.%Y")
 
     prompt = f"""Ти астролог. Аналізуй ТІЛЬКИ ПОТОЧНІ ТРАНЗИТИ для Олега Новосадова.
-ДН: 22.09.1989, 02:52, Львів | СЬОГОДНІ: {today_str}, Косіце, Словаччина
+ДН: 22.09.1989, 02:52, Львів | СЬОГОДНІ: {today_str} ({_weekday_ua_astro}), {_now_local_astro.strftime('%H:%M')}, Косіце, Словаччина — звіряйся ТІЛЬКИ з цим часом.
 
 ━━━━━━━━━━━━━━━━━━ НАТАЛЬНА КАРТА (для довідки) ━━━━━━━━━━━━━━━━━━
 Асцендент (ASC) 1°02' ЛЕВ (I дім) — ДУЖЕ ВАЖЛИВО для будь-яких транзитів у Лева!
@@ -5159,6 +5223,10 @@ def main():
     local_date = now_local.strftime("%d.%m.%Y")
     weekday = now_local.weekday()
     local_hour = now_local.hour
+    # 12.10.2026 (запит Олега): "звіти 3х на день вкл аі" — повний AI-контент
+    # (брифінг, тематика, email AI) лише у _FULL_AI_HOURS; ручний /звіт (force)
+    # завжди повний. Решта слотів (кожні 3г) — чистий скелет без AI.
+    _is_full_ai_slot = force or (local_hour in _FULL_AI_HOURS)
 
     is_weekend = weekday >= 5
     include_learning_blocks = True  # крипто/ціни — завжди
@@ -5896,9 +5964,24 @@ def main():
         else:
             email_parts.append(email_text)
 
-    # Email AI аналіз — аналізуємо тільки КЛЮЧЕВІ листи (без реклами)
+    # Email AI аналіз — аналізуємо тільки КЛЮЧЕВІ листи (без реклами).
+    # 12.10.2026 (запит Олега): "аі пошта 2хна день" — власні ворота 2х/день
+    # (allow_every 12г) + лише у full-AI слоті. Якщо нових листів немає —
+    # _get_email_ai_analysis_for_report() повертає "" (дедуп по UID всередині)
+    # і блок просто мовчить замість повторного опису того самого листа.
     _email_ai_full = ""
-    if isinstance(email_text, dict) and email_text.get("items"):
+    _email_ai_due = True
+    try:
+        import hourgate as _hg_email
+        _email_ai_due = _hg_email.allow_every("email_ai", 12)
+    except Exception as _e_hge:
+        print(f"[email_ai] hourgate error: {_e_hge}", flush=True)
+    if not _is_full_ai_slot:
+        _email_ai_due = False
+        print("[email_ai] SKIP — не full-AI слот (3х/день)", flush=True)
+    elif not _email_ai_due:
+        print("[email_ai] SKIP — вже був AI-аналіз пошти у цьому 12-годинному вікні (2х/день)", flush=True)
+    if _email_ai_due and isinstance(email_text, dict) and email_text.get("items"):
         print(f"[email_ai] generating analysis for {len(email_text.get('items', []))} emails", flush=True)
         # Контекст здоров'я для email AI
         _health_ctx_email = ""
@@ -5913,6 +5996,8 @@ def main():
         if _email_ai_analysis:
             _email_ai_full = _email_ai_analysis
             print(f"[email_ai] analysis done: {len(_email_ai_analysis)} chars", flush=True)
+        else:
+            print("[email_ai] нічого актуального (все вже бачили) — без опису", flush=True)
 
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
 
@@ -5934,6 +6019,10 @@ def main():
             _astro_ai_due = _hg_astro.allow_every("astro_ai", 12)
         except Exception as _e_hg:
             print(f"[astro_ai] hourgate skip: {_e_hg}", flush=True)
+        # 12.10.2026 (запит Олега): AI-розбір астро лише у full-AI слоті
+        # (інакше 2х/добові ворота можуть "вистрелити" у чисто-скелетний слот).
+        if not _is_full_ai_slot:
+            _astro_ai_due = False
         if not _astro_ai_due:
             print("[astro_ai] SKIP — AI-розбір 2х/день, транзити в звіті лишаються", flush=True)
         elif not _ai_time_left(40):
@@ -5963,18 +6052,13 @@ def main():
     _themes_ai_full = ""
     try:
         _gem_key_th = os.environ.get("GEMINI_API_KEY", "")
-        # 25.09.2026: тематичний AI-блок — раз на 2 години, не щогодини
-        # (Олег просив: звіт від бота щогодини, а AI-контент у звіті раз
-        # на 2 години — економія Gemini-кредитів). Дані звіту (крипто,
-        # погода, здоров'я, календар) лишаються в КОЖНОМУ звіті.
-        _themes_due = True
-        try:
-            import hourgate as _hg_th
-            _themes_due = _hg_th.allow_every("report_themes_ai", 2)
-        except Exception as _e_hgt:
-            print(f"[themes_ai] hourgate error: {_e_hgt}", flush=True)
+        # 12.10.2026 (запит Олега): тематичний AI-блок — лише у 3 full-AI
+        # слотах/день ("звіти 3х на день вкл аі"), не у кожному 3-годинному
+        # скелет-слоті. Дані звіту (крипто, погода, здоров'я, календар)
+        # лишаються в КОЖНОМУ звіті (кожні 3г) — тут обрізаний лише AI-текст.
+        _themes_due = _is_full_ai_slot
         if not _themes_due:
-            print("[themes_ai] SKIP — AI-тема раз на 2 год (економія кредитів), звіт без цього блоку", flush=True)
+            print("[themes_ai] SKIP — не full-AI слот (3х/день), звіт без цього блоку", flush=True)
             raise RuntimeError("hourgate_skip")
         if not _ai_time_left(40):
             print("[themes_ai] SKIP — мало часу до дедлайну, звіт надсилаємо без themes AI", flush=True)
@@ -6115,16 +6199,11 @@ def main():
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
     # ── AI-брифінг: генерується з ПОВНИХ даних звіту ─────────────────────────
-    # 25.09.2026: раз на 2 години, не щогодини (Олег просив: звіт від бота
-    # щогодини, AI-вступ у звіті — раз на 2 години, економія кредитів).
-    _briefing_due = True
-    try:
-        import hourgate as _hg_brief
-        _briefing_due = _hg_brief.allow_every("report_briefing", 2)
-    except Exception as _e_hgb:
-        print(f"[briefing] hourgate error: {_e_hgb}", flush=True)
+    # 12.10.2026 (запит Олега): лише у full-AI слоті (3х/день), не у кожному
+    # 3-годинному скелет-слоті — "звіти 3х на день вкл аі".
+    _briefing_due = _is_full_ai_slot
     if not _briefing_due:
-        print("[briefing] SKIP — AI-вступ раз на 2 год (економія кредитів), звіт без цього блоку", flush=True)
+        print("[briefing] SKIP — не full-AI слот (3х/день), звіт без цього блоку", flush=True)
         gemini_key_for_brief = ""
     elif gemini_key and not _ai_time_left(30):
         print("[briefing] SKIP — мало часу до дедлайну", flush=True)
@@ -7396,6 +7475,9 @@ def check_crypto_price_alert():
     """Шле сповіщення якщо BTC/ETH/AVAX/ONDO змінились >5% за ~1 годину.
     Логіка: зберігаємо snapshot цін в GitHub storage кожні 15хв,
     порівнюємо з snapshot що був ~60хв тому.
+
+    ПРАВИЛО (запит Олега, 12.10.2026): алерти БЕЗ AI — чисте порогове
+    порівняння цифр, жодного Gemini-виклику. Не додавати AI-опис сюди.
     """
     now_ts  = int(time.time())
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
@@ -7519,6 +7601,9 @@ ETF_ALERT_THRESHOLD = 3.0  # % зміна за ~1г для алерту
 def check_etf_price_alert():
     """Шле сповіщення якщо ETF/S&P500 змінились >3% за ~1 годину.
     Працює тільки в торгові години NYSE (14:30–21:00 UTC).
+
+    ПРАВИЛО (запит Олега, 12.10.2026): алерти БЕЗ AI — чисте порогове
+    порівняння цифр, жодного Gemini-виклику.
     """
     try:
         import yfinance as yf
@@ -11643,6 +11728,9 @@ def check_currency_alert():
     """
     Якщо EUR/USD змінився більш ніж на 0.5% за добу — надсилає алерт.
     Також щоранку о 08:00 надсилає поточні курси.
+
+    ПРАВИЛО (запит Олега, 12.10.2026): алерти БЕЗ AI — чисте порогове
+    порівняння цифр, жодного Gemini-виклику.
     """
     try:
         import urllib.request as _ur_ca, json as _json_ca
