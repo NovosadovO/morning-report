@@ -1,9 +1,4 @@
 {
-  "80241": {
-    "sender": "no-reply@news.crypto.com",
-    "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
-    "seen_ts": "2026-10-05T06:22:57.608316+00:00"
-  },
   "80242": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T21:24:46.755058+00:00"
+  },
+  "80717": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-12T22:14:48.376975+00:00"
   }
 }
