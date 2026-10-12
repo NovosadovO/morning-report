@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:31:10.470586",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy's bitcoin holdings hit 848,250 BTC</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80713"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80713"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80713"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80713"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80713"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80713"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:31:11.994148",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
@@ -247,6 +208,12 @@
       "ts": "2026-10-13T00:33:20.403536",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.3% за 24г\n\nЗараз: 0.4839 $\n24г тому: 0.5110 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:33:22.278725",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.0% за 24г</b>\n\nЗараз: 10.35 $\n24г тому: 10.90 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
