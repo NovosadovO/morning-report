@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:31:19.479679",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80654"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80654"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80654"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80654"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80654"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80654"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T02:31:20.814591",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nubank walks away from £10B Monzo deal after 10% share drop </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-10-12T02:34:11.847631",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +6.1% за 24г</b>\n\nЗараз: 0.5230 $\n24г тому: 0.4928 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T02:34:12.594684",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +6.1% за 24г\n\nЗараз: 0.5230 $\n24г тому: 0.4928 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
