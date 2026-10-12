@@ -1,14 +1,4 @@
 {
-  "80209": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-10-04T06:44:43.286422+00:00"
-  },
-  "80210": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-10-04T06:52:52.077882+00:00"
-  },
   "80211": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1503,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-10-12T10:40:18.819653+00:00"
+  },
+  "80683": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-12T12:14:24.486149+00:00"
   }
 }
