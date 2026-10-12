@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_field_stale",
-      "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-09-27 (3 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
-      "module": "healthai",
-      "ts": "2026-09-30T16:46:41"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_good",
       "detail": "😴 Сон за тиждень у середньому 10.2 год — стабільно добре",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від EtherMail <ethermail@ethermail.io> | Action Needed: Privacy Wall - Blocked Communications Digest вказує на необхідність дії.",
       "module": "selfact",
       "ts": "2026-10-12T05:05:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Конференція Finweek Bratislava",
+      "detail": "Запланована подія в календарі (конференція) відбувається завтра.",
+      "module": "selfact",
+      "ts": "2026-10-12T05:20:57"
     }
   ]
 }
