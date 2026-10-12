@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:31:04.304201",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Manažér obchodnej agentúry v Ko</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80717"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80717"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80717"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80717"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80717"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80717"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:31:05.886180",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Action Required] Mark AI agent OAuth clients as agentic for</b>\n👤 Google Cloud &lt;CloudPlatform-noreply@google.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-13T00:33:13.082479",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Temu  → Potvrdenie vašej objednávky Temu (#PO-180-08315922862710256)\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:33:15.241563",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
