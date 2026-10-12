@@ -14893,7 +14893,43 @@
     "pid": "email_keep_80711",
     "subject": "Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Notifikácie KOOPERATIVA\n📋 Тема: «Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného pois»\n\nЦей лист є повідомленням від страхової компанії KOOPERATIVA про необхідність сплатити страховий внесок за обов'язкове страхування цивільно-правової відповідальності власників транспортних засобів (PZ) за полісом № 6641172176 для автомобіля з номерни"
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Notifikácie KOOPERATIVA\n📋 Тема: «Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného pois»\n\nЦей лист є повідомленням від страхової компанії KOOPERATIVA про необхідність сплатити страховий внесок за обов'язкове страхування цивільно-правової відповідальності власників транспортних засобів (PZ) за полісом № 6641172176 для автомобіля з номерни",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 114654,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80711"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80711"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80711"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80711"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80711"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80711"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-12T21:59:06.356774+00:00"
   },
