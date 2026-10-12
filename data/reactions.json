@@ -7414,5 +7414,16 @@
     "about": "Олеже, твоя виплатна картка за вересень від Minebea вже дост",
     "state": "closed",
     "ts": "2026-10-12T21:59:51"
+  },
+  "notify_ack|t|несплачений рахунок runable": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "несплачений рахунок runable",
+    "title": "Несплачений рахунок Runable",
+    "action": "close",
+    "label": "👌 Прийняв",
+    "about": "Несплачений рахунок Runable",
+    "state": "closed",
+    "ts": "2026-10-12T22:47:15"
   }
 }
