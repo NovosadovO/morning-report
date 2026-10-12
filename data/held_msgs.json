@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:46:02.109337",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T00:46:03.571286",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Manažér obchodnej agentúry v Ko</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-10-13T00:47:56.269101",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.7% за 24г\n\nЗараз: 0.4847 $\n24г тому: 0.5139 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:47:58.393364",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.4% за 24г</b>\n\nЗараз: 10.34 $\n24г тому: 10.93 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
