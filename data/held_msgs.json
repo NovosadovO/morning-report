@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T02:16:12.266049",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Don’t feel sorry for millennials. They’re living it up now</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80654"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80654"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80654"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80654"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80654"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80654"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T02:16:13.604759",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nubank walks away from £10B Monzo deal after 10% share drop </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-10-12T02:18:10.297466",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.9% за 24г</b>\n\nЗараз: 10.98 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T02:18:11.138113",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.9% за 24г\n\nЗараз: 10.98 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
