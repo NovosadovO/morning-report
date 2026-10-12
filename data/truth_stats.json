@@ -38,7 +38,7 @@
     },
     "briefing": {
       "checked": 429,
-      "issues": 333,
+      "issues": 334,
       "fixed": 143,
       "cut": 10
     },
@@ -567,6 +567,7 @@
     "fixed": 20
   },
   "2026-10-12": {
-    "checked": 5
+    "checked": 5,
+    "issues": 1
   }
 }
