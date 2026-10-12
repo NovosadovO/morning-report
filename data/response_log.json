@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T00:03:28.354291+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Сауна",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-21T00:32:25.869921+00:00",
       "category": "deadline_found",
       "question": "Видалення неактивного облікового запису Philips",
@@ -13960,6 +13950,15 @@
       "answer": "2026-10-23",
       "extra": {
         "kind": "warranty"
+      }
+    },
+    {
+      "ts": "2026-10-12T20:23:32.378420+00:00",
+      "category": "deadline_found",
+      "question": "Скасування підписки Garmin Connect+",
+      "answer": "2026-11-04",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
