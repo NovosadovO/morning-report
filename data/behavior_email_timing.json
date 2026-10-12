@@ -1,9 +1,4 @@
 {
-  "80190": {
-    "sender": "no-reply@mail.thedefiant.io",
-    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
-    "seen_ts": "2026-10-03T17:35:42.144995+00:00"
-  },
   "80191": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T04:15:51.356673+00:00"
+  },
+  "80666": {
+    "sender": "news@flights.airbaltic.com",
+    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
+    "seen_ts": "2026-10-12T05:45:02.974668+00:00"
   }
 }
