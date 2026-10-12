@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-10-03T20:00:56"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: steps_good",
       "detail": "🚶 Кроки за тиждень у середньому 14555 — ціль 8000 досягнута",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи містять сповіщення про вакансії, які відповідають інтересам Олега щодо пошуку роботи (Cryptocurrency, Senior Software Engineer - React Native - Consumer).",
       "module": "selfact",
       "ts": "2026-10-12T11:35:21"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-12T12:05:54"
     }
   ]
 }
