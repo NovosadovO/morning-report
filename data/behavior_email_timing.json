@@ -1,9 +1,4 @@
 {
-  "80214": {
-    "sender": "info@message.cropp.com",
-    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
-    "seen_ts": "2026-10-04T07:46:20.585284+00:00"
-  },
   "80215": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "team@ua-4u.mail.sweet.tv",
     "sender_raw": "SWEET.TV <team@ua-4u.mail.sweet.tv>",
     "seen_ts": "2026-10-12T13:03:12.971731+00:00"
+  },
+  "80689": {
+    "sender": "researchteam@blockworks.com",
+    "sender_raw": "0xResearch <researchteam@blockworks.com>",
+    "seen_ts": "2026-10-12T14:02:07.814131+00:00"
   }
 }
