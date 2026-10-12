@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: stale",
-      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-30). Автосинк із годинника міг зламатись",
-      "module": "healthai",
-      "ts": "2026-10-01T11:32:54"
-    },
-    {
       "kind": "reminder",
       "what": "нагадування надіслати дані",
       "detail": "92 год мовчання",
@@ -2799,6 +2792,13 @@
       "detail": "Подія в календарі 'Оплатити квартиру' на 15.10.2026.",
       "module": "selfact",
       "ts": "2026-10-12T06:07:18"
+    },
+    {
+      "kind": "notify",
+      "what": "EtherMail Privacy Wall",
+      "detail": "Лист від EtherMail прямо вказує на необхідність дії: 'Action Needed: Privacy Wall - Blocked Communications Digest'.",
+      "module": "selfact",
+      "ts": "2026-10-12T06:22:38"
     }
   ]
 }
