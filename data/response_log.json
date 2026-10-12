@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T01:33:30.341920+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс до Будапешта",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-21"
-      }
-    },
-    {
       "ts": "2026-08-21T01:33:34.830048+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13957,6 +13947,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dl_note_d67cf19573"
+    },
+    {
+      "ts": "2026-10-12T21:22:49.856949+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
