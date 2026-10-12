@@ -406,6 +406,30 @@ def send_sleep_question():
     })
     print("Sent sleep question")
 
+
+def _garmin_sleep_hours(day: str):
+    """Якщо Garmin УЖЕ має точні дані сну за `day` (sleep_total_min у кеші
+    qwatch_data.json — пише garmin_sync.py кожні 3 год) — повертає години
+    (float, 1 знак). Інакше None (ще не прийшло — тоді й питаємо, бо
+    реально невідомо).
+
+    Запит Олега 12.10: 'правило... має бути до всіх сповіщень... не
+    питати те, на що відповідь вже відома' — застосовуємо і до питання
+    про сон, не лише про біг: Garmin з 09.10 ЄДИНЕ джерело даних
+    здоров'я, тож питати вручну те, що вже прийшло звідти — дублювання
+    і ризик суперечливих чисел (точне з годинника vs неточна оцінка на
+    кнопці 5/6/7/8г)."""
+    try:
+        import storage as _st_sl
+        qd = _st_sl.load("qwatch_data.json", default={}) or {}
+        mins = (qd.get(day) or {}).get("sleep_total_min")
+        if mins is None:
+            return None
+        return round(mins / 60.0, 1)
+    except Exception as e:
+        print(f"[habits] _garmin_sleep_hours error: {e}", flush=True)
+        return None
+
 # ─── ОБРОБКА ВІДПОВІДІ ────────────────────────────────────────────────────────
 
 def handle_callback(callback_query):
@@ -568,17 +592,32 @@ def run():
                 save_sent(sent)
                 send_question(h)
 
-        # Питання про сон о 8:00
+        # Питання про сон о 8:00 — ТІЛЬКИ якщо Garmin ще не приніс точні дані
+        # сну за ніч (запит Олега 12.10: не питати те, відповідь на що вже
+        # відома — тепер і для сну, не лише для бігу).
         sleep_key = f"{today}_sleep_q"
         if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute == SLEEP_MINUTE:
-            if try_acquire_reminder_lock(sleep_key):
-                # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
-                sent[sleep_key] = True
-                save_sent(sent)
-                send_sleep_question()
+            if today_answers.get("sleep") is not None:
+                sent[sleep_key] = True  # вже є відповідь (ручна чи автозаповнена раніше)
             else:
-                print(f"[habits] skip duplicate sleep_q (lock exists)", flush=True)
-                sent[sleep_key] = True
+                g_sleep = _garmin_sleep_hours(today)
+                if g_sleep is not None:
+                    # Garmin вже синхронізував сон за цю ніч — автозаповнюємо,
+                    # не питаємо (точніше за ручну кнопку 5/6/7/8г).
+                    db_sl = load_data()
+                    db_sl.setdefault(today, {})["sleep"] = g_sleep
+                    save_data(db_sl)
+                    sent[sleep_key] = True
+                    save_sent(sent)
+                    print(f"[habits] сон автозаповнено з Garmin: {g_sleep}г за {today}", flush=True)
+                elif try_acquire_reminder_lock(sleep_key):
+                    # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
+                    sent[sleep_key] = True
+                    save_sent(sent)
+                    send_sleep_question()
+                else:
+                    print(f"[habits] skip duplicate sleep_q (lock exists)", flush=True)
+                    sent[sleep_key] = True
 
         # Нагадування про біг — о 17:30 якщо ще не відмітив
         run_key_done = f"{today}_run"
