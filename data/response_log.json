@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-20T22:38:03.213679+00:00",
-      "category": "event_done",
-      "question": "📅 💧 Вода (2л+) ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-20T22:38:03.839324+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13939,6 +13933,16 @@
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
       "answer": "Підготовка до Finweek Bratislava: BLOOD, SWEAT & MiCA",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-12"
+      }
+    },
+    {
+      "ts": "2026-10-12T09:00:13.512657+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Підготуватися до Finweek Bratislava",
       "extra": {
         "kind": "calendar",
         "date": "2026-10-12"
