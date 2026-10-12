@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-12T03:46:46.033651",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80656"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80656"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80656"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80656"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80656"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80656"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-12T03:46:46.596092",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.3% за 24г\n\nЗараз: 10.92 $\n24г тому: 10.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -212,6 +173,12 @@
       "ts": "2026-10-12T03:49:46.767201",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +6.1% за 24г</b>\n\nЗараз: 0.5236 $\n24г тому: 0.4935 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-12T03:49:47.670788",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +6.1% за 24г\n\nЗараз: 0.5236 $\n24г тому: 0.4935 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
