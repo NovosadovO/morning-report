@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:50:42.537390+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_1fe1d32b4d"
-    },
-    {
       "ts": "2026-08-21T03:50:50.820484+00:00",
       "category": "confirm",
       "question": "email_delete: [NOTICE] Server Outage Affecting Your Service",
@@ -13949,6 +13943,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_c656b7edd3"
+    },
+    {
+      "ts": "2026-10-12T22:20:03.294974+00:00",
+      "category": "bill_found",
+      "question": "KOOPERATIVA",
+      "answer": "сума не вказана",
+      "extra": {
+        "due": ""
+      }
     }
   ]
 }
