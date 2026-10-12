@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "нагадування надіслати дані",
-      "detail": "92 год мовчання",
-      "module": "healthai",
-      "ts": "2026-10-01T12:00:50"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.76 год) — тіло не встигає підлаштуватись під ритм",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від EtherMail прямо вказує на необхідність дії: 'Action Needed: Privacy Wall - Blocked Communications Digest'.",
       "module": "selfact",
       "ts": "2026-10-12T06:22:38"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-12T07:01:29"
     }
   ]
 }
