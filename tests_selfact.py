@@ -40,6 +40,12 @@ _MAILS = []
 _mon.get_emails = lambda: list(_MAILS)
 sys.modules["monitor"] = _mon
 
+# calgate з'явився пізніше за цей тест-файл (питає дозвіл перед кожним
+# записом) — тут не про нього, тож дозволяємо запис одразу (force-режим).
+_cg = types.ModuleType("calgate")
+_cg.gate_write = lambda *a, **kw: None
+sys.modules["calgate"] = _cg
+
 import selfact as S
 import ai_kit as K
 
@@ -106,6 +112,7 @@ def reset():
     _MAILS.clear()
     GEM["out"] = []
     S._dedup = K.Dedup(S.DEDUP_FILE, ttl_days=5)
+    S._mail_act_dedup = K.Dedup(S.MAIL_ACT_DEDUP_FILE, ttl_days=30)
 
 
 TOM = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
@@ -234,6 +241,44 @@ GEM["out"] = [{"type": "ask", "title": "Питання", "text": "чи опла�
 r = S.report()
 ok("Питання" in r, "report показує задум")
 ok(SENT == [] and EVENTS == [] and _NOTES == [], "report нічого не виконує")
+
+# ── 14. СПРОБУЙ НОВЕ фікс: дедуп по mail_uid, навіть якщо AI перефразовує
+#         title (запит Олега 12.10.2026: "я вже відповів, він мав
+#         запам'ятати") ─────────────────────────────────────────────────
+print("14. дедуп по uid листа при різних title")
+reset()
+STORE["bills.json"] = {"b1": {"vendor": "KOOPERATIVA"}}
+GEM["out"] = [{"type": "notify", "title": "Нагадування про страховку",
+               "text": "Перевір лист про страховку", "mail_uid": "mail-42"}]
+n1 = S.run(force=True)
+ok(n1 == 1, "перший notify про лист виконано")
+ok(len(SENT) == 1, "перша картка надіслана")
+# другий прохід — та сама пошта (uid=mail-42), але AI назвав дію ІНШИМИ
+# словами: без mail_uid дедуп по title би це пропустив.
+GEM["out"] = [{"type": "notify", "title": "Лист від KOOPERATIVA",
+               "text": "Нагадую про оплату страхування", "mail_uid": "mail-42"}]
+n2 = S.run(force=True)
+ok(n2 == 0, "другий notify про ТОЙ САМИЙ лист (інший title) заблоковано")
+ok(len(SENT) == 1, "друга картка НЕ надіслана — немає дублю")
+# інший лист (інший uid) — має пройти нормально.
+GEM["out"] = [{"type": "notify", "title": "Лист про щось інше",
+               "text": "Інша тема", "mail_uid": "mail-99"}]
+n3 = S.run(force=True)
+ok(n3 == 1, "notify про ІНШИЙ лист (інший uid) проходить")
+ok(len(SENT) == 2, "третя картка надіслана")
+
+# ── 15. notify_ack: кнопка "Прийняв" на notify-картці мусить закривати ──
+print("15. notify відправляється через notify_ack (закриваючий kind)")
+reset()
+_KB_CALLS = []
+_orig_rx_keyboard = _rx.keyboard
+_rx.keyboard = lambda kind="generic", key="", title="", **kw: (
+    _KB_CALLS.append(kind), _orig_rx_keyboard(kind, key, title))[1]
+STORE["bills.json"] = {"b1": {"vendor": "R"}}
+GEM["out"] = [{"type": "notify", "title": "Тест нотифай", "text": "щось"}]
+S.run(force=True)
+ok("notify_ack" in _KB_CALLS, "_do_notify просить кнопки kind=notify_ack, не generic")
+_rx.keyboard = _orig_rx_keyboard
 
 print()
 print("FAILS:", len(FAILS))

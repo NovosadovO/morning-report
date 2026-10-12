@@ -34,6 +34,7 @@ TAG = "selfact"
 
 SCAN_FILE = "selfact_scan.json"
 DEDUP_FILE = "selfact_dedup.json"
+MAIL_ACT_DEDUP_FILE = "selfact_mail_dedup.json"  # дедуп дій по uid листа (фікс 12.10.2026)
 JOURNAL_FILE = "bot_actions.json"
 DIGEST_FILE = "selfact_digest.json"
 REMINDERS_FILE = "reminders.json"
@@ -48,6 +49,11 @@ DIGEST_HOUR = 21
 DIGEST_MIN = 30
 
 _dedup = K.Dedup(DEDUP_FILE, ttl_days=5)
+# Дедуп по uid листа — незалежний від того, як AI щоразу перефразовує title
+# (напр. "Нагадування про страховку" vs "Лист від KOOPERATIVA" про той самий
+# лист, 16 хв різниці — запит Олега 12.10.2026: "я вже відповів, він мав
+# запам'ятати"). TTL довший за DEDUP_FILE, бо лист не зникає з інбоксу днями.
+_mail_act_dedup = K.Dedup(MAIL_ACT_DEDUP_FILE, ttl_days=30)
 
 ACTION_TYPES = ("note", "reminder", "event", "notify", "ask")
 
@@ -184,7 +190,12 @@ def _mail_block() -> str:
             body = _short(rec.get("body"), BODY_CHARS)
         if not body:
             body = _short(em.get("body") or em.get("snippet"), BODY_CHARS)
-        piece = "- від " + frm + " | " + subj
+        # uid у тексті (ЛИСТИ #2 фікс, 12.10.2026): AI щоразу перефразовує
+        # title/text про той самий лист ("Нагадування про страховку" →
+        # "Лист від KOOPERATIVA" 16 хв пізніше) — текстовий дедуп по title
+        # це пропускає. uid дає run() стабільний ключ для дедупу незалежно
+        # від того, як AI цього разу назве дію.
+        piece = "- uid=" + (uid or "?") + " | від " + frm + " | " + subj
         if body:
             piece += "\n  текст: " + body
         lines.append(piece)
@@ -297,6 +308,14 @@ _PROMPT = """Ти — АІ-ініціатор персонального бот�
   загальні поради без конкретної прив'язки до факту з ДАНИХ;
 - більше ніж 6 дій.
 
+ПРО ЛИСТИ (ВАЖЛИВО): кожен рядок у "СВІЖІ ЛИСТИ:" має "uid=...". Якщо дія
+(notify/reminder/note/event/ask) стосується КОНКРЕТНОГО листа — завжди додай
+до об'єкта дії поле "mail_uid" з цим точним uid. Якщо один і той самий лист
+(той самий uid) уже був причиною дії минулого разу — дивись у "ЩО БОТ УЖЕ
+ЗРОБИВ" і "ЗАПЛАНОВАНІ НАГАДУВАННЯ" — не пропонуй про нього ще раз дію ТОГО
+Ж ТИПУ, навіть іншими словами чи іншим заголовком: один лист = одна дія
+кожного типу, не більше.
+
 ПЕРЕВІРКА ЧАСУ (ОБОВ'ЯЗКОВО перед кожною дією):
 - Поточний момент — у заголовку ДАНИХ ("СЬОГОДНІ: dd.mm.yyyy HH:MM"). Порахуй, скільки
   часу РЕАЛЬНО лишилось до кінця дня/вікна/події, про яку пропонуєш дію.
@@ -313,7 +332,8 @@ _PROMPT = """Ти — АІ-ініціатор персонального бот�
 
 Формат — тільки JSON-масив:
 [{{"type":"reminder","title":"коротка назва","text":"що саме сказати Олегу українською",
-   "date":"YYYY-MM-DD","time":"HH:MM","why":"на якому саме факті з ДАНИХ це базується"}}]
+   "date":"YYYY-MM-DD","time":"HH:MM","why":"на якому саме факті з ДАНИХ це базується",
+   "mail_uid":"uid листа, якщо дія про конкретний лист, інакше не давай поле"}}]
 Для note/notify/ask поля date/time можна не давати. У "text" — живою українською, без води."""
 
 
@@ -338,6 +358,7 @@ def decide(ctx: str = None) -> list:
         a["type"] = typ
         a["title"] = title or text[:60]
         a["text"] = text or title
+        a["mail_uid"] = _short(a.get("mail_uid"), 80)
         acts.append(a)
     return acts[:MAX_ACTIONS]
 
@@ -439,7 +460,9 @@ def _do_event(a: dict) -> bool:
 
 def _do_notify(a: dict) -> bool:
     text = "🤖 <b>" + K.esc(a["title"]) + "</b>\n\n" + K.esc(a["text"])
-    return K.send_card(text, _kb("generic", a["title"]), tag=TAG)
+    # notify_ack, не generic (фікс 12.10.2026): «Прийняв» на цих картках
+    # мусить закривати тему, інакше та сама справа повертається знову.
+    return K.send_card(text, _kb("notify_ack", a["title"]), tag=TAG)
 
 
 def _do_ask(a: dict) -> bool:
@@ -597,11 +620,17 @@ def run(force: bool = False) -> int:
     for a in acts:
         typ = a["type"]
         title = a["title"]
+        mail_uid = str(a.get("mail_uid") or "")
         if _dedup.seen(typ, title):
             _log("вже робив: " + typ + " / " + title)
             continue
         if _muted(title):
             _log("тема закрита/заглушена: " + title)
+            continue
+        # Дедуп по листу (ВАЖЛИВО, фікс 12.10.2026): той самий лист — та
+        # сама дія того ж типу вдруге, навіть якщо AI назвав її інакше.
+        if mail_uid and _mail_act_dedup.seen(typ, mail_uid):
+            _log("вже був " + typ + " про цей лист (uid=" + mail_uid + "): " + title)
             continue
         doer = _DOERS.get(typ)
         if not doer:
@@ -614,6 +643,8 @@ def run(force: bool = False) -> int:
         if not ok:
             continue
         _dedup.mark(typ, title)
+        if mail_uid:
+            _mail_act_dedup.mark(typ, mail_uid)
         journal(typ, title, _short(a.get("why") or a.get("text"), 300))
         done += 1
         if typ in ("note", "reminder", "event"):

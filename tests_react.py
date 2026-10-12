@@ -231,6 +231,29 @@ ok("Faktúra O2" in rep and "BTC -6%" in rep, "у звіті обидві реа
 ok("🔒" in rep, "закрита тема позначена")
 ok("закритих тем: 1" in rep, "чесний рахунок закритих тем")
 
+# ─── 12. notify_ack: "Прийняв" закриває тему (фікс 12.10.2026) ──────────────
+# Запит Олега: "я вже відповів (Прийняв), він мав запам'ятати — більше не
+# нагадувати". generic/"ok" свідомо лишає тему відкритою (money/інше), тож
+# для selfact-ініціативи (notify/ask) є окремий kind notify_ack з action
+# "close", який ТАКИ закриває тему, не чіпаючи поведінку "ok" ніде інакше.
+print("\n=== 12. notify_ack закриває тему, generic — ні ===")
+reset()
+res = press("notify_ack", "close", title="Лист від KOOPERATIVA")
+ok("закрита" in res["text"].lower(), "ACK явно каже: тема закрита")
+ok(R.is_closed("notify_ack", title="Лист від KOOPERATIVA") is True,
+   "notify_ack/close дійсно закриває тему")
+ok(any(m["kind"] == "notify_ack" for m in MUTED),
+   "closed-дія задублювана в dismissed, як і інші CLOSING-дії")
+reset()
+press("generic", "ok", title="Щось узяв до відома")
+ok(R.is_closed("generic", title="Щось узяв до відома") is False,
+   "generic/ok і далі НЕ закриває тему — поведінка не зламана ніде інакше")
+ok(not MUTED, "generic/ok не йде в dismissed")
+reset()
+press("money", "ok", title="Крипто портфель -5%")
+ok(R.is_closed("money", title="Крипто портфель -5%") is False,
+   "money/ok («Знаю») теж лишається відкритим, як і раніше")
+
 print("\n" + "=" * 50)
 print("Падінь: " + str(len(FAILS)))
 for f in FAILS:
