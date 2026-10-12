@@ -1,9 +1,4 @@
 {
-  "80186": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-10-03T14:20:45.532457+00:00"
-  },
   "80189": {
     "sender": "team@ship.emergent.sh",
     "sender_raw": "Emergent <team@ship.emergent.sh>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-12T02:14:02.321871+00:00"
+  },
+  "80664": {
+    "sender": "offers@travel.wizznews.com",
+    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
+    "seen_ts": "2026-10-12T02:28:30.658241+00:00"
   }
 }
