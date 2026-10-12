@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-12t06_53_51_955813": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Finweek Bratislava\",     \"text\": \"Олеже, завтра, 13 жовтня о 12:45, у тебе запланована подія BLOOD, SWEAT & Mi",
+    "ts": "2026-10-12T06:53:51.955813"
+  },
   "mailcal_extract|2026-10-12t06_44_22_310006": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-10-12T04:02:11.539626"
-  },
-  "action_detect|2026-10-12t04_01_55_458222": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відвідати Finweek у Братиславі\", \"action_date\": \"2026-10-13\", \"action_time\": \"13:45\", \"action_summary\": \"Відвідати ",
-    "ts": "2026-10-12T04:01:55.458222"
   }
 }
