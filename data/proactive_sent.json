@@ -20,6 +20,7 @@
     "run_question": true,
     "anomaly_weight_rising": true,
     "ai_observations": true,
-    "post_shift_checkin": true
+    "post_shift_checkin": true,
+    "evening_checkin": true
   }
 }
