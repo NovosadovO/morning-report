@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T00:01:00.585020",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>AI-Powered Bond Rating Startup Says OpenAI Debt Is Junk And\r</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80714"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80714"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80714"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80714"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80714"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80714"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T00:01:02.087164",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy's bitcoin holdings hit 848,250 BTC</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-13T00:04:14.901211",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T00:05:38.644455",
+      "kind": "MSG_FORESIGHT_TRIP",
+      "text": "✈️ <b>ПОЇЗДКА: Bratislava</b> — через 1 дн. (14.10–17.10)\n\n🧳 <b>ЩО ВЗЯТИ</b>\n• одяг на 4…17°C\n• кофта, вітровка, закрите взуття\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 <b>ПОГОДА</b>\n• 14.10: 16°/8°; 15.10: 16°/8°; 16.10: 17°/4°; 17.10: 17°/9°\n\n✅ <b>ДО ВИЛЬОТУ</b>\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
       "keyboard": null
     }
   ]
