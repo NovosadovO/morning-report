@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-12t10_30_13_511154": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити нові оголошення про квартири\",     \"date\": \"2026-10-12\",     \"time\": \"18:00\",     \"message\": \"Оле",
+    "ts": "2026-10-12T10:30:13.511154"
+  },
   "selfact|2026-10-12t10_16_45_410547": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, нагадую, що платіж до Runable на $10.00 був невдалим. Потрібно оновити п",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-12T08:02:25.024906"
-  },
-  "action_detect|2026-10-12t08_02_14_551405": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка або інтенсивна ходьба\", \"action_date\": \"2026-10-12\", \"action_time\": \"10:00\", \"action_summary\": \"Пробіжка а",
-    "ts": "2026-10-12T08:02:14.551405"
   }
 }
