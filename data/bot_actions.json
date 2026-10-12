@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-10-02T07:00:32"
-    },
-    {
       "kind": "reminder",
       "what": "нагадування надіслати дані",
       "detail": "19 год мовчання",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від EtherMail <ethermail@ethermail.io> | Action Needed: Privacy Wall - Blocked Communications Digest.",
       "module": "selfact",
       "ts": "2026-10-12T08:12:04"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-12",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-12T08:28:07"
     }
   ]
 }
