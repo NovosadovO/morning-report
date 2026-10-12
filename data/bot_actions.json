@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-10-05T20:00:57"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: steps_good",
       "detail": "🚶 Кроки за тиждень у середньому 12862 — ціль 8000 досягнута",
@@ -2799,6 +2792,13 @@
       "detail": "Олег питав про підключення до Garmin, і щойно прийшов лист про успішну реєстрацію нового пристрою. Це пряма відповідь на його запитання та підтвердження дії бота.",
       "module": "selfact",
       "ts": "2026-10-12T19:38:46"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-12",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-10-12T19:42:03"
     }
   ]
 }
