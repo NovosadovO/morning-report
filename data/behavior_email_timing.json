@@ -1,9 +1,4 @@
 {
-  "80196": {
-    "sender": "sales@plunge.com",
-    "sender_raw": "Colton at Plunge <sales@plunge.com>",
-    "seen_ts": "2026-10-03T19:00:24.354431+00:00"
-  },
   "80199": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply-accounts@google.com",
     "sender_raw": "Google <noreply-accounts@google.com>",
     "seen_ts": "2026-10-12T07:51:18.601785+00:00"
+  },
+  "80672": {
+    "sender": "noreply@sheinnotice.com",
+    "sender_raw": "SHEIN <noreply@sheinnotice.com>",
+    "seen_ts": "2026-10-12T07:51:26.113131+00:00"
   }
 }
