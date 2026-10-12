@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T01:56:33.807699",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → Objednávka je odoslaná a sledovacie číslo Packeta je pripravené (ID objednávky: #PO-180-08315922862710256)\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Manažér obchodnej agentúry v Košiciach в UNIQA CZ\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T01:56:36.387955",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-13T01:58:38.104999",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.2% за 24г\n\nЗараз: 0.0822 $\n24г тому: 0.0867 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T01:58:40.403418",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -5.1% за 24г</b>\n\nЗараз: 105.54 $\n24г тому: 111.25 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
