@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-12t08_58_10_632996": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від Kraken\",     \"text\": \"Олеже, у тебе є два нових сповіщення про вакансії Senior Software Engi",
+    "ts": "2026-10-12T08:58:10.632996"
+  },
   "selfact|2026-10-12t08_43_05_341264": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії React Native\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії Senior Software Engineer - Re",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2026-10-12\", \"action_time\": \"09:00\", \"action_summary\": \"Запланувати пробіжку на 09:00 (1",
     "ts": "2026-10-12T06:02:12.117633"
-  },
-  "briefing_truthfix|2026-10-12t06_02_06_020176": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 ВЕКТОР ДНЯ Твої кроки впали до 2606 за 11 жовтня, а вага 83.7 кг тримається. Це дані за вчора, 1 день тому. Ти відклав підтвердження підписки Garmin Connect+ ",
-    "ts": "2026-10-12T06:02:06.020176"
   }
 }
