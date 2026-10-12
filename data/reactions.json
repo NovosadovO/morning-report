@@ -7425,5 +7425,16 @@
     "about": "Несплачений рахунок Runable",
     "state": "closed",
     "ts": "2026-10-12T22:47:15"
+  },
+  "notify_ack|t|завтра конференція finweek bratislava": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "завтра конференція finweek bratislava",
+    "title": "Завтра конференція Finweek Bratislava",
+    "action": "close",
+    "label": "👌 Прийняв",
+    "about": "Завтра конференція Finweek Bratislava",
+    "state": "closed",
+    "ts": "2026-10-12T22:47:49"
   }
 }
