@@ -1,9 +1,4 @@
 {
-  "80219": {
-    "sender": "hello@notify.railway.app",
-    "sender_raw": "Railway <hello@notify.railway.app>",
-    "seen_ts": "2026-10-04T10:04:27.545670+00:00"
-  },
   "80222": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-10-12T14:22:36.944845+00:00"
+  },
+  "80692": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-12T14:28:50.736331+00:00"
   }
 }
