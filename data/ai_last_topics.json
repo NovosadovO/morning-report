@@ -1,4 +1,14 @@
 {
+  "foresight|2026-10-12t11_42_08_301801": {
+    "topic": "foresight",
+    "gist": "Олеже, бачу, що нічні зміни вже близько, з 15 жовтня, а з ними й виклик для сну та відновлення. Замість того, щоб чекати, поки втома накопичиться, спробуй вже с",
+    "ts": "2026-10-12T11:42:08.301801"
+  },
+  "selfact|2026-10-12t11_35_15_425033": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири у Кошице\",     \"text\": \"Олеже, з'явилися 2 нових оголошення про 3-кімнатні квартири у Кошице. Пе",
+    "ts": "2026-10-12T11:35:15.425033"
+  },
   "openloop_promises|2026-10-12t11_33_55_214029": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-12T09:01:36.002883"
-  },
-  "action_detect|2026-10-12t09_01_25_400747": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"BLOOD, SWEAT & MiCA\", \"action_date\": \"2026-10-13\", \"action_time\": \"13:45\", \"action_summary\": \"Завтра, 13 жовтня 202",
-    "ts": "2026-10-12T09:01:25.400747"
-  },
-  "action_detect|2026-10-12t09_01_14_275266": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст є інформаційним уроком про принцип інвестування",
-    "ts": "2026-10-12T09:01:14.275266"
   }
 }
