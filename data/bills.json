@@ -414,5 +414,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-10-12"
+  },
+  "kooperativa||": {
+    "vendor": "KOOPERATIVA",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "PZ 6641172176",
+    "due": "",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "subject": "Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI",
+    "note": "Повідомлення про необхідність сплати обов'язкового страхування транспортного засобу (PZ).",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-10-12"
   }
 }
