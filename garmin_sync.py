@@ -342,8 +342,14 @@ def sync_running_activities(day: str = None, client=None) -> list:
             print(f"[{TAG}] save_from_garmin error: {e}", flush=True)
     if saved:
         print(f"[{TAG}] автопідтягнуто {len(saved)} пробіжок/ходи за {day}", flush=True)
-        if any(a.get("type") in _RUN_HABIT_TYPES for a in saved):
-            _auto_mark_run_habit(day)
+    # Перевіряємо на `acts` (усі пробіжки за `day`, щойно отримані з Garmin),
+    # НЕ на `saved` (лише нові цього разу) — виправлення бага 12.10: якщо
+    # активність уже була збережена РАНІШЕ (напр. до того, як цей автомарк
+    # з'явився в коді), вона завжди піде в дедуп і НІКОЛИ не попаде в `saved`
+    # знову → звичка лишалась незаповненою назавжди. Так кожен 3-годинний
+    # синк сам "доганяє" і ставить галочку, якщо вона ще не стоїть.
+    if any(a.get("type") in _RUN_HABIT_TYPES for a in acts):
+        _auto_mark_run_habit(day)
     return saved
 
 
