@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±5.15 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-10-04T21:08:33"
-    },
-    {
       "kind": "hcoach",
       "what": "evening_review",
       "detail": "вечірній розбір, оцінка 65",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від OKX <updates@okx.com> | OKX Shield: Verify every transaction. Це важливе сповіщення щодо безпеки фінансових операцій.",
       "module": "selfact",
       "ts": "2026-10-12T18:04:53"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-12T18:06:16"
     }
   ]
 }
