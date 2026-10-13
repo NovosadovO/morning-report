@@ -1,4 +1,19 @@
 {
+  "healthai|2026-10-13t12_06_13_214349": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, бачу, ти щойно натиснув «🏃 Побігав» на моє сповіщення про новий маршрут для пробіжки. Це чудово, адже допоможе відновитись перед конференцією Finweek B",
+    "ts": "2026-10-13T12:06:13.214349"
+  },
+  "action_detect|2026-10-13t12_00_54_370849": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-13T12:00:54.370849"
+  },
+  "action_detect|2026-10-13t12_00_43_329007": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обід у Кошіце\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Обід у Кошіце з максимумом 500",
+    "ts": "2026-10-13T12:00:43.329007"
+  },
   "selfact|2026-10-13t11_55_33_778365": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї ",
@@ -283,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Конференція Finweek Bratislava\",     \"text\": \"Олеже, нагадую, що сьогодні о 12:45 у тебе BLOOD, SWEAT & MiCA —",
     "ts": "2026-10-13T08:48:36.860352"
-  },
-  "openloop_promises|2026-10-13t08_42_14_912385": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-13T08:42:14.912385"
-  },
-  "deadlines|2026-10-13t08_40_08_860934": {
-    "topic": "deadlines",
-    "gist": "```json [] ```",
-    "ts": "2026-10-13T08:40:08.860934"
-  },
-  "foresight_truthfix|2026-10-13t08_37_44_276405": {
-    "topic": "foresight/truthfix",
-    "gist": "Привіт, Олеже!  Маємо вільні дні сьогодні, 13 жовтня, та завтра, 14 жовтня, перед нічними змінами 15 та 16 жовтня. Твій рівень стресу за 12 жовтня був 9, що зна",
-    "ts": "2026-10-13T08:37:44.276405"
-  },
-  "action_detect|2026-10-13t12_00_43_329007": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обід у Кошіце\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Обід у Кошіце з максимумом 500",
-    "ts": "2026-10-13T12:00:43.329007"
   }
 }
