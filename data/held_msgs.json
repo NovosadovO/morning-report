@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T02:37:04.644061",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -11.8% за 24г</b>\n\nЗараз: 0.4628 $\n24г тому: 0.5245 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T02:37:05.495492",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -11.8% за 24г\n\nЗараз: 0.4628 $\n24г тому: 0.5245 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-13T02:39:14.568067",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -6.6% за 24г</b>\n\nЗараз: 103.83 $\n24г тому: 111.20 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T02:39:15.602652",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ SOL -6.6% за 24г\n\nЗараз: 103.83 $\n24г тому: 111.20 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
