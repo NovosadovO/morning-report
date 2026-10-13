@@ -1,4 +1,49 @@
 {
+  "selfact|2026-10-13t11_55_33_778365": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї ",
+    "ts": "2026-10-13T11:55:33.778365"
+  },
+  "openloop_promises|2026-10-13t11_43_42_321041": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-13T11:43:42.321041"
+  },
+  "action_detect|2026-10-13t11_43_31_611253": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:43:31.611253"
+  },
+  "action_detect|2026-10-13t11_42_35_918421": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:42:35.918421"
+  },
+  "foresight|2026-10-13t11_42_03_944795": {
+    "topic": "foresight",
+    "gist": "Олеже, враховуючи, що до конференції Finweek Bratislava залишилося небагато часу, а тобі потрібне гарне відновлення перед нічними змінами, спробуй новий маршрут",
+    "ts": "2026-10-13T11:42:03.944795"
+  },
+  "action_detect|2026-10-13t11_41_05_132017": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:41:05.132017"
+  },
+  "action_detect|2026-10-13t11_40_42_377990": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування\", \"action_date\": null, \"action_time\": \"12:40\", \"action_summary\": \"Нагадати ще раз о 12:40.\"}",
+    "ts": "2026-10-13T11:40:42.377990"
+  },
+  "selfact|2026-10-13t11_40_16_524733": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, нагадую, що лист від Notifikácie KOOPERATIVA пот",
+    "ts": "2026-10-13T11:40:16.524733"
+  },
+  "action_detect|2026-10-13t11_39_52_695924": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Коригування тренувань\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Активізувати т",
+    "ts": "2026-10-13T11:39:52.695924"
+  },
   "msg_crypto_move|2026-10-13t11_39_36_546988": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "Привіт Олеже! 📈  Сьогоднішній ранок приніс доволі неоднозначні рухи на крипторинку, з якими варто розібратись спокійно, без поспіху. З одного боку, твій портфел",
@@ -253,90 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "Привіт, Олеже!  Маємо вільні дні сьогодні, 13 жовтня, та завтра, 14 жовтня, перед нічними змінами 15 та 16 жовтня. Твій рівень стресу за 12 жовтня був 9, що зна",
     "ts": "2026-10-13T08:37:44.276405"
-  },
-  "foresight|2026-10-13t08_37_33_112512": {
-    "topic": "foresight",
-    "gist": "Привіт! Олеже, маємо вільні вихідні без змін аж до четверга, а ще твій рівень стресу зараз лише 9, що значно нижче середнього. Саме час спробувати щось нове: як",
-    "ts": "2026-10-13T08:37:33.112512"
-  },
-  "selfact|2026-10-13t08_32_50_692614": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPER",
-    "ts": "2026-10-13T08:32:50.692614"
-  },
-  "selfact|2026-10-13t08_17_01_590742": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPERATIVA, який потребу",
-    "ts": "2026-10-13T08:17:01.590742"
-  },
-  "healthai|2026-10-13t08_05_17_011575": {
-    "topic": "healthai",
-    "gist": "👋 Олеже, бачу, що за сьогодні ще немає даних по вазі, сну та кроках. Останні відомі дані по вазі — 83.9 кг за 12 жовтня, тобто вчора, що на 8.9 кг вище цілі 75 ",
-    "ts": "2026-10-13T08:05:17.011575"
-  },
-  "selfact|2026-10-13t08_01_35_174718": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPERATIVA, який потребу",
-    "ts": "2026-10-13T08:01:35.174718"
-  },
-  "action_detect|2026-10-13t08_00_39_948999": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Notifikácie KOOPERATIVA\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\"",
-    "ts": "2026-10-13T08:00:39.948999"
-  },
-  "action_detect|2026-10-13t08_00_20_502855": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: До Поліції Руслані\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action_summary\": \"Нагадати Оле",
-    "ts": "2026-10-13T08:00:20.502855"
-  },
-  "foresight_truthfix|2026-10-13t07_51_40_822195": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, зараз, коли ти маєш вільні дні 13 та 14 жовтня перед нічними змінами 15 та 16 жовтня, варто звернути увагу на відновлення. Вчора, 12 жовтня, ти пробіг 7.",
-    "ts": "2026-10-13T07:51:40.822195"
-  },
-  "foresight|2026-10-13t07_51_29_293240": {
-    "topic": "foresight",
-    "gist": "Олеже, враховуючи, що сьогодні і завтра у тебе вільні від змін дні перед нічними та ранніми, зараз ідеальний час для 20-хвилинної розтяжки після пробіжки вчора;",
-    "ts": "2026-10-13T07:51:29.293240"
-  },
-  "openloop_promises|2026-10-13t11_43_42_321041": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-13T11:43:42.321041"
-  },
-  "action_detect|2026-10-13t11_43_31_611253": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:43:31.611253"
-  },
-  "action_detect|2026-10-13t11_42_35_918421": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:42:35.918421"
-  },
-  "foresight|2026-10-13t11_42_03_944795": {
-    "topic": "foresight",
-    "gist": "Олеже, враховуючи, що до конференції Finweek Bratislava залишилося небагато часу, а тобі потрібне гарне відновлення перед нічними змінами, спробуй новий маршрут",
-    "ts": "2026-10-13T11:42:03.944795"
-  },
-  "action_detect|2026-10-13t11_41_05_132017": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:41:05.132017"
-  },
-  "action_detect|2026-10-13t11_40_42_377990": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування\", \"action_date\": null, \"action_time\": \"12:40\", \"action_summary\": \"Нагадати ще раз о 12:40.\"}",
-    "ts": "2026-10-13T11:40:42.377990"
-  },
-  "selfact|2026-10-13t11_40_16_524733": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, нагадую, що лист від Notifikácie KOOPERATIVA пот",
-    "ts": "2026-10-13T11:40:16.524733"
-  },
-  "action_detect|2026-10-13t11_39_52_695924": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Коригування тренувань\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Активізувати т",
-    "ts": "2026-10-13T11:39:52.695924"
   }
 }
