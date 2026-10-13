@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-08",
-      "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-09T01:30:15"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-09",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-13T18:06:33"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_good",
+      "detail": "😴 Сон за тиждень у середньому 8.1 год — стабільно добре",
+      "module": "healthai",
+      "ts": "2026-10-13T18:44:05"
     }
   ]
 }
