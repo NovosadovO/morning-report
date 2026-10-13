@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:31:24.080913",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Coordinator HU в Atlas </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80721"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80721"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80721"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80721"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80721"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80721"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T03:31:25.361363",
       "kind": "offer",
       "text": "📦 ✉️\n📌 <b>Objednávka je odoslaná a sledovacie číslo Packeta je priprav</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-13T03:33:50.955778",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 14.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:33:52.082828",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 14.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
