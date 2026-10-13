@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:50:53.941371+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_10b648aada"
-    },
-    {
       "ts": "2026-08-21T03:51:55.009950+00:00",
       "category": "confirm",
       "question": "gate_dl_skip: 📌 ДЕДЛАЙН У ПОШТІ — ТЕРМІН",
@@ -13954,6 +13948,16 @@
       "answer": "З'ясувати суму та термін оплати страховки PZ № 6641172176",
       "extra": {
         "kind": "reminder",
+        "date": "2026-10-13"
+      }
+    },
+    {
+      "ts": "2026-10-13T04:30:21.404332+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "reply",
         "date": "2026-10-13"
       }
     }
