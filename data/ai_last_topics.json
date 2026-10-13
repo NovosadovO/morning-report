@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-13t21_30_42_681974": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує уваги\",     \"text\": \"Олеже, у тебе є невідповідний лист від Notifikácie KOOPERAT",
+    "ts": "2026-10-13T21:30:42.681974"
+  },
   "hcoach|2026-10-13t21_20_53_650365": {
     "topic": "hcoach",
     "gist": "Чудовий день сьогодні, Олеже! Ти отримав 99 зі 100 балів, що вказує на гарний баланс у ключових показниках.  ### Вага Твоя вага сьогодні 82.6 кг, і це хороший р",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
     "ts": "2026-10-13T18:01:18.607602"
-  },
-  "action_detect|2026-10-13t18_01_06_507380": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про кроки Олега, його ціль п",
-    "ts": "2026-10-13T18:01:06.507380"
   }
 }
