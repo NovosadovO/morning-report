@@ -298,5 +298,45 @@
     "topic": "foresight",
     "gist": "Олеже, враховуючи, що сьогодні і завтра у тебе вільні від змін дні перед нічними та ранніми, зараз ідеальний час для 20-хвилинної розтяжки після пробіжки вчора;",
     "ts": "2026-10-13T07:51:29.293240"
+  },
+  "openloop_promises|2026-10-13t11_43_42_321041": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-13T11:43:42.321041"
+  },
+  "action_detect|2026-10-13t11_43_31_611253": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:43:31.611253"
+  },
+  "action_detect|2026-10-13t11_42_35_918421": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:42:35.918421"
+  },
+  "foresight|2026-10-13t11_42_03_944795": {
+    "topic": "foresight",
+    "gist": "Олеже, враховуючи, що до конференції Finweek Bratislava залишилося небагато часу, а тобі потрібне гарне відновлення перед нічними змінами, спробуй новий маршрут",
+    "ts": "2026-10-13T11:42:03.944795"
+  },
+  "action_detect|2026-10-13t11_41_05_132017": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T11:41:05.132017"
+  },
+  "action_detect|2026-10-13t11_40_42_377990": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування\", \"action_date\": null, \"action_time\": \"12:40\", \"action_summary\": \"Нагадати ще раз о 12:40.\"}",
+    "ts": "2026-10-13T11:40:42.377990"
+  },
+  "selfact|2026-10-13t11_40_16_524733": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, нагадую, що лист від Notifikácie KOOPERATIVA пот",
+    "ts": "2026-10-13T11:40:16.524733"
+  },
+  "action_detect|2026-10-13t11_39_52_695924": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Коригування тренувань\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Активізувати т",
+    "ts": "2026-10-13T11:39:52.695924"
   }
 }
