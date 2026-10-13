@@ -1,9 +1,4 @@
 {
-  "80251": {
-    "sender": "avalancheteam1@substack.com",
-    "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
-    "seen_ts": "2026-10-05T10:13:12.618114+00:00"
-  },
   "80252": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-13T12:09:11.506583+00:00"
+  },
+  "80745": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-13T12:13:25.631531+00:00"
   }
 }
