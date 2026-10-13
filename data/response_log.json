@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T07:51:10.357002+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Зафіксувати доходи та витрати",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T07:51:13.737837+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13988,6 +13982,12 @@
       "extra": {
         "kind": "warranty"
       }
+    },
+    {
+      "ts": "2026-10-13T14:41:13.889466+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Збільшити щоденну активність",
+      "answer": "yes"
     }
   ]
 }
