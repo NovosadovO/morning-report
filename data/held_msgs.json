@@ -224,6 +224,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-14T00:01:17.919517",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: 10 Trillion Dollar Tokenization Marke</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80775"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80775"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80775"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80775"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80775"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80775"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
