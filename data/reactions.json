@@ -7447,5 +7447,16 @@
     "about": "Лист від KOOPERATIVA потребує відповіді",
     "state": "closed",
     "ts": "2026-10-13T11:41:15"
+  },
+  "notify_ack|t|finweek blood sweat mica": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "finweek blood sweat mica",
+    "title": "Finweek «Blood, Sweat & MiCA»",
+    "action": "close",
+    "label": "👌 Прийняв",
+    "about": "Finweek «Blood, Sweat & MiCA»",
+    "state": "closed",
+    "ts": "2026-10-13T12:13:46"
   }
 }
