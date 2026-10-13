@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-13t23_04_09_999450": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPERATIVA, який ",
+    "ts": "2026-10-13T23:04:09.999450"
+  },
   "selfact|2026-10-13t22_48_57_249360": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершені звички за сьогодні\",     \"text\": \"Олеже, ти не зробив спрей для волосся та не випив трав'яний чай ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї відповіді. Це термі",
     "ts": "2026-10-13T19:39:14.687912"
-  },
-  "mailcal_extract|2026-10-13t19_25_26_592103": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-13T19:25:26.592103"
   }
 }
