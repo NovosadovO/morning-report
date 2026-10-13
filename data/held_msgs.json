@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:28:49.868140",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -10.9% за 24г\n\nЗараз: 0.4697 $\n24г тому: 0.5271 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:28:52.776371",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -7.7% за 24г</b>\n\nЗараз: 10.09 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80722"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:31:24.080913",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Coordinator HU в Atlas </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80721"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80721"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80721"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80721"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80721"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80721"
             }
           ]
         ]
