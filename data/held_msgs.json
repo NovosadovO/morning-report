@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T00:13:59.539862",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: 10 Trillion Dollar Tokenization Market?\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-14T00:14:01.593406",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• The Block  → Tokenization Briefing: 10 Trillion Dollar Tokenization Market?\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80775"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-14T00:16:24.039615",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The best and worst protocol revenues in a bear market</b>\n👤 DefiLlama Newsletter &lt;hi@newsletter.defillama.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80774"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80774"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80774"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80774"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80774"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80774"
             }
           ]
         ]
