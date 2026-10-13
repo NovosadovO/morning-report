@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T00:31:26.838889",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Key Account Manager Slovakia в Bolton – вакансія, яка може в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80782"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80782"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80782"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80782"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80782"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80782"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T00:31:28.355581",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-14T00:34:28.004181",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 15.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T00:34:30.598284",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
