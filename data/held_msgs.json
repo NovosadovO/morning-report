@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:01:29.397164",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[Action Required] Mark AI agent OAuth clients as agentic for</b>\n👤 Google Cloud &lt;CloudPlatform-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80716"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80716"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80716"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80716"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80716"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80716"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T03:01:30.723194",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 How LLMs might make crypto mining useful</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-13T03:03:34.917276",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.7% за 24г\n\nЗараз: 9.8840 $\n24г тому: 10.94 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:03:37.239765",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -7.9% за 24г</b>\n\nЗараз: 102.89 $\n24г тому: 111.72 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
