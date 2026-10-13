@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-13t09_39_00_126197": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист інформує про два нових оголошення щодо 3-кімнатних квартир у Кошиці, Словаччина, зі звітом, сформованим 2026-10-13. Перша квартира на Irku",
+    "ts": "2026-10-13T09:39:00.126197"
+  },
   "selfact|2026-10-13t09_34_34_745347": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Нагадую, що лист від Notifikácie KOOPERATIVA, який надійшов сьогодні, потр",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Це важливий ли",
     "ts": "2026-10-13T06:11:43.248785"
-  },
-  "action_detect|2026-10-13t06_01_46_132554": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-13T06:01:46.132554"
   }
 }
