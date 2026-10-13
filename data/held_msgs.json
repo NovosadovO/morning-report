@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:28:52.776371",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -7.7% за 24г</b>\n\nЗараз: 10.09 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:28:53.672191",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -7.7% за 24г\n\nЗараз: 10.09 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80721"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:31:25.361363",
+      "kind": "offer",
+      "text": "📦 ✉️\n📌 <b>Objednávka je odoslaná a sledovacie číslo Packeta je priprav</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80720"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80720"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80720"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80720"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80720"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80720"
             }
           ]
         ]
