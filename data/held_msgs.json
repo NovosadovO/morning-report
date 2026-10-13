@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:28:56.951421",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ SOL -6.5% за 24г\n\nЗараз: 104.21 $\n24г тому: 111.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:29:00.065899",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0823 $\n24г тому: 0.0867 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80717"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:31:29.666309",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[Action Required] Mark AI agent OAuth clients as agentic for</b>\n👤 Google Cloud &lt;CloudPlatform-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80716"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80716"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80716"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80716"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80716"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80716"
             }
           ]
         ]
