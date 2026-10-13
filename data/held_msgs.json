@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T00:01:11.360757",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Toms Founder Pledged $100M To Psychedelic Research—But Now H</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80779"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80779"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80779"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80779"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80779"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80779"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T00:01:12.714451",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin whale moves $378 million after six year</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-14T00:03:47.391857",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T00:03:48.481874",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
