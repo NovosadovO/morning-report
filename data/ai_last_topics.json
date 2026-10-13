@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-10-13t14_36_21_675593": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  На обідній час, 13 жовтня 2026 року, бачимо, що ти зараз вдома, і є можливість оцінити твій прогрес за цим тижнем. Ринок криптовалют загалом де",
+    "ts": "2026-10-13T14:36:21.675593"
+  },
   "selfact|2026-10-13t14_30_29_145799": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (Avízo na zapla",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
     "ts": "2026-10-13T11:41:05.132017"
-  },
-  "action_detect|2026-10-13t11_40_42_377990": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування\", \"action_date\": null, \"action_time\": \"12:40\", \"action_summary\": \"Нагадати ще раз о 12:40.\"}",
-    "ts": "2026-10-13T11:40:42.377990"
   }
 }
