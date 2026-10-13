@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T00:31:28.355581",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80780"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80780"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80780"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80780"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80780"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80780"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T00:31:29.967028",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Toms Founder Pledged $100M To Psychedelic Research—But Now H</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -346,6 +307,12 @@
       "ts": "2026-10-14T00:34:30.598284",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T00:34:31.719483",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
