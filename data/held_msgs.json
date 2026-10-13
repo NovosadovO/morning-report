@@ -263,6 +263,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-14T00:01:19.396612",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The best and worst protocol revenues in a bear market</b>\n👤 DefiLlama Newsletter &lt;hi@newsletter.defillama.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80774"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80774"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80774"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80774"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80774"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80774"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
