@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:44:23.446816",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -5.8% за 24г</b>\n\nЗараз: 104.87 $\n24г тому: 111.32 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:44:24.416649",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.8% за 24г\n\nЗараз: 104.87 $\n24г тому: 111.32 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80716"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:46:39.490088",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 How LLMs might make crypto mining useful</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80715"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80715"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80715"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80715"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80715"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80715"
             }
           ]
         ]
