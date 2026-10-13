@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-13t13_13_00_314196": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) потребує твоєї уваги щ",
+    "ts": "2026-10-13T13:13:00.314196"
+  },
+  "healthai_truthfix|2026-10-13t13_06_28_278309": {
+    "topic": "healthai/truthfix",
+    "gist": "Олеже, бачу, що ти зараз зосереджений на конференції Finweek Bratislava, яка починається о 13:45. Важливо врахувати, що дані по сну (9.5 годин) та кроках (12386",
+    "ts": "2026-10-13T13:06:28.278309"
+  },
   "healthai|2026-10-13t13_06_17_505363": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що ти зараз зосереджений на конференції Finweek Bratislava, яка починається через 30 хвилин. Враховуючи, що далі на тебе чекають дві нічні зміни,",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про зростання ваги Олега та ",
     "ts": "2026-10-13T10:00:07.577771"
-  },
-  "selfact|2026-10-13t09_50_15_103604": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про Finweek Bratislava\",     \"text\": \"Олеже, нагадую, що сьогодні о 12:45 у тебе запланована подія",
-    "ts": "2026-10-13T09:50:15.103604"
-  },
-  "action_detect|2026-10-13t09_39_56_528065": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути позиції портфеля\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути позиції з н",
-    "ts": "2026-10-13T09:39:56.528065"
   }
 }
