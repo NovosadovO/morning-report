@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T09:03:27.216836+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Інформація про робочі зміни",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-21"
-      }
-    },
-    {
       "ts": "2026-08-21T09:16:04.073551+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -13984,6 +13974,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_tea"
+    },
+    {
+      "ts": "2026-10-13T19:17:31.251819+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
