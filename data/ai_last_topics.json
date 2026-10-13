@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-13t04_10_55_614195": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-13T04:10:55.614195"
+  },
   "selfact|2026-10-13t04_06_42_676429": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Це заплановано",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Кредит Temu за затримку доставки\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",     ",
     "ts": "2026-10-12T20:23:16.407129"
-  },
-  "email_ai_item|2026-10-12t20_15_24_263514": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію Senior Solution Owner - Digital Identity в компанії Innovatrics, розташованій у Б",
-    "ts": "2026-10-12T20:15:24.263514"
   }
 }
