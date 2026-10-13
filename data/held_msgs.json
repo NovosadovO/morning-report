@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:31:26.962088",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Not Your Hardware Wallet, Not Your Keys</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80719"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80719"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80719"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80719"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80719"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80719"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T03:31:28.347252",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Manažér obchodnej agentúry v Ko</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-10-13T03:33:54.906345",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:33:56.063193",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
