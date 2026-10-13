@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:46:33.691340",
-      "kind": "offer",
-      "text": "📦 ✉️\n📌 <b>Objednávka je odoslaná a sledovacie číslo Packeta je priprav</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80720"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80720"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80720"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80720"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80720"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80720"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T03:46:35.257239",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Not Your Hardware Wallet, Not Your Keys</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-13T03:49:33.490240",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 14.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:49:35.852348",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
