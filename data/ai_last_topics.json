@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-13t15_29_41_109533": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Blockworks інформує про додаткові заходи (side events) під час конференції DAS London, які включають Poker Night, Inves",
+    "ts": "2026-10-13T15:29:41.109533"
+  },
   "money|2026-10-13t15_25_29_993211": {
     "topic": "money",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "money",
     "gist": "[]",
     "ts": "2026-10-13T12:55:00.934541"
-  },
-  "selfact|2026-10-13t12_42_31_982736": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (Avízo na zaplatenie p",
-    "ts": "2026-10-13T12:42:31.982736"
   }
 }
