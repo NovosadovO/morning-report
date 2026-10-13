@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-13t11_24_24_316394": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї відпові",
+    "ts": "2026-10-13T11:24:24.316394"
+  },
   "action_detect|2026-10-13t11_11_31_036007": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-13T07:39:51.498921"
-  },
-  "msg_crypto_move_truthfix|2026-10-13t07_39_41_210601": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт, Олеже!  Бачу, що сьогодні, 13 жовтня 2026 року, твій день оцінений на 100 балів, що є чудовим показником. Проте, дані щодо ваги (83.9 кг), сну (9.5 год)",
-    "ts": "2026-10-13T07:39:41.210601"
   }
 }
