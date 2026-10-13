@@ -1,4 +1,24 @@
 {
+  "healthai|2026-10-13t18_06_17_257140": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, бачу, що твоя енергія (body battery) сьогодні зросла до 82, тоді як середній показник за 7 днів був 39.2. Це значне відновлення, яке, можливо, пов'язан",
+    "ts": "2026-10-13T18:06:17.257140"
+  },
+  "action_detect|2026-10-13t18_01_18_607602": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
+    "ts": "2026-10-13T18:01:18.607602"
+  },
+  "action_detect|2026-10-13t18_01_06_507380": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про кроки Олега, його ціль п",
+    "ts": "2026-10-13T18:01:06.507380"
+  },
+  "action_detect|2026-10-13t18_00_55_551038": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Notifikácie KOOPERATIVA\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\"",
+    "ts": "2026-10-13T18:00:55.551038"
+  },
   "action_detect|2026-10-13t18_00_20_439552": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вечеря\", \"action_date\": null, \"action_time\": \"19:00\", \"action_summary\": \"З'їсти легку вечерю до 19:00, уникаючи сол",
@@ -278,25 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Компенсація за затримку доставки Temu\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",",
     "ts": "2026-10-13T14:40:26.385643"
-  },
-  "people|2026-10-13t14_38_20_966202": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"сервіс\",     \"topics\": [\"рахунок за послуги\"],     \"my_",
-    "ts": "2026-10-13T14:38:20.966202"
-  },
-  "action_detect|2026-10-13t14_36_43_481038": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збільшити щоденну активність\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Запланувати дод",
-    "ts": "2026-10-13T14:36:43.481038"
-  },
-  "msg_vip_email_truthfix|2026-10-13t14_36_34_022828": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "На 14:36 вівторка, 13 жовтня 2026 року, твої дані показують, що ти маєш вільний день, але місцезнаходження не підтверджено. Твій портфель втратив $223 за останн",
-    "ts": "2026-10-13T14:36:34.022828"
-  },
-  "msg_vip_email|2026-10-13t14_36_21_675593": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🏹  На обідній час, 13 жовтня 2026 року, бачимо, що ти зараз вдома, і є можливість оцінити твій прогрес за цим тижнем. Ринок криптовалют загалом де",
-    "ts": "2026-10-13T14:36:21.675593"
   }
 }
