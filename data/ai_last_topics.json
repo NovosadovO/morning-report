@@ -1,4 +1,34 @@
 {
+  "selfact|2026-10-13t14_45_37_380067": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Новий рахунок від Mariia Ovsiienko\",     \"text\": \"Олеже, надійшов новий рахунок від Mariia Ovsiienko. Його мож",
+    "ts": "2026-10-13T14:45:37.380067"
+  },
+  "openloop_promises|2026-10-13t14_44_19_697987": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-13T14:44:19.697987"
+  },
+  "deadlines|2026-10-13t14_40_26_385643": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Компенсація за затримку доставки Temu\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",",
+    "ts": "2026-10-13T14:40:26.385643"
+  },
+  "people|2026-10-13t14_38_20_966202": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"сервіс\",     \"topics\": [\"рахунок за послуги\"],     \"my_",
+    "ts": "2026-10-13T14:38:20.966202"
+  },
+  "action_detect|2026-10-13t14_36_43_481038": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збільшити щоденну активність\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Запланувати дод",
+    "ts": "2026-10-13T14:36:43.481038"
+  },
+  "msg_vip_email_truthfix|2026-10-13t14_36_34_022828": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "На 14:36 вівторка, 13 жовтня 2026 року, твої дані показують, що ти маєш вільний день, але місцезнаходження не підтверджено. Твій портфель втратив $223 за останн",
+    "ts": "2026-10-13T14:36:34.022828"
+  },
   "msg_vip_email|2026-10-13t14_36_21_675593": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  На обідній час, 13 жовтня 2026 року, бачимо, що ти зараз вдома, і є можливість оцінити твій прогрес за цим тижнем. Ринок криптовалют загалом де",
@@ -268,55 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обід у Кошіце\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Обід у Кошіце з максимумом 500",
     "ts": "2026-10-13T12:00:43.329007"
-  },
-  "selfact|2026-10-13t11_55_33_778365": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї ",
-    "ts": "2026-10-13T11:55:33.778365"
-  },
-  "openloop_promises|2026-10-13t11_43_42_321041": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-13T11:43:42.321041"
-  },
-  "action_detect|2026-10-13t11_43_31_611253": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:43:31.611253"
-  },
-  "action_detect|2026-10-13t11_42_35_918421": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:42:35.918421"
-  },
-  "foresight|2026-10-13t11_42_03_944795": {
-    "topic": "foresight",
-    "gist": "Олеже, враховуючи, що до конференції Finweek Bratislava залишилося небагато часу, а тобі потрібне гарне відновлення перед нічними змінами, спробуй новий маршрут",
-    "ts": "2026-10-13T11:42:03.944795"
-  },
-  "action_detect|2026-10-13t11_41_05_132017": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T11:41:05.132017"
-  },
-  "deadlines|2026-10-13t14_40_26_385643": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Компенсація за затримку доставки Temu\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",",
-    "ts": "2026-10-13T14:40:26.385643"
-  },
-  "people|2026-10-13t14_38_20_966202": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"сервіс\",     \"topics\": [\"рахунок за послуги\"],     \"my_",
-    "ts": "2026-10-13T14:38:20.966202"
-  },
-  "action_detect|2026-10-13t14_36_43_481038": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збільшити щоденну активність\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Запланувати дод",
-    "ts": "2026-10-13T14:36:43.481038"
-  },
-  "msg_vip_email_truthfix|2026-10-13t14_36_34_022828": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "На 14:36 вівторка, 13 жовтня 2026 року, твої дані показують, що ти маєш вільний день, але місцезнаходження не підтверджено. Твій портфель втратив $223 за останн",
-    "ts": "2026-10-13T14:36:34.022828"
   }
 }
