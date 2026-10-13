@@ -1,4 +1,29 @@
 {
+  "bills|2026-10-13t12_25_40_041279": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80646\",     \"vendor\": \"Mariia Ovsiienko\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"20260164\",     \"due\": \"\",     \"alre",
+    "ts": "2026-10-13T12:25:40.041279"
+  },
+  "action_detect|2026-10-13t12_14_31_020526": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-13T12:14:31.020526"
+  },
+  "action_detect|2026-10-13t12_14_19_865088": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати сьог",
+    "ts": "2026-10-13T12:14:19.865088"
+  },
+  "action_detect|2026-10-13t12_14_08_825394": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лікар\", \"action_date\": \"2023-10-14\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра о 10:00 лікар.\"}",
+    "ts": "2026-10-13T12:14:08.825394"
+  },
+  "planner|2026-10-13t12_13_57_635245": {
+    "topic": "planner",
+    "gist": "[]",
+    "ts": "2026-10-13T12:13:57.635245"
+  },
   "selfact|2026-10-13t12_10_48_448682": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Це важливе наг",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Наближається оплата квартири",
     "ts": "2026-10-13T09:01:30.315099"
-  },
-  "briefing_truthfix|2026-10-13t09_01_25_724415": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже,  **ФІНАНСИ: ДЕДЛАЙНИ ТА ПРОСТРОЧЕНІ РАХУНКИ** 1.  **Оплата квартири 15 жовтня (€500)**: Залишилося 2 дні. 2.  **Прострочені рахунки**: 39 прострочених ра",
-    "ts": "2026-10-13T09:01:25.724415"
-  },
-  "briefing|2026-10-13t09_01_19_484552": {
-    "topic": "briefing",
-    "gist": "Олеже,  🧭 ВЕКТОР ДНЯ Сьогоднішній ранок 13 жовтня, коли твоя зміна не підтверджена, ставить на перший план потребу у чіткій дії щодо фінансів. Наближається опла",
-    "ts": "2026-10-13T09:01:19.484552"
-  },
-  "themes_ai|2026-10-13t09_01_07_555544": {
-    "topic": "themes_ai",
-    "gist": "Олеже, поглянемо на поточні дані та їхні тенденції, враховуючи твій вільний день і заплановану конференцію.  💰 ФІНАНСИ Твій портфель за останні 24 години втрати",
-    "ts": "2026-10-13T09:01:07.555544"
-  },
-  "action_detect|2026-10-13t09_00_47_225246": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-13T09:00:47.225246"
-  },
-  "action_detect|2026-10-13t09_00_36_183249": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-13T09:00:36.183249"
   }
 }
