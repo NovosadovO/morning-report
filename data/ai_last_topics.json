@@ -1,4 +1,9 @@
 {
+  "healthai|2026-10-13t13_06_17_505363": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, бачу, що ти зараз зосереджений на конференції Finweek Bratislava, яка починається через 30 хвилин. Враховуючи, що далі на тебе чекають дві нічні зміни,",
+    "ts": "2026-10-13T13:06:17.505363"
+  },
   "action_detect|2026-10-13t13_01_06_679392": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути позиції портфеля\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути позиції з н",
     "ts": "2026-10-13T09:39:56.528065"
-  },
-  "msg_crypto_move_truthfix|2026-10-13t09_39_44_851709": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Ринок продовжує падати, і твій портфель це відчуває. За вчорашній день, 12 жовтня, він втратив $172, оцінюючись у $5,798. Особливо помітне зниження у NEAR (-9.3",
-    "ts": "2026-10-13T09:39:44.851709"
   }
 }
