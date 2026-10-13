@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:01:18.635360",
-      "kind": "offer",
-      "text": "📦 ✉️\n📌 <b>Objednávka je odoslaná a sledovacie číslo Packeta je priprav</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80720"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80720"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80720"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80720"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80720"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80720"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-13T03:01:19.538284",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 14.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -346,6 +307,12 @@
       "ts": "2026-10-13T03:03:23.771305",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 14.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:03:24.571296",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 14.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
