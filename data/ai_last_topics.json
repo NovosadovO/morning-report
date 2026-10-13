@@ -298,5 +298,25 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
     "ts": "2026-10-13T11:41:05.132017"
+  },
+  "deadlines|2026-10-13t14_40_26_385643": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Компенсація за затримку доставки Temu\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",",
+    "ts": "2026-10-13T14:40:26.385643"
+  },
+  "people|2026-10-13t14_38_20_966202": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"сервіс\",     \"topics\": [\"рахунок за послуги\"],     \"my_",
+    "ts": "2026-10-13T14:38:20.966202"
+  },
+  "action_detect|2026-10-13t14_36_43_481038": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збільшити щоденну активність\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Запланувати дод",
+    "ts": "2026-10-13T14:36:43.481038"
+  },
+  "msg_vip_email_truthfix|2026-10-13t14_36_34_022828": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "На 14:36 вівторка, 13 жовтня 2026 року, твої дані показують, що ти маєш вільний день, але місцезнаходження не підтверджено. Твій портфель втратив $223 за останн",
+    "ts": "2026-10-13T14:36:34.022828"
   }
 }
