@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:10:15.933788",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Objednávka je odoslaná a sledovacie číslo Packeta je pripravené (ID objednávky: #PO-180-08315922862710256)\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Manažér obchodnej agentúry v Košiciach в UNIQA CZ\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:10:19.102357",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 14.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-13T03:12:11.637941",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -11.4% за 24г\n\nЗараз: 0.4648 $\n24г тому: 0.5243 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:12:14.623614",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -8.3% за 24г</b>\n\nЗараз: 9.9842 $\n24г тому: 10.89 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
