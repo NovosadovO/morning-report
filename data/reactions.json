@@ -7436,5 +7436,16 @@
     "about": "Завтра конференція Finweek Bratislava",
     "state": "closed",
     "ts": "2026-10-12T22:47:49"
+  },
+  "notify_ack|t|лист від kooperativa потребує відповіді": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "лист від kooperativa потребує відповіді",
+    "title": "Лист від KOOPERATIVA потребує відповіді",
+    "action": "close",
+    "label": "👌 Прийняв",
+    "about": "Лист від KOOPERATIVA потребує відповіді",
+    "state": "closed",
+    "ts": "2026-10-13T11:41:15"
   }
 }
