@@ -1,4 +1,9 @@
 {
+  "money|2026-10-13t15_25_29_993211": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-13T15:25:29.993211"
+  },
   "selfact|2026-10-13t15_17_00_784296": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) потребує т",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (Avízo na zaplatenie p",
     "ts": "2026-10-13T12:42:31.982736"
-  },
-  "lunch_ai|2026-10-13t12_30_47_051952": {
-    "topic": "LUNCH_AI",
-    "gist": "Привіт, Олеже!  Твоя оперативна доповідь станом на 12:30 вівторка, 13 жовтня 2026 року.  Згідно з Google Calendar, твій поточний статус – \"вдома, вільний час\". ",
-    "ts": "2026-10-13T12:30:47.051952"
   }
 }
