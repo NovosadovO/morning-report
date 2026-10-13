@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:50:50.820484+00:00",
-      "category": "confirm",
-      "question": "email_delete: [NOTICE] Server Outage Affecting Your Service",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T03:50:53.941371+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13951,6 +13945,16 @@
       "answer": "сума не вказана",
       "extra": {
         "due": ""
+      }
+    },
+    {
+      "ts": "2026-10-13T04:30:16.647639+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "З'ясувати суму та термін оплати страховки PZ № 6641172176",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-13"
       }
     }
   ]
