@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T02:58:27.813141",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -9.3% за 24г</b>\n\nЗараз: 9.8817 $\n24г тому: 10.90 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T02:58:28.601448",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.3% за 24г\n\nЗараз: 9.8817 $\n24г тому: 10.90 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80715"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:01:32.000536",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AI-Powered Bond Rating Startup Says OpenAI Debt Is Junk And\r</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80714"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80714"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80714"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80714"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80714"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80714"
             }
           ]
         ]
