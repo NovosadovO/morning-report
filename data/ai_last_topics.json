@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-13t19_15_51_726883": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-13T19:15:51.726883"
+  },
   "calendar|2026-10-13t19_10_54_038243": {
     "topic": "calendar",
     "gist": "Олеже, завтра у тебе вільний день, і це чудова нагода зосередитися на цілях, адже твоя вага 82.6 кг все ще на 7.6 кг вище цілі 75 кг, хоча тренд і падає. Бачу, ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Not\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Протягом наступних 30 хви",
     "ts": "2026-10-13T15:30:19.313269"
-  },
-  "email_ai_item|2026-10-13t15_29_41_109533": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Blockworks інформує про додаткові заходи (side events) під час конференції DAS London, які включають Poker Night, Inves",
-    "ts": "2026-10-13T15:29:41.109533"
   }
 }
