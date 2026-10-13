@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, Garmin Connect+ підписка була підтверджена і почалася",
-      "detail": "Надійшов лист про підтвердження підписки Garmin Connect+ та майбутні списання, що є важливою фінансовою інформацією.",
-      "module": "selfact",
-      "ts": "2026-10-08T23:09:33"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи хочеш, щоб я додав підписку Garmin Connect+ до спи",
       "detail": "Олег підписався на Garmin Connect+, але вона ще не відображена в списку підписок, і бот може запропонувати її додати.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-13T16:43:09"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-13T16:43:27"
     }
   ]
 }
