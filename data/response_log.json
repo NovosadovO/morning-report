@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:51:55.009950+00:00",
-      "category": "confirm",
-      "question": "gate_dl_skip: 📌 ДЕДЛАЙН У ПОШТІ — ТЕРМІН",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T03:52:01.497469+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13958,6 +13952,16 @@
       "answer": "Переглянути нові вакансії від Profesia.sk",
       "extra": {
         "kind": "reply",
+        "date": "2026-10-13"
+      }
+    },
+    {
+      "ts": "2026-10-13T04:30:26.162260+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Замовлення Temu відправлено",
+      "extra": {
+        "kind": "note",
         "date": "2026-10-13"
       }
     }
