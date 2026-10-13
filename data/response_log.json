@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T07:49:04.613211+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_6781c4e119"
-    },
-    {
       "ts": "2026-08-21T07:49:23.938967+00:00",
       "category": "confirm",
       "question": "email_delete: 5 nových pracovných ponúk",
@@ -13985,6 +13979,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_3a6e44532e"
+    },
+    {
+      "ts": "2026-10-13T11:43:19.060004+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Нагадування",
+      "answer": "yes"
     }
   ]
 }
