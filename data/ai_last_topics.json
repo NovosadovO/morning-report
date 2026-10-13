@@ -298,5 +298,10 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-13T06:19:57.378110"
+  },
+  "action_detect|2026-10-13t10_00_07_577771": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про зростання ваги Олега та ",
+    "ts": "2026-10-13T10:00:07.577771"
   }
 }
