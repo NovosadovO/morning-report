@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-13t11_31_04_097420": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Приготувати легкий обід\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приготувати собі легкий обід",
+    "ts": "2026-10-13T11:31:04.097420"
+  },
   "selfact|2026-10-13t11_24_24_316394": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї відпові",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "Олеже, доброго ранку! Зараз 07:41, вівторок, 13 жовтня 2026 року.  ### Сон та відновлення  *   Сон за сьогодні ще не приходив, останнє відоме — 12 жовтня, 1 ден",
     "ts": "2026-10-13T07:41:37.951926"
-  },
-  "action_detect|2026-10-13t07_39_51_498921": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-13T07:39:51.498921"
   }
 }
