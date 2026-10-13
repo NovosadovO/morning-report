@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:14:15.744186",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -5.9% за 24г</b>\n\nЗараз: 0.0817 $\n24г тому: 0.0868 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:14:16.631147",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.9% за 24г\n\nЗараз: 0.0817 $\n24г тому: 0.0868 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:16:31.188955",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80722"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80722"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80722"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80722"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80722"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80722"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
