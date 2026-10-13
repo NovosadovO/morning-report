@@ -1,9 +1,4 @@
 {
-  "80253": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-10-05T10:53:57.358490+00:00"
-  },
   "80254": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@blockworks.com",
     "sender_raw": "Blockworks <events@blockworks.com>",
     "seen_ts": "2026-10-13T13:29:45.348765+00:00"
+  },
+  "80755": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-10-13T13:50:10.259664+00:00"
   }
 }
