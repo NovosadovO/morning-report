@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T02:12:31.679618",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T02:12:34.421250",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -10.7% за 24г</b>\n\nЗараз: 0.4641 $\n24г тому: 0.5197 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-13T02:14:46.847328",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -6.0% за 24г\n\nЗараз: 104.45 $\n24г тому: 111.12 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T02:14:49.106905",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -5.6% за 24г</b>\n\nЗараз: 0.0819 $\n24г тому: 0.0867 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
