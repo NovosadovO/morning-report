@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-10-13t20_14_51_315711": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії. Зокрема, пропонується позиція Junior Marketing Specialist for Ukraine в GymBe",
+    "ts": "2026-10-13T20:14:51.315711"
+  },
+  "selfact|2026-10-13t20_11_32_409988": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, нагадую, що лист від Notifikácie KOOPERATIVA (ui",
+    "ts": "2026-10-13T20:11:32.409988"
+  },
   "foresight_truthfix|2026-10-13t20_09_59_033339": {
     "topic": "foresight/truthfix",
     "gist": "Олеже, враховуючи, що Finweek Bratislava завершилась 5 годин тому, а ринок крипти показує падіння (ETH -7.3% за 7 днів, BTC -3.0% за 7 днів), зараз є можливість",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
     "ts": "2026-10-13T16:39:55.905936"
-  },
-  "selfact|2026-10-13t16_32_56_265921": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) потребує твоєї відпові",
-    "ts": "2026-10-13T16:32:56.265921"
-  },
-  "bills|2026-10-13t16_25_54_262721": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80646\",     \"vendor\": \"Mariia Ovsiienko\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"20260164\",     \"due\": \"\",     \"alre",
-    "ts": "2026-10-13T16:25:54.262721"
   }
 }
