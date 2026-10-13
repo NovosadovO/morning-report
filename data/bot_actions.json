@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-10-08T20:01:06"
-    },
-    {
       "kind": "reminder",
       "what": "нагадування надіслати дані",
       "detail": "172 год мовчання",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-13T07:41:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Лист від Notifikácie KOOPERATIVA",
+      "detail": "Лист від Notifikácie KOOPERATIVA потребує відповіді, як вказано в календарі на 13.10.",
+      "module": "selfact",
+      "ts": "2026-10-13T08:01:40"
     }
   ]
 }
