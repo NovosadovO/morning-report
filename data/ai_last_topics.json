@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-10-13t05_39_23_301527": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-13T05:39:23.301527"
+  },
   "foresight|2026-10-13t05_32_36_302974": {
     "topic": "foresight",
     "gist": "Олеже, на фоні двох вільних днів, які ти маєш сьогодні та завтра, і майбутніх нічних змін, це ідеальний час для експериментів з обідом, щоб твоя вага до 75 кг р",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочений рахунок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, які рахунк",
     "ts": "2026-10-12T21:02:55.286812"
-  },
-  "action_detect|2026-10-12t21_02_43_922853": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-12T21:02:43.922853"
   }
 }
