@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T07:49:27.625520+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_5a2bae1f3b"
-    },
-    {
       "ts": "2026-08-21T07:51:10.357002+00:00",
       "category": "confirm",
       "question": "calrem_skip: Зафіксувати доходи та витрати",
@@ -13985,6 +13979,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_8fefbda236"
+    },
+    {
+      "ts": "2026-10-13T14:40:34.288653+00:00",
+      "category": "deadline_found",
+      "question": "Компенсація за затримку доставки Temu",
+      "answer": "2026-10-23",
+      "extra": {
+        "kind": "warranty"
+      }
     }
   ]
 }
