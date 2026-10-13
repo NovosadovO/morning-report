@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-10-13t14_13_22_154684": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденним дайджестом новин зі світу криптовалют від CryptoBeholder.com за 13 жовтня. Він містить короткі огляди новин, таких ",
+    "ts": "2026-10-13T14:13:22.154684"
+  },
+  "email_ai_item|2026-10-13t14_09_10_431083": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від Олега Безуглого через LinkedIn. У ньому йдеться про падіння біткоїна до $83K,",
+    "ts": "2026-10-13T14:09:10.431083"
+  },
   "healthai|2026-10-13t14_05_21_034419": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що за сьогодні, 13 жовтня, твій сон поки що зафіксовано на рівні 11.4 години, що значно більше середніх показників (8.1 за 7 днів, 9.2 за 14 днів",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Приготувати легкий обід\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приготувати собі легкий обід",
     "ts": "2026-10-13T11:31:04.097420"
-  },
-  "selfact|2026-10-13t11_24_24_316394": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує твоєї відпові",
-    "ts": "2026-10-13T11:24:24.316394"
-  },
-  "action_detect|2026-10-13t11_11_31_036007": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
-    "ts": "2026-10-13T11:11:31.036007"
   }
 }
