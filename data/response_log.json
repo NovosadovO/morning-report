@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T03:52:01.497469+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dl_skip_a1c487d769"
-    },
-    {
       "ts": "2026-08-21T03:52:01.497733+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13960,6 +13954,16 @@
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
       "answer": "Замовлення Temu відправлено",
+      "extra": {
+        "kind": "note",
+        "date": "2026-10-13"
+      }
+    },
+    {
+      "ts": "2026-10-13T06:00:15.206768+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Відстежити посилку Temu",
       "extra": {
         "kind": "note",
         "date": "2026-10-13"
