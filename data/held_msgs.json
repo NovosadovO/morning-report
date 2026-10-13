@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T02:20:13.077606",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -10.4% за 24г</b>\n\nЗараз: 0.4703 $\n24г тому: 0.5247 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T02:20:13.954685",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -10.4% за 24г\n\nЗараз: 0.4703 $\n24г тому: 0.5247 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-13T02:22:12.550755",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.8% за 24г</b>\n\nЗараз: 0.0817 $\n24г тому: 0.0867 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T02:22:13.341804",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.8% за 24г\n\nЗараз: 0.0817 $\n24г тому: 0.0867 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
