@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T12:03:22.713753+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Ліки Armolopid Plus",
-      "extra": {
-        "kind": "note",
-        "date": ""
-      }
-    },
-    {
       "ts": "2026-08-21T12:46:21.296018+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -13973,6 +13963,12 @@
     },
     {
       "ts": "2026-10-13T19:17:43.961104+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-10-13T19:17:46.164344+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
