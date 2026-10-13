@@ -1,4 +1,24 @@
 {
+  "lunch_ai|2026-10-13t12_30_47_051952": {
+    "topic": "LUNCH_AI",
+    "gist": "Привіт, Олеже!  Твоя оперативна доповідь станом на 12:30 вівторка, 13 жовтня 2026 року.  Згідно з Google Calendar, твій поточний статус – \"вдома, вільний час\". ",
+    "ts": "2026-10-13T12:30:47.051952"
+  },
+  "foresight_truthfix|2026-10-13t12_28_22_578469": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, ти зараз на зміні чи вдома?  Сьогодні, 13 жовтня 2026 року, о 12:28, ти маєш 30 хвилин до початку конференції Finweek Bratislava. Це ідеальний час, щоб п",
+    "ts": "2026-10-13T12:28:22.578469"
+  },
+  "foresight|2026-10-13t12_28_11_449375": {
+    "topic": "foresight",
+    "gist": "Олеже, час між конференцією Finweek Bratislava та нічною зміною 15.10 — ідеальний момент, щоб освоїти швидкий та корисний обід, який допоможе тримати вагу в тон",
+    "ts": "2026-10-13T12:28:11.449375"
+  },
+  "selfact|2026-10-13t12_26_44_481470": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) про",
+    "ts": "2026-10-13T12:26:44.481470"
+  },
   "bills|2026-10-13t12_25_40_041279": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80646\",     \"vendor\": \"Mariia Ovsiienko\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"20260164\",     \"due\": \"\",     \"alre",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "🤔 Олеже, сьогодні, 13 жовтня, о 09:05 ранку, у нас ще немає даних по твоїй вазі, сну та кроках. Це важливо, адже без свіжих показників ми не бачимо, як саме тві",
     "ts": "2026-10-13T09:05:49.984739"
-  },
-  "selfact|2026-10-13t09_03_41_788346": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA, що",
-    "ts": "2026-10-13T09:03:41.788346"
-  },
-  "action_detect|2026-10-13t09_01_52_611294": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповідь на лист від Notifikácie KOOPERATIVA\", \"action_date\": \"2026-10-13\", \"action_time\": \"13:45\", \"action_summar",
-    "ts": "2026-10-13T09:01:52.611294"
-  },
-  "action_detect|2026-10-13t09_01_41_343083": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
-    "ts": "2026-10-13T09:01:41.343083"
-  },
-  "action_detect|2026-10-13t09_01_30_315099": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Наближається оплата квартири",
-    "ts": "2026-10-13T09:01:30.315099"
   }
 }
