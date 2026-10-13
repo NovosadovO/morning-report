@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T02:58:05.265113",
-      "kind": "MSG_FORESIGHT_TRIP",
-      "text": "✈️ ПОЇЗДКА: Bratislava — через 0 дн. (13.10–16.10)\n\n🧳 ЩО ВЗЯТИ\n• одяг на 4…18°C\n• кофта, вітровка, закрите взуття\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 ПОГОДА\n• 13.10: 16°/8°; 14.10: 18°/8°; 15.10: 16°/8°; 16.10: 17°/4°\n\n✅ ДО ВИЛЬОТУ\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-13T02:58:13.516168",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Coordinator HU в Atlas Copco – Активно набирає персонал\n• Temu <temu@orders.temu.com> → Objednávka je odoslaná a sledovacie číslo Packeta je pripravené (ID objednávky: #PO-180-08315922862710256)\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Manažér obchodnej agentúry v Košiciach в UNIQA CZ\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T02:58:14.366700",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → Objednávka je odoslaná a sledovacie číslo Packeta je pripravené (ID objednávky: #PO-180-08315922862710256)\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Manažér obchodnej agentúry v Košiciach в UNIQA CZ\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -182,6 +170,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-13T03:01:18.635360",
+      "kind": "offer",
+      "text": "📦 ✉️\n📌 <b>Objednávka je odoslaná a sledovacie číslo Packeta je priprav</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80720"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80720"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80720"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80720"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80720"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80720"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-13T03:01:19.538284",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 14.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
     }
   ]
 }
