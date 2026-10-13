@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-13T03:46:17.797534",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -7.0% за 24г</b>\n\nЗараз: 10.15 $\n24г тому: 10.91 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-13T03:46:18.922427",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -7.0% за 24г\n\nЗараз: 10.15 $\n24г тому: 10.91 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -379,6 +373,12 @@
       "ts": "2026-10-13T03:48:05.905722",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -7.1% за 24г\n\nЗараз: 10.15 $\n24г тому: 10.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-13T03:48:08.442701",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -5.6% за 24г</b>\n\nЗараз: 104.95 $\n24г тому: 111.22 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
