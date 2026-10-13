@@ -1,4 +1,39 @@
 {
+  "healthai|2026-10-13t15_05_58_430877": {
+    "topic": "healthai",
+    "gist": "📈 Олеже, твоя вага 82.6 кг сьогодні, при цілі 75 кг, показує, що ти все ще на 7.6 кг далі. Зважаючи на завтрашній вихідний, коли о 09:00 запланована оплата квар",
+    "ts": "2026-10-13T15:05:58.430877"
+  },
+  "action_detect|2026-10-13t15_01_54_966487": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути активи SOL та ADA\", \"action_date\": \"2026-10-13\", \"action_time\": \"17:00\", \"action_summary\": \"Переглянути",
+    "ts": "2026-10-13T15:01:54.966487"
+  },
+  "action_detect|2026-10-13t15_01_43_163092": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-13T15:01:43.163092"
+  },
+  "selfact|2026-10-13t15_01_36_703225": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує уваги\",     \"text\": \"Олеже, зверни увагу на лист від Notifikácie KOOPERATIVA (ui",
+    "ts": "2026-10-13T15:01:36.703225"
+  },
+  "action_detect|2026-10-13t15_01_32_348690": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію для Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Онови",
+    "ts": "2026-10-13T15:01:32.348690"
+  },
+  "briefing_truthfix|2026-10-13t15_01_26_032086": {
+    "topic": "briefing/truthfix",
+    "gist": "Олеже, на годиннику 15:01, вівторок, 13 жовтня 2026 року. Дані про твій сон за сьогодні, зафіксовані о 13:42, показують 11.4 години, але це може бути частковим ",
+    "ts": "2026-10-13T15:01:26.032086"
+  },
+  "briefing|2026-10-13t15_01_20_578078": {
+    "topic": "briefing",
+    "gist": "Олеже, на годиннику 15:01, вівторок, 13 жовтня 2026 року. Сьогоднішній день оцінений на 45 зі 100, що на 18 пунктів нижче вчорашнього показника, і це свідчить п",
+    "ts": "2026-10-13T15:01:20.578078"
+  },
   "themes_ai|2026-10-13t15_01_03_829320": {
     "topic": "themes_ai",
     "gist": "Привіт, Олеже! Зараз, о 15:00, твій день показує, що ти бігав сьогодні, молодець. Також бачу, що за минулі 7 днів твоя середня вага 83.5 кг, а це лише на 0.9 кг",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, час між конференцією Finweek Bratislava та нічною зміною 15.10 — ідеальний момент, щоб освоїти швидкий та корисний обід, який допоможе тримати вагу в тон",
     "ts": "2026-10-13T12:28:11.449375"
-  },
-  "selfact|2026-10-13t12_26_44_481470": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) про",
-    "ts": "2026-10-13T12:26:44.481470"
-  },
-  "bills|2026-10-13t12_25_40_041279": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80646\",     \"vendor\": \"Mariia Ovsiienko\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"20260164\",     \"due\": \"\",     \"alre",
-    "ts": "2026-10-13T12:25:40.041279"
-  },
-  "action_detect|2026-10-13t12_14_31_020526": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-13T12:14:31.020526"
-  },
-  "action_detect|2026-10-13t12_14_19_865088": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати сьог",
-    "ts": "2026-10-13T12:14:19.865088"
-  },
-  "action_detect|2026-10-13t12_14_08_825394": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лікар\", \"action_date\": \"2023-10-14\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра о 10:00 лікар.\"}",
-    "ts": "2026-10-13T12:14:08.825394"
-  },
-  "planner|2026-10-13t12_13_57_635245": {
-    "topic": "planner",
-    "gist": "[]",
-    "ts": "2026-10-13T12:13:57.635245"
-  },
-  "selfact|2026-10-13t12_10_48_448682": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Це важливе наг",
-    "ts": "2026-10-13T12:10:48.448682"
   }
 }
