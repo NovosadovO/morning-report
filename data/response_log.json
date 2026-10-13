@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T10:46:20.916445+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "LINK виріс на 9.3% за 24 години (зараз $11.540); ONDO (твоя позиція) виріс на 8.5% за 24 години (зараз $0.37483)"
-    },
-    {
       "ts": "2026-08-21T12:03:18.417177+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13980,6 +13974,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-13T19:17:40.706963+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
