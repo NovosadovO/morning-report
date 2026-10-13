@@ -1,4 +1,9 @@
 {
+  "money|2026-10-13t12_55_00_934541": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-13T12:55:00.934541"
+  },
   "selfact|2026-10-13t12_42_31_982736": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (Avízo na zaplatenie p",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом, що відображає поточні ц",
     "ts": "2026-10-13T09:10:59.736729"
-  },
-  "healthai_truthfix|2026-10-13t09_06_00_686251": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, сьогодні, 13 жовтня, о 09:05 ранку, дані про твою вагу (83.9 кг), сон (9.5 год) та кроки (12386.0) є за 12 жовтня, тобто їм 1 день. Без свіжих показників",
-    "ts": "2026-10-13T09:06:00.686251"
   }
 }
