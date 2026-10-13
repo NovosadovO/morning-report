@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T09:03:23.094798+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-21"
-      }
-    },
-    {
       "ts": "2026-08-21T09:03:27.216836+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13988,6 +13978,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-13T19:17:29.064031+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_tea"
     }
   ]
 }
