@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-13t16_02_25_009684": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачений рахунок KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (uid=80711) про оплату ",
+    "ts": "2026-10-13T16:02:25.009684"
+  },
+  "email_ai_item|2026-10-13t15_50_09_190699": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є інформаційним повідомленням про групу 'Information Technology (IT) Professionals'. Він описує цілі спільноти, ї",
+    "ts": "2026-10-13T15:50:09.190699"
+  },
   "selfact|2026-10-13t15_47_20_391696": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачений рахунок KOOPERATIVA\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPERATIVA з повідомлення",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-13T13:01:06.679392"
-  },
-  "selfact|2026-10-13t12_57_36_866931": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA (Avízo na zapla",
-    "ts": "2026-10-13T12:57:36.866931"
-  },
-  "healthai_truthfix|2026-10-13t12_56_15_739255": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, ти зараз на зміні чи вдома?  **Здоров'я:** Вага сьогодні 82.6 кг, що на 0.9 кг менше, ніж середнє за 7 днів. Це наближає до цілі 75 кг, але за останні 14",
-    "ts": "2026-10-13T12:56:15.739255"
   }
 }
