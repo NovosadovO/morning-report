@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T14:42:02.886364+00:00",
-      "category": "confirm",
-      "question": "email_delete: Head of Operations (Gibraltar) в Confidential",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T14:42:06.427670+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13978,6 +13972,12 @@
       "extra": {
         "score": 3
       }
+    },
+    {
+      "ts": "2026-10-13T21:51:01.422779+00:00",
+      "category": "diary",
+      "question": "3 питання про день",
+      "answer": "ні  постійно іфнормуй"
     }
   ]
 }
