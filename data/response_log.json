@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T04:33:24.435255+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-21"
-      }
-    },
-    {
       "ts": "2026-08-21T04:34:22.444839+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -13972,6 +13962,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-13"
+      }
+    },
+    {
+      "ts": "2026-10-13T09:00:27.485099+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-13"
