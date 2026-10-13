@@ -1,4 +1,14 @@
 {
+  "healthai|2026-10-13t04_22_41_479353": {
+    "topic": "healthai",
+    "gist": "Олеже, твій пульс 45.0 уд/хв за вчорашній день є найнеочікуванішою цифрою: це суттєво нижче не тільки середнього за 30 днів (68.1 уд/хв), а й за 7 днів (52.5 уд",
+    "ts": "2026-10-13T04:22:41.479353"
+  },
+  "email_ai_item|2026-10-13t04_14_25_669676": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію 'SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR (RENOMIA NETWORK)' в компанії RENOMIA",
+    "ts": "2026-10-13T04:14:25.669676"
+  },
   "openloop_promises|2026-10-13t04_10_55_614195": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"80673\",     \"title\": \"Замовлення Temu #PO-180-08315922862710256 підтверджено\",     \"date\": \"2026-10-12\",     \"time\": null,     \"kind\":",
     "ts": "2026-10-12T20:25:23.428300"
-  },
-  "people|2026-10-12t20_23_44_778335": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"masyastadnikova@gmail.com\",     \"name\": \"Mariia Ovsiienko\",     \"relation\": \"інше\",     \"topics\": [       \"рахунок-фактура\"     ],  ",
-    "ts": "2026-10-12T20:23:44.778335"
-  },
-  "deadlines|2026-10-12t20_23_16_407129": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80673\",     \"kind\": \"warranty\",     \"title\": \"Кредит Temu за затримку доставки\",     \"org\": \"Temu\",     \"deadline\": \"2026-10-23\",     ",
-    "ts": "2026-10-12T20:23:16.407129"
   }
 }
