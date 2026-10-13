@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-13t09_18_52_961370": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Notifikácie KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Бу",
+    "ts": "2026-10-13T09:18:52.961370"
+  },
+  "proactive_ai|2026-10-13t09_14_23_181909": {
+    "topic": "proactive_ai",
+    "gist": "Олеже, бачу, що вага трохи підросла до 83.9 кг за останні три дні, віддаляючись від цілі на 8.9 кг. Щоб зупинити цей тренд, спробуй до 13:00 випити літр води і ",
+    "ts": "2026-10-13T09:14:23.181909"
+  },
   "action_detect|2026-10-13t09_10_59_736729": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом, що відображає поточні ц",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, лист від Notifikácie KOOPERATIVA потребує відповіді. Це терміново, ",
     "ts": "2026-10-13T05:55:56.650519"
-  },
-  "openloop_promises|2026-10-13t05_41_23_872701": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-13T05:41:23.872701"
-  },
-  "selfact|2026-10-13t05_40_13_402795": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA\",     \"text\": \"Олеже, нагадую, що сьогодні, 13.10, тобі потрібно відповісти на лист від N",
-    "ts": "2026-10-13T05:40:13.402795"
   }
 }
