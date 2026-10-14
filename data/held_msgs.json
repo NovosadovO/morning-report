@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T03:01:39.526433",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Production Tools s.r.o. наймає: Project Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80784"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80784"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80784"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80784"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80784"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80784"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T03:01:40.940407",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Майбутні зміни у Вашій підписці Google AI Plus</b>\n👤 Google One &lt;googleone-noreply@google.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-14T03:07:31.059295",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T03:07:34.656950",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
