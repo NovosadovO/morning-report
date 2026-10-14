@@ -200,6 +200,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-14T21:01:34.098621",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Faktúra k Vašej objednávke 369860086841</b>\n👤 \"NAY\" &lt;noreply@nay.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80832"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80832"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80832"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80832"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80832"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80832"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
