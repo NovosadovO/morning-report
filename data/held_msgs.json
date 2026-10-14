@@ -161,6 +161,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-14T21:01:32.434904",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на вакансію зараз: «Junior Marketing Sp</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80833"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80833"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80833"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80833"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80833"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80833"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
