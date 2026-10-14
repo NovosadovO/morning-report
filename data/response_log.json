@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:43:51.627209+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-21T21:43:55.132299+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14009,6 +14003,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-14T13:30:23.579954+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-14"
+      }
     }
   ]
 }
