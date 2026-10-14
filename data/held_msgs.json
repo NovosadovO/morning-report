@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T03:31:33.794235",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Production Tools s.r.o. наймає: Project Manager</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80784"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80784"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80784"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80784"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80784"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80784"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T03:31:35.116556",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Майбутні зміни у Вашій підписці Google AI Plus</b>\n👤 Google One &lt;googleone-noreply@google.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-14T03:37:34.164885",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T03:37:35.366588",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
