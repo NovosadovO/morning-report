@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:43:55.132299+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_tea"
-    },
-    {
       "ts": "2026-08-21T21:43:56.912440+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14012,6 +14006,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-14"
+      }
+    },
+    {
+      "ts": "2026-10-14T17:41:21.446983+00:00",
+      "category": "deadline_found",
+      "question": "Завершення програми лояльності SizeerClub",
+      "answer": "2026-10-27",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
