@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T16:49:05.854559+00:00",
-      "category": "confirm",
-      "question": "email_delete: Technology Operations Specialist в ExxonMobil",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T16:49:10.452979+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13993,6 +13987,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Купити піжаму та тапочки",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-14"
+      }
+    },
+    {
+      "ts": "2026-10-14T09:01:14.665178+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Забрати посилку Temu",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-14"
