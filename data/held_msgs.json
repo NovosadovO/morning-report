@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T02:54:35.856129",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.1% за 24г\n\nЗараз: 10.33 $\n24г тому: 9.8288 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-14T02:55:58.957410",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80784"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-14T03:01:40.940407",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Майбутні зміни у Вашій підписці Google AI Plus</b>\n👤 Google One &lt;googleone-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80783"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80783"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80783"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80783"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80783"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80783"
             }
           ]
         ]
