@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує відповіді\",     \"text\": \"Олеже, нагадую, що лист від Notifikácie KOOPERATIVA пот",
     "ts": "2026-10-13T20:43:26.186830"
+  },
+  "proactive_actions|2026-10-14t04_30_19_586199": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Купити піжаму і тапочки\",     \"date\": \"2026-10-14\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьогодні о 1",
+    "ts": "2026-10-14T04:30:19.586199"
   }
 }
