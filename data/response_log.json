@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T16:48:49.798358+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_c071acf315"
-    },
-    {
       "ts": "2026-08-21T16:48:53.404687+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13989,6 +13983,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-14"
+      }
+    },
+    {
+      "ts": "2026-10-14T05:41:04.087277+00:00",
+      "category": "deadline_found",
+      "question": "Зміни в підписці Google AI Plus",
+      "answer": "2026-11-13",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
