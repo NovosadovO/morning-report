@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-14t04_39_43_432843": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-14T04:39:43.432843"
+  },
   "selfact|2026-10-14t04_34_28_510009": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Купити піжаму і тапочки\",     \"text\": \"Олеже, сьогодні, 14 жовтня о 09:00, тобі потрібно купити піжаму і тап",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Щоденник\", \"action_date\": \"2026-10-13\", \"action_time\": null, \"action_summary\": \"Відповісти на 3 питання про день: е",
     "ts": "2026-10-13T21:00:24.940274"
-  },
-  "selfact|2026-10-13t20_59_07_016213": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від KOOPERATIVA потребує уваги\",     \"text\": \"Олеже, у тебе є лист від Notifikácie KOOPERATIVA щодо оплат",
-    "ts": "2026-10-13T20:59:07.016213"
   }
 }
