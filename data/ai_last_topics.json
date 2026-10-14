@@ -1,4 +1,39 @@
 {
+  "healthai|2026-10-14t12_05_40_944617": {
+    "topic": "healthai",
+    "gist": "🤔 Олеже, враховуючи, що сьогодні у тебе вихідний, а завтра починається нічна зміна о 18:00, важливо розуміти, як саме ти відновлюєшся. За сьогодні, 14 жовтня, в",
+    "ts": "2026-10-14T12:05:40.944617"
+  },
+  "action_detect|2026-10-14t12_01_20_552907": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-14T12:01:20.552907"
+  },
+  "action_detect|2026-10-14t12_01_09_572643": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-14T12:01:09.572643"
+  },
+  "action_detect|2026-10-14t12_00_58_374353": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-14T12:00:58.374353"
+  },
+  "proactive_actions|2026-10-14t12_00_17_488122": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Купити піжаму і тапочки\",     \"date\": \"2026-10-14\",     \"time\": \"\",     \"message\": \"Олеже, ти сьогодні плану",
+    "ts": "2026-10-14T12:00:17.488122"
+  },
+  "action_detect|2026-10-14t12_00_17_045882": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-14T12:00:17.045882"
+  },
+  "openloop_promises|2026-10-14t11_51_48_247188": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-14T11:51:48.247188"
+  },
   "selfact|2026-10-14t11_50_37_043154": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"title\": \"Сповіщення про вакансію Aplikační manažer - ČSOB CEB\",     \"text\": \"Олег отримує сповіщення про вакансію Aplikač",
@@ -263,50 +298,5 @@
     "topic": "briefing",
     "gist": "Олеже, на годиннику 09:01, середа, 14 жовтня 2026 року. Сьогоднішній день обіцяє бути насиченим, хоча твій графік зміни не підтверджений. Пам'ятай, що навіть у ",
     "ts": "2026-10-14T09:01:37.247416"
-  },
-  "themes_ai|2026-10-14t09_01_14_853992": {
-    "topic": "themes_ai",
-    "gist": "Олеже, почнемо з чіткого огляду.  💰 ФІНАНСИ Твій портфель втратив $93 за 24 години, при цьому ETH і AVAX показують падіння. На сьогодні є €440.14 рахунків до оп",
-    "ts": "2026-10-14T09:01:14.853992"
-  },
-  "proactive_actions|2026-10-14t09_01_10_447575": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Забрати посилку Temu\",     \"date\": \"2026-10-14\",     \"time\": \"10:00\",     \"message\": \"Олеже, у тебе є важлив",
-    "ts": "2026-10-14T09:01:10.447575"
-  },
-  "action_detect|2026-10-14t09_00_59_283610": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-14T09:00:59.283610"
-  },
-  "action_detect|2026-10-14t09_00_46_997281": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-14T09:00:46.997281"
-  },
-  "selfact|2026-10-14t08_59_59_066452": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про покупки\",     \"text\": \"Олеже, нагадую, що о 09:00 тобі потрібно купити піжаму і тапочки, а так",
-    "ts": "2026-10-14T08:59:59.066452"
-  },
-  "openloop_promises|2026-10-14t08_50_25_177652": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-14T08:50:25.177652"
-  },
-  "calendar_truthfix|2026-10-14t08_49_16_562901": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, сьогодні, 14 жовтня 2026 року, о 08:49, у тебе заплановано кілька покупок. На 10:00 стоїть нагадування купити піжаму і тапочки, а на 11:00 — пазл та три ",
-    "ts": "2026-10-14T08:49:16.562901"
-  },
-  "action_detect|2026-10-14t12_00_17_045882": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
-    "ts": "2026-10-14T12:00:17.045882"
-  },
-  "openloop_promises|2026-10-14t11_51_48_247188": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-14T11:51:48.247188"
   }
 }
