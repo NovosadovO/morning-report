@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T21:16:47.160319",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Customer Success Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80834"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80834"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80834"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80834"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80834"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80834"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T21:16:48.721751",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на вакансію зараз: «Junior Marketing Sp</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-14T21:24:12.128694",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T21:24:13.257799",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
