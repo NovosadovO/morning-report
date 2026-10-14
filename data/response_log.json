@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T16:48:46.998851+00:00",
-      "category": "confirm",
-      "question": "email_delete: 🚩🚩🚩",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T16:48:49.724170+00:00",
       "category": "confirm",
       "question": "email_delete: Crypto Biz: Treasury’s ‘Not-QE’ playbook sends Bitcoin higher",
@@ -13978,6 +13972,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Купити піжаму і тапочки",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-14"
+      }
+    },
+    {
+      "ts": "2026-10-14T04:30:32.297506+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Купити пазл і 3 коробки для конвертів",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-14"
