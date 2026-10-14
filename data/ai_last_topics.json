@@ -1,4 +1,9 @@
 {
+  "bills|2026-10-14t12_26_33_135509": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-10-14T12:26:33.135509"
+  },
   "selfact|2026-10-14t12_22_10_288246": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нові рекомендації щодо віддаленої роботи. М",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"80791\",     \"title\": \"Отримати знижкову картку Temu\",     \"date\": \"2026-10-14\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Pos",
     "ts": "2026-10-14T09:13:45.140469"
-  },
-  "action_detect|2026-10-14t09_11_01_061918": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-10-14T09:11:01.061918"
   }
 }
