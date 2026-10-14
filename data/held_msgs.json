@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T23:52:49.480332",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-14T23:52:50.413235",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T00:01:20.444670",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Richest Person In Every State 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80842"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80842"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80842"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80842"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80842"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80842"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
