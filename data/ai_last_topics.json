@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-14t13_45_28_876956": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-14T13:45:28.876956"
+  },
   "selfact|2026-10-14t13_40_11_214287": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії та статті\",     \"text\": \"Олеже, є нові вакансії від LinkedIn, зокрема від tribe47 (віддалена роб",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Купити піжаму і тапочки\",     \"date\": \"2026-10-14\",     \"time\": \"11:00\",     \"message\": \"Олеже, за годину то",
     "ts": "2026-10-14T10:30:15.427663"
-  },
-  "openloop_promises|2026-10-14t10_21_01_632933": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-14T10:21:01.632933"
   }
 }
