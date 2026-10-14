@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T00:46:26.668445",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Vix Technology наймає: Office Manager &amp; HR Administration</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80838"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80838"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80838"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80838"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80838"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80838"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T00:46:28.238447",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔴 The Insider: What does Alice Weidel really believe?</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
@@ -214,6 +175,12 @@
       "ts": "2026-10-15T00:54:02.629234",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T00:54:03.564991",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
