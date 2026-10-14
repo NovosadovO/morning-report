@@ -298,5 +298,20 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії, які можуть підійти одержувачу. Зокрема, пропонується посада Office Manager & HR Admin",
     "ts": "2026-10-14T14:14:02.597284"
+  },
+  "action_detect|2026-10-14t18_00_39_586077": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-14T18:00:39.586077"
+  },
+  "foresight|2026-10-14t17_54_08_173535": {
+    "topic": "foresight",
+    "gist": "Привіт, Олеже!  Оскільки ти сьогодні, 14 жовтня, відпочиваєш перед нічними змінами, і минуле нагадування про пазл вже завершилося, варто скористатися цією паузо",
+    "ts": "2026-10-14T17:54:08.173535"
+  },
+  "openloop_promises|2026-10-14t17_53_44_718426": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-14T17:53:44.718426"
   }
 }
