@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T21:01:35.602266",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Uncle Sam Moves $1B BTC</b>\n👤 WhaleTales &lt;whaletales@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80831"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80831"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80831"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80831"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80831"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80831"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T21:01:37.121049",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Donald Trump’s popularity hits a new low</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -247,6 +208,12 @@
       "ts": "2026-10-14T21:10:23.087829",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• 🧹 прибрав мертвих записів: 1\n• ⏳ відкритих дедлайнів під наглядом: 48\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T21:10:24.215039",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• 🧹 прибрав мертвих записів: 1\n• ⏳ відкритих дедлайнів під наглядом: 48\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
       "keyboard": null
     }
   ]
