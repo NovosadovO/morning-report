@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, сьогодні ти отримав автоматичну квитанцію про оплату",
-      "detail": "Свіжий лист від noreply@eznamka.sk про оплату дорожньої віньєтки, яка діє тільки сьогодні. Це важлива інформація, яку Олег міг пропустити.",
-      "module": "selfact",
-      "ts": "2026-10-09T14:31:20"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи хочеш, щоб я перевірив наявність онлайн-трансляції",
       "detail": "Олег має нічну зміну 13.10, і йому буде важко відвідати Finweek Bratislava. Запитати його, чи потрібна допомога з пошуком онлайн-ресурсів, є логічним кроком.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-14T16:46:54"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-14T16:47:31"
     }
   ]
 }
