@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T14:42:06.427670+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_f6fba0552f"
-    },
-    {
       "ts": "2026-08-21T16:48:46.998851+00:00",
       "category": "confirm",
       "question": "email_delete: 🚩🚩🚩",
@@ -13978,6 +13972,16 @@
       "category": "diary",
       "question": "3 питання про день",
       "answer": "ні  постійно іфнормуй"
+    },
+    {
+      "ts": "2026-10-14T04:30:27.041131+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Купити піжаму і тапочки",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-14"
+      }
     }
   ]
 }
