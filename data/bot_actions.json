@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-09",
-      "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-09T15:30:43"
-    },
-    {
       "kind": "notify",
       "what": "Finweek Bratislava: \"Blood, Sweat & MiCA\" - перевірка трансляції/запису",
       "detail": "У календарі на 13.10 є подія 'Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor', яка збігається з нічною зміною Олега. Важливо перевірити можливість перегляду пізніше.",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-10-14T20:01:25"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-14T20:06:13"
     }
   ]
 }
