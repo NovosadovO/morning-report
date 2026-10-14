@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-14T02:30:04.668499",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Production Tools s.r.o. наймає: Project Manager»\n\n<i>«Сповіщення про вакансії в SlovakiaКерувати сповіщеннями про вакансії: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BLycFNR57QBiSKjBcTc6w4A%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=2lPlshPcmtJIs1&amp;trk=eml-email_job_alert_digest_01-primary_job_list-0-man...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80784"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80784"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80784"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80784"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80784"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80784"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-14T02:30:42.721066",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-14T02:37:44.644608",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-14T02:39:04.256728",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
