@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Чи бажаєш, щоб я перевірив наявність стріму/запису для Finwe",
-      "detail": "Олег має дві нічні зміни перед подією Finweek Bratislava, і йому було б корисно дізнатися про можливість перегляду онлайн. Питання дозволить уточнити його потреби.",
-      "module": "selfact",
-      "ts": "2026-10-09T15:01:59"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 8.1 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-14T19:03:04"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-14T19:47:36"
     }
   ]
 }
