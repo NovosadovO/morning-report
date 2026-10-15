@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:02:50.204855+00:00",
-      "category": "confirm",
-      "question": "email_delete: 📰 AI-curated Daily Crypto Digest - August 21",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T22:02:53.255354+00:00",
       "category": "confirm",
       "question": "email_delete: 📰 Daily Crypto Digest — August 21",
@@ -14069,6 +14063,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Оплатити квартиру",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-16"
+      }
+    },
+    {
+      "ts": "2026-10-16T01:30:19.507914+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Пробіжка",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-16"
