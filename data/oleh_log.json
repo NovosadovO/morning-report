@@ -3,12 +3,6 @@
     {
       "t": "msg",
       "kind": "msg",
-      "text": "Analysis by Sleep Cycle alarm clock. Download here: https://www.sleepcycle.com #sleepCycle",
-      "ts": "2026-09-21T15:11:29"
-    },
-    {
-      "t": "msg",
-      "kind": "msg",
       "text": "Сьогодні я не спав 2 год.звідки такі дані?",
       "ts": "2026-09-21T15:12:37"
     },
@@ -7199,6 +7193,12 @@
       "data": "rx_done_82968c6179",
       "label": "✅ Зробив",
       "ts": "2026-10-15T22:19:55"
+    },
+    {
+      "t": "btn",
+      "data": "rx_watch_b6a9e89dde",
+      "label": "👀 Спостерігаю",
+      "ts": "2026-10-15T22:19:59"
     }
   ]
 }
