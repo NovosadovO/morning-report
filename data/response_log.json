@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:02:53.255354+00:00",
-      "category": "confirm",
-      "question": "email_delete: 📰 Daily Crypto Digest — August 21",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T22:02:54.353377+00:00",
       "category": "confirm",
       "question": "email_delete: Anthropic wants the biggest IPO ever",
@@ -14075,6 +14069,16 @@
       "answer": "Пробіжка",
       "extra": {
         "kind": "reminder",
+        "date": "2026-10-16"
+      }
+    },
+    {
+      "ts": "2026-10-16T01:30:24.308001+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про річне оцінювання",
+      "extra": {
+        "kind": "reply",
         "date": "2026-10-16"
       }
     }
