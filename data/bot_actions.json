@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твій безкоштовний пробний період Garmin Connect+ закі",
-      "detail": "Лист від Garmin Connect+ Subscription Confirmation вказує на майбутнє списання коштів та необхідність вчасної відміни.",
-      "module": "selfact",
-      "ts": "2026-10-09T22:14:42"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, ти отримав виплатну картку за вересень 2026 від Mineb",
       "detail": "Лист від ehuman@minebeamitsumi.eu 'Minebea, Výplatná páska/Payslip 09/2026' є важливим документом.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-15T13:50:34"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: weight_good",
+      "detail": "⚖️ Вага йде вниз: -0.5 кг за період, зараз 82.3 кг (до цілі 7.3 кг)",
+      "module": "healthai",
+      "ts": "2026-10-15T13:56:52"
     }
   ]
 }
