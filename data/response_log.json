@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:47:29.573293+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "fu_skip_67761c2faf"
-    },
-    {
       "ts": "2026-08-21T21:47:29.573778+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14051,6 +14045,12 @@
     },
     {
       "ts": "2026-10-15T22:19:31.481150+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-15T22:19:34.520055+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
