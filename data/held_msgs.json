@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:31:37.330308",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Uniswap and PancakeSwap Pay LPs More</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80841"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80841"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80841"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80841"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80841"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80841"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T03:31:38.875554",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Coinbase outlines Bitcoin's post-quantum priori</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-15T03:36:13.916736",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.1% за 24г</b>\n\nЗараз: 0.4440 $\n24г тому: 0.4681 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:36:14.837378",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.4440 $\n24г тому: 0.4681 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
