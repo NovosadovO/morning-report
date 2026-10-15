@@ -1,9 +1,4 @@
 {
-  "2026-10-11": {
-    "midday_checkin": true,
-    "anomaly_weight_rising": true,
-    "evening_checkin": true
-  },
   "2026-10-12": {
     "morning_greet": true,
     "run_question": true,
@@ -20,5 +15,8 @@
   "2026-10-14": {
     "morning_greet": true,
     "evening_checkin": true
+  },
+  "2026-10-15": {
+    "morning_greet": true
   }
 }
