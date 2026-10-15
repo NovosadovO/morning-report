@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:47:04.727675+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-21T21:47:05.737642+00:00",
       "category": "event_done",
       "question": "📅 🏃 Біг ✅\nПланувалась до 20:40 — виконано?",
@@ -14051,6 +14045,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_25b3962fce"
+    },
+    {
+      "ts": "2026-10-15T15:30:02.537296+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_f6099e752c"
     }
   ]
 }
