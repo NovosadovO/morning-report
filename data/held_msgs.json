@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T02:55:31.813708",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -5.4% за 24г\n\nЗараз: 0.4446 $\n24г тому: 0.4699 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-15T02:57:02.927712",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80841"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-15T03:01:36.122535",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Coinbase outlines Bitcoin's post-quantum priori</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80839"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80839"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80839"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80839"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80839"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80839"
             }
           ]
         ]
