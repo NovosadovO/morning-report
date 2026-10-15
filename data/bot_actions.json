@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-09T21:05:19"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: steps_good",
       "detail": "🚶 Кроки за тиждень у середньому 11279 — ціль 8000 досягнута",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-15T10:48:56"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-15T10:49:35"
     }
   ]
 }
