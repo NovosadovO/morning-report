@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 46",
-      "module": "selfact",
-      "ts": "2026-10-09T21:21:51"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-09",
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-15T12:06:12"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_unstable",
+      "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.74 год) — тіло не встигає підлаштуватись під ритм",
+      "module": "healthai",
+      "ts": "2026-10-15T12:14:23"
     }
   ]
 }
