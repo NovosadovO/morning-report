@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-10-16t00_04_56_683037": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-16T00:04:56.683037"
+  },
+  "action_detect|2026-10-16t00_01_19_472077": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-16T00:01:19.472077"
+  },
+  "action_detect|2026-10-16t00_01_08_641099": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
+    "ts": "2026-10-16T00:01:08.641099"
+  },
   "proactive_actions|2026-10-16t00_00_11_598553": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховку KOOPERATIVA\",     \"date\": \"2026-10-17\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є н",
@@ -283,20 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, щоб після нічної зміни не закисати в буденності, спробуй після 06:00 заїхати в парк Андорра — це затишне місце з гарними стежками, де можна відновити сил",
     "ts": "2026-10-15T20:59:24.667647"
-  },
-  "selfact|2026-10-15t20_44_11_318943": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, тобі надійшов лист від Martin Kovac з інформацією про рі",
-    "ts": "2026-10-15T20:44:11.318943"
-  },
-  "deadlines|2026-10-15t20_41_38_097231": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80901\",     \"kind\": \"submit\",     \"title\": \"Річне оцінювання працівників\",     \"org\": \"Minebea Mitsumi\",     \"deadline\": \"2026-10-31\",",
-    "ts": "2026-10-15T20:41:38.097231"
-  },
-  "evening_ai_truthfix|2026-10-15t20_31_11_841607": {
-    "topic": "EVENING_AI/truthfix",
-    "gist": "Привіт, Олеже!  Зараз четвер, 15 жовтня 2026 року, 20:31, і ти на нічній зміні, яка триватиме до 06:00. Це важливо, оскільки твої дії та можливості обмежені роб",
-    "ts": "2026-10-15T20:31:11.841607"
   }
 }
