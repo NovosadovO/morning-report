@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:16:36.637331",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Uniswap and PancakeSwap Pay LPs More</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80841"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80841"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80841"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80841"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80841"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80841"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T03:16:38.155919",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Coinbase outlines Bitcoin's post-quantum priori</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-15T03:23:10.835277",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:23:11.841084",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
