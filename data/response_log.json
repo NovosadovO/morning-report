@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:45:30.489198+00:00",
-      "category": "confirm",
-      "question": "email_delete: @Oleg Novosadov,Prosím prijmite čo najskôr...",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T21:45:31.454113+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14051,6 +14045,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_0a56cd6be6"
+    },
+    {
+      "ts": "2026-10-15T15:29:25.567302+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
