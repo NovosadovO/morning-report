@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:45:31.454113+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T21:45:33.706613+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14051,6 +14045,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-15T15:29:34.196593+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_25b3962fce"
     }
   ]
 }
