@@ -1,4 +1,14 @@
 {
+  "msg_crypto_move|2026-10-16t00_33_33_356096": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Схоже, поки ти відновлюєш сили перед наступною частиною нічної зміни, крипторинок вирішив показати свою динаміку, особливо для ZEC та NEAR. Бач",
+    "ts": "2026-10-16T00:33:33.356096"
+  },
+  "bills|2026-10-16t00_28_15_445572": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-16T00:28:15.445572"
+  },
   "selfact|2026-10-16t00_24_41_839398": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий біг\",     \"text\": \"Олеже, за календарем сьогодні, 16.10, був запланований біг о 18:10, але він не був",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплата за квартиру\", \"action_date\": \"2026-11-15\", \"action_time\": null, \"action_summary\": \"Намітити, як розп",
     "ts": "2026-10-15T21:02:03.943119"
-  },
-  "action_detect|2026-10-15t21_01_52_659766": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
-    "ts": "2026-10-15T21:01:52.659766"
-  },
-  "action_detect|2026-10-15t21_01_41_407810": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-10-15\", \"action_time\": null, \"action_summary\": \"Оплатити квартиру €500 +3.",
-    "ts": "2026-10-15T21:01:41.407810"
   }
 }
