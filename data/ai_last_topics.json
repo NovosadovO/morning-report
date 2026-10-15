@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-15t22_19_45_636262": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
+    "ts": "2026-10-15T22:19:45.636262"
+  },
   "email_ai_item|2026-10-15t22_14_09_293673": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Кошице, Словаччина. Зокрема, пропонується вакансія C Shift Supervisor в Crown Holdings,",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, тобі надійшов лист від Martin Kovac з інформацією щодо р",
     "ts": "2026-10-15T18:55:07.702765"
-  },
-  "mailcal_extract|2026-10-15t18_41_50_040810": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"80901\",     \"title\": \"Річне оцінювання працівників\",     \"date\": \"2026-10-13\",     \"time\": \"11:10\",     \"kind\": \"deadline\",     \"why\":",
-    "ts": "2026-10-15T18:41:50.040810"
   }
 }
