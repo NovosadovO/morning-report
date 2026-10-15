@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:46:31.676903",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80846"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80846"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80846"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80846"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80846"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80846"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T03:46:33.218058",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>JUNIOR SPECIALISTA PROCESŮ A DIGITALIZACE (RENOMIA NETWORK) </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +340,12 @@
       "ts": "2026-10-15T03:50:37.673476",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.6% за 24г\n\nЗараз: 0.4431 $\n24г тому: 0.4695 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:52:00.354182",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
