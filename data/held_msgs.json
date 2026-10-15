@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T02:54:08.808977",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -5.6% за 24г\n\nЗараз: 0.4437 $\n24г тому: 0.4700 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-15T02:55:26.738675",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80845"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-15T03:01:28.690971",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Office Manager &amp; HR Administration в Vix Technology: зарплат</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80844"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80844"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80844"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80844"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80844"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80844"
             }
           ]
         ]
