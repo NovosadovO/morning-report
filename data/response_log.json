@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:47:33.270280+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "fu_skip_33d5b811f4"
-    },
-    {
       "ts": "2026-08-21T21:47:33.270621+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14056,6 +14050,16 @@
       "answer": "😐 Нормально",
       "extra": {
         "score": 3
+      }
+    },
+    {
+      "ts": "2026-10-16T00:00:18.313493+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страховку KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-17"
       }
     }
   ]
