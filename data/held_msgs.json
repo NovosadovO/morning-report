@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:01:28.690971",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Office Manager &amp; HR Administration в Vix Technology: зарплат</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80844"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80844"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80844"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80844"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80844"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80844"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T03:01:31.122446",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 The big business of spare capacity</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-15T03:09:24.008077",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:09:25.033594",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
