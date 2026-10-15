@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T02:57:02.927712",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-15T02:57:03.815866",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80839"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-15T03:01:37.552802",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Vix Technology наймає: Office Manager &amp; HR Administration</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80838"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80838"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80838"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80838"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80838"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80838"
             }
           ]
         ]
