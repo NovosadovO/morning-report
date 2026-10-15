@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:46:30.112296",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-15T03:46:31.676903",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-10-15T03:50:36.776537",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.6% за 24г</b>\n\nЗараз: 0.4431 $\n24г тому: 0.4695 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:50:37.673476",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.6% за 24г\n\nЗараз: 0.4431 $\n24г тому: 0.4695 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
