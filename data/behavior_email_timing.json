@@ -1,9 +1,4 @@
 {
-  "80287": {
-    "sender": "googledevelopers-noreply@google.com",
-    "sender_raw": "Google Developers <googledevelopers-noreply@google.com>",
-    "seen_ts": "2026-10-05T21:04:19.412716+00:00"
-  },
   "80288": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-10-15T12:23:27.957878+00:00"
+  },
+  "80881": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-15T12:48:13.225144+00:00"
   }
 }
