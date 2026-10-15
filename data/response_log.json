@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:45:24.291280+00:00",
-      "category": "confirm",
-      "question": "email_delete: Vedúci oddelenia digitálnych aktív a custody služieb v Tatra banke (M/Ž) в Tatra banka",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T21:45:26.752351+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14047,6 +14041,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-15"
+      }
+    },
+    {
+      "ts": "2026-10-15T15:28:39.440593+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "night"
       }
     }
   ]
