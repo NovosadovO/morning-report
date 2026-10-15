@@ -1,9 +1,4 @@
 {
-  "80288": {
-    "sender": "newsletter@mail.theblock.co",
-    "sender_raw": "The Block <newsletter@mail.theblock.co>",
-    "seen_ts": "2026-10-05T21:04:29.959177+00:00"
-  },
   "80289": {
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-15T12:48:13.225144+00:00"
+  },
+  "80882": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-15T12:54:26.131669+00:00"
   }
 }
