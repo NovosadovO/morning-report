@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T02:54:03.843002",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-15T02:54:04.734350",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-15T03:01:22.328058",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.3% за 24г</b>\n\nЗараз: 0.4446 $\n24г тому: 0.4695 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:01:23.295342",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.3% за 24г\n\nЗараз: 0.4446 $\n24г тому: 0.4695 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
