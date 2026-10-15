@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-15T03:01:31.122446",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 The big business of spare capacity</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-15T03:01:32.663635",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Richest Person In Every State 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-10-15T03:09:25.033594",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-15T03:09:28.724186",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
