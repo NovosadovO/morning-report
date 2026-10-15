@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, нагадую про конференцію Finweek Bratislava: “Blood, S",
-      "detail": "У календарі на 13.10 є дві пов'язані події: 'BLOOD, SWEAT & MiCA — Finweek Bratislava' та 'Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor'. Важливо перевірити можливість онлайн-перегляду, оскільки Олег може бути на зміні.",
-      "module": "selfact",
-      "ts": "2026-10-10T02:26:54"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи хочеш, щоб я переглянув/ла деталі вакансій Supply",
       "detail": "Олег отримує сповіщення про вакансії, і можливо, йому потрібна допомога з їх аналізом.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-15T21:06:07"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 68",
+      "module": "selfact",
+      "ts": "2026-10-15T21:20:49"
     }
   ]
 }
