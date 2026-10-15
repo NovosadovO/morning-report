@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-15t16_50_20_633463": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
+    "ts": "2026-10-15T16:50:20.633463"
+  },
   "action_detect|2026-10-15t16_42_18_500694": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Adrian Pape через LinkedIn є інформаційним бюлетенем, що аналізує вплив інфляції на ринок криптовалют. У ньому згадується ",
     "ts": "2026-10-15T13:40:15.026792"
-  },
-  "action_detect|2026-10-15t13_35_17_361067": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати причини падіння ринку\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізувати ",
-    "ts": "2026-10-15T13:35:17.361067"
   }
 }
