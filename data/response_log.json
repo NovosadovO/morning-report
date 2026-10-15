@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:43:56.912440+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_water"
-    },
-    {
       "ts": "2026-08-21T21:44:01.491425+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14015,6 +14009,16 @@
       "answer": "2026-10-27",
       "extra": {
         "kind": "contract"
+      }
+    },
+    {
+      "ts": "2026-10-15T04:30:17.139998+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-15"
       }
     }
   ]
