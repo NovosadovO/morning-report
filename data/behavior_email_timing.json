@@ -1,9 +1,4 @@
 {
-  "80285": {
-    "sender": "email@inbox.fox.com",
-    "sender_raw": "\"FOX\" <email@inbox.fox.com>",
-    "seen_ts": "2026-10-05T20:56:06.447556+00:00"
-  },
   "80287": {
     "sender": "googledevelopers-noreply@google.com",
     "sender_raw": "Google Developers <googledevelopers-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Adrian Pape через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-15T11:40:18.641630+00:00"
+  },
+  "80878": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-10-15T12:23:27.957878+00:00"
   }
 }
