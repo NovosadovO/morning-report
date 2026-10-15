@@ -217,7 +217,7 @@
     "foresight": {
       "checked": 425,
       "issues": 294,
-      "fixed": 137,
+      "fixed": 138,
       "cut": 6
     },
     "ai_weekly_accuracy": {
@@ -593,6 +593,7 @@
   },
   "2026-10-16": {
     "checked": 2,
-    "issues": 1
+    "issues": 1,
+    "fixed": 1
   }
 }
