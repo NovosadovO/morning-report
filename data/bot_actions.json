@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Невдала сауна",
-      "detail": "З календаря видно, що сауна на 10.10 була позначена як невиконана (❌).",
-      "module": "selfact",
-      "ts": "2026-10-10T00:20:46"
-    },
-    {
-      "kind": "notify",
       "what": "Новий пейсліп",
       "detail": "Є свіжий лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-15T19:51:17"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-15T19:51:55"
     }
   ]
 }
