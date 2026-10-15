@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, надійшла виплатна відомість за вересень від Minebea.",
-      "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026', що є важливою фінансовою інформацією.",
-      "module": "selfact",
-      "ts": "2026-10-09T23:32:45"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_field_stale",
       "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-10-06 (3 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-15T17:06:38"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-15T18:06:16"
     }
   ]
 }
