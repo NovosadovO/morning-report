@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові оголошення про квартири\",     \"text\": \"Олеже, з'явилися 2 нові оголошення про квартири у Кошице. Можеш пе",
     "ts": "2026-10-14T19:24:27.803163"
+  },
+  "action_detect|2026-10-15t06_15_22_505166": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-15T06:15:22.505166"
   }
 }
