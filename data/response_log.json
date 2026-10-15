@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T21:47:12.196150+00:00",
-      "category": "event_done",
-      "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-21T21:47:12.842118+00:00",
       "category": "event_done",
       "question": "📅 💈 Спрей для волосся ❌\nПланувалась до 20:40 — виконано?",
@@ -14054,6 +14048,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-10-15T22:19:15.127094+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
