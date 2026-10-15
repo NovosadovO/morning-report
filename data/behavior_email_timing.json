@@ -1,9 +1,4 @@
 {
-  "80296": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-10-06T02:05:45.911169+00:00"
-  },
   "80297": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-15T20:14:13.040540+00:00"
+  },
+  "80911": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-15T21:25:27.972290+00:00"
   }
 }
