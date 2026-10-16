@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_water",
-      "label": "❌ Ні",
-      "ts": "2026-09-21T20:17:10"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79501",
       "label": "🗑 Видалити",
       "ts": "2026-09-21T20:17:23"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_shower",
       "label": "❌ Ні",
       "ts": "2026-10-16T13:46:06"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_shower",
+      "label": "❌ Пропустив",
+      "ts": "2026-10-16T13:46:13"
     }
   ]
 }
