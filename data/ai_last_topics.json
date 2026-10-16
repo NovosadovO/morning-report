@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-10-16t16_14_15_826769": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Кошице, зокрема про позицію Grocery Associate в Wolt та HR Specialist - Recruiter в Min",
+    "ts": "2026-10-16T16:14:15.826769"
+  },
+  "selfact|2026-10-16t16_12_30_525466": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
+    "ts": "2026-10-16T16:12:30.525466"
+  },
   "mailcal_extract|2026-10-16t16_10_08_528829": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-10-16T12:51:18.219127"
-  },
-  "selfact|2026-10-16t12_49_47_970609": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, у тебе є нові рекомендовані вакансії на LinkedIn: Anti-Fraud Offi",
-    "ts": "2026-10-16T12:49:47.970609"
-  },
-  "selfact|2026-10-16t12_34_03_685490": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії Anti-Fraud Officer та Customer Success Manager\",     \"text\": \"Олеже, з'явилися дві нові вакансії",
-    "ts": "2026-10-16T12:34:03.685490"
   }
 }
