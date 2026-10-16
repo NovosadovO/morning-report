@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-16t08_57_20_742017": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
+    "ts": "2026-10-16T08:57:20.742017"
+  },
+  "deadlines|2026-10-16t08_51_02_099364": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-10-16T08:51:02.099364"
+  },
   "bills|2026-10-16t08_50_50_962399": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
     "ts": "2026-10-16T06:00:48.170503"
-  },
-  "selfact|2026-10-16t05_52_28_262130": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річна оцінка співробітників\",     \"text\": \"Олеже, тобі надіслали інформацію щодо річної оцінки співробітників ",
-    "ts": "2026-10-16T05:52:28.262130"
-  },
-  "deadlines|2026-10-16t05_44_01_240148": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80901\",     \"kind\": \"submit\",     \"title\": \"Річне оцінювання працівників\",     \"org\": \"Minebea Mitsumi\",     \"deadline\": \"2026-10-31\",",
-    "ts": "2026-10-16T05:44:01.240148"
   }
 }
