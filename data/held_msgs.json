@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-16T23:49:42.618247",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-16T23:49:43.548739",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T00:01:15.407313",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>Activity feed filters, guided IaC migration, cron jobs in th</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80982"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80982"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80982"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80982"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80982"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80982"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
