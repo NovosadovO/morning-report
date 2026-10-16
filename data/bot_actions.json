@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Конференція Finweek Bratislava: Blood, Sweat & MiCA",
-      "detail": "У календарі на 13.10 вказано '12:45 BLOOD, SWEAT & MiCA — Finweek Bratislava' та '12:45 Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor'.",
-      "module": "selfact",
-      "ts": "2026-10-10T10:58:15"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-16T15:05:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Несплачена підписка Strava",
+      "detail": "Дедлайн 'Підписка Strava — оновлення платіжної інформації' минув 2026-08-04, і дія не позначена як виконана.",
+      "module": "selfact",
+      "ts": "2026-10-16T15:25:31"
     }
   ]
 }
