@@ -298,5 +298,10 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"80901\",     \"title\": \"Річне оцінювання співробітників (Minebea Mitsumi)\",     \"date\": \"2026-10-13\",     \"time\": \"11:10\",     \"kind\": \"",
     "ts": "2026-10-16T01:39:38.212454"
+  },
+  "action_detect|2026-10-16t06_00_48_170503": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
+    "ts": "2026-10-16T06:00:48.170503"
   }
 }
