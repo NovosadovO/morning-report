@@ -1,9 +1,4 @@
 {
-  "80302": {
-    "sender": "noreply@newsletter.austrian.com",
-    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
-    "seen_ts": "2026-10-06T07:25:00.907499+00:00"
-  },
   "80303": {
     "sender": "noreply@nay.sk",
     "sender_raw": "\"NAY\" <noreply@nay.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-16T11:33:04.057081+00:00"
+  },
+  "80936": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-10-16T12:03:46.207449+00:00"
   }
 }
