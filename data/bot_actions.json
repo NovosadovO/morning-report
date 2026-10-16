@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, 13 жовтня відбудеться подія 'BLOOD, SWEAT & MiCA — Fi",
-      "detail": "У календарі на 13.10 є дві події, пов'язані з Finweek Bratislava, і є примітка перевірити livestream/record.",
-      "module": "selfact",
-      "ts": "2026-10-10T07:05:48"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-16T07:05:58"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-16",
+      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-16T07:17:52"
     }
   ]
 }
