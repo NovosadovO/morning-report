@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Підписка Garmin Connect+ продовжиться",
-      "detail": "Лист від Garmin Connect+ Subscription Confirmation вказує на автоматичне продовження підписки та майбутнє списання коштів.",
-      "module": "selfact",
-      "ts": "2026-10-10T14:51:27"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує листи від Abacus AI, що свідчить про його інтерес до AI технологій. Лист uid=80973.",
       "module": "selfact",
       "ts": "2026-10-16T21:08:19"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 71",
+      "module": "selfact",
+      "ts": "2026-10-16T21:21:37"
     }
   ]
 }
