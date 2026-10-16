@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "cmd",
-      "text": "/звички",
-      "ts": "2026-09-21T21:51:59"
-    },
-    {
       "t": "btn",
       "data": "habit_yes_shower",
       "label": "✅ 🚿 Холодний душ",
@@ -7198,6 +7192,12 @@
       "t": "btn",
       "data": "habit_no_run",
       "label": "❌ Ні",
+      "ts": "2026-10-16T20:02:06"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
       "ts": "2026-10-16T20:02:06"
     }
   ]
