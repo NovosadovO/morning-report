@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-16t20_20_35_045330": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить звіт про нові 3-кімнатні квартири у Кошицях (Словаччина), сформований 2026-10-16 20:19:53. Представлено 20 оголошень з цін",
+    "ts": "2026-10-16T20:20:35.045330"
+  },
   "email_ai_item|2026-10-16t20_14_17_637082": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є сповіщенням від LinkedIn про нову вакансію \\\"Director of Data Center Operations\\\" в компанії Cirrascale Cloud Services, розт",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
     "ts": "2026-10-16T16:12:30.525466"
-  },
-  "mailcal_extract|2026-10-16t16_10_08_528829": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T16:10:08.528829"
   }
 }
