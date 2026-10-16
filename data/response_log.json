@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T07:30:45.408788+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Нові пропозиції роботи від Profesia.sk",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-22T07:30:49.455798+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -14078,6 +14068,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_e1ab132e78"
+    },
+    {
+      "ts": "2026-10-16T15:26:32.286842+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Прийняти холодний душ",
+      "answer": "yes"
     }
   ]
 }
