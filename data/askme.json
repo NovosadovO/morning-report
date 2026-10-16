@@ -8211,6 +8211,17 @@
   "note|олег переслав лист fwd ročné hodnotenie zamestnancov що": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що »\n\nОлег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що свідчить про його зацікавленість у процесі оцінювання співробітників на заводі.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-10-16T00:24:50"
+    "asked_at": "2026-10-16T00:24:50",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-10-16T02:33:36",
+    "meta": {
+      "summary": "Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що",
+      "desc": "Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що свідчить про його за",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
