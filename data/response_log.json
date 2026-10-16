@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T05:46:31.464926+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "XLM виріс на 13.5% за 24 години (зараз $0.21319)"
-    },
-    {
       "ts": "2026-08-22T06:00:31.826880+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14086,6 +14080,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_low_8a96d11c63"
+    },
+    {
+      "ts": "2026-10-16T13:46:08.424488+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_shower"
     }
   ]
 }
