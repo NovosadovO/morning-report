@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T00:38:35.232690",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T00:38:36.158158",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T00:46:02.534002",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Friday charts</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80985"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80985"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80985"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80985"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80985"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80985"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
