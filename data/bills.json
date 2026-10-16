@@ -428,5 +428,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-10-12"
+  },
+  "railway|10_01|": {
+    "vendor": "Railway",
+    "amount": "10.01",
+    "currency": "USD",
+    "invoice_no": "",
+    "due": "",
+    "uid": "80914",
+    "sender": "Railway <hello@notify.railway.app>",
+    "subject": "Railway usage alert",
+    "note": "Повідомлення про використання сервісів Railway на суму $10.01 за цей місяць.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-10-16"
   }
 }
