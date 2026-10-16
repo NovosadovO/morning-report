@@ -1,9 +1,4 @@
 {
-  "80310": {
-    "sender": "noreply@email-service.bybit.com",
-    "sender_raw": "Bybit <noreply@email-service.bybit.com>",
-    "seen_ts": "2026-10-06T09:14:22.006030+00:00"
-  },
   "80318": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1gelrri1t19amw9r@stripe.com",
     "sender_raw": "\"Abacus.AI\" <failed-payments+acct_1GElrRI1t19amW9R@stripe.com>",
     "seen_ts": "2026-10-16T15:58:59.957397+00:00"
+  },
+  "80961": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-16T16:17:46.236165+00:00"
   }
 }
