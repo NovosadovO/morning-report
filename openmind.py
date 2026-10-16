@@ -317,10 +317,74 @@ def horizon_text() -> str:
     return "🧭 <b>ГОРИЗОНТ</b>\n<i>" + K.esc(hz) + "</i>\n\n" + body.strip()
 
 
+# ─── "CMC-СТИЛЬ" ЛІДЕРБОРД (запит Олега 20.10, "цікаві новини з CoinMarketCap") ─
+# CoinMarketCap сам по собі потребує платного API-ключа для гейнерів/лузерів/
+# трендового — CoinGecko (вже тут, безкоштовно) дає ТІ Ж дані (ранжування за
+# капіталізацією, рухи 24г, трендове за пошуком, новачки в ТОП-20). Формат —
+# короткий сканований лідерборд, а не прозовий огляд (той є в digest()).
+
+def cmc_leaderboard_text() -> str:
+    data = market(100)
+    if not data:
+        return "💎 <b>ТОП рухів ринку</b>\n\nдані недоступні"
+    mv = movers(data, n=5)
+    tr = trending(6)
+    nc = newcomers(data)
+    rows = ["💎 <b>ТОП рухів ринку</b> (як на CoinMarketCap, джерело CoinGecko)",
+            _now().strftime("%d.%m.%Y %H:%M"), ""]
+    rows.append("📈 Гейнери 24г:")
+    for c in mv["up"]:
+        rows.append("  " + _fmt_coin(c))
+    rows.append("")
+    rows.append("📉 Лузери 24г:")
+    for c in mv["down"]:
+        rows.append("  " + _fmt_coin(c))
+    if tr:
+        rows.append("")
+        rows.append("🔥 Трендове (найбільше шукають зараз):")
+        for t in tr:
+            rows.append("  " + t["symbol"] + " — " + t["name"]
+                        + (" (#" + str(t["rank"]) + " за капою)" if t["rank"] else ""))
+    if nc:
+        rows.append("")
+        rows.append("🆕 Нове в ТОП-20: " + ", ".join(nc))
+    return "\n".join(rows)
+
+
+def cmc_leaderboard_notify() -> bool:
+    try:
+        import quiet
+        if quiet.blocked("msg"):
+            return False
+    except Exception:
+        pass
+    try:
+        import ai_kit as _k_cmc
+        if not _k_cmc.rate_ok("insight_gate.json", 45):
+            _log("cmc_leaderboard: SKIP — спільні ворота 'одна тема' (45 хв)")
+            return False
+    except Exception:
+        pass
+    text = cmc_leaderboard_text()
+    ok = K.send_card(text, [[
+        {"text": "📰 Новини", "callback_data": "om_news"},
+        {"text": "🌐 Повний огляд", "callback_data": "om_full"},
+    ]], tag=TAG)
+    if ok:
+        try:
+            import ai_kit as _k_cmc
+            _k_cmc.rate_mark("insight_gate.json")
+        except Exception:
+            pass
+    return ok
+
+
 # ─── ПЛАНУВАЛЬНИК ────────────────────────────────────────────────────────────
 
 def tick() -> str:
-    """Відкритий огляд двічі на день: 09:30 і 18:30."""
+    """Відкритий огляд (digest) двічі на день: 09:30 і 18:30.
+    Плюс CMC-стиль лідерборд гейнерів/лузерів/трендового раз на день о 13:15 —
+    окреме, коротке, скановане "цікаве" (не прозовий аналіз, як digest)."""
     now = _now()
     day = now.strftime("%Y-%m-%d")
     st = K.load(STATE_FILE, default={}) or {}
@@ -342,6 +406,13 @@ def tick() -> str:
                 done.append(name)
             except Exception as e:
                 _log(name + " error: " + str(e))
+    if now.hour == 13 and 15 <= now.minute < 21 and st.get("cmc") != day:
+        try:
+            if cmc_leaderboard_notify():
+                st["cmc"] = day
+                done.append("cmc")
+        except Exception as e:
+            _log("cmc error: " + str(e))
     if done:
         K.save(STATE_FILE, st)
     return ", ".join(done)

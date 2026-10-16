@@ -6163,6 +6163,10 @@ def _route_callback(cb, confirmed: bool = False):
             elif data == "om_top":
                 _th_om.Thread(target=lambda: send(chat_id, _om_cb.top_text()),
                               daemon=True, name="om-top").start()
+            elif data == "om_full":
+                _th_om.Thread(target=lambda: _om_cb.digest(send=True),
+                              daemon=True, name="om-full").start()
+                send(chat_id, "🌐 Готую повний огляд з AI-аналізом…")
         except Exception as _e_omcb:
             send(chat_id, f"⚠️ openmind: {str(_e_omcb)[:200]}")
         return
@@ -7216,15 +7220,34 @@ def main():
                 event = get_next_important_event()
                 
                 if event:
-                    # Форматуємо красивий текст
-                    notification_text = format_notification(event)
-                    
-                    if notification_text:
-                        send(TELEGRAM_CHAT, notification_text)
-                        print(f"[SMART_NOTIF] Sent: {event.get('type')} | priority={event.get('priority')}", flush=True)
+                    # Спільні ворота "одна тема на 45 хв" (insight_gate.json) — ті
+                    # самі, що в healthai.initiative()/foresight.py. Раніше ці
+                    # смарт-сповіщення (email/крипто/здоров'я) не підпорядковувались
+                    # жодному спільному обмеженню — могли прилетіти одразу після
+                    # картки з іншого модуля (запит Олега 20.10: "розумні
+                    # нагадування та сповіщення мають бути до всього" — тобто
+                    # координація теж до ВСІХ модулів, не лише здоров'я+форсайт).
+                    try:
+                        import ai_kit as _k_sn
+                        _gate_ok = _k_sn.rate_ok("insight_gate.json", 45)
+                    except Exception:
+                        _gate_ok = True
+                    if not _gate_ok:
+                        print(f"[SMART_NOTIF] SKIP — спільні ворота 'одна тема' (45 хв): {event.get('type')}", flush=True)
+                    else:
+                        # Форматуємо красивий текст
+                        notification_text = format_notification(event)
                         
-                        # Позначаємо що відправили (деdup)
-                        _mark_notified(event.get("notification_id", ""))
+                        if notification_text:
+                            send(TELEGRAM_CHAT, notification_text)
+                            print(f"[SMART_NOTIF] Sent: {event.get('type')} | priority={event.get('priority')}", flush=True)
+                            
+                            # Позначаємо що відправили (деdup)
+                            _mark_notified(event.get("notification_id", ""))
+                            try:
+                                _k_sn.rate_mark("insight_gate.json")
+                            except Exception:
+                                pass
             
             except Exception as _sn:
                 print(f"⚠️ Smart notifications error: {_sn}", flush=True)
