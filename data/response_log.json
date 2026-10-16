@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T11:45:30.765430+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Зважити себе",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-22T11:45:35.753889+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14085,6 +14079,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_invest"
+    },
+    {
+      "ts": "2026-10-16T21:31:05.917773+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
