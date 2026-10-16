@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-16t02_14_23_371614": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, твій колега Martin Kovac переслав тобі інформацію щодо р",
+    "ts": "2026-10-16T02:14:23.371614"
+  },
   "selfact|2026-10-16t01_58_48_906124": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала підписка Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потр",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати сауну\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Запланувати сауну на 28 ве",
     "ts": "2026-10-15T22:19:45.636262"
-  },
-  "email_ai_item|2026-10-15t22_14_09_293673": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Кошице, Словаччина. Зокрема, пропонується вакансія C Shift Supervisor в Crown Holdings,",
-    "ts": "2026-10-15T22:14:09.293673"
   }
 }
