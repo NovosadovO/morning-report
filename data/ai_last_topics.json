@@ -1,4 +1,19 @@
 {
+  "defi_digest|2026-10-16t18_16_17_119210": {
+    "topic": "defi_digest",
+    "gist": "На DeFi ринку за останні 24 години найбільше виділяється падіння Nexus BTC на 21.2%, що є досить значним відхиленням і може свідчити про підвищену волатильність",
+    "ts": "2026-10-16T18:16:17.119210"
+  },
+  "openloop_promises|2026-10-16t18_12_31_315450": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"Постав нагадування: годинник заряджено на 95%\",     \"to\": \"собі\",     \"date\": \"2026-10-16\"   } ] ```",
+    "ts": "2026-10-16T18:12:31.315450"
+  },
+  "deadlines|2026-10-16t18_10_53_562772": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-10-16T18:10:53.562772"
+  },
   "people|2026-10-16t18_10_02_964679": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"інше\",     \"topics\": [       \"запрошення до Runable\"",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "🧐 Олеже, бачу, ти позначив повідомлення про вчорашній сон як \"Зробив\", але сьогодні поки зафіксовано лише 4.3 години сну о 14:12, що значно менше за середнє за ",
     "ts": "2026-10-16T15:05:03.780660"
-  },
-  "action_detect|2026-10-16t15_02_24_922166": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надолужити біг\", \"action_date\": \"2026-10-16\", \"action_time\": null, \"action_summary\": \"Залишилося менше доби, щоб на",
-    "ts": "2026-10-16T15:02:24.922166"
-  },
-  "action_detect|2026-10-16t15_02_11_190065": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є зведенням особистих даних про здоров'я, ф",
-    "ts": "2026-10-16T15:02:11.190065"
-  },
-  "action_detect|2026-10-16t15_01_59_959339": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти холодний душ\", \"action_date\": \"2026-10-16\", \"action_time\": null, \"action_summary\": \"Прийми холодний душ, о",
-    "ts": "2026-10-16T15:01:59.959339"
   }
 }
