@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_skip_botsend_1790020548844",
-      "label": "❌ Не треба",
-      "ts": "2026-09-21T21:59:40"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_gip3t0so2hpau7dlok2kogie0c_2026-09-21",
       "label": "✅ Виконано",
       "ts": "2026-09-21T21:59:40"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_80970",
       "label": "🗑 Видалити",
       "ts": "2026-10-16T20:08:19"
+    },
+    {
+      "t": "btn",
+      "data": "rx_read_852d18ec27",
+      "label": "👍 Прочитав",
+      "ts": "2026-10-16T20:08:27"
     }
   ]
 }
