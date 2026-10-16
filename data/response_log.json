@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:03:29.686149+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Вивчити динаміку ONDO та LINK",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T22:03:34.045142+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14084,6 +14078,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_29f713a931"
+    },
+    {
+      "ts": "2026-10-16T02:43:29.097763+00:00",
+      "category": "deadline_found",
+      "question": "Річне оцінювання співробітників",
+      "answer": "2026-10-31",
+      "extra": {
+        "kind": "submit"
+      }
     }
   ]
 }
