@@ -6010,15 +6010,15 @@ def main():
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
         print(f"[main] GEMINI_API_KEY={'***' if _gemini_key_astro else 'NOT_SET'}, shift_hint={shift_hint[:40]}", flush=True)
         _astro_ai = ""
-        # AI-розбір астро — РІВНО 2 рази на день: рано (09) і ввечері (21)
-        # (16.10.2026, запит Олега: "мають бути 2 рази на день рано і вечір").
-        # Старий allow_every("astro_ai", 12) ділив доба на 2 половини (00-11 і
-        # 12-23) і стріляв на ПЕРШОМУ full-AI слоті кожної половини — це була
-        # 09 (ранок, ок) і 15 (день, НЕ вечір), бо 21 вже потрапляв у ту саму
-        # зайняту половину й ворота його блокували. Тепер прив'язано напряму
-        # до годин 9 і 21 (обидві й так full-AI сллоти), по одному разу
-        # на кожну календарну годину — тож 15 більше не забирає вечірній слот.
-        _ASTRO_AI_HOURS = (9, 21)
+        # AI-розбір астро — РІВНО 2 рази на день: рано і ввечері.
+        # (16.10.2026, запит Олега: "до год 11:30 та до 19:25"). Доба й так
+        # ділиться на репорт-слоти (0,3,6,9,12,15,18,21 — див.
+        # _REPORT_SLOT_HOURS); 09 встигає до 11:30 з запасом, а для дедлайну
+        # 19:25 підходить слот 18 (не 21, бо 21:00 — вже ПІСЛЯ 19:25). Більше
+        # НЕ прив'язано до _FULL_AI_HOURS (9/15/21) — 18 туди не входить, а
+        # транзити (astro_text) і контекст (shift_hint) рахуються в КОЖНОМУ
+        # слоті незалежно, тож AI-розбору на 18 нічого не бракує.
+        _ASTRO_AI_HOURS = (9, 18)
         _astro_ai_due = local_hour in _ASTRO_AI_HOURS
         if _astro_ai_due:
             try:
@@ -6026,8 +6026,6 @@ def main():
                 _astro_ai_due = _hg_astro.allow("astro_ai", 1)
             except Exception as _e_hg:
                 print(f"[astro_ai] hourgate skip: {_e_hg}", flush=True)
-        if not _is_full_ai_slot:
-            _astro_ai_due = False
         if not _astro_ai_due:
             print("[astro_ai] SKIP — AI-розбір 2х/день, транзити в звіті лишаються", flush=True)
         elif not _ai_time_left(40):
