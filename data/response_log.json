@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T06:00:31.826880+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити пропозиції роботи від Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-22T06:00:37.192551+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14083,6 +14073,12 @@
     },
     {
       "ts": "2026-10-16T13:46:08.424488+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_shower"
+    },
+    {
+      "ts": "2026-10-16T13:46:15.185797+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_shower"
