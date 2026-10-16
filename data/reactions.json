@@ -7625,5 +7625,16 @@
     "about": "Несплачена підписка Strava",
     "state": "closed",
     "ts": "2026-10-16T15:27:10"
+  },
+  "report|t|gemini закінчились prepayment credits весь ai аналіз вимкнено бот прац": {
+    "kind": "report",
+    "key": "",
+    "tkey": "gemini закінчились prepayment credits весь ai аналіз вимкнено бот прац",
+    "title": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI",
+    "action": "read",
+    "label": "👍 Прочитав",
+    "about": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпретації. Поповни баланс на https://ai.studio → Billing.",
+    "state": "open",
+    "ts": "2026-10-16T19:02:05"
   }
 }
