@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-16T23:11:27.270940",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-16T23:12:41.866230",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-16T23:26:11.756181",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «Most Valuable NBA Teams 2026: Warriors Still Rule After Lakers Sale»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/most-valuable-nba-teams-2026-warriors-still-rule-after-o6wme?lipi=urn%3Ali%3Apage%3Aemail_email_series_follo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80980"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80980"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80980"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80980"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80980"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80980"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
