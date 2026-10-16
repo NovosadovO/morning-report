@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Підписка Garmin Connect+ активована",
-      "detail": "Отримано лист від Garmin <GarminServicesBilling@garmin.com> з темою 'Garmin Connect+ Subscription Confirmation', де вказано дату початку підписки та майбутні списання.",
-      "module": "selfact",
-      "ts": "2026-10-10T10:58:11"
-    },
-    {
-      "kind": "notify",
       "what": "Конференція Finweek Bratislava: Blood, Sweat & MiCA",
       "detail": "У календарі на 13.10 вказано '12:45 BLOOD, SWEAT & MiCA — Finweek Bratislava' та '12:45 Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-16T14:12:49"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-16T15:05:19"
     }
   ]
 }
