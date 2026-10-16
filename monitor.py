@@ -6010,17 +6010,22 @@ def main():
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
         print(f"[main] GEMINI_API_KEY={'***' if _gemini_key_astro else 'NOT_SET'}, shift_hint={shift_hint[:40]}", flush=True)
         _astro_ai = ""
-        # AI-розбір астро — 2 рази на день (08.10.2026, запит Олега), а не щогодини
-        # (економія кредитів). Самі транзити (astro_text) лишаються в КОЖНОМУ звіті,
-        # а астро-алерти про реальні зміни йдуть одразу, повз ці ворота.
-        _astro_ai_due = True
-        try:
-            import hourgate as _hg_astro
-            _astro_ai_due = _hg_astro.allow_every("astro_ai", 12)
-        except Exception as _e_hg:
-            print(f"[astro_ai] hourgate skip: {_e_hg}", flush=True)
-        # 12.10.2026 (запит Олега): AI-розбір астро лише у full-AI слоті
-        # (інакше 2х/добові ворота можуть "вистрелити" у чисто-скелетний слот).
+        # AI-розбір астро — РІВНО 2 рази на день: рано (09) і ввечері (21)
+        # (16.10.2026, запит Олега: "мають бути 2 рази на день рано і вечір").
+        # Старий allow_every("astro_ai", 12) ділив доба на 2 половини (00-11 і
+        # 12-23) і стріляв на ПЕРШОМУ full-AI слоті кожної половини — це була
+        # 09 (ранок, ок) і 15 (день, НЕ вечір), бо 21 вже потрапляв у ту саму
+        # зайняту половину й ворота його блокували. Тепер прив'язано напряму
+        # до годин 9 і 21 (обидві й так full-AI сллоти), по одному разу
+        # на кожну календарну годину — тож 15 більше не забирає вечірній слот.
+        _ASTRO_AI_HOURS = (9, 21)
+        _astro_ai_due = local_hour in _ASTRO_AI_HOURS
+        if _astro_ai_due:
+            try:
+                import hourgate as _hg_astro
+                _astro_ai_due = _hg_astro.allow("astro_ai", 1)
+            except Exception as _e_hg:
+                print(f"[astro_ai] hourgate skip: {_e_hg}", flush=True)
         if not _is_full_ai_slot:
             _astro_ai_due = False
         if not _astro_ai_due:
