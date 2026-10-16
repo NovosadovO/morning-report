@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-16t11_16_17_445020": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія в Кошице\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Customer Success M",
+    "ts": "2026-10-16T11:16:17.445020"
+  },
   "action_detect|2026-10-16t11_11_52_259845": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "😴 Олеже, ти вчора спав 8.3 години, це трохи нижче середнього за 14 днів (9.5 год), і загальний тренд сну зараз падає (-1.4 год). Враховуючи, що сьогодні у тебе ",
     "ts": "2026-10-16T08:05:10.029266"
-  },
-  "action_detect|2026-10-16t08_03_08_436160": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-10-16T08:03:08.436160"
   }
 }
