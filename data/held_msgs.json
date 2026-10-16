@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T00:31:09.721265",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Anti-Fraud Officer  в Cybertexex – вакансія, яка може вас за</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80984"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80984"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80984"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80984"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80984"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80984"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T00:31:11.194240",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: MSCI's new rules put Strategy at risk</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-17T00:37:18.965408",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T00:37:19.977971",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
