@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-16t13_00_11_146551": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні вихідний, гарний момент для 20 хв ",
+    "ts": "2026-10-16T13:00:11.146551"
+  },
+  "bills|2026-10-16t12_51_18_219127": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-16T12:51:18.219127"
+  },
   "selfact|2026-10-16t12_49_47_970609": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, у тебе є нові рекомендовані вакансії на LinkedIn: Anti-Fraud Offi",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, щоб скинути вагу до 75 кг, важливо не лише бігати, а й контролювати харчування, адже ти зараз на 84.1 кг. Спробуй приготувати салат з кіноа, куркою та ов",
     "ts": "2026-10-16T09:23:36.025472"
-  },
-  "selfact|2026-10-16t09_12_30_683202": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
-    "ts": "2026-10-16T09:12:30.683202"
-  },
-  "action_detect|2026-10-16t09_11_08_721427": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом, що показує поточні ціни",
-    "ts": "2026-10-16T09:11:08.721427"
   }
 }
