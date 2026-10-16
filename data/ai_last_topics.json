@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-16t19_58_40_494549": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80969\",     \"title\": \"Платіж Google Cloud Platform & APIs\",     \"date\": \"2026-10-16\",     \"time\": null,     \"kind\": \"payment\",     \"wh",
+    "ts": "2026-10-16T19:58:40.494549"
+  },
   "action_detect|2026-10-16t19_26_24_569384": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2023-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-16T15:25:09.979533"
-  },
-  "mailcal_extract|2026-10-16t15_24_59_019733": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T15:24:59.019733"
   }
 }
