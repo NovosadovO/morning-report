@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T00:00:28.993305+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-22T01:16:28.265074+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14087,6 +14077,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_8a0ef7bda2"
+    },
+    {
+      "ts": "2026-10-16T03:00:50.367559+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страховий поліс KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-17"
+      }
     }
   ]
 }
