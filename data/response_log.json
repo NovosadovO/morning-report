@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:03:03.190871+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ae5eb35ca1"
-    },
-    {
       "ts": "2026-08-21T22:03:04.284677+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14084,6 +14078,12 @@
       "category": "confirm",
       "question": "gate_bill_paid: 💸 НОВИЙ РАХУНОК У ПОШТІ",
       "answer": "no"
+    },
+    {
+      "ts": "2026-10-16T02:31:34.689568+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_6fe701c4d7"
     }
   ]
 }
