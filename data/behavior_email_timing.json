@@ -1,9 +1,4 @@
 {
-  "80326": {
-    "sender": "notifications-noreply@linkedin.com",
-    "sender_raw": "LinkedIn <notifications-noreply@linkedin.com>",
-    "seen_ts": "2026-10-06T11:51:25.130415+00:00"
-  },
   "80327": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-16T18:57:23.186145+00:00"
+  },
+  "80977": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-16T20:02:33.203480+00:00"
   }
 }
