@@ -1,9 +1,9 @@
 {
-  "label": "🙈 Не нагадуй",
-  "action": "mute",
-  "kind": "notify_ack",
-  "title": "Несплачена підписка Strava",
-  "about": "Несплачена підписка Strava",
-  "means": "попросив більше не нагадувати",
-  "ts": "2026-10-16T15:27:14"
+  "label": "👍 Прочитав",
+  "action": "read",
+  "kind": "report",
+  "title": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI",
+  "about": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпретації. Поповни баланс на https://ai.studio → Billing.",
+  "means": "прочитав",
+  "ts": "2026-10-16T19:02:06"
 }
