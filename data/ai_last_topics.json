@@ -1,4 +1,24 @@
 {
+  "selfact|2026-10-16t13_51_49_771993": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
+    "ts": "2026-10-16T13:51:49.771993"
+  },
+  "action_detect|2026-10-16t13_44_58_487908": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-16T13:44:58.487908"
+  },
+  "action_detect|2026-10-16t13_43_54_368282": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має нагадування попра",
+    "ts": "2026-10-16T13:43:54.368282"
+  },
+  "openloop_promises|2026-10-16t13_41_05_386681": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-16T13:41:05.386681"
+  },
   "selfact|2026-10-16t13_35_59_415368": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться новинами та аналітикою від The Economist, що підтверджується свіжим листом.\",     \"why\": \"Свіжий ",
@@ -278,30 +298,5 @@
     "topic": "MSG_VIP_EMAIL/truthfix",
     "gist": "Олеже,  Бачу, що сьогодні, 16 жовтня 2026 року, у тебе вільний день за графіком змін. Вага зафіксована сьогодні на рівні 84.1 кг, до цілі 75 кг ще 9.1 кг. Сон з",
     "ts": "2026-10-16T10:32:08.061644"
-  },
-  "msg_vip_email|2026-10-16t10_31_58_466212": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Сьогодні п'ятниця, 16 жовтня 2026 року, і, згідно з наданими даними, у тебе вільний час, що є чудовою нагодою для підбиття підсумків та планува",
-    "ts": "2026-10-16T10:31:58.466212"
-  },
-  "selfact|2026-10-16t10_30_24_339466": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансію Cu",
-    "ts": "2026-10-16T10:30:24.339466"
-  },
-  "selfact|2026-10-16t10_15_38_487530": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Cu",
-    "ts": "2026-10-16T10:15:38.487530"
-  },
-  "foresight_truthfix|2026-10-16t10_10_40_109529": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, бачу, що ти змучений після нічної зміни, про що ти сам сказав сьогодні о 07:20. Дані про сон за сьогодні ще не надійшли, останні відомі — за вчора, 15 жо",
-    "ts": "2026-10-16T10:10:40.109529"
-  },
-  "openloop_promises|2026-10-16t13_41_05_386681": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-16T13:41:05.386681"
   }
 }
