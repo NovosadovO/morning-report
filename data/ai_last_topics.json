@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-10-16t06_07_40_742029": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-16T06:07:40.742029"
+  },
+  "action_detect|2026-10-16t06_00_58_882159": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-16T06:00:58.882159"
+  },
+  "action_detect|2026-10-16t06_00_48_170503": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
+    "ts": "2026-10-16T06:00:48.170503"
+  },
   "selfact|2026-10-16t05_52_28_262130": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річна оцінка співробітників\",     \"text\": \"Олеже, тобі надіслали інформацію щодо річної оцінки співробітників ",
@@ -283,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, твій колега Martin Kovac переслав тобі інформацію щодо р",
     "ts": "2026-10-16T02:14:23.371614"
-  },
-  "selfact|2026-10-16t01_58_48_906124": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала підписка Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потр",
-    "ts": "2026-10-16T01:58:48.906124"
-  },
-  "selfact|2026-10-16t01_42_50_948724": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, тобі надійшов лист від колеги Мартіна Ковача щодо річног",
-    "ts": "2026-10-16T01:42:50.948724"
-  },
-  "mailcal_extract|2026-10-16t01_39_38_212454": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"80901\",     \"title\": \"Річне оцінювання співробітників (Minebea Mitsumi)\",     \"date\": \"2026-10-13\",     \"time\": \"11:10\",     \"kind\": \"",
-    "ts": "2026-10-16T01:39:38.212454"
-  },
-  "action_detect|2026-10-16t06_00_48_170503": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
-    "ts": "2026-10-16T06:00:48.170503"
   }
 }
