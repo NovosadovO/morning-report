@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_tea",
-      "label": "❌ Ні",
-      "ts": "2026-09-21T20:16:49"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-09-21T20:16:50"
@@ -7199,6 +7193,12 @@
       "data": "rx_done_15f03b0393",
       "label": "✅ Зробив",
       "ts": "2026-10-16T13:44:56"
+    },
+    {
+      "t": "btn",
+      "data": "calrem_skip_crypto_move_1792143074",
+      "label": "❌ Не треба",
+      "ts": "2026-10-16T13:45:45"
     }
   ]
 }
