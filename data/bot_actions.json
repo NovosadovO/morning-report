@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "нагадування надіслати дані",
-      "detail": "206 год мовчання",
-      "module": "healthai",
-      "ts": "2026-10-10T07:00:19"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "🚶 Кроки за тиждень у середньому 9772 — ціль 8000 досягнута",
       "module": "healthai",
       "ts": "2026-10-16T05:21:02"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-16T07:00:47"
     }
   ]
 }
