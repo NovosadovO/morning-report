@@ -1010,20 +1010,47 @@ def get_natal_transits_short(max_aspects=5):
 
         aspects = _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3.0)
 
-        # ── Перевірка: чи транзитна планета ЩОЙНО перейшла у знак натального Асценденту ──
+        # ── Перевірка: чи транзитна планета РЕАЛЬНО в I домі (на Асценденті) ──
+        # 16.10: Олег поскаржився — бот писав «Юпітер на твоєму Асценденті вже 4
+        # місяці», хоча Юпітер ДАВНО перейшов у II дім. Причина: тут перевірявся
+        # лише ЗНАК ("tp.sign == asc_sign") — а знак триває ~12 міс. для Юпітера,
+        # тоді як "на Асценденті" астрологічно триває лише доки планета в I домі
+        # (до наступного cusp'у). Тепер рахуємо РЕАЛЬНИЙ дім через натальні cusps:
+        # лише дім 1 = «на Асценденті», інакше явно кажемо який дім зараз і
+        # забороняємо називати це Асцендентом.
         ingress_lines = []
         try:
+            natal_cusps = [
+                natal.first_house.abs_pos,   natal.second_house.abs_pos,  natal.third_house.abs_pos,
+                natal.fourth_house.abs_pos,  natal.fifth_house.abs_pos,   natal.sixth_house.abs_pos,
+                natal.seventh_house.abs_pos, natal.eighth_house.abs_pos, natal.ninth_house.abs_pos,
+                natal.tenth_house.abs_pos,   natal.eleventh_house.abs_pos, natal.twelfth_house.abs_pos,
+            ]
             asc_sign = natal.ascendant.sign
             for key, name_ua in PLANETS_LIST:
                 tp = getattr(transit, key, None)
-                if tp and tp.sign == asc_sign and key in ("jupiter", "saturn", "uranus", "neptune", "pluto"):
+                if not tp or key not in ("jupiter", "saturn", "uranus", "neptune", "pluto"):
+                    continue
+                if tp.sign != asc_sign:
+                    continue
+                house_n = _get_natal_house(tp.abs_pos, natal_cusps)
+                info = ingress_info(key)
+                phrase = info.get("phrase") if info else None
+                if house_n == 1:
                     # ПРАВДА, а не «щойно»: беремо ФАКТИЧНУ дату входу з ефемерид
-                    info = ingress_info(key)
-                    phrase = info.get("phrase") if info else None
                     ingress_lines.append(
-                        f"🌟 <b>{name_ua} у знаку твого Асценденту ({_sign_ua(asc_sign)})</b> — "
+                        f"🌟 <b>{name_ua} у твоєму I домі, на Асценденті ({_sign_ua(asc_sign)})</b> — "
                         + (phrase or "дата входу не обчислена")
                         + ". Рідкісний транзит: особистість, зовнішній вигляд, новий цикл."
+                    )
+                else:
+                    # той самий ЗНАК, що й Асцендент, але планета вже пройшла далі —
+                    # явно кажемо реальний дім, щоб AI не писав «на Асценденті»
+                    ingress_lines.append(
+                        f"ℹ️ <b>{name_ua} зараз у твоєму {house_n}-му домі</b> ({_sign_ua(asc_sign)}, "
+                        + (phrase or "дата входу в знак не обчислена")
+                        + f"). ВЖЕ НЕ на Асценденті (вийшов з I дому) — пиши саме про {house_n}-й дім, "
+                          "НЕ про Асцендент і НЕ про I дім."
                     )
         except Exception:
             pass
