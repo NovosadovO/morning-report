@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-16t12_49_47_970609": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, у тебе є нові рекомендовані вакансії на LinkedIn: Anti-Fraud Offi",
+    "ts": "2026-10-16T12:49:47.970609"
+  },
   "selfact|2026-10-16t12_34_03_685490": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії Anti-Fraud Officer та Customer Success Manager\",     \"text\": \"Олеже, з'явилися дві нові вакансії",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом, що показує поточні ціни",
     "ts": "2026-10-16T09:11:08.721427"
-  },
-  "openloop_promises|2026-10-16t09_09_02_616307": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T09:09:02.616307"
   }
 }
