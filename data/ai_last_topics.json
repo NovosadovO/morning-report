@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-16t03_00_42_190592": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховий поліс KOOPERATIVA\",     \"date\": \"2026-10-17\",     \"time\": \"\",     \"message\": \"Олеже, ти о",
+    "ts": "2026-10-16T03:00:42.190592"
+  },
   "deadlines|2026-10-16t02_43_22_400450": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80901\",     \"kind\": \"submit\",     \"title\": \"Річне оцінювання співробітників\",     \"org\": \"Minebea Mitsumi\",     \"deadline\": \"2026-10-3",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що були невдалі платежі до Runable на $10.00. Потр",
     "ts": "2026-10-15T22:35:07.278374"
-  },
-  "action_detect|2026-10-15t22_34_53_533765": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Переглянути графік змін та запланувати активність\", \"action_date\": \"2026-10-16\", \"action_time\": \"06:00\", \"",
-    "ts": "2026-10-15T22:34:53.533765"
   }
 }
