@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-09-21T20:16:50"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_water",
       "label": "❌ Ні",
       "ts": "2026-09-21T20:17:10"
@@ -7199,6 +7193,12 @@
       "data": "calrem_skip_crypto_move_1792143074",
       "label": "❌ Не треба",
       "ts": "2026-10-16T13:45:45"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_shower",
+      "label": "❌ Ні",
+      "ts": "2026-10-16T13:46:06"
     }
   ]
 }
