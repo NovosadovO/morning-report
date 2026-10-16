@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-16t13_05_02_852582": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
+    "ts": "2026-10-16T13:05:02.852582"
+  },
+  "action_detect|2026-10-16t13_00_22_398610": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-16T13:00:22.398610"
+  },
   "action_detect|2026-10-16t13_00_11_146551": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні вихідний, гарний момент для 20 хв ",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
     "ts": "2026-10-16T09:28:19.640783"
-  },
-  "foresight_truthfix|2026-10-16t09_23_47_377172": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, бачу, що твоя вага сьогодні, 16 жовтня 2026 року, становить 84.1 кг, тоді як ціль — 75 кг. Це на 9.1 кг більше.  Дані про калорії застарілі, останні відо",
-    "ts": "2026-10-16T09:23:47.377172"
-  },
-  "foresight|2026-10-16t09_23_36_025472": {
-    "topic": "foresight",
-    "gist": "Олеже, щоб скинути вагу до 75 кг, важливо не лише бігати, а й контролювати харчування, адже ти зараз на 84.1 кг. Спробуй приготувати салат з кіноа, куркою та ов",
-    "ts": "2026-10-16T09:23:36.025472"
   }
 }
