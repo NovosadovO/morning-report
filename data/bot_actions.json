@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, надійшла виплатна відомість за вересень 2026 року від",
-      "detail": "Лист від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026",
-      "module": "selfact",
-      "ts": "2026-10-10T09:08:05"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, команда Avalanche опублікувала пост про те, як Avalan",
       "detail": "Лист від Avalanche Team1 <avalancheteam1@substack.com> | How Avalanche Is Entering the Next Era of Tokenized Finance",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "💓 Сьогоднішні дані вже прийшли, але без HRV — останнє відоме значення за 2026-10-15 (1 дн. тому). Скинь, будь ласка, HRV окремо, якщо він є в застосунку QWatch.",
       "module": "healthai",
       "ts": "2026-10-16T11:43:46"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-16T12:06:15"
     }
   ]
 }
