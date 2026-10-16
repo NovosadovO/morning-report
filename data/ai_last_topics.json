@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-16t04_02_58_078891": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річне оцінювання співробітників\",     \"text\": \"Олеже, тобі надійшов лист від Martin Kovac щодо річного оцінюва",
+    "ts": "2026-10-16T04:02:58.078891"
+  },
+  "mailcal_extract|2026-10-16t03_58_33_035351": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"80901\",     \"title\": \"Річне оцінювання співробітників\",     \"date\": \"2026-10-13\",     \"time\": \"11:10\",     \"kind\": \"deadline\",     \"wh",
+    "ts": "2026-10-16T03:58:33.035351"
+  },
+  "foresight_truthfix|2026-10-16t03_57_19_054192": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, зараз 03:57, п'ятниця, 16 жовтня 2026 року, ти вдома, і це вільний день перед ранніми змінами, які починаються завтра. Дані про твій сон за 15 жовтня пок",
+    "ts": "2026-10-16T03:57:19.054192"
+  },
   "foresight|2026-10-16t03_57_07_692955": {
     "topic": "foresight",
     "gist": "Олеже, зараз глибока ніч, ти вдома і маєш вільний день, що є ідеальним моментом для короткої, але ефективної дихальної практики – вона допоможе розслабитися і п",
@@ -283,20 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-10-16T00:04:56.683037"
-  },
-  "action_detect|2026-10-16t00_01_19_472077": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-16T00:01:19.472077"
-  },
-  "action_detect|2026-10-16t00_01_08_641099": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
-    "ts": "2026-10-16T00:01:08.641099"
-  },
-  "proactive_actions|2026-10-16t00_00_11_598553": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховку KOOPERATIVA\",     \"date\": \"2026-10-17\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є н",
-    "ts": "2026-10-16T00:00:11.598553"
   }
 }
