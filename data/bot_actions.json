@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені додати нагадування про Finweek Brati",
-      "detail": "У календарі на 13.10 є дві схожі події про Finweek Bratislava, і незрозуміло, чи потрібне окреме нагадування, чи Олег вже про це знає/планує.",
-      "module": "selfact",
-      "ts": "2026-10-10T08:37:54"
-    },
-    {
       "kind": "notify",
       "what": "Garmin Connect+ підписка",
       "detail": "З листа від Garmin <GarminServicesBilling@garmin.com> видно, що безкоштовний пробний період Garmin Connect+ закінчується 05.11.2026, і почнеться автоматичне списання коштів.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-16T11:06:35"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-16",
+      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-16T11:23:36"
     }
   ]
 }
