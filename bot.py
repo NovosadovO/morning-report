@@ -2969,6 +2969,18 @@ def handle_command(chat_id, text):
         import threading as _th_h1
         _th_h1.Thread(target=_run_h1, daemon=True, name="healthai-stats").start()
 
+    elif text.lower().strip() in ["/астростат", "/astrostat", "/астро статистика", "/аj"]:
+        def _run_aj1():
+            try:
+                import sys as _saj1, os as _oaj1
+                _saj1.path.insert(0, _oaj1.path.dirname(__file__))
+                import astro_journal as _aj1
+                send(chat_id, _aj1.stats_block())
+            except Exception as _e_aj1:
+                send(chat_id, f"⚠️ Помилка astro-журналу: {str(_e_aj1)[:300]}")
+        import threading as _th_aj1
+        _th_aj1.Thread(target=_run_aj1, daemon=True, name="astro-journal-stats").start()
+
     elif text.lower().strip() in ["/коуч", "/coach", "/тренер"]:
         def _run_h2():
             try:
@@ -6204,6 +6216,29 @@ def _route_callback(cb, confirmed: bool = False):
                 send(chat_id, "🔇 Не буду турбувати про здоров'я 12 годин.")
         except Exception as _e_hcb:
             send(chat_id, f"⚠️ healthai: {str(_e_hcb)[:200]}")
+        return
+    # ── astro_journal: оцінка "чи збіглось" у журналі спостережень ────────
+    if data.startswith("aj_"):
+        try:
+            import astro_journal as _aj_cb
+            msg_id = cb["message"]["message_id"]
+            _verdict_labels = {"ok": "✅ Збіглось", "no": "❌ Не збіглось", "unsure": "🤷 Не певен"}
+            _matched = None
+            for _v in ("ok", "no", "unsure"):
+                if data.startswith(f"aj_{_v}_"):
+                    _matched = _v
+                    _entry_id = data[len(f"aj_{_v}_"):]
+                    break
+            if _matched:
+                _aj_cb.record_feedback(_entry_id, _matched)
+                api("editMessageReplyMarkup", {
+                    "chat_id": chat_id, "message_id": msg_id,
+                    "reply_markup": {"inline_keyboard": [[
+                        {"text": f"{_verdict_labels[_matched]} — записано", "callback_data": "noop"}
+                    ]]}
+                })
+        except Exception as _e_ajcb:
+            send(chat_id, f"⚠️ astro_journal: {str(_e_ajcb)[:200]}")
         return
     # ПОВНА ПАМ'ЯТЬ: кожне натискання кнопки — теж відповідь Олега.
     try:

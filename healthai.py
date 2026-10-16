@@ -1176,6 +1176,128 @@ def hourly_checkin(send: bool = True) -> str:
     return text
 
 
+# ─── СКОР ВІДНОВЛЕННЯ ПЕРЕД НІЧНОЮ ЗМІНОЮ (запит Олега 20.10) ────────────────
+# Раніше бот лише ПОСТФАКТУМ помічав поганий сон/низький HRV. Олег попросив
+# попередження ЗАЗДАЛЕГІДЬ — перед нічною зміною, враховуючи HRV, борг сну і
+# скільки ночей підряд він вже відпрацював, щоб встигнути підготуватись
+# (лягти раніше, менше кави тощо), а не дізнатись про проблему вже вночі.
+RECOVERY_STATE_FILE = "healthai_recovery.json"
+RECOVERY_WINDOW = (10, 17)       # перевіряємо й надсилаємо тільки 10:00-17:59 — до старту о 18:00
+RECOVERY_HRV_DROP_PCT = 15.0     # HRV нижче сер.7д на цей % — вже сигнал
+RECOVERY_SLEEP_DEBT_H = 1.0      # недосип за ніч понад цю величину (год) — вже сигнал
+RECOVERY_CONSEC_NIGHTS_WARN = 2  # від стількох нічних підряд ПЕРЕД цією — вже привід попередити
+
+
+def _consecutive_nights_worked() -> int:
+    """Скільки нічних змін ПІДРЯД Олег вже відпрацював ДО сьогодні (не рахуючи
+    сьогоднішню, яка ще не почалась) — дивимось у календар назад, день за днем,
+    поки не впаде нічна зміна чи дані недоступні."""
+    try:
+        n = 0
+        for off in range(-1, -8, -1):
+            shift = K.classify_shift(K.events_for_day(off))
+            if shift != "night":
+                break
+            n += 1
+        return n
+    except Exception as e:
+        K.log(TAG, f"_consecutive_nights_worked error: {e}")
+        return 0
+
+
+def recovery_score(a: dict = None) -> dict:
+    """Факти (без вигадок AI) — HRV-падіння, борг сну за ост. ночі, скільки
+    нічних підряд. 'risk' — проста сума балів, 'level' ok/mid/weak."""
+    a = a or analytics(14)
+    reasons = []
+    risk = 0
+
+    hrv = a.get("hrv") or {}
+    hrv_drop_pct = None
+    if hrv.get("last") is not None and hrv.get("avg7"):
+        try:
+            hrv_drop_pct = round((hrv["avg7"] - hrv["last"]) / hrv["avg7"] * 100, 1)
+        except Exception:
+            hrv_drop_pct = None
+    if hrv_drop_pct is not None and hrv_drop_pct >= RECOVERY_HRV_DROP_PCT:
+        risk += 2
+        reasons.append(f"HRV {hrv['last']} мс — нижче сер.7д {hrv['avg7']} мс на {hrv_drop_pct}%")
+
+    sleep = a.get("sleep") or {}
+    sleep_debt_h = 0.0
+    nights_counted = 0
+    if sleep.get("avg7") is not None:
+        per_night_debt = max(0.0, round(SLEEP_MIN_OK - sleep["avg7"], 1))
+        nights_counted = max(1, min(3, sleep.get("n") or 0))
+        sleep_debt_h = round(per_night_debt * nights_counted, 1)
+        if per_night_debt > 0:
+            risk += 2 if per_night_debt >= RECOVERY_SLEEP_DEBT_H else 1
+            reasons.append(f"борг сну ~{sleep_debt_h} год за {nights_counted} ост. ноч. "
+                            f"(сер. {sleep['avg7']} год, норма {SLEEP_MIN_OK}+ год)")
+
+    nights_row = _consecutive_nights_worked()
+    if nights_row >= RECOVERY_CONSEC_NIGHTS_WARN:
+        risk += min(nights_row, 3)
+        reasons.append(f"{nights_row} нічні зміни підряд ПЕРЕД цією")
+
+    level = "weak" if risk >= 4 else ("mid" if risk >= 2 else "ok")
+    return {"level": level, "risk": risk, "reasons": reasons,
+            "hrv_drop_pct": hrv_drop_pct, "sleep_debt_h": sleep_debt_h,
+            "consecutive_nights": nights_row}
+
+
+def recovery_precheck(send: bool = True, force: bool = False) -> bool:
+    """Раз на день, у вікні RECOVERY_WINDOW, якщо СЬОГОДНІ нічна зміна —
+    дивимось на скор відновлення і, якщо він слабкий/середній, пишемо
+    ЗАЗДАЛЕГІДЬ (а не після того, як зміна вже почалась/закінчилась)."""
+    if not force and _muted():
+        return False
+    now = _now()
+    if not force and not (RECOVERY_WINDOW[0] <= now.hour <= RECOVERY_WINDOW[1]):
+        return False
+    try:
+        if _shift_for(0) != "night":
+            return False
+    except Exception as e:
+        K.log(TAG, f"recovery_precheck shift error: {e}")
+        return False
+
+    day = now.strftime("%Y-%m-%d")
+    state = K.load(RECOVERY_STATE_FILE, default={}) or {}
+    if not force and state.get("day") == day:
+        return False
+    state["day"] = day
+    K.save(RECOVERY_STATE_FILE, state)
+
+    a = analytics(14)
+    rs = recovery_score(a)
+    if rs["level"] == "ok" and not force:
+        K.log(TAG, f"recovery_precheck: скор ОК, не пишу ({rs})")
+        return False
+
+    if not send:
+        return True
+
+    emoji = "🔴" if rs["level"] == "weak" else "🟡"
+    header = f"{emoji} <b>Скор відновлення перед нічною</b>"
+    reasons_text = "\n".join(f"• {r}" for r in rs["reasons"]) or "• помітних сигналів немає, але варто бути уважним"
+    prompt = (f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n\n"
+              f"СКОР ВІДНОВЛЕННЯ ПЕРЕД НІЧНОЮ ЗМІНОЮ: {rs['level']} (бали {rs['risk']})\n"
+              f"ПРИЧИНИ:\n{reasons_text}\n\n"
+              "Напиши Олегу коротко (3-4 речення): що ЦЕ означає для сьогоднішньої нічної "
+              "саме через ці конкретні цифри, і ОДНУ конкретну пораду як підготуватись "
+              "ЗАРАЗ (до старту зміни) — лягти раніше/менше кави/коротка денна сонна павза "
+              "тощо, під ЦІ фактори. Без загальних порад типу «відпочивай більше». Без вступів.")
+    ai = (K.gemini_text(prompt, max_tokens=450, temperature=0.6, tag=TAG) or "").strip()
+    text = f"{header}\n\n{reasons_text}"
+    if ai:
+        text += f"\n\n{ai}"
+    ok = K.send_card(text, _kb(), tag=TAG)
+    if ok:
+        _journal("recovery", f"скор відновлення перед нічною: {rs['level']}", reasons_text)
+    return ok
+
+
 # ─── ПЛАНУВАЛЬНИК (викликається з monitor_loop щохвилини) ────────────────────
 
 # Звіти перенесені у hcoach.py (AI-коуч 2.0): ранковий план 07:00, вечірній
@@ -1227,6 +1349,12 @@ def tick() -> str:
             done.append(f"initiative:{n}")
     except Exception as e:
         K.log(TAG, f"initiative error: {e}")
+
+    try:
+        if recovery_precheck():
+            done.append("recovery")
+    except Exception as e:
+        K.log(TAG, f"recovery error: {e}")
 
     try:
         if data_reminder():

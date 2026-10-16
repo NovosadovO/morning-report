@@ -1279,6 +1279,15 @@ def run_assistant_watcher():
                     print(f"[healthai] {_hai_done}", flush=True)
             except Exception as _e_hai:
                 print(f"[healthai] watcher error: {_e_hai}", flush=True)
+            # Astro-журнал спостережень: раз на день питає Олега, чи збіглось
+            # учорашнє астро-спостереження, і накопичує його ВЛАСНУ статистику
+            # (запит Олега 20.10).
+            try:
+                import astro_journal as _aj_w
+                if _aj_w.ask_tick():
+                    print("[astro_journal] запитав про минуле спостереження", flush=True)
+            except Exception as _e_aj_w:
+                print(f"[astro_journal] watcher error: {_e_aj_w}", flush=True)
             # AI-КОУЧ 2.0: ранковий план 07:00, вечірній розбір + оцінка 0-100
             # о 21:20, аналіз сну (ср 14:40), тижневий нд 19:30, місячний 1-го
             # о 10:00 — усе з графіками.

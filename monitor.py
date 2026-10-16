@@ -6047,6 +6047,14 @@ def main():
             # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
             _astro_ai_full = _astro_ai
             print(f"[main] ✅ _astro_ai_full set to {len(_astro_ai)} chars", flush=True)
+            # Astro-журнал спостережень (запит Олега 20.10) — зберігаємо тему
+            # дня, щоб потім самим спитати Олега "чи збіглось" і показати
+            # його ВЛАСНУ статистику збігу, а не вірити астрології на слово.
+            try:
+                import astro_journal as _aj_log
+                _aj_log.log_prediction(_astro_ai, slot=str(local_hour))
+            except Exception as _e_aj:
+                print(f"[astro_journal] log error: {_e_aj}", flush=True)
         else:
             _astro_ai_full = ""
             print(f"[astro_ai] RESULT: empty or None — skipping block", flush=True)
