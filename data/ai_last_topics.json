@@ -1,4 +1,24 @@
 {
+  "mailcal_extract|2026-10-16t15_24_59_019733": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-16T15:24:59.019733"
+  },
+  "email_ai_item|2026-10-16t15_12_59_879301": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Cointelegraph через LinkedIn є інформаційним бюлетенем Crypto Biz. Він розповідає про токенізовані акції, які починають пе",
+    "ts": "2026-10-16T15:12:59.879301"
+  },
+  "openloop_promises|2026-10-16t15_11_30_285687": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-16T15:11:30.285687"
+  },
+  "deadlines|2026-10-16t15_10_28_943020": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-10-16T15:10:28.943020"
+  },
   "selfact|2026-10-16t15_09_44_367467": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансію Cu",
     "ts": "2026-10-16T12:03:05.090315"
-  },
-  "action_detect|2026-10-16t12_01_12_831015": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-16T12:01:12.831015"
-  },
-  "action_detect|2026-10-16t12_01_00_093021": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
-    "ts": "2026-10-16T12:01:00.093021"
-  },
-  "deadlines|2026-10-16t11_51_03_108829": {
-    "topic": "deadlines",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T11:51:03.108829"
-  },
-  "selfact|2026-10-16t11_47_30_987583": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилася нова вакансія Customer Success Manager ",
-    "ts": "2026-10-16T11:47:30.987583"
   }
 }
