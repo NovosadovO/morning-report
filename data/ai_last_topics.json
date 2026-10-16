@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-16t18_32_47_606974": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Abacus.AI\",     \"text\": \"Олеже, зверни увагу: платіж на $20.00 до Abacus.AI за допомогою твоєї ",
+    "ts": "2026-10-16T18:32:47.606974"
+  },
   "mailcal_extract|2026-10-16t18_26_50_218608": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-10-16T15:11:30.285687"
-  },
-  "deadlines|2026-10-16t15_10_28_943020": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-10-16T15:10:28.943020"
   }
 }
