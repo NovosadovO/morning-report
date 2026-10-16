@@ -1,9 +1,4 @@
 {
-  "80318": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-10-06T10:15:21.535751+00:00"
-  },
   "80319": {
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-16T16:17:46.236165+00:00"
+  },
+  "80964": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Google через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-16T16:45:54.467226+00:00"
   }
 }
