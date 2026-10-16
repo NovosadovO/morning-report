@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T04:30:27.079311+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Олег на нічній зміні",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-22T05:46:31.464926+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14090,6 +14080,12 @@
       "extra": {
         "shift": "free"
       }
+    },
+    {
+      "ts": "2026-10-16T08:02:30.219961+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_low_8a96d11c63"
     }
   ]
 }
