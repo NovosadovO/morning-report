@@ -10150,5 +10150,28 @@
       "tag": "healthai"
     },
     "ts": "2026-10-16T08:05:24.433847+00:00"
+  },
+  "ae51d32e63": {
+    "key": "note|олег шукає роботу customer success manager",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег шукає роботу Customer Success Manager »\n\nОлег отримує сповіщення про вакансію Customer Success Manager – US market, Kosice в NATEK, що свідчить про його інтерес до цієї позиції.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег шукає роботу Customer Success Manager",
+      "desc": "Олег отримує сповіщення про вакансію Customer Success Manager – US market, Kosice в NATEK, що свідчить про його інтерес до цієї позиції.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-10-16T08:28:16.755881+00:00"
   }
 }
