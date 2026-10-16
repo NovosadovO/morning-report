@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-10-16t15_30_32_372488": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти холодний душ\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийми холодний душ, оскільки ",
+    "ts": "2026-10-16T15:30:32.372488"
+  },
+  "selfact|2026-10-16t15_25_24_593752": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжної інформації для Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 ",
+    "ts": "2026-10-16T15:25:24.593752"
+  },
+  "action_detect|2026-10-16t15_25_09_979533": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-16T15:25:09.979533"
+  },
   "mailcal_extract|2026-10-16t15_24_59_019733": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -283,20 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn містить рекомендації вакансій на основі активності користувача. Пропонуються три вакансії в Словаччині: Anti-Fraud Office",
     "ts": "2026-10-16T12:16:15.371449"
-  },
-  "openloop_promises|2026-10-16t12_10_12_684991": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T12:10:12.684991"
-  },
-  "healthai|2026-10-16t12_05_42_305889": {
-    "topic": "healthai",
-    "gist": "😴 Олеже, поки що даних про твій сьогоднішній сон немає, останній раз ми бачили 8.3 години за вчора. Але з огляду на \"дуже нерівний ритм сну\" (розкид ±3.67 год) ",
-    "ts": "2026-10-16T12:05:42.305889"
-  },
-  "selfact|2026-10-16t12_03_05_090315": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансію Cu",
-    "ts": "2026-10-16T12:03:05.090315"
   }
 }
