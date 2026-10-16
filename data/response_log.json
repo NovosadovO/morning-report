@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T08:46:30.275056+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_610b286f81"
-    },
-    {
       "ts": "2026-08-22T08:53:06.361990+00:00",
       "category": "chat",
       "question": "ті покупки що відмічені видали",
@@ -14080,6 +14074,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-16T20:02:07.791079+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
