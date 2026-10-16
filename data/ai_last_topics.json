@@ -1,4 +1,9 @@
 {
+  "bills|2026-10-16t06_44_21_655235": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-16T06:44:21.655235"
+  },
   "selfact|2026-10-16t06_39_16_304054": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Річна оцінка співробітників\",     \"text\": \"Олеже, тобі надійшов лист від Martin Kovac з темою \\\"Fwd: Ročné hod",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80901\",     \"kind\": \"submit\",     \"title\": \"Річне оцінювання співробітників\",     \"org\": \"Minebea Mitsumi\",     \"deadline\": \"2026-10-3",
     "ts": "2026-10-16T02:43:22.400450"
-  },
-  "action_detect|2026-10-16t02_34_10_679848": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати біг\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Заплануй наступний біг, оскільки з м",
-    "ts": "2026-10-16T02:34:10.679848"
   }
 }
