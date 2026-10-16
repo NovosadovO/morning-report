@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:03:04.284677+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_145204ac45"
-    },
-    {
       "ts": "2026-08-21T22:03:25.874557+00:00",
       "category": "confirm",
       "question": "email_delete: 🔷 The Daily: Is bitcoin's rally the real turnaround? Bernstein thinks so",
@@ -14084,6 +14078,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_6fe701c4d7"
+    },
+    {
+      "ts": "2026-10-16T02:33:25.270401+00:00",
+      "category": "confirm",
+      "question": "gate_bill_skip: 💸 НОВИЙ РАХУНОК У ПОШТІ",
+      "answer": "no"
     }
   ]
 }
