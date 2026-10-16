@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T11:45:35.753889+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_46e4eb2d43"
-    },
-    {
       "ts": "2026-08-22T12:00:04.844602+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14085,6 +14079,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-10-16T21:31:14.569088+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😕 Нижче норми",
+      "extra": {
+        "score": 2
+      }
     }
   ]
 }
