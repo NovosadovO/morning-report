@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-16t10_00_02_753852": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Cu",
+    "ts": "2026-10-16T10:00:02.753852"
+  },
   "selfact|2026-10-16t09_44_15_532301": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Customer Success Manager\",     \"text\": \"Олеже, з'явилося нове сповіщення про вакансію Customer S",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст є аналізом поточного стану Олега та рекомендаці",
     "ts": "2026-10-16T07:20:57.945621"
-  },
-  "context_ask_ai_truthfix|2026-10-16t07_20_47_017680": {
-    "topic": "context_ask_ai/truthfix",
-    "gist": "Олеже, як ти плануєш використати вільний день сьогодні, 16 жовтня, враховуючи, що дані про сон за 15 жовтня показують 8.3 години, а звички ще не відмічені? Це м",
-    "ts": "2026-10-16T07:20:47.017680"
   }
 }
