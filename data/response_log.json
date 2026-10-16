@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T06:00:37.192551+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн check-in на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-22"
-      }
-    },
-    {
       "ts": "2026-08-22T07:16:33.621597+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14082,6 +14072,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_shower"
+    },
+    {
+      "ts": "2026-10-16T15:25:42.945881+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Надолужити біг",
+      "answer": "yes"
     }
   ]
 }
