@@ -8274,5 +8274,10 @@
     "q": "Скільки годин ти спав сьогодні, 16 жовтня?",
     "kind": "confirm",
     "asked_at": "2026-10-16T08:05:26"
+  },
+  "note|олег шукає роботу customer success manager": {
+    "q": "📝 Хочу записати нотатку:\n\n« Олег шукає роботу Customer Success Manager »\n\nОлег отримує сповіщення про вакансію Customer Success Manager – US market, Kosice в NATEK, що свідчить про його інтерес до цієї позиції.\n\nПоставити?",
+    "kind": "write",
+    "asked_at": "2026-10-16T08:28:22"
   }
 }
