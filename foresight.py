@@ -15,6 +15,7 @@
 Частота: не частіше ніж раз на 45 хв, і лише коли реально є що сказати.
 """
 
+import re
 from datetime import datetime, timedelta
 
 import ai_kit as K
@@ -734,17 +735,43 @@ _LIFE_POOL = [
 
 _TRY_NEW_GAP_DAYS = 3
 
+# Баг 12.10 (скарга Олега, скрін): "спробуй нове" (вузька ідея на 2-3 речення)
+# розросталось у перекази сьогоднішніх пробіжки/ваги/крипто-портфеля — ТИМИ Ж
+# цифрами, що й окремі сповіщення (Garmin, крипто-алерт). Промпт це забороняє
+# текстом, але Gemini іноді ігнорує заборону — тож тут ще й ПРОГРАМНИЙ фільтр:
+# якщо AI все одно вставив вагу/сон/кроки/калорії/% чи суму грошей, текст
+# відкидається і йде нейтральне запасне речення замість нього.
+_FORBIDDEN_FIGURE_RE = [
+    re.compile(r"\d+[.,]?\d*\s*кг\b", re.I),                      # вага
+    re.compile(r"сон[^.!?\n]{0,20}\d+[.,]?\d*\s*(год|годин)", re.I),
+    re.compile(r"\d+[.,]?\d*\s*(год|годин)[^.!?\n]{0,20}сон", re.I),
+    re.compile(r"\d+[.,]?\d*\s*(крок|кроків)", re.I),             # кроки
+    re.compile(r"\d+[.,]?\d*\s*(ккал|калорі)", re.I),             # калорії
+    re.compile(r"\d+[.,]?\d*\s*%"),                                # будь-який %
+    re.compile(r"[$€]\s?\d|\d[.,]?\d*\s?[$€]"),                   # суми грошей
+]
 
-def _try_new_brief() -> str:
-    """Раз на кілька днів — ідея поза звичкою з кнопкою "додати"."""
+
+def _has_forbidden_figures(text: str) -> bool:
+    t = text or ""
+    for rx in _FORBIDDEN_FIGURE_RE:
+        if rx.search(t):
+            return True
+    return False
+
+
+def _try_new_pick():
+    """Якщо час для нової теми 'спробуй нове' — повертає draft-dict (тема,
+    текст, що потрібно позначити у стані). Нічого не надсилає й не позначає —
+    це робить _try_new_commit(). Дозволяє tick() спершу перевірити, чи та сама
+    картка не збігається з крипто-алертом в цьому ж проході."""
     st = _state()
     last_day = str(st.get("try_new_last") or "")
-    today = _now().strftime("%Y-%m-%d")
     if last_day:
         try:
             last_dt = datetime.strptime(last_day, "%Y-%m-%d")
             if (_now() - last_dt).days < _TRY_NEW_GAP_DAYS:
-                return ""
+                return None
         except Exception:
             pass
     used = st.get("life_used") or []
@@ -754,15 +781,6 @@ def _try_new_brief() -> str:
         used = []
     idx = (_now().timetuple().tm_yday + _now().hour) % len(pool)
     pick = pool[idx]
-    # Баг 12.10 (скарга Олега, скрін): це повідомлення (вузька ідея "спробуй
-    # нове" на 2-3 речення) розрослось у кілька абзаців з переказом сьогоднішніх
-    # пробіжки/ваги/крипто-портфеля — ТИМИ Ж цифрами й майже тими ж словами, що
-    # й окреме сповіщення garmin_periodic_notify за 9 хв до цього. Причина —
-    # allctx/ai_brain підмішують у КОЖЕН промпт (через monitor._gem_post) повний
-    # зріз усіх даних, і модель використовує його як "розгін" навіть тут, де
-    # тема геть про інше. Явно забороняємо це саме тут, а не прибираємо allctx
-    # (Олег сам просив AI мати повний доступ до всього) — просто ця конкретна
-    # картка має лишатись про pick, а не ставати ще одним дублем щоденного звіту.
     prompt = (
         "Ти особистий асистент Олега. " + _PROFILE + "\n\n"
         "Тема для «спробуй нове»: " + pick + ".\n\n"
@@ -782,32 +800,61 @@ def _try_new_brief() -> str:
                              tag=TAG) or ""
     except Exception as e:
         _log("gemini trynew: " + str(e))
+    if body.strip() and _has_forbidden_figures(body):
+        _log("trynew: AI згадав заборонені цифри — відкидаю, беру нейтральний текст")
+        body = ""
     if not body.strip():
         body = "Ідея на найближчі дні: " + pick + "."
-    ok = False
-    try:
-        ok = K.send_card("✨ <b>СПРОБУЙ НОВЕ</b>\n\n" + body,
-                         tag="MSG_FORESIGHT_TRYNEW")
-    except Exception as e:
-        _log("send trynew: " + str(e))
-    if not ok:
-        return ""
+    return {"pick": pick, "body": body, "used": used}
+
+
+def _try_new_mark(draft) -> None:
+    today = _now().strftime("%Y-%m-%d")
     try:
         K.update_key(STATE, "try_new_last", today)
-        used2 = list(used) + [pick]
+        used2 = list(draft["used"]) + [draft["pick"]]
         K.update_key(STATE, "life_used", used2[-len(_LIFE_POOL):])
     except Exception as e:
         _log("state trynew: " + str(e))
+
+
+def _try_new_ask(draft, body: str = None) -> None:
+    today = _now().strftime("%Y-%m-%d")
+    pick = draft["pick"]
+    txt = body if body is not None else draft["body"]
     try:
         import askme as A
         A.ask("💾 Додати нагадування спробувати це найближчими днями?",
               kind="write", key="trynew|" + today + "|" + pick[:40],
               meta={"summary": "Спробувати: " + pick[:90],
-                    "desc": body[:250]},
+                    "desc": txt[:250]},
               tag="MSG_FORESIGHT_TRYNEW_ASK")
     except Exception as e:
         _log("ask trynew skip: " + str(e))
-    return "trynew:" + pick[:30]
+
+
+def _try_new_commit(draft) -> str:
+    """Надсилає картку 'спробуй нове' окремо (коли крипто-алерту в цьому
+    проході немає — старий, незмінний шлях)."""
+    ok = False
+    try:
+        ok = K.send_card("✨ <b>СПРОБУЙ НОВЕ</b>\n\n" + draft["body"],
+                         tag="MSG_FORESIGHT_TRYNEW")
+    except Exception as e:
+        _log("send trynew: " + str(e))
+    if not ok:
+        return ""
+    _try_new_mark(draft)
+    _try_new_ask(draft)
+    return "trynew:" + draft["pick"][:30]
+
+
+def _try_new_brief() -> str:
+    """Самостійний виклик (напр. з тестів/ручного /вперед) — як і раніше."""
+    draft = _try_new_pick()
+    if not draft:
+        return ""
+    return _try_new_commit(draft)
 
 
 # ─── КРИПТО: РУХ ≥5% ЗА 24 ГОД (ТІЛЬКИ DEFILLAMA) ────────────────────────────
@@ -816,21 +863,26 @@ _CRYPTO_MOVE_PCT = 5.0
 _CRYPTO_NOTE_PCT = 10.0
 
 
-def _crypto_watch_brief() -> str:
-    """Дивиться на watchlist через coins.llama.fi (DefiLlama). Жодного
-    CoinGecko тут. Мовчить, якщо DefiLlama недоступний."""
+def _crypto_fmt_pct(pct: float) -> str:
+    return ("+%.1f" % pct) if pct > 0 else ("%.1f" % pct)
+
+
+def _crypto_watch_pick():
+    """Дивиться на watchlist через coins.llama.fi (DefiLlama). Якщо є новий
+    незабрифений рух ≥5% за 24г — повертає draft-dict. Нічого не надсилає й
+    не позначає як побачене — це робить _crypto_commit()."""
     try:
         import llama_prices as L
     except Exception as e:
         _log("llama_prices import: " + str(e))
-        return ""
+        return None
     try:
         moves = L.change_pct(24) or {}
     except Exception as e:
         _log("llama change_pct: " + str(e))
-        return ""
+        return None
     if not moves:
-        return ""
+        return None
     today = _now().strftime("%Y-%m-%d")
     for sym, m in sorted(moves.items(), key=lambda kv: -abs(kv[1]["pct"])):
         pct = m["pct"]
@@ -840,37 +892,140 @@ def _crypto_watch_brief() -> str:
         key = "crypto|" + sym + "|" + today + "|" + direction
         if _seen(key):
             continue
-        arrow = "🟢▲" if pct > 0 else "🔴▼"
-        txt = (arrow + " <b>" + sym + " " + ("+%.1f" % pct if pct > 0 else
-               "%.1f" % pct) + "% за 24г</b>\n\n"
-               "Зараз: " + ("%.4f" % m["now"] if m["now"] < 10 else
-                            "%.2f" % m["now"]) + " $\n"
-               "24г тому: " + ("%.4f" % m["then"] if m["then"] < 10 else
-                                "%.2f" % m["then"]) + " $\n\n"
-               "📊 Джерело: DefiLlama (coins.llama.fi)")
-        ok = False
-        try:
-            ok = K.send_card(txt, tag="MSG_FORESIGHT_CRYPTO")
-        except Exception as e:
-            _log("send crypto: " + str(e))
-        if not ok:
-            continue
-        _mark(key, sym + " " + str(pct) + "%")
-        if abs(pct) >= _CRYPTO_NOTE_PCT:
-            try:
-                import askme as A
-                A.ask("💾 Записати нотатку про рух " + sym + " (" +
-                      ("+%.1f" % pct if pct > 0 else "%.1f" % pct) +
-                      "% за 24г)?",
-                      kind="write", key="cryptonote|" + key,
-                      meta={"summary": "Нотатка: " + sym + " " +
-                            ("+%.1f" % pct if pct > 0 else "%.1f" % pct) +
-                            "% за 24г (DefiLlama)",
-                            "desc": txt[:250]},
-                      tag="MSG_FORESIGHT_CRYPTO_ASK")
-            except Exception as e:
-                _log("ask crypto skip: " + str(e))
-        return "crypto:" + sym + " " + str(pct) + "%"
+        return {"sym": sym, "pct": pct, "now": m["now"], "then": m["then"],
+                "key": key}
+    return None
+
+
+def _crypto_card_text(draft) -> str:
+    sym = draft["sym"]; pct = draft["pct"]
+    arrow = "🟢▲" if pct > 0 else "🔴▼"
+    return (arrow + " <b>" + sym + " " + _crypto_fmt_pct(pct) + "% за 24г</b>\n\n"
+            "Зараз: " + ("%.4f" % draft["now"] if draft["now"] < 10 else
+                         "%.2f" % draft["now"]) + " $\n"
+            "24г тому: " + ("%.4f" % draft["then"] if draft["then"] < 10 else
+                             "%.2f" % draft["then"]) + " $\n\n"
+            "📊 Джерело: DefiLlama (coins.llama.fi)")
+
+
+def _crypto_mark(draft) -> None:
+    _mark(draft["key"], draft["sym"] + " " + str(draft["pct"]) + "%")
+
+
+def _crypto_ask(draft, txt: str) -> None:
+    pct = draft["pct"]; sym = draft["sym"]
+    if abs(pct) < _CRYPTO_NOTE_PCT:
+        return
+    try:
+        import askme as A
+        A.ask("💾 Записати нотатку про рух " + sym + " (" +
+              _crypto_fmt_pct(pct) + "% за 24г)?",
+              kind="write", key="cryptonote|" + draft["key"],
+              meta={"summary": "Нотатка: " + sym + " " + _crypto_fmt_pct(pct) +
+                    "% за 24г (DefiLlama)",
+                    "desc": txt[:250]},
+              tag="MSG_FORESIGHT_CRYPTO_ASK")
+    except Exception as e:
+        _log("ask crypto skip: " + str(e))
+
+
+def _crypto_commit(draft) -> str:
+    """Надсилає крипто-алерт окремо (коли 'спробуй нове' в цьому проході
+    немає — старий, незмінний шлях)."""
+    txt = _crypto_card_text(draft)
+    ok = False
+    try:
+        ok = K.send_card(txt, tag="MSG_FORESIGHT_CRYPTO")
+    except Exception as e:
+        _log("send crypto: " + str(e))
+    if not ok:
+        return ""
+    _crypto_mark(draft)
+    _crypto_ask(draft, txt)
+    return "crypto:" + draft["sym"] + " " + str(draft["pct"]) + "%"
+
+
+def _crypto_watch_brief() -> str:
+    """Самостійний виклик (напр. з тестів/ручного /вперед) — як і раніше."""
+    draft = _crypto_watch_pick()
+    if not draft:
+        return ""
+    return _crypto_commit(draft)
+
+
+def _send_merged(trynew, crypto) -> str:
+    """Скарга Олега 16.10 (скрін): 'спробуй нове' і крипто-алерт в один
+    прохід виходили як 2 окремі картки про майже одне й те саме (напр. ідея
+    'спробуй інвест-аналіз' і окремий алерт про ТОЙ САМИЙ рух ONDO відразу
+    за нею). Якщо обидва готові вистрілити в один прохід — об'єднуємо їх в
+    ОДНЕ повідомлення від AI замість двох."""
+    pick = trynew["pick"]
+    sym = crypto["sym"]; pct = crypto["pct"]
+    prompt = (
+        "Ти особистий асистент Олега. " + _PROFILE + "\n\n"
+        "Напиши ОДНЕ повідомлення українською (4-5 речень), що об'єднує ДВІ "
+        "окремі теми в один зв'язний текст без штучного зв'язку між ними, "
+        "якщо його нема:\n"
+        "1) ідея «спробуй нове»: " + pick + ";\n"
+        "2) крипто-рух: " + sym + " " + _crypto_fmt_pct(pct) +
+        "% за 24г (джерело DefiLlama).\n\n"
+        "Подай обидві теми як два короткі абзаци під одним теплим вступом, "
+        "тон живий, як друг. Не вигадуй фальшивого зв'язку між темами. Не "
+        "згадуй жодних інших цифр (вагу, сон, кроки, калорії, гроші) — лише "
+        "ту одну крипто-цифру, що вказана вище. Без заголовків markdown.")
+    body = ""
+    try:
+        body = K.gemini_text(prompt, max_tokens=350, temperature=0.8,
+                             tag=TAG) or ""
+    except Exception as e:
+        _log("gemini merged: " + str(e))
+    if not body.strip():
+        body = ("Ідея на найближчі дні: " + pick + ".\n\n" +
+                sym + " " + _crypto_fmt_pct(pct) + "% за 24г (DefiLlama).")
+    ok = False
+    try:
+        ok = K.send_card("✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\n" + body,
+                         tag="MSG_FORESIGHT_MERGED")
+    except Exception as e:
+        _log("send merged: " + str(e))
+    if not ok:
+        return ""
+    try:
+        _try_new_mark(trynew)
+    except Exception as e:
+        _log("state trynew(merged): " + str(e))
+    try:
+        _crypto_mark(crypto)
+    except Exception as e:
+        _log("state crypto(merged): " + str(e))
+    # Один ask на обидві теми (трайнью-ідею можна зберегти нагадуванням),
+    # а не два — щоб не плодити ще повідомлень одразу після щойно об'єднаних.
+    try:
+        _try_new_ask(trynew, body)
+    except Exception as e:
+        _log("ask merged skip: " + str(e))
+    return "merged:" + pick[:20] + "+" + sym + " " + str(pct) + "%"
+
+
+def _try_new_and_crypto() -> str:
+    """Рахує обидві теми ОДНИМ проходом (без відправки), і якщо вистрілюють
+    обидві — зводить їх в один _send_merged() замість двох окремих карток."""
+    trynew = None
+    crypto = None
+    try:
+        trynew = _try_new_pick()
+    except Exception as e:
+        _log("try_new_pick error: " + str(e))
+    try:
+        crypto = _crypto_watch_pick()
+    except Exception as e:
+        _log("crypto_watch_pick error: " + str(e))
+    if trynew and crypto:
+        return _send_merged(trynew, crypto)
+    if trynew:
+        return _try_new_commit(trynew)
+    if crypto:
+        return _crypto_commit(crypto)
     return ""
 
 
@@ -881,8 +1036,7 @@ def tick(force: bool = False) -> str:
     if not force and not K.rate_ok(RATE, MIN_GAP_MIN):
         return ""
     sent = []
-    for fn in (_trip_brief, _shift_brief, _mail_brief, _gap_brief,
-               _try_new_brief, _crypto_watch_brief):
+    for fn in (_trip_brief, _shift_brief, _mail_brief, _gap_brief):
         try:
             done = fn()
         except Exception as e:
@@ -894,6 +1048,15 @@ def tick(force: bool = False) -> str:
             # Активно — до 3 нових тем за прохід (Олег обрав "активно").
             if len(sent) >= 3:
                 break
+    if len(sent) < 3:
+        try:
+            done = _try_new_and_crypto()
+        except Exception as e:
+            _log("try_new_and_crypto error: " + str(e))
+            done = ""
+        if done:
+            sent.append(done)
+            _log("надіслано → " + done)
     if sent:
         try:
             K.rate_mark(RATE)
