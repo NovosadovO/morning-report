@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені переглянути нові вакансії від Profes",
-      "detail": "Прийшли нові сповіщення про вакансії від Profesia.sk (20 нових) та LinkedIn (Digital Asset Custody Specialist, Supply Chain Co-Founder / Head of Growth), і Олег активно шукає роботу.",
-      "module": "selfact",
-      "ts": "2026-10-10T05:16:52"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-10",
       "detail": "автосинк з годинника: steps, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-16T03:02:06"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-16T03:02:42"
     }
   ]
 }
