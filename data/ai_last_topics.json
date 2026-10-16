@@ -1,4 +1,9 @@
 {
+  "hcoach|2026-10-16t07_00_37_966129": {
+    "topic": "hcoach",
+    "gist": "Олеже, почну з того, що вага 84.1 кг, яку ми бачили вчора, за тиждень знизилась на 0.5 кг (до 83.4 кг), а за місяць — на 0.3 кг (до 83.7 кг). Це повільний, але ",
+    "ts": "2026-10-16T07:00:37.966129"
+  },
   "selfact|2026-10-16t06_55_02_014306": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Executive Assistant\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Executi",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
     "ts": "2026-10-16T03:01:18.393868"
-  },
-  "proactive_actions|2026-10-16t03_00_42_190592": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховий поліс KOOPERATIVA\",     \"date\": \"2026-10-17\",     \"time\": \"\",     \"message\": \"Олеже, ти о",
-    "ts": "2026-10-16T03:00:42.190592"
   }
 }
