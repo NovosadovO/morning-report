@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:02:54.353377+00:00",
-      "category": "confirm",
-      "question": "email_delete: Anthropic wants the biggest IPO ever",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-21T22:02:58.192981+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14080,6 +14074,15 @@
       "extra": {
         "kind": "reply",
         "date": "2026-10-16"
+      }
+    },
+    {
+      "ts": "2026-10-16T02:28:51.152128+00:00",
+      "category": "bill_found",
+      "question": "Railway",
+      "answer": "10.01 USD",
+      "extra": {
+        "due": ""
       }
     }
   ]
