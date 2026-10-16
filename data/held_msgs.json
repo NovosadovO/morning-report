@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T00:16:13.370592",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: MSCI's new rules put Strategy at risk</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80983"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80983"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80983"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80983"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80983"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80983"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T00:16:14.739100",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Activity feed filters, guided IaC migration, cron jobs in th</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-17T00:22:20.068393",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T00:22:20.914380",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
