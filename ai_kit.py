@@ -351,16 +351,39 @@ def events_for_day(offset: int = 0) -> list:
 
 _SHIFT_EARLY = ("рання", "ранкова", "early", "☀️", "denna", "denná")
 _SHIFT_NIGHT = ("нічна", "ночна", "night", "🌙", "nocna", "nočná")
+_SHIFT_GENERIC = ("зміна", "змiна", "smena", "zmena", "shift", "робота", "work", "minebea")
 
 
 def classify_shift(events: list) -> str:
-    """'early' | 'night' | 'free' — за назвами подій дня."""
+    """'early' | 'night' | 'free' — за назвами подій дня.
+
+    20.10: додано фолбек на час початку події для загальних назв типу
+    "зміна"/"робота"/"Minebea" без слова рання/нічна (раніше такі події
+    тихо вважались "free" — не було зміни взагалі). Для подій, що почались
+    ВЧОРА (нічна зміна, яка триває після півночі), використовуй
+    context.get_shift_from_calendar() замість цієї функції — вона дивиться
+    на події лише ОДНОГО дня."""
     for ev in events or []:
         s = str(ev.get("summary", "")).lower()
         if any(x in s for x in _SHIFT_NIGHT):
             return "night"
         if any(x in s for x in _SHIFT_EARLY):
             return "early"
+    for ev in events or []:
+        s = str(ev.get("summary", "")).lower()
+        if any(x in s for x in _SHIFT_GENERIC):
+            start_str = (ev.get("start") or {}).get("dateTime")
+            if start_str:
+                try:
+                    from datetime import datetime as _dt, timedelta as _td
+                    dt_local = _dt.fromisoformat(start_str.replace("Z", "+00:00")) + _td(hours=2)
+                    h = dt_local.hour
+                    if 14 <= h < 23:
+                        return "night"
+                    if 3 <= h < 11:
+                        return "early"
+                except Exception:
+                    pass
     return "free"
 
 

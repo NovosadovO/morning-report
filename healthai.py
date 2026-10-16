@@ -29,6 +29,11 @@ JOURNAL_FILE = "health_journal.json"
 STATE_FILE = "healthai_state.json"
 JOURNAL_KEEP = 800
 
+# Спільні ворота "одна тема" з foresight.py (_INSIGHT_GATE_FILE там же ім'я) —
+# не більше однієї вузькотемної проактивної картки на 45 хв з ЖОДНОГО з двох
+# модулів (20.10, скарга Олега на back-to-back однотемні сповіщення).
+_INSIGHT_GATE_FILE = "insight_gate.json"
+
 WEIGHT_GOAL = 75.0          # ціль Олега
 SLEEP_MIN_OK = 6.5          # менше — недосип
 STEPS_GOAL = 8000
@@ -45,6 +50,7 @@ REMINDER_GAP_HOURS = 5      # не частіше цього між нагаду
 
 _SHIFT_UA = {"early": "☀️ рання 06:00–18:00",
              "night": "🌙 нічна 18:00–06:00",
+             "after_night": "🌙 щойно закінчилась нічна зміна (18:00–06:00) — вдома, відновлюється",
              "free": "🏠 вихідний"}
 
 _NUM = re.compile(r"-?\d+(?:[.,]\d+)?")
@@ -219,8 +225,22 @@ def _avg(vals):
 
 
 def _shift_for(offset: int = 0) -> str:
-    """'early' | 'night' | 'free' — зміна на день (offset у днях від сьогодні)."""
+    """'early' | 'night' | 'after_night' | 'free' — зміна на день (offset у днях від
+    сьогодні).
+
+    20.10: раніше тут був K.classify_shift(K.events_for_day(offset)) — пряма
+    перевірка подій ЛИШЕ сьогоднішнього дня, без обробки нічної зміни, яка
+    почалась ВЧОРА о 18:00 і триває/щойно закінчилась сьогодні вранці. Через
+    це о 4-7 ранку після нічної зміни функція повертала "free" ("вихідний"),
+    і AI писав Олегу "ти на вихідному"/"ти відпочиваєш" під час/щойно після
+    реальної нічної зміни, яка БУЛА в календарі. context.get_shift_from_calendar()
+    вже має цю опівнічну логіку (перевіряє і вчорашній день) — тепер делегуємо
+    туди для сьогодні/завтра замість власної вузької перевірки."""
     try:
+        if offset in (0, 1):
+            import context as _ctx
+            info = _ctx.get_shift_from_calendar()
+            return info.get("today" if offset == 0 else "tomorrow", "free")
         return K.classify_shift(K.events_for_day(offset))
     except Exception as e:
         K.log(TAG, f"shift error: {e}")
@@ -900,6 +920,14 @@ def initiative(force: bool = False) -> int:
         return 0
     if not force and not K.rate_ok(STATE_FILE, 20):
         return 0
+    # 20.10: Олег поскаржився, що однотемні картки (ця "Помітив у твоїх даних"
+    # + foresight "СПРОБУЙ НОВЕ"/крипто) летять одна за одною — спамить і
+    # палить Gemini-кредити зайве. Спільні ворота з foresight.py: не частіше
+    # ОДНОЇ такої "однотемної" картки на 45 хв, незалежно який модуль хотів
+    # писати першим.
+    if not force and not K.rate_ok(_INSIGHT_GATE_FILE, 45):
+        K.log(TAG, "initiative: SKIP — спільні ворота 'одна тема' з foresight (45 хв)")
+        return 0
     K.rate_mark(STATE_FILE)
 
     a = analytics(30)
@@ -942,6 +970,7 @@ def initiative(force: bool = False) -> int:
             seen[key] = now.isoformat(timespec="seconds")
             sent += 1
             _journal("notify", f"сповіщення про здоров'я: {key}", line)
+            K.rate_mark(_INSIGHT_GATE_FILE)
 
     state["seen"] = seen
     K.save(STATE_FILE, state)

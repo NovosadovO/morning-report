@@ -162,6 +162,37 @@ def get_calendar_events(days: int = 2) -> dict:
 
 # ─── CALENDAR: ВИЗНАЧЕННЯ ЗМІНИ ───────────────────────────────────────────────
 
+# 20.10: Олег поскаржився, що AI написав "ти вільний/відпочиваєш" під час
+# нічної зміни 18:00(вчора)→06:00(сьогодні), яка БУЛА в календарі. Корінь —
+# розпізнавання типу зміни тут раніше дивилось лише на 2 вузькі слова
+# ("рання"/"нічна"), тоді як _is_shift_event() нижче вже давно (23.08) має
+# ШИРШИЙ список (зміна/робота/work/minebea/час "18:00-06:00" тощо) — просто
+# для ІНШОЇ мети (чи є взагалі зміна). Тепер класифікація early/night теж
+# використовує широкий список слів, а якщо подія явно "зміна"/"робота" без
+# слова рання/нічна — визначаємо тип з ЧАСУ ПОЧАТКУ події (увечері ~14-23г
+# → нічна, вранці ~3-11г → рання), а не вважаємо день вільним.
+_NIGHT_WORDS = ("нічна", "ночна", "night", "nocna", "nočná")
+_EARLY_WORDS = ("рання", "ранкова", "денна", "early", "ranna", "ranná", "denna", "denná")
+_GENERIC_SHIFT_WORDS = ("зміна", "змiна", "smena", "zmena", "shift", "робота", "work", "minebea")
+
+
+def _classify_event_shift(summary: str, dt_local=None):
+    """'night' | 'early' | None — тип зміни з назви події (+ фолбек на час початку,
+    якщо назва лише загально каже 'зміна'/'робота' без слова рання/нічна)."""
+    s = (summary or "").lower()
+    if any(x in s for x in _NIGHT_WORDS):
+        return "night"
+    if any(x in s for x in _EARLY_WORDS):
+        return "early"
+    if dt_local is not None and any(x in s for x in _GENERIC_SHIFT_WORDS):
+        h = dt_local.hour
+        if 14 <= h < 23:
+            return "night"
+        if 3 <= h < 11:
+            return "early"
+    return None
+
+
 def get_shift_from_calendar():
     """
     Читає Google Calendar і повертає shift для СЬОГОДНІ + ЗАВТРА.
@@ -202,14 +233,14 @@ def get_shift_from_calendar():
         if h < 15:
             yesterday_events = _fetch_events_for_day(token, -1)
             for ev in yesterday_events:
-                s = ev.get("summary", "").lower()
-                if any(x in s for x in ["нічна", "night"]):
-                    start_str = ev["start"].get("dateTime") or ev["start"].get("date")
-                    try:
-                        dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                        dt_local = dt_start + timedelta(hours=2)
-                    except Exception:
-                        dt_local = None
+                s = ev.get("summary", "")
+                start_str = ev["start"].get("dateTime") or ev["start"].get("date")
+                try:
+                    dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+                    dt_local = dt_start + timedelta(hours=2)
+                except Exception:
+                    dt_local = None
+                if _classify_event_shift(s, dt_local) == "night":
                     if h < 6:
                         # Ще на роботі
                         result["today"] = "night"
@@ -230,7 +261,7 @@ def get_shift_from_calendar():
             else:
                 events = _fetch_events_for_day(token, offset)
                 for ev in events:
-                    s = ev.get("summary", "").lower()
+                    s = ev.get("summary", "")
                     start_str = ev["start"].get("dateTime") or ev["start"].get("date")
                     try:
                         dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
@@ -243,7 +274,8 @@ def get_shift_from_calendar():
                         if dt_local.date() != day_local_date:
                             continue
 
-                    if any(x in s for x in ["рання", "early"]):
+                    kind = _classify_event_shift(s, dt_local)
+                    if kind == "early":
                         result[key] = "early"
                         if key == "today":
                             result["today_start"] = dt_local
@@ -251,7 +283,7 @@ def get_shift_from_calendar():
                         else:
                             result["tomorrow_start"] = dt_local
                         break
-                    elif any(x in s for x in ["нічна", "night"]):
+                    elif kind == "night":
                         result[key] = "night"
                         if key == "today":
                             result["today_start"] = dt_local
@@ -425,6 +457,19 @@ def get_status(shift_info=None):
             return "post_shift"
         else:
             return "home"
+
+    elif today == "after_night":
+        # 20.10: саме цього стану тут РАНІШЕ не було — "after_night" (нічна
+        # зміна вчора 18:00→сьогодні 06:00, яка щойно закінчилась) провалювався
+        # в "else" нижче і о 6-7 ранку ставав "sleeping" ("спить / нічний
+        # відпочинок"), хоча Олег щойно ПРАЦЮВАВ, а не спав. Звідси скарга
+        # "AI пише що я відпочиваю/вільний, хоча я щойно з нічної зміни".
+        if 6 <= h < 10:
+            return "post_shift"
+        elif 10 <= h < 22:
+            return "home"
+        else:
+            return "sleeping"
 
     else:
         if 0 <= h < 7:

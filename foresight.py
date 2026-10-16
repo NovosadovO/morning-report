@@ -1007,9 +1007,21 @@ def _send_merged(trynew, crypto) -> str:
     return "merged:" + pick[:20] + "+" + sym + " " + str(pct) + "%"
 
 
+_INSIGHT_GATE_FILE = "insight_gate.json"
+
+
 def _try_new_and_crypto() -> str:
     """Рахує обидві теми ОДНИМ проходом (без відправки), і якщо вистрілюють
-    обидві — зводить їх в один _send_merged() замість двох окремих карток."""
+    обидві — зводить їх в один _send_merged() замість двох окремих карток.
+
+    20.10: спільні ворота з healthai.initiative() (_INSIGHT_GATE_FILE —
+    однакове ім'я файлу в обох модулях) — Олег поскаржився, що однотемні
+    картки ("Помітив у твоїх даних" + "СПРОБУЙ НОВЕ"/крипто з РІЗНИХ модулів)
+    летять одна за одною. Не більше однієї такої картки на 45 хв з будь-якого
+    з двох модулів."""
+    if not K.rate_ok(_INSIGHT_GATE_FILE, 45):
+        _log("try_new_and_crypto: SKIP — спільні ворота 'одна тема' з healthai (45 хв)")
+        return ""
     trynew = None
     crypto = None
     try:
@@ -1020,13 +1032,16 @@ def _try_new_and_crypto() -> str:
         crypto = _crypto_watch_pick()
     except Exception as e:
         _log("crypto_watch_pick error: " + str(e))
+    result = ""
     if trynew and crypto:
-        return _send_merged(trynew, crypto)
-    if trynew:
-        return _try_new_commit(trynew)
-    if crypto:
-        return _crypto_commit(crypto)
-    return ""
+        result = _send_merged(trynew, crypto)
+    elif trynew:
+        result = _try_new_commit(trynew)
+    elif crypto:
+        result = _crypto_commit(crypto)
+    if result:
+        K.rate_mark(_INSIGHT_GATE_FILE)
+    return result
 
 
 # ─── ТОЧКА ВХОДУ ────────────────────────────────────────────────────────────

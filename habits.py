@@ -50,40 +50,23 @@ def _get_shift_type():
     """
     Повертає тип дня по Google Calendar:
       'early'   — рання зміна → душ о 05:00
-      'night'   — нічна зміна  → душ о 16:30
-      'weekend' — вихідний / немає змін → душ о 10:00
+      'night'   — нічна зміна (сьогодні, починається/триває) → душ о 16:30
+      'weekend' — вихідний / немає змін / нічна зміна вже закінчилась (after_night)
+                  → душ о 10:00
+
+    20.10: делегує до context.get_shift_from_calendar() — тут раніше була
+    ОКРЕМА копія з власним (вужчим) розпізнаванням слів і без обробки нічної
+    зміни, що триває з учора. Один канонічний розпізнавач замість трьох
+    різних копій (context.py / ai_kit.py / тут) з різними багами.
     """
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        return "weekend"
     try:
-        import json as _json, sys, urllib.parse as _up
+        import sys
         sys.path.insert(0, _DIR)
-        from monitor import _get_google_token
-        creds_data = _json.loads(creds_json)
-        token   = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-        headers = {"Authorization": f"Bearer {token}"}
-        cal_id  = "novosadovoleg%40gmail.com"
-        now_utc = __import__('datetime').datetime.now(__import__('datetime').timezone.utc)
-        from datetime import timedelta as _td
-        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - _td(hours=2)
-        day_end   = day_start + _td(hours=24)
-        url = (
-            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={_up.quote(day_start.isoformat())}"
-            f"&timeMax={_up.quote(day_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=20"
-        )
-        import urllib.request as _ur
-        req = _ur.Request(url, headers=headers)
-        with _ur.urlopen(req, timeout=15) as r:
-            events = _json.loads(r.read()).get("items", [])
-        for ev in events:
-            s = ev.get("summary", "").lower()
-            if any(x in s for x in ["рання", "ранн", "early"]):
-                return "early"
-            if any(x in s for x in ["нічна", "нічн", "night"]):
-                return "night"
+        import context as _ctx
+        info = _ctx.get_shift_from_calendar()
+        today = info.get("today", "free")
+        if today in ("early", "night"):
+            return today
         return "weekend"
     except Exception as e:
         print(f"_get_shift_type error: {e}")
