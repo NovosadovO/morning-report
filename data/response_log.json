@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-21T22:03:34.045142+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_7c6dfa63e5"
-    },
-    {
       "ts": "2026-08-21T22:03:37.198836+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14087,6 +14081,12 @@
       "extra": {
         "kind": "submit"
       }
+    },
+    {
+      "ts": "2026-10-16T02:43:48.769265+00:00",
+      "category": "confirm",
+      "question": "gate_dl_skip: 📨 ДЕДЛАЙН У ПОШТІ — ПОДАТИ ДОКУМЕНТИ",
+      "answer": "yes"
     }
   ]
 }
