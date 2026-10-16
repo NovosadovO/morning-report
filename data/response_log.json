@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T07:16:33.621597+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "LINK виріс на 14.7% за 24 години (зараз $11.640); XLM виріс на 18.1% за 24 години (зараз $0.19950); ONDO (твоя позиція) "
-    },
-    {
       "ts": "2026-08-22T07:30:45.408788+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -14078,6 +14072,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Надолужити біг",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-16T15:25:58.575857+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_e1ab132e78"
     }
   ]
 }
