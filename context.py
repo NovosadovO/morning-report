@@ -193,6 +193,40 @@ def _classify_event_shift(summary: str, dt_local=None):
     return None
 
 
+# 16.10: Олег написав в чаті "після нічної" / "змучений... хочу спати" — AI відповів,
+# визнавши "після нічної зміни" ОДРАЗУ ПОРЯД з "вихідний день сьогодні, як плануєш
+# відпочити", бо system prompt брав статус ЛИШЕ з календаря, а в календарі ночі
+# не було записано взагалі (Олег забув/не записав зміну). Якщо Олег САМ прямо каже
+# в поточному повідомленні про свою зміну — це довіреніше за календар і має
+# перебити авто-розрахунок, щоб відповідь не суперечила сама собі в одному реченні.
+_SELF_SHIFT_AFTER_NIGHT = (
+    "після нічної", "щойно з нічної", "щойно закінчив нічну", "закінчив нічну зміну",
+    "відпрацював нічну", "був на нічній зміні", "з нічної зміни", "після нічної зміни",
+)
+_SELF_SHIFT_NOW_NIGHT = (
+    "я на нічній", "зараз на нічній", "ще на нічній", "працюю нічну", "на нічній зміні зараз",
+    "я на зміні" ,
+)
+_SELF_SHIFT_NOW_EARLY = (
+    "я на ранній", "зараз на ранній", "працюю ранню", "на ранній зміні зараз",
+)
+
+
+def _detect_self_reported_shift(text: str):
+    """Повертає shift_today-значення ('after_night'|'night'|'early') якщо Олег
+    САМ прямо згадав свою зміну у повідомленні, інакше None. Навмисно не ловить
+    'вихідний'/'вільний' від Олега — лише явні згадки роботи/зміни, щоб не
+    перебивати календар на пусте місце."""
+    t = (text or "").lower()
+    if any(p in t for p in _SELF_SHIFT_AFTER_NIGHT):
+        return "after_night"
+    if any(p in t for p in _SELF_SHIFT_NOW_NIGHT):
+        return "night"
+    if any(p in t for p in _SELF_SHIFT_NOW_EARLY):
+        return "early"
+    return None
+
+
 def get_shift_from_calendar():
     """
     Читає Google Calendar і повертає shift для СЬОГОДНІ + ЗАВТРА.
@@ -677,9 +711,10 @@ def get_system_prompt(ctx=None):
 
     now = ctx["now"]
     shift_labels = {
-        "early": "рання (06:00–18:00)",
-        "night": "нічна (18:00–06:00)",
-        "free":  "вихідний / вільний",
+        "early":       "рання (06:00–18:00)",
+        "night":       "нічна (18:00–06:00)",
+        "after_night": "після нічної (вдома, відновлюється — НЕ вихідний)",
+        "free":        "вихідний / вільний",
     }
 
     weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now.weekday()]
@@ -699,6 +734,17 @@ def get_system_prompt(ctx=None):
         f"Статус Олега: {ctx['status_label']}",
         f"Зміна сьогодні: {shift_labels.get(ctx['shift_today'], ctx['shift_today'])}",
         f"Зміна завтра:   {shift_labels.get(ctx['shift_tomorrow'], ctx['shift_tomorrow'])}",
+    ]
+
+    if ctx.get("_shift_self_reported"):
+        lines.append(
+            "⚠️ Олег ЩОЙНО сам написав про свою зміну в останньому повідомленні нижче — "
+            "цей факт ВАЖЛИВІШИЙ за будь-який авто-розрахунок за календарем вище (календар міг просто "
+            "не мати запису про цю зміну). НЕ пиши, що сьогодні 'вихідний'/'вільний день', і не питай "
+            "як провести вільний день, якщо Олег щойно сказав, що він на зміні / щойно з зміни."
+        )
+
+    lines += [
         "",
         "══ КАЛЕНДАР СЬОГОДНІ ══",
         ctx["calendar_today"],
@@ -891,6 +937,13 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
 
     try:
         ctx = get_context(include_crypto=True, include_calendar=True)
+        self_shift = _detect_self_reported_shift(user_message)
+        if self_shift and self_shift != ctx.get("shift_today"):
+            ctx["shift_today"] = self_shift
+            new_status = get_status({"today": self_shift})
+            ctx["status"] = new_status
+            ctx["status_label"] = STATUS_LABELS.get(new_status, new_status)
+            ctx["_shift_self_reported"] = True
         system_prompt = get_system_prompt(ctx)
     except Exception as e:
         print(f"ask_ai get_context error: {e}")
