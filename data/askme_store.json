@@ -10100,28 +10100,5 @@
       "tag": "MSG_FORESIGHT_MAIL"
     },
     "ts": "2026-10-16T00:06:11.635953+00:00"
-  },
-  "349e7d273f": {
-    "key": "note|олег переслав лист fwd ročné hodnotenie zamestnancov що",
-    "q": "📝 Хочу записати нотатку:\n\n« Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що »\n\nОлег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що свідчить про його зацікавленість у процесі оцінювання співробітників на заводі.\n\nПоставити?",
-    "kind": "write",
-    "opts": [
-      [
-        "save",
-        "💾 Так, запиши"
-      ],
-      [
-        "no",
-        "🚫 Не треба"
-      ]
-    ],
-    "meta": {
-      "summary": "Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що",
-      "desc": "Олег переслав лист 'Fwd: Ročné hodnotenie zamestnancov', що свідчить про його зацікавленість у процесі оцінювання співробітників на заводі.",
-      "minutes": 30,
-      "calendar": true,
-      "kind": "note"
-    },
-    "ts": "2026-10-16T00:24:47.635778+00:00"
   }
 }
