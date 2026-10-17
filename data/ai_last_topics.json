@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-17t19_56_45_147871": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію CRS - Investment Operations Associate в компанії Swiss Re, розташованій у Брат",
+    "ts": "2026-10-17T19:56:45.147871"
+  },
   "openloop_promises|2026-10-17t19_51_52_011633": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що сьогоднішній день приніс позитивні зміни в деяких показниках, але старі дані по калоріях не дають повної картини. Зараз ти на зміні, тож, будь",
     "ts": "2026-10-17T16:05:56.701622"
-  },
-  "action_detect|2026-10-17t16_01_42_842131": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попр",
-    "ts": "2026-10-17T16:01:42.842131"
   }
 }
