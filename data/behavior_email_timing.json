@@ -1,9 +1,4 @@
 {
-  "80354": {
-    "sender": "hi@newsletter.defillama.com",
-    "sender_raw": "DefiLlama Newsletter <hi@newsletter.defillama.com>",
-    "seen_ts": "2026-10-06T18:46:37.561687+00:00"
-  },
   "80355": {
     "sender": "newsletter@data.theblock.co",
     "sender_raw": "The Block <newsletter@data.theblock.co>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-17T12:20:23.829043+00:00"
+  },
+  "81021": {
+    "sender": "myagent+telegram-agent-oleh-22adc3@abacus.ai",
+    "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-22adc3@abacus.ai>",
+    "seen_ts": "2026-10-17T12:43:02.533811+00:00"
   }
 }
