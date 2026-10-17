@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T21:31:25.170174",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80953"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80953"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80953"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80953"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80953"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80953"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T21:31:26.709006",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-17T21:43:20.630239",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T21:43:28.810936",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
