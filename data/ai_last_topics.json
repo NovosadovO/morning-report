@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-10-17t18_21_43_002902": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-17T18:21:43.002902"
+  },
+  "action_detect|2026-10-17t18_15_40_632731": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-17T18:15:40.632731"
+  },
   "defi_digest|2026-10-17t18_15_30_529836": {
     "topic": "defi_digest",
     "gist": "За останні 24 години на DeFi ринку спостерігається значна волатильність: деякі протоколи, як Forward Industries SOL та RHEA LST, показали зростання понад 11-15%",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
     "ts": "2026-10-17T15:02:17.593097"
-  },
-  "action_detect|2026-10-17t15_02_08_275720": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Yevhenii\", \"action_date\": \"2026-10-20\", \"action_time\": \"14:00\", \"action_summary\": \"Записано на стрижку у ",
-    "ts": "2026-10-17T15:02:08.275720"
-  },
-  "action_detect|2026-10-17t15_01_53_706967": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд та коригування стоп-лосів/тейк-профітів\", \"action_date\": \"2026-10-17\", \"action_time\": null, \"action_summar",
-    "ts": "2026-10-17T15:01:53.706967"
   }
 }
