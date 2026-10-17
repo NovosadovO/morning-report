@@ -7813,5 +7813,12 @@
     "ts": "2026-10-17T10:27:47.105836+00:00",
     "norm": "securitize",
     "keyword": "securitize"
+  },
+  "k:cal_skip|botsend_1792225472733": {
+    "kind": "cal_skip",
+    "key": "botsend_1792225472733",
+    "title": "Нагадування про заряд годинника",
+    "note": "confirm",
+    "ts": "2026-10-17T10:27:54.303728+00:00"
   }
 }
