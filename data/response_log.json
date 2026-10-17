@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T13:19:17.402823+00:00",
-      "category": "confirm",
-      "question": "email_delete: Audrey зробив(-ла) репост твого відео",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-22T13:19:20.975946+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14090,6 +14084,16 @@
       "answer": "Додаткова рання зміна",
       "extra": {
         "kind": "calendar",
+        "date": "2026-10-17"
+      }
+    },
+    {
+      "ts": "2026-10-17T04:30:19.734566+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-10-17"
       }
     }
