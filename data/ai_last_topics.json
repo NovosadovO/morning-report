@@ -1,4 +1,24 @@
 {
+  "healthai|2026-10-17t16_05_56_701622": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, бачу, що сьогоднішній день приніс позитивні зміни в деяких показниках, але старі дані по калоріях не дають повної картини. Зараз ти на зміні, тож, будь",
+    "ts": "2026-10-17T16:05:56.701622"
+  },
+  "action_detect|2026-10-17t16_01_42_842131": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попр",
+    "ts": "2026-10-17T16:01:42.842131"
+  },
+  "action_detect|2026-10-17t16_01_31_869998": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
+    "ts": "2026-10-17T16:01:31.869998"
+  },
+  "selfact|2026-10-17t15_52_12_711648": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Telegram Agent Oleh\",     \"text\": \"Олеже, твій агент Telegram Agent Oleh тричі за останню годину не",
+    "ts": "2026-10-17T15:52:12.711648"
+  },
   "email_ai_item|2026-10-17t15_50_26_938728": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn інформує про обговорення в групі Artificial Intelligence, Machine Learning, Data Science & Robotics та запрошує приєднати",
@@ -278,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попр",
     "ts": "2026-10-17T12:47:38.476561"
-  },
-  "selfact|2026-10-17t12_45_26_288509": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Telegram Agent Oleh\",     \"text\": \"Олеже, твій агент Telegram Agent Oleh тричі за останню годину ві",
-    "ts": "2026-10-17T12:45:26.288509"
-  },
-  "mailcal_extract|2026-10-17t12_43_03_120761": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-17T12:43:03.120761"
-  },
-  "email_ai_item|2026-10-17t12_40_05_066197": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист є автоматичним повідомленням від Telegram Agent Oleh, що вказує на досягнення ліміту зусиль за один оберт. Агент запитує, чи ",
-    "ts": "2026-10-17T12:40:05.066197"
-  },
-  "selfact|2026-10-17t12_30_30_883140": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири у Кошице\",     \"text\": \"Олеже, з'явилося 20 нових оголошень про 3-кімнатні квартири у Кошице. Мо",
-    "ts": "2026-10-17T12:30:30.883140"
-  },
-  "action_detect|2026-10-17t16_01_31_869998": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
-    "ts": "2026-10-17T16:01:31.869998"
-  },
-  "selfact|2026-10-17t15_52_12_711648": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Telegram Agent Oleh\",     \"text\": \"Олеже, твій агент Telegram Agent Oleh тричі за останню годину не",
-    "ts": "2026-10-17T15:52:12.711648"
   }
 }
