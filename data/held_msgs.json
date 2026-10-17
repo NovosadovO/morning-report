@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T21:16:14.210602",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>TwoBirds Company наймає: Head of Operations bij Fiducial</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81036"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81036"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81036"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81036"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81036"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81036"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T21:16:15.578300",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
@@ -379,6 +340,12 @@
       "ts": "2026-10-17T21:28:30.790038",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T21:28:31.665134",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
       "keyboard": null
     }
   ]
