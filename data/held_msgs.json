@@ -74,6 +74,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-17T21:01:07.129354",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80953"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80953"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80953"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80953"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80953"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80953"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
