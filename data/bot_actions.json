@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "ask",
-      "what": "Олеже, чи потрібно мені перевірити інформацію щодо конференц",
-      "detail": "Подія в календарі: 13.10: 12:45 Finweek Bratislava: “Blood, Sweat & MiCA” — check for livestream/recor",
-      "module": "selfact",
-      "ts": "2026-10-11T14:31:01"
-    },
-    {
-      "kind": "ask",
       "what": "Олеже, чи потрібна допомога з відповіддю на лист від OGN APP",
       "detail": "Лист від OGN APPS <ogn.applications@gmail.com> | ALLTELEGRAM з питанням про труднощі з оплатою.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 7.9 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-17T19:25:38"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-17T20:02:07"
     }
   ]
 }
