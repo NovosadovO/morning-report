@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T02:55:42.130954",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-17T02:55:42.917300",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T02:55:46.209886",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -347,6 +335,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-17T03:01:05.089555",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Most Valuable NBA Teams 2026: Warriors Still Rule After Lake</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80980"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80980"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80980"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80980"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80980"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80980"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-17T03:01:05.497654",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
