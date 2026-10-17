@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-17t18_26_07_153841": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія в UNIQA CZ\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію 'Manažér v Brati",
+    "ts": "2026-10-17T18:26:07.153841"
+  },
   "openloop_promises|2026-10-17t18_21_43_002902": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити прострочені рахунки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни, коли буд",
     "ts": "2026-10-17T15:02:28.777021"
-  },
-  "action_detect|2026-10-17t15_02_17_593097": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
-    "ts": "2026-10-17T15:02:17.593097"
   }
 }
