@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Новий пейсліп від Minebea",
-      "detail": "Олег отримав лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 09/2026'.",
-      "module": "selfact",
-      "ts": "2026-10-10T20:19:13"
-    },
-    {
-      "kind": "notify",
       "what": "Оплатити квартиру 15.10",
       "detail": "У календарі на 15.10 є запис '08:00 Оплатити квартиру — €500'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Повідомлення від Telegram Agent Oleh вказують на технічні проблеми, які потребують уваги.",
       "module": "selfact",
       "ts": "2026-10-17T10:09:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Новини від Financial Times та Securitize",
+      "detail": "Є свіжі листи з новинами від Financial Times через LinkedIn (uid=80999) та Securitize через LinkedIn (uid=80977).",
+      "module": "selfact",
+      "ts": "2026-10-17T10:25:13"
     }
   ]
 }
