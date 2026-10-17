@@ -1,4 +1,19 @@
 {
+  "healthai|2026-10-17t12_06_11_931365": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, зараз 12:05, ти на ранній зміні до 18:00. Вага 83.9 кг, це на 8.9 кг більше за ціль 75 кг, хоча тренд останніх днів падає на -0.1 кг.  Сьогодні зафіксо",
+    "ts": "2026-10-17T12:06:11.931365"
+  },
+  "action_detect|2026-10-17t12_01_19_500686": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Постав нагадування на с",
+    "ts": "2026-10-17T12:01:19.500686"
+  },
+  "action_detect|2026-10-17t12_01_08_487745": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Додаткова рання зміна\", \"action_date\": \"2026-10-04\", \"action_time\": \"05:00\", \"action_summary\": \"Додаткова р",
+    "ts": "2026-10-17T12:01:08.487745"
+  },
   "action_detect|2026-10-17t12_00_57_262380": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та рекомендації, а",
     "ts": "2026-10-17T09:03:31.458488"
-  },
-  "action_detect|2026-10-17t09_03_20_420731": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-17T09:03:20.420731"
-  },
-  "action_detect|2026-10-17t09_03_09_474186": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені рахунки\", \"action_date\": \"2023-10-17\", \"action_time\": null, \"action_summary\": \"Спробуй у на",
-    "ts": "2026-10-17T09:03:09.474186"
-  },
-  "action_detect|2026-10-17t09_02_58_195874": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-17\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагадування н",
-    "ts": "2026-10-17T09:02:58.195874"
   }
 }
