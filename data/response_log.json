@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T04:31:28.261608+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Отримати звіт RWA з DefiLlama.com",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T04:31:32.824927+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14114,6 +14104,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_717735e880"
+    },
+    {
+      "ts": "2026-10-17T16:08:30.536147+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_de020907c9"
     }
   ]
 }
