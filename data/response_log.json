@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T04:31:24.115023+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T04:31:28.261608+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14118,6 +14108,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_61"
+    },
+    {
+      "ts": "2026-10-17T16:01:22.051768+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_717735e880"
     }
   ]
 }
