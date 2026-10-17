@@ -1,4 +1,19 @@
 {
+  "proactive_actions|2026-10-17t07_30_14_542097": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"note\",     \"title\": \"Нові вакансії від Profesia.sk\",     \"date\": \"2026-10-17\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є 20 нов",
+    "ts": "2026-10-17T07:30:14.542097"
+  },
+  "bills|2026-10-17t07_25_28_149425": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-17T07:25:28.149425"
+  },
+  "action_detect|2026-10-17t07_19_34_959694": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Нагадати ",
+    "ts": "2026-10-17T07:19:34.959694"
+  },
   "selfact|2026-10-17t07_19_24_314282": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, з'явились нові вакансії на LinkedIn: Grocery Associate в Wolt (Ко",
@@ -283,30 +298,5 @@
     "topic": "healthai",
     "gist": "Олеже, почну з важливого: сьогодні, 17 жовтня, ти знову на ранній зміні з 06:00 до 18:00, і завтра теж.  ### Сон та відновлення  1.  **Сон за вчора:** 4.3 годин",
     "ts": "2026-10-17T04:01:06.143643"
-  },
-  "action_detect|2026-10-16t21_31_15_327129": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Постав нагадування на с",
-    "ts": "2026-10-16T21:31:15.327129"
-  },
-  "action_detect|2026-10-16t21_31_10_499720": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 3 дні з останнь",
-    "ts": "2026-10-16T21:31:10.499720"
-  },
-  "bills|2026-10-16t21_24_05_390102": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-10-16T21:24:05.390102"
-  },
-  "bills|2026-10-17t07_25_28_149425": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-10-17T07:25:28.149425"
-  },
-  "action_detect|2026-10-17t07_19_34_959694": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Нагадати ",
-    "ts": "2026-10-17T07:19:34.959694"
   }
 }
