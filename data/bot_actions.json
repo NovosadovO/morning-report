@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-10T17:06:43"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-10",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Поточна дата і час, а також подія в календарі на сьогодні: 17.10: 06:00 Додаткова рання зміна.",
       "module": "selfact",
       "ts": "2026-10-17T04:44:08"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-17",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-17T05:11:13"
     }
   ]
 }
