@@ -1,9 +1,4 @@
 {
-  "80346": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-10-06T15:11:06.973052+00:00"
-  },
   "80347": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "myagent+telegram-agent-oleh-22adc3@abacus.ai",
     "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-22adc3@abacus.ai>",
     "seen_ts": "2026-10-17T09:08:27.421328+00:00"
+  },
+  "81004": {
+    "sender": "myagent+telegram-agent-oleh-22adc3@abacus.ai",
+    "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-22adc3@abacus.ai>",
+    "seen_ts": "2026-10-17T09:39:02.532122+00:00"
   }
 }
