@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T03:30:54.531031",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T03:30:55.927874",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>50% of budget reached</b>\n👤 Google Cloud Billing Alerts &lt;CloudPlatform-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-10-17T03:36:17.003141",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T03:36:17.870281",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
