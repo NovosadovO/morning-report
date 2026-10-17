@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_done_5f5956864d",
-      "label": "✅ Зробив",
-      "ts": "2026-09-23T19:46:40"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-09-23T19:46:44"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_vitamins",
       "label": "✅ Так",
       "ts": "2026-10-17T10:24:04"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_80995",
+      "label": "🗑 Видалити",
+      "ts": "2026-10-17T10:24:28"
     }
   ]
 }
