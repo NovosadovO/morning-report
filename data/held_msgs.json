@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T03:40:07.129015",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T03:40:08.160692",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Railway  → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80987"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-17T03:45:57.892036",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Investment Manager в Lindström</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80986"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80986"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80986"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80986"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80986"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80986"
             }
           ]
         ]
