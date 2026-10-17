@@ -1,4 +1,14 @@
 {
+  "healthai|2026-10-17t04_01_06_143643": {
+    "topic": "healthai",
+    "gist": "Олеже, почну з важливого: сьогодні, 17 жовтня, ти знову на ранній зміні з 06:00 до 18:00, і завтра теж.  ### Сон та відновлення  1.  **Сон за вчора:** 4.3 годин",
+    "ts": "2026-10-17T04:01:06.143643"
+  },
+  "action_detect|2026-10-16t21_31_15_327129": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Постав нагадування на с",
+    "ts": "2026-10-16T21:31:15.327129"
+  },
   "action_detect|2026-10-16t21_31_10_499720": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 3 дні з останнь",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-16T18:03:21.131143"
-  },
-  "action_detect|2026-10-16t18_03_10_161759": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагадування н",
-    "ts": "2026-10-16T18:03:10.161759"
-  },
-  "action_detect|2026-10-16t18_02_58_673447": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагаду",
-    "ts": "2026-10-16T18:02:58.673447"
   }
 }
