@@ -7691,5 +7691,16 @@
     "about": "Олеже, твій агент Telegram Agent Oleh тричі за останню годин",
     "state": "closed",
     "ts": "2026-10-17T10:27:24"
+  },
+  "notify_ack|t|новини від financial times та securitize": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "новини від financial times та securitize",
+    "title": "Новини від Financial Times та Securitize",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Новини від Financial Times та Securitize",
+    "state": "closed",
+    "ts": "2026-10-17T10:27:43"
   }
 }
