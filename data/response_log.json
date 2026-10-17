@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T13:29:37.826595+00:00",
-      "category": "chat",
-      "question": "біг заплануй на вівторок і також постав нагадуванняна 9:00 до дерматолога",
-      "answer": "❌ Помилка при створенні події: time data '2026-08-25 morning' does not match format '%Y-%m-%d %H:%M'"
-    },
-    {
       "ts": "2026-08-22T13:30:03.559121+00:00",
       "category": "confirm",
       "question": "gate_cal_add: Біг та дерматолог",
@@ -14103,6 +14097,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_8b4c361dd6"
+    },
+    {
+      "ts": "2026-10-17T06:00:20.847432+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-17"
+      }
     }
   ]
 }
