@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T14:47:46.034989+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_8c79665adf"
-    },
-    {
       "ts": "2026-08-22T14:47:51.378898+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14106,6 +14100,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_db5d2e9053"
+    },
+    {
+      "ts": "2026-10-17T07:30:20.173839+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "note",
+        "date": "2026-10-17"
+      }
     }
   ]
 }
