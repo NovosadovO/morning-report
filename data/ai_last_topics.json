@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-17t17_40_17_229641": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжної інформації Runable\",     \"text\": \"Олеже, нагадую, що платіж до Runable на $10.00 був невда",
+    "ts": "2026-10-17T17:40:17.229641"
+  },
+  "action_detect|2026-10-17t17_36_02_802046": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додаткова рання зміна\", \"action_date\": null, \"action_time\": \"07:00\", \"action_summary\": \"Підготуватися до додаткової",
+    "ts": "2026-10-17T17:36:02.802046"
+  },
   "msg_event_soon|2026-10-17t17_35_53_733822": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Ти зараз на роботі, але вже скоро, о 07:00, починається твоя додаткова рання зміна. Цей брифінг допоможе тобі максимально ефективно використати",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digitalization Expert\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Exper",
     "ts": "2026-10-17T14:19:23.108282"
-  },
-  "email_ai_item|2026-10-17t14_14_06_049555": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії в Vienna, зокрема про позицію Expert - Digitalization - Market to Sell (m/f/d) у компа",
-    "ts": "2026-10-17T14:14:06.049555"
-  },
-  "mailcal_extract|2026-10-17t14_13_54_103429": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-17T14:13:54.103429"
   }
 }
