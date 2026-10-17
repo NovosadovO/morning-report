@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T00:24:56.574229",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-18T00:26:06.602033",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80931"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-18T00:31:26.057926",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Активувати акаунт ➡️</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80888"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80888"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80888"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80888"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80888"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80888"
             }
           ]
         ]
