@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібна допомога з відповіддю на лист від OGN APP",
-      "detail": "Лист від OGN APPS <ogn.applications@gmail.com> | ALLTELEGRAM з питанням про труднощі з оплатою.",
-      "module": "selfact",
-      "ts": "2026-10-11T14:46:27"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-10-17T20:02:07"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-17T20:05:35"
     }
   ]
 }
