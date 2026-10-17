@@ -1,4 +1,24 @@
 {
+  "email_ai_item|2026-10-17t06_14_09_514843": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про вакансії в Кошице. Зокрема, пропонується вакансія Grocery Associate в Wolt та HR Specialis",
+    "ts": "2026-10-17T06:14:09.514843"
+  },
+  "selfact|2026-10-17t06_02_13_743898": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що оплата до Runable на $10.00 була невдалою. Потрі",
+    "ts": "2026-10-17T06:02:13.743898"
+  },
+  "action_detect|2026-10-17t06_00_56_026390": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати блискучі ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй все, що пр",
+    "ts": "2026-10-17T06:00:56.026390"
+  },
+  "action_detect|2026-10-17t06_00_44_896526": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Оплатити підпис",
+    "ts": "2026-10-17T06:00:44.896526"
+  },
   "proactive_actions|2026-10-17t06_00_15_083761": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії від Profesia.sk\",     \"date\": \"2026-10-17\",     \"time\": \"18:00\",     \"message\": \"О",
@@ -278,25 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "Дані про тренування за цей тиждень відсутні, а останнє тренування було 12 жовтня. Згідно з даними, твоя вага 16 жовтня становила 84.1 кг, що на 9.1 кг більше ві",
     "ts": "2026-10-16T20:56:47.018489"
-  },
-  "foresight|2026-10-16t20_56_35_904073": {
-    "topic": "foresight",
-    "gist": "Зараз ідеальний момент, щоб освіжити свої тренування та прискорити рух до цілі 75 кг, адже організм швидко звикає до одних і тих самих навантажень. Спробуй сьог",
-    "ts": "2026-10-16T20:56:35.904073"
-  },
-  "selfact|2026-10-16t20_53_02_645295": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, підписка на Runable не оплачена через невдалі спроби. Будь ласка, онови платіжну інформацію.\",     \"why\"",
-    "ts": "2026-10-16T20:53:02.645295"
-  },
-  "mailcal_extract|2026-10-16t20_44_12_832208": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-16T20:44:12.832208"
-  },
-  "action_detect|2026-10-16t20_38_44_802411": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати ZEC та переглянути портфель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"П",
-    "ts": "2026-10-16T20:38:44.802411"
   }
 }
