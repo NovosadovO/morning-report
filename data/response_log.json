@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T13:30:09.121641+00:00",
-      "category": "calendar_confirm",
-      "question": "Біг та дерматолог",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Біг та дерматолог"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-22T13:30:12.109301+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14110,6 +14099,17 @@
       "extra": {
         "kind": "note",
         "date": "2026-10-17"
+      }
+    },
+    {
+      "ts": "2026-10-17T06:21:32.110014+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "accepted",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": null
       }
     }
   ]
