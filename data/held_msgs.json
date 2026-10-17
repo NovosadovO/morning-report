@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T23:54:58.924430",
-      "kind": "watchdog",
-      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T23:55:07.171840",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80953"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-18T00:01:31.283064",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80931"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80931"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80931"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80931"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80931"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80931"
             }
           ]
         ]
