@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T03:01:05.089555",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Most Valuable NBA Teams 2026: Warriors Still Rule After Lake</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80980"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80980"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80980"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80980"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80980"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80980"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T03:01:05.497654",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-17T03:07:43.626893",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T03:08:14.271508",
+      "kind": "bills",
+      "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (24 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>CapCut</b>\n💰 сума не вказана\n📆 до <b>2026-09-23</b>\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
       "keyboard": null
     }
   ]
