@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-17t13_33_06_691722": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-17T13:33:06.691722"
+  },
+  "mailcal_extract|2026-10-17t13_28_40_147987": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-10-17T13:28:40.147987"
+  },
   "bills|2026-10-17t13_25_43_381393": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
     "ts": "2026-10-17T10:25:37.311030"
-  },
-  "selfact|2026-10-17t10_25_09_243222": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з підпискою Runable\",     \"text\": \"Олеже, зверни увагу, що платежі за підписку Runable на $10.00 були",
-    "ts": "2026-10-17T10:25:09.243222"
-  },
-  "action_detect|2026-10-17t10_24_56_528149": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
-    "ts": "2026-10-17T10:24:56.528149"
   }
 }
