@@ -1,9 +1,4 @@
 {
-  "80335": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-10-06T13:32:16.657791+00:00"
-  },
   "80336": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "myagent+telegram-agent-oleh-22adc3@abacus.ai",
     "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-22adc3@abacus.ai>",
     "seen_ts": "2026-10-17T05:35:47.254234+00:00"
+  },
+  "80994": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-17T06:15:06.896869+00:00"
   }
 }
