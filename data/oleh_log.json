@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_mute_082bfc7ac4",
-      "label": "🙈 Не нагадуй",
-      "ts": "2026-09-25T04:58:20"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_109ea3b5ad",
       "label": "🙈 Не нагадуй",
       "ts": "2026-09-25T04:58:34"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_cardio_np",
       "label": "❌",
       "ts": "2026-10-17T20:53:52"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_hnsdjtgvub9tti6f5pmba3s868_2026-10-17",
+      "label": "✅ Виконано",
+      "ts": "2026-10-17T20:54:26"
     }
   ]
 }
