@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T21:46:35.873274",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T21:46:37.484989",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-17T21:54:39.765412",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T21:54:48.445217",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
