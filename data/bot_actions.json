@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Ваша виплатна квитанція за вересень 2026",
-      "detail": "Лист від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 09/2026",
-      "module": "selfact",
-      "ts": "2026-10-10T19:16:48"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, оскільки ти зареєстрував Garmin Venu X1 та підписався",
       "detail": "Лист від Garmin <garmin@registration.garmin.com> | Thanks for Registering Your Venu X1, Лист від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation, а також його запит 'Ти можеш зєднатися із моїм garmin connect для збору даних про здоров’я?'",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-17T08:11:54"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-17T09:05:45"
     }
   ]
 }
