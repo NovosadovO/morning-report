@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T05:28:04.502961+00:00",
-      "category": "confirm",
-      "question": "email_delete: 2 nové pracovné ponuky",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T05:28:08.719855+00:00",
       "category": "confirm",
       "question": "email_delete: Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
@@ -14111,6 +14105,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_477327a387"
+    },
+    {
+      "ts": "2026-10-17T20:48:17.103216+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
