@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T21:01:09.843036",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Активувати акаунт ➡️</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80888"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80888"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80888"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80888"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80888"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80888"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-17T21:01:12.062985",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>More Trading, Different Activity: Avalanche’s Latest 30 Days</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-17T21:14:18.860608",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T21:15:45.726656",
+      "kind": "watchdog",
+      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
       "keyboard": null
     }
   ]
