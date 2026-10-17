@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T16:36:24.460343+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_38bc21efb2"
-    },
-    {
       "ts": "2026-08-22T16:48:02.263293+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14118,6 +14112,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_17e06b07f3"
+    },
+    {
+      "ts": "2026-10-17T10:25:27.434006+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Зарядити годинник",
+      "answer": "yes"
     }
   ]
 }
