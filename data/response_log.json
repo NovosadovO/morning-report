@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T13:31:06.799379+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "db_cal_d286563d1a"
-    },
-    {
       "ts": "2026-08-22T13:32:36.011046+00:00",
       "category": "calendar_button",
       "question": "💍 купити квіти — річниця",
@@ -14111,6 +14105,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_634d9dc37c"
+    },
+    {
+      "ts": "2026-10-17T06:21:48.907679+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
