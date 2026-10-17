@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T00:01:29.973537",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80953"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80953"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80953"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80953"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80953"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80953"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-18T00:01:31.283064",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-18T00:07:21.035756",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T00:08:43.495838",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
