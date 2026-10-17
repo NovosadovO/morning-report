@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-17t12_00_57_262380": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-17T12:00:57.262380"
+  },
+  "selfact|2026-10-17t11_58_58_075423": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири у Кошиці\",     \"text\": \"Олеже, з'явилися 20 нових оголошень про 3-кімнатні квартири у Кошиці. Це",
+    "ts": "2026-10-17T11:58:58.075423"
+  },
   "action_detect|2026-10-17t11_55_32_796915": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-17\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагадування н",
     "ts": "2026-10-17T09:02:58.195874"
-  },
-  "action_detect|2026-10-17t09_02_47_095310": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити рахунок на 440.14€, який ч",
-    "ts": "2026-10-17T09:02:47.095310"
-  },
-  "briefing_truthfix|2026-10-17t09_02_42_268187": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 09:02 суботи, 17 жовтня 2026 року, ти на ранній зміні.  **Фінансовий стан: накопичений підсумок**  Твій портфель становить $5,568, що на $85 менше ",
-    "ts": "2026-10-17T09:02:42.268187"
   }
 }
