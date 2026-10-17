@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-17t09_17_42_304403": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-17T09:17:42.304403"
+  },
   "subs|2026-10-17t09_10_20_160357": {
     "topic": "subs",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, з'явилися нові вакансії на LinkedIn, які можуть тебе зацікавити: ",
     "ts": "2026-10-17T06:18:29.539354"
-  },
-  "openloop_promises|2026-10-17t06_15_47_971177": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-17T06:15:47.971177"
   }
 }
