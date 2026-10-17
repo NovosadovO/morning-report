@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T02:24:05.897004",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T02:25:17.276228",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-17T02:31:52.878014",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-17T02:33:05.108366",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Activity feed filters, guided IaC migration, cron jobs in the CLI\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
