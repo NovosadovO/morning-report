@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T14:47:41.214539+00:00",
-      "category": "confirm",
-      "question": "email_delete: Your Subscription is Confirmed",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-22T14:47:43.884840+00:00",
       "category": "confirm",
       "question": "email_delete: Head of Consumer Financial Operations в Blockchain.com",
@@ -14106,6 +14100,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_9a83d42e80"
+    },
+    {
+      "ts": "2026-10-17T06:37:20.272864+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_36f8466891"
     }
   ]
 }
