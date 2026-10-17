@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T16:36:18.306383+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-22T16:36:20.738250+00:00",
       "category": "confirm",
       "question": "email_delete: Area Sales Manager - Neuro / Oncology / Hematology в Novartis Slovakia",
@@ -14118,6 +14112,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-10-17T10:24:47.377633+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_17e06b07f3"
     }
   ]
 }
