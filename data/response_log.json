@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T05:28:12.179018+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_d33575532a"
-    },
-    {
       "ts": "2026-08-23T05:28:12.186174+00:00",
       "category": "confirm",
       "question": "email_delete: 2 nové pracovné ponuky",
@@ -14111,6 +14105,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-17T20:48:26.502351+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
