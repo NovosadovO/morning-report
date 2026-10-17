@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, оскільки ти зареєстрував Garmin Venu X1 та підписався",
-      "detail": "Лист від Garmin <garmin@registration.garmin.com> | Thanks for Registering Your Venu X1, Лист від Garmin <GarminServicesBilling@garmin.com> | Garmin Connect+ Subscription Confirmation, а також його запит 'Ти можеш зєднатися із моїм garmin connect для збору даних про здоров’я?'",
-      "module": "selfact",
-      "ts": "2026-10-10T19:16:53"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-17T09:05:45"
+    },
+    {
+      "kind": "notify",
+      "what": "Помилка перевірки пошти та календаря",
+      "detail": "Листи uid=80996 та uid=80995 від Telegram Agent Oleh вказують на те, що пошта та календар не були повністю перевірені через ліміт зусиль бота.",
+      "module": "selfact",
+      "ts": "2026-10-17T09:08:08"
     }
   ]
 }
