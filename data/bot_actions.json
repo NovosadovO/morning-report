@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-10T20:05:42"
-    },
-    {
       "kind": "notify",
       "what": "Новий пейсліп від Minebea",
       "detail": "Олег отримав лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 09/2026'.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-17T10:05:59"
+    },
+    {
+      "kind": "notify",
+      "what": "Проблеми з Telegram Agent Oleh",
+      "detail": "Повідомлення від Telegram Agent Oleh вказують на технічні проблеми, які потребують уваги.",
+      "module": "selfact",
+      "ts": "2026-10-17T10:09:22"
     }
   ]
 }
