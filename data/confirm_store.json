@@ -16055,7 +16055,45 @@
     "pid": "fu_skip_61",
     "subject": "🔔 Ти встиг(ла) відкрити й оцінити вакансію Tatra banka перед",
     "extra": {
-      "msg": "🔔 Ти встиг(ла) відкрити й оцінити вакансію Tatra banka перед нічною зміною?"
+      "msg": "🔔 Ти встиг(ла) відкрити й оцінити вакансію Tatra banka перед нічною зміною?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 116389,
+        "kb": [
+          [
+            {
+              "text": "Нагадати про Tatra banka",
+              "callback_data": "proactive_ack"
+            }
+          ],
+          [
+            {
+              "text": "✅ Так, зроблено!",
+              "callback_data": "fu_done_61"
+            },
+            {
+              "text": "⏰ За 1 год",
+              "callback_data": "fu_1h_61"
+            }
+          ],
+          [
+            {
+              "text": "⏰ За 3 год",
+              "callback_data": "fu_later_61"
+            },
+            {
+              "text": "📅 Завтра",
+              "callback_data": "fu_tomorrow_61"
+            }
+          ],
+          [
+            {
+              "text": "🚫 Не потрібно",
+              "callback_data": "fu_skip_61"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-17T15:54:25.885860+00:00"
   }
