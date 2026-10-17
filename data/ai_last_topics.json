@@ -298,5 +298,15 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові квартири у Кошице\",     \"text\": \"Олеже, з'явилося 20 нових оголошень про 3-кімнатні квартири у Кошице. Мо",
     "ts": "2026-10-17T12:30:30.883140"
+  },
+  "action_detect|2026-10-17t16_01_31_869998": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
+    "ts": "2026-10-17T16:01:31.869998"
+  },
+  "selfact|2026-10-17t15_52_12_711648": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Telegram Agent Oleh\",     \"text\": \"Олеже, твій агент Telegram Agent Oleh тричі за останню годину не",
+    "ts": "2026-10-17T15:52:12.711648"
   }
 }
