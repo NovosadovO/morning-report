@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T06:01:24.204752+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T06:31:55.669469+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14116,6 +14106,12 @@
         "when": "09:00–09:30",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-17T20:52:57.499458+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_a5465db1d2"
     }
   ]
 }
