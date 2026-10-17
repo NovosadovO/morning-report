@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T00:01:56.677886",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-18T00:03:08.599389",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-18T00:09:16.382704",
       "kind": "followup",
       "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 dtp_keo@faxcopy.sk\n📋 blue_greeting_A4_five_gifts_no_second_stanza\n📤 Твій лист від 2026-10-14\n\n\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T00:09:19.352330",
+      "kind": "followup",
+      "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>dtp_keo@faxcopy.sk</b>\n📋 q\n📤 Твій лист від 2026-10-14\n\n<i></i>\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
       "keyboard": null
     }
   ]
