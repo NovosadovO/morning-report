@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-17t19_51_52_011633": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-17T19:51:52.011633"
+  },
   "selfact|2026-10-17t19_43_43_423439": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові оголошення про квартири\",     \"text\": \"Олеже, з'явилося 1 нове оголошення про квартири у Кошице. Можеш пе",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попр",
     "ts": "2026-10-17T16:01:42.842131"
-  },
-  "action_detect|2026-10-17t16_01_31_869998": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
-    "ts": "2026-10-17T16:01:31.869998"
   }
 }
