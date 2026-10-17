@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-17T23:53:45.686517",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-17T23:53:46.448663",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T00:01:27.266661",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>ŠPECIALISTA/KA ADMINISTRATÍVNEJ PODPORY - POLOVIČNÝ ÚVÄZOK в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81037"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81037"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81037"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81037"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81037"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81037"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
