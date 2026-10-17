@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T04:31:32.824927+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T04:31:54.500561+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14110,6 +14100,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_de020907c9"
+    },
+    {
+      "ts": "2026-10-17T20:07:44.557095+00:00",
+      "category": "calendar_button",
+      "question": "Завершити підтвердження особи в Revolut",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "10:00–10:15",
+        "note": null
+      }
     }
   ]
 }
