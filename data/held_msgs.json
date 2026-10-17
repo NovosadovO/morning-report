@@ -230,6 +230,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-17T21:01:13.313108",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80756"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80756"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80756"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80756"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80756"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80756"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
