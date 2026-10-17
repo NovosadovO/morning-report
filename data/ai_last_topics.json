@@ -1,4 +1,9 @@
 {
+  "proactive_ai|2026-10-17t18_45_13_768191": {
+    "topic": "proactive_ai",
+    "gist": "Привіт! Як зміна пройшла?",
+    "ts": "2026-10-17T18:45:13.768191"
+  },
   "selfact|2026-10-17t18_41_00_572784": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вебхук\", \"action_date\": \"2023-10-17\", \"action_time\": \"15:06\", \"action_summary\": \"Перевірити чи працює ве",
     "ts": "2026-10-17T15:07:17.490473"
-  },
-  "action_detect|2026-10-17t15_07_00_514260": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-17T15:07:00.514260"
   }
 }
