@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T00:31:20.654397",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>ŠPECIALISTA/KA ADMINISTRATÍVNEJ PODPORY - POLOVIČNÝ ÚVÄZOK в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81037"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81037"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81037"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81037"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81037"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81037"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-18T00:31:21.901645",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>TwoBirds Company наймає: Head of Operations bij Fiducial</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -346,6 +307,12 @@
       "ts": "2026-10-18T00:36:54.807669",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T00:36:55.680440",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
