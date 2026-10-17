@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-22T13:30:12.109301+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_3d56f15b74"
-    },
-    {
       "ts": "2026-08-22T13:31:06.799379+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14111,6 +14105,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-17T06:21:32.609025+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_634d9dc37c"
     }
   ]
 }
