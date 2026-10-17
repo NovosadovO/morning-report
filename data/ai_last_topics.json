@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-17t06_48_43_407753": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії: Grocery Associate в Wolt (Кошице), IT Man",
+    "ts": "2026-10-17T06:48:43.407753"
+  },
+  "mailcal_extract|2026-10-17t06_38_15_889496": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-17T06:38:15.889496"
+  },
   "action_detect|2026-10-17t06_37_32_184439": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попр",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити 1 не",
     "ts": "2026-10-16T21:02:18.958888"
-  },
-  "action_detect|2026-10-16t21_02_07_930053": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
-    "ts": "2026-10-16T21:02:07.930053"
-  },
-  "action_detect|2026-10-16t21_01_56_863877": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Перег",
-    "ts": "2026-10-16T21:01:56.863877"
   }
 }
