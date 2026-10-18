@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T00:15:41.445213",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Europe stands alone as America abandons Ukraine</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81065"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81065"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81065"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81065"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81065"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81065"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-19T00:15:43.081655",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ramp is building the operating system for AI-native companie</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-19T00:22:26.407300",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-19T00:22:27.592015",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
