@@ -211,39 +211,39 @@
       }
     },
     {
-      "ts": "2026-10-19T00:15:44.439690",
+      "ts": "2026-10-19T00:15:45.766979",
       "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
+      "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80953"
+              "callback_data": "email_reply_80931"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_80953"
+              "callback_data": "email_describe_80931"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_80953"
+              "callback_data": "email_star_80931"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_80953"
+              "callback_data": "email_cal_80931"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_80953"
+              "callback_data": "email_keep_80931"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_80953"
+              "callback_data": "email_delete_80931"
             }
           ]
         ]
