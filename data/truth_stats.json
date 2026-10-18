@@ -222,7 +222,8 @@
     },
     "ai_weekly_accuracy": {
       "checked": 2,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     },
     "MSG_CRYPTO_MOVE": {
       "checked": 208,
@@ -606,7 +607,7 @@
   "2026-10-18": {
     "checked": 72,
     "issues": 51,
-    "fixed": 25,
+    "fixed": 26,
     "cut": 1
   }
 }
