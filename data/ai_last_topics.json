@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-10-18t17_00_19_850954": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T17:00:19.850954"
+  },
+  "mailcal_extract|2026-10-18t16_50_36_611228": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T16:50:36.611228"
+  },
   "selfact|2026-10-18t16_49_27_696457": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
     "ts": "2026-10-18T13:24:44.674857"
-  },
-  "action_detect|2026-10-18t13_19_40_889467": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-18T13:19:40.889467"
-  },
-  "foresight_truthfix|2026-10-18t13_12_04_346225": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, бачу, що ти на ранній зміні, і дані про сон за сьогодні, 18 жовтня 2026 року, поки що зафіксовані як 6.9 годин. Це менше, ніж твої середні 7.9 годин за о",
-    "ts": "2026-10-18T13:12:04.346225"
   }
 }
