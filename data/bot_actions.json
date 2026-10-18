@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Незавершене завдання Abacus AI",
-      "detail": "Лист від no-reply@abacus.ai інформує про призупинене завдання, яке потребує вводу Олега.",
-      "module": "selfact",
-      "ts": "2026-10-11T16:21:32"
-    },
-    {
-      "kind": "notify",
       "what": "Abacus AI Agent: DeFiLlama — огляд і зміни",
       "detail": "Лист від no-reply@abacus.ai інформує про призупинення завдання, що вимагає втручання Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-18T05:13:32"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-18T05:13:53"
     }
   ]
 }
