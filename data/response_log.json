@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:31:00.976685+00:00",
-      "category": "bill_found",
-      "question": "Railway Corporation",
-      "answer": "12.32 USD",
-      "extra": {
-        "due": ""
-      }
-    },
-    {
       "ts": "2026-08-23T10:31:18.204882+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14133,6 +14124,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7b52ce95fc"
+    },
+    {
+      "ts": "2026-10-18T09:00:21.308149+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-19"
+      }
     }
   ]
 }
