@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-18t08_44_49_281651": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, з'явилися нові вакансії від LinkedIn, які можуть тебе зацікав",
+    "ts": "2026-10-18T08:44:49.281651"
+  },
+  "foresight_truthfix|2026-10-18t08_36_18_930949": {
+    "topic": "foresight/truthfix",
+    "gist": "Зараз, коли ти на ранній зміні, варто пам'ятати, що дані про твою вагу від 18 жовтня 2026 року показують 85.3 кг, а ціль — 75 кг. Це означає, що до цілі залишає",
+    "ts": "2026-10-18T08:36:18.930949"
+  },
+  "foresight|2026-10-18t08_36_08_154350": {
+    "topic": "foresight",
+    "gist": "Привіт, друже. Оскільки зараз ти на ранній зміні, а ціль по вазі (75 кг) ще потребує роботи, варто спробувати новий рецепт швидкого корисного обіду на робочий д",
+    "ts": "2026-10-18T08:36:08.154350"
+  },
   "action_detect|2026-10-18t08_33_20_019356": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна скоро\",     \"text\": \"Олеже, нагадую, що о 06:00 у тебе починається рання зміна на заводі. Залишило",
     "ts": "2026-10-18T05:07:40.382741"
-  },
-  "action_detect|2026-10-18t05_00_47_857508": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-10-18\", \"action_time\": \"05:30\", \"action_summary\": \"Сьогодні рання зміна, виходит",
-    "ts": "2026-10-18T05:00:47.857508"
-  },
-  "action_detect|2026-10-18t05_00_37_203578": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-18T05:00:37.203578"
-  },
-  "openloop_promises|2026-10-18t04_54_12_832874": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-18T04:54:12.832874"
   }
 }
