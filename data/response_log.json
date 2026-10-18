@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:08:55.755308+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Запланувати біг",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T10:09:05.423418+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14128,6 +14122,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Проаналізувати зростання XMR",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-18T07:01:39.634133+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_729946aba2"
     }
   ]
 }
