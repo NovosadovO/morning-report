@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_skip_event_soon_1790362378",
-      "label": "❌ Не треба",
-      "ts": "2026-09-25T20:58:03"
-    },
-    {
-      "t": "btn",
       "data": "rx_watch_22ebf1cd26",
       "label": "👀 Спостерігаю",
       "ts": "2026-09-25T20:58:56"
@@ -7199,6 +7193,12 @@
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-10-18T13:19:37"
+    },
+    {
+      "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-10-18T14:26:18"
     }
   ]
 }
