@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:08:41.180953+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Пробіжка",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T10:08:49.597136+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14119,6 +14113,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-18"
+      }
+    },
+    {
+      "ts": "2026-10-18T06:00:22.536959+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Запланувати сауну",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-19"
       }
     }
   ]
