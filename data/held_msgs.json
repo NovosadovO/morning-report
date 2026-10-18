@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T02:54:48.250659",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-18T02:54:51.663609",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81038"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-18T03:01:19.638270",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>ŠPECIALISTA/KA ADMINISTRATÍVNEJ PODPORY - POLOVIČNÝ ÚVÄZOK в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81037"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81037"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81037"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81037"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81037"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81037"
             }
           ]
         ]
