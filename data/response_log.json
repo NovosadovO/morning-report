@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T09:01:31.063429+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Детальний звіт RWA з DefiLlama.com",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T09:04:52.293490+00:00",
       "category": "confirm",
       "question": "email_delete: Your receipt from Runable #2740-1261",
@@ -14111,6 +14101,17 @@
       "extra": {
         "kind": "note",
         "date": "2026-10-18"
+      }
+    },
+    {
+      "ts": "2026-10-18T05:27:08.208991+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "accepted",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": null
       }
     }
   ]
