@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T09:06:23.759750+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_3a81cfab47"
-    },
-    {
       "ts": "2026-08-23T10:08:38.848584+00:00",
       "category": "confirm",
       "question": "calrem_skip: Пробіжка",
@@ -14116,6 +14110,12 @@
       "extra": {
         "shift": "early"
       }
+    },
+    {
+      "ts": "2026-10-18T05:27:42.906599+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_ok_258ccb8f84"
     }
   ]
 }
