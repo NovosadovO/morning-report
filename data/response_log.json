@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:26:08.093453+00:00",
-      "category": "confirm",
-      "question": "email_delete: $10.00 payment to Runable was unsuccessful",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T11:26:12.500660+00:00",
       "category": "event_done",
       "question": "📅 і ранні зміни!!\nПланувалась до 12:00 — виконано?",
@@ -14117,6 +14111,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-18T13:19:13.532500+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_4dc949cf39"
     }
   ]
 }
