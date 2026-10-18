@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T00:41:03.645423",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-19T00:41:04.485412",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80931"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-19T00:46:38.695073",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Активувати акаунт ➡️</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80888"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80888"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80888"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80888"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80888"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80888"
             }
           ]
         ]
