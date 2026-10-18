@@ -1,4 +1,9 @@
 {
+  "bills|2026-10-18t17_32_53_215313": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T17:32:53.215313"
+  },
   "selfact|2026-10-18t17_20_30_596411": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Director of Operations\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансію Dire",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверніть увагу, що платежі до Runable на $10.00 були невдалими. ",
     "ts": "2026-10-18T13:56:20.286214"
-  },
-  "mailcal_extract|2026-10-18t13_47_46_819498": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-18T13:47:46.819498"
   }
 }
