@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T03:16:20.332714",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81039"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81039"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81039"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81039"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81039"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81039"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-18T03:16:21.747413",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія Production Supervisor в Convatec – Активно набирає </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-10-18T03:24:21.265609",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Full Immersion With The Sauna Mini\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T03:24:23.803764",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
