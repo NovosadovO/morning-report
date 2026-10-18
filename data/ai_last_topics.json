@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-18t04_20_31_527657": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, на LinkedIn з'явилися нові вакансії: 'ŠPECIALISTA/KA ADMINISTRATÍ",
+    "ts": "2026-10-18T04:20:31.527657"
+  },
   "email_ai_item|2026-10-18t04_14_28_506976": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії, що відповідають вашим інтересам. Він містить інформацію про дві вакансії: 'ŠPECIAL",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставлено нагадування ",
     "ts": "2026-10-17T18:02:53.352114"
-  },
-  "action_detect|2026-10-17t18_02_42_285532": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спи",
-    "ts": "2026-10-17T18:02:42.285532"
   }
 }
