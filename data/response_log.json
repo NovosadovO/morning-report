@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T09:01:23.190404+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Оплатити невдалі платежі Runable та Railway Corporation",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-23"
-      }
-    },
-    {
       "ts": "2026-08-23T09:01:27.186354+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14112,6 +14102,16 @@
       "category": "event_done",
       "question": "📅 💈 Спрей для волосся ✅\nПланувалась до 20:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-18T04:30:17.174540+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Ознайомитися з новими вакансіями на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-18"
+      }
     }
   ]
 }
