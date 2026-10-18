@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-18t09_00_12_179263": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії на Profesia.sk\",     \"date\": \"2026-10-19\",     \"time\": \"09:00\",     \"message\": \"Ол",
+    "ts": "2026-10-18T09:00:12.179263"
+  },
   "selfact|2026-10-18t08_44_49_281651": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, з'явилися нові вакансії від LinkedIn, які можуть тебе зацікав",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить крипто дашборд з інформацією про різні ",
     "ts": "2026-10-18T05:10:38.343739"
-  },
-  "selfact|2026-10-18t05_07_40_382741": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна скоро\",     \"text\": \"Олеже, нагадую, що о 06:00 у тебе починається рання зміна на заводі. Залишило",
-    "ts": "2026-10-18T05:07:40.382741"
   }
 }
