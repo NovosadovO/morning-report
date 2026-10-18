@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:30:56.718248+00:00",
-      "category": "bill_found",
-      "question": "Runable",
-      "answer": "10.00 USD",
-      "extra": {
-        "due": ""
-      }
-    },
-    {
       "ts": "2026-08-23T10:31:00.976685+00:00",
       "category": "bill_found",
       "question": "Railway Corporation",
@@ -14136,6 +14127,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_607ce87425"
+    },
+    {
+      "ts": "2026-10-18T08:05:26.375476+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_7b52ce95fc"
     }
   ]
 }
