@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-10-18t09_14_24_467046": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T09:14:24.467046"
+  },
+  "healthai_truthfix|2026-10-18t09_05_59_745181": {
+    "topic": "healthai/truthfix",
+    "gist": "🤔 Олеже, дані про твою активність за сьогодні, 18 жовтня 2026 року, виглядають суперечливо, враховуючи, що ти підтвердив втому. Поки що зафіксовано лише 308 кро",
+    "ts": "2026-10-18T09:05:59.745181"
+  },
   "healthai|2026-10-18t09_05_48_899829": {
     "topic": "healthai",
     "gist": "🤔 Олеже, враховуючи, що ти зараз на ранній зміні, є певні розбіжності між твоїми показниками за сьогодні. Наприклад, кроків поки що зафіксовано лише 308, хоча с",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-18T06:01:01.806307"
-  },
-  "action_detect|2026-10-18t06_00_51_065528": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Списання підписки Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього ",
-    "ts": "2026-10-18T06:00:51.065528"
-  },
-  "proactive_actions|2026-10-18t06_00_11_803390": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії на Profesia.sk\",     \"date\": \"2026-10-18\",     \"time\": \"18:00\",     \"message\": \"Ол",
-    "ts": "2026-10-18T06:00:11.803390"
   }
 }
