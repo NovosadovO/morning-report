@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:19:51.152610+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ebea0cb7dd"
-    },
-    {
       "ts": "2026-08-23T10:20:13.790904+00:00",
       "category": "confirm",
       "question": "email_delete: $10.00 payment to Runable was unsuccessful",
@@ -14136,6 +14130,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-18T08:05:20.159551+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_3432a3e1d8"
     }
   ]
 }
