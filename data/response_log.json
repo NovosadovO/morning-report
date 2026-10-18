@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:25:16.618242+00:00",
-      "category": "event_done",
-      "question": "📅 💳 Оплата Runable $10.00\nПланувалась до 11:00 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T11:25:16.643095+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14117,6 +14111,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_53e431bce1"
+    },
+    {
+      "ts": "2026-10-18T13:17:57.822044+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
+      "answer": "yes"
     }
   ]
 }
