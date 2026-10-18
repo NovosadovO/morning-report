@@ -1510,20 +1510,6 @@
   ],
   "action_detect": [
     {
-      "open": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"a",
-      "fp": [
-        722295188,
-        2102688035,
-        2341136278,
-        2400470518,
-        2420934553,
-        2748093265,
-        2892530940,
-        4030200314
-      ],
-      "ts": "2026-10-18T07:02:32"
-    },
-    {
       "open": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_",
       "fp": [
         140532093,
@@ -1707,6 +1693,20 @@
         4030200314
       ],
       "ts": "2026-10-18T07:27:56"
+    },
+    {
+      "open": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"a",
+      "fp": [
+        722295188,
+        2102688035,
+        2341136278,
+        2400470518,
+        2420934553,
+        2748093265,
+        2892530940,
+        4030200314
+      ],
+      "ts": "2026-10-18T07:57:02"
     }
   ],
   "briefing/truthfix": [
