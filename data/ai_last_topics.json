@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-18t14_32_54_044171": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T14:32:54.044171"
+  },
   "action_detect|2026-10-18t14_26_22_751479": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-18T10:45:21.298385"
-  },
-  "selfact|2026-10-18t10_32_53_115834": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Head of Operations\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Head of ",
-    "ts": "2026-10-18T10:32:53.115834"
   }
 }
