@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T09:04:52.293490+00:00",
-      "category": "confirm",
-      "question": "email_delete: Your receipt from Runable #2740-1261",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T09:04:56.925159+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14113,6 +14107,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-18T05:27:08.566905+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_8ada6336c7"
     }
   ]
 }
