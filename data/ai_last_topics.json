@@ -1,4 +1,19 @@
 {
+  "healthai|2026-10-18t12_06_18_802220": {
+    "topic": "healthai",
+    "gist": "📉 Олеже, твоя вага зараз 85.3 кг, а це вже на 10.3 кг більше від цільових 75 кг, і тренд зростає на 0.2 кг. Твій сон сьогодні зафіксований лише на 6.9 години, х",
+    "ts": "2026-10-18T12:06:18.802220"
+  },
+  "action_detect|2026-10-18t12_01_24_577334": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записувати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі і",
+    "ts": "2026-10-18T12:01:24.577334"
+  },
+  "action_detect|2026-10-18t12_01_13_529608": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спи",
+    "ts": "2026-10-18T12:01:13.529608"
+  },
   "action_detect|2026-10-18t12_00_51_989325": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, з'явилися нові вакансії від LinkedIn, які можуть тебе зацікав",
     "ts": "2026-10-18T08:44:49.281651"
-  },
-  "foresight_truthfix|2026-10-18t08_36_18_930949": {
-    "topic": "foresight/truthfix",
-    "gist": "Зараз, коли ти на ранній зміні, варто пам'ятати, що дані про твою вагу від 18 жовтня 2026 року показують 85.3 кг, а ціль — 75 кг. Це означає, що до цілі залишає",
-    "ts": "2026-10-18T08:36:18.930949"
-  },
-  "foresight|2026-10-18t08_36_08_154350": {
-    "topic": "foresight",
-    "gist": "Привіт, друже. Оскільки зараз ти на ранній зміні, а ціль по вазі (75 кг) ще потребує роботи, варто спробувати новий рецепт швидкого корисного обіду на робочий д",
-    "ts": "2026-10-18T08:36:08.154350"
-  },
-  "action_detect|2026-10-18t08_33_20_019356": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-18T08:33:20.019356"
   }
 }
