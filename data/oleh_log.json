@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "gx_note_bd67e7a153",
-      "label": "✍️ Нотатка",
-      "ts": "2026-09-25T20:59:27"
-    },
-    {
-      "t": "btn",
       "data": "rx_done_0329fbfce0",
       "label": "✅ Зробив",
       "ts": "2026-09-25T21:03:16"
@@ -7199,6 +7193,18 @@
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-10-18T19:44:23"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-10-18T19:44:25"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-18T19:44:27"
     }
   ]
 }
