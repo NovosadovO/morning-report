@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:25:48.965014+00:00",
-      "category": "confirm",
-      "question": "email_delete: Сховище iCloud майже заповнено",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T11:25:54.140345+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14117,6 +14111,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_7b64677a7d"
+    },
+    {
+      "ts": "2026-10-18T13:18:45.722156+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
+      "answer": "yes"
     }
   ]
 }
