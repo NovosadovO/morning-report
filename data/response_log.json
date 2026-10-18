@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:08:40.948905+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_00a70e2c11"
-    },
-    {
       "ts": "2026-08-23T10:08:41.180953+00:00",
       "category": "confirm",
       "question": "calrem_skip: Пробіжка",
@@ -14116,6 +14110,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_258ccb8f84"
+    },
+    {
+      "ts": "2026-10-18T06:00:17.976294+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-18"
+      }
     }
   ]
 }
