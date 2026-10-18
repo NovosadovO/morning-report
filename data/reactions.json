@@ -7823,5 +7823,16 @@
     "about": "Нагадування про підтвердження Revolut",
     "state": "closed",
     "ts": "2026-10-18T09:57:46"
+  },
+  "notify_ack|t|новини fintech": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "новини fintech",
+    "title": "Новини FinTech",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Новини FinTech",
+    "state": "closed",
+    "ts": "2026-10-18T11:37:28"
   }
 }
