@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:26:06.122768+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_494b690372"
-    },
-    {
       "ts": "2026-08-23T11:26:08.093453+00:00",
       "category": "confirm",
       "question": "email_delete: $10.00 payment to Runable was unsuccessful",
@@ -14117,6 +14111,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_54713f97df"
+    },
+    {
+      "ts": "2026-10-18T13:19:01.156312+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
+      "answer": "yes"
     }
   ]
 }
