@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:26:31.600069+00:00",
-      "category": "confirm",
-      "question": "email_delete: Compute is an Asset Class now, & NVIDIA is the Bank of AI 🤖🏦; Cloudflare just shipped the full stack for AI Agents that spend money 🤖💸",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T11:26:34.704860+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14122,6 +14116,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-18T19:44:17.313993+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_929175d83a"
     }
   ]
 }
