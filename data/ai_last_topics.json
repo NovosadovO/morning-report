@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-18t12_00_51_989325": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-18T12:00:51.989325"
+  },
   "selfact|2026-10-18t11_50_32_717399": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що були невдалі платежі до Runable на $10.00. Потр",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-18T08:33:20.019356"
-  },
-  "msg_event_soon|2026-10-18t08_33_10_711806": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Бачу, твоя рання зміна (06:00–18:00) триває, а до її завершення ще багато годин. Як людина на роботі, пам'ятай про головне: фокус на поточних з",
-    "ts": "2026-10-18T08:33:10.711806"
   }
 }
