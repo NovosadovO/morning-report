@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_skip_evening_1790362435",
-      "label": "",
-      "ts": "2026-09-25T20:59:26"
-    },
-    {
-      "t": "btn",
       "data": "gx_note_bd67e7a153",
       "label": "✍️ Нотатка",
       "ts": "2026-09-25T20:59:27"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-10-18T19:44:22"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-10-18T19:44:23"
     }
   ]
 }
