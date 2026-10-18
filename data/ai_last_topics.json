@@ -1,4 +1,34 @@
 {
+  "selfact|2026-10-18t09_30_40_693549": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нове сповіщення про вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансії: Tw",
+    "ts": "2026-10-18T09:30:40.693549"
+  },
+  "action_detect|2026-10-18t09_27_56_863288": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-18T09:27:56.863288"
+  },
+  "action_detect|2026-10-18t09_27_46_056266": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
+    "ts": "2026-10-18T09:27:46.056266"
+  },
+  "action_detect|2026-10-18t09_27_35_062883": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Постав на",
+    "ts": "2026-10-18T09:27:35.062883"
+  },
+  "action_detect|2026-10-18t09_27_24_092999": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
+    "ts": "2026-10-18T09:27:24.092999"
+  },
+  "action_detect|2026-10-18t09_27_13_131615": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
+    "ts": "2026-10-18T09:27:13.131615"
+  },
   "openloop_promises|2026-10-18t09_26_20_351815": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -268,35 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-10-18T06:40:50.287330"
-  },
-  "action_detect|2026-10-18t06_31_40_742766": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення інформує про значний ріст Monero (XMR) т",
-    "ts": "2026-10-18T06:31:40.742766"
-  },
-  "morning_ai_truthfix|2026-10-18t06_31_30_269046": {
-    "topic": "MORNING_AI/truthfix",
-    "gist": "Олеже, зараз 06:31, ти на ранній зміні, і важливо розуміти, що бездіяльність має свою ціну. Твоя вага, за даними за 17 жовтня, становить 83.9 кг, а ціль — 75 кг",
-    "ts": "2026-10-18T06:31:30.269046"
-  },
-  "msg_crypto_move_truthfix|2026-10-18t06_31_21_980102": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Олеже,  За даними, які є в наявності, Monero (XMR) показує зростання на +7.7% за останні 24 години та на +15.5% за тиждень, що виділяє його серед інших активів,",
-    "ts": "2026-10-18T06:31:21.980102"
-  },
-  "morning_ai|2026-10-18t06_31_11_191569": {
-    "topic": "MORNING_AI",
-    "gist": "Привіт, Олеже!  Починаєш свій робочий день на ранній зміні, і це чудовий початок для продуктивного дня. Сподіваюся, тобі вдалося добре відпочити перед ним, адже",
-    "ts": "2026-10-18T06:31:11.191569"
-  },
-  "msg_crypto_move|2026-10-18t06_31_00_702568": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 💹  Сьогодні вранці твій портфель приємно дивує завдяки Monero (XMR), який показав значний ріст у +7.5% за останні 24 години. Це робить його одним ",
-    "ts": "2026-10-18T06:31:00.702568"
-  },
-  "selfact|2026-10-18t06_25_17_871117": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, на LinkedIn з'явилися нові вакансії: 'SPECIALISTA/KA PROCESŮ ",
-    "ts": "2026-10-18T06:25:17.871117"
   }
 }
