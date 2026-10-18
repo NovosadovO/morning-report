@@ -1,18 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:19:47.177515+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_f2b25bb043"
-    },
-    {
-      "ts": "2026-08-23T10:19:47.907299+00:00",
-      "category": "confirm",
-      "question": "email_delete: Purchasing Specialist в Carmeuse",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T10:19:51.152610+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14136,6 +14124,18 @@
         "kind": "reminder",
         "date": "2026-10-18"
       }
+    },
+    {
+      "ts": "2026-10-18T08:05:08.251762+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: 📅 Пропоную додати в календар",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-10-18T08:05:13.238576+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
