@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-18t14_26_22_751479": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
+    "ts": "2026-10-18T14:26:22.751479"
+  },
   "email_ai_item|2026-10-18t14_17_21_915141": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є щоденним дайджестом новин зі світу криптовалют від CryptoBeholder.com за 18 жовтня. Він містить короткі огляди статей про зу",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Head of Operations\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Head of ",
     "ts": "2026-10-18T10:32:53.115834"
-  },
-  "selfact|2026-10-18t10_17_00_321441": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-10-18T10:17:00.321441"
   }
 }
