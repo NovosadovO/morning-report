@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_done_0cbbdaaad1",
-      "label": "✅ Зробив",
-      "ts": "2026-09-25T13:17:06"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79704",
       "label": "🗑 Видалити",
       "ts": "2026-09-25T13:17:15"
@@ -7199,6 +7193,12 @@
       "data": "pa_skip_3d0b36564c",
       "label": "❌ Не треба",
       "ts": "2026-10-18T09:24:36"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_vitamins",
+      "label": "✅ Так",
+      "ts": "2026-10-18T09:24:48"
     }
   ]
 }
