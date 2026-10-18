@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-18t10_01_20_432108": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Head of Operations\",     \"text\": \"Олеже, LinkedIn прислав нове сповіщення про вакансію Head of O",
+    "ts": "2026-10-18T10:01:20.432108"
+  },
   "action_detect|2026-10-18t09_57_01_398988": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "hcoach",
     "gist": "Олеже, почну з того, що сьогоднішній день почався з ранньої зміни о 06:00, і це саме той момент, коли кожен показник здоров'я стає критично важливим. Зафіксован",
     "ts": "2026-10-18T07:01:11.555767"
-  },
-  "mailcal_extract|2026-10-18t06_57_39_903809": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-10-18T06:57:39.903809"
   }
 }
