@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-18t13_47_46_819498": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-18T13:47:46.819498"
+  },
   "selfact|2026-10-18t13_40_29_283315": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Стрижка у Yevhenii\",     \"text\": \"Олеже, нагадую, що завтра, 20 жовтня о 14:00, у тебе запланована стрижка у",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: годинник заряджено\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Постав на",
     "ts": "2026-10-18T09:27:35.062883"
-  },
-  "action_detect|2026-10-18t09_27_24_092999": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про заряд годинника\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити",
-    "ts": "2026-10-18T09:27:24.092999"
   }
 }
