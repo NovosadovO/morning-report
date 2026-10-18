@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-18t04_30_10_705068": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Ознайомитися з новими вакансіями на Profesia.sk\",     \"date\": \"2026-10-18\",     \"time\": \"\",     \"message\": \"",
+    "ts": "2026-10-18T04:30:10.705068"
+  },
   "selfact|2026-10-18t04_20_31_527657": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, на LinkedIn з'явилися нові вакансії: 'ŠPECIALISTA/KA ADMINISTRATÍ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записувати ідеї\", \"action_date\": \"2026-10-17\", \"action_time\": null, \"action_summary\": \"Записуй всі ідеї, що спадают",
     "ts": "2026-10-17T18:03:04.295329"
-  },
-  "action_detect|2026-10-17t18_02_53_352114": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставлено нагадування ",
-    "ts": "2026-10-17T18:02:53.352114"
   }
 }
