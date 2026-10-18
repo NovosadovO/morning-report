@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:08:38.848584+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Пробіжка",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T10:08:40.948905+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14113,6 +14107,12 @@
     },
     {
       "ts": "2026-10-18T05:27:42.906599+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_ok_258ccb8f84"
+    },
+    {
+      "ts": "2026-10-18T05:27:43.712801+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_258ccb8f84"
