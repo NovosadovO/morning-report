@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T09:04:56.925159+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_4cb1841c66"
-    },
-    {
       "ts": "2026-08-23T09:06:20.476273+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити листи",
@@ -14113,6 +14107,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_8ada6336c7"
+    },
+    {
+      "ts": "2026-10-18T05:27:20.206956+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
