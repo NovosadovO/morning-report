@@ -1,4 +1,14 @@
 {
+  "astro_ai|2026-10-18t12_42_41_303785": {
+    "topic": "astro_ai",
+    "gist": "Олеже, зараз, коли твоя рання зміна триває і вже 12:42, варто сфокусуватись на тому, що відбувається в твоїх фінансах та кар'єрі, адже саме ці сфери зараз найбі",
+    "ts": "2026-10-18T12:42:41.303785"
+  },
+  "deadlines|2026-10-18t12_40_59_413135": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-10-18T12:40:59.413135"
+  },
   "selfact|2026-10-18t12_38_05_492284": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що були невдалі платежі за підписку Runable. Потрі",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути структуру портфеля\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни перегляну",
     "ts": "2026-10-18T09:02:20.357156"
-  },
-  "action_detect|2026-10-18t09_02_11_451732": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
-    "ts": "2026-10-18T09:02:11.451732"
-  },
-  "action_detect|2026-10-18t09_01_58_457824": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути підписку Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Пер",
-    "ts": "2026-10-18T09:01:58.457824"
   }
 }
