@@ -1694,7 +1694,7 @@
     "saved_at": "2026-10-17 20:13"
   },
   "2026-10-18": {
-    "steps": 83,
+    "steps": 308,
     "sleep_total_min": 413,
     "sleep_deep_min": 72,
     "sleep_rem_min": 85,
@@ -1703,11 +1703,12 @@
     "hr_avg": 51,
     "hrv": 38,
     "spo2": 96,
-    "body_battery": 67,
+    "body_battery": 64,
     "stress": 20,
     "sleep_hours": 6.88,
     "date": "2026-10-18",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-18 05:13"
+    "saved_at": "2026-10-18 08:13",
+    "weight_kg": 85.3
   }
 }
