@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:09:05.423418+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_6fcdb04332"
-    },
-    {
       "ts": "2026-08-23T10:19:44.668999+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14128,6 +14122,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_729946aba2"
+    },
+    {
+      "ts": "2026-10-18T07:30:13.304161+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Холодний душ",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-18"
+      }
     }
   ]
 }
