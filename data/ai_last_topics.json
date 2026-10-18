@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-18t19_00_09_931394": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-18T19:00:09.931394"
+  },
   "selfact|2026-10-18t18_54_17_127976": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Director of Operations\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Dire",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [] ```",
     "ts": "2026-10-18T16:01:56.920610"
-  },
-  "selfact|2026-10-18t15_48_06_143918": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Будь ласка, онови плат",
-    "ts": "2026-10-18T15:48:06.143918"
   }
 }
