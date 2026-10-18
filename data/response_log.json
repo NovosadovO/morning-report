@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:26:12.500660+00:00",
-      "category": "event_done",
-      "question": "📅 і ранні зміни!!\nПланувалась до 12:00 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-23T11:26:13.129603+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14117,6 +14111,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_4dc949cf39"
+    },
+    {
+      "ts": "2026-10-18T13:19:13.532903+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_d4da4aa82a"
     }
   ]
 }
