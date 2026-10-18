@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-18t04_45_27_687058": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
+    "ts": "2026-10-18T04:45:27.687058"
+  },
   "mailcal_extract|2026-10-18t04_41_15_777640": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-17T18:15:40.632731"
-  },
-  "defi_digest|2026-10-17t18_15_30_529836": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на DeFi ринку спостерігається значна волатильність: деякі протоколи, як Forward Industries SOL та RHEA LST, показали зростання понад 11-15%",
-    "ts": "2026-10-17T18:15:30.529836"
   }
 }
