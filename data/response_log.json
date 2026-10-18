@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:25:13.059363+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перегляд криптоактивів та фіксація прибутку",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T11:25:15.806887+00:00",
       "category": "calendar_button",
       "question": "💳 Оплата Runable $10.00",
@@ -14122,6 +14116,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_05408d7997"
+    },
+    {
+      "ts": "2026-10-18T09:56:27.892324+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Переглянути структуру портфеля",
+      "answer": "yes"
     }
   ]
 }
