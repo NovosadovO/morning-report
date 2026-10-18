@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T03:46:04.514314",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-18T03:46:05.774829",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Full Immersion With The Sauna Mini</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-10-18T03:51:42.903576",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• PLUNGE <hello@plunge.com> → Full Immersion With The Sauna Mini\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-18T03:51:43.992332",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Full Immersion With The Sauna Mini\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
