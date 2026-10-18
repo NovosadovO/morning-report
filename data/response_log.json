@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T11:26:34.704860+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e414fc4074"
-    },
-    {
       "ts": "2026-08-23T11:27:19.532066+00:00",
       "category": "calendar_button",
       "question": "і ранні зміни!!",
@@ -14122,6 +14116,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_929175d83a"
+    },
+    {
+      "ts": "2026-10-18T19:44:23.592080+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
