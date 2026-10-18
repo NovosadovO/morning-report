@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-18T23:53:57.109340",
-      "kind": "watchdog",
-      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 49\n• 💳 активних підписок під наглядом: 4\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-18T23:54:04.781592",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81065"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-19T00:00:45.420397",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ramp is building the operating system for AI-native companie</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81064"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81064"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81064"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81064"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81064"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81064"
             }
           ]
         ]
