@@ -241,6 +241,9 @@
       "issues": 2,
       "fixed": 1,
       "cut": 1
+    },
+    "run_week_synth": {
+      "checked": 1
     }
   },
   "last": [
@@ -605,7 +608,7 @@
     "cut": 1
   },
   "2026-10-18": {
-    "checked": 73,
+    "checked": 74,
     "issues": 51,
     "fixed": 26,
     "cut": 1
