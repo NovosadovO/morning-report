@@ -1,4 +1,9 @@
 {
+  "healthai|2026-10-18t13_05_25_643830": {
+    "topic": "healthai",
+    "gist": "😴 Привіт, Олеже! Ти зараз на зміні, і годинник поки що зафіксував 6.9 години сну за сьогодні до 11:14. Чи відчуваєш ти, що вдалося добре відпочити, чи ця зміна,",
+    "ts": "2026-10-18T13:05:25.643830"
+  },
   "selfact|2026-10-18t12_53_50_374672": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що було кілька невдалих платежів до Runable на $10",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-18T09:02:53.298547"
-  },
-  "action_detect|2026-10-18t09_02_42_555535": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї та інсайти, ",
-    "ts": "2026-10-18T09:02:42.555535"
   }
 }
