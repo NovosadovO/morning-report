@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Abacus AI: DeFiLlama — огляд і зміни",
-      "detail": "Є лист від Abacus AI про призупинене завдання, що потребує вводу Олега.",
-      "module": "selfact",
-      "ts": "2026-10-11T16:52:59"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-10-18T07:01:15"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-18T07:05:25"
     }
   ]
 }
