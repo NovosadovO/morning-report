@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T10:08:49.597136+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_00a70e2c11"
-    },
-    {
       "ts": "2026-08-23T10:08:50.843099+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14123,6 +14117,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-19"
+      }
+    },
+    {
+      "ts": "2026-10-18T06:00:28.559882+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Ознайомитись з Full Immersion With The Sauna Mini",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-18"
       }
     }
   ]
