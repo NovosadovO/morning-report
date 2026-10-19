@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T12:53:05.364011+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T12:53:07.680599+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14132,6 +14126,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_high_16ca45afeb"
+    },
+    {
+      "ts": "2026-10-19T06:00:17.957416+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Стрижка у Yevhenii",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-20"
+      }
     }
   ]
 }
