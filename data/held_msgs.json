@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T00:16:39.961955",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan expands JPM Coin to Ethereum</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81112"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81112"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81112"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81112"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81112"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81112"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T00:16:41.356776",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>12 spooky days left to win 1,000 SOL</b>\n👤 \"Kraken\" &lt;no-reply@email.kraken.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-20T00:20:46.211416",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T00:20:47.106930",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 21.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
