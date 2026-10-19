@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T12:28:18.777702+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T12:28:21.194715+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14126,6 +14120,12 @@
     },
     {
       "ts": "2026-10-19T05:33:48.481670+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-19T05:33:58.299919+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
