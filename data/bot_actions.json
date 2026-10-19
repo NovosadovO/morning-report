@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-12T08:28:31"
-    },
-    {
       "kind": "notify",
       "what": "Нові вакансії React Native",
       "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від Profesia.sk та LinkedIn. Ці вакансії відповідають його інтересам у сфері Cryptocurrency та React Native.",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-10-19T20:00:58"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-19T20:05:21"
     }
   ]
 }
