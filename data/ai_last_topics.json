@@ -1,4 +1,19 @@
 {
+  "people|2026-10-19t18_32_34_579544": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"Runable реферальне",
+    "ts": "2026-10-19T18:32:34.579544"
+  },
+  "selfact|2026-10-19t18_17_51_579509": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Managing Director\",     \"text\": \"Олеже, на LinkedIn з'явилася нова вакансія Managing Director в ",
+    "ts": "2026-10-19T18:17:51.579509"
+  },
+  "action_detect|2026-10-19t18_15_52_035241": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-19T18:15:52.035241"
+  },
   "defi_digest|2026-10-19t18_15_44_626905": {
     "topic": "defi_digest",
     "gist": "За останні 24 години на DeFi ринку найбільше виділяється значне падіння Dolomite на 34.8%, що вказує на високі ризики окремих протоколів. Водночас, спостерігаєм",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
     "ts": "2026-10-19T15:01:49.307734"
-  },
-  "action_detect|2026-10-19t15_01_38_254544": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати вечірню прогулянку\", \"action_date\": \"2026-10-19\", \"action_time\": \"18:00\", \"action_summary\": \"Спланувати ",
-    "ts": "2026-10-19T15:01:38.254544"
-  },
-  "briefing_truthfix|2026-10-19t15_01_32_452015": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз, 19 жовтня 2026 року, 15:01, ти на ранній зміні до 18:00. Дані, які я маю, є кешованими і не оновлювалися з 19 жовтня 2026 року, 11:36.  Твоя вага продовж",
-    "ts": "2026-10-19T15:01:32.452015"
-  },
-  "briefing|2026-10-19t15_01_27_308795": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Зараз, у розпал ранньої зміни, найважливіше — зберегти ясність думки для стратегічних рішень, які принесуть плоди одразу після зміни. Твоя фінансов",
-    "ts": "2026-10-19T15:01:27.308795"
   }
 }
