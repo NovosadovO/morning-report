@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-19t19_05_07_501313": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно цікавиться новинами та статтями, пов'язаними зі штучним інтелектом та криптовалютами, що видно з отр",
+    "ts": "2026-10-19T19:05:07.501313"
+  },
+  "deadlines|2026-10-19t19_02_50_151394": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-19T19:02:50.151394"
+  },
   "action_detect|2026-10-19t19_00_09_924040": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -288,15 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-10-19T16:02:44.641070"
-  },
-  "selfact|2026-10-19t15_57_24_443027": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Key Account Manager Industry\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансі",
-    "ts": "2026-10-19T15:57:24.443027"
-  },
-  "mailcal_extract|2026-10-19t15_42_38_139706": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-19T15:42:38.139706"
   }
 }
