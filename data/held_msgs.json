@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T00:01:35.616298",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Don’t rage against the machines</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81115"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81115"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81115"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81115"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81115"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81115"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T00:01:36.997118",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на Junior Marketing Specialist for Ukra</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-20T00:05:43.193368",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T00:05:47.345623",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
