@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T12:26:07.486338+00:00",
-      "category": "confirm",
-      "question": "email_delete: NOVINKA: Premium Quality",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T12:26:14.750367+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14124,6 +14118,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-19"
+      }
+    },
+    {
+      "ts": "2026-10-19T04:30:24.980371+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Скасування підписки Garmin Connect+",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-04"
       }
     }
   ]
