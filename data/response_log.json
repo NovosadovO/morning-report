@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T12:25:16.058688+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T12:25:18.570732+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14117,6 +14111,16 @@
       "category": "event_done",
       "question": "📅 💈 Спрей для волосся ✅\nПланувалась до 20:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-19T04:30:15.789828+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Підтвердити стрижку",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-19"
+      }
     }
   ]
 }
