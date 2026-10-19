@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-10-19t05_05_46_288105": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-19T05:05:46.288105"
+  },
+  "calendar_truthfix|2026-10-19t05_04_14_909268": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, зараз 05:04, ти збираєшся на ранню зміну.  Дані про твою вагу (85.3 кг), сон (6.9 год) та кроки (18829) є за 18 жовтня 2026 року, тобто їм 1 день. Твоя в",
+    "ts": "2026-10-19T05:04:14.909268"
+  },
+  "calendar|2026-10-19t05_04_06_553056": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, що ти на ранній зміні до 18:00, і це вже третій день поспіль, що вимагає чималої витримки. 🦾 Твої реакції за минулу добу показують, що ти у",
+    "ts": "2026-10-19T05:04:06.553056"
+  },
+  "selfact|2026-10-19t05_03_24_662730": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, нагадую, що сьогодні, 19 жовтня, о 06:00 у тебе починається рання зміна. Зар",
+    "ts": "2026-10-19T05:03:24.662730"
+  },
+  "action_detect|2026-10-19t05_01_12_935275": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Yevhenii\", \"action_date\": \"2026-10-20\", \"action_time\": \"14:00\", \"action_summary\": \"Завтра, 20.10.2026, о ",
+    "ts": "2026-10-19T05:01:12.935275"
+  },
   "action_detect|2026-10-19t05_00_35_288804": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати пробіжки\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Запланувати хоча б дві ",
     "ts": "2026-10-18T18:47:10.360183"
-  },
-  "weekly_report|2026-10-18t18_47_02_326059": {
-    "topic": "weekly_report",
-    "gist": "Привіт, Олеже!  Дивлячись на твої результати за тиждень, дуже добре вдалося підтримувати дисципліну з холодним душем та водою — 5 з 7 днів це стабільність. Прот",
-    "ts": "2026-10-18T18:47:02.326059"
-  },
-  "action_detect|2026-10-18t18_46_48_280559": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядити годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагадування н",
-    "ts": "2026-10-18T18:46:48.280559"
-  },
-  "action_detect|2026-10-18t18_46_37_293188": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагаду",
-    "ts": "2026-10-18T18:46:37.293188"
-  },
-  "action_detect|2026-10-18t18_46_26_114879": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібн",
-    "ts": "2026-10-18T18:46:26.114879"
-  },
-  "action_detect|2026-10-18t18_46_15_304266": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагаду",
-    "ts": "2026-10-18T18:46:15.304266"
   }
 }
