@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T03:44:22.916630",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 20.10 14:30–22:00 (450 хв)\n\nВільно 450 хв 14:30–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-19T03:44:25.673177",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -379,6 +373,12 @@
       "ts": "2026-10-19T03:47:09.180620",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen  → The Daily Degen - October 18th, 2026\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-19T03:47:11.655568",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 20.10</b> 14:30–22:00 (450 хв)\n\nВільно 450 хв 14:30–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
