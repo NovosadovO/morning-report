@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-19t05_19_17_314639": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, нагадую, що о 06:00 у тебе починається рання зміна на заводі. До початку змі",
+    "ts": "2026-10-19T05:19:17.314639"
+  },
   "action_detect|2026-10-19t05_10_42_071147": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить крипто дашборд з поточними цінами та зм",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-18T19:00:09.931394"
-  },
-  "selfact|2026-10-18t18_54_17_127976": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Director of Operations\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Dire",
-    "ts": "2026-10-18T18:54:17.127976"
   }
 }
