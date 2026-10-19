@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-19t15_25_42_283742": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Key Account Manager\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Key Acc",
+    "ts": "2026-10-19T15:25:42.283742"
+  },
   "selfact|2026-10-19t15_09_56_895822": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії за твоїми запитами. Зокрема, є пропози",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Стрижка у Yevhenii\",     \"text\": \"Олеже, нагадую, що завтра, 20 жовтня, о 13:00 у тебе запланована стрижка у Y",
     "ts": "2026-10-19T12:02:38.077374"
-  },
-  "action_detect|2026-10-19t12_01_07_195480": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-19T12:01:07.195480"
   }
 }
