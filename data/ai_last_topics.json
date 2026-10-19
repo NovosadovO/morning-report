@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-19t15_09_56_895822": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії за твоїми запитами. Зокрема, є пропози",
+    "ts": "2026-10-19T15:09:56.895822"
+  },
+  "healthai_truthfix|2026-10-19t15_05_25_138435": {
+    "topic": "healthai/truthfix",
+    "gist": "Олеже, дані про вагу, які я маю, є кешованими і не оновлювалися з 19 жовтня 2026 року, 11:36. Твоя вага зараз 85.5 кг, що на 10.5 кг більше цільових 75 кг. Цей ",
+    "ts": "2026-10-19T15:05:25.138435"
+  },
   "healthai|2026-10-19t15_05_14_299432": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що твоя вага зараз 85.5 кг, і це на 10.5 кг більше цільових 75 кг. Цей ріст (+0.8 кг) відбувається на фоні зниження рухової активності, адже сере",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-19T12:01:07.195480"
-  },
-  "action_detect|2026-10-19t12_00_56_441819": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
-    "ts": "2026-10-19T12:00:56.441819"
-  },
-  "action_detect|2026-10-19t12_00_45_329233": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спи",
-    "ts": "2026-10-19T12:00:45.329233"
   }
 }
