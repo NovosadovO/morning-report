@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-10-19t09_01_24_443925": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-19T09:01:24.443925"
+  },
+  "action_detect|2026-10-19t09_00_46_042591": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має попрацювати над D",
+    "ts": "2026-10-19T09:00:46.042591"
+  },
+  "proactive_actions|2026-10-19t09_00_12_256803": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прочитати лист від The Block\",     \"date\": \"2026-10-19\",     \"time\": \"18:00\",     \"message\": \"Олеже, у тебе ",
+    "ts": "2026-10-19T09:00:12.256803"
+  },
   "selfact|2026-10-19t08_56_56_285473": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, нагадую, що сьогодні, 19 жовтня, о 06:00 у тебе починається рання зміна. Зар",
     "ts": "2026-10-19T05:03:24.662730"
-  },
-  "action_detect|2026-10-19t05_01_12_935275": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Yevhenii\", \"action_date\": \"2026-10-20\", \"action_time\": \"14:00\", \"action_summary\": \"Завтра, 20.10.2026, о ",
-    "ts": "2026-10-19T05:01:12.935275"
-  },
-  "action_detect|2026-10-19t05_00_35_288804": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-19T05:00:35.288804"
-  },
-  "foresight|2026-10-19t04_48_24_098314": {
-    "topic": "foresight",
-    "gist": "Олеже, на вихідні, поки буде більше часу після ранньої зміни у понеділок та вівторок, є чудовий привід спробувати нову страву для схуднення. Приготуй, наприклад",
-    "ts": "2026-10-19T04:48:24.098314"
   }
 }
