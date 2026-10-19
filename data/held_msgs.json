@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T00:41:26.807083",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-20T00:41:27.737607",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T00:46:29.376562",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[Bybit-EU]Important Changes to Several Terms and Conditions:</b>\n👤 Bybit-EU &lt;notification@notification.bybit.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81117"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81117"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81117"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81117"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81117"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81117"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
