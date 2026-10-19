@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T03:31:29.630667",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81067"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81067"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81067"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81067"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81067"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81067"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-19T03:31:31.007323",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 18th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-19T03:33:42.185030",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 20.10 14:30–22:00 (450 хв)\n\nВільно 450 хв 14:30–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-19T03:33:47.296683",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
