@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T23:53:44.941358",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-19T23:53:45.697598",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81104"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-20T00:01:43.978918",
+      "kind": "offer",
+      "text": "📦 ✉️\n📌 <b>Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81103"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81103"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81103"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81103"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81103"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81103"
             }
           ]
         ]
