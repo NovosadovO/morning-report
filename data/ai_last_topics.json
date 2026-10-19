@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
     "ts": "2026-10-19T08:25:44.671341"
+  },
+  "action_detect|2026-10-19t12_00_45_329233": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-10-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спи",
+    "ts": "2026-10-19T12:00:45.329233"
   }
 }
