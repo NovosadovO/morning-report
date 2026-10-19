@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії React Native",
-      "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від Profesia.sk та LinkedIn. Ці вакансії відповідають його інтересам у сфері Cryptocurrency та React Native.",
-      "module": "selfact",
-      "ts": "2026-10-12T08:43:13"
-    },
-    {
-      "kind": "notify",
       "what": "Нові вакансії в Кошице та Прешові",
       "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від Profesia.sk та LinkedIn, а також його інтерес до вакансій Engineering Manager та Regionalny kierownik sprzedaży, що було зазначено в нотатках.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T20:05:21"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_good",
+      "detail": "😴 Сон за тиждень у середньому 7.6 год — стабільно добре",
+      "module": "healthai",
+      "ts": "2026-10-19T20:13:42"
     }
   ]
 }
