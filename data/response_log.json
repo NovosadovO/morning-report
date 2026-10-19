@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T03:00:15.991152+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-25"
-      }
-    },
-    {
       "ts": "2026-08-24T03:00:20.212226+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14153,6 +14143,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-19T20:31:48.831600+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
