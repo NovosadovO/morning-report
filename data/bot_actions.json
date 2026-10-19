@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, 15 жовтня тобі потрібно сплатити за квартиру €500. Це",
-      "detail": "Подія в календарі 'Оплатити квартиру' на 15.10.2026.",
-      "module": "selfact",
-      "ts": "2026-10-12T06:07:18"
-    },
-    {
-      "kind": "notify",
       "what": "EtherMail Privacy Wall",
       "detail": "Лист від EtherMail прямо вказує на необхідність дії: 'Action Needed: Privacy Wall - Blocked Communications Digest'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T13:05:36"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-19T14:05:18"
     }
   ]
 }
