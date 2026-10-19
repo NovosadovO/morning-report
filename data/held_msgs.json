@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T00:31:35.346670",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[Bybit-EU]Important Changes to Several Terms and Conditions:</b>\n👤 Bybit-EU &lt;notification@notification.bybit.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81117"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81117"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81117"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81117"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81117"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81117"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T00:31:36.649112",
       "kind": "offer",
       "text": "📦 ✉️\n📌 <b>Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-20T00:32:54.397220",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 7 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Завершення програми лояльності SizeerClub\n📆 до 2026-10-27\n🏢 Sizeer\n\n➡️ Використати всі накопичені бали та купони в мобільній програмі Sizeer до 27.10.2026 23:50.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T00:32:56.480713",
+      "kind": "subs",
+      "text": "🔄 <b>СКОРО СПИСАННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Railway Corporation</b>\n💰 12.55$ — через 2 дн. (2026-10-22)\n\nЩомісячна оплата за тариф Hobby plan та використання ресурсів.\n\n⏳ Лишилось 2 дн. — вже пора, а не «потім».\nТихі підписки — найдорожча стаття витрат, бо їх ніхто не перевіряє.\nЦе 151€ на рік — вирішувати варто саме такими числами, а не місячними.\n➡️ Не користувався — тисни «Хочу скасувати», зроблю нагадування.",
       "keyboard": null
     }
   ]
