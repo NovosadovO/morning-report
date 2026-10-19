@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, зверни увагу на подію 'BLOOD, SWEAT & MiCA — Finweek",
-      "detail": "Подія Finweek Bratislava відбудеться завтра, і Олег міг про неї забути.",
-      "module": "selfact",
-      "ts": "2026-10-12T07:40:58"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, тобі прийшли нові сповіщення про вакансії від LinkedI",
       "detail": "Олег активно шукає роботу, і нові вакансії можуть бути для нього актуальними.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег цікавиться новинами та аналітикою крипторинку, а також AI, що видно з отриманих розсилок та нотаток про його інтереси.",
       "module": "selfact",
       "ts": "2026-10-19T17:16:12"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-19",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-19T17:36:56"
     }
   ]
 }
