@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T14:47:08.627934+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T14:47:11.375106+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14156,6 +14150,17 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-04"
+      }
+    },
+    {
+      "ts": "2026-10-19T13:16:57.345103+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Стрижка у Yevhenii",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "14:00–14:30",
+        "note": null
       }
     }
   ]
