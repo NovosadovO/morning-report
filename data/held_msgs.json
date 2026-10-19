@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T00:16:42.807653",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Gigantic AI debts are making investors nervous</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81106"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81106"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81106"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81106"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81106"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81106"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T00:16:44.205330",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Managing Director в COREDO</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-10-20T00:20:50.293491",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T00:20:51.333417",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
