@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T00:00:19.982703+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Переглянути звіт RWA",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-24"
-      }
-    },
-    {
       "ts": "2026-08-24T00:00:24.006200+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14173,6 +14163,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-19T19:37:50.437823+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_a868e6560d"
     }
   ]
 }
