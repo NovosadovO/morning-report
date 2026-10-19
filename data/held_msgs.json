@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T03:16:38.174255",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - October 18th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81066"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81066"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81066"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81066"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81066"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81066"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-19T03:16:39.589582",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Europe stands alone as America abandons Ukraine</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -346,6 +307,12 @@
       "ts": "2026-10-19T03:20:22.465627",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 18th, 2026\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-19T03:20:23.264598",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen  → The Daily Degen - October 18th, 2026\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
