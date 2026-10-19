@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T23:52:38.278954",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-19T23:53:44.941358",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81106"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-20T00:01:42.620347",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Managing Director в COREDO</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81104"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81104"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81104"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81104"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81104"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81104"
             }
           ]
         ]
