@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-10-19t13_02_40_513816": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-19T13:02:40.513816"
+  },
   "selfact|2026-10-19t12_49_12_192916": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія віддаленої роботи\",     \"text\": \"Олеже, LinkedIn знайшов для тебе нову вакансію віддаленої робот",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути раціон\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Після зміни, о 18:00, переглян",
     "ts": "2026-10-19T09:02:57.882793"
-  },
-  "action_detect|2026-10-19t09_02_51_149110": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
-    "ts": "2026-10-19T09:02:51.149110"
   }
 }
