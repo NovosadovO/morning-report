@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-19t11_17_04_219741": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата підписки Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдали",
+    "ts": "2026-10-19T11:17:04.219741"
+  },
+  "openloop_promises|2026-10-19t11_08_32_039396": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-19T11:08:32.039396"
+  },
   "mailcal_extract|2026-10-19t11_08_02_709368": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81075\",     \"title\": \"Замовлення Temu передано Packeta для доставки\",     \"date\": \"2026-10-19\",     \"time\": null,     \"kind\": \"deliver",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-10-19T07:34:12.018550"
-  },
-  "proactive_actions|2026-10-19t07_30_13_704102": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прочитати непрочитаний лист від The Block\",     \"date\": \"2026-10-19\",     \"time\": \"18:30\",     \"message\": \"О",
-    "ts": "2026-10-19T07:30:13.704102"
-  },
-  "selfact|2026-10-19t07_23_17_115579": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що були невдалі платежі до Runable. Потрібно онови",
-    "ts": "2026-10-19T07:23:17.115579"
   }
 }
