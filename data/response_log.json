@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T12:53:09.038852+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-23T12:53:11.734094+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14138,6 +14132,16 @@
       "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "note",
+        "date": "2026-10-19"
+      }
+    },
+    {
+      "ts": "2026-10-19T07:30:19.348186+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Прочитати непрочитаний лист від The Block",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-10-19"
       }
     }
