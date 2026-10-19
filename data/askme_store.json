@@ -11296,5 +11296,28 @@
       "tag": "report"
     },
     "ts": "2026-10-19T18:15:42.322924+00:00"
+  },
+  "7fd6bcd88a": {
+    "key": "note|інтерес до managing director",
+    "q": "📝 Хочу записати нотатку:\n\n« Інтерес до Managing Director »\n\nОлег отримує сповіщення про вакансію Managing Director в COREDO, що свідчить про його інтерес до цієї ролі.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Інтерес до Managing Director",
+      "desc": "Олег отримує сповіщення про вакансію Managing Director в COREDO, що свідчить про його інтерес до цієї ролі.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-10-19T19:20:24.995475+00:00"
   }
 }
