@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-23T20:15:44.622855+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_1ec7d4d9e4"
-    },
-    {
       "ts": "2026-08-23T20:19:20.367337+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14172,6 +14166,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-19T19:36:33.842114+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
