@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, у тебе є заблоковані повідомлення на Privacy Wall від",
-      "detail": "Лист від EtherMail <ethermail@ethermail.io> | Action Needed: Privacy Wall - Blocked Communications Digest вказує на необхідність дії.",
-      "module": "selfact",
-      "ts": "2026-10-12T05:05:09"
-    },
-    {
-      "kind": "notify",
       "what": "Конференція Finweek Bratislava",
       "detail": "Запланована подія в календарі (конференція) відбувається завтра.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T08:36:08"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-19T09:05:28"
     }
   ]
 }
