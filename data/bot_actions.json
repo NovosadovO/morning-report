@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії в Кошице та Прешові",
-      "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від Profesia.sk та LinkedIn, а також його інтерес до вакансій Engineering Manager та Regionalny kierownik sprzedaży, що було зазначено в нотатках.",
-      "module": "selfact",
-      "ts": "2026-10-12T08:43:18"
-    },
-    {
-      "kind": "notify",
       "what": "Подія Finweek Bratislava",
       "detail": "У календарі на 13.10 запланована подія Finweek Bratislava, яка може бути цікава Олегу, враховуючи його інтерес до криптовалют.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 7.6 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-19T20:13:42"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-19",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-19T20:37:35"
     }
   ]
 }
