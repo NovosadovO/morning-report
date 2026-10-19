@@ -672,17 +672,16 @@
     "pinged_at": ""
   },
   "dtp_keo@faxcopy.sk": {
-    "name": "dtp_keo@faxcopy.sk",
+    "name": "Faxcopy",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "друк",
-      "вітальна листівка"
+      "друк вітальних листівок"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати нагадування про запити на друк, оскільки минуло 4 дні без відповіді.",
+    "next_step": "Надіслати нагадування Faxcopy щодо друку вітальних листівок, оскільки минуло 5 днів без відповіді.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
