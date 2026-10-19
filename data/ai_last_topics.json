@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-19t12_49_12_192916": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія віддаленої роботи\",     \"text\": \"Олеже, LinkedIn знайшов для тебе нову вакансію віддаленої робот",
+    "ts": "2026-10-19T12:49:12.192916"
+  },
+  "mailcal_extract|2026-10-19t12_39_52_858177": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81079\",     \"title\": \"Набуття чинності законодавства про цінні папери на розподілених реєстрах\",     \"date\": \"2027-02-04\",     \"time\":",
+    "ts": "2026-10-19T12:39:52.858177"
+  },
   "openloop_promises|2026-10-19t12_38_40_867594": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати всі блискучі іде",
     "ts": "2026-10-19T09:02:51.149110"
-  },
-  "action_detect|2026-10-19t09_02_35_887167": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Yevhenii\", \"action_date\": \"2026-10-20\", \"action_time\": \"14:00\", \"action_summary\": \"Завтра о 14:00 стрижка",
-    "ts": "2026-10-19T09:02:35.887167"
-  },
-  "action_detect|2026-10-19t09_02_26_897011": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити підтвердження Revolut\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Перевірити ",
-    "ts": "2026-10-19T09:02:26.897011"
   }
 }
