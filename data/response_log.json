@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T01:30:23.827995+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити невдалу оплату Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-24"
-      }
-    },
-    {
       "ts": "2026-08-24T03:00:15.991152+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14157,6 +14147,12 @@
       "category": "chat",
       "question": "постав цю нічну зміну в календар",
       "answer": "✅ <b>Додано в Google Calendar</b>\n📌 Нічна зміна\n🗓 21.10.2026 (середа) о 18:00"
+    },
+    {
+      "ts": "2026-10-19T20:31:34.153600+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
