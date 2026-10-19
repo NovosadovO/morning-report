@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, тобі прийшли нові сповіщення про вакансії від LinkedI",
-      "detail": "Олег активно шукає роботу, і нові вакансії можуть бути для нього актуальними.",
-      "module": "selfact",
-      "ts": "2026-10-12T07:56:28"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверни увагу на лист від EtherMail 'Action Needed: Pr",
       "detail": "Є лист від EtherMail, який вимагає дії щодо Privacy Wall.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-19T17:36:56"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-19T17:37:30"
     }
   ]
 }
