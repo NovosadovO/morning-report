@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T00:00:15.998269+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Оплатити Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-25"
-      }
-    },
-    {
       "ts": "2026-08-24T00:00:19.982703+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14172,6 +14162,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-10-19T19:37:50.074926+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
