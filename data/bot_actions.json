@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, зверни увагу на лист від EtherMail 'Action Needed: Pr",
-      "detail": "Є лист від EtherMail, який вимагає дії щодо Privacy Wall.",
-      "module": "selfact",
-      "ts": "2026-10-12T07:56:33"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T17:37:30"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-19T18:06:15"
     }
   ]
 }
