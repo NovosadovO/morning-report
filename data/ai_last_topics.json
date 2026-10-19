@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-10-19t19_00_09_924040": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-10-19T19:00:09.924040"
+  },
+  "selfact|2026-10-19t18_49_11_313641": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові статті про AI та крипту\",     \"text\": \"Олеже, у тебе є нові статті на LinkedIn про AI: Claude розгадав та",
+    "ts": "2026-10-19T18:49:11.313641"
+  },
+  "mailcal_extract|2026-10-19t18_44_24_190524": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81103\",     \"title\": \"Замовлення Temu відправлено на DEPO Košice\",     \"date\": \"2026-10-19\",     \"time\": \"17:24\",     \"kind\": \"deliver",
+    "ts": "2026-10-19T18:44:24.190524"
+  },
   "email_ai_item|2026-10-19t18_44_12_781780": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від GenAI Works через LinkedIn є інформаційним бюлетенем, який розповідає про останні новини у світі штучного інтелекту. Основ",
@@ -283,30 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-19T15:42:38.139706"
-  },
-  "selfact|2026-10-19t15_41_28_614920": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Key Account Manager Industry\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансі",
-    "ts": "2026-10-19T15:41:28.614920"
-  },
-  "openloop_promises|2026-10-19t15_40_13_898618": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-19T15:40:13.898618"
-  },
-  "foresight_truthfix|2026-10-19t15_35_27_302946": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, дані про вагу, які я маю, є кешованими і не оновлювалися з 19 жовтня 2026 року, 11:36. Твоя вага зараз 85.5 кг, що на 10.5 кг більше цільових 75 кг, і тр",
-    "ts": "2026-10-19T15:35:27.302946"
-  },
-  "selfact|2026-10-19t18_49_11_313641": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові статті про AI та крипту\",     \"text\": \"Олеже, у тебе є нові статті на LinkedIn про AI: Claude розгадав та",
-    "ts": "2026-10-19T18:49:11.313641"
-  },
-  "mailcal_extract|2026-10-19t18_44_24_190524": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81103\",     \"title\": \"Замовлення Temu відправлено на DEPO Košice\",     \"date\": \"2026-10-19\",     \"time\": \"17:24\",     \"kind\": \"deliver",
-    "ts": "2026-10-19T18:44:24.190524"
   }
 }
