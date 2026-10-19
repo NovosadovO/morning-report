@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "EtherMail Privacy Wall",
-      "detail": "Лист від EtherMail прямо вказує на необхідність дії: 'Action Needed: Privacy Wall - Blocked Communications Digest'.",
-      "module": "selfact",
-      "ts": "2026-10-12T06:22:38"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T14:05:18"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-19",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-19T14:36:32"
     }
   ]
 }
