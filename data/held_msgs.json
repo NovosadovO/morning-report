@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-19T03:46:27.706131",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80953"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80953"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80953"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80953"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80953"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80953"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-19T03:46:29.001054",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-19T03:49:57.115356",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 20.10 14:30–22:00 (450 хв)\n\nВільно 450 хв 14:30–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-19T03:50:00.364415",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
