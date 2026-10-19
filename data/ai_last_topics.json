@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-10-19t05_00_35_288804": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-19T05:00:35.288804"
+  },
+  "foresight|2026-10-19t04_48_24_098314": {
+    "topic": "foresight",
+    "gist": "Олеже, на вихідні, поки буде більше часу після ранньої зміни у понеділок та вівторок, є чудовий привід спробувати нову страву для схуднення. Приготуй, наприклад",
+    "ts": "2026-10-19T04:48:24.098314"
+  },
+  "selfact|2026-10-19t04_48_04_079131": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, нагадую, що о 06:00 починається твоя рання зміна. До початку залишилось менш",
+    "ts": "2026-10-19T04:48:04.079131"
+  },
   "action_detect|2026-10-19t04_46_02_862437": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про годинник\", \"action_date\": \"2026-10-16\", \"action_time\": \"17:44\", \"action_summary\": \"Поставити нагаду",
     "ts": "2026-10-18T18:46:15.304266"
-  },
-  "action_detect|2026-10-18t18_46_04_740549": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування: попрацювати над DEX-ботом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег просив н",
-    "ts": "2026-10-18T18:46:04.740549"
-  },
-  "selfact|2026-10-18t18_38_21_949341": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Director of Operations від Scopely\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову в",
-    "ts": "2026-10-18T18:38:21.949341"
-  },
-  "proactive_ai|2026-10-18t18_36_11_936439": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Як тобі зміна пройшла? Сподіваюсь, встиг поїсти, бо голодним після роботи не можна бути. Що плануєш на цей вечір, як відпочиватимеш?",
-    "ts": "2026-10-18T18:36:11.936439"
   }
 }
