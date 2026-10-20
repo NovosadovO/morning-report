@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T12:16:07.082263+00:00",
-      "category": "event_done",
-      "question": "📅 💳 Невдала оплата Railway Corporation $12.32\nПланувалась до 11:00 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-24T14:50:33.712275+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14186,6 +14180,12 @@
         "when": "15:00–15:30",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-20T13:10:36.899007+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_6ca6c6a60a"
     }
   ]
 }
