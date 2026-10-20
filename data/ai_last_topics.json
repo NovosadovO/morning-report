@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-20t11_31_13_762993": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про стрижку\",     \"text\": \"Олеже, нагадую, що сьогодні, 20 жовтня, о 13:00 у тебе запланована стри",
+    "ts": "2026-10-20T11:31:13.762993"
+  },
+  "action_detect|2026-10-20t11_30_21_977284": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-10-20T11:30:21.977284"
+  },
   "mailcal_extract|2026-10-20t11_26_29_646887": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81132\",     \"title\": \"Замовлення Temu готове до доставки\",     \"date\": \"2026-10-20\",     \"time\": null,     \"kind\": \"delivery\",     \"wh",
@@ -288,15 +298,5 @@
     "topic": "assistant",
     "gist": "Зараз, коли ти маєш вільний день до вечірніх справ, можна скористатися цим часом, щоб подбати про майбутній блок нічних змін та покращити самопочуття, враховуюч",
     "ts": "2026-10-20T09:01:12.958437"
-  },
-  "action_detect|2026-10-20t09_00_42_840020": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Занотувати нічну зміну Олега на ",
-    "ts": "2026-10-20T09:00:42.840020"
-  },
-  "action_detect|2026-10-20t09_00_23_059700": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-20T09:00:23.059700"
   }
 }
