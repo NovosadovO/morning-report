@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:45:37.540727",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81119"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81119"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81119"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81119"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81119"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81119"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:45:38.837931",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Bybit-EU]Important Changes to Several Terms and Conditions:</b>\n👤 Bybit-EU &lt;notification@notification.bybit.eu&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-20T03:52:15.974480",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:52:16.759808",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
