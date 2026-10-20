@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:45:36.204352",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Meet the upgrade that changes everything</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81120"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81120"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81120"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81120"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81120"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81120"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:45:37.540727",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-20T03:52:11.918900",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Meet the upgrade that changes everything\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Bybit-EU  → [Bybit-EU]Important Changes to Several Terms and Conditions:\r\n Introducing Auto-Earn for Bybit Card\n• Temu  → Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19. októbra 2026, 23:39(č. PO-180-08315922862710256)\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:52:15.974480",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
