@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:15:36.640780",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[Bybit-EU]Important Changes to Several Terms and Conditions:</b>\n👤 Bybit-EU &lt;notification@notification.bybit.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81117"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81117"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81117"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81117"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81117"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81117"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:15:39.235191",
       "kind": "offer",
       "text": "📦 ✉️\n📌 <b>Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19</b>\n👤 Temu &lt;temu@orders.temu.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-20T03:21:18.968409",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:21:20.017662",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
