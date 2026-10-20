@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T05:27:49.990334+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-08-24T05:28:04.580303+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14159,6 +14153,15 @@
       "ts": "2026-10-20T07:03:18.404902+00:00",
       "category": "deadline_found",
       "question": "Завершення розпродажу Plunge",
+      "answer": "2026-10-30",
+      "extra": {
+        "kind": "other"
+      }
+    },
+    {
+      "ts": "2026-10-20T10:03:30.694501+00:00",
+      "category": "deadline_found",
+      "question": "Знижка на Plunge Pro Chiller",
       "answer": "2026-10-30",
       "extra": {
         "kind": "other"
