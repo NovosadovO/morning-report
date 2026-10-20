@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-20t17_23_49_003191": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-20T17:23:49.003191"
+  },
   "selfact|2026-10-20t17_12_56_820044": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія LinkedIn\",     \"text\": \"Олеже, з'явилася нова вакансія Business Unit Manager Gastro CZSK в AbbVi",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-10-20T14:21:56.411870"
-  },
-  "calendar_truthfix|2026-10-20t14_19_25_643272": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, дані про твою стрижку у Yevhenii на Staré Mesto 463 о 15:00 сьогодні, 20 жовтня 2026 року, є кешованими і не оновлювалися з 19 жовтня 2026 року. Враховую",
-    "ts": "2026-10-20T14:19:25.643272"
   }
 }
