@@ -1,4 +1,24 @@
 {
+  "healthai|2026-10-20t06_18_53_368898": {
+    "topic": "healthai",
+    "gist": "Олеже, напередодні нічних змін, які починаються завтра, бачу, що твоя вага за 19 жовтня становила 85.5 кг. Це на 10.5 кг більше цільових 75 кг, і тренд зростає,",
+    "ts": "2026-10-20T06:18:53.368898"
+  },
+  "selfact|2026-10-20t06_03_00_738651": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Стрижка сьогодні\",     \"text\": \"Олеже, нагадую, що сьогодні, 20 жовтня, о 13:00 у тебе запланована стрижка у Y",
+    "ts": "2026-10-20T06:03:00.738651"
+  },
+  "action_detect|2026-10-20t06_01_36_756002": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Занотувати нічну зміну Олега на ",
+    "ts": "2026-10-20T06:01:36.756002"
+  },
+  "action_detect|2026-10-20t06_01_22_160910": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Yevhenii\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Занотувати стрижку у Yevh",
+    "ts": "2026-10-20T06:01:22.160910"
+  },
   "proactive_actions|2026-10-20t06_00_13_088196": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-10-21\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 21 жовтн",
     "ts": "2026-10-19T19:39:25.102036"
-  },
-  "context_ask_ai|2026-10-19t19_39_15_707056": {
-    "topic": "context_ask_ai",
-    "gist": "Зрозумів, Олеже. Значить, 21 жовтня у тебе нічна зміна, яка починається о 18:00.  Добре, що нагадав. Ці завдання по Revolut (09:00 та 10:00) будуть перед початк",
-    "ts": "2026-10-19T19:39:15.707056"
-  },
-  "action_detect|2026-10-19t19_39_00_696615": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Підтвердження Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"10:00\", \"action_summary\": \"Завершити п",
-    "ts": "2026-10-19T19:39:00.696615"
-  },
-  "context_ask_ai|2026-10-19t19_38_58_703762": {
-    "topic": "context_ask_ai",
-    "gist": "Олеже, 21 жовтня у тебе заплановано:  * **09:00** — Нагадування: Підтвердження Revolut. * **10:00** — Завершити підтвердження особи в Revolut.",
-    "ts": "2026-10-19T19:38:58.703762"
-  },
-  "action_detect|2026-10-19t19_38_33_663810": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-19T19:38:33.663810"
   }
 }
