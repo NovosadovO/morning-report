@@ -1,9 +1,4 @@
 {
-  "80393": {
-    "sender": "updates@okx.com",
-    "sender_raw": "OKX <updates@okx.com>",
-    "seen_ts": "2026-10-07T12:05:22.307247+00:00"
-  },
   "80395": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@blockworks.com",
     "sender_raw": "Blockworks <events@blockworks.com>",
     "seen_ts": "2026-10-20T13:01:46.623754+00:00"
+  },
+  "81156": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-10-20T13:51:28.368053+00:00"
   }
 }
