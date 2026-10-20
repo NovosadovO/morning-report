@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T00:30:51.383282",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Your one-time password</b>\n👤 info@mticket.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81171"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81171"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81171"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81171"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81171"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81171"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T00:30:52.700333",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>An inside look at Gemini 4 Argon with Google DeepMind SVP Ko</b>\n👤 Google через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-10-21T00:33:35.109742",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Garmin Connect+ — скасування підписки\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку на Garmin Connect+ до 4 листопада 2026 року, якщо не хочете, щоб вона автоматично продовжилася.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T00:33:37.475440",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Garmin Connect+ - скасування підписки</b>\n📆 до <b>2026-11-04</b>\n🏢 Garmin\n\n➡️ Скасувати підписку на Garmin Connect+ до 4 листопада, якщо не хочеш платити.",
       "keyboard": null
     }
   ]
