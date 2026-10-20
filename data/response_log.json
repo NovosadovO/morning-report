@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T10:20:43.540492+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T10:20:46.669099+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14170,6 +14164,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Аналіз криптопортфеля",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-20T10:34:22.892455+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_d6d454d3c6"
     }
   ]
 }
