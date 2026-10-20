@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T10:21:14.529583+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T10:21:17.452090+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14170,6 +14164,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-20T10:36:23.215327+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Оцінити портфель та ризик-менеджмент",
+      "answer": "yes"
     }
   ]
 }
