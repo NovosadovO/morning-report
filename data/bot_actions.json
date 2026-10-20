@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені додати рахунок № 20260164 від Mariia",
-      "detail": "Свіжий лист від Mariia Ovsiienko <masyastadnikova@gmail.com> з темою Faktúra od Mariia Ovsiienko, який містить посилання на рахунок.",
-      "module": "selfact",
-      "ts": "2026-10-12T20:09:47"
-    },
-    {
       "kind": "notify",
       "what": "Конференція 'Slovenský finančný trh a inovácie 2026'",
       "detail": "Свіжий лист від Ruslana Kozanchyn <ruslanakozancin@gmail.com> | Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné pokyny, де вказано дату 8 жовтня 2026 року.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-20T23:06:27"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, нагадую, що тобі потрібно завершити підтвердження осо",
+      "detail": "Завтра о 09:00 Олег має завершити підтвердження Revolut, а вже о 17:00 починається нічна зміна. Поточний час 23:27, тому краще нагадати зараз, щоб він міг підготуватися або зробити це до початку зміни.",
+      "module": "selfact",
+      "ts": "2026-10-20T23:27:30"
     }
   ]
 }
