@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T02:55:52.228557",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Bybit-EU  → [Bybit-EU]Important Changes to Several Terms and Conditions:\r\n Introducing Auto-Earn for Bybit Card\n• Temu  → Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19. októbra 2026, 23:39(č. PO-180-08315922862710256)\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-20T02:55:55.924765",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81115"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-20T03:01:44.908032",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на Junior Marketing Specialist for Ukra</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81114"
             }
           ]
         ]
