@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зміни в уряді Словаччини",
-      "detail": "Лист від TREND.sk через LinkedIn <newsletters-noreply@linkedin.com> | Vláda odkladá šetrenie. Drahší dlh zasiahne hypotéky aj úspory.",
-      "module": "selfact",
-      "ts": "2026-10-12T09:29:02"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що тобі потрібно сплатити квартиру 15 жовтня",
       "detail": "Подія в календарі на 15.10: Оплатити квартиру — €500.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-19T21:05:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Дедлайн: Підписка Strava",
+      "detail": "Дедлайн для оновлення платіжної інформації Strava минув 4 серпня, і Олег міг пропустити це.",
+      "module": "selfact",
+      "ts": "2026-10-20T04:29:43"
     }
   ]
 }
