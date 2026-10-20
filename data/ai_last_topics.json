@@ -298,5 +298,15 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81155\",     \"title\": \"Завершення оплати паркування Ubian\",     \"date\": \"2026-10-20\",     \"time\": \"14:43\",     \"kind\": \"payment\",     \"",
     "ts": "2026-10-20T16:46:13.912670"
+  },
+  "action_detect|2026-10-20t20_30_57_680579": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-10-20T20:30:57.680579"
+  },
+  "openloop_promises|2026-10-20t20_24_21_827793": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-20T20:24:21.827793"
   }
 }
