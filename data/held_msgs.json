@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T00:30:54.153549",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan forecasts 10% annual bitcoin returns</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81169"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81169"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81169"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81169"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81169"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81169"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T00:30:55.463222",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: What is Citadel doing with Tokenizati</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-21T00:33:38.321463",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Garmin Connect+ - скасування підписки\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку на Garmin Connect+ до 4 листопада, якщо не хочеш платити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T00:33:40.472503",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Скасування підписки Garmin Connect+</b>\n📆 до <b>2026-11-04</b>\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ до 4 листопада, якщо Олег не хоче, щоб вона автоматично продовжилася.",
       "keyboard": null
     }
   ]
