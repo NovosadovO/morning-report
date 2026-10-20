@@ -1,9 +1,4 @@
 {
-  "80387": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-10-07T11:06:31.589608+00:00"
-  },
   "80390": {
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-20T08:32:03.139094+00:00"
+  },
+  "81146": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-20T12:14:37.174220+00:00"
   }
 }
