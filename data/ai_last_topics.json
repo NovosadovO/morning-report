@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-20t16_57_07_398652": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Business Unit Manager Gastro CZSK\",     \"text\": \"Олеже, LinkedIn повідомив про нову вакансію Bus",
+    "ts": "2026-10-20T16:57:07.398652"
+  },
   "mailcal_extract|2026-10-20t16_46_13_912670": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81155\",     \"title\": \"Завершення оплати паркування Ubian\",     \"date\": \"2026-10-20\",     \"time\": \"14:43\",     \"kind\": \"payment\",     \"",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії за запитом 'Директор з операцій в European Union'. Зокрема, пропонується вак",
     "ts": "2026-10-20T14:14:33.318929"
-  },
-  "selfact|2026-10-20t14_07_45_390168": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Стрижка у Yevhenii\",     \"text\": \"Олеже, нагадую, що сьогодні о 14:00 у тебе запланована стрижка у Yevhenii за",
-    "ts": "2026-10-20T14:07:45.390168"
   }
 }
