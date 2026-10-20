@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-21T00:01:12.228159",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Naštartuj kariéru na oddelení auditu! (Košice) в Deloitte</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81165"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81165"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81165"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81165"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81165"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81165"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
