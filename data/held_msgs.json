@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T00:30:48.635414",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxp</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81173"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81173"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81173"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81173"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81173"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81173"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T00:30:50.016421",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Stablecoin Blacklists Recovered Nothing in 60 Exploits</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-21T00:33:31.954596",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Garmin Connect+ підписка — скасування\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ на Garmin.com/subscriptions, якщо не хочете платити",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T00:33:34.154122",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Garmin Connect+ — скасування підписки</b>\n📆 до <b>2026-11-04</b>\n🏢 Garmin\n\n➡️ Скасувати підписку на Garmin Connect+ до 4 листопада 2026 року, якщо не хочете, щоб вона автоматично продовжилася.",
       "keyboard": null
     }
   ]
