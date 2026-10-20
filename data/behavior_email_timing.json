@@ -1,9 +1,4 @@
 {
-  "80392": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-10-07T11:56:05.043642+00:00"
-  },
   "80393": {
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-20T12:16:53.316462+00:00"
+  },
+  "81153": {
+    "sender": "events@blockworks.com",
+    "sender_raw": "Blockworks <events@blockworks.com>",
+    "seen_ts": "2026-10-20T13:01:46.623754+00:00"
   }
 }
