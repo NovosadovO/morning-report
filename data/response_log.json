@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T10:20:46.669099+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_f28c237603"
-    },
-    {
       "ts": "2026-08-24T10:21:14.529583+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14170,6 +14164,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_d6d454d3c6"
+    },
+    {
+      "ts": "2026-10-20T10:35:34.381402+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
