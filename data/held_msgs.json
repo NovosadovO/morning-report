@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T02:32:36.190351",
-      "kind": "bills",
-      "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (27 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 CapCut\n💰 сума не вказана\n📆 до 2026-09-23\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-20T02:32:38.837171",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🧰 <b>Кредит Temu за затримку доставки</b>\n📆 до <b>2026-10-23</b>\n🏢 Temu\n\n➡️ Перевірити, чи доставлено замовлення Temu до 23 жовтня. Якщо ні, очікувати кредит 5,00 €.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-20T02:37:39.341285",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Bybit-EU  → [Bybit-EU]Important Changes to Several Terms and Conditions:\r\n Introducing Auto-Earn for Bybit Card\n• Temu  → Stav odoslania vašej objednávky Temu bolaktualizovaný dňa 19. októbra 2026, 23:39(č. PO-180-08315922862710256)\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T02:37:43.537530",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
