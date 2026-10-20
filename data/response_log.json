@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T10:21:44.718213+00:00",
-      "category": "confirm",
-      "question": "email_delete: Користувач 0xfustвказав вас уCashmere Labs",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T10:21:50.553528+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14177,6 +14171,15 @@
       "extra": {
         "kind": "note",
         "date": "2026-10-21"
+      }
+    },
+    {
+      "ts": "2026-10-20T13:03:36.573369+00:00",
+      "category": "deadline_found",
+      "question": "Отримання посилки Temu",
+      "answer": "2026-10-20",
+      "extra": {
+        "kind": "other"
       }
     }
   ]
