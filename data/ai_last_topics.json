@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-10-20t21_35_37_434151": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! ⚠️  Бачу, що сьогодні ринок криптовалют демонструє певну динаміку, особливо виділяється ZEC зі зростанням на 6.4% за останні 24 години. Це цікавий",
+    "ts": "2026-10-20T21:35:37.434151"
+  },
   "action_detect|2026-10-20t21_30_40_385595": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -293,10 +298,5 @@
     "topic": "defi_digest",
     "gist": "Чи варто звертати увагу на таку волатильність у DeFi? Так, адже попри значний ріст Dolomite (+47.1%) та LayerZero V2 (+24.6%), є й помітні падіння, як у Papertr",
     "ts": "2026-10-20T18:15:24.729033"
-  },
-  "email_ai_item|2026-10-20t18_14_49_464310": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію 'SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR (RENOMIA NETWORK)' в компанії RENOMIA у ",
-    "ts": "2026-10-20T18:14:49.464310"
   }
 }
