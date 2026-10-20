@@ -1,4 +1,29 @@
 {
+  "mailcal_extract|2026-10-20t13_43_13_889049": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81132\",     \"title\": \"Замовлення Temu готове до доставки\",     \"date\": \"2026-10-20\",     \"time\": null,     \"kind\": \"delivery\",     \"wh",
+    "ts": "2026-10-20T13:43:13.889049"
+  },
+  "selfact|2026-10-20t13_35_55_548378": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
+    "ts": "2026-10-20T13:35:55.548378"
+  },
+  "bills|2026-10-20t13_35_43_317405": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-20T13:35:43.317405"
+  },
+  "action_detect|2026-10-20t13_35_23_998277": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити новини щодо NEAR\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Варто перевірити актуаль",
+    "ts": "2026-10-20T13:35:23.998277"
+  },
+  "msg_crypto_move_truthfix|2026-10-20t13_35_15_778521": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Привіт Олеже!  Дані, які я маю, є кешованими і не оновлювалися з 19 жовтня 2026 року, тобто їм 1 день. Твій портфель втратив $102 за останні 24 години, при цьом",
+    "ts": "2026-10-20T13:35:15.778521"
+  },
   "msg_crypto_move|2026-10-20t13_35_05_633247": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "Привіт Олеже! 💹  Сьогодні ринок криптовалют переживає помітне зниження, що позначилося і на твоїх активах, зокрема NEAR та RAIN. NEAR втратив 5.4%, а RAIN — 7.3",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверніть увагу, що платежі до Runable на $10.00 були невдалими к",
     "ts": "2026-10-20T10:59:35.606817"
-  },
-  "selfact|2026-10-20t10_43_50_115875": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-10-20T10:43:50.115875"
-  },
-  "mailcal_extract|2026-10-20t10_40_59_413751": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81122\",     \"title\": \"Замовлення Temu прибуло на depo Nová Polhora\",     \"date\": \"2026-10-20\",     \"time\": \"09:24\",     \"kind\": \"deliv",
-    "ts": "2026-10-20T10:40:59.413751"
-  },
-  "action_detect|2026-10-20t10_34_19_555574": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Поставити нічну зміну Олега в ка",
-    "ts": "2026-10-20T10:34:19.555574"
-  },
-  "people|2026-10-20t10_33_08_678962": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"Runable\",       \"Ж",
-    "ts": "2026-10-20T10:33:08.678962"
-  },
-  "action_detect|2026-10-20t10_32_48_042426": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз криптопортфеля\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Переглянути поточні по",
-    "ts": "2026-10-20T10:32:48.042426"
   }
 }
