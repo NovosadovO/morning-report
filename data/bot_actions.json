@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Конференція 'Slovenský finančný trh a inovácie 2026'",
-      "detail": "Свіжий лист від Ruslana Kozanchyn <ruslanakozancin@gmail.com> | Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné pokyny, де вказано дату 8 жовтня 2026 року.",
-      "module": "selfact",
-      "ts": "2026-10-12T20:09:53"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-12",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "Завтра о 09:00 Олег має завершити підтвердження Revolut, а вже о 17:00 починається нічна зміна. Поточний час 23:27, тому краще нагадати зараз, щоб він міг підготуватися або зробити це до початку зміни.",
       "module": "selfact",
       "ts": "2026-10-20T23:27:30"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-20",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-10-20T23:41:12"
     }
   ]
 }
