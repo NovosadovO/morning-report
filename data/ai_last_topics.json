@@ -1,4 +1,24 @@
 {
+  "selfact|2026-10-20t18_30_40_498849": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, з'явилися нові вакансії на LinkedIn, які можуть бути тобі цікаві:",
+    "ts": "2026-10-20T18:30:40.498849"
+  },
+  "mailcal_extract|2026-10-20t18_16_42_895613": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-20T18:16:42.895613"
+  },
+  "selfact|2026-10-20t18_15_35_004526": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-10-20T18:15:35.004526"
+  },
+  "defi_digest|2026-10-20t18_15_24_729033": {
+    "topic": "defi_digest",
+    "gist": "Чи варто звертати увагу на таку волатильність у DeFi? Так, адже попри значний ріст Dolomite (+47.1%) та LayerZero V2 (+24.6%), є й помітні падіння, як у Papertr",
+    "ts": "2026-10-20T18:15:24.729033"
+  },
   "email_ai_item|2026-10-20t18_14_49_464310": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію 'SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR (RENOMIA NETWORK)' в компанії RENOMIA у ",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "🤔 Олеже, бачу, що за сьогодні, 20 жовтня, поки зафіксовано 10.4 години сну, що помітно більше, ніж твоя середня за 7 днів – 7.5 годин. Це може бути хорошим відн",
     "ts": "2026-10-20T15:05:28.528080"
-  },
-  "email_ai_item|2026-10-20t15_01_45_519743": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Blockworks про спільну акцію DAS London та Solana Breakpoint, що пропонує 50% знижки на квитки на обидві події. Пропозиція діє",
-    "ts": "2026-10-20T15:01:45.519743"
-  },
-  "action_detect|2026-10-20t15_01_44_134785": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Сьогодні ",
-    "ts": "2026-10-20T15:01:44.134785"
-  },
-  "action_detect|2026-10-20t15_01_32_770753": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Занотувати нічну зміну Олега на ",
-    "ts": "2026-10-20T15:01:32.770753"
-  },
-  "action_detect|2026-10-20t15_01_21_825395": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підтвердження Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"09:00\", \"action_summary\": \"Завершити підтвердж",
-    "ts": "2026-10-20T15:01:21.825395"
   }
 }
