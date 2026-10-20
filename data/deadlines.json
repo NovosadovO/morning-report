@@ -622,5 +622,17 @@
     "sender": "PLUNGE <hello@plunge.com>",
     "done": false,
     "created": "2026-10-20"
+  },
+  "отримання_посилки_temu|2026-10-20": {
+    "kind": "other",
+    "title": "Отримання посилки Temu",
+    "org": "Temu",
+    "deadline": "2026-10-20",
+    "action": "Бути готовим прийняти посилку за адресою Trieda SNP 83, Košice.",
+    "why": "Посилка вже готова до доставки, і її потрібно буде забрати сьогодні.",
+    "uid": "81132",
+    "sender": "Temu <temu@orders.temu.com>",
+    "done": false,
+    "created": "2026-10-20"
   }
 }
