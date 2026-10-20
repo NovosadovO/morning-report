@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T00:41:07.086418",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T00:41:08.109450",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81173"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T00:46:11.736843",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Stablecoin Blacklists Recovered Nothing in 60 Exploits</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81172"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81172"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81172"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81172"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81172"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81172"
             }
           ]
         ]
