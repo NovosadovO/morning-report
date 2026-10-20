@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T16:20:33.398942+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA додав 47.3% за 24 години (капіталізація $70.28B)"
-    },
-    {
       "ts": "2026-08-24T17:20:33.017049+00:00",
       "category": "deadline_found",
       "question": "Підтвердження пропозиції Temu",
@@ -14189,6 +14183,17 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-10-21"
+      }
+    },
+    {
+      "ts": "2026-10-20T13:33:12.356451+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Стрижка у Yevhenii",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "14:00–14:30",
+        "note": null
       }
     }
   ]
