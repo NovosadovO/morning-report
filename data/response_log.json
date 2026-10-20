@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T03:00:20.212226+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Переглянути звіт RWA з DefiLlama.com",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-24"
-      }
-    },
-    {
       "ts": "2026-08-24T03:00:24.393376+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14149,6 +14139,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-10-20T04:03:15.460576+00:00",
+      "category": "deadline_found",
+      "question": "Завершення акції Plunge Fall Contrast Sale",
+      "answer": "2026-10-30",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
