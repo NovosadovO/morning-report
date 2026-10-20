@@ -1,9 +1,4 @@
 {
-  "80400": {
-    "sender": "support@pixoryofficial.com",
-    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
-    "seen_ts": "2026-10-07T13:03:51.911495+00:00"
-  },
   "80403": {
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "AI Evolution через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-20T18:45:45.234504+00:00"
+  },
+  "81170": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Google через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-20T20:57:44.025670+00:00"
   }
 }
