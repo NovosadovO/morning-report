@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:30:41.334612",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Meet the upgrade that changes everything</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81120"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81120"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81120"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81120"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81120"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81120"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:30:42.858813",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-20T03:32:50.684336",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 7 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Завершення програми лояльності SizeerClub\n📆 до 2026-10-27\n🏢 Sizeer\n\n➡️ Використати всі накопичені бали та купони в мобільній програмі Sizeer до 27.10.2026 23:50.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:32:52.776716",
+      "kind": "subs",
+      "text": "🔄 <b>СКОРО СПИСАННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Railway Corporation</b>\n💰 12.55$ — через 2 дн. (2026-10-22)\n\nЩомісячна оплата за тариф Hobby plan та використання ресурсів.\n\n⏳ Лишилось 2 дн. — вже пора, а не «потім».\nСкасувати можна тільки ДО списання — після вже не повернуть.\nЦе 151€ на рік — вирішувати варто саме такими числами, а не місячними.\n➡️ Порівняй із тим, скільки це виходить на рік — рішення стане очевидним.",
       "keyboard": null
     }
   ]
