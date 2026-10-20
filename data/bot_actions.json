@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-12",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-10-12T20:00:39"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "вечірній розбір, оцінка 88",
       "module": "selfact",
       "ts": "2026-10-20T21:21:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Завершення підтвердження Revolut",
+      "detail": "Є запланована подія в календарі на 21.10 о 09:00 'Завершити підтвердження особи в Revolut', а також нагадування 'Підтвердження Revolut' на 21.10 о 09:00. Оскільки Олег працює нічними змінами, краще нагадати заздалегідь.",
+      "module": "selfact",
+      "ts": "2026-10-20T21:22:41"
     }
   ]
 }
