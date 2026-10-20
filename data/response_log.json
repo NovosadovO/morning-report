@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T07:20:14.774972+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "ONDO (твоя позиція) виріс на 6.5% за 24 години (зараз $0.37427)"
-    },
-    {
       "ts": "2026-08-24T10:20:43.540492+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14170,6 +14164,12 @@
         "kind": "reminder",
         "date": "2026-10-21"
       }
+    },
+    {
+      "ts": "2026-10-20T10:34:00.074390+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Аналіз криптопортфеля",
+      "answer": "yes"
     }
   ]
 }
