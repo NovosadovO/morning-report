@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:30:42.858813",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81119"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81119"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81119"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81119"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81119"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81119"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:30:44.306596",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Bybit-EU]Important Changes to Several Terms and Conditions:</b>\n👤 Bybit-EU &lt;notification@notification.bybit.eu&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-20T03:32:52.776716",
       "kind": "subs",
       "text": "🔄 <b>СКОРО СПИСАННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Railway Corporation</b>\n💰 12.55$ — через 2 дн. (2026-10-22)\n\nЩомісячна оплата за тариф Hobby plan та використання ресурсів.\n\n⏳ Лишилось 2 дн. — вже пора, а не «потім».\nСкасувати можна тільки ДО списання — після вже не повернуть.\nЦе 151€ на рік — вирішувати варто саме такими числами, а не місячними.\n➡️ Порівняй із тим, скільки це виходить на рік — рішення стане очевидним.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:32:53.604235",
+      "kind": "subs",
+      "text": "🔄 СКОРО СПИСАННЯ\n━━━━━━━━━━━━━━━━━━━━\n🏢 Railway Corporation\n💰 12.55$ — через 2 дн. (2026-10-22)\n\nЩомісячна оплата за тариф Hobby plan та використання ресурсів.\n\n⏳ Лишилось 2 дн. — вже пора, а не «потім».\nСкасувати можна тільки ДО списання — після вже не повернуть.\nЦе 151€ на рік — вирішувати варто саме такими числами, а не місячними.\n➡️ Порівняй із тим, скільки це виходить на рік — рішення стане очевидним.",
       "keyboard": null
     }
   ]
