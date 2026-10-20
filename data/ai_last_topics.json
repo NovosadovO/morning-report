@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-20t18_14_49_464310": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію 'SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR (RENOMIA NETWORK)' в компанії RENOMIA у ",
+    "ts": "2026-10-20T18:14:49.464310"
+  },
   "astro_ai|2026-10-20t18_10_45_489079": {
     "topic": "astro_ai",
     "gist": "Привіт, Олеже!  Сьогодні, 20 жовтня 2026 року, о 18:10 у Кошице, астрологічна картина для тебе досить насичена. Відчувається суміш імпульсів до дії та потреби у",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підтвердження Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"09:00\", \"action_summary\": \"Завершити підтвердж",
     "ts": "2026-10-20T15:01:21.825395"
-  },
-  "action_detect|2026-10-20t15_01_11_346481": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Олег має нічну зміну 21 жовтня.\"",
-    "ts": "2026-10-20T15:01:11.346481"
   }
 }
