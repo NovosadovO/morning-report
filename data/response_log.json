@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T17:20:33.017049+00:00",
-      "category": "deadline_found",
-      "question": "Підтвердження пропозиції Temu",
-      "answer": "2026-08-24",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-24T17:50:46.319539+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14195,6 +14186,12 @@
         "when": "14:00–14:30",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-20T13:33:12.801488+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_2526e20ded"
     }
   ]
 }
