@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-20t06_00_13_088196": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
+    "ts": "2026-10-20T06:00:13.088196"
+  },
   "selfact|2026-10-20t05_47_01_322904": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-19T19:38:33.663810"
-  },
-  "planner|2026-10-19t19_38_18_708388": {
-    "topic": "planner",
-    "gist": "```json [   {     \"title\": \"Рання зміна\",     \"date\": \"2026-10-21\",     \"time\": null,     \"allday\": true   } ] ```",
-    "ts": "2026-10-19T19:38:18.708388"
   }
 }
