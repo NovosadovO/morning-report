@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-20T03:45:43.042399",
-      "kind": "offer",
-      "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на Junior Marketing Specialist for Ukra</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81114"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81114"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81114"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81114"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81114"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81114"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-20T03:45:44.365124",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan expands JPM Coin to Ethereum</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-20T03:53:37.164086",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-20T03:53:38.100740",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
