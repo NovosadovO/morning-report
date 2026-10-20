@@ -17,6 +17,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T00:01:03.509895",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxp</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81173"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81173"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81173"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81173"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81173"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81173"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
