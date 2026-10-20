@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-20t05_31_58_769625": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-20T05:31:58.769625"
+  },
+  "openloop_promises|2026-10-20t05_18_15_399525": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-20T05:18:15.399525"
+  },
   "selfact|2026-10-20t05_16_46_814096": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Стрижка у Yevhenii\",     \"text\": \"Олеже, нагадую, що сьогодні, 20 жовтня, о 13:00 у тебе запланована стрижка у",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Abacus AI інформує Олега про три способи використання ChatLLM для роботи: створення додатків, документів та презентацій за",
     "ts": "2026-10-19T19:08:48.654225"
-  },
-  "action_detect|2026-10-19t19_07_47_646778": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-19T19:07:47.646778"
-  },
-  "action_detect|2026-10-19t19_07_36_791264": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2026-10-20\", \"action_time\": \"null\", \"action_summary\": \"Олеже, завтра, 20 жовтня, найкращ",
-    "ts": "2026-10-19T19:07:36.791264"
   }
 }
