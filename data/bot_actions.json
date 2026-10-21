@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-12",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-10-12T20:25:31"
-    },
-    {
       "kind": "notify",
       "what": "Нова вакансія Senior Solution Owner - Digital Identity",
       "detail": "Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від LinkedIn, і ця вакансія відповідає його профілю (Digital Identity, висока зарплата).",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 21.10 є дві події: 08:00 🔔 Підтвердження Revolut та 09:00 Завершити підтвердження особи в Revolut. Поточний час 04:07, тому є достатньо часу для сповіщення.",
       "module": "selfact",
       "ts": "2026-10-21T04:07:36"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-21",
+      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-21T05:41:35"
     }
   ]
 }
