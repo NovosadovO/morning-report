@@ -1,4 +1,9 @@
 {
+  "healthai|2026-10-21t20_54_04_493590": {
+    "topic": "healthai",
+    "gist": "Олеже, бачу, ти сьогодні о 19:10 підтвердив, що зробив щось щодо зниженого HRV. Це може свідчити про те, що ти звертаєш увагу на цей показник, що важливо, адже ",
+    "ts": "2026-10-21T20:54:04.493590"
+  },
   "selfact|2026-10-21t20_48_22_437326": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія: Vedúci/Vedúca oddelenia / Department Manager\",     \"text\": \"Олеже, LinkedIn знайшов для тебе но",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-21T18:00:13.084019"
-  },
-  "selfact|2026-10-21t17_54_33_220066": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу, про що свідчить отримання сповіщення про вакансію Finance – Head of Operations від Red",
-    "ts": "2026-10-21T17:54:33.220066"
   }
 }
