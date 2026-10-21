@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T05:50:40.233032+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "ONDO (твоя позиція) виріс на 5.8% за 24 години (зараз $0.39336)"
-    },
-    {
       "ts": "2026-08-25T06:00:17.103797+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14248,6 +14242,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_rem_c617c577a1"
+    },
+    {
+      "ts": "2026-10-22T00:03:03.108726+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_ae29f6b29a"
     }
   ]
 }
