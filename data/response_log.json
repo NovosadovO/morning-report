@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T19:44:40.637215+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T19:44:43.254651+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14211,6 +14205,16 @@
       "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "reply",
+        "date": "2026-10-22"
+      }
+    },
+    {
+      "ts": "2026-10-21T13:30:17.785834+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Нічна зміна",
+      "extra": {
+        "kind": "calendar",
         "date": "2026-10-22"
       }
     }
