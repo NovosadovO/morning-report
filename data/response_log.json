@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T20:41:55.487835+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-24T20:42:43.749316+00:00",
       "category": "chat",
       "question": "чому ти не додав до моіх звичок пункт догляд за обличчям?",
@@ -14225,6 +14219,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_9786ecf9e6"
+    },
+    {
+      "ts": "2026-10-21T16:30:33.846415+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Завершити підтвердження особи в Revolut",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-21"
+      }
     }
   ]
 }
