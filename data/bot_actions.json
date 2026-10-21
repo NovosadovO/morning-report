@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-13T07:41:50"
-    },
-    {
       "kind": "notify",
       "what": "Лист від Notifikácie KOOPERATIVA",
       "detail": "Лист від Notifikácie KOOPERATIVA потребує відповіді, як вказано в календарі на 13.10.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-21T16:05:43"
+    },
+    {
+      "kind": "notify",
+      "what": "Зміни в розкладі: кардіо прогулянка",
+      "detail": "Олег сам попросив видалити нічну зміну і додати кардіо прогулянку на сьогодні 21.10.",
+      "module": "selfact",
+      "ts": "2026-10-21T16:52:31"
     }
   ]
 }
