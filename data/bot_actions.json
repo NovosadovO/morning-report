@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Лист від Notifikácie KOOPERATIVA потребує відповіді",
-      "detail": "У календарі на 13.10 зазначено: 🔔 Лист від Notifikácie KOOPERATIVA потребує відповіді.",
-      "module": "selfact",
-      "ts": "2026-10-13T08:32:59"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Запланована подія в календарі на 21.10: 19:00 Кардіо прогулянка. Поточний час 17:23, залишається достатньо часу.",
       "module": "selfact",
       "ts": "2026-10-21T17:24:02"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-21",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-21T17:43:21"
     }
   ]
 }
