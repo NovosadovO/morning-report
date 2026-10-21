@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-22t00_27_00_070726": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачений рахунок KOOPERATIVA\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA про авізо на сплат",
+    "ts": "2026-10-22T00:27:00.070726"
+  },
   "selfact|2026-10-22t00_11_19_987897": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA щодо оплати обов'язковог",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Завершити підтвердження особи в Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"10:00\", \"action_summ",
     "ts": "2026-10-21T21:02:08.702836"
-  },
-  "action_detect|2026-10-21t21_01_57_514580": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-21T21:01:57.514580"
   }
 }
