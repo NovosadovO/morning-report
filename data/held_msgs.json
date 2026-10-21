@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:45:59.824205",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Stablecoin Blacklists Recovered Nothing in 60 Exploits</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81172"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81172"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81172"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81172"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81172"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81172"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T03:46:03.134790",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Your one-time password</b>\n👤 info@mticket.eu",
@@ -247,6 +208,12 @@
       "ts": "2026-10-21T03:53:07.236236",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → What happens after year one?\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Forbes через LinkedIn → Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxpayer Expense\n• info@mticket.eu → Your one-time password\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T03:53:10.107364",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.4% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
