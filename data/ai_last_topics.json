@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-21t19_29_24_795150": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж на $10.00 до Runable був невдалим. Будь ласка, онови платі",
+    "ts": "2026-10-21T19:29:24.795150"
+  },
   "mailcal_extract|2026-10-21t19_23_53_311344": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Завершити підтвердження особи в Revolut\",     \"date\": \"2026-10-21\",     \"time\": \"17:30\",     \"message\": \"Оле",
     "ts": "2026-10-21T16:30:24.537173"
-  },
-  "mailcal_extract|2026-10-21t16_22_39_134330": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81207\",     \"title\": \"Кредит від Temu\",     \"date\": \"2026-10-21\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Poslali sme vám k",
-    "ts": "2026-10-21T16:22:39.134330"
   }
 }
