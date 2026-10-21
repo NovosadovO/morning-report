@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Завтра конференція Finweek Bratislava",
-      "detail": "Подія 'BLOOD, SWEAT & MiCA — Finweek Bratislava' запланована на 13.10 о 12:45. Це важлива подія, про яку варто нагадати заздалегідь.",
-      "module": "selfact",
-      "ts": "2026-10-12T22:47:03"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: steps_good",
       "detail": "🚶 Кроки за тиждень у середньому 12781 — ціль 8000 досягнута",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-21T13:05:52"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 13475 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-10-21T13:16:03"
     }
   ]
 }
