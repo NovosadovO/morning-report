@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T20:41:46.174960+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e3de1f4409"
-    },
-    {
       "ts": "2026-08-24T20:41:55.487835+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14225,6 +14219,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Змінити розклад",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-21T15:25:29.196954+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_9786ecf9e6"
     }
   ]
 }
