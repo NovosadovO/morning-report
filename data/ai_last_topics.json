@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-21t16_36_24_302709": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег сьогодні, 21.10.2026, о 15:16 попросив видалити нічну зміну і додати кардіо прогулянку замість неї.\",     \"w",
+    "ts": "2026-10-21T16:36:24.302709"
+  },
   "proactive_actions|2026-10-21t16_30_24_537173": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Завершити підтвердження особи в Revolut\",     \"date\": \"2026-10-21\",     \"time\": \"17:30\",     \"message\": \"Оле",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
     "ts": "2026-10-21T13:42:56.143741"
-  },
-  "action_detect|2026-10-21t13_36_33_706176": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-21T13:36:33.706176"
   }
 }
