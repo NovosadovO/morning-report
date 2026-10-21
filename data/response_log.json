@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T21:15:49.134868+00:00",
-      "category": "confirm",
-      "question": "email_delete: Action Needed: Privacy Wall - Blocked Communications Digest",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T21:15:53.178713+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14232,6 +14226,17 @@
       "extra": {
         "kind": "reply",
         "date": "2026-10-21"
+      }
+    },
+    {
+      "ts": "2026-10-21T19:08:44.461239+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
       }
     }
   ]
