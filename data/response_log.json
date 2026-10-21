@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T04:30:24.049983+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Прийом Armolopid Plus",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-25"
-      }
-    },
-    {
       "ts": "2026-08-25T05:50:40.233032+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14252,6 +14242,12 @@
       "category": "confirm",
       "question": "gate_pa_rem: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-22T00:03:03.107986+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_rem_c617c577a1"
     }
   ]
 }
