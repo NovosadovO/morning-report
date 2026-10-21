@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T02:54:22.406071",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO +5.3% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T02:55:41.758113",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Forbes через LinkedIn<newsletters-noreply@linkedin.com> → Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxpayer Expense\n• info@mticket.eu → Your one-time password\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: What is Citadel doing with Tokenization?\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81170"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T03:01:10.984858",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan forecasts 10% annual bitcoin returns</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81169"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81169"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81169"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81169"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81169"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81169"
             }
           ]
         ]
