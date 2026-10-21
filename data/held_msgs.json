@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T02:53:04.004037",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO +5.3% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T02:53:04.863798",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO +5.3% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T03:01:03.678007",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Can crypto re-democratize investing?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81175"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81175"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81175"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81175"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81175"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81175"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
