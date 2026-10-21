@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Лист від KOOPERATIVA потребує відповіді",
-      "detail": "У календарі на 13.10 зазначено: 🔔 Лист від Notifikácie KOOPERATIVA потребує відповіді; 12:45 BLOOD, SWEAT & MiCA — Finweek Bratislava. Поточний час 11:40, тому відповідь на лист важлива перед подією.",
-      "module": "selfact",
-      "ts": "2026-10-13T11:40:26"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-21T20:05:42"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-21",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-21T20:43:53"
     }
   ]
 }
