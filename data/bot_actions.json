@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Finweek «Blood, Sweat & MiCA»",
-      "detail": "Календар на 13.10: 12:15 Нагадування: Finweek «Blood, Sweat & MiCA» починається за 30 хв; 12:45 BLOOD, SWEAT & MiCA — Finweek Bratislava",
-      "module": "selfact",
-      "ts": "2026-10-13T12:10:56"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_field_stale",
       "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-10-12 (1 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-21T20:44:20"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_good",
+      "detail": "😴 Сон за тиждень у середньому 7.4 год — стабільно добре",
+      "module": "healthai",
+      "ts": "2026-10-21T20:54:15"
     }
   ]
 }
