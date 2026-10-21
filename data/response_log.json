@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T19:44:43.254651+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_caf4c7cee8"
-    },
-    {
       "ts": "2026-08-24T19:44:58.672248+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Річниця",
@@ -14216,6 +14210,16 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-10-22"
+      }
+    },
+    {
+      "ts": "2026-10-21T15:00:25.712516+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути ранковий дайджест ринків",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-10-21"
       }
     }
   ]
