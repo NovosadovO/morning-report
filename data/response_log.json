@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T20:41:43.303311+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T20:41:46.174960+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14225,6 +14219,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_241a460b95"
+    },
+    {
+      "ts": "2026-10-21T15:25:10.857043+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Змінити розклад",
+      "answer": "yes"
     }
   ]
 }
