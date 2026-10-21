@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T21:15:53.178713+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ea4d1fed73"
-    },
-    {
       "ts": "2026-08-24T21:16:26.231945+00:00",
       "category": "event_done",
       "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
@@ -14238,6 +14232,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-21T19:08:45.046157+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_eff6c488fb"
     }
   ]
 }
