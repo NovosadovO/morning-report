@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:39:31.548150",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.4% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T03:39:32.478298",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.4% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81173"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T03:45:59.824205",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Stablecoin Blacklists Recovered Nothing in 60 Exploits</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81172"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81172"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81172"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81172"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81172"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81172"
             }
           ]
         ]
