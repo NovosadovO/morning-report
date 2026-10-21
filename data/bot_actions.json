@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нагадування про страховку",
-      "detail": "Свіжий лист від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> про Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI.",
-      "module": "selfact",
-      "ts": "2026-10-12T21:58:31"
-    },
-    {
-      "kind": "notify",
       "what": "Нова фактура від Марії",
       "detail": "Свіжий лист від Mariia Ovsiienko <masyastadnikova@gmail.com> про Faktúra od Mariia Ovsiienko.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-21T10:06:20"
+    },
+    {
+      "kind": "notify",
+      "what": "Новини від LinkedIn",
+      "detail": "Є три нові листи від LinkedIn з цікавими статтями, які Олег міг не побачити.",
+      "module": "selfact",
+      "ts": "2026-10-21T10:53:47"
     }
   ]
 }
