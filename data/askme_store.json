@@ -15171,5 +15171,30 @@
       "tag": "MSG_FORESIGHT_MAIL"
     },
     "ts": "2026-10-21T03:41:57.272545+00:00"
+  },
+  "4dcf50cdb3": {
+    "key": "q| plunge   what happens after year one",
+    "q": "• PLUNGE  → What happens after year one?",
+    "kind": "confirm",
+    "opts": [
+      [
+        "yes",
+        "✅ Так"
+      ],
+      [
+        "no",
+        "❌ Ні"
+      ],
+      [
+        "later",
+        "⏰ Пізніше"
+      ]
+    ],
+    "meta": {
+      "summary": "📥 СПЕРШУ ВАЖЛИВЕ",
+      "desc": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → What happens after year one?\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Forbes через LinkedIn → Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxpayer Expense\n• info@mticket.eu → Your one-time pas",
+      "tag": "MSG_FORESIGHT_MAIL"
+    },
+    "ts": "2026-10-21T03:43:15.159547+00:00"
   }
 }
