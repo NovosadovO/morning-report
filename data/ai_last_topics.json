@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-21t12_00_12_831757": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Завершити підтвердження Revolut\",     \"date\": \"2026-10-21\",     \"time\": \"17:00\",     \"message\": \"Олеже, нага",
+    "ts": "2026-10-21T12:00:12.831757"
+  },
   "selfact|2026-10-21t11_55_25_595490": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підтвердження Revolut\",     \"text\": \"Олеже, нагадую, що тобі потрібно завершити підтвердження особи",
     "ts": "2026-10-21T09:03:43.729992"
-  },
-  "action_detect|2026-10-21t09_03_33_510291": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати думки\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Обов'язково записуй усі думки",
-    "ts": "2026-10-21T09:03:33.510291"
   }
 }
