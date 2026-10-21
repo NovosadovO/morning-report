@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:01:10.984858",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan forecasts 10% annual bitcoin returns</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81169"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81169"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81169"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81169"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81169"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81169"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T03:01:12.283673",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: What is Citadel doing with Tokenizati</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-21T03:08:08.059475",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.5% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T03:08:09.016773",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.5% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
