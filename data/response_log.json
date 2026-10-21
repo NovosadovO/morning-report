@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T20:41:13.699990+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-24T20:41:14.847508+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14222,6 +14216,12 @@
     },
     {
       "ts": "2026-10-21T15:20:32.528460+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-10-21T15:20:39.198365+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
