@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:09:19.691256",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Forbes через LinkedIn → Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxpayer Expense\n• info@mticket.eu → Your one-time password\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T03:09:24.186282",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.5% за 24г (DefiLlama).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81176"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T03:16:04.219821",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Can crypto re-democratize investing?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81175"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81175"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81175"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81175"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81175"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81175"
             }
           ]
         ]
