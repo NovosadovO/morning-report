@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-21t06_11_19_065901": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Revolut: Підтвердження особи\",     \"text\": \"Олеже, нагадую, що сьогодні, 21 жовтня, о 09:00 тобі потрібно заве",
+    "ts": "2026-10-21T06:11:19.065901"
+  },
+  "action_detect|2026-10-21t06_00_50_143796": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-21T06:00:50.143796"
+  },
+  "action_detect|2026-10-21t06_00_39_144415": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-21\", \"action_time\": null, \"action_summary\": \"Занотувати нічну зміну на 21 жов",
+    "ts": "2026-10-21T06:00:39.144415"
+  },
   "proactive_actions|2026-10-21t06_00_09_392519": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"calendar\",     \"title\": \"Завершити підтвердження Revolut\",     \"date\": \"2026-10-21\",     \"time\": \"10:00\",     \"message\": \"Олеже, нага",
@@ -283,20 +298,5 @@
     "topic": "foresight",
     "gist": "Попереду блок нічних змін, і зараз ідеальний час, щоб переглянути, як можна адаптувати свій розклад для кращого самопочуття та продуктивності. Спробуй протягом ",
     "ts": "2026-10-20T21:47:18.966890"
-  },
-  "selfact|2026-10-20t21_38_26_003138": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу, про що свідчать численні сповіщення про вакансії від LinkedIn, включаючи Deloitte, REN",
-    "ts": "2026-10-20T21:38:26.003138"
-  },
-  "bills|2026-10-20t21_36_03_732313": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-10-20T21:36:03.732313"
-  },
-  "action_detect|2026-10-20t21_35_47_845135": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати ZEC\", \"action_date\": \"2026-10-20\", \"action_time\": null, \"action_summary\": \"Проаналізувати ZEC, перев",
-    "ts": "2026-10-20T21:35:47.845135"
   }
 }
