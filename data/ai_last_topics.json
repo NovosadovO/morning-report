@@ -1,4 +1,19 @@
 {
+  "deadlines|2026-10-21t13_04_19_306684": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-21T13:04:19.306684"
+  },
+  "openloop_promises|2026-10-21t13_01_12_614896": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-21T13:01:12.614896"
+  },
+  "email_ai_item|2026-10-21t12_59_26_235714": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить рекомендації вакансій Key Account Manager від різних компаній, таких як Sandoz, Allianz Partners та Imper",
+    "ts": "2026-10-21T12:59:26.235714"
+  },
   "selfact|2026-10-21t12_57_16_892243": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-21T09:18:30.520434"
-  },
-  "action_detect|2026-10-21t09_18_19_668385": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Завершити підтвердження особи в Revolut\", \"action_date\": null, \"action_time\": \"10:00\", \"action_summary\": \"Завершити",
-    "ts": "2026-10-21T09:18:19.668385"
-  },
-  "action_detect|2026-10-21t09_18_07_623785": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-21T09:18:07.623785"
-  },
-  "action_detect|2026-10-21t09_17_56_667005": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Завершити підтвердження Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"10:00\", \"action_summary\": \"Завершити",
-    "ts": "2026-10-21T09:17:56.667005"
   }
 }
