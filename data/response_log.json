@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T21:30:51.130049+00:00",
-      "category": "mood",
-      "question": "Оцінка настрою",
-      "answer": "😐 Нормально",
-      "extra": {
-        "score": 3
-      }
-    },
-    {
       "ts": "2026-08-24T21:31:09.008083+00:00",
       "category": "chat",
       "question": "у календарі є записані мій графік .",
@@ -14251,6 +14242,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_run"
+    },
+    {
+      "ts": "2026-10-21T22:01:59.267284+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
