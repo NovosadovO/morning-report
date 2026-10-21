@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:01:05.118971",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump’s Favorite Tax Scheme Could Shelter $1 Billion—At Taxp</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81173"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81173"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81173"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81173"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81173"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81173"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-21T03:01:06.646546",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Stablecoin Blacklists Recovered Nothing in 60 Exploits</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-21T03:06:49.048845",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.0% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-21T03:06:49.917600",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.0% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
