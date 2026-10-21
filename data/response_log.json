@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-24T21:16:26.231945+00:00",
-      "category": "event_done",
-      "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-24T21:17:47.235649+00:00",
       "category": "diary",
       "question": "3 питання про день",
@@ -14238,6 +14232,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_eff6c488fb"
+    },
+    {
+      "ts": "2026-10-21T22:00:10.788644+00:00",
+      "category": "calendar_button",
+      "question": "Кардіо прогулянка",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "20:00–21:00",
+        "note": null
+      }
     }
   ]
 }
