@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_done_9bba6f9122",
-      "label": "✅ Зробив",
-      "ts": "2026-09-27T20:03:03"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-09-27T20:12:50"
@@ -7198,6 +7192,12 @@
       "t": "btn",
       "data": "habit_yes_run",
       "label": "✅ Так",
+      "ts": "2026-10-21T22:01:53"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_run",
+      "label": "❌ Ні",
       "ts": "2026-10-21T22:01:53"
     }
   ]
