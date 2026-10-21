@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-21t17_32_47_358616": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-21T17:32:47.358616"
+  },
   "selfact|2026-10-21t17_23_51_682705": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу, про що свідчить лист від LinkedIn про вакансію Finance – Head of Operations в European",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-10-21T14:31:58.805802"
-  },
-  "selfact|2026-10-21t14_30_28_580481": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна сьогодні\",     \"text\": \"Олеже, нагадую, що сьогодні, 21 жовтня, о 17:00 у тебе починається нічна з",
-    "ts": "2026-10-21T14:30:28.580481"
   }
 }
