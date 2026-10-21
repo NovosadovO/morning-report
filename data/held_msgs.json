@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T03:10:39.637666",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.5% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T03:10:40.279787",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO +5.5% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81172"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T03:16:11.951424",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Your one-time password</b>\n👤 info@mticket.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81171"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81171"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81171"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81171"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81171"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81171"
             }
           ]
         ]
