@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-21T02:54:21.427391",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO +5.3% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-21T02:54:22.406071",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO +5.3% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81171"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-21T03:01:09.600605",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>An inside look at Gemini 4 Argon with Google DeepMind SVP Ko</b>\n👤 Google через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81170"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81170"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81170"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81170"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81170"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81170"
             }
           ]
         ]
