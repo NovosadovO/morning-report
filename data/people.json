@@ -673,21 +673,22 @@
     "pinged_at": ""
   },
   "dtp_keo@faxcopy.sk": {
-    "name": "Faxcopy",
+    "name": "dtp_keo@faxcopy.sk",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "друк вітальних листівок"
+      "вітальна листівка",
+      "друк"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Написати Faxcopy, щоб дізнатися статус замовлення на друк вітальних листівок.",
+    "next_step": "Написати dtp_keo@faxcopy.sk, щоб дізнатися, чи отримали вони листи та чи можуть надрукувати.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-14",
-    "updated": "2026-10-20",
+    "updated": "2026-10-21",
     "pinged_at": ""
   }
 }
