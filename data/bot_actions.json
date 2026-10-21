@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Невикористаний спрей для волосся та сауна",
-      "detail": "У календарі на 12.10 зазначено: '18:10 💈 Спрей для волосся ❌' та '18:10 🧖 Сауна ❌'.",
-      "module": "selfact",
-      "ts": "2026-10-12T22:31:16"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-12",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "Олег активно стежить за новинами та вакансіями у криптосфері.",
       "module": "selfact",
       "ts": "2026-10-21T11:40:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-21",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-21T11:42:10"
     }
   ]
 }
