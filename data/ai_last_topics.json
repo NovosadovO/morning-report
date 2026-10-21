@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-21t19_13_44_769231": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
+    "ts": "2026-10-21T19:13:44.769231"
+  },
+  "action_detect|2026-10-21t19_09_57_117707": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-10-21T19:09:57.117707"
+  },
   "action_detect|2026-10-21t19_07_55_448249": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
@@ -288,15 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [] ```",
     "ts": "2026-10-21T16:04:10.443590"
-  },
-  "openloop_promises|2026-10-21t16_02_51_589675": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-21T16:02:51.589675"
-  },
-  "email_ai_item|2026-10-21t15_50_18_489515": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від LinkedIn інформує про активність у групі 'AI Innovators Network for Artificial Intelligence, ChatGPT, Claude, Gemini, P",
-    "ts": "2026-10-21T15:50:18.489515"
   }
 }
