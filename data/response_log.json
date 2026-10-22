@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:36:03.589101+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_b54786cf28"
-    },
-    {
       "ts": "2026-08-25T10:36:08.085019+00:00",
       "category": "event_done",
       "question": "📅 Біг та дерматолог\nПланувалась до 11:00 — виконано?",
@@ -14251,6 +14245,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_99cdbc27d5"
+    },
+    {
+      "ts": "2026-10-22T16:32:11.322785+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_46acd3e4de"
     }
   ]
 }
