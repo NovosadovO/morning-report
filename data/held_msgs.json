@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T08:53:12.605954",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T08:54:19.717834",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81151"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T09:01:41.383568",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>💰 The Funding: What happens if MSCI drops crypto treasuries </b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81070"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81070"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81070"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81070"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81070"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81070"
             }
           ]
         ]
