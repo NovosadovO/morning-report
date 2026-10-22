@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-10-22t18_37_41_875680": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! ⚠️ Ринок криптовалют сьогодні демонструє помітний спад, і це привід обережно поглянути на твої інвестиції, особливо враховуючи, що ти зараз на ніч",
+    "ts": "2026-10-22T18:37:41.875680"
+  },
   "people|2026-10-22t18_33_18_741578": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"Runable\",       \"Ж",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-10-22T15:18:08.158210"
-  },
-  "action_detect|2026-10-22t15_17_57_151010": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-22T15:17:57.151010"
   }
 }
