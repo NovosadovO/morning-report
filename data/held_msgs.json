@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T03:33:48.566165",
-      "kind": "subs",
-      "text": "🔄 СКОРО СПИСАННЯ\n━━━━━━━━━━━━━━━━━━━━\n🏢 Railway Corporation\n💰 12.55$ — СЬОГОДНІ (2026-10-22)\n\nЩомісячна оплата за тариф Hobby plan та використання ресурсів.\n\n⚡ Сьогодні. Далі відкладати нема куди.\nТихі підписки — найдорожча стаття витрат, бо їх ніхто не перевіряє.\nЦе 151€ на рік — вирішувати варто саме такими числами, а не місячними.\n➡️ Не користувався — тисни «Хочу скасувати», зроблю нагадування.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T03:33:56.709202",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81227"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T03:45:40.607902",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Pump.fun Bets on Dubious Celebrity Trader to Reach the Mains</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81226"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81226"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81226"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81226"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81226"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81226"
             }
           ]
         ]
