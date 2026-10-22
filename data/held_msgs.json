@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T02:51:39.651028",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T02:51:40.450827",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80805"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T03:00:58.065748",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80756"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80756"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80756"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80756"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80756"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80756"
             }
           ]
         ]
