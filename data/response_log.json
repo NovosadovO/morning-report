@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T13:25:59.745463+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_2fa812637e"
-    },
-    {
       "ts": "2026-08-25T15:56:33.183857+00:00",
       "category": "event_done",
       "question": "📅 💳 Оплата паркувального талона Ubian\nПланувалась до 15:54 — виконано?",
@@ -14241,6 +14235,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_afa72a57e6"
+    },
+    {
+      "ts": "2026-10-23T00:00:50.922809+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Прочитати лист від The Block",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-10-23"
+      }
     }
   ]
 }
