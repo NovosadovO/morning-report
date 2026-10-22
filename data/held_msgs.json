@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:33:46.047642",
-      "kind": "followup",
-      "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 12 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 Приєднуйся до Runable та почни створювати. https://runable.cloud/?refer_code=VJN8OT\n📤 Твій лист від 2026-10-10\n\n<i></i>\n\nОлеже, тиша вже 12 дні. Хочеш, складу короткий делікатний пінг?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T12:33:47.216599",
       "kind": "followup",
       "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 12 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Oleg Novosadov\n📋 Приєднуйся до Runable та почни створювати. https://runable.cloud/?refer_code=VJN8OT\n📤 Твій лист від 2026-10-10\n\n\n\nОлеже, тиша вже 12 дні. Хочеш, складу короткий делікатний пінг?",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T12:45:42.229799",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Progmat Moved $2.7 Billion to Avalanche. But What Actually M</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81241"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81241"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81241"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81241"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81241"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81241"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
