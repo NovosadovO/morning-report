@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-22t18_27_50_046256": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-22T18:27:50.046256"
+  },
+  "mailcal_extract|2026-10-22t18_16_55_163475": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-22T18:16:55.163475"
+  },
   "defi_digest_truthfix|2026-10-22t18_15_57_891903": {
     "topic": "defi_digest/truthfix",
     "gist": "Олеже, чи варто зараз відволікатися на волатильність ринку, враховуючи нічну зміну?  **DeFi ринок (дані за 22 жовтня 2026, 18:15)**  Дані CoinGecko наразі недос",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-22T15:17:46.163432"
-  },
-  "action_detect|2026-10-22t15_17_35_174879": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-22T15:17:35.174879"
-  },
-  "action_detect|2026-10-22t15_17_24_166221": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-22T15:17:24.166221"
   }
 }
