@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:35:51.701992+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_d536b8ce58"
-    },
-    {
       "ts": "2026-08-25T10:36:00.524483+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14251,6 +14245,12 @@
         "kind": "reply",
         "date": "2026-10-22"
       }
+    },
+    {
+      "ts": "2026-10-22T16:31:47.550705+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
+      "answer": "yes"
     }
   ]
 }
