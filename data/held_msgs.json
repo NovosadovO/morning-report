@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T14:52:03.608330",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nONDO -5.4% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T14:53:10.845592",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nONDO -5.8% за 24г (DefiLlama).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81251"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T15:00:59.205831",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🕵️ AI hacks 70% of internet</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81250"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81250"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81250"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81250"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81250"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81250"
             }
           ]
         ]
