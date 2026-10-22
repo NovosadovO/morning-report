@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T12:11:29.183444+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T12:11:32.162874+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14241,6 +14235,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-22T20:29:45.234955+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
