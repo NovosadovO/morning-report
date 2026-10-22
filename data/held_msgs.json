@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:00:53.048151",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ramp now wants to hold your company’s money, not just track </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81239"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81239"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81239"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81239"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81239"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81239"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T12:00:54.524625",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AI discovery shuts down government websites</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-22T12:11:29.007461",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T12:12:46.176471",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
