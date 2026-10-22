@@ -1,9 +1,4 @@
 {
-  "2026-10-18": {
-    "anomaly_no_run": true,
-    "ai_observations": true,
-    "post_shift_checkin": true
-  },
   "2026-10-19": {
     "post_shift_checkin": true
   },
@@ -16,5 +11,8 @@
     "morning_greet": true,
     "post_shift_checkin": true,
     "evening_checkin": true
+  },
+  "2026-10-22": {
+    "morning_greet": true
   }
 }
