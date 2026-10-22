@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T09:15:39.550947",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T09:15:41.216832",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[Legal Notice] Updates to Google Cloud Terms of Service and </b>\n👤 Google Cloud &lt;CloudPlatform-noreply@google.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-10-22T09:24:42.847521",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T09:25:51.216164",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
