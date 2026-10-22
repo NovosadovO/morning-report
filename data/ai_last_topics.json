@@ -1,4 +1,9 @@
 {
+  "people|2026-10-22t18_33_18_741578": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"Runable\",       \"Ж",
+    "ts": "2026-10-22T18:33:18.741578"
+  },
   "selfact|2026-10-22t18_27_50_046256": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-22T15:17:57.151010"
-  },
-  "action_detect|2026-10-22t15_17_46_163432": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-22T15:17:46.163432"
   }
 }
