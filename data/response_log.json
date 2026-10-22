@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T13:25:54.404115+00:00",
-      "category": "confirm",
-      "question": "email_delete: Úspešne podaná žiadosť!",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T13:25:59.745463+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14241,6 +14235,12 @@
       "category": "confirm",
       "question": "calrem_skip: Проаналізувати найбільші позиції в криптопортфелі",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-22T21:50:06.122574+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_afa72a57e6"
     }
   ]
 }
