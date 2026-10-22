@@ -17114,7 +17114,24 @@
     "action": "calrem_skip",
     "pid": "crypto_move_1792697913",
     "subject": "Проаналізувати найбільші позиції в криптопортфелі",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 118285,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_crypto_move_1792697913"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_crypto_move_1792697913"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-10-22T21:49:36.019652+00:00"
   }
 }
