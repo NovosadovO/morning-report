@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-22t23_31_05_535595": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
+    "ts": "2026-10-22T23:31:05.535595"
+  },
   "selfact|2026-10-22t23_25_52_764278": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія від LinkedIn\",     \"text\": \"Олеже, на LinkedIn з'явилася нова вакансія 'Administratívny pracovní",
     "ts": "2026-10-22T19:31:39.823261"
-  },
-  "email_describe|2026-10-22t19_25_13_865839": {
-    "topic": "email_describe",
-    "gist": "ВІДПРАВНИК UniCredit Bank – це фінансова установа, яка інформує своїх клієнтів про зміни в умовах обслуговування.  СУТЬ Банк повідомляє про оновлення деяких тор",
-    "ts": "2026-10-22T19:25:13.865839"
   }
 }
