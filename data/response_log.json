@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T07:30:20.467126+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Купити квіти до річниці",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-25"
-      }
-    },
-    {
       "ts": "2026-08-25T07:30:24.784265+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14242,6 +14232,16 @@
       "answer": "Відповісти Profesia.sk",
       "extra": {
         "kind": "reply",
+        "date": "2026-10-22"
+      }
+    },
+    {
+      "ts": "2026-10-22T04:30:22.484825+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити Railway Security Disclosure",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-10-22"
       }
     }
