@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T09:00:24.286246+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Купити квіти",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-25"
-      }
-    },
-    {
       "ts": "2026-08-25T09:00:28.411712+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14240,6 +14230,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути пропозиції роботи від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-22"
+      }
+    },
+    {
+      "ts": "2026-10-22T06:00:22.746236+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Ознайомитися з повідомленням про безпеку Railway",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-22"
