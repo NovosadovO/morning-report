@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T09:34:26.157277",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T09:34:27.025344",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81229"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T09:45:54.983469",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81227"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81227"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81227"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81227"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81227"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81227"
             }
           ]
         ]
