@@ -1458,5 +1458,42 @@
         ]
       ]
     }
+  },
+  "2100366814_118187": {
+    "text": "📩 ✉️\n📌 Upravujeme niektoré obchodné podmienky\n👤 \"UniCredit Bank\" <UniCreditBank@info.unicreditgrou",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_81151"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_81151"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_81151"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_81151"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_81151"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_81151"
+          }
+        ]
+      ]
+    }
   }
 }
