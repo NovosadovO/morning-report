@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-10-23t01_30_11_212685": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"calendar\",     \"title\": \"Запланувати сауну\",     \"date\": \"2026-10-23\",     \"time\": \"09:00\",     \"message\": \"Олеже, ти планував сауну,",
+    "ts": "2026-10-23T01:30:11.212685"
+  },
   "openloop_promises|2026-10-23t01_19_37_567326": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершена сауна\",     \"text\": \"Олеже, ти не завершив сауну, яка була запланована на сьогодні о 18:10. Хочеш ",
     "ts": "2026-10-22T21:03:37.372728"
-  },
-  "action_detect|2026-10-22t21_01_48_262304": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"У першу ж перерву перевірити",
-    "ts": "2026-10-22T21:01:48.262304"
   }
 }
