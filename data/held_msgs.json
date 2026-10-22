@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:18:44.699972",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-22T12:19:54.873154",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T12:19:55.865365",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -248,6 +236,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-22T12:30:50.866879",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81235"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81235"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81235"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81235"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81235"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81235"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T12:30:51.684091",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
     }
   ]
 }
