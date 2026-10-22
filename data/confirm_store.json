@@ -17139,7 +17139,24 @@
     "action": "calrem_skip",
     "pid": "crypto_move_1792708804",
     "subject": "Переоцінити ризики криптопортфеля",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 118340,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_crypto_move_1792708804"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_crypto_move_1792708804"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-10-23T01:18:40.349990+00:00"
   }
 }
