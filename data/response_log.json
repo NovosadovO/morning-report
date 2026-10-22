@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:37:02.316253+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-25T10:37:24.591379+00:00",
       "category": "calendar_button",
       "question": "✈️ Онлайн-реєстрація на рейс Ryanair",
@@ -14251,6 +14245,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_99cdbc27d5"
+    },
+    {
+      "ts": "2026-10-22T16:32:56.761858+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
