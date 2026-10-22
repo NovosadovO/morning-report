@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:35:51.055167",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T12:35:52.647992",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81235"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T12:45:48.190557",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Viac farieb, viac úpletov</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81234"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81234"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81234"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81234"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81234"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81234"
             }
           ]
         ]
