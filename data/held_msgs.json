@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T14:13:03.493552",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CryptoBeholder.com через LinkedIn</b>\n📋 Тема: «📰 AI-curated Daily Crypto Digest - October 22»\n\n<i>«AI-curated Daily Crypto Digest\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-curated-daily-crypto-digest-october-22-cryptobeholder-kqwif?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81248"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81248"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81248"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81248"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81248"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81248"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T14:13:06.415355",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nONDO -5.3% за 24г (DefiLlama).",
@@ -181,6 +142,12 @@
       "ts": "2026-10-22T14:26:50.062606",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T14:28:12.980302",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
