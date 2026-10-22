@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "calrem_skip_crypto_move_1790548449",
-      "label": "❌ Не треба",
-      "ts": "2026-09-28T01:40:11"
-    },
-    {
-      "t": "btn",
       "data": "rx_later_e4bb0362d0",
       "label": "⏰ Пізніше",
       "ts": "2026-09-28T01:40:38"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-10-22T20:26:35"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-22T20:26:36"
     }
   ]
 }
