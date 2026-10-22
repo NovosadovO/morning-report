@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:17:31.714902",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T12:18:42.478531",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81241"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T12:30:47.973865",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ramp now wants to hold your company’s money, not just track </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81239"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81239"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81239"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81239"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81239"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81239"
             }
           ]
         ]
