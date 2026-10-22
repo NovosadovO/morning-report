@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T03:04:59.882747",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T03:05:00.894636",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81226"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T03:15:47.819261",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Urgent: Railway Security Disclosure - Rotate Credentials</b>\n👤 Railway Support &lt;support@railway.app&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81225"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81225"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81225"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81225"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81225"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81225"
             }
           ]
         ]
