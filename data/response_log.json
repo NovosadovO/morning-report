@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:37:26.938256+00:00",
-      "category": "confirm",
-      "question": "cw_miss: ✈️ Онлайн-реєстрація на рейс Ryanair",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T10:37:34.427305+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14246,6 +14240,12 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-22T16:34:02.638112+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_8707590e78"
     }
   ]
 }
