@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T12:09:05.654394+00:00",
-      "category": "calendar_button",
-      "question": "💍 купити квіти — річниця",
-      "answer": "moved",
-      "extra": {
-        "stage": "after",
-        "when": "09:00–09:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-25T12:09:07.048345+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14246,6 +14235,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-10-22T20:26:45.418000+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
