@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T15:56:52.914826+00:00",
-      "category": "micro_checkin",
-      "question": "Привіт Олеже! ✨\n\nОго, скільки всього за ранок! Бачу, сьогодні, 25 серпня, ти встиг перенести купівлю квітів на річницю, але пропустив онлайн-реєстрацію на рейс Ryanair. Хоча, з огляду на \"Ionian Cruises - Cancellation Cruise\", можливо, це й на краще, якщо плани змінилися.\n\nНайбільше мене зараз турбу",
-      "answer": "dobry den, dna 26.08.2026 o 12:10 ste objednany na vysetrenie na ec cassovar kožné b. uvedeny cas povazujte za orientacny. додай до календаря"
-    },
-    {
       "ts": "2026-08-25T16:14:07.796520+00:00",
       "category": "chat",
       "question": "dobry den, dna 26.08.2026 o 12:10 ste objednany na vysetrenie na ec cassovar kožné b. uvedeny cas povazujte za orientacny. додай до календаря",
@@ -14248,6 +14242,16 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-10-25"
+      }
+    },
+    {
+      "ts": "2026-10-23T01:30:17.941835+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Запланувати сауну",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-23"
       }
     }
   ]
