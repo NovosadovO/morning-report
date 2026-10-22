@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:15:47.217918",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T12:15:48.561800",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Progmat Moved $2.7 Billion to Avalanche. But What Actually M</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-10-22T12:25:49.577302",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T12:25:50.451692",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
