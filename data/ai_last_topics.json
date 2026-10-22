@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-22t19_23_53_889035": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-22T19:23:53.889035"
+  },
+  "selfact|2026-10-22t19_15_46_030918": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Administratívny pracovník / pracovníčka v sklade\",     \"text\": \"Олеже, LinkedIn знайшов нову вак",
+    "ts": "2026-10-22T19:15:46.030918"
+  },
   "openloop_promises|2026-10-22t19_15_28_947916": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-10-22T16:14:17.788558"
-  },
-  "selfact|2026-10-22t16_08_24_479573": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверни увагу, що платіж за підписку Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію",
-    "ts": "2026-10-22T16:08:24.479573"
-  },
-  "healthai|2026-10-22t16_06_03_011644": {
-    "topic": "healthai",
-    "gist": "🌙 Бачу, твій організм знову намагається адаптуватися до нічної зміни, але якість відновлення знижується. Енергія (body battery) сьогодні лише 25, а за тиждень в",
-    "ts": "2026-10-22T16:06:03.011644"
   }
 }
