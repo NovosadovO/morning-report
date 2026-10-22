@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T14:06:54.170993",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — October 22»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-october-22-oleh-bezuhlyi-qlnjf?lipi=urn%3Ali%3Apage%3Aemail_email_...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81247"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81247"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81247"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81247"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81247"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81247"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T14:07:06.721221",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -214,6 +175,12 @@
       "ts": "2026-10-22T14:20:18.907785",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nONDO -5.2% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T14:20:19.889630",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nONDO -5.2% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
