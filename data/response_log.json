@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:41:57.169962+00:00",
-      "category": "event_done",
-      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T12:09:05.654394+00:00",
       "category": "calendar_button",
       "question": "💍 купити квіти — річниця",
@@ -14246,6 +14240,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-22T20:26:37.543945+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
