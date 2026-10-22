@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T11:48:34.633727",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.\n\nAVAX -5.1% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T11:49:44.958596",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.\n\nAVAX -5.0% за 24г (DefiLlama).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81239"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T12:00:54.524625",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AI discovery shuts down government websites</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81238"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81238"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81238"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81238"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81238"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81238"
             }
           ]
         ]
