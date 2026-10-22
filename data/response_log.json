@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T12:09:07.048345+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_moved_1d9c61ed05"
-    },
-    {
       "ts": "2026-08-25T12:11:29.183444+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14241,6 +14235,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-22T20:29:37.057436+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
