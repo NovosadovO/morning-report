@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T03:33:57.793662",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-22T03:35:05.944471",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81225"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-22T03:45:43.569069",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Upravujeme niektoré obchodné podmienky</b>\n👤 \"UniCredit Bank\" &lt;UniCreditBank@info.unicreditgrou",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81151"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81151"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81151"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81151"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81151"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81151"
             }
           ]
         ]
