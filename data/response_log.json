@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T10:35:45.737627+00:00",
-      "category": "confirm",
-      "question": "email_delete: Crypto & Fiat Operations Specialist в BITEXPERT",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T10:35:49.904851+00:00",
       "category": "event_done",
       "question": "📅 ✈️ Онлайн-реєстрація на рейс Ryanair\nПланувалась до 11:00 — виконано?",
@@ -14243,6 +14237,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_eec6083011"
+    },
+    {
+      "ts": "2026-10-22T16:30:23.776819+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути пропозиції роботи від Profesia.sk",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-10-22"
+      }
     }
   ]
 }
