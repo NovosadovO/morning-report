@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T10:30:09.834473",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Reserved</b>\n📋 Тема: «Viac farieb, viac úpletov»\n\n<i>«Email table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; } body { margin: 0; padding: 0; background-color: #ffffff; } a { text-decoration: none; } .keep-white { mso-style-textfill-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81234"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81234"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81234"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81234"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81234"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81234"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T10:30:27.554212",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nAVAX -5.1% за 24г (DefiLlama).",
@@ -181,6 +142,12 @@
       "ts": "2026-10-22T10:44:01.007802",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nAVAX -5.2% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T10:45:12.337409",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).\n\nAVAX -5.3% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
