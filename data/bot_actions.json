@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Незавершені звички",
-      "detail": "Згідно з календарем, Олег мав виконати ці звички о 18:10, але відмітив їх як невиконані.",
-      "module": "selfact",
-      "ts": "2026-10-13T19:23:35"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-13",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-10-22T07:01:54"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-22T15:09:19"
     }
   ]
 }
