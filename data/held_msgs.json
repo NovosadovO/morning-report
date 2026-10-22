@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T12:01:00.248398",
-      "kind": "offer",
-      "text": "💼 ✉️\n📌 <b>Jobs Newsletter #470</b>\n👤 CryptoJobsList &lt;newsletter@cryptojobslist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81229"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81229"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81229"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81229"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81229"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81229"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T12:01:02.590135",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-22T12:15:06.838356",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T12:15:07.879902",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
