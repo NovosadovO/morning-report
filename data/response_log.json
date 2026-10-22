@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T09:00:28.411712+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-25T10:34:56.116350+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14243,6 +14233,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-22"
+      }
+    },
+    {
+      "ts": "2026-10-22T15:10:34.428545+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "night"
       }
     }
   ]
