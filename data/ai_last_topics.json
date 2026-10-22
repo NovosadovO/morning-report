@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-22t04_06_33_850598": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-22T04:06:33.850598"
+  },
   "selfact|2026-10-22t00_27_00_070726": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачений рахунок KOOPERATIVA\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA про авізо на сплат",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вакансія H&M: Vedúci/Vedúca oddelenia\",     \"text\": \"Олеже, LinkedIn повідомляє про нову вакансію Vedúci/Vedúc",
     "ts": "2026-10-21T21:04:00.508607"
-  },
-  "action_detect|2026-10-21t21_02_08_702836": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Завершити підтвердження особи в Revolut\", \"action_date\": \"2026-10-21\", \"action_time\": \"10:00\", \"action_summ",
-    "ts": "2026-10-21T21:02:08.702836"
   }
 }
