@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-22T09:30:53.105894",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Pump.fun Bets on Dubious Celebrity Trader to Reach the Mains</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81226"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81226"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81226"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81226"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81226"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81226"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-22T09:30:54.585906",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Urgent: Railway Security Disclosure - Rotate Credentials</b>\n👤 Railway Support &lt;support@railway.app&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-22T09:42:42.718834",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-22T09:43:51.183060",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
