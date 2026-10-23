@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:25:09.143663+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_run"
-    },
-    {
       "ts": "2026-08-25T20:25:13.627858+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14258,6 +14252,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Оплатити страховку PZ 6641172176",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-23"
+      }
+    },
+    {
+      "ts": "2026-10-23T04:30:24.640451+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути рахунок від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-23"
