@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:46:58.499767+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_ec57e53de9"
-    },
-    {
       "ts": "2026-08-25T20:46:59.582682+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14285,6 +14279,16 @@
       "answer": "Запланувати сауну",
       "extra": {
         "kind": "reminder",
+        "date": "2026-10-24"
+      }
+    },
+    {
+      "ts": "2026-10-24T01:30:55.770653+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Переглянути Changelog #0313",
+      "extra": {
+        "kind": "note",
         "date": "2026-10-24"
       }
     }
