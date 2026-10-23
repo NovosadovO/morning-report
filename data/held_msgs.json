@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T09:31:04.009162",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 3 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T09:31:05.450412",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
@@ -379,6 +373,12 @@
       "ts": "2026-10-23T09:40:20.262421",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T09:41:37.909484",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
