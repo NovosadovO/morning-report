@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T15:01:41.293610",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📊 Ранковий дайджест ринків — 23.10.2026</b>\n👤 Morning Report &lt;onboarding@resend.dev&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81305"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81305"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81305"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81305"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81305"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81305"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T15:01:42.212790",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -280,6 +241,12 @@
       "ts": "2026-10-23T15:10:07.534123",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T15:11:22.780071",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
