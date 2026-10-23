@@ -1,4 +1,24 @@
 {
+  "selfact|2026-10-23t03_18_39_336154": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-23T03:18:39.336154"
+  },
+  "selfact|2026-10-23t03_02_47_547914": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-10-23T03:02:47.547914"
+  },
+  "proactive_actions|2026-10-23t03_02_18_828187": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
+    "ts": "2026-10-23T03:02:18.828187"
+  },
+  "action_detect|2026-10-23t03_01_41_795807": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-23T03:01:41.795807"
+  },
   "action_detect|2026-10-23t03_01_31_243479": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -278,25 +298,5 @@
     "topic": "MSG_EVENT_SOON/truthfix",
     "gist": "Привіт Олеже! ⏰  Ти зараз на нічній зміні, яка триває з 18:00 до 06:00, і це вже друга нічна зміна поспіль. Дані, які я маю, зафіксовані сьогодні, 22 жовтня 202",
     "ts": "2026-10-22T23:37:07.484678"
-  },
-  "msg_event_soon|2026-10-22t23_36_37_637652": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Ти зараз на нічній зміні, яка триває з 18:00 до 06:00. Сподіваюся, ти взяв усе необхідне для комфорту під час тривалої роботи.  Оскільки ти пра",
-    "ts": "2026-10-22T23:36:37.637652"
-  },
-  "action_detect|2026-10-22t23_31_05_535595": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
-    "ts": "2026-10-22T23:31:05.535595"
-  },
-  "selfact|2026-10-22t23_25_52_764278": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
-    "ts": "2026-10-22T23:25:52.764278"
-  },
-  "selfact|2026-10-22t23_08_13_950248": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
-    "ts": "2026-10-22T23:08:13.950248"
   }
 }
