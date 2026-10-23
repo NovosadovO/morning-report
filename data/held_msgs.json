@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T12:30:35.754448",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T12:30:37.121965",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The One-Person Company on Grok Bot 🤖</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-10-23T12:37:57.386132",
       "kind": "followup",
       "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 6 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 Ж\n📤 Твій лист від 2026-10-17\n\n<i></i>\n\nОлеже, тиша вже 6 дні. Хочеш, складу короткий делікатний пінг?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T12:37:58.348314",
+      "kind": "followup",
+      "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 6 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Oleg Novosadov\n📋 Ж\n📤 Твій лист від 2026-10-17\n\n\n\nОлеже, тиша вже 6 дні. Хочеш, складу короткий делікатний пінг?",
       "keyboard": null
     }
   ]
