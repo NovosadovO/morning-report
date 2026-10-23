@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-23t03_01_31_243479": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-23T03:01:31.243479"
+  },
   "mailcal_extract|2026-10-23t02_53_02_614264": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81281\",     \"title\": \"Скасування Glamsterdam upgrade на Hoodi розробниками Ethereum\",     \"date\": \"2026-10-26\",     \"time\": null,     ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
     "ts": "2026-10-22T23:08:13.950248"
-  },
-  "healthai_truthfix|2026-10-22t23_05_52_755674": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, дані за 22 жовтня показують, що твоя оцінка дня становить 82. Це нижче, ніж 99 та 100, зафіксовані 13 та 14 жовтня відповідно. Враховуючи, що ти зараз на",
-    "ts": "2026-10-22T23:05:52.755674"
   }
 }
