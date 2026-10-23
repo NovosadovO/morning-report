@@ -17319,7 +17319,24 @@
     "action": "calrem_skip",
     "pid": "gen_1792791054491",
     "subject": "Зважитись",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 118623,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1792791054491"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1792791054491"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-10-23T23:39:19.714800+00:00"
   }
 }
