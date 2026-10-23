@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T17:32:46.693073+00:00",
-      "category": "deadline_found",
-      "question": "Підписка Railway Corporation - оплата",
-      "answer": "2026-08-25",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-08-25T18:02:28.191066+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14258,6 +14249,12 @@
         "kind": "calendar",
         "date": "2026-10-24"
       }
+    },
+    {
+      "ts": "2026-10-23T04:05:02.705314+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: 📅 Пропоную додати в календар",
+      "answer": "yes"
     }
   ]
 }
