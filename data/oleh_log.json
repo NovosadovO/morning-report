@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "am_save_4ddab22b69",
-      "label": "💾 Так, запиши",
-      "ts": "2026-09-28T20:22:58"
-    },
-    {
-      "t": "btn",
       "data": "rx_watch_eb4429b475",
       "label": "👀 Спостерігаю",
       "ts": "2026-09-28T20:23:07"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_1aonp3nlqre3ifteuc0gtu5s1o_2026-10-23",
       "label": "✅ Виконано",
       "ts": "2026-10-23T17:25:19"
+    },
+    {
+      "t": "btn",
+      "data": "rx_done_184aeae718",
+      "label": "✅ Зробив",
+      "ts": "2026-10-23T17:25:41"
     }
   ]
 }
