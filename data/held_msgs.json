@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T15:01:47.322703",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Baltic Operations Director в Ay</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81303"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81303"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81303"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81303"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81303"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81303"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T15:01:48.711009",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The agony of liberal Europe</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
@@ -214,6 +175,12 @@
       "ts": "2026-10-23T15:12:30.217343",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T15:12:35.518370",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
