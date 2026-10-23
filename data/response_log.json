@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T17:32:42.334301+00:00",
-      "category": "deadline_found",
-      "question": "Підписка ChatGPT Go - продовження",
-      "answer": "2026-08-25",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-08-25T17:32:46.693073+00:00",
       "category": "deadline_found",
       "question": "Підписка Railway Corporation - оплата",
@@ -14257,6 +14248,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_1f246316a4"
+    },
+    {
+      "ts": "2026-10-23T03:02:22.298081+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Сауна",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-10-24"
+      }
     }
   ]
 }
