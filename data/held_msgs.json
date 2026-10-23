@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T09:46:20.259047",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T09:46:21.608043",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-23T09:59:41.864250",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T09:59:42.822476",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
