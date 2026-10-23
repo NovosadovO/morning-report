@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T15:06:30.458146",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T15:06:31.333126",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81309"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-23T15:15:49.866995",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 23</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81308"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81308"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81308"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81308"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81308"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81308"
             }
           ]
         ]
