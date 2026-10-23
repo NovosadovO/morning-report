@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_good",
-      "detail": "😴 Сон за тиждень у середньому 8.1 год — стабільно добре",
-      "module": "healthai",
-      "ts": "2026-10-14T19:03:04"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-14",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 28.7 — нижче за 30, організм виснажений",
       "module": "healthai",
       "ts": "2026-10-23T16:54:40"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_unstable",
+      "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.03 год) — тіло не встигає підлаштуватись під ритм",
+      "module": "healthai",
+      "ts": "2026-10-23T16:54:50"
     }
   ]
 }
