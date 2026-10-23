@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T12:16:42.122073",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The One-Person Company on Grok Bot 🤖</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81294"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81294"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81294"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81294"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81294"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81294"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T12:16:43.741670",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔓 Banks found AI agents in customer accounts</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-23T12:26:42.128112",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T12:27:50.826546",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
