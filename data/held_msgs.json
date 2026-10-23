@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T15:15:48.527402",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>📉 Markets tumble as security worries worsen</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81309"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81309"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81309"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81309"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81309"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81309"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T15:15:49.866995",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 23</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -346,6 +307,12 @@
       "ts": "2026-10-23T15:23:26.645118",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T15:24:38.257286",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
