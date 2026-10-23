@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-23t18_24_19_473663": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що було кілька невдалих платежів за підписку Runab",
+    "ts": "2026-10-23T18:24:19.473663"
+  },
   "defi_digest|2026-10-23t18_15_53_261357": {
     "topic": "defi_digest",
     "gist": "За останні 24 години на DeFi ринку найбільше виділяється шалений ріст Morpho Midnight на 274.2%, що свідчить про надзвичайно високу волатильність у деяких проєк",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-23T06:00:44.857594"
-  },
-  "action_detect|2026-10-23t06_00_33_857799": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-23T06:00:33.857799"
   }
 }
