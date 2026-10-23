@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:25:25.764525+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-25T20:25:55.514801+00:00",
       "category": "confirm",
       "question": "gate_cal_add: Відвідування дерматолога",
@@ -14274,6 +14268,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-23T17:25:20.731229+00:00",
+      "category": "event_done",
+      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
+      "answer": "yes"
     }
   ]
 }
