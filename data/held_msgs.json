@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T14:14:56.444066",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Ви можете підійти для посади Baltic Operations Director в Ayvens»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union          \r\nНові вакансії відповідають вашим налаштуванням.\r\nКерувати сповіщеннями: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3Bqtt2qGwpSe%2BQYNjLGggQDA%3D%3D&amp;midToken=AQFTjF...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81303"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81303"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81303"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81303"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81303"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81303"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T14:15:51.267683",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -280,6 +241,12 @@
       "ts": "2026-10-23T14:28:07.330666",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T14:28:08.182770",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
