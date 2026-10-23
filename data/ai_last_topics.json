@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-10-23t23_29_03_210813": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-23T23:29:03.210813"
+  },
+  "email_ai_item|2026-10-23t23_25_47_003545": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Forbes через LinkedIn є інформаційною розсилкою, що містить статтю про мільярдера Бена Лемма, який займається генетичною і",
+    "ts": "2026-10-23T23:25:47.003545"
+  },
   "selfact|2026-10-23t23_22_42_144174": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж на Runable на $10.00 був невдалим. Потріб",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digital Business Product Owner\",     \"text\": \"Олеже, LinkedIn повідомив про нову вакансію Digita",
     "ts": "2026-10-23T19:58:42.655313"
-  },
-  "email_ai_item|2026-10-23t19_57_26_151448": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від LinkedIn повідомляє про нову вакансію Digital Business Product Owner у компанії Caterpillar Inc. в місті Кошице, яка ві",
-    "ts": "2026-10-23T19:57:26.151448"
-  },
-  "selfact|2026-10-23t19_43_44_411683": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-10-23T19:43:44.411683"
   }
 }
