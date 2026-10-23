@@ -1,4 +1,9 @@
 {
+  "defi_digest|2026-10-23t18_15_53_261357": {
+    "topic": "defi_digest",
+    "gist": "За останні 24 години на DeFi ринку найбільше виділяється шалений ріст Morpho Midnight на 274.2%, що свідчить про надзвичайно високу волатильність у деяких проєк",
+    "ts": "2026-10-23T18:15:53.261357"
+  },
   "selfact|2026-10-23t18_09_13_356535": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-23T06:00:33.857799"
-  },
-  "proactive_actions|2026-10-23t06_00_16_198320": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховку KOOPERATIVA\",     \"date\": \"2026-10-23\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є н",
-    "ts": "2026-10-23T06:00:16.198320"
   }
 }
