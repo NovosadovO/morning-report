@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T12:37:54.441709",
-      "kind": "followup",
-      "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 13 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Oleg Novosadov\n📋 Приєднуйся до Runable та почни створювати. https://runable.cloud/?refer_code=VJN8OT\n📤 Твій лист від 2026-10-10\n\n\n\nОлеже, тиша вже 13 дні. Хочеш, складу короткий делікатний пінг?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T12:37:57.386132",
       "kind": "followup",
       "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 6 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 Ж\n📤 Твій лист від 2026-10-17\n\n<i></i>\n\nОлеже, тиша вже 6 дні. Хочеш, складу короткий делікатний пінг?",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81290"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-23T12:46:41.026320",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81289"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81289"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81289"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81289"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81289"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81289"
             }
           ]
         ]
