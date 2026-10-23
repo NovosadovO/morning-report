@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-14T13:46:49"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: weight_good",
       "detail": "⚖️ Вага йде вниз: -0.4 кг за період, зараз 82.3 кг (до цілі 7.3 кг)",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-23T02:46:59"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-23T02:47:38"
     }
   ]
 }
