@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-24t00_24_48_330493": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-10-24T00:24:48.330493"
+  },
   "mailcal_extract|2026-10-24t00_14_15_451538": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-23T21:00:27.930351"
-  },
-  "action_detect|2026-10-23t21_00_17_127461": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-23T21:00:17.127461"
   }
 }
