@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T16:14:38.916273+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T16:14:41.860018+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14257,6 +14251,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_6c97445922"
+    },
+    {
+      "ts": "2026-10-23T02:31:03.013639+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Переоцінити ризики криптопортфеля",
+      "answer": "yes"
     }
   ]
 }
