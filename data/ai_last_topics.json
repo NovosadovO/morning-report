@@ -1,4 +1,9 @@
 {
+  "foresight|2026-10-24t00_37_43_788463": {
+    "topic": "foresight",
+    "gist": "Привіт, Олеже! Зараз 00:37 суботи, і ти щойно зайшов у блок із двох нічних змін. Це означає, що наступні дні будуть напруженими, але потім у тебе будуть два віл",
+    "ts": "2026-10-24T00:37:43.788463"
+  },
   "selfact|2026-10-24t00_24_48_330493": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digital Business Product Owner\",     \"text\": \"Олеже, LinkedIn сповістив про нову вакансію 'Digit",
     "ts": "2026-10-23T21:00:56.002794"
-  },
-  "action_detect|2026-10-23t21_00_27_930351": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-23T21:00:27.930351"
   }
 }
