@@ -1,9 +1,4 @@
 {
-  "80449": {
-    "sender": "info@vas.zlavomat.sk",
-    "sender_raw": "Tím Zľavomat <info@vas.zlavomat.sk>",
-    "seen_ts": "2026-10-08T09:47:23.372924+00:00"
-  },
   "80450": {
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-23T11:30:57.048851+00:00"
+  },
+  "81303": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-23T12:14:55.445001+00:00"
   }
 }
