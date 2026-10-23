@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-15",
-      "detail": "автосинк з годинника: steps, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-15T04:48:14"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-23T18:05:48"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-23T19:07:30"
     }
   ]
 }
