@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T15:31:03.327990",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📍Agents Plan Factory Production</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81304"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81304"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81304"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81304"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81304"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81304"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T15:31:07.953485",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Baltic Operations Director в Ay</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-10-23T15:41:50.252508",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T15:42:32.655836",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
