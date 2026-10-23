@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_72cc2c6280",
-      "label": "👌 Прийняв",
-      "ts": "2026-09-28T20:22:55"
-    },
-    {
-      "t": "btn",
       "data": "am_save_4ddab22b69",
       "label": "💾 Так, запиши",
       "ts": "2026-09-28T20:22:58"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-10-23T17:00:07"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_1aonp3nlqre3ifteuc0gtu5s1o_2026-10-23",
+      "label": "✅ Виконано",
+      "ts": "2026-10-23T17:25:19"
     }
   ]
 }
