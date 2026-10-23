@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T12:01:21.218873",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔥 Introducing: Statements, Tags, and AI Connections</b>\n👤 ether.fi &lt;updates@ether.fi&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81291"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81291"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81291"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81291"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81291"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81291"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T12:01:22.691429",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Crypto Relative Strength, or Simply Lagging?</b>\n👤 \"CMC Market Pulse\" &lt;marketpulse@newsletters.coinma",
@@ -280,6 +241,12 @@
       "ts": "2026-10-23T12:14:42.380721",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T12:14:43.202601",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
