@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-23t22_51_06_148700": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digital Business Product Owner\",     \"text\": \"Олеже, LinkedIn повідомив про нову вакансію Digita",
+    "ts": "2026-10-23T22:51:06.148700"
+  },
+  "mailcal_extract|2026-10-23t22_43_52_096774": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81327\",     \"title\": \"The Daily Degen - October 23rd, 2026\",     \"date\": \"2026-10-23\",     \"time\": null,     \"kind\": \"other\",     \"why",
+    "ts": "2026-10-23T22:43:52.096774"
+  },
   "email_ai_item|2026-10-23t22_40_57_557008": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Securitize через LinkedIn є щотижневим дайджестом новин \\\"Onchain Assets Weekly\\\" за 23 жовтня 2026 року. Він містить огля",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-10-23T19:27:34.258839"
-  },
-  "foresight|2026-10-23t19_14_24_771383": {
-    "topic": "foresight",
-    "gist": "Коли завершиться нічна зміна, що триває до 06:00, замість звичного маршруту спробуй пройтися до Лісопарку Банков — це всього 15 хвилин від центру Кошице і дасть",
-    "ts": "2026-10-23T19:14:24.771383"
-  },
-  "selfact|2026-10-23t19_11_43_366789": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
-    "ts": "2026-10-23T19:11:43.366789"
   }
 }
