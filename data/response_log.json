@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:27:22.001230+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_7716f9bcd9"
-    },
-    {
       "ts": "2026-08-25T20:32:31.165920+00:00",
       "category": "deadline_found",
       "question": "Продовження підписки ChatGPT Go",
@@ -14274,6 +14268,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-23T23:08:42.873289+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
