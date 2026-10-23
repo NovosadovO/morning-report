@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:55:47.209460+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_note_d22c92643a"
-    },
-    {
       "ts": "2026-08-25T21:02:30.630518+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14291,6 +14285,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_fd09005c3d"
+    },
+    {
+      "ts": "2026-10-24T01:42:05.852996+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_0bee544e95"
     }
   ]
 }
