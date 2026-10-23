@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T11:47:48.860613",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T11:49:01.109794",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81294"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-23T12:01:18.074732",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔓 Banks found AI agents in customer accounts</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81293"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81293"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81293"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81293"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81293"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81293"
             }
           ]
         ]
