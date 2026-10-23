@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.93 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-10-15T04:00:44"
-    },
-    {
-      "kind": "notify",
       "what": "Оплата квартири",
       "detail": "Запланована подія в календарі на 15.10 о 08:00.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-23T17:48:26"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-23T17:48:40"
     }
   ]
 }
