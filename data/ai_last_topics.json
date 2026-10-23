@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-23t02_16_59_514967": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платежі до Runable на $10.00 були невдалими кіл",
+    "ts": "2026-10-23T02:16:59.514967"
+  },
   "mailcal_extract|2026-10-23t02_06_25_237062": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81281\",     \"title\": \"Скасування Glamsterdam upgrade на Hoodi розробниками Ethereum\",     \"date\": \"2026-10-26\",     \"time\": null,     ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-10-23\", \"action_time\": \"18:00\", \"action_summary\": \"Завтра нічна зміна з 18:00 до",
     "ts": "2026-10-22T22:00:30.601198"
-  },
-  "selfact|2026-10-22t21_51_03_061288": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Несплачений рахунок KOOPERATIVA\",     \"text\": \"Олеже, зверни увагу на лист від KOOPERATIVA. Це авізо на сплату",
-    "ts": "2026-10-22T21:51:03.061288"
   }
 }
