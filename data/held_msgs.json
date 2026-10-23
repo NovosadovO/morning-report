@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T14:50:20.893850",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T14:50:21.748128",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T15:01:37.039387",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>📉 Markets tumble as security worries worsen</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81309"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81309"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81309"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81309"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81309"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81309"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
