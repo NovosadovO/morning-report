@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:46:46.919522+00:00",
-      "category": "confirm",
-      "question": "gate_dl_skip: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T20:46:48.357192+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14271,6 +14265,12 @@
       "category": "confirm",
       "question": "calrem_skip: Зважитись",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-23T23:39:50.150549+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_39fda0ebda"
     }
   ]
 }
