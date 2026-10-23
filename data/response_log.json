@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:32:31.165920+00:00",
-      "category": "deadline_found",
-      "question": "Продовження підписки ChatGPT Go",
-      "answer": "2026-08-25",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-08-25T20:46:46.919522+00:00",
       "category": "confirm",
       "question": "gate_dl_skip: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
@@ -14274,6 +14265,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-10-23T23:39:44.226738+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Зважитись",
+      "answer": "yes"
     }
   ]
 }
