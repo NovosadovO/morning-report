@@ -1,9 +1,4 @@
 {
-  "80446": {
-    "sender": "newsletter@news.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@news.hm.com>",
-    "seen_ts": "2026-10-08T08:24:45.608288+00:00"
-  },
   "80448": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Ment Tech Labs через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-23T09:32:40.098009+00:00"
+  },
+  "81300": {
+    "sender": "jobs-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <jobs-noreply@linkedin.com>",
+    "seen_ts": "2026-10-23T11:06:01.127987+00:00"
   }
 }
