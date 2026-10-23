@@ -1,9 +1,4 @@
 {
-  "80450": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-10-08T10:01:39.059028+00:00"
-  },
   "80451": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-23T12:14:55.445001+00:00"
+  },
+  "81305": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-10-23T12:21:11.442292+00:00"
   }
 }
