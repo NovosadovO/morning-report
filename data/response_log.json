@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:46:48.357192+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_mute_986c7114d2"
-    },
-    {
       "ts": "2026-08-25T20:46:57.418546+00:00",
       "category": "confirm",
       "question": "gx_mute: крипто",
@@ -14271,6 +14265,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_39fda0ebda"
+    },
+    {
+      "ts": "2026-10-24T00:00:14.787192+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути The Daily Degen",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-24"
+      }
     }
   ]
 }
