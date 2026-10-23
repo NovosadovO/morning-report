@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T19:03:04.637437+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_b44e95e3e9"
-    },
-    {
       "ts": "2026-08-25T19:03:51.250761+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14255,6 +14249,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_b4fea28e91"
+    },
+    {
+      "ts": "2026-10-23T04:08:56.130935+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — продовження",
+      "answer": "2026-10-31",
+      "extra": {
+        "kind": "insurance"
+      }
     }
   ]
 }
