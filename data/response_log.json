@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T19:03:00.774929+00:00",
-      "category": "confirm",
-      "question": "email_delete: Dobierka je teraz k dispozícii!",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T19:03:04.637437+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14255,6 +14249,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_25b57f53d8"
+    },
+    {
+      "ts": "2026-10-23T04:05:23.250613+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b4fea28e91"
     }
   ]
 }
