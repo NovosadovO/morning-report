@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:25:56.557413+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_05d3625130"
-    },
-    {
       "ts": "2026-08-25T20:27:17.990552+00:00",
       "category": "confirm",
       "question": "email_delete: OpenAI's CFO Just Shared a Timeline",
@@ -14274,6 +14268,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-23T23:08:26.513943+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
