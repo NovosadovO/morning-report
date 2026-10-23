@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-23t07_27_38_426683": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про сплату страховки\",     \"text\": \"Олеже, надійшло авізо на сплату обов'язкового страхування авто",
+    "ts": "2026-10-23T07:27:38.426683"
+  },
   "openloop_promises|2026-10-23t07_23_08_396067": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-23T03:01:31.243479"
-  },
-  "mailcal_extract|2026-10-23t02_53_02_614264": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81281\",     \"title\": \"Скасування Glamsterdam upgrade на Hoodi розробниками Ethereum\",     \"date\": \"2026-10-26\",     \"time\": null,     ",
-    "ts": "2026-10-23T02:53:02.614264"
   }
 }
