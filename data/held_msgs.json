@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T09:33:17.877991",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-23T09:33:18.688106",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 3 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T09:46:11.804826",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81286"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81286"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81286"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81286"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81286"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81286"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
