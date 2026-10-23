@@ -634,5 +634,17 @@
     "sender": "Temu <temu@orders.temu.com>",
     "done": false,
     "created": "2026-10-20"
+  },
+  "страховка_авто_kooperativa_продовження|2026-10-3": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — продовження",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-10-31",
+    "action": "Оплатити страховий внесок за полісом PZ 6641172176 до 31 жовтня 2026 року.",
+    "why": "Без оплати поліс може бути анульований, і авто залишиться без обов'язкового страхування.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-10-23"
   }
 }
