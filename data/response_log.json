@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T22:18:27.096965+00:00",
-      "category": "event_done",
-      "question": "📅 Догляд за обличчям\nПланувалась до 12:00 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-25T22:19:24.731722+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14291,6 +14285,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_d86b237089"
+    },
+    {
+      "ts": "2026-10-24T01:42:07.307236+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_892a47dc66"
     }
   ]
 }
