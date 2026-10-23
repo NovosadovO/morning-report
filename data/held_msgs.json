@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-23T09:46:13.286625",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>💰 The Funding: What happens if MSCI drops crypto treasuries </b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81070"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81070"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81070"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81070"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81070"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81070"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-23T09:46:14.050864",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -346,6 +307,12 @@
       "ts": "2026-10-23T09:56:06.883915",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-23T09:57:14.076092",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
