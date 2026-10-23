@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T16:14:41.860018+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ca5219c111"
-    },
-    {
       "ts": "2026-08-25T17:32:42.334301+00:00",
       "category": "deadline_found",
       "question": "Підписка ChatGPT Go - продовження",
@@ -14257,6 +14251,12 @@
       "category": "confirm",
       "question": "calrem_skip: Переоцінити ризики криптопортфеля",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-23T02:31:06.638007+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_1f246316a4"
     }
   ]
 }
