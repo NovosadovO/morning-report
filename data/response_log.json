@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T18:02:28.191066+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -2.10% за 24 години — такі інструменти мають стояти на м"
-    },
-    {
       "ts": "2026-08-25T19:03:00.774929+00:00",
       "category": "confirm",
       "question": "email_delete: Dobierka je teraz k dispozícii!",
@@ -14255,6 +14249,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-10-23T04:05:23.250203+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_25b57f53d8"
     }
   ]
 }
