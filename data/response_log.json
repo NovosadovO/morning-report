@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T20:46:58.163435+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dl_skip_0a2f12e911"
-    },
-    {
       "ts": "2026-08-25T20:46:58.163702+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14278,6 +14272,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-24"
+      }
+    },
+    {
+      "ts": "2026-10-24T01:30:46.109988+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Скасувати підписку Garmin Connect+",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-04"
       }
     }
   ]
