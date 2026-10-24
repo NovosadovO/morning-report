@@ -1,9 +1,4 @@
 {
-  "80460": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "AI NOW & BEYOND через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-08T12:02:19.045950+00:00"
-  },
   "80461": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-23T21:25:47.952198+00:00"
+  },
+  "81339": {
+    "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
+    "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "seen_ts": "2026-10-24T07:05:05.629316+00:00"
   }
 }
