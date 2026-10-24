@@ -1,4 +1,29 @@
 {
+  "selfact|2026-10-24t06_09_05_601382": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Додаткова рання зміна завтра\",     \"text\": \"Олеже, нагадую, що завтра, 25 жовтня, о 05:00 у тебе додаткова ран",
+    "ts": "2026-10-24T06:09:05.601382"
+  },
+  "openloop_promises|2026-10-24t06_03_19_649311": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-24T06:03:19.649311"
+  },
+  "healthai|2026-10-24t06_01_33_693947": {
+    "topic": "healthai",
+    "gist": "Олеже, бачу, що сьогоднішній вихідний ти, схоже, використовуєш для відновлення, але дані по енергії Body Battery в 30 та зростання стресу до 35, попри зниження ",
+    "ts": "2026-10-24T06:01:33.693947"
+  },
+  "healthai|2026-10-24t06_01_23_067802": {
+    "topic": "healthai",
+    "gist": "Олеже, бачу, як твій змінний графік впливає на все: сьогодні ти на вихідному, але завтра вже на ранній зміні 06:00–18:00, і це може пояснювати, чому останній ві",
+    "ts": "2026-10-24T06:01:23.067802"
+  },
+  "action_detect|2026-10-24t06_01_20_662700": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
+    "ts": "2026-10-24T06:01:20.662700"
+  },
   "action_detect|2026-10-24t06_01_10_352453": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу, про що свідчить отримання сповіщення про вакансію Digital Business Product Owner від C",
     "ts": "2026-10-24T01:58:09.273270"
-  },
-  "mailcal_extract|2026-10-24t01_45_44_567676": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-24T01:45:44.567676"
-  },
-  "selfact|2026-10-24t01_42_26_440364": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
-    "ts": "2026-10-24T01:42:26.440364"
-  },
-  "action_detect|2026-10-24t01_41_45_360220": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-24T01:41:45.360220"
-  },
-  "proactive_actions|2026-10-24t01_30_39_837190": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, наближ",
-    "ts": "2026-10-24T01:30:39.837190"
-  },
-  "openloop_promises|2026-10-24t01_29_50_080252": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-24T01:29:50.080252"
   }
 }
