@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T14:03:28.868958",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T14:04:36.212714",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -215,6 +209,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T14:17:18.518312",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CryptoBeholder.com через LinkedIn</b>\n📋 Тема: «📰 AI-curated Daily Crypto Digest - October 24»\n\n<i>«AI-curated Daily Crypto Digest\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-curated-daily-crypto-digest-october-24-cryptobeholder-9sa0f?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81346"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81346"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81346"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81346"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81346"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81346"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
