@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T00:01:24.365906",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80711"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80711"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80711"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80711"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80711"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80711"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-25T00:01:25.894421",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-25T00:08:17.590070",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO -5.1% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T00:08:18.379852",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO -5.1% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
