@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T15:15:58.037006",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 24</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81344"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81344"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81344"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81344"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81344"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81344"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T15:15:59.435204",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your weekly report is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-24T15:28:27.083144",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T15:28:27.877072",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
