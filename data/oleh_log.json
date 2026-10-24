@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_skip_done_d8at4ev783j8tk6at8a71n15pc_2026-09-30",
-      "label": "⏭ Перенести",
-      "ts": "2026-09-30T16:38:27"
-    },
-    {
-      "t": "btn",
       "data": "rx_watch_0344e831ba",
       "label": "👀 Спостерігаю",
       "ts": "2026-09-30T17:05:02"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_spray",
       "label": "✅ Так",
       "ts": "2026-10-24T21:22:45"
+    },
+    {
+      "t": "btn",
+      "data": "rx_later_9c9454e7bb",
+      "label": "⏰ Пізніше",
+      "ts": "2026-10-24T21:22:47"
     }
   ]
 }
