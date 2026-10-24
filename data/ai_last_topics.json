@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-10-24t07_31_40_837032": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Схоже, ранок приніс неприємні сюрпризи на крипторинку, особливо для Monero (XMR) та NEAR Protocol (NEAR). Ці активи показали суттєве падіння за",
+    "ts": "2026-10-24T07:31:40.837032"
+  },
   "selfact|2026-10-24t07_27_34_430023": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-24T03:25:28.482262"
-  },
-  "action_detect|2026-10-24t03_25_17_487237": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-24T03:25:17.487237"
   }
 }
