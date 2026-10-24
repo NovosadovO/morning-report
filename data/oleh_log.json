@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_79967",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-30T07:32:33"
-    },
-    {
-      "t": "btn",
       "data": "rx_done_c86b194ca4",
       "label": "✅ Зробив",
       "ts": "2026-09-30T07:33:05"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_cardio_np",
       "label": "✅ Так",
       "ts": "2026-10-24T19:25:54"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_cardio_np",
+      "label": "✅ Так",
+      "ts": "2026-10-24T19:26:21"
     }
   ]
 }
