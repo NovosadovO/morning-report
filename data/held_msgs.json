@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:46:54.187731",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 10/23/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81330"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81330"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81330"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81330"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81330"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81330"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T09:46:55.497444",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 23rd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-24T09:56:52.677752",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T09:58:13.545230",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
