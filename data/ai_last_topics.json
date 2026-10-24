@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-24t18_52_49_228665": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверніть увагу, що платіж до Runable на $10.00 був невдалим. Потр",
+    "ts": "2026-10-24T18:52:49.228665"
+  },
+  "selfact|2026-10-24t18_36_57_631257": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Будь ласка, онови плат",
+    "ts": "2026-10-24T18:36:57.631257"
+  },
+  "foresight_truthfix|2026-10-24t18_35_40_319371": {
+    "topic": "foresight/truthfix",
+    "gist": "Зараз субота, 24 жовтня 2026, 18:35. Дані, які я маю, оновлені станом на сьогодні, але інформація про сон зафіксована о 17:50 і може бути неповною.  **Як далеко",
+    "ts": "2026-10-24T18:35:40.319371"
+  },
   "foresight|2026-10-24t18_35_27_791319": {
     "topic": "foresight",
     "gist": "Після нічних змін організм особливо потребує якісного перезавантаження, і саме зараз, коли завтра в тебе рання зміна, важливо закласти основу для доброго сну. С",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-24T15:34:33.000022"
-  },
-  "action_detect|2026-10-24t15_34_22_372472": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
-    "ts": "2026-10-24T15:34:22.372472"
-  },
-  "action_detect|2026-10-24t15_31_54_657016": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунок\", \"action_date\": \"2026-10-24\", \"action_time\": null, \"action_summary\": \"Перевірити, який саме рахун",
-    "ts": "2026-10-24T15:31:54.657016"
-  },
-  "action_detect|2026-10-24t15_31_43_727750": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-24T15:31:43.727750"
   }
 }
