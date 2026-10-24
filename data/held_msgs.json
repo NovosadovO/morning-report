@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:09:21.674460",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T09:09:22.387895",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81334"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-24T09:16:34.256360",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 10/23/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81330"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81330"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81330"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81330"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81330"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81330"
             }
           ]
         ]
