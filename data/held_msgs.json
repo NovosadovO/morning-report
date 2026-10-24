@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T12:31:04.080292",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81339"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81339"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81339"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81339"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81339"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81339"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T12:31:05.484678",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>I’m still here, your idea</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-24T12:41:09.399330",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T12:42:15.783752",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
