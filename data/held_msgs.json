@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:36:34.957250",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T09:37:43.178442",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81339"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-24T09:46:48.822379",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>I’m still here, your idea</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81338"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81338"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81338"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81338"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81338"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81338"
             }
           ]
         ]
