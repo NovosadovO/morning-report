@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:31:36.221633",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>I’m still here, your idea</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81338"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81338"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81338"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81338"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81338"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81338"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T09:31:37.554724",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Initia Halts Its Chain After a Bridge Drain</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-24T09:39:27.559916",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T09:40:02.042078",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
