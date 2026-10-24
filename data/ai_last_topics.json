@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-10-24t03_16_50_082712": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-24T03:16:50.082712"
+  },
+  "selfact|2026-10-24t03_01_31_274233": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-10-24T03:01:31.274233"
+  },
+  "action_detect|2026-10-24t03_01_21_403063": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-24T03:01:21.403063"
+  },
   "action_detect|2026-10-24t03_01_09_603262": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додаткова рання зміна\", \"action_date\": \"2026-10-25\", \"action_time\": \"07:00\", \"action_summary\": \"Завтра, 25 жовтня 2",
@@ -283,20 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81327\",     \"title\": \"The Daily Degen - October 23rd, 2026\",     \"date\": \"2026-10-23\",     \"time\": null,     \"kind\": \"other\",     \"why",
     "ts": "2026-10-23T22:43:52.096774"
-  },
-  "email_ai_item|2026-10-23t22_40_57_557008": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Securitize через LinkedIn є щотижневим дайджестом новин \\\"Onchain Assets Weekly\\\" за 23 жовтня 2026 року. Він містить огля",
-    "ts": "2026-10-23T22:40:57.557008"
-  },
-  "selfact|2026-10-23t22_34_48_467872": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digital Business Product Owner\",     \"text\": \"Олеже, LinkedIn повідомив про нову вакансію Digita",
-    "ts": "2026-10-23T22:34:48.467872"
-  },
-  "openloop_promises|2026-10-23t22_28_58_964807": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-23T22:28:58.964807"
   }
 }
