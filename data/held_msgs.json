@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:46:47.467633",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81339"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81339"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81339"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81339"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81339"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81339"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T09:46:48.822379",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>I’m still here, your idea</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-24T09:54:28.814661",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T09:54:29.642747",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
