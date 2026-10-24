@@ -1,4 +1,24 @@
 {
+  "selfact|2026-10-24t04_35_50_293791": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-24T04:35:50.293791"
+  },
+  "openloop_promises|2026-10-24t04_31_28_408524": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-10-24T04:31:28.408524"
+  },
+  "proactive_actions|2026-10-24t04_30_11_528929": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, наближ",
+    "ts": "2026-10-24T04:30:11.528929"
+  },
+  "foresight_truthfix|2026-10-24t04_29_52_866256": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, привіт! Зараз 04:29 суботи, 24 жовтня 2026 року, і ти, найімовірніше, вдома.  Щодо крипторинку, то дані, які я маю, оновлені станом на зараз.  *   **Що в",
+    "ts": "2026-10-24T04:29:52.866256"
+  },
   "foresight|2026-10-24t04_29_40_449662": {
     "topic": "foresight",
     "gist": "Олеже, зараз, коли ринок крипти трохи хитає, і багато хто чекає на зрозумілі сигнали, є ідеальний момент, щоб подивитися на on-chain дані — це може дати тобі ун",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
     "ts": "2026-10-24T00:10:01.345433"
-  },
-  "action_detect|2026-10-24t00_03_23_440757": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-24T00:03:23.440757"
-  },
-  "action_detect|2026-10-24t00_03_11_175839": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
-    "ts": "2026-10-24T00:03:11.175839"
-  },
-  "proactive_actions|2026-10-24t00_00_09_821071": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути The Daily Degen\",     \"date\": \"2026-10-24\",     \"time\": \"\",     \"message\": \"Олеже, ти отримав но",
-    "ts": "2026-10-24T00:00:09.821071"
-  },
-  "openloop_promises|2026-10-23t23_59_43_892000": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-23T23:59:43.892000"
   }
 }
