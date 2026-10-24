@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:00:05.821872",
-      "kind": "astro_journal",
-      "text": "🔭 Astro-журнал: чи збіглось?\n\n2026-10-20: «Привіт, Олеже! Бачу, сьогодні 20 жовтня 2026 року, 09:01 ранку, і в тебе вільний день за графіком. Але, згідно з оцінкою дня, твій поточний стан лише на 29 балів зі 100, що досить …»\n\nЗбіглось з реальністю того дня?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T09:00:25.341848",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -380,6 +374,45 @@
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T09:05:06.523183",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Railway Corporation</b>\n📋 Тема: «$12.56 payment to Railway Corporation was unsuccessful again»\n\n<i>«Railway Corporation  (https://railway.com)\r\n\r\nRailway Corporation\r\n\r\n$12.56 payment to Railway Corporation was unsuccessful We attempted to charge your Visa ending in 0311 for your Railway Corporation subscription again, but were unsuccessful. Please update your billing information to continue your...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81339"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81339"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81339"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81339"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81339"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81339"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
