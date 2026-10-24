@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T14:01:06.830581",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T14:01:07.757799",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -182,6 +176,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T14:15:14.073083",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Communications and Social Media Manager в DuckDuckGo»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\nКерувати сповіщеннями: https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BY47K5GV%2FQqesDGJY1QcIjg%3D%3D&amp;midToken=AQFTjFOONAfT2w&amp;midSig=3Ry7Sfx0-tYss1&amp;trk=em...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81345"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81345"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81345"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81345"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81345"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81345"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
