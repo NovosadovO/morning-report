@@ -673,16 +673,16 @@
     "pinged_at": ""
   },
   "dtp_keo@faxcopy.sk": {
-    "name": "DTP KEO",
+    "name": "dtp_keo",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "друк вітальної листівки"
+      "друк вітальних листівок"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати нагадування про друк вітальної листівки, оскільки минуло 9 днів.",
+    "next_step": "Надіслати нагадування dtp_keo@faxcopy.sk щодо друку вітальних листівок.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
