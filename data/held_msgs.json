@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T00:08:17.590070",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO -5.1% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-25T00:08:18.379852",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO -5.1% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 3 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T00:16:12.215248",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ви надали сервісу defillama.com деякі дані свого облікового </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81358"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81358"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81358"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81358"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81358"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81358"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
