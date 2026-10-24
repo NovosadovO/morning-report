@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T00:16:10.630392",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 3 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-25T00:16:12.215248",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ви надали сервісу defillama.com деякі дані свого облікового </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
@@ -313,6 +307,12 @@
       "ts": "2026-10-25T00:21:46.048146",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T00:23:02.246795",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n• Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko <masyastadnikova@gmail.com> → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
