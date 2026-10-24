@@ -1,123 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:01:20.186591",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>I’m still here, your idea</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81338"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81338"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81338"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81338"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81338"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81338"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-10-24T09:01:21.517255",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Initia Halts Its Chain After a Bridge Drain</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81337"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81337"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81337"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81337"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81337"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81337"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-10-24T09:01:23.020841",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>90% of budget reached</b>\n👤 Google Cloud Billing Alerts &lt;CloudPlatform-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81336"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81336"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81336"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81336"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81336"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81336"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-24T09:01:24.388220",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -424,6 +307,12 @@
       "ts": "2026-10-24T09:09:23.449421",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T09:09:28.765134",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
