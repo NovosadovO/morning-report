@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_79953",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-30T00:45:56"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_79954",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-30T00:46:09"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_79960",
       "label": "🗑 Видалити",
       "ts": "2026-09-30T07:32:17"
@@ -7199,6 +7187,18 @@
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-10-24T19:23:05"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-10-24T19:23:06"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-10-24T19:23:10"
     }
   ]
 }
