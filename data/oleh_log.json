@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "cmd",
-      "text": "/прокинувся",
-      "ts": "2026-09-30T16:04:14"
-    },
-    {
       "t": "btn",
       "data": "evdone_skip_done_d8at4ev783j8tk6at8a71n15pc_2026-09-30",
       "label": "⏭ Перенести",
@@ -7199,6 +7193,12 @@
       "data": "rx_done_ae0c36e087",
       "label": "✅ Зробив",
       "ts": "2026-10-24T20:32:01"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_spray",
+      "label": "✅ Так",
+      "ts": "2026-10-24T21:22:45"
     }
   ]
 }
