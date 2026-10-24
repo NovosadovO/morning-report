@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T23:55:06.437227",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T23:56:12.762701",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -379,6 +373,12 @@
       "ts": "2026-10-25T00:03:05.726755",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1  → More Trading, Different Activity: Avalanche’s Latest 30 Days\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T00:03:08.334189",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.\n\nONDO -5.0% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
