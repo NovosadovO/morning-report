@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T09:24:23.781696",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T09:24:24.781561",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🏖 Сьогодні вільний день\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81330"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-24T09:31:42.819203",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - October 23rd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81327"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81327"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81327"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81327"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81327"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81327"
             }
           ]
         ]
