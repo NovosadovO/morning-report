@@ -1,4 +1,34 @@
 {
+  "healthai|2026-10-24t18_05_45_122924": {
+    "topic": "healthai",
+    "gist": "📈 Олеже, сьогодні, 24 жовтня, твоя вага 85.2 кг, що на 0.8 кг більше, ніж середнє за 7 днів. З урахуванням змінної роботи та нерівного ритму сну (розкид ±1.89 г",
+    "ts": "2026-10-24T18:05:45.122924"
+  },
+  "action_detect|2026-10-24t18_01_47_984940": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про страховку авто\", \"action_date\": \"2026-11-05\", \"action_time\": null, \"action_summary\": \"Звернути уваг",
+    "ts": "2026-10-24T18:01:47.984940"
+  },
+  "action_detect|2026-10-24t18_01_37_223057": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунки та оновити підписку Strava\", \"action_date\": \"2026-10-24\", \"action_time\": \"18:00\", \"action_summary\"",
+    "ts": "2026-10-24T18:01:37.223057"
+  },
+  "action_detect|2026-10-24t18_01_36_999423": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
+    "ts": "2026-10-24T18:01:36.999423"
+  },
+  "action_detect|2026-10-24t18_01_16_004854": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додаткова рання зміна\", \"action_date\": \"2026-10-25\", \"action_time\": \"07:00\", \"action_summary\": \"Завтра о 07:00 запл",
+    "ts": "2026-10-24T18:01:16.004854"
+  },
+  "astro_ai|2026-10-24t18_01_07_184443": {
+    "topic": "astro_ai",
+    "gist": "Олеже, зараз 18:00 суботи, 24 жовтня 2026 року, і є кілька напружених моментів, які потребують твоєї уваги, особливо з огляду на зростаючий тренд ваги та падінн",
+    "ts": "2026-10-24T18:01:07.184443"
+  },
   "action_detect|2026-10-24t18_00_44_356072": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-24T15:29:38.041488"
-  },
-  "action_detect|2026-10-24t08_00_37_004234": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додаткова рання зміна\", \"action_date\": \"2026-10-25\", \"action_time\": \"07:00\", \"action_summary\": \"Завтра, 25 жовтня 2",
-    "ts": "2026-10-24T08:00:37.004234"
-  },
-  "selfact|2026-10-24t07_58_37_582735": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-10-24T07:58:37.582735"
-  },
-  "mailcal_extract|2026-10-24t07_51_15_295805": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81336\",     \"title\": \"Досягнуто 90% бюджету Google Cloud\",     \"date\": \"2026-10-23\",     \"time\": \"18:44\",     \"kind\": \"payment\",     \"",
-    "ts": "2026-10-24T07:51:15.295805"
-  },
-  "selfact|2026-10-24t07_42_56_936559": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
-    "ts": "2026-10-24T07:42:56.936559"
-  },
-  "bills|2026-10-24t07_41_54_778699": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-10-24T07:41:54.778699"
-  },
-  "openloop_promises|2026-10-24t07_35_30_194936": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-10-24T07:35:30.194936"
   }
 }
