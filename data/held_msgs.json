@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T12:31:02.731415",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T12:31:04.080292",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
@@ -379,6 +373,12 @@
       "ts": "2026-10-24T12:41:08.512149",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T12:41:09.399330",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
