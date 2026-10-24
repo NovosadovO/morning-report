@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T15:04:41.053339",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T15:05:50.533800",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81344"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-24T15:15:59.435204",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your weekly report is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81343"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81343"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81343"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81343"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81343"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81343"
             }
           ]
         ]
