@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-24t03_25_06_653303": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-24T03:25:06.653303"
+  },
+  "selfact|2026-10-24t03_17_10_837853": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-24T03:17:10.837853"
+  },
   "mailcal_extract|2026-10-24t03_16_50_082712": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Цієї нічної зміни є гарний привід подумати, як урізноманітнити тренування, адже це допоможе тобі вийти на новий рівень у досягненні цілі 75 кг. Після зміни спро",
     "ts": "2026-10-23T23:05:17.863482"
-  },
-  "selfact|2026-10-23t22_51_06_148700": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Digital Business Product Owner\",     \"text\": \"Олеже, LinkedIn повідомив про нову вакансію Digita",
-    "ts": "2026-10-23T22:51:06.148700"
-  },
-  "mailcal_extract|2026-10-23t22_43_52_096774": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81327\",     \"title\": \"The Daily Degen - October 23rd, 2026\",     \"date\": \"2026-10-23\",     \"time\": null,     \"kind\": \"other\",     \"why",
-    "ts": "2026-10-23T22:43:52.096774"
   }
 }
