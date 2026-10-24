@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T22:19:49.989935+00:00",
-      "category": "ai_button",
-      "question": "run",
-      "answer": "chart",
-      "extra": {
-        "trigger": "micro_checkin",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-25T22:19:50.651173+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14292,6 +14282,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути Changelog Railway",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-24"
+      }
+    },
+    {
+      "ts": "2026-10-24T04:30:14.825186+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-24"
