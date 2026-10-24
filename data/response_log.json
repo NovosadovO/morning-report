@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T22:19:24.731722+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "rw_mute_today"
-    },
-    {
       "ts": "2026-08-25T22:19:29.888928+00:00",
       "category": "mood",
       "question": "Оцінка настрою",
@@ -14291,6 +14285,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_892a47dc66"
+    },
+    {
+      "ts": "2026-10-24T03:00:26.072639+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Запланувати сауну",
+      "extra": {
+        "kind": "note",
+        "date": "2026-10-24"
+      }
     }
   ]
 }
