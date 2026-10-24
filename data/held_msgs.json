@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T00:46:15.298030",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ви надали сервісу defillama.com деякі дані свого облікового </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81358"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81358"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81358"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81358"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81358"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81358"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-25T00:46:16.788426",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-25T00:52:59.781856",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1  → More Trading, Different Activity: Avalanche’s Latest 30 Days\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T00:53:02.201076",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
