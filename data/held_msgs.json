@@ -277,39 +277,39 @@
       }
     },
     {
-      "ts": "2026-10-25T00:16:25.673696",
+      "ts": "2026-10-25T00:16:26.973847",
       "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80711"
+              "callback_data": "email_reply_80646"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_80711"
+              "callback_data": "email_describe_80646"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_80711"
+              "callback_data": "email_star_80646"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_80711"
+              "callback_data": "email_cal_80646"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_80711"
+              "callback_data": "email_keep_80646"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_80711"
+              "callback_data": "email_delete_80646"
             }
           ]
         ]
