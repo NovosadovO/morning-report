@@ -1,4 +1,19 @@
 {
+  "bills|2026-10-24t15_42_06_610131": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-10-24T15:42:06.610131"
+  },
+  "action_detect|2026-10-24t15_34_44_044572": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-24T15:34:44.044572"
+  },
+  "action_detect|2026-10-24t15_34_33_000022": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-24T15:34:33.000022"
+  },
   "action_detect|2026-10-24t15_34_22_372472": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"С",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-10-24T05:32:14.293239"
-  },
-  "msg_crypto_move_truthfix|2026-10-24t05_32_07_260698": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже!  Бачу, що дані по крипторинку, які є зараз, оновлювалися 1 день тому, 23 жовтня 2026 року. Тоді, на ранній ранок, ринок показував певні рухи, які ",
-    "ts": "2026-10-24T05:32:07.260698"
-  },
-  "msg_crypto_move|2026-10-24t05_31_56_804403": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  Ніч принесла помітні рухи на крипторинку, які варто розглянути спокійно, особливо зважаючи на те, що зараз час для відновлення. За останні 24 г",
-    "ts": "2026-10-24T05:31:56.804403"
-  },
-  "selfact|2026-10-24t05_22_33_419653": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
-    "ts": "2026-10-24T05:22:33.419653"
   }
 }
