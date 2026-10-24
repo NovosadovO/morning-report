@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-24T11:50:07.409544",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-24T11:51:27.296807",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-24T11:51:28.141213",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-24T11:52:37.604238",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -326,6 +308,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-24T12:01:00.337591",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 10/23/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81330"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81330"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81330"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81330"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81330"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81330"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
