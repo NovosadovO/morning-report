@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-25T22:28:26.378093+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_3923940b6a"
-    },
-    {
       "ts": "2026-08-25T22:29:00.963870+00:00",
       "category": "calendar_button",
       "question": "Догляд за обличчям",
@@ -14293,6 +14287,12 @@
     },
     {
       "ts": "2026-10-24T19:23:12.406449+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-24T19:23:18.999387+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
