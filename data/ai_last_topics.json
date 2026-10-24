@@ -1,4 +1,29 @@
 {
+  "foresight|2026-10-24t18_35_27_791319": {
+    "topic": "foresight",
+    "gist": "Після нічних змін організм особливо потребує якісного перезавантаження, і саме зараз, коли завтра в тебе рання зміна, важливо закласти основу для доброго сну. С",
+    "ts": "2026-10-24T18:35:27.791319"
+  },
+  "people|2026-10-24t18_33_31_723665": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"особисте\",     \"topics\": [       \"запрошення Runable",
+    "ts": "2026-10-24T18:33:31.723665"
+  },
+  "action_detect|2026-10-24t18_32_29_084060": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-24T18:32:29.084060"
+  },
+  "msg_crypto_move_truthfix|2026-10-24t18_32_21_928898": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Олеже, дані, які я маю, оновлені станом на сьогодні, 24 жовтня 2026 року, 18:32.  На крипторинку спостерігається загальний спад, що може вплинути на твій портфе",
+    "ts": "2026-10-24T18:32:21.928898"
+  },
+  "msg_crypto_move|2026-10-24t18_32_10_770918": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! ⚠️  Схоже, вечір приніс помітний рух на крипторинку, який варто розглянути з позиції обережного інвестора. Сьогодні спостерігається загальний спад",
+    "ts": "2026-10-24T18:32:10.770918"
+  },
   "mailcal_extract|2026-10-24t18_30_56_039860": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81354\",     \"title\": \"Вхід через Google в Bybit\",     \"date\": \"2026-10-24\",     \"time\": \"17:20\",     \"kind\": \"other\",     \"why\": \"Ви с",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-24T15:31:43.727750"
-  },
-  "action_detect|2026-10-24t15_31_32_733998": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Кардіо прогулянка\", \"action_date\": \"2026-10-24\", \"action_time\": null, \"action_summary\": \"Заплануй кардіо прогулянку",
-    "ts": "2026-10-24T15:31:32.733998"
-  },
-  "briefing_truthfix|2026-10-24t15_31_28_558748": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогодні, 24 жовтня, твій вихідний день, але дані по вазі за 23 жовтня показують 82.7 кг, що на 7.7 кг більше від цілі 75 кг. Це важливо, адже завт",
-    "ts": "2026-10-24T15:31:28.558748"
-  },
-  "action_detect|2026-10-24t15_31_15_739033": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-24T15:31:15.739033"
-  },
-  "briefing|2026-10-24t15_31_14_140576": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогоднішній вихідний день дає тобі простір для стратегічного погляду на свої цілі, особливо коли завтра чекає додаткова рання зміна. Найближче до ",
-    "ts": "2026-10-24T15:31:14.140576"
-  },
-  "action_detect|2026-10-24t15_30_54_306153": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-24T15:30:54.306153"
   }
 }
