@@ -673,21 +673,23 @@
     "pinged_at": ""
   },
   "dtp_keo@faxcopy.sk": {
-    "name": "dtp_keo",
+    "name": "dtp_keo@faxcopy.sk",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "друк вітальних листівок"
+      "blue_greeting_A4_five_gifts_no_second_stanza",
+      "q",
+      "blue_greeting_A4_print"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати нагадування dtp_keo@faxcopy.sk щодо друку вітальних листівок.",
+    "next_step": "Надіслати нагадування dtp_keo@faxcopy.sk щодо трьох листів.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-14",
-    "updated": "2026-10-24",
+    "updated": "2026-10-25",
     "pinged_at": ""
   }
 }
