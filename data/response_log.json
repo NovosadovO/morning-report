@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T04:30:29.391510+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Догляд за обличчям (вечір)",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T04:30:33.506293+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14294,6 +14284,16 @@
       "answer": "2026-10-31",
       "extra": {
         "kind": "insurance"
+      }
+    },
+    {
+      "ts": "2026-10-25T04:30:23.404354+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страховку KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-27"
       }
     }
   ]
