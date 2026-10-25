@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:35:18.400811+00:00",
-      "category": "confirm",
-      "question": "email_delete: ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-26T10:35:21.357297+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14305,6 +14299,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-10-25T12:58:11.436726+00:00",
+      "category": "event_done",
+      "question": "📅 💊 Вітаміни ✅\nПланувалась до 09:30 — виконано?",
+      "answer": "yes"
     }
   ]
 }
