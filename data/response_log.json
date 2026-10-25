@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T12:06:25.265024+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "lc_skip_b598be6ef6"
-    },
-    {
       "ts": "2026-08-26T12:06:42.204263+00:00",
       "category": "confirm",
       "question": "email_delete: UBIAN - Potvrdenie o zaplatení",
@@ -14308,6 +14302,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-25T19:24:44.308248+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
