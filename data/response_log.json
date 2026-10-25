@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T06:02:43.491725+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "ONDO (твоя позиція) впав на 6.1% за 24 години (зараз $0.36712)"
-    },
-    {
       "ts": "2026-08-26T07:30:57.425212+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14297,6 +14291,16 @@
       "answer": "2026-10-31",
       "extra": {
         "kind": "insurance"
+      }
+    },
+    {
+      "ts": "2026-10-25T07:30:18.727168+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Сплатити страховку KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-26"
       }
     }
   ]
