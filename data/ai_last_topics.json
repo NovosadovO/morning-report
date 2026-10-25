@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-25t05_05_18_777545": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку автомобіля\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA щодо сплати о",
+    "ts": "2026-10-25T05:05:18.777545"
+  },
+  "action_detect|2026-10-25t05_00_55_828006": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про страховку на авто\", \"action_date\": \"2026-11-05\", \"action_time\": null, \"action_summary\": \"Нагадуванн",
+    "ts": "2026-10-25T05:00:55.828006"
+  },
   "action_detect|2026-10-25t05_00_44_908998": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-10-24T19:37:58.724690"
-  },
-  "selfact|2026-10-24t19_23_02_647299": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про сплату страховки\",     \"text\": \"Олеже, зверни увагу на лист від KOOPERATIVA: «Avízo na zaplate",
-    "ts": "2026-10-24T19:23:02.647299"
-  },
-  "foresight_truthfix|2026-10-24t19_21_42_994392": {
-    "topic": "foresight/truthfix",
-    "gist": "Зараз вечір суботи, 24 жовтня 2026 року, і, судячи з даних, які оновлені станом на вчора, 23 жовтня, ти маєш вільний день. Це чудова нагода спробувати щось нове",
-    "ts": "2026-10-24T19:21:42.994392"
   }
 }
