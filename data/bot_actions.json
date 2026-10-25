@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-15T23:06:20"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-15",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Факт про Олега 'Дедлайн 2026-11-04: Скасування підписки Garmin Connect+ (Garmin)' та попереднє сповіщення '⚠️ Термін дії підписки Garmin Connect+ наближається' (яке було вже зроблено ботом) та реакція Олега '⏰ Пізніше' на питання про дедлайн Strava, що вказує на можливу неуважність до дедлайнів.",
       "module": "selfact",
       "ts": "2026-10-25T04:49:47"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-25",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-25T05:51:15"
     }
   ]
 }
