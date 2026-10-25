@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:35:21.357297+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e72ca91a74"
-    },
-    {
       "ts": "2026-08-26T10:35:46.129619+00:00",
       "category": "confirm",
       "question": "email_delete: Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
@@ -14302,6 +14296,12 @@
     },
     {
       "ts": "2026-10-25T12:58:11.436726+00:00",
+      "category": "event_done",
+      "question": "📅 💊 Вітаміни ✅\nПланувалась до 09:30 — виконано?",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-10-25T12:58:18.470182+00:00",
       "category": "event_done",
       "question": "📅 💊 Вітаміни ✅\nПланувалась до 09:30 — виконано?",
       "answer": "yes"
