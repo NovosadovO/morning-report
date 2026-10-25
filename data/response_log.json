@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T07:30:57.425212+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T07:31:02.226078+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14298,6 +14288,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Сплатити страховку KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-26"
+      }
+    },
+    {
+      "ts": "2026-10-25T07:30:23.387368+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-10-26"
