@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:35:46.129619+00:00",
-      "category": "confirm",
-      "question": "email_delete: Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-26T10:35:47.650859+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14304,6 +14298,12 @@
       "ts": "2026-10-25T12:58:18.470182+00:00",
       "category": "event_done",
       "question": "📅 💊 Вітаміни ✅\nПланувалась до 09:30 — виконано?",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-10-25T13:51:32.525888+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 15 дн.",
       "answer": "yes"
     }
   ]
