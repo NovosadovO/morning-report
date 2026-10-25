@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-16",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-16T07:17:52"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "У пам'яті бота є дедлайн 'Скасування підписки Garmin Connect+' до 4 листопада, і Олег ще не підтвердив, що він виконав це завдання. Бот уже питав про це 12 днів тому, але статус 'done' залишається false, тому варто перепитати.",
       "module": "selfact",
       "ts": "2026-10-25T11:18:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-25",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-25T11:52:28"
     }
   ]
 }
