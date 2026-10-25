@@ -154,5 +154,29 @@
     "subject": "Garmin Connect+ Subscription Confirmation",
     "uid": "80341",
     "last_seen": "2026-10-13"
+  },
+  "googleplay": {
+    "vendor": "Google Play",
+    "cycle": "unknown",
+    "currency": "EUR",
+    "charges": [
+      {
+        "date": "2026-10-25",
+        "amount": "7.99",
+        "uid": "81377"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-10-25",
+    "note": "Підписка на додаток ChatGPT Go, платіж відхилено, потрібно оновити спосіб оплати до 1 листопада 2026 року.",
+    "next_due": "2026-11-01",
+    "amount": "7.99",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Платіж за підписку на додаток ChatGPT відхилено",
+    "uid": "81377",
+    "last_seen": "2026-10-25"
   }
 }
