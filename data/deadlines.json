@@ -658,5 +658,17 @@
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
     "done": false,
     "created": "2026-10-25"
+  },
+  "страховка_авто_kooperativa_оплата|2026-10-31": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-10-31",
+    "action": "Оплатити страховий внесок за полісом PZ 6641172176",
+    "why": "Без оплати страховка авто може бути анульована, що призведе до відсутності покриття у разі ДТП.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-10-25"
   }
 }
