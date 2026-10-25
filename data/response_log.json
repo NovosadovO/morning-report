@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T06:00:58.135141+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T06:02:43.491725+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14298,6 +14288,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-27"
+      }
+    },
+    {
+      "ts": "2026-10-25T07:09:56.152789+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — оплата",
+      "answer": "2026-10-31",
+      "extra": {
+        "kind": "insurance"
       }
     }
   ]
