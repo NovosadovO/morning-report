@@ -1,14 +1,4 @@
 {
-  "80466": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-10-08T12:27:05.689003+00:00"
-  },
-  "80468": {
-    "sender": "slovnaftmove@mail.loyaltyteam.com",
-    "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
-    "seen_ts": "2026-10-08T12:29:11.998870+00:00"
-  },
   "80474": {
     "sender": "team@ua-4u.mail.sweet.tv",
     "sender_raw": "SWEET.TV <team@ua-4u.mail.sweet.tv>",
@@ -1503,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-25T08:00:22.013299+00:00"
+  },
+  "81365": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-25T10:08:19.588866+00:00"
   }
 }
