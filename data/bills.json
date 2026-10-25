@@ -442,5 +442,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-10-16"
+  },
+  "google_play|7_99|2026-11-01": {
+    "vendor": "Google Play",
+    "amount": "7.99",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-11-01",
+    "uid": "81377",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Платіж за підписку на додаток ChatGPT відхилено",
+    "note": "Платіж за підписку на додаток ChatGPT відхилено. Оновіть спосіб оплати до 1 листопада, інакше підписку буде скасовано.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-10-25"
   }
 }
