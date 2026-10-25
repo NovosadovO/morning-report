@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:35:02.140578+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_dbdd87a666"
-    },
-    {
       "ts": "2026-08-26T10:35:18.400811+00:00",
       "category": "confirm",
       "question": "email_delete: ",
@@ -14305,6 +14299,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_d534bbc8f9"
+    },
+    {
+      "ts": "2026-10-25T12:22:57.937783+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
