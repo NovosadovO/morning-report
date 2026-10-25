@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T03:01:09.876921",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81359"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81359"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81359"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81359"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81359"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81359"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-25T03:01:11.324141",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ви надали сервісу defillama.com деякі дані свого облікового </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-25T03:06:43.885782",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1  → More Trading, Different Activity: Avalanche’s Latest 30 Days\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T03:06:46.741150",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
