@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-25t05_10_30_608008": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-25T05:10:30.608008"
+  },
   "selfact|2026-10-25t05_05_18_777545": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку автомобіля\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA щодо сплати о",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Новий рахунок від Mariia Ovsiienko\",     \"text\": \"Олеже, отримано новий рахунок № 20260164 від Mariia Ovsiienk",
     "ts": "2026-10-24T19:38:12.640355"
-  },
-  "openloop_promises|2026-10-24t19_37_58_724690": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-24T19:37:58.724690"
   }
 }
