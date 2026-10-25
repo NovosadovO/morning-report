@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-25t08_26_35_277205": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку автомобіля\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA щодо сплати с",
+    "ts": "2026-10-25T08:26:35.277205"
+  },
   "selfact|2026-10-25t08_10_43_108966": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про сплату страховки\",     \"text\": \"Олеже, надійшло повідомлення від KOOPERATIVA щодо сплати обов'",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-10-25\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має ранню зміну з 06:00 ",
     "ts": "2026-10-25T04:30:20.566345"
-  },
-  "proactive_actions|2026-10-25t04_30_13_626625": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страховку KOOPERATIVA\",     \"date\": \"2026-10-27\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є н",
-    "ts": "2026-10-25T04:30:13.626625"
   }
 }
