@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Невдалий біг",
-      "detail": "У календарі на 15.10 стоїть '🏃 Біг ❌'.",
-      "module": "selfact",
-      "ts": "2026-10-15T22:51:02"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-15",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 7.9 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-25T04:01:18"
+    },
+    {
+      "kind": "notify",
+      "what": "Невиконані дедлайни",
+      "detail": "Повідомлення про прострочені дедлайни, щоб Олег звернув на них увагу.",
+      "module": "selfact",
+      "ts": "2026-10-25T04:33:48"
     }
   ]
 }
