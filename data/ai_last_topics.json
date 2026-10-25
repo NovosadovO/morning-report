@@ -1,4 +1,49 @@
 {
+  "healthai|2026-10-25t21_05_33_625714": {
+    "topic": "healthai",
+    "gist": "🤔 Олеже, сьогоднішня оцінка дня – 88 балів, що є найвищим показником за останні 14 днів, але при цьому енергія (body battery) впала до 39, а вага зросла до 84.8",
+    "ts": "2026-10-25T21:05:33.625714"
+  },
+  "action_detect|2026-10-25t21_01_41_858384": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути та оплатити прострочені рахунки\", \"action_date\": \"2023-10-25\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-10-25T21:01:41.858384"
+  },
+  "action_detect|2026-10-25t21_01_30_908292": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-25T21:01:30.908292"
+  },
+  "action_detect|2026-10-25t21_01_19_791388": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-25T21:01:19.791388"
+  },
+  "action_detect|2026-10-25t21_01_09_055163": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Свідоме планування харчування\", \"action_date\": \"2023-10-26\", \"action_time\": null, \"action_summary\": \"Свідом",
+    "ts": "2026-10-25T21:01:09.055163"
+  },
+  "briefing_truthfix|2026-10-25t21_01_04_264406": {
+    "topic": "briefing/truthfix",
+    "gist": "🧭 ВЕКТОР ДНЯ  Сьогоднішній вечір, 25 жовтня 2026 року, дає тобі простір для стратегічного погляду на свої цілі. Дані, які є у мене, показують, що твоя вага зрос",
+    "ts": "2026-10-25T21:01:04.264406"
+  },
+  "briefing|2026-10-25t21_00_58_124995": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ  Сьогоднішній вихідний, що закінчується, дає тобі можливість переосмислити динаміку останніх днів. Поки ринок криптовалют коливається, твої цілі що",
+    "ts": "2026-10-25T21:00:58.124995"
+  },
+  "themes_ai_truthfix|2026-10-25t21_00_47_113452": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, бачу, що ти знову на ранній зміні, яка завершилася о 18:00, а вже завтра, 26 жовтня, о 06:00 починається нова. Це залишає мало часу на відновлення.  *   ",
+    "ts": "2026-10-25T21:00:47.113452"
+  },
+  "themes_ai|2026-10-25t21_00_42_847870": {
+    "topic": "themes_ai",
+    "gist": "Олеже, чи є актуальна інформація щодо твоїх фінансових операцій, щоб оцінити загальну картину заборгованостей, які зараз становлять 448.13€?  💰 ФІНАНСИ Загальна",
+    "ts": "2026-10-25T21:00:42.847870"
+  },
   "action_detect|2026-10-25t21_00_10_426700": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -253,50 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-25T18:45:48.733686"
-  },
-  "action_detect|2026-10-25t18_45_37_646938": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T18:45:37.646938"
-  },
-  "action_detect|2026-10-25t18_45_26_803344": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T18:45:26.803344"
-  },
-  "action_detect|2026-10-25t18_45_15_745990": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-10-25T18:45:15.745990"
-  },
-  "subs|2026-10-25t18_40_03_271567": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"81377\",     \"vendor\": \"Google Play\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"cycle\": \"unknown\",     \"charge_date\": null,    ",
-    "ts": "2026-10-25T18:40:03.271567"
-  },
-  "foresight_truthfix|2026-10-25t18_38_03_033299": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, бачу, що ти зараз на ранній зміні, яка триватиме до 18:00. Дані про твою вагу, зафіксовані сьогодні, 25 жовтня 2026 року, показують 84.8 кг, що на 9.8 кг",
-    "ts": "2026-10-25T18:38:03.033299"
-  },
-  "foresight|2026-10-25t18_37_50_683563": {
-    "topic": "foresight",
-    "gist": "Олеже, на вихідних, коли ти вже будеш вільний від ранньої зміни, варто спробувати новий рецепт, адже зараз саме час шукати смачні та легкі страви, щоб ефективні",
-    "ts": "2026-10-25T18:37:50.683563"
-  },
-  "selfact|2026-10-25t18_33_58_708105": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення порталу eKooperativa\",     \"text\": \"Олеже, зверни увагу, що з 28 жовтня 2026 року KOOPERATIVA запров",
-    "ts": "2026-10-25T18:33:58.708105"
-  },
-  "people|2026-10-25t18_33_25_579365": {
-    "topic": "people",
-    "gist": "```json [] ```",
-    "ts": "2026-10-25T18:33:25.579365"
-  },
-  "email_ai_item|2026-10-25t18_27_59_521424": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від страхової компанії KOOPERATIVA інформує про запуск нового клієнтського порталу eKooperativa та оновлення умов з 28 жовтня 2",
-    "ts": "2026-10-25T18:27:59.521424"
   }
 }
