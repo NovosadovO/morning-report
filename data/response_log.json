@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T04:30:25.156667+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T04:30:29.391510+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14296,6 +14286,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_cardio_np"
+    },
+    {
+      "ts": "2026-10-25T04:09:49.436396+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — нагадування",
+      "answer": "2026-10-31",
+      "extra": {
+        "kind": "insurance"
+      }
     }
   ]
 }
