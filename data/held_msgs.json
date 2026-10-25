@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T03:16:08.964711",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80743"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80743"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80743"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80743"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80743"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80743"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-25T03:16:10.291945",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
@@ -214,6 +175,12 @@
       "ts": "2026-10-25T03:22:49.099832",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-25T03:22:49.943593",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
