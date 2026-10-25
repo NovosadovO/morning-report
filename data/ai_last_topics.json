@@ -1,4 +1,24 @@
 {
+  "foresight|2026-10-25t13_15_51_785944": {
+    "topic": "foresight",
+    "gist": "На ранній зміні зараз гарний час, щоб подумати про майбутні кроки щодо фінансів. Свіжим оком глянути на один з активів у портфелі варто, адже ринок постійно змі",
+    "ts": "2026-10-25T13:15:51.785944"
+  },
+  "deadlines|2026-10-25t13_09_48_830262": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-10-25T13:09:48.830262"
+  },
+  "selfact|2026-10-25t13_06_33_393894": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку KOOPERATIVA\",     \"text\": \"Олеже, згідно з листом від KOOPERATIVA, надійшло авізо на",
+    "ts": "2026-10-25T13:06:33.393894"
+  },
+  "healthai_truthfix|2026-10-25t13_06_15_863282": {
+    "topic": "healthai/truthfix",
+    "gist": "Олеже, бачу, що дані про твою вагу за 25 жовтня показують 84.8 кг, що на 0.5 кг більше, ніж середній показник за останні 7 днів. Це зростання, хоча ти вже на ра",
+    "ts": "2026-10-25T13:06:15.863282"
+  },
   "healthai|2026-10-25t13_06_05_248098": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що твоя вага 84.8 кг зараз продовжує зростати (+0.5 кг за тиждень), хоча ти вже на ранній зміні. Чи достатньо 7.8 годин сну, який, до речі, поки ",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та історію взаємод",
     "ts": "2026-10-25T09:02:27.212584"
-  },
-  "action_detect|2026-10-25t09_02_15_866289": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити підписки Strava\", \"action_date\": \"2026-10-25\", \"action_time\": null, \"action_summary\": \"Переглянути підпи",
-    "ts": "2026-10-25T09:02:15.866289"
-  },
-  "action_detect|2026-10-25t09_02_04_995361": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочений рахунок\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Сфокусуйся на закр",
-    "ts": "2026-10-25T09:02:04.995361"
-  },
-  "action_detect|2026-10-25t09_01_55_135686": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T09:01:55.135686"
-  },
-  "action_detect|2026-10-25t09_01_42_945235": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Під час перерви на р",
-    "ts": "2026-10-25T09:01:42.945235"
   }
 }
