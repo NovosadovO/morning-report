@@ -1,4 +1,24 @@
 {
+  "mailcal_extract|2026-10-25t19_41_53_166247": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81379\",     \"title\": \"Оновлення умов та запуск нового порталу eKooperativa\",     \"date\": \"2026-10-28\",     \"time\": null,     \"kind\": \"",
+    "ts": "2026-10-25T19:41:53.166247"
+  },
+  "selfact|2026-10-25t19_37_37_648643": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення порталу eKooperativa\",     \"text\": \"Олеже, зверни увагу, що з 28 жовтня 2026 року KOOPERATIVA запров",
+    "ts": "2026-10-25T19:37:37.648643"
+  },
+  "action_detect|2026-10-25t19_37_08_034694": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-10-25T19:37:08.034694"
+  },
+  "ai_weekly_accuracy|2026-10-25t19_36_57_639640": {
+    "topic": "ai_weekly_accuracy",
+    "gist": "Олеже, давай відверто: за останній тиждень наші повідомлення зосередилися майже виключно на крипті та нагадуваннях про зміни, і це потрібно виправити. Поради бу",
+    "ts": "2026-10-25T19:36:57.639640"
+  },
   "action_detect|2026-10-25t19_34_50_085595": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст аналізує динаміку ринку криптовалют ZEC та NEAR",
@@ -278,25 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"81377\",     \"vendor\": \"Google Play\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"\",     \"due\": \"2026-11-01\",     \"",
     "ts": "2026-10-25T17:42:59.219763"
-  },
-  "action_detect|2026-10-25t17_34_14_551630": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом ринку криптовалют ZEC та RAIN, б",
-    "ts": "2026-10-25T17:34:14.551630"
-  },
-  "msg_crypto_move_truthfix|2026-10-25t17_34_06_865982": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Олеже,  Бачу, що дані по ринку криптовалют, які є в мене, показують цікаву динаміку для ZEC та RAIN. Важливо зазначити, що ці дані не є свіжими, а відображають ",
-    "ts": "2026-10-25T17:34:06.865982"
-  },
-  "msg_crypto_move|2026-10-25t17_33_55_995271": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 💹  Бачу, що сьогодні ринок криптовалют демонструє цікаву динаміку, зокрема, ZEC та RAIN показують значне зростання. Давай розберемося, що могло сп",
-    "ts": "2026-10-25T17:33:55.995271"
-  },
-  "selfact|2026-10-25t17_30_20_116407": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-10-25T17:30:20.116407"
   }
 }
