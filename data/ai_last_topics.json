@@ -1,4 +1,14 @@
 {
+  "bills|2026-10-25t15_42_54_202910": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-10-25T15:42:54.202910"
+  },
+  "foresight_truthfix|2026-10-25t15_34_16_008112": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, дані, які я маю, є застарілими, тому не можу надати актуальної інформації. Проте, з огляду на твій графік ранніх змін, варто подумати про майбутні кроки ",
+    "ts": "2026-10-25T15:34:16.008112"
+  },
   "foresight|2026-10-25t15_34_04_961824": {
     "topic": "foresight",
     "gist": "Цікаво, що ти постійно розвиваєшся, а тема інвестицій і фінансової незалежності зараз особливо актуальна. Варто використати період зміни для саморозвитку, обрав",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-25T12:01:21.360062"
-  },
-  "action_detect|2026-10-25t12_01_12_074355": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T12:01:12.074355"
-  },
-  "action_detect|2026-10-25t12_01_02_236986": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-10-25T12:01:02.236986"
   }
 }
