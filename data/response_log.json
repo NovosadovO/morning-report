@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:36:53.858071+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_rem_aa6d5fc0cd"
-    },
-    {
       "ts": "2026-08-26T10:36:53.858258+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14305,6 +14299,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-25T17:43:07.314787+00:00",
+      "category": "bill_found",
+      "question": "Google Play",
+      "answer": "7.99 EUR",
+      "extra": {
+        "due": "2026-11-01"
+      }
     }
   ]
 }
