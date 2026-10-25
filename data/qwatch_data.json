@@ -1819,5 +1819,22 @@
     "weight_kg": 85.2,
     "hrv": 48,
     "sleep_hours": 5.48
+  },
+  "2026-10-25": {
+    "steps": 22,
+    "sleep_total_min": 465,
+    "sleep_deep_min": 84,
+    "sleep_rem_min": 96,
+    "sleep_light_min": 286,
+    "sleep_awake_min": 1,
+    "hr_avg": 47,
+    "hrv": 58,
+    "spo2": 97,
+    "body_battery": 100,
+    "stress": 12,
+    "sleep_hours": 7.75,
+    "date": "2026-10-25",
+    "source": "qwatch_auto",
+    "saved_at": "2026-10-25 05:51"
   }
 }
