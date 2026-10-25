@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-10-25t14_21_12_304779": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-10-25T14:21:12.304779"
+  },
   "email_ai_item|2026-10-25t14_14_04_049842": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію 'SPECIALISTA/KA PROCESŮ A DIGITALIZACE JUNIOR (RENOMIA NETWORK)' в компанії RENOM",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто KOOPERATIVA — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-1",
     "ts": "2026-10-25T10:09:46.393410"
-  },
-  "healthai|2026-10-25t10_06_00_861663": {
-    "topic": "healthai",
-    "gist": "👋 Олеже, бачу, сьогодні в тебе знову рання зміна до 18:00, і завтра теж. Поки що зафіксовано 7.8 годин сну, що трохи нижче середнього за 14 днів (7.9 год), і тр",
-    "ts": "2026-10-25T10:06:00.861663"
   }
 }
