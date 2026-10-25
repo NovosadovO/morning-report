@@ -1,4 +1,14 @@
 {
+  "foresight|2026-10-25t18_37_50_683563": {
+    "topic": "foresight",
+    "gist": "Олеже, на вихідних, коли ти вже будеш вільний від ранньої зміни, варто спробувати новий рецепт, адже зараз саме час шукати смачні та легкі страви, щоб ефективні",
+    "ts": "2026-10-25T18:37:50.683563"
+  },
+  "selfact|2026-10-25t18_33_58_708105": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення порталу eKooperativa\",     \"text\": \"Олеже, зверни увагу, що з 28 жовтня 2026 року KOOPERATIVA запров",
+    "ts": "2026-10-25T18:33:58.708105"
+  },
   "people|2026-10-25t18_33_25_579365": {
     "topic": "people",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-25T15:02:02.029455"
-  },
-  "action_detect|2026-10-25t15_01_50_842715": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T15:01:50.842715"
-  },
-  "action_detect|2026-10-25t15_01_39_967977": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз InterFin\", \"action_date\": \"2026-10-25\", \"action_time\": \"15:00\", \"action_summary\": \"Проаналізувати InterFin п",
-    "ts": "2026-10-25T15:01:39.967977"
   }
 }
