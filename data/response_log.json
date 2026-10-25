@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T04:30:33.506293+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути вакансії від Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T04:32:41.631920+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14294,6 +14284,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-27"
+      }
+    },
+    {
+      "ts": "2026-10-25T04:30:27.642559+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Скасувати підписку Garmin Connect+",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-03"
       }
     }
   ]
