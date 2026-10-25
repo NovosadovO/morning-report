@@ -646,5 +646,17 @@
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
     "done": false,
     "created": "2026-10-23"
+  },
+  "страховка_авто_kooperativa_нагадування|2026-10-3": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — нагадування",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-10-31",
+    "action": "Перевірити статус оплати страховки PZ 6641172176 для авто LE066BI.",
+    "why": "Це нагадування про необхідність оплати страховки. Без оплати страховка може бути недійсною, що призведе до проблем у разі ДТП.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-10-25"
   }
 }
