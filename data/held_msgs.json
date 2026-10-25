@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-25T23:49:38.683496",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-25T23:50:46.344396",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81385"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-26T00:01:24.502844",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The winners and losers of Trumponomics</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81384"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81384"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81384"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81384"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81384"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81384"
             }
           ]
         ]
