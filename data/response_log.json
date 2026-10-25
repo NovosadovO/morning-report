@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T10:35:50.692198+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_bd50924d57"
-    },
-    {
       "ts": "2026-08-26T10:36:49.186756+00:00",
       "category": "confirm",
       "question": "gate_pa_rem: 📅 Пропоную додати в календар",
@@ -14305,6 +14299,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_d17e31f0d2"
+    },
+    {
+      "ts": "2026-10-25T13:51:43.589860+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_bf80690699"
     }
   ]
 }
