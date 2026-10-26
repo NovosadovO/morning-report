@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:31:13.221165",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Claude Duet arrived last to the AI Agent race, and OpenAI ha</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-26T03:31:14.538204",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The winners and losers of Trumponomics</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -346,6 +307,12 @@
       "ts": "2026-10-26T03:36:57.501713",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-26T03:36:58.313363",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
