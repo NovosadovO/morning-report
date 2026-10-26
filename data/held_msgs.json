@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T23:46:58.936275",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-26T23:46:59.691800",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:00:55.093229",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Second tokenized fund on XRP Ledger</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81429"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81429"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81429"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81429"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81429"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81429"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
