@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:31:20.496270",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80743"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80743"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80743"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80743"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80743"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80743"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-26T03:31:41.797239",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-26T03:38:22.120668",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Завершення програми лояльності SizeerClub\n📆 до 2026-10-27\n🏢 Sizeer\n\n➡️ Використати всі накопичені бали та купони в мобільній програмі Sizeer до 27.10.2026 23:50.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-26T03:38:25.783117",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
