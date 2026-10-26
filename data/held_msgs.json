@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T23:48:12.773255",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-26T23:49:23.184809",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81427"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-27T00:01:06.266843",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81409"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81409"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81409"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81409"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81409"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81409"
             }
           ]
         ]
