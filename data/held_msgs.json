@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:01:10.593419",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>More Trading, Different Activity: Avalanche’s Latest 30 Days</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80805"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80805"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80805"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80805"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80805"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80805"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:01:12.263067",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-27T00:10:20.531764",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:10:21.478886",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
