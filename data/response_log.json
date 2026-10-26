@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T13:40:07.143246+00:00",
-      "category": "calendar_button",
-      "question": "📌 Закінчення паркування в Кошице (LE066BI)",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t30",
-        "when": "12:56–13:56",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-26T13:40:08.345266+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14311,6 +14300,12 @@
       "extra": {
         "score": 3
       }
+    },
+    {
+      "ts": "2026-10-26T21:37:31.581960+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
