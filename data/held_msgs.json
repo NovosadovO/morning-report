@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:46:14.028184",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-26T03:46:36.014456",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-26T03:53:26.034324",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-26T03:54:49.745287",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
