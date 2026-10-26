@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:31:22.017817",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81409"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81409"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81409"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81409"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81409"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81409"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:31:23.379485",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Japan: Institutions Chose Avalanche. Now It’s the Buil</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-27T00:38:43.935877",
       "kind": "followup",
       "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 Mm\n📤 Твій лист від 2026-10-23\n\n<i></i>\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:38:44.810207",
+      "kind": "followup",
+      "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Oleg Novosadov\n📋 Mm\n📤 Твій лист від 2026-10-23\n\n\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
       "keyboard": null
     }
   ]
