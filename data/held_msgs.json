@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:31:19.036296",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Вакансія B4B Sales Team Lead в Bolt – Активно набирає персон</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81428"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81428"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81428"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81428"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81428"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81428"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:31:20.615268",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔴 Inside Geopolitics: Should we fear Trump-Putin-Xi collusio</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-10-27T00:38:39.704279",
       "kind": "followup",
       "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 (без теми)\n📤 Твій лист від 2026-10-24\n\n<i></i>\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:38:40.624465",
+      "kind": "followup",
+      "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Oleg Novosadov\n📋 (без теми)\n📤 Твій лист від 2026-10-24\n\n\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
       "keyboard": null
     }
   ]
