@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:46:16.375511",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади AML Officer, MLRO (Slovakia) в </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81431"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81431"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81431"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81431"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81431"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81431"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:46:17.724337",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Investors never see everything</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-27T00:52:55.198520",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:52:56.063782",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
