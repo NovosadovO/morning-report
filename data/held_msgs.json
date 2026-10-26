@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:16:13.475575",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Investors never see everything</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81430"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81430"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81430"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81430"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81430"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81430"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:16:14.954801",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Second tokenized fund on XRP Ledger</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-27T00:23:23.412492",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:23:24.258006",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
