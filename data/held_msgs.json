@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:46:06.052151",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81387"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81387"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81387"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81387"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81387"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81387"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-26T03:46:07.447702",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>100% of budget reached</b>\n👤 Google Cloud Billing Alerts &lt;CloudPlatform-noreply",
@@ -379,6 +340,12 @@
       "ts": "2026-10-26T03:51:59.384175",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1  → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-26T03:52:02.998625",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
