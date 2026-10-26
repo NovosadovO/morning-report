@@ -1,9 +1,4 @@
 {
-  "80488": {
-    "sender": "email.campaign@sg.booking.com",
-    "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
-    "seen_ts": "2026-10-08T15:59:57.499639+00:00"
-  },
   "80489": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-26T15:08:05.021030+00:00"
+  },
+  "81415": {
+    "sender": "paula@carvertical.com",
+    "sender_raw": "carVertical <paula@carvertical.com>",
+    "seen_ts": "2026-10-26T15:47:09.451184+00:00"
   }
 }
