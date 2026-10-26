@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_80099",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-02T09:21:44"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_80101",
       "label": "🗑 Видалити",
       "ts": "2026-10-02T09:21:52"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_spray",
       "label": "✅ Так",
       "ts": "2026-10-26T22:24:33"
+    },
+    {
+      "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-10-26T22:24:41"
     }
   ]
 }
