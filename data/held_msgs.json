@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:31:18.958704",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Останній крок — підтвердження особи ✨</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-26T03:31:20.496270",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-26T03:38:21.283213",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Завершення програми лояльності SizeerClub</b>\n📆 до <b>2026-10-27</b>\n🏢 Sizeer\n\n➡️ Використати всі накопичені бали та купони в мобільній програмі Sizeer до 27.10.2026 23:50.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-26T03:38:22.120668",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Завершення програми лояльності SizeerClub\n📆 до 2026-10-27\n🏢 Sizeer\n\n➡️ Використати всі накопичені бали та купони в мобільній програмі Sizeer до 27.10.2026 23:50.",
       "keyboard": null
     }
   ]
