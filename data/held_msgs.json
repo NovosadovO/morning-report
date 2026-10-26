@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:39:03.599909",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Знижка на Plunge Pro Chiller</b>\n📆 до <b>2026-10-30</b>\n🏢 PLUNGE\n\n➡️ Скористатися знижкою до 30 жовтня, якщо Олег зацікавлений у покупці Plunge Pro Chiller.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-27T00:39:04.494835",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Знижка на Plunge Pro Chiller\n📆 до 2026-10-30\n🏢 PLUNGE\n\n➡️ Скористатися знижкою до 30 жовтня, якщо Олег зацікавлений у покупці Plunge Pro Chiller.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:46:14.902996",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Fall savings end this week + 0% APR financing is back!</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81432"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81432"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81432"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81432"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81432"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81432"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
