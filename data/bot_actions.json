@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-17T05:11:29"
-    },
-    {
       "kind": "notify",
       "what": "Нагадування про стрижку",
       "detail": "У календарі на 20.10 запланована стрижка у Yevhenii, і є нагадування про це.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-26T20:54:42"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-26T20:55:01"
     }
   ]
 }
