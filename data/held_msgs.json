@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-26T03:24:42.149691",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Avalanche Team1  → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1  → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-26T03:24:45.967412",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81385"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-26T03:31:14.538204",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The winners and losers of Trumponomics</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81384"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81384"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81384"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81384"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81384"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81384"
             }
           ]
         ]
