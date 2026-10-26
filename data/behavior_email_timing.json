@@ -1,9 +1,4 @@
 {
-  "80487": {
-    "sender": "team@ua-news.mail.sweet.tv",
-    "sender_raw": "SWEET.TV <team@ua-news.mail.sweet.tv>",
-    "seen_ts": "2026-10-08T15:24:59.261510+00:00"
-  },
   "80488": {
     "sender": "email.campaign@sg.booking.com",
     "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "oleg.novosadov@minebeamitsumi.eu",
     "sender_raw": "Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>",
     "seen_ts": "2026-10-26T14:27:16.803841+00:00"
+  },
+  "81410": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-26T15:08:05.021030+00:00"
   }
 }
