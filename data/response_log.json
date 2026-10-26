@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T13:51:39.848897+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_done_af50723ed0"
-    },
-    {
       "ts": "2026-08-26T13:51:41.150853+00:00",
       "category": "calendar_button",
       "question": "💳 Оплата паркування в Кошице (LE066BI)",
@@ -14301,6 +14295,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-26T22:24:35.152835+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_spray"
     }
   ]
 }
