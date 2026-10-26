@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:01:04.771714",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 Inside Geopolitics: Should we fear Trump-Putin-Xi collusio</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81427"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81427"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81427"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81427"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81427"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81427"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T00:01:06.266843",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-27T00:08:54.458931",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T00:10:15.626224",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 1\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Japan: Institutions Chose Avalanche. Now It’s the Builders’ Turn.\n• Avalanche Team1 <avalancheteam1@substack.com> → More Trading, Different Activity: Avalanche’s Latest 30 Days\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
