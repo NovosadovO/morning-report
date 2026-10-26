@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T00:39:34.038296",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Fall savings end this week + 0% APR financing is back!\n• Сповіщення про вакансії LinkedIn → 1\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-27T00:39:37.928583",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81430"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-27T00:46:19.191650",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Second tokenized fund on XRP Ledger</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81429"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81429"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81429"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81429"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81429"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81429"
             }
           ]
         ]
