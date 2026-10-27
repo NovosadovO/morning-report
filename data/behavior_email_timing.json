@@ -1,9 +1,4 @@
 {
-  "80498": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-10-08T18:37:06.677767+00:00"
-  },
   "80500": {
     "sender": "newsletter@email.blockchain.com",
     "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
@@ -1498,5 +1493,10 @@
     "sender": "notifications-noreply@linkedin.com",
     "sender_raw": "LinkedIn <notifications-noreply@linkedin.com>",
     "seen_ts": "2026-10-27T12:50:06.057368+00:00"
+  },
+  "81466": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-10-27T12:54:26.732876+00:00"
   }
 }
