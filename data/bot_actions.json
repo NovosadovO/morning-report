@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Помилка перевірки пошти та календаря",
-      "detail": "Листи uid=80996 та uid=80995 від Telegram Agent Oleh вказують на те, що пошта та календар не були повністю перевірені через ліміт зусиль бота.",
-      "module": "selfact",
-      "ts": "2026-10-17T09:08:08"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, твій агент Telegram Agent Oleh тричі за останню годин",
       "detail": "Три поспіль повідомлення від Telegram Agent Oleh про неможливість перевірити листи та календар, що може свідчити про технічну проблему.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±1.53 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
       "ts": "2026-10-27T07:02:12"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-27",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-27T08:55:11"
     }
   ]
 }
