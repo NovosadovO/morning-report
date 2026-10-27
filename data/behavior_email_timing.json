@@ -1,9 +1,4 @@
 {
-  "80494": {
-    "sender": "no-reply@email.kraken.com",
-    "sender_raw": "\"Kraken\" <no-reply@email.kraken.com>",
-    "seen_ts": "2026-10-08T17:45:58.860522+00:00"
-  },
   "80496": {
     "sender": "pullandbear@news.pullandbear.com",
     "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "seen_ts": "2026-10-27T07:21:08.185195+00:00"
+  },
+  "81447": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-27T09:17:45.360935+00:00"
   }
 }
