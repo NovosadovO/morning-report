@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T13:57:30.443566+00:00",
-      "category": "calendar_confirm",
-      "question": "Нічна зміна",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Нічна зміна"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-26T13:57:35.210139+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14291,6 +14280,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-27T21:15:02.123188+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
