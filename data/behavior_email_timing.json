@@ -1,9 +1,4 @@
 {
-  "80496": {
-    "sender": "pullandbear@news.pullandbear.com",
-    "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
-    "seen_ts": "2026-10-08T18:26:54.248474+00:00"
-  },
   "80498": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-27T09:17:45.360935+00:00"
+  },
+  "81464": {
+    "sender": "notifications-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <notifications-noreply@linkedin.com>",
+    "seen_ts": "2026-10-27T12:50:06.057368+00:00"
   }
 }
