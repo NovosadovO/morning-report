@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T03:26:29.389805",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 28.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-27T03:26:30.199170",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 28.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81435"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-27T03:31:25.127480",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Keystone Will Destroy 18,835 Wallets After Key Theft</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81434"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81434"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81434"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81434"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81434"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81434"
             }
           ]
         ]
