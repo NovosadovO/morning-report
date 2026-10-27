@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T03:31:26.589742",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Anthropic Filed For Its Highly Anticipated IPO Today. These </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81433"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81433"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81433"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81433"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81433"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81433"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T03:31:27.983504",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Fall savings end this week + 0% APR financing is back!</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-27T03:36:11.154088",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Fall savings end this week + 0% APR financing is back!\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади AML Officer, MLRO (Slovakia) в Manimama Law Firm\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T03:36:14.103738",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 28.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
