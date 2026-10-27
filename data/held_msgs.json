@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-27T03:46:31.723122",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади AML Officer, MLRO (Slovakia) в </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81431"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81431"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81431"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81431"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81431"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81431"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-27T03:46:33.027013",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Investors never see everything</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-27T03:50:28.746609",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 28.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-27T03:50:31.948542",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
