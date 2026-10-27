@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Проблеми з Telegram Agent Oleh",
-      "detail": "Повідомлення від Telegram Agent Oleh вказують на технічні проблеми, які потребують уваги.",
-      "module": "selfact",
-      "ts": "2026-10-17T10:09:22"
-    },
-    {
-      "kind": "notify",
       "what": "Новини від Financial Times та Securitize",
       "detail": "Є свіжі листи з новинами від Financial Times через LinkedIn (uid=80999) та Securitize через LinkedIn (uid=80977).",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-10-27T11:55:17"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-10-27T11:55:20"
     }
   ]
 }
