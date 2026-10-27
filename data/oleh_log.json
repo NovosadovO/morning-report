@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_tea",
-      "label": "✅ Так",
-      "ts": "2026-10-02T19:36:13"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_run",
       "label": "✅ Так",
       "ts": "2026-10-02T19:36:21"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-10-27T21:14:47"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-10-27T21:14:59"
     }
   ]
 }
