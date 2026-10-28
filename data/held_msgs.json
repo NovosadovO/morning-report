@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:42:48.498853",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 30.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-29T00:42:53.091407",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81555"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-29T00:46:33.752768",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Datavault AI can't withdraw its bitcoin</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81554"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81554"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81554"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81554"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81554"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81554"
             }
           ]
         ]
