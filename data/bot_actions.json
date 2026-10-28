@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Рання зміна скоро",
-      "detail": "Наближається час ранньої зміни, про яку є запис у календарі.",
-      "module": "selfact",
-      "ts": "2026-10-18T04:51:53"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-18",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-28T14:56:04"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-28",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-10-28T17:56:08"
     }
   ]
 }
