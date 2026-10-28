@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "msg",
-      "text": "84.2",
-      "ts": "2026-10-03T04:55:42"
-    },
-    {
       "t": "btn",
       "data": "am_no_fab4fd2fdf",
       "label": "🚫 Не треба",
@@ -7199,6 +7193,12 @@
       "data": "rx_read_2975eeef4e",
       "label": "👍 Прочитав",
       "ts": "2026-10-28T10:47:43"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_shower",
+      "label": "✅ Так",
+      "ts": "2026-10-28T10:48:18"
     }
   ]
 }
