@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:01:40.039823",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Ripple gets final approval for national trust b</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81489"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81489"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81489"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81489"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81489"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81489"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-28T03:01:41.553489",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Junior Marketing Specialist for Ukraine в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-10-28T03:06:37.372842",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 29.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:06:40.371527",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
