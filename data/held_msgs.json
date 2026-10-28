@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:15:43.530417",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1ks USB dobíjateľný a... môže stáťmenej</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81549"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81549"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81549"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81549"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81549"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81549"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:15:44.903090",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 28th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -445,6 +406,12 @@
       "ts": "2026-10-29T00:38:24.185639",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 30.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:38:24.971249",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 30.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
