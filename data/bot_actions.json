@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_good",
-      "detail": "😴 Сон за тиждень у середньому 7.9 год — стабільно добре",
-      "module": "healthai",
-      "ts": "2026-10-17T19:25:38"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-10-28T08:55:49"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-28",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-28T11:55:53"
     }
   ]
 }
