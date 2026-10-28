@@ -17,6 +17,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:01:40.199793",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Railway usage alert</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81555"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81555"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81555"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81555"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81555"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81555"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
