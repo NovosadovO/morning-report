@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "am_no_fab4fd2fdf",
-      "label": "🚫 Не треба",
-      "ts": "2026-10-03T04:55:44"
-    },
-    {
-      "t": "btn",
       "data": "rx_skipped_e7363e39f3",
       "label": "❌ Не бігав",
       "ts": "2026-10-03T04:56:27"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Так",
       "ts": "2026-10-28T10:48:18"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-10-28T23:55:42"
     }
   ]
 }
