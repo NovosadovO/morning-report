@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:01:49.187522",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 The Insider: Will the midterms make the world more dangero</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81544"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81544"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81544"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81544"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81544"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81544"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:15:03.791502",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Carmeuse наймає: Purchasing Specialist»\n\n<i>«Сповіщення про вакансії в Košice            \r\nPurchasing Specialist\r\nCarmeuse\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4484076814/?trackingId=l%2FGMpnjSg50m9HOlCZwx6Q%3D%3D&amp;refId=S9bPCNJVK9dYXElx5rsYog%3D%3D&amp;lipi=urn%3Ali%3Apage%3A...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -676,6 +637,12 @@
       "ts": "2026-10-29T00:36:56.292402",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@notify.railway.app> → Railway usage alert\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Datavault AI can't withdraw its bitcoin\n• Temu <temu@eu.temuemail.com> → 1ks USB dobíjateľný a... môže stáťmenej\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:36:57.199410",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Railway usage alert\n• The Block  → 🔷 The Daily: Datavault AI can't withdraw its bitcoin\n• Temu  → 1ks USB dobíjateľný a... môže stáťmenej\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
