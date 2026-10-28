@@ -1874,12 +1874,13 @@
     "steps": 19933
   },
   "2026-10-28": {
-    "hr_avg": 51,
+    "hr_avg": 46,
     "spo2": 97,
-    "body_battery": 42,
-    "stress": 21,
+    "body_battery": 77,
+    "stress": 13,
     "date": "2026-10-28",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-28 05:55"
+    "saved_at": "2026-10-28 08:55",
+    "steps": 15
   }
 }
