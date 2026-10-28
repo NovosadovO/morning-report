@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:01:40.199793",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Railway usage alert</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81555"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81555"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81555"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81555"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81555"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81555"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:01:41.394382",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Datavault AI can't withdraw its bitcoin</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -772,6 +733,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81554"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-29T00:31:36.283257",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Robinhood Lists Tokens of OKXICE Objectors</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81552"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81552"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81552"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81552"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81552"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81552"
             }
           ]
         ]
