@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:46:36.776808",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Вакансія Specialis/ka Middle office investiční společnosti в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81551"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81551"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81551"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81551"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81551"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81551"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:46:38.212007",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1ks USB dobíjateľný a... môže stáťmenej</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-29T00:50:04.713826",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:50:05.495185",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
