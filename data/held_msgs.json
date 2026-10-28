@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:25:11.571017",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-28T03:25:12.436319",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:30:56.824649",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Digital Business Product Owner в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81494"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81494"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81494"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81494"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81494"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81494"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
