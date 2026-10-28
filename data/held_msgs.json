@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:46:04.504017",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Tokenized Credit on Solana Go Crazy</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81492"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81492"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81492"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81492"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81492"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81492"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-28T03:46:05.813342",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Junior Marketing Specialist for</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-10-28T03:51:34.858624",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:51:37.608440",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 29.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
