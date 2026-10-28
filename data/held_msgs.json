@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:31:32.283863",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Carmeuse наймає: Purchasing Specialist</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81557"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81557"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81557"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81557"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81557"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81557"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:31:33.596757",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Railway usage alert</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-29T00:39:21.954416",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Завершення розпродажу Plunge</b>\n📆 до <b>2026-10-30</b>\n🏢 PLUNGE\n\n➡️ Якщо Олег планував придбати щось на розпродажі Plunge, йому слід зробити це до 30 жовтня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:39:22.740045",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Завершення розпродажу Plunge\n📆 до 2026-10-30\n🏢 PLUNGE\n\n➡️ Якщо Олег планував придбати щось на розпродажі Plunge, йому слід зробити це до 30 жовтня.",
       "keyboard": null
     }
   ]
