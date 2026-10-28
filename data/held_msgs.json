@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T02:07:50.038326",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-28T02:08:58.809888",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Junior Marketing Specialist for Ukraine в GymBeam\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T02:14:02.533398",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Digital Business Product Owner в Caterpillar Inc.»\n\n<i>«Сповіщення про вакансії в Košice            \r\nDigital Business Product Owner\r\nCaterpillar Inc.\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4482491763/?trackingId=J6vLz0QZMKjSYondMKO5lg%3D%3D&amp;refId=AGjisv01Gi%2BVZXDooxYTFg%3D%3D&amp;lipi=u...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81494"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81494"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81494"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81494"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81494"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81494"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
