@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T13:59:36.669880+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_c56e1fbd10"
-    },
-    {
       "ts": "2026-08-26T14:07:05.056748+00:00",
       "category": "event_done",
       "question": "📅 📌 Закінчення паркування в Кошице (LE066BI)\nПланувалась до 14:56 — виконано?",
@@ -14284,6 +14278,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-28T23:55:43.988795+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
