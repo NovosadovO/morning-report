@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-17",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-17T20:13:11"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "⚖️ Вага йде вгору: +0.9 кг за період, зараз 84.1 кг (до цілі 9.1 кг)",
       "module": "healthai",
       "ts": "2026-10-28T12:22:50"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_unstable",
+      "detail": "😴 Сон дуже нерівний останні дні (розкид ±1.79 год) — тіло не встигає підлаштуватись під ритм",
+      "module": "healthai",
+      "ts": "2026-10-28T12:22:53"
     }
   ]
 }
