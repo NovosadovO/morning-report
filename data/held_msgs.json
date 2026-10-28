@@ -290,6 +290,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-29T00:15:03.791502",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Carmeuse наймає: Purchasing Specialist»\n\n<i>«Сповіщення про вакансії в Košice            \r\nPurchasing Specialist\r\nCarmeuse\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4484076814/?trackingId=l%2FGMpnjSg50m9HOlCZwx6Q%3D%3D&amp;refId=S9bPCNJVK9dYXElx5rsYog%3D%3D&amp;lipi=urn%3Ali%3Apage%3A...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81557"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81557"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81557"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81557"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81557"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81557"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
