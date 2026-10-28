@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:46:03.078924",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Robinhood's Chain Lifts Its Crypto Revenue</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81493"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81493"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81493"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81493"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81493"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81493"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-28T03:46:04.504017",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Tokenized Credit on Solana Go Crazy</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-28T03:51:34.037112",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Junior Marketing Specialist for Ukraine в GymBeam\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:51:34.858624",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
