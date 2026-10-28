@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:01:32.856862",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Digital Business Product Owner в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81494"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81494"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81494"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81494"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81494"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81494"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-28T03:01:34.210724",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Robinhood's Chain Lifts Its Crypto Revenue</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-28T03:05:23.846920",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:05:26.488690",
+      "kind": "chunk",
+      "text": "🛠 <b>Самодіагностика бота</b>\n\n🔴 <b>АІ помітив проблему з собою:</b> Gemini (мозок аналізу) падає у 100% останніх спроб. Можливо вичерпані кредити, невалідний ключ, або тимчасовий збій Google. Відповіді йдуть на локальних шаблонах (менш точні) поки це не виправиться.",
       "keyboard": null
     }
   ]
