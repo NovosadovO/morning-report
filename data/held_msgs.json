@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:15:03.791502",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Carmeuse наймає: Purchasing Specialist»\n\n<i>«Сповіщення про вакансії в Košice            \r\nPurchasing Specialist\r\nCarmeuse\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4484076814/?trackingId=l%2FGMpnjSg50m9HOlCZwx6Q%3D%3D&amp;refId=S9bPCNJVK9dYXElx5rsYog%3D%3D&amp;lipi=urn%3Ali%3Apage%3A...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81557"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81557"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81557"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81557"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81557"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81557"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:15:26.691199",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Чт 29.10  ·  00:15</b>\n🏠 Вдома\n<i>Нічна стратегія: переглянути графіки, скласти план на ранок 🌙</i>\n\n⚡ <b>День: ⭐⭐⭐☆☆ 60/100</b>  ↓7 vs вчора\n\n☁️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>10°C</b>\n<i>😊 Свіжо — легка куртка</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:14   🌇 16:21  01:00 ☀️8°  │  02:00 ☀️8°  │  03:00 ☀️8°  │  04:00 ☀️8°  │  05:00 ☀️7°  │  06:00 ☀️7°  09:00 ⛅️11°  │  12:00 ⛅️13°  │  15:00 ☁️12°  │  18:00 🌤10°  │  21:00 ☁️9°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻9°  /  🔺13°\n<code>09:00</code> ⛅️11°  │  <code>12:00</code> ⛅️13°  │  <code>15:00</code> ☁️12°  │  <code>18:00</code> 🌤10°  │  <code>21:00</code> ☁️9°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n<i>🚧 6 довготривалих перекриттів — без змін від минулого разу:</i>\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n<i>+ ще 4</i>\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n➡️ <b>BTC</b> <code>$81,201.25</code>  0.00%\n➡️ <b>ETH</b> <code>$2,357.09</code>  0.00%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$46.14</code>  <i>+0.96% за день</i>\n🟢 <b>ETHA</b>  <code>$53.60</code>  <i>+1.07% за день</i>\n🔴 <b>VAVA</b>  <code>$0.81</code>  <i>-0.11% за день</i>\n🟢 <b>GAVA</b>  <code>$21.97</code>  <i>+1.65% за день</i>\n🟢 <b>QQQ</b>  <code>$725.61</code",
@@ -643,6 +604,12 @@
       "ts": "2026-10-29T00:36:57.199410",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Railway usage alert\n• The Block  → 🔷 The Daily: Datavault AI can't withdraw its bitcoin\n• Temu  → 1ks USB dobíjateľný a... môže stáťmenej\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T00:37:00.229704",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 30.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
