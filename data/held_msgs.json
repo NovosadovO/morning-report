@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T02:57:53.650063",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Junior Marketing Specialist for Ukraine в GymBeam\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-28T02:57:54.414549",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → Tokenization Briefing: Tokenized Credit on Solana Go Crazy\n• Сповіщення про вакансії LinkedIn → 🔷 The Daily: Ripple gets final approval for national trust bank\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81491"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-28T03:01:38.629363",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 The Heisenberg principle of investing</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81490"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81490"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81490"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81490"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81490"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81490"
             }
           ]
         ]
