@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-17T16:06:02"
-    },
-    {
       "kind": "notify",
       "what": "Завислі петлі з Booking.com та Ionian Cruises",
       "detail": "В розділі 'ЗАВИСЛІ ПЕТЛІ' є кілька незавершених завдань, пов'язаних з Booking.com та Ionian Cruises, які були зафіксовані 23.08.2026.",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 7.2 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-28T05:32:30"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-28",
+      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-10-28T05:55:41"
     }
   ]
 }
