@@ -1,9 +1,4 @@
 {
-  "80520": {
-    "sender": "newsletter.sk@email.pepco.eu",
-    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
-    "seen_ts": "2026-10-09T06:45:44.160148+00:00"
-  },
   "80521": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-28T09:03:50.840250+00:00"
+  },
+  "81511": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-28T10:42:16.780522+00:00"
   }
 }
