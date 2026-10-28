@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:31:08.221569",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 The Heisenberg principle of investing</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81490"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81490"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81490"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81490"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81490"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81490"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-28T03:31:09.611365",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Ripple gets final approval for national trust b</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-28T03:36:46.889493",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 29.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-28T03:36:49.831537",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
