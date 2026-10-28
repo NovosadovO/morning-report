@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-28T03:27:59.977931",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 29.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-28T03:28:00.806623",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 29.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81489"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-28T03:31:10.982674",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Junior Marketing Specialist for Ukraine в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81488"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81488"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81488"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81488"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81488"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81488"
             }
           ]
         ]
