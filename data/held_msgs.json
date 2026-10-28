@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T00:01:42.673246",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Robinhood Lists Tokens of OKXICE Objectors</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81552"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81552"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81552"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81552"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81552"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81552"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-29T00:01:44.046554",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія Specialis/ka Middle office investiční společnosti в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -772,6 +733,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81551"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-29T00:31:39.347861",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1ks USB dobíjateľný a... môže stáťmenej</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81549"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81549"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81549"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81549"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81549"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81549"
             }
           ]
         ]
