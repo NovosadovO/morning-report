@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T13:59:29.954335+00:00",
-      "category": "calendar_confirm",
-      "question": "Нагадування про реєстрацію до дерматолога",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Нагадування про реєстрацію до дерматолога"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-26T13:59:36.669880+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14289,6 +14278,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-10-28T10:48:20.161208+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
