@@ -56,6 +56,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-29T00:01:41.394382",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Datavault AI can't withdraw its bitcoin</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81554"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81554"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81554"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81554"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81554"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81554"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
