@@ -1,9 +1,4 @@
 {
-  "80526": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-09T08:19:50.331487+00:00"
-  },
   "80527": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-28T15:07:17.161037+00:00"
+  },
+  "81531": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-28T16:26:54.560882+00:00"
   }
 }
