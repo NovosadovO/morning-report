@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-29T00:01:49.187522",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔴 The Insider: Will the midterms make the world more dangero</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81544"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81544"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81544"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81544"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81544"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81544"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
