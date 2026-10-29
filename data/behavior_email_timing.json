@@ -1,9 +1,4 @@
 {
-  "80539": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-10-09T11:51:58.379042+00:00"
-  },
   "80540": {
     "sender": "hello@maple.finance",
     "sender_raw": "Maple <hello@maple.finance>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-10-29T13:55:18.939154+00:00"
+  },
+  "81597": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-10-29T14:51:22.420846+00:00"
   }
 }
