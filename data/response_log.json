@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T15:08:55.790678+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_mute_6fd7a79437"
-    },
-    {
       "ts": "2026-08-26T15:09:05.909592+00:00",
       "category": "confirm",
       "question": "gx_mute: крипто",
@@ -14276,6 +14270,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-29T19:16:07.622851+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
