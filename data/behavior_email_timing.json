@@ -1,9 +1,4 @@
 {
-  "80536": {
-    "sender": "avalancheteam1@substack.com",
-    "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
-    "seen_ts": "2026-10-09T10:15:47.584953+00:00"
-  },
   "80538": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-10-29T08:55:30.725271+00:00"
+  },
+  "81586": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-29T12:14:57.231960+00:00"
   }
 }
