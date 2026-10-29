@@ -1,9 +1,4 @@
 {
-  "80540": {
-    "sender": "hello@maple.finance",
-    "sender_raw": "Maple <hello@maple.finance>",
-    "seen_ts": "2026-10-09T12:03:38.214831+00:00"
-  },
   "80541": {
     "sender": "hello@metamask.io",
     "sender_raw": "MetaMask Team <hello@metamask.io>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-10-29T14:51:22.420846+00:00"
+  },
+  "81598": {
+    "sender": "phantom@updates.phantom.com",
+    "sender_raw": "\"Phantom\" <phantom@updates.phantom.com>",
+    "seen_ts": "2026-10-29T15:06:10.712351+00:00"
   }
 }
