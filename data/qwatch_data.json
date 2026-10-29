@@ -1893,12 +1893,21 @@
     "vo2max": 43.0
   },
   "2026-10-29": {
-    "hr_avg": 51,
+    "hr_avg": 46,
     "spo2": 97,
-    "body_battery": 32,
-    "stress": 22,
+    "body_battery": 81,
+    "stress": 16,
     "date": "2026-10-29",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-29 08:56"
+    "saved_at": "2026-10-29 11:56",
+    "steps": 677,
+    "sleep_total_min": 584,
+    "sleep_deep_min": 70,
+    "sleep_rem_min": 138,
+    "sleep_light_min": 376,
+    "sleep_awake_min": 11,
+    "weight_kg": 83.7,
+    "hrv": 51,
+    "sleep_hours": 9.73
   }
 }
