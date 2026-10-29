@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T16:53:43.801141+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -3.00% за 24 години — такі інструменти мають стояти на м"
-    },
-    {
       "ts": "2026-08-26T17:08:42.926155+00:00",
       "category": "bill_found",
       "question": "Railway",
@@ -14276,6 +14270,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_invest"
+    },
+    {
+      "ts": "2026-10-29T22:47:48.890086+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_cardio_np"
     }
   ]
 }
