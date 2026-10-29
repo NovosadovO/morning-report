@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T15:09:05.909592+00:00",
-      "category": "confirm",
-      "question": "gx_mute: крипто",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-26T15:09:07.235540+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14276,6 +14270,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-29T22:46:55.644494+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
