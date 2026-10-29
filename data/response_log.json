@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T14:11:49.330274+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_done_f83368fb95"
-    },
-    {
       "ts": "2026-08-26T14:38:29.687472+00:00",
       "category": "deadline_found",
       "question": "Закінчення паркування в Кошице",
@@ -14279,6 +14273,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-29T19:16:03.697350+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
