@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T03:00:21.155010",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-29T03:00:21.906130",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -379,6 +373,12 @@
       "ts": "2026-10-29T03:05:59.655376",
       "kind": "chunk",
       "text": "🛠 <b>Самодіагностика бота</b>\n\n🔴 <b>АІ помітив проблему з собою:</b> Gemini (мозок аналізу) падає у 100% останніх спроб. Можливо вичерпані кредити, невалідний ключ, або тимчасовий збій Google. Відповіді йдуть на локальних шаблонах (менш точні) поки це не виправиться.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-29T03:06:31.453949",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Garmin <GarminServicesBilling@garmin.com> → Your Garmin Connect+ Free Trial Ends Soon\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади COO Bulgaria & SEE region в GRASHKA\n• Railway <hello@notify.railway.app> → Railway usage alert\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Datavault AI can't withdraw its bitcoin\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
