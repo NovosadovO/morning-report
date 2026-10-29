@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-29T03:39:34.616061",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Garmin  → Your Garmin Connect+ Free Trial Ends Soon\n• Сповіщення про вакансії LinkedIn → Railway usage alert\n• The Block  → 🔷 The Daily: Datavault AI can't withdraw its bitcoin\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-29T03:39:38.722221",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81560"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-29T03:46:47.777915",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади COO Bulgaria &amp; SEE region в GRA</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81559"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81559"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81559"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81559"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81559"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81559"
             }
           ]
         ]
