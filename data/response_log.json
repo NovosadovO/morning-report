@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T15:09:07.235540+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_715e3023dd"
-    },
-    {
       "ts": "2026-08-26T15:20:52.518998+00:00",
       "category": "chat",
       "question": "чому не приходять звіти кожної години?",
@@ -14276,6 +14270,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-29T22:47:03.317324+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
