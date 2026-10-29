@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T14:38:29.687472+00:00",
-      "category": "deadline_found",
-      "question": "Закінчення паркування в Кошице",
-      "answer": "2026-08-26",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-26T15:08:55.790678+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14279,6 +14270,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-29T19:16:05.664363+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
