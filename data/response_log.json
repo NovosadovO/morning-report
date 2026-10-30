@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T20:13:39.222428+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-26T20:13:59.689375+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14270,6 +14264,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-10-30T22:07:18.769371+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😐 Нормально",
+      "extra": {
+        "score": 3
+      }
     }
   ]
 }
