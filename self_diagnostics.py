@@ -32,6 +32,21 @@ _LAST_ALERT_SENT = {}  # {"gemini": ts, "email": ts} — dedup щоб не сп�
 # для історії за тиждень/місяць.
 _TODAY_CALLS = {"day": None, "n": 0}
 _LAST_FLUSHED_DAY = [None]
+_TAG_STATS = {"day": None, "t": {}}  # tag -> [calls, tokens]; лише в пам'яті, flush раз на день
+
+
+def record_tag(tag, tokens=0):
+    """Лічильник викликів і токенів Gemini по тегу (без запису в сховище)."""
+    try:
+        today = _today_str()
+        if _TAG_STATS["day"] != today:
+            _TAG_STATS["day"] = today
+            _TAG_STATS["t"] = {}
+        e = _TAG_STATS["t"].setdefault(str(tag)[:40], [0, 0])
+        e[0] += 1
+        e[1] += int(tokens or 0)
+    except Exception:
+        pass
 
 
 def _today_str():
@@ -72,6 +87,14 @@ def flush_daily_count(force: bool = False):
         cutoff = (now - timedelta(days=60)).strftime("%Y-%m-%d")
         hist = {d: v for d, v in hist.items() if d >= cutoff}
         storage.save("ai_usage_daily.json", hist)
+        try:
+            if _TAG_STATS["day"] == today and _TAG_STATS["t"]:
+                bt = storage.load("ai_usage_by_tag.json", default={}) or {}
+                bt[today] = _TAG_STATS["t"]
+                bt = {d: v for d, v in bt.items() if d >= cutoff}
+                storage.save("ai_usage_by_tag.json", bt)
+        except Exception:
+            pass
         _LAST_FLUSHED_DAY[0] = today
         print(f"[self_diag] flushed AI usage {today}: {_TODAY_CALLS['n']} викликів", flush=True)
     except Exception as e:

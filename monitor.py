@@ -1909,6 +1909,10 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                     except Exception:
                         pass
                     _resp = json.loads(r.read())
+                    try:
+                        _sd_ok.record_tag(tag, (_resp.get("usageMetadata") or {}).get("totalTokenCount", 0))
+                    except Exception:
+                        pass
                     # grounding: прибираємо технічні маркери цитат з тексту
                     try:
                         import grounding as _gr3
