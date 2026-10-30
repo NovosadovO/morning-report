@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-31t00_00_43_360385": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T00:00:43.360385"
+  },
+  "action_detect|2026-10-30t23_30_52_383037": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-30T23:30:52.383037"
+  },
   "mailcal_extract|2026-10-26t04_05_06_553622": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст аналізує динаміку ринку криптовалют ZEC та NEAR",
     "ts": "2026-10-25T19:34:50.085595"
-  },
-  "msg_crypto_move_truthfix|2026-10-25t19_34_39_370931": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Зараз 18:34 неділі, 25 жовтня 2026 року, і, хоча дані про ринок криптовалют є застарілими (їм не вказано вік, але вони не є \"сьогоднішніми\" в реальному часі), в",
-    "ts": "2026-10-25T19:34:39.370931"
-  },
-  "msg_crypto_move|2026-10-25t19_34_28_915061": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! ⚠️  Бачу, що вечір приніс несподівані ринкові рухи, і хоча загальний тренд може здаватися тривожним, деякі криптовалюти демонструють стійкість і н",
-    "ts": "2026-10-25T19:34:28.915061"
-  },
-  "action_detect|2026-10-30t23_30_52_383037": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-30T23:30:52.383037"
   }
 }
