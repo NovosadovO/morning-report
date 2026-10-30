@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:16:37.371368",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>New login to Instagram from Mobile Safari on Apple iPhone</b>\n👤 \"Instagram\" &lt;security@mail.instagram.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81616"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81616"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81616"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81616"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81616"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81616"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-30T03:16:38.827670",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Verify your profile</b>\n👤 \"Instagram\" &lt;security@mail.instagram.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-30T03:30:01.560850",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.9% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T03:30:02.429447",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.9% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
