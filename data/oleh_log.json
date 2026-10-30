@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "am_no_16a20aaee1",
-      "label": "🚫 Не треба",
-      "ts": "2026-10-03T10:16:51"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_80176",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-03T11:45:51"
-    },
-    {
-      "t": "btn",
       "data": "rx_later_9f3ea720af",
       "label": "⏰ Пізніше",
       "ts": "2026-10-03T11:45:56"
@@ -7199,6 +7187,18 @@
       "data": "habit_no_invest",
       "label": "❌ Ні",
       "ts": "2026-10-30T20:47:57"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-10-30T20:47:59"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-30T20:48:00"
     }
   ]
 }
