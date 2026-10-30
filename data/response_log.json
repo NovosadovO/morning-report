@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T20:13:37.517213+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_tea"
-    },
-    {
       "ts": "2026-08-26T20:13:39.222428+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14270,6 +14264,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-10-30T21:28:00.891120+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
