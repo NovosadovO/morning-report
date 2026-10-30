@@ -1,9 +1,4 @@
 {
-  "80565": {
-    "sender": "info@upland.me",
-    "sender_raw": "Upland Community <info@upland.me>",
-    "seen_ts": "2026-10-09T19:21:30.457775+00:00"
-  },
   "80566": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
     "seen_ts": "2026-10-30T20:57:57.967191+00:00"
+  },
+  "81694": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-30T23:22:19.767736+00:00"
   }
 }
