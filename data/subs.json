@@ -140,6 +140,11 @@
         "date": "2026-10-08",
         "amount": "8.99",
         "uid": "80341"
+      },
+      {
+        "date": "2026-10-31",
+        "amount": "8.99",
+        "uid": "81560"
       }
     ],
     "active": true,
@@ -147,13 +152,13 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-10-08",
-    "note": "Підписка Garmin Connect+ Monthly Plan. Списання почнеться 5 листопада 2026 року.",
+    "note": "Підписка Garmin Connect+ Monthly Plan, яка почне списуватися з 5 листопада 2026 року.",
     "next_due": "2026-11-05",
     "amount": "8.99",
     "sender": "Garmin <GarminServicesBilling@garmin.com>",
-    "subject": "Garmin Connect+ Subscription Confirmation",
-    "uid": "80341",
-    "last_seen": "2026-10-13"
+    "subject": "Your Garmin Connect+ Free Trial Ends Soon",
+    "uid": "81560",
+    "last_seen": "2026-10-31"
   },
   "googleplay": {
     "vendor": "Google Play",
