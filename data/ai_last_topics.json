@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-31t01_15_22_134913": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, оплата підписки Runable на $10.00 була невдалою. Потрібно оновити",
+    "ts": "2026-10-31T01:15:22.134913"
+  },
   "openloop_promises|2026-10-31t01_09_56_175449": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81379\",     \"title\": \"Оновлення умов порталу eKooperativa\",     \"date\": \"2026-10-28\",     \"time\": null,     \"kind\": \"other\",     \"why\"",
     "ts": "2026-10-25T20:27:29.566146"
-  },
-  "selfact|2026-10-25t20_24_15_593753": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення порталу eKooperativa\",     \"text\": \"Олеже, зверніть увагу на оновлення клiєнтського порталу eKoopera",
-    "ts": "2026-10-25T20:24:15.593753"
   }
 }
