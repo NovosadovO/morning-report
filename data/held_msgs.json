@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:31:30.671671",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Market Strategy and Partnerships Manager в Fever</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81621"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81621"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81621"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81621"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81621"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81621"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-30T03:31:32.470784",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Binance hack may reach $5.8 billion or more</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-30T03:43:17.308640",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -9.6% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T03:43:18.178913",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -9.6% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
