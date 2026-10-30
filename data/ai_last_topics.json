@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-10-31t00_08_57_942464": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T00:08:57.942464"
+  },
+  "action_detect|2026-10-31t00_01_21_996825": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-10-31T00:01:21.996825"
+  },
   "action_detect|2026-10-31t00_00_43_360385": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-10-25T19:37:08.034694"
-  },
-  "ai_weekly_accuracy|2026-10-25t19_36_57_639640": {
-    "topic": "ai_weekly_accuracy",
-    "gist": "Олеже, давай відверто: за останній тиждень наші повідомлення зосередилися майже виключно на крипті та нагадуваннях про зміни, і це потрібно виправити. Поради бу",
-    "ts": "2026-10-25T19:36:57.639640"
-  },
-  "action_detect|2026-10-25t19_34_50_085595": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст аналізує динаміку ринку криптовалют ZEC та NEAR",
-    "ts": "2026-10-25T19:34:50.085595"
   }
 }
