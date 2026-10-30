@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:34:46.689049",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T03:34:47.568796",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.2% за 24г (DefiLlama).",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81621"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-30T03:46:25.475395",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Binance hack may reach $5.8 billion or more</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81620"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81620"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81620"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81620"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81620"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81620"
             }
           ]
         ]
