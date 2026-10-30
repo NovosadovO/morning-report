@@ -1911,20 +1911,21 @@
     "sleep_hours": 9.73
   },
   "2026-10-30": {
-    "steps": 34,
+    "steps": 202,
     "hr_avg": 45,
     "spo2": 97,
-    "body_battery": 92,
-    "stress": 13,
+    "body_battery": 93,
+    "stress": 15,
     "date": "2026-10-30",
     "source": "qwatch_auto",
-    "saved_at": "2026-10-30 14:57",
-    "sleep_total_min": 375,
-    "sleep_deep_min": 60,
-    "sleep_rem_min": 27,
-    "sleep_light_min": 288,
-    "sleep_awake_min": 1,
+    "saved_at": "2026-10-30 17:57",
+    "sleep_total_min": 249,
+    "sleep_deep_min": 58,
+    "sleep_rem_min": 0,
+    "sleep_light_min": 191,
+    "sleep_awake_min": 97,
     "hrv": 56,
-    "sleep_hours": 6.25
+    "sleep_hours": 4.15,
+    "weight_kg": 84.1
   }
 }
