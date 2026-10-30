@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T02:52:59.675613",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO -12.0% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T02:53:00.473912",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO -12.0% за 24г (DefiLlama).",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81616"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-30T03:01:48.229749",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Verify your profile</b>\n👤 \"Instagram\" &lt;security@mail.instagram.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81615"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81615"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81615"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81615"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81615"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81615"
             }
           ]
         ]
