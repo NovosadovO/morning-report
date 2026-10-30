@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:34:47.568796",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T03:35:57.521477",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.2% за 24г (DefiLlama).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81620"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-30T03:46:26.798610",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>M&amp;A Integration Specialist в Deel та ще 17 вакансій, які мож</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81619"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81619"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81619"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81619"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81619"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81619"
             }
           ]
         ]
