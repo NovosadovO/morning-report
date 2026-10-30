@@ -12254,5 +12254,13 @@
     "text": "📬 ПОШТА",
     "tag": "report",
     "ts": "2026-10-30T06:01:19.540500+00:00"
+  },
+  "9f894f9cd6": {
+    "kind": "report",
+    "key": "",
+    "title": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI",
+    "text": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпретації. Поповни баланс на https://ai.studio → Billing.",
+    "tag": "report",
+    "ts": "2026-10-30T06:14:27.328288+00:00"
   }
 }
