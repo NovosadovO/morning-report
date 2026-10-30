@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:06:11.996962",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.9% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T03:06:36.068289",
       "kind": "chunk",
       "text": "🛠 <b>Самодіагностика бота</b>\n\n🔴 <b>АІ помітив проблему з собою:</b> Gemini (мозок аналізу) падає у 100% останніх спроб. Можливо вичерпані кредити, невалідний ключ, або тимчасовий збій Google. Відповіді йдуть на локальних шаблонах (менш точні) поки це не виправиться.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81619"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-30T03:16:36.022944",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Вакансія Grocery Associate - Košice в Wolt – Активно набирає</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81618"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81618"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81618"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81618"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81618"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81618"
             }
           ]
         ]
