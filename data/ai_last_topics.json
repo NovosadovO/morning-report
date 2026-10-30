@@ -1,4 +1,14 @@
 {
+  "money|2026-10-31t00_15_39_713736": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-31T00:15:39.713736"
+  },
+  "selfact|2026-10-31t00_11_09_367208": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-10-31T00:11:09.367208"
+  },
   "action_detect|2026-10-31t00_08_57_942464": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"81379\",     \"title\": \"Оновлення умов та запуск нового порталу eKooperativa\",     \"date\": \"2026-10-28\",     \"time\": null,     \"kind\": \"",
     "ts": "2026-10-25T19:41:53.166247"
-  },
-  "selfact|2026-10-25t19_37_37_648643": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення порталу eKooperativa\",     \"text\": \"Олеже, зверни увагу, що з 28 жовтня 2026 року KOOPERATIVA запров",
-    "ts": "2026-10-25T19:37:37.648643"
-  },
-  "action_detect|2026-10-25t19_37_08_034694": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-10-25T19:37:08.034694"
   }
 }
