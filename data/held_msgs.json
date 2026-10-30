@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:33:32.771726",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.4% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T03:33:33.707614",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.4% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T03:46:22.609076",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Binance Hacked for Billions</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81622"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81622"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81622"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81622"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81622"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81622"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
