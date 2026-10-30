@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:35:58.408966",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T03:37:09.271377",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.0% за 24г (DefiLlama).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81618"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-30T03:46:29.648982",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>New login to Instagram from Mobile Safari on Apple iPhone</b>\n👤 \"Instagram\" &lt;security@mail.instagram.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81616"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81616"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81616"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81616"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81616"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81616"
             }
           ]
         ]
