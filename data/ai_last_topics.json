@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-10-31t01_22_15_609395": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від GenAI Works через LinkedIn є інформаційним бюлетенем «The Atlas», який обговорює новини зі світу штучного інтелекту. Зокре",
+    "ts": "2026-10-31T01:22:15.609395"
+  },
   "selfact|2026-10-31t01_15_22_134913": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, оплата підписки Runable на $10.00 була невдалою. Потрібно оновити",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Новий портал eKooperativa\",     \"text\": \"Олеже, зверніть увагу, що з 28 жовтня 2026 року KOOPERATIVA запускає ",
     "ts": "2026-10-25T20:40:14.498487"
-  },
-  "mailcal_extract|2026-10-25t20_27_29_566146": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"81379\",     \"title\": \"Оновлення умов порталу eKooperativa\",     \"date\": \"2026-10-28\",     \"time\": null,     \"kind\": \"other\",     \"why\"",
-    "ts": "2026-10-25T20:27:29.566146"
   }
 }
