@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T17:08:42.926155+00:00",
-      "category": "bill_found",
-      "question": "Railway",
-      "answer": "12.32 USD",
-      "extra": {
-        "due": "2026-08-26"
-      }
-    },
-    {
       "ts": "2026-08-26T18:23:46.895452+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14276,6 +14267,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_cardio_np"
+    },
+    {
+      "ts": "2026-10-30T16:30:26.630452+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
