@@ -1836,6 +1836,32 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _gre:
         print(f"[grounding] skipped for {tag}: {_gre}", flush=True)
 
+    # ─── НЕ ВИГОЛОШУВАТИ "ДАНІ З КЕШУ/ЗАСТАРІЛІ" (18.10.2026, скарга Олега
+    # зі скріном: бот сам пише вголос "дані кешовані і не оновлювалися з
+    # [час]") ──────────────────────────────────────────────────────────────
+    # Перевірено: реального бага "показує старі дані" в пайплайні нема —
+    # ціни/здоров'я фетчаться живо щоразу (TTL-кеш лише 3 хв в пам'яті як
+    # захист від rate-limit, не більше). AI сам вигадував таке застереження,
+    # бо ніде прямо не було заборонено. Інжект тут, в ЄДИНІЙ точці входу до
+    # Gemini — накриває всі ~30 модулів одразу (не лише ті, де заборону вже
+    # дописано окремо в самому промпті — message_generator.py, foresight.py).
+    try:
+        import json as _js_nc
+        import ai_brain as _brain_nc
+        _NC_MARK = "⁣NOCACHE⁣"
+        _b_nc = _js_nc.loads(body_bytes.decode())
+        _pp_nc = _b_nc["contents"][0]["parts"][0]["text"]
+        if _NC_MARK not in _pp_nc and not _brain_nc.is_json_prompt(_pp_nc):
+            _add_nc = (
+                "\n\n⚠️ НІКОЛИ не пиши про 'кеш'/'застарілі дані'/'не "
+                "оновлювалося' — усе вище отримано живим запитом щойно; якщо "
+                "щось явно старе за датою, просто мовчки не кажи 'сьогодні'." + _NC_MARK
+            )
+            _b_nc["contents"][0]["parts"][0]["text"] = _pp_nc + _add_nc
+            body_bytes = _js_nc.dumps(_b_nc).encode()
+    except Exception as _e_nc:
+        print("[nocache] skip: " + str(_e_nc), flush=True)
+
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
     import re as _re0
     _cur_m = None
