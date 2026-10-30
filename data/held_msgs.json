@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:01:43.610758",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>M&amp;A Integration Specialist в Deel та ще 17 вакансій, які мож</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81619"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81619"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81619"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81619"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81619"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81619"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-30T03:01:45.398827",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія Grocery Associate - Košice в Wolt – Активно набирає</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-10-30T03:13:15.763864",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.5% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T03:14:25.365857",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.7% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
