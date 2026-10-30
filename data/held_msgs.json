@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T02:01:20.724621",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO -9.8% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-30T02:02:27.484700",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO -9.8% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.\n\nONDO -9.8% за 24г (DefiLlama).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T02:15:10.857006",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Senior Market Strategy and Partnerships Manager в Fever»\n\n<i>«Сповіщення про вакансії за запитом Менеджер з продажу в Bratislava Metropolitan Area            \r\nSenior Market Strategy and Partnerships Manager\r\nFever\r\nBratislava\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4323415412/?trackingId=7IHpfwrbaD...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81621"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81621"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81621"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81621"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81621"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81621"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
