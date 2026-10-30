@@ -1,9 +1,4 @@
 {
-  "80546": {
-    "sender": "team@ua-4u.mail.sweet.tv",
-    "sender_raw": "SWEET.TV <team@ua-4u.mail.sweet.tv>",
-    "seen_ts": "2026-10-09T13:02:54.453215+00:00"
-  },
   "80547": {
     "sender": "hello@mail.paulkalkbrenner.net",
     "sender_raw": "PAUL KALKBRENNER <hello@mail.paulkalkbrenner.net>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-30T00:15:09.942689+00:00"
+  },
+  "81633": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-30T08:57:18.205088+00:00"
   }
 }
