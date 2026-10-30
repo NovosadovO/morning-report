@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-30T03:46:28.213638",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Вакансія Grocery Associate - Košice в Wolt – Активно набирає</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81618"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81618"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81618"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81618"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81618"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81618"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-30T03:46:29.648982",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>New login to Instagram from Mobile Safari on Apple iPhone</b>\n👤 \"Instagram\" &lt;security@mail.instagram.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-10-30T03:58:42.817882",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -9.2% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-30T03:59:54.530161",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -8.9% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
