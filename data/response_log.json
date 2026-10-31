@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T20:14:31.611172+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-26T20:15:28.796295+00:00",
       "category": "event_done",
       "question": "📅 🔔 Догляд за обличчям (вечір)\nПланувалась до 21:00 — виконано?",
@@ -14276,6 +14270,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-04"
+      }
+    },
+    {
+      "ts": "2026-10-31T04:31:34.432512+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-10-31"
       }
     }
   ]
