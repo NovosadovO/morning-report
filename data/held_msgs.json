@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T21:15:57.459924",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Платіж за підписку на додаток Google One відхилено</b>\n👤 Google Play &lt;googleplay-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81722"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81722"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81722"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81722"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81722"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81722"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T21:15:58.865837",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-10-31T21:20:37.256525",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 57\n• 💳 активних підписок під наглядом: 5\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T21:20:48.744596",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
