@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-31t02_02_50_978966": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-10-31T02:02:50.978966"
+  },
+  "bills|2026-10-31t01_54_50_900193": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"81560\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"\",     \"due\": \"2026-11-05\",     \"alrea",
+    "ts": "2026-10-31T01:54:50.900193"
+  },
   "email_ai_item|2026-10-31t01_53_02_373723": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Volkswagen Group через LinkedIn є щомісячним інформаційним бюлетенем за жовтень. Він висвітлює, як Volkswagen Group змі",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути та оплатити прострочені рахунки\", \"action_date\": \"2023-10-25\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-10-25T21:01:41.858384"
-  },
-  "action_detect|2026-10-25t21_01_30_908292": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T21:01:30.908292"
-  },
-  "action_detect|2026-10-25t21_01_19_791388": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T21:01:19.791388"
   }
 }
