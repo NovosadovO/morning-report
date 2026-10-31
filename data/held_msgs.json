@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T18:25:30.682460",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T18:26:16.421092",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81720"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T18:30:40.312429",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 31</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81719"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81719"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81719"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81719"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81719"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81719"
             }
           ]
         ]
