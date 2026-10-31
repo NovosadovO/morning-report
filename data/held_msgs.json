@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T12:15:42.990233",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>user29023396936почав(-ла) слідкувати за тобою</b>\n👤 TikTok &lt;notification@service.tiktok.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81707"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81707"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81707"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81707"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81707"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81707"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T12:15:44.284387",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ešte stále chcete mať svoj životopis sprístupnený v databáze</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-31T12:20:06.214818",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T12:20:47.129932",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
