@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-01t00_55_27_606173": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-01T00:55:27.606173"
+  },
   "selfact|2026-11-01t00_40_57_368536": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав кілька сповіщень про вакансії. Можливо, варто переглянути їх, адже ти активно шукаєш роботу.\"",
@@ -293,10 +298,5 @@
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"81560\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": \"2026-11-05\", ",
     "ts": "2026-10-31T06:54:51.238948"
-  },
-  "mailcal_extract|2026-10-31t06_53_56_918579": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-10-31T06:53:56.918579"
   }
 }
