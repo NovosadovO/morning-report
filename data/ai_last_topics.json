@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-01t00_19_17_037701": {
+    "topic": "healthai",
+    "gist": "Олеже, ти зараз на нічній зміні. Твій пульс спокою – 49 уд/хв, а Body Battery – 44/100.  *   🌙 На нічній зміні важлива стабільність: спробуй випити склянку води",
+    "ts": "2026-11-01T00:19:17.037701"
+  },
   "email_ai_item|2026-11-01t00_14_30_942270": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Support Associate (Full-Time Remote)\\\" в компанії Wolt та \\\"Sales Manager Slovakia (m/",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: Support Associate (Full-Time Remote) у Wolt та Senior Growth M",
     "ts": "2026-10-31T06:14:42.898326"
-  },
-  "selfact|2026-10-31t06_09_23_066560": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
-    "ts": "2026-10-31T06:09:23.066560"
   }
 }
