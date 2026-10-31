@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T14:57:26.255018",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T14:57:29.733736",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81707"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T15:01:41.334990",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ešte stále chcete mať svoj životopis sprístupnený v databáze</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81706"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81706"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81706"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81706"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81706"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81706"
             }
           ]
         ]
