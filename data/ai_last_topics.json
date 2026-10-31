@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-01t00_14_30_942270": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Support Associate (Full-Time Remote)\\\" в компанії Wolt та \\\"Sales Manager Slovakia (m/",
+    "ts": "2026-11-01T00:14:30.942270"
+  },
   "action_detect|2026-11-01t00_07_29_536037": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
     "ts": "2026-10-31T06:09:23.066560"
-  },
-  "foresight_truthfix|2026-10-31t06_06_47_450466": {
-    "topic": "foresight/truthfix",
-    "gist": "Зараз, після нічної зміни, важливо зосередитися на відновленні, а не на нових навантаженнях. Дані за 30 жовтня показують, що твій сон становив 4.2 години, що зн",
-    "ts": "2026-10-31T06:06:47.450466"
   }
 }
