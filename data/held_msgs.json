@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T20:56:43.526719",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «CoolPeople Technology наймає: Business Analyst (44363)»\n\n<i>«Сповіщення про вакансії за запитом Cryptocurrency в Slovakia            \r\nBusiness Analyst (44363)\r\nCoolPeople Technology\r\nBratislava\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4485356808/?trackin...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81730"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81730"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81730"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81730"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81730"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81730"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T20:57:28.646896",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -343,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81724"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T21:00:51.755625",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Платіж за підписку на додаток Google One відхилено</b>\n👤 Google Play &lt;googleplay-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81722"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81722"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81722"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81722"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81722"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81722"
             }
           ]
         ]
