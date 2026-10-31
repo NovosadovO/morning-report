@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T12:15:54.310420",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81560"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81560"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81560"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81560"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81560"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81560"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T12:16:26.132076",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -181,6 +142,12 @@
       "ts": "2026-10-31T12:22:27.060769",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T12:22:47.998991",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
