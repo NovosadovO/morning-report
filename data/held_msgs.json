@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T21:11:14.170894",
-      "kind": "calendar",
-      "text": "🌙 <b>ЩО ЧЕКАЄ ЗАВТРА</b>\n━━━━━━━━━━━━━━━━━━━━\n📅 01.11.2026\n🏠 Вільний день\n\n📌 Реальних подій немає — день вільний від зустрічей.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T21:11:14.932928",
       "kind": "calendar",
       "text": "🌙 ЩО ЧЕКАЄ ЗАВТРА\n━━━━━━━━━━━━━━━━━━━━\n📅 01.11.2026\n🏠 Вільний день\n\n📌 Реальних подій немає — день вільний від зустрічей.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T21:15:47.177529",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>CoolPeople Technology наймає: Business Analyst (44363)</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81730"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81730"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81730"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81730"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81730"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81730"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
