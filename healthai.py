@@ -928,7 +928,7 @@ def initiative(force: bool = False) -> int:
     if not force and not K.rate_ok(_INSIGHT_GATE_FILE, 45):
         K.log(TAG, "initiative: SKIP — спільні ворота 'одна тема' з foresight (45 хв)")
         return 0
-    if not force and not K.topic_ok("health"):
+    if not force and not getattr(K, "topic_ok", lambda *_: True)("health"):
         K.log(TAG, "initiative: SKIP — тема 'здоров'я' вже була нещодавно (topic gate)")
         return 0
     K.rate_mark(STATE_FILE)
@@ -974,7 +974,7 @@ def initiative(force: bool = False) -> int:
             sent += 1
             _journal("notify", f"сповіщення про здоров'я: {key}", line)
             K.rate_mark(_INSIGHT_GATE_FILE)
-            K.topic_mark("health")
+            getattr(K, "topic_mark", lambda *_: None)("health")
 
     state["seen"] = seen
     K.save(STATE_FILE, state)

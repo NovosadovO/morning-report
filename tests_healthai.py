@@ -39,6 +39,8 @@ def _mk_ai_kit():
     m.gemini_json = lambda p, **kw: []
     m.rate_ok = lambda f, gap: True
     m.rate_mark = lambda f: None
+    m.topic_ok = lambda *a, **k: True
+    m.topic_mark = lambda *a, **k: None
     m.esc = lambda s: str(s)
     return m
 
