@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T11:56:52.534466",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T11:56:53.377699",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81697"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T12:00:55.276882",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81560"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81560"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81560"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81560"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81560"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81560"
             }
           ]
         ]
