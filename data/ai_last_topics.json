@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-01t01_27_09_907277": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, нагадую, що сьогодні, 1 листопада, у тебе нічна зміна. Початок о 18:00.\",     \"dat",
+    "ts": "2026-11-01T01:27:09.907277"
+  },
+  "openloop_promises|2026-11-01t01_17_24_162470": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-01T01:17:24.162470"
+  },
   "subs|2026-11-01t01_16_46_778137": {
     "topic": "subs",
     "gist": "[   {     \"uid\": \"81722\",     \"vendor\": \"Google One\",     \"amount\": \"4.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"next_du",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Wolt\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Support Associate (Ful",
     "ts": "2026-10-31T07:27:18.051970"
-  },
-  "deadlines|2026-10-31t07_24_52_559681": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"81560\",     \"kind\": \"contract\",     \"title\": \"Скасування підписки Garmin Connect+\",     \"org\": \"Garmin\",     \"deadline\": \"2026-11-04\",",
-    "ts": "2026-10-31T07:24:52.559681"
-  },
-  "selfact|2026-10-31t07_12_14_746849": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Support Associate в Wolt\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Su",
-    "ts": "2026-10-31T07:12:14.746849"
   }
 }
