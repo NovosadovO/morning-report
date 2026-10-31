@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:16:36.342905",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The quality you should most wish for your children</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81714"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81714"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81714"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81714"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81714"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81714"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T15:16:37.790255",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Business Analyst (44363) в Cool</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-10-31T15:21:39.299315",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T15:21:40.342381",
+      "kind": "calendar",
+      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
     }
   ]
