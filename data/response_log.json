@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T20:16:08.804067+00:00",
-      "category": "event_done",
-      "question": "📅 🍵 Трав'яний чай ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-26T20:16:14.312312+00:00",
       "category": "event_done",
       "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 20:40 — виконано?",
@@ -14291,6 +14285,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-31T06:01:49.297919+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Скасувати підписку Garmin Connect+",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-03"
+      }
     }
   ]
 }
