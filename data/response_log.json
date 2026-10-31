@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T22:06:43.753051+00:00",
-      "category": "event_done",
-      "question": "📅 🔔 Догляд за обличчям\nПланувалась до 23:00 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-26T22:08:01.328012+00:00",
       "category": "diary",
       "question": "3 питання про день",
@@ -14300,6 +14294,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-11-01T01:31:40.522893+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-01"
+      }
     }
   ]
 }
