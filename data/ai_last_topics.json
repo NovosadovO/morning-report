@@ -1,4 +1,9 @@
 {
+  "selfact|2026-10-31t08_44_46_792745": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, LinkedIn прислав нові вакансії: Key Account Manager Industry ",
+    "ts": "2026-10-31T08:44:46.792745"
+  },
   "openloop_promises|2026-10-31t08_40_43_760307": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"oleg.novosadov@minebeamitsumi.eu\",     \"name\": \"Oleh Novosadov\",     \"relation\": \"робота\",     \"topics\": [\"підпис електронної пошти\"",
     "ts": "2026-10-31T04:54:19.328409"
-  },
-  "selfact|2026-10-31t04_52_59_879262": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платежі до Runable на $10.00 були невдалими. По",
-    "ts": "2026-10-31T04:52:59.879262"
   }
 }
