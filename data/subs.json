@@ -207,5 +207,29 @@
     "uid": "81722",
     "last_seen": "2026-11-01",
     "next_due": "2026-12-01"
+  },
+  "chatgpt": {
+    "vendor": "ChatGPT",
+    "cycle": "monthly",
+    "currency": "EUR",
+    "charges": [
+      {
+        "date": "2026-11-01",
+        "amount": "7.99",
+        "uid": "81724"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-11-01",
+    "note": "Підписка на додаток ChatGPT з щомісячним платежем, яка потребує оновлення способу оплати.",
+    "amount": "7.99",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Платіж за підписку на додаток ChatGPT відхилено",
+    "uid": "81724",
+    "last_seen": "2026-11-01",
+    "next_due": "2026-12-01"
   }
 }
