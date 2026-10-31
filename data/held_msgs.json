@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T18:10:23.130317",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T18:10:28.584510",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81726"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T18:15:43.462779",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Платіж за підписку на додаток ChatGPT відхилено</b>\n👤 Google Play &lt;googleplay-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81724"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81724"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81724"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81724"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81724"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81724"
             }
           ]
         ]
