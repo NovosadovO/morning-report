@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-26T20:15:28.796295+00:00",
-      "category": "event_done",
-      "question": "📅 🔔 Догляд за обличчям (вечір)\nПланувалась до 21:00 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-26T20:15:57.319253+00:00",
       "category": "event_done",
       "question": "📅 🏃 Біг ❌\nПланувалась до 20:40 — виконано?",
@@ -14280,6 +14274,17 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-10-31"
+      }
+    },
+    {
+      "ts": "2026-10-31T05:59:39.341240+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "bills",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": null
       }
     }
   ]
