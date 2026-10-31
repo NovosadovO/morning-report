@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T16:44:21.085770",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T16:44:27.349913",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T16:50:38.718300",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>LinkedIn</b>\n📋 Тема: «Не пропустіть обговорення в Artificial Intelligence, Deep Learning, Ma»\n\n<i>«Не пропустіть обговорення в Artificial Intelligence, Deep Learning, Machine Learning\r\n\r\n.....................................Artificial Intelligence, Deep Learning, Machine Learning\r\nAIAI is an alliance of builders &amp; executives facilitating the LLM &amp; multimodal AI era, sharing tools to scale powerfu...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81723"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81723"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81723"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81723"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81723"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81723"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
