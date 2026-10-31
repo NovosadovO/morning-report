@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:12:36.331979",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-31T15:12:37.372386",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T15:12:54.424372",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — October 31»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-october-31-oleh-bezuhlyi-fkntf?lipi=urn%3Ali%3Apage%3Aemail_email_...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -353,6 +341,45 @@
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T15:16:45.200320",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🐶📰Weekend Update</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81712"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81712"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81712"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81712"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81712"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81712"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
