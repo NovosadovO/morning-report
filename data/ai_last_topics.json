@@ -1,4 +1,24 @@
 {
+  "deadlines|2026-10-31t04_24_52_344664": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"81560\",     \"kind\": \"contract\",     \"title\": \"Скасування підписки Garmin Connect+\",     \"org\": \"Garmin\",     \"deadline\": \"2026-11-04\",",
+    "ts": "2026-10-31T04:24:52.344664"
+  },
+  "selfact|2026-10-31t04_21_10_999851": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата підписки Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдали",
+    "ts": "2026-10-31T04:21:10.999851"
+  },
+  "action_detect|2026-10-31t04_20_54_899593": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T04:20:54.899593"
+  },
+  "action_detect|2026-10-31t04_20_43_907277": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T04:20:43.907277"
+  },
   "action_detect|2026-10-31t04_20_39_732189": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
@@ -278,25 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "Олеже, зараз 23:41 п'ятниці, 30 жовтня 2026 року.  <b>Підписка Garmin Connect+</b> Тобі потрібно скасувати підписку Garmin Connect+ до 4 листопада, якщо не хоче",
     "ts": "2026-10-31T00:42:05.367203"
-  },
-  "foresight|2026-10-31t00_41_54_810678": {
-    "topic": "foresight",
-    "gist": "Ось розбір твоєї пошти, Олеже:  📬 <b>Garmin <GarminServicesBilling@garmin.com></b> → Спливає термін дії безкоштовного пробного періоду Garmin Connect+. 📬 <b>Ole",
-    "ts": "2026-10-31T00:41:54.810678"
-  },
-  "action_detect|2026-10-31t00_33_53_119829": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата страховки авто\", \"action_date\": \"2023-11-08\", \"action_time\": null, \"action_summary\": \"Оплатити страховку PZ ",
-    "ts": "2026-10-31T00:33:53.119829"
-  },
-  "msg_event_soon_truthfix|2026-10-31t00_33_45_061708": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Привіт Олеже!  Бачу, що попереду нічна зміна, яка розпочинається сьогодні, 31 жовтня 2026 року.  **Що взяти з собою:** * Даних про необхідні речі для зміни нема",
-    "ts": "2026-10-31T00:33:45.061708"
-  },
-  "msg_event_soon|2026-10-31t00_33_33_162660": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  Бачу, що попереду нічна зміна, яка, згідно з календарем, розпочинається о 20:00. Хоч зараз вже пізно, важливо бути готовим до продуктивної робо",
-    "ts": "2026-10-31T00:33:33.162660"
   }
 }
