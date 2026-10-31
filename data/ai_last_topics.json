@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-10-31t08_40_43_760307": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-10-31T08:40:43.760307"
+  },
   "selfact|2026-10-31t08_28_50_437920": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, у тебе є нові сповіщення про вакансії на LinkedIn, які можуть бут",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платежі до Runable на $10.00 були невдалими. По",
     "ts": "2026-10-31T04:52:59.879262"
-  },
-  "action_detect|2026-10-31t04_42_46_282493": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T04:42:46.282493"
   }
 }
