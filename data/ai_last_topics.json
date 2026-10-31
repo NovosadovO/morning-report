@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-10-31t04_20_39_732189": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T04:20:39.732189"
+  },
   "email_ai_item|2026-10-31t04_15_02_199375": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про дві вакансії: Key Account Manager у GymBeam в Кошице, Словачччина, та Support Associate",
@@ -293,10 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Бачу, що попереду нічна зміна, яка, згідно з календарем, розпочинається о 20:00. Хоч зараз вже пізно, важливо бути готовим до продуктивної робо",
     "ts": "2026-10-31T00:33:33.162660"
-  },
-  "selfact|2026-10-31t00_26_37_885196": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
-    "ts": "2026-10-31T00:26:37.885196"
   }
 }
