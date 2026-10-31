@@ -17956,7 +17956,29 @@
     "pid": "dl_due_done_d6a8e0c50c",
     "subject": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.",
     "extra": {
-      "msg": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Garmin Connect+ підписка — скасування\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ на Garmin.com/subscriptions, якщо не хочете платити"
+      "msg": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Garmin Connect+ підписка — скасування\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ на Garmin.com/subscriptions, якщо не хочете платити",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 121146,
+        "kb": [
+          [
+            {
+              "text": "✅ Зроблено",
+              "callback_data": "dl_due_done_d6a8e0c50c"
+            }
+          ],
+          [
+            {
+              "text": "📅 В календар",
+              "callback_data": "dl_cal_d6a8e0c50c"
+            },
+            {
+              "text": "⏰ Нагадати завтра",
+              "callback_data": "dl_due_snooze_d6a8e0c50c"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-01T00:55:31.368334+00:00"
   }
