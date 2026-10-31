@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:30:47.001288",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Business Analyst (44363) в Cool</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81713"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81713"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81713"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81713"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81713"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81713"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T15:30:48.249260",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🐶📰Weekend Update</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-10-31T15:35:49.050317",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T15:36:19.261659",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
