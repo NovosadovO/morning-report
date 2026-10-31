@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T21:42:59.604815",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T21:43:00.303188",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81722"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T21:46:10.023781",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81721"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81721"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81721"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81721"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81721"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81721"
             }
           ]
         ]
