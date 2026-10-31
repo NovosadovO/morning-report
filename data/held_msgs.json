@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:11:36.389552",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T15:11:48.716542",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81717"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T15:16:35.046715",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Weekly Recap: Binance Hack Hits $6.3 Billion</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81716"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81716"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81716"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81716"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81716"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81716"
             }
           ]
         ]
