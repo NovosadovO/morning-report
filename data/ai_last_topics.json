@@ -1,4 +1,14 @@
 {
+  "selfact|2026-10-31t04_05_53_625394": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Key Account Manager в GymBeam\",     \"text\": \"Олеже, з'явилася нова вакансія Key Account Manager ",
+    "ts": "2026-10-31T04:05:53.625394"
+  },
+  "bills|2026-10-31t03_55_04_689874": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"81560\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"EUR4369771\",     \"due\": \"2026-11-05\", ",
+    "ts": "2026-10-31T03:55:04.689874"
+  },
   "subs|2026-10-31t03_54_49_633378": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"81560\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": \"2026-11-05\", ",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
     "ts": "2026-10-31T00:11:09.367208"
-  },
-  "action_detect|2026-10-31t00_08_57_942464": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T00:08:57.942464"
-  },
-  "action_detect|2026-10-31t00_01_21_996825": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-10-31T00:01:21.996825"
   }
 }
