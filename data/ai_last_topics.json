@@ -298,5 +298,30 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-10-31T02:16:37.317563"
+  },
+  "foresight|2026-10-31t06_06_36_271433": {
+    "topic": "foresight",
+    "gist": "Зараз, після нічної зміни, нові треки можуть стати чудовим способом відволіктися і налаштуватися на відпочинок, а не на майбутні пробіжки. Спробуй знайти плейли",
+    "ts": "2026-10-31T06:06:36.271433"
+  },
+  "proactive_actions|2026-10-31t06_01_46_058711": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-03\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
+    "ts": "2026-10-31T06:01:46.058711"
+  },
+  "action_detect|2026-10-31t06_01_11_857429": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T06:01:11.857429"
+  },
+  "action_detect|2026-10-31t06_00_52_003500": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T06:00:52.003500"
+  },
+  "action_detect|2026-10-31t05_59_41_155338": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
+    "ts": "2026-10-31T05:59:41.155338"
   }
 }
