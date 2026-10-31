@@ -244,39 +244,39 @@
       }
     },
     {
-      "ts": "2026-10-31T18:30:37.417343",
+      "ts": "2026-10-31T18:30:38.875496",
       "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "text": "📩 ✉️\n📌 <b>Підозріло вигідна пропозиція</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81721"
+              "callback_data": "email_reply_81720"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_81721"
+              "callback_data": "email_describe_81720"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_81721"
+              "callback_data": "email_star_81720"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_81721"
+              "callback_data": "email_cal_81720"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_81721"
+              "callback_data": "email_keep_81720"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_81721"
+              "callback_data": "email_delete_81720"
             }
           ]
         ]
