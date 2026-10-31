@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T23:59:38.236216",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T23:59:39.101628",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -379,6 +373,12 @@
       "ts": "2026-11-01T00:02:48.941338",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu <temu@eu.temuemail.com> → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T00:02:49.774273",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu  → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
