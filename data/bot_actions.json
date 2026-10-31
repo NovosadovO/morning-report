@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Сьогодні стрижка",
-      "detail": "Запис у календарі на сьогодні: 20.10: 13:00 🔔 Стрижка у Yevhenii; 14:00 Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice. Поточний час 06:50, є достатньо часу для сповіщення.",
-      "module": "selfact",
-      "ts": "2026-10-20T06:50:39"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист про нові оголошення щодо квартир, що може бути для нього актуальним, враховуючи, що він мешкає в Кошице.",
       "module": "selfact",
       "ts": "2026-11-01T00:09:50"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-10-31",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-01T00:19:00"
     }
   ]
 }
