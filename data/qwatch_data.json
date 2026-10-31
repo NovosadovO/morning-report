@@ -1927,5 +1927,15 @@
     "hrv": 56,
     "sleep_hours": 4.15,
     "weight_kg": 84.1
+  },
+  "2026-10-31": {
+    "steps": 2256,
+    "hr_avg": 50,
+    "spo2": 93,
+    "body_battery": 46,
+    "stress": 26,
+    "date": "2026-10-31",
+    "source": "qwatch_auto",
+    "saved_at": "2026-10-31 02:57"
   }
 }
