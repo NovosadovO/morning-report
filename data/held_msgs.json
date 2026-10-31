@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T00:01:01.494258",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Pánske vysokoelastick...Môže byť lacnejšie!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81732"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81732"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81732"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81732"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81732"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81732"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T00:01:02.826197",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Why it’s a bad time to be a rat-killer</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -313,6 +274,12 @@
       "ts": "2026-11-01T00:04:09.847563",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu  → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T00:04:13.117795",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 02.11</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
