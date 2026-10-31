@@ -1,4 +1,9 @@
 {
+  "money|2026-10-31t02_45_46_720117": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-10-31T02:45:46.720117"
+  },
   "openloop_promises|2026-10-31t02_40_25_511770": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-25T21:17:11.044392"
-  },
-  "action_detect|2026-10-25t21_17_00_070742": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-10-25T21:17:00.070742"
   }
 }
