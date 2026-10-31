@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-10-04T19:31:57"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-10-04T19:31:58"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-11-01T00:55:05"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-11-01T00:55:13"
     }
   ]
 }
