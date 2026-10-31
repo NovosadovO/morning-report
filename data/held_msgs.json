@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T00:00:58.585963",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 40 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81734"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81734"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81734"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81734"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81734"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81734"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T00:01:00.036435",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Executive Assistant в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +340,12 @@
       "ts": "2026-11-01T00:03:18.094414",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 3 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T00:04:09.068702",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu <temu@eu.temuemail.com> → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
