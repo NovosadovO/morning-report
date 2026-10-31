@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T21:15:49.709677",
-      "kind": "offer",
-      "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на вакансію зараз: «Junior Sales Repres</b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81728"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81728"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81728"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81728"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81728"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81728"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T21:15:50.703867",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -313,6 +274,12 @@
       "ts": "2026-10-31T21:19:24.725702",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T21:19:25.742058",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
