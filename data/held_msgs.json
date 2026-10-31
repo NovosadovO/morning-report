@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T00:01:00.036435",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Executive Assistant в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81733"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81733"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81733"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81733"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81733"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81733"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T00:01:01.494258",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Pánske vysokoelastick...Môže byť lacnejšie!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-01T00:04:09.068702",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu <temu@eu.temuemail.com> → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T00:04:09.847563",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 40 нових оголошень\n• Temu  → Pánske vysokoelastick...Môže byť lacnejšie!\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
