@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:41:50.628063",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T15:41:51.445878",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81714"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T15:45:49.811535",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Business Analyst (44363) в Cool</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81713"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81713"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81713"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81713"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81713"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81713"
             }
           ]
         ]
