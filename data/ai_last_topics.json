@@ -1,4 +1,19 @@
 {
+  "selfact|2026-10-31t09_15_35_497649": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії: Key Account Manager Industry (M/",
+    "ts": "2026-10-31T09:15:35.497649"
+  },
+  "action_detect|2026-10-31t09_10_59_976838": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
+    "ts": "2026-10-31T09:10:59.976838"
+  },
+  "foresight_truthfix|2026-10-31t09_09_48_001503": {
+    "topic": "foresight/truthfix",
+    "gist": "Після нічної зміни 31 жовтня, коли ти відновлюєшся, важливо врахувати, що дані про вагу (84.1 кг) та сон (4.2 години) є за 30 жовтня, тобто їм 1 день. Ці дані п",
+    "ts": "2026-10-31T09:09:48.001503"
+  },
   "foresight|2026-10-31t09_09_37_157115": {
     "topic": "foresight",
     "gist": "Олеже, зараз, коли ти відновлюєшся після нічної зміни, ідеальний час подумати, як урізноманітнити тренування, щоб прискорити досягнення цілі у 75 кг. Спробуй на",
@@ -283,20 +298,5 @@
     "topic": "foresight",
     "gist": "Зараз, після нічної зміни, нові треки можуть стати чудовим способом відволіктися і налаштуватися на відпочинок, а не на майбутні пробіжки. Спробуй знайти плейли",
     "ts": "2026-10-31T06:06:36.271433"
-  },
-  "proactive_actions|2026-10-31t06_01_46_058711": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-03\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
-    "ts": "2026-10-31T06:01:46.058711"
-  },
-  "action_detect|2026-10-31t06_01_11_857429": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T06:01:11.857429"
-  },
-  "action_detect|2026-10-31t06_00_52_003500": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T06:00:52.003500"
   }
 }
