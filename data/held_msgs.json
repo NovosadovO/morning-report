@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:12:54.424372",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — October 31»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-october-31-oleh-bezuhlyi-fkntf?lipi=urn%3Ali%3Apage%3Aemail_email_...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81718"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81718"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81718"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81718"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81718"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81718"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T15:12:58.797410",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -376,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81712"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T15:16:46.456402",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Kimi K3.1 takes on ChatGPT and Claude</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81710"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81710"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81710"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81710"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81710"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81710"
             }
           ]
         ]
