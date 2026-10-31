@@ -1287,12 +1287,26 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
             _log(f"Skipping {trigger_type}")
             return False
 
+        # Спільна «одна тема — раз на N год» для всіх рушіїв: ДО генерації (кредити).
+        try:
+            import ai_kit as _k_tg
+            if not _k_tg.topic_ok(trigger_type):
+                _log(f"⏸ Topic gate: тема '{_k_tg.topic_name(trigger_type)}' вже була нещодавно — пропускаю {trigger_type}")
+                return False
+        except Exception:
+            _k_tg = None
+
         message = _generate_message(trigger_type, trigger_data, location, idle_hours)
         if not message:
             return False
 
         success = _send_to_telegram(message, trigger_type=trigger_type)
         if success:
+            try:
+                if _k_tg:
+                    _k_tg.topic_mark(trigger_type)
+            except Exception:
+                pass
             # hourly_gate_mark() вже викликаний всередині _send_to_telegram
             # Save first 100 chars as "topic" for anti-repeat
             topic = message[:100].replace("\n", " ")

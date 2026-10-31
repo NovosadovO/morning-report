@@ -1868,6 +1868,10 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     _mm = _re0.search(r'/models/([^:]+):generateContent', url)
     if _mm:
         _cur_m = _mm.group(1)
+    # економія: жорстко вписаний у URL дорогий gemini-2.5-flash -> flash-lite першим
+    # (flash лишається резервом). Важливі теги якості не чіпаємо.
+    if _cur_m == "gemini-2.5-flash" and str(tag) not in ("deep_analysis", "weekly_coach", "monthly_coach", "weekly_report"):
+        _cur_m = "gemini-2.5-flash-lite"
     _models = ([_cur_m] if _cur_m else []) + [m for m in _GEM_MODELS if m != _cur_m]
     if not _models:
         _models = list(_GEM_MODELS)

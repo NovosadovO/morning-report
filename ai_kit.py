@@ -179,6 +179,52 @@ def rate_mark(state_file: str):
     update_key(state_file, "last", now().isoformat())
 
 
+# ─── ТЕМНІ ВОРОТА (одна тема — не частіше, ніж раз на N годин, для ВСІХ модулів) ─
+# Різні рушії (message_generator, smart_notifications_v3, healthai, hcoach) писали
+# про одне й те саме (сон, здоров'я, крипто, брифінг) кожен окремо — і кожен
+# викликав Gemini. Перевірка ДО генерації -> без зайвих викликів і без дублів.
+TOPIC_FILE = "topic_gate.json"
+TOPIC_COOLDOWN_H = {"health": 5, "run": 8, "crypto": 3, "briefing": 2}
+_TOPIC_OF = {
+    "health": "health", "health_combined": "health", "micro_checkin": "health",
+    "health_pulse": "health", "health_update": "health", "weight": "health",
+    "sleep": "health", "health_ai": "health", "hcoach": "health",
+    "weekly_run_compare": "run", "workout_plan": "run", "strava": "run",
+    "crypto_move": "crypto", "crypto": "crypto", "crypto_alert": "crypto",
+    "briefing": "briefing", "contextual_briefing": "briefing", "morning": "briefing",
+    "lunch": "briefing", "afternoon": "briefing", "evening": "briefing",
+    "idle_timeout": "briefing", "day_plan": "briefing",
+}
+
+
+def topic_name(trigger: str):
+    """Тема з коротким cooldown для тригера/тега, або None (тема без ворт)."""
+    t = _TOPIC_OF.get(str(trigger or "").lower())
+    return t if t in TOPIC_COOLDOWN_H else None
+
+
+def topic_ok(trigger: str, hours=None) -> bool:
+    """False, якщо ця тема вже надсилалась менш ніж cooldown годин тому."""
+    topic = topic_name(trigger)
+    if not topic:
+        return True
+    try:
+        last = (load(TOPIC_FILE, default={}) or {}).get(topic)
+        if not last:
+            return True
+        then = datetime.fromisoformat(str(last)).replace(tzinfo=None)
+        gap_h = (now().replace(tzinfo=None) - then).total_seconds() / 3600
+        return gap_h >= (hours if hours is not None else TOPIC_COOLDOWN_H[topic])
+    except Exception:
+        return True  # fail-open
+
+
+def topic_mark(trigger: str):
+    topic = topic_name(trigger)
+    if topic:
+        update_key(TOPIC_FILE, topic, now().isoformat())
+
+
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 
 def tg(method: str, body: dict, tag="ai_kit"):

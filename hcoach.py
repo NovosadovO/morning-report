@@ -749,8 +749,11 @@ def tick() -> str:
             # аналіз сну — тільки по середах, щоб не набридати
             if name == "sleep" and now.weekday() != 2:
                 continue
+            if name != "morning" and not K.topic_ok("health", 3):
+                continue  # інший модуль щойно писав про здоров'я — не дублюємо
             try:
                 fn(send=True)
+                K.topic_mark("health")
                 state[name] = day
                 done.append(name)
             except Exception as e:

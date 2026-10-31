@@ -578,6 +578,13 @@ def handle_morning_schedule(schedule_name, now_tz):
     if not _hourly_gate_ok():
         _log("⏸ Hourly gate: пропускаю morning — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
+    try:
+        import ai_kit as _k_tg
+        if not _k_tg.topic_ok("briefing"):
+            _log("⏸ Topic gate: брифінг щойно був — пропускаю morning")
+            return ""
+    except Exception:
+        pass
 
     try:
         emails = _get_important_emails(5)
@@ -587,6 +594,12 @@ def handle_morning_schedule(schedule_name, now_tz):
         
         message = _analyze_morning(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
+        try:
+            if message:
+                import ai_kit as _k_tm
+                _k_tm.topic_mark("briefing")
+        except Exception:
+            pass
         
         # Рекомендації тепер вбудовані в саму _analyze_morning() (розділ
         # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
@@ -609,6 +622,13 @@ def handle_lunch_schedule(schedule_name, now_tz):
     if not _hourly_gate_ok():
         _log("⏸ Hourly gate: пропускаю lunch — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
+    try:
+        import ai_kit as _k_tg
+        if not _k_tg.topic_ok("briefing"):
+            _log("⏸ Topic gate: брифінг щойно був — пропускаю lunch")
+            return ""
+    except Exception:
+        pass
 
     try:
         emails = _get_important_emails(5)
@@ -617,6 +637,12 @@ def handle_lunch_schedule(schedule_name, now_tz):
         
         message = _analyze_lunch(emails, crypto, health)
         _log(f"Generated: {len(message)} chars")
+        try:
+            if message:
+                import ai_kit as _k_tm
+                _k_tm.topic_mark("briefing")
+        except Exception:
+            pass
         
         # Рекомендації тепер вбудовані в саму _analyze_lunch() (розділ
         # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
@@ -639,6 +665,13 @@ def handle_afternoon_schedule(schedule_name, now_tz):
     if not _hourly_gate_ok():
         _log("⏸ Hourly gate: пропускаю afternoon — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
+    try:
+        import ai_kit as _k_tg
+        if not _k_tg.topic_ok("briefing"):
+            _log("⏸ Topic gate: брифінг щойно був — пропускаю afternoon")
+            return ""
+    except Exception:
+        pass
 
     try:
         emails = _get_important_emails(3)
@@ -648,6 +681,12 @@ def handle_afternoon_schedule(schedule_name, now_tz):
         
         message = _analyze_afternoon(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
+        try:
+            if message:
+                import ai_kit as _k_tm
+                _k_tm.topic_mark("briefing")
+        except Exception:
+            pass
         
         # Рекомендації тепер вбудовані в саму _analyze_afternoon() (розділ
         # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
@@ -670,6 +709,13 @@ def handle_evening_schedule(schedule_name, now_tz):
     if not _hourly_gate_ok():
         _log("⏸ Hourly gate: пропускаю evening — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
+    try:
+        import ai_kit as _k_tg
+        if not _k_tg.topic_ok("briefing"):
+            _log("⏸ Topic gate: брифінг щойно був — пропускаю evening")
+            return ""
+    except Exception:
+        pass
 
     try:
         emails = _get_important_emails(7)
@@ -681,6 +727,12 @@ def handle_evening_schedule(schedule_name, now_tz):
         
         message = _analyze_evening(emails, crypto, health, astro)
         _log(f"Generated: {len(message)} chars")
+        try:
+            if message:
+                import ai_kit as _k_tm
+                _k_tm.topic_mark("briefing")
+        except Exception:
+            pass
         
         # Рекомендації тепер вбудовані в саму _analyze_evening() (розділ
         # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
