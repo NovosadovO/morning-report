@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T18:15:47.665684",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Підозріло вигідна пропозиція</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81720"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81720"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81720"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81720"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81720"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81720"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T18:15:48.955227",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 31</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -247,6 +208,12 @@
       "ts": "2026-10-31T18:21:29.218589",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T18:22:27.325334",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔔 Перевірити страховку авто</b>\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
