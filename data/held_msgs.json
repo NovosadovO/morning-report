@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:30:42.896764",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How Claude stole government data</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81717"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81717"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81717"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81717"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81717"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81717"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T15:30:44.278328",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Weekly Recap: Binance Hack Hits $6.3 Billion</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-31T15:35:07.496619",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T15:35:08.373640",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
