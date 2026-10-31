@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-10-03T19:22:02"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-10-03T19:22:04"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_81698",
       "label": "🗑 Видалити",
       "ts": "2026-10-31T04:17:48"
+    },
+    {
+      "t": "btn",
+      "data": "calrem_skip_event_soon_1793410555",
+      "label": "❌ Не треба",
+      "ts": "2026-10-31T04:18:00"
     }
   ]
 }
