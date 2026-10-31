@@ -1,4 +1,14 @@
 {
+  "msg_crypto_move|2026-10-31t06_35_49_478742": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! ⚠️  Бачу, що ринок криптовалют цієї ночі демонструє доволі помітний рух, і особливо виділяється падіння TRX на 6.3%. Враховуючи, що ти зараз після",
+    "ts": "2026-10-31T06:35:49.478742"
+  },
+  "selfact|2026-10-31t06_25_03_559260": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Support Associate\",     \"text\": \"Олеже, LinkedIn пропонує нову вакансію Support Associate (Full-",
+    "ts": "2026-10-31T06:25:03.559260"
+  },
   "email_ai_item|2026-10-31t06_14_42_898326": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: Support Associate (Full-Time Remote) у Wolt та Senior Growth M",
@@ -288,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
     "ts": "2026-10-31T03:00:52.085642"
-  },
-  "action_detect|2026-10-31t03_00_39_561086": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T03:00:39.561086"
-  },
-  "healthai|2026-10-31t03_00_28_014533": {
-    "topic": "healthai",
-    "gist": "Олеже, бачу, що нічна зміна сьогодні, 31 жовтня, з 18:00 до 06:00, і відразу після неї у тебе вихідний. При цьому, останній відомий сон за 30 жовтня складав лиш",
-    "ts": "2026-10-31T03:00:28.014533"
-  },
-  "selfact|2026-10-31t06_25_03_559260": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Support Associate\",     \"text\": \"Олеже, LinkedIn пропонує нову вакансію Support Associate (Full-",
-    "ts": "2026-10-31T06:25:03.559260"
   }
 }
