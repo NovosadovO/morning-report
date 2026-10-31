@@ -1,4 +1,14 @@
 {
+  "deadlines|2026-10-31t07_24_52_559681": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"81560\",     \"kind\": \"contract\",     \"title\": \"Скасування підписки Garmin Connect+\",     \"org\": \"Garmin\",     \"deadline\": \"2026-11-04\",",
+    "ts": "2026-10-31T07:24:52.559681"
+  },
+  "selfact|2026-10-31t07_12_14_746849": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Support Associate в Wolt\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Su",
+    "ts": "2026-10-31T07:12:14.746849"
+  },
   "openloop_promises|2026-10-31t07_10_43_858739": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про дві вакансії: Key Account Manager у GymBeam в Кошице, Словачччина, та Support Associate",
     "ts": "2026-10-31T04:15:02.199375"
-  },
-  "openloop_promises|2026-10-31t04_10_39_485573": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-31T04:10:39.485573"
-  },
-  "selfact|2026-10-31t04_05_53_625394": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Key Account Manager в GymBeam\",     \"text\": \"Олеже, з'явилася нова вакансія Key Account Manager ",
-    "ts": "2026-10-31T04:05:53.625394"
   }
 }
