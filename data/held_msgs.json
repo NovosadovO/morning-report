@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T18:30:38.875496",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Підозріло вигідна пропозиція</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81720"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81720"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81720"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81720"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81720"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81720"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-31T18:30:43.364923",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-31T18:36:56.721844",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T18:36:57.538409",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
