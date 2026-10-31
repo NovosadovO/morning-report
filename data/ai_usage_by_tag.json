@@ -4,5 +4,135 @@
       1,
       2130
     ]
+  },
+  "2026-10-31": {
+    "action_detect": [
+      23,
+      52891
+    ],
+    "selfact": [
+      35,
+      272636
+    ],
+    "money": [
+      4,
+      8341
+    ],
+    "MSG_EVENT_SOON": [
+      2,
+      28000
+    ],
+    "MSG_EVENT_SOON/truthfix": [
+      2,
+      23192
+    ],
+    "foresight": [
+      13,
+      146650
+    ],
+    "foresight/truthfix": [
+      11,
+      120902
+    ],
+    "subs": [
+      3,
+      6842
+    ],
+    "astro_ai": [
+      1,
+      19526
+    ],
+    "openloop_promises": [
+      6,
+      10753
+    ],
+    "email_ai_item": [
+      5,
+      16765
+    ],
+    "deadlines": [
+      3,
+      8667
+    ],
+    "proactive_actions": [
+      6,
+      17421
+    ],
+    "MSG_CRYPTO_MOVE": [
+      3,
+      43416
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      3,
+      36318
+    ],
+    "bills": [
+      4,
+      11525
+    ],
+    "mailcal_extract": [
+      4,
+      10187
+    ],
+    "healthai": [
+      14,
+      175795
+    ],
+    "healthai/truthfix": [
+      8,
+      91788
+    ],
+    "people": [
+      1,
+      3963
+    ],
+    "calendar": [
+      1,
+      12054
+    ],
+    "calendar/truthfix": [
+      1,
+      11858
+    ],
+    "proactive_ai": [
+      1,
+      11952
+    ],
+    "hcoach": [
+      1,
+      13616
+    ],
+    "hcoach/truthfix": [
+      1,
+      12616
+    ],
+    "assistant": [
+      1,
+      11591
+    ],
+    "MORNING_AI": [
+      1,
+      13199
+    ],
+    "MORNING_AI/truthfix": [
+      1,
+      11755
+    ],
+    "themes_ai": [
+      1,
+      12984
+    ],
+    "themes_ai/truthfix": [
+      1,
+      11963
+    ],
+    "briefing": [
+      1,
+      14887
+    ],
+    "briefing/truthfix": [
+      1,
+      11857
+    ]
   }
 }
