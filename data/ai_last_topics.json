@@ -1,4 +1,9 @@
 {
+  "subs|2026-11-01t01_16_46_778137": {
+    "topic": "subs",
+    "gist": "[   {     \"uid\": \"81722\",     \"vendor\": \"Google One\",     \"amount\": \"4.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"next_du",
+    "ts": "2026-11-01T01:16:46.778137"
+  },
   "selfact|2026-11-01t01_12_06_935994": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Починається нічна зміна.\",     \"date\": \"2026-11-01\",     \"time\": \"18:00\",     \"wh",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Support Associate в Wolt\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію Su",
     "ts": "2026-10-31T07:12:14.746849"
-  },
-  "openloop_promises|2026-10-31t07_10_43_858739": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-31T07:10:43.858739"
   }
 }
