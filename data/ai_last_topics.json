@@ -1,4 +1,14 @@
 {
+  "healthai|2026-10-31t02_57_31_886384": {
+    "topic": "healthai",
+    "gist": "Олеже, чи є взагалі шанс відновити сон до початку наступної зміни, з огляду на те, що зараз ти на нічній?  Твій сон за сьогодні ще не приходив, останнє відоме —",
+    "ts": "2026-10-31T02:57:31.886384"
+  },
+  "selfact|2026-10-31t02_48_06_427589": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія: Key Account Manager в GymBeam\",     \"text\": \"Олеже, з'явилася нова вакансія Key Account Manager",
+    "ts": "2026-10-31T02:48:06.427589"
+  },
   "money|2026-10-31t02_45_46_720117": {
     "topic": "money",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-25T21:17:33.181766"
-  },
-  "action_detect|2026-10-25t21_17_22_106426": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T21:17:22.106426"
-  },
-  "action_detect|2026-10-25t21_17_11_044392": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-25T21:17:11.044392"
   }
 }
