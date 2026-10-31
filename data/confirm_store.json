@@ -17739,7 +17739,43 @@
     "pid": "email_star_81560",
     "subject": "📌 Your Garmin Connect+ Free Trial Ends Soon",
     "extra": {
-      "msg": "📩 ✉️\n📌 Your Garmin Connect+ Free Trial Ends Soon\n👤 Garmin <GarminServicesBilling@garmin.com>"
+      "msg": "📩 ✉️\n📌 Your Garmin Connect+ Free Trial Ends Soon\n👤 Garmin <GarminServicesBilling@garmin.com>",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 120973,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81560"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81560"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81560"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81560"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81560"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81560"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-31T04:20:41.348381+00:00"
   }
