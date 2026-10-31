@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T15:39:54.209245",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T15:39:55.033401",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-31T15:45:40.904779",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Підозріло вигідна пропозиція</b>\n👤 carVertical &lt;paula@carvertical.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81720"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81720"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81720"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81720"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81720"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81720"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
