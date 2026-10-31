@@ -183,5 +183,29 @@
     "subject": "Платіж за підписку на додаток ChatGPT відхилено",
     "uid": "81377",
     "last_seen": "2026-10-25"
+  },
+  "googleone": {
+    "vendor": "Google One",
+    "cycle": "monthly",
+    "currency": "EUR",
+    "charges": [
+      {
+        "date": "2026-11-01",
+        "amount": "4.99",
+        "uid": "81722"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-11-01",
+    "note": "Підписка на Google One (400 GB) з щомісячним платежем, яка потребує оновлення способу оплати.",
+    "amount": "4.99",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Платіж за підписку на додаток Google One відхилено",
+    "uid": "81722",
+    "last_seen": "2026-11-01",
+    "next_due": "2026-12-01"
   }
 }
