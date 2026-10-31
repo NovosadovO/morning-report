@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-31T12:41:08.857144",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔔 Перевірити страховку авто\n📅 04.11 (Wed) — через 4 дн.\n🕐 10:00–10:30\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-31T12:42:04.998646",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81704"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-31T12:46:38.690626",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Key Account Manager Industry (M/Ž) в Sika</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81702"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81702"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81702"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81702"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81702"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81702"
             }
           ]
         ]
