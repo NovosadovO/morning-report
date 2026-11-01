@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "vr_skip_b2b3b3d8c1",
-      "label": "❌ Не треба",
-      "ts": "2026-10-07T01:41:24"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_9dd864084a",
       "label": "🙈 Не нагадуй",
       "ts": "2026-10-07T01:41:29"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_581lh0grl9l9dq8bb5j1dmmhb8_2026-11-01",
       "label": "✅ Виконано",
       "ts": "2026-11-01T21:00:33"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_invest",
+      "label": "❌ Ні",
+      "ts": "2026-11-01T21:03:58"
     }
   ]
 }
