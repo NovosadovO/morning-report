@@ -1,4 +1,14 @@
 {
+  "healthai|2026-11-01t08_05_48_954357": {
+    "topic": "healthai",
+    "gist": "🌙 Олеже, щойно закінчилась твоя нічна зміна, і це чудовий час, щоб зосередитись на відновленні. Бачу, що дані по вазі та сну за сьогодні ще не надходили, і це в",
+    "ts": "2026-11-01T08:05:48.954357"
+  },
+  "bills|2026-11-01t08_02_33_250923": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"81560\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"invoice_no\":\"\",\"due\":\"2026-11-05\",\"already_paid\":false,\"note\":\"Нагадування про закінчення бе",
+    "ts": "2026-11-01T08:02:33.250923"
+  },
   "selfact|2026-11-01t07_58_51_479000": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Олеже, з'явилася нова вакансія від Bureau Veritas: Industry Business De",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-01T04:18:54.943695"
-  },
-  "subs|2026-11-01t04_17_04_324275": {
-    "topic": "subs",
-    "gist": "[{\"uid\":\"81560\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"cycle\":\"monthly\",\"charge_date\":\"2026-11-05\",\"next_due\":\"2026-11-05\",\"recurring\":true,\"note\":",
-    "ts": "2026-11-01T04:17:04.324275"
-  },
-  "email_ai_item|2026-11-01t04_14_02_890393": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Operations Transformation - Transformation Enablement (f/m/d)\\\" в Deutsche Börse Group",
-    "ts": "2026-11-01T04:14:02.890393"
   }
 }
