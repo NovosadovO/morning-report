@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:30:13.606682+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "bill_paid_be00040be5"
-    },
-    {
       "ts": "2026-08-27T23:30:13.607068+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14318,6 +14312,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_spray"
+    },
+    {
+      "ts": "2026-11-02T00:48:37.595357+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_shower"
     }
   ]
 }
