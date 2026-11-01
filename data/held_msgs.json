@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T00:46:04.583177",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Cardell Logistics наймає: Office &amp; Finance Coordinator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81775"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81775"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81775"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81775"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81775"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81775"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T00:46:05.884724",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Capco наймає: Data Analyst with German language</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-11-02T01:12:14.413376",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T01:12:15.240625",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
