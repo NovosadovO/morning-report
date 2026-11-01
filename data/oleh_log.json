@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_tea",
-      "label": "✅ Так",
-      "ts": "2026-10-07T20:21:14"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-10-07T20:21:23"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_81783",
       "label": "🗑 Видалити",
       "ts": "2026-11-02T00:24:02"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_spray",
+      "label": "✅ Так",
+      "ts": "2026-11-02T00:48:20"
     }
   ]
 }
