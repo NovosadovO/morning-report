@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:38:08.389295",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T15:39:25.165261",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81755"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:46:41.045443",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Sales Manager в Supermicro</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81754"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81754"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81754"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81754"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81754"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81754"
             }
           ]
         ]
