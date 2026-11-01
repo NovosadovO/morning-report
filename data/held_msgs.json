@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:01:02.737954",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81750"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81750"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81750"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81750"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81750"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81750"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T15:01:04.345951",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Claude Duet arrived last to the AI Agent race, and OpenAI ha</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
@@ -247,6 +208,12 @@
       "ts": "2026-11-01T15:11:12.610519",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T15:11:13.530743",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
