@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-20",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-10-20T20:40:34"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від J.P. Morgan з розсилкою 'Strengthening Critical Industries'. Може бути цікаво, враховуючи твої інтереси.",
       "module": "selfact",
       "ts": "2026-11-01T21:08:10"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-01",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-01T21:21:14"
     }
   ]
 }
