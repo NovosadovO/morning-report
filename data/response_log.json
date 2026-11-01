@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T19:28:52.244631+00:00",
-      "category": "ai_button",
-      "question": "email",
-      "answer": "mail",
-      "extra": {
-        "trigger": "vip_email",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-27T19:29:02.479045+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14304,6 +14294,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_26e7e8f15b"
+    },
+    {
+      "ts": "2026-11-01T21:06:25.064679+00:00",
+      "category": "chat",
+      "question": "запиши на завтра біг",
+      "answer": "Добре, Олеже! Запишу тобі біг на завтра, **2 листопада 2026 року**.\n\nО котрій годині зручніше буде?\n\n✅ <b>Додано в Google Calendar</b>\n📌 біг\n🗓 02.11.2026 (понеділок) о 10:00"
     }
   ]
 }
