@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-10-07T20:21:23"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-10-07T20:21:25"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_spray",
       "label": "✅ Так",
       "ts": "2026-11-02T00:48:20"
+    },
+    {
+      "t": "msg",
+      "kind": "cmd",
+      "text": "/звички",
+      "ts": "2026-11-02T00:48:28"
     }
   ]
 }
