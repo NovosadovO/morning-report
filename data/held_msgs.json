@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T18:46:41.219651",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ви надали сервісу OpenAI деякі дані свого облікового запису </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81766"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81766"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81766"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81766"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81766"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81766"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T18:46:43.793153",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-01T18:58:57.219970",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T18:58:58.003127",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
