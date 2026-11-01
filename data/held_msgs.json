@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T18:31:27.874301",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Cardell Logistics наймає: Office &amp; Finance Coordinator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81769"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81769"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81769"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81769"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81769"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T18:31:29.253516",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ви надали сервісу OpenAI деякі дані свого облікового запису </b>\n👤 Google &lt;noreply-accounts@google.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-11-01T18:41:32.462484",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T18:42:41.071487",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
