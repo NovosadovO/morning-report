@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-01t06_14_09_585648": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від LinkedIn про нову вакансію \\\"Industry Business Development Manager with Slovak and English\\\" від компанії Bureau Veritas у Братиславі.",
+    "ts": "2026-11-01T06:14:09.585648"
+  },
   "selfact|2026-11-01t06_09_16_010919": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні в тебе нічна зміна на заводі, початок о 18:00. Не забудь взяти вс",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, ти зараз на нічній зміні. Будь уважним на роботі.\",     \"why\": \"Сьогодні, 01",
     "ts": "2026-11-01T02:13:39.457239"
-  },
-  "bills|2026-11-01t02_01_53_420377": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"81724\",     \"vendor\": \"Google Play\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"\",     \"due\": \"2026-11-01\",     \"",
-    "ts": "2026-11-01T02:01:53.420377"
   }
 }
