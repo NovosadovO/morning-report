@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:08:47.135150",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T15:09:40.762733",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81750"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:16:16.579055",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Claude Duet arrived last to the AI Agent race, and OpenAI ha</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81749"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81749"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81749"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81749"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81749"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81749"
             }
           ]
         ]
