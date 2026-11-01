@@ -1,4 +1,14 @@
 {
+  "foresight|2026-11-01t21_53_13_632559": {
+    "topic": "foresight",
+    "gist": "Олеже, зараз саме той момент, щоб спробувати щось нове в інвестиціях, адже ринок постійно змінюється, і фінансова грамотність — це твій ключ до незалежності. Пр",
+    "ts": "2026-11-01T21:53:13.632559"
+  },
+  "mailcal_extract|2026-11-01t21_42_06_454059": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-01T21:42:06.454059"
+  },
   "selfact|2026-11-01t21_39_48_547302": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олеже, твоя підписка на Runable знову має проблеми з оплатою. Здається, потріб",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй свої ідеї та думки, коли відчуєш раптовий спа",
     "ts": "2026-11-01T09:03:03.217344"
-  },
-  "action_detect|2026-11-01t09_02_52_239728": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-01T09:02:52.239728"
-  },
-  "action_detect|2026-11-01t09_02_41_170259": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T09:02:41.170259"
   }
 }
