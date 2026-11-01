@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T01:30:38.967212+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Інтерес до крипто-новин",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-27"
-      }
-    },
-    {
       "ts": "2026-08-27T03:00:38.629993+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14321,6 +14311,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-01"
+      }
+    },
+    {
+      "ts": "2026-11-01T07:47:05.791504+00:00",
+      "category": "deadline_found",
+      "question": "Garmin Connect+ підписка — закінчення пробного періоду",
+      "answer": "2026-11-05",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
