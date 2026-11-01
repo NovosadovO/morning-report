@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T00:00:13.635048+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Спроба оплати Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-27"
-      }
-    },
-    {
       "ts": "2026-08-27T00:00:18.207885+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14311,6 +14301,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути листи від Avalanche Team1",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "ts": "2026-11-01T04:32:01.360420+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відповісти на лист від Profesia.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-01"
