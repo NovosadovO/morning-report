@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-20",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-10-20T23:41:12"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано новий лист про нерухомість у Кошиці.",
       "module": "selfact",
       "ts": "2026-11-02T00:00:29"
+    },
+    {
+      "kind": "notify",
+      "what": "У тебе сьогодні нічна зміна о 18:00. Не забудь про холодний",
+      "detail": "Плани на сьогоднішній день (02.11) включають нічну зміну о 18:00, а також ранкові ритуали (душ, вітаміни) та вечірні (вода, чай).",
+      "module": "selfact",
+      "ts": "2026-11-02T00:16:15"
     }
   ]
 }
