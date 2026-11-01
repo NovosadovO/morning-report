@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:31:20.820369",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Sales Manager в Supermicro</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81754"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81754"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81754"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81754"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81754"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81754"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T15:31:22.228981",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Well Informed: Is brown rice really healthier?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-01T15:39:44.603648",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T15:40:35.209730",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
