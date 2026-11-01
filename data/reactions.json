@@ -8484,10 +8484,11 @@
     "key": "",
     "tkey": "надійшов лист від j p morgan з розсилкою strengthening cri",
     "title": "Надійшов лист від J.P. Morgan з розсилкою 'Strengthening Cri",
-    "action": "mute",
-    "label": "🙈 Не нагадуй",
+    "action": "later",
+    "label": "⏰ Пізніше",
     "about": "Надійшов лист від J.P. Morgan з розсилкою 'Strengthening Cri",
-    "state": "closed",
-    "ts": "2026-11-01T21:08:13"
+    "state": "snoozed",
+    "ts": "2026-11-01T21:08:15",
+    "until": "2026-11-02T03:08:15"
   }
 }
