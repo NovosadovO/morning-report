@@ -1,4 +1,29 @@
 {
+  "selfact|2026-11-01t21_39_48_547302": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олеже, твоя підписка на Runable знову має проблеми з оплатою. Здається, потріб",
+    "ts": "2026-11-01T21:39:48.547302"
+  },
+  "action_detect|2026-11-01t21_33_42_869169": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Стабільно — і це вже добре.\"} ```",
+    "ts": "2026-11-01T21:33:42.869169"
+  },
+  "action_detect|2026-11-01t21_33_31_643307": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Стабільно — і це вже добре.\"} ```",
+    "ts": "2026-11-01T21:33:31.643307"
+  },
+  "action_detect|2026-11-01t21_33_20_648510": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-01T21:33:20.648510"
+  },
+  "evening_ai_truthfix|2026-11-01t21_31_11_300512": {
+    "topic": "EVENING_AI/truthfix",
+    "gist": "Олеже, вечір неділі, 1 листопада 2026 року, настає, і це час для рефлексії після насиченого дня. Ти подолав 13422 кроки, що є чудовим показником активності, хоч",
+    "ts": "2026-11-01T21:31:11.300512"
+  },
   "evening_ai|2026-11-01t21_31_02_891018": {
     "topic": "EVENING_AI",
     "gist": "Олеже, вечір неділі, 1 листопада 2026 року, настає, і це час для рефлексії після насиченого дня, хоча він і виявився робочим, а не відпочинком. Ти зараз на нічн",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-01T09:02:41.170259"
-  },
-  "action_detect|2026-11-01t09_02_30_227171": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-01T09:02:30.227171"
-  },
-  "action_detect|2026-11-01t09_02_19_165761": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-01T09:02:19.165761"
-  },
-  "action_detect|2026-11-01t09_02_08_273343": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Перевірити страховку авто\",   \"action_date\": \"2023-11-04\",   \"action_time\": \"10:00\",   \"action_summary",
-    "ts": "2026-11-01T09:02:08.273343"
-  },
-  "action_detect|2026-11-01t09_01_57_252262": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T09:01:57.252262"
-  },
-  "briefing_truthfix|2026-11-01t09_01_53_154464": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 ВЕКТОР ДНЯ  Після нічної зміни пріоритетом є відновлення, що впливає на фінансову незалежність та нову кар'єру. Схуднення до 75 кг залежить від самопочуття та",
-    "ts": "2026-11-01T09:01:53.154464"
   }
 }
