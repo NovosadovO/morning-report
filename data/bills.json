@@ -456,5 +456,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-10-25"
+  },
+  "google_play|4_99|2026-11-05": {
+    "vendor": "Google Play",
+    "amount": "4.99",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-11-05",
+    "uid": "81722",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Платіж за підписку на додаток Google One відхилено",
+    "note": "Рахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-11-01"
   }
 }
