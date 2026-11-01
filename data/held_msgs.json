@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:23:31.315975",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T15:24:40.477903",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81751"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:31:26.543123",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81750"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81750"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81750"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81750"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81750"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81750"
             }
           ]
         ]
