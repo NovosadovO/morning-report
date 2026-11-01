@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:45:59.918474",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Wolt наймає: Support Associate (Full-Time Remote)</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81740"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81740"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81740"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81740"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81740"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81740"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T12:46:18.782931",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-01T12:59:35.697101",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T13:00:39.602353",
+      "kind": "chunk",
+      "text": "🥗 <b>Обід!</b>\n\nЧас заправитись 🍽\n• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n• Не переїдай — вечеря ще буде\n\n<i>Слідкуй за порціями → 75 кг реальні!</i>",
       "keyboard": null
     }
   ]
