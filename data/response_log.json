@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:28:34.639466+00:00",
-      "category": "bill_found",
-      "question": "Runable",
-      "answer": "8.93 EUR",
-      "extra": {
-        "due": ""
-      }
-    },
-    {
       "ts": "2026-08-27T23:30:06.094532+00:00",
       "category": "confirm",
       "question": "gate_bill_paid: 💸 НОВИЙ РАХУНОК У ПОШТІ",
@@ -14321,6 +14312,12 @@
         "kind": "note",
         "date": "2026-11-02"
       }
+    },
+    {
+      "ts": "2026-11-02T00:23:51.940395+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "sb_ok_b1ea47bb91"
     }
   ]
 }
