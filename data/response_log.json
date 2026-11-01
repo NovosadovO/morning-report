@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:49:41.191733+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-27T23:49:45.072240+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14318,6 +14312,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-11-02T00:53:12.249181+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
