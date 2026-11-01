@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T00:31:00.074433",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Strengthening Critical Industries</b>\n👤 J.P. Morgan через LinkedIn&lt;newsletters-noreply@lin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81776"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81776"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81776"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81776"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81776"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81776"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T00:31:01.465069",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Cardell Logistics наймає: Office &amp; Finance Coordinator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -478,6 +439,12 @@
       "ts": "2026-11-02T01:05:07.710471",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T01:06:16.144901",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
