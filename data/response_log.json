@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T18:59:09.019685+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dm_low_b0a2cb89a8"
-    },
-    {
       "ts": "2026-08-27T19:19:30.493041+00:00",
       "category": "calendar_button",
       "question": "tomorrow",
@@ -14309,6 +14303,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_run_c92bc34b5c"
+    },
+    {
+      "ts": "2026-11-01T21:05:38.942068+00:00",
+      "category": "diary",
+      "question": "3 питання про день",
+      "answer": "завтра біг"
     }
   ]
 }
