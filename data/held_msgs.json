@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T17:54:15.975747",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T17:55:24.110159",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80805"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T18:01:10.136654",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80743"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80743"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80743"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80743"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80743"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80743"
             }
           ]
         ]
