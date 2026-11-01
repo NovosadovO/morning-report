@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T18:31:30.610412",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81560"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81560"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81560"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81560"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81560"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81560"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T18:31:31.989588",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Отримайте Balance Protectionдля своїх коштів в Aave App</b>\n👤 Aave App &lt;no-reply@aave.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-01T18:42:41.861973",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T18:43:50.799965",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
