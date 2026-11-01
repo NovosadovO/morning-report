@@ -1,4 +1,24 @@
 {
+  "healthai|2026-11-02t00_22_17_197833": {
+    "topic": "healthai",
+    "gist": "🌙 Олеже, ти зараз на нічній зміні, яка триває з 18:00 до 06:00.  За минулу ніч твій сон тривав 5 годин 31 хвилину. Вага – 84.4 кг, що на 9.4 кг більше за цільов",
+    "ts": "2026-11-02T00:22:17.197833"
+  },
+  "people|2026-11-02t00_17_15_793996": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"novosadovoleg@gmail.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"інше\",     \"topics\": [       \"нові квартири у Кошиці\"     ]",
+    "ts": "2026-11-02T00:17:15.793996"
+  },
+  "action_detect|2026-11-02t00_16_45_962942": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-02T00:16:45.962942"
+  },
+  "action_detect|2026-11-02t00_16_34_987909": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-02T00:16:34.987909"
+  },
   "selfact|2026-11-02t00_16_09_531464": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"У тебе сьогодні нічна зміна о 18:00. Не забудь про холодний душ та вітаміни о 07:00, а також випити 2л води та ",
@@ -278,25 +298,5 @@
     "topic": "calendar",
     "gist": "1) **07:00 – 10:00**: Це вікно найкраще, адже завтра Олег має вільний день, тобто немає ранкової чи нічної зміни. Він завершив нічну зміну сьогодні вранці, тому",
     "ts": "2026-11-01T21:05:03.436473"
-  },
-  "calendar|2026-11-01t21_04_52_679437": {
-    "topic": "calendar",
-    "gist": "1) 🕐 **14:00–16:00 (або пізніше, до настання темряви)** — це найкраще вікно, тому що Олег завершив нічну зміну о 06:00, тобто матиме достатньо часу для відпочин",
-    "ts": "2026-11-01T21:04:52.679437"
-  },
-  "action_detect|2026-11-01t21_01_38_895003": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата рахунку\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Сьогодні варто зос",
-    "ts": "2026-11-01T21:01:38.895003"
-  },
-  "action_detect|2026-11-01t21_01_27_554101": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-01T21:01:27.554101"
-  },
-  "action_detect|2026-11-01t21_01_16_692194": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-11-01\", \"action_time\": \"20:00\", \"action_summary\": \"Занотувати подію \\\"Нічна змін",
-    "ts": "2026-11-01T21:01:16.692194"
   }
 }
