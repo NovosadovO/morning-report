@@ -1,4 +1,19 @@
 {
+  "proactive_actions|2026-11-01t04_31_55_848746": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, твоя б",
+    "ts": "2026-11-01T04:31:55.848746"
+  },
+  "selfact|2026-11-01t04_20_22_035287": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 18:00. Не забудь про це.\",",
+    "ts": "2026-11-01T04:20:22.035287"
+  },
+  "openloop_promises|2026-11-01t04_18_54_943695": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-01T04:18:54.943695"
+  },
   "subs|2026-11-01t04_17_04_324275": {
     "topic": "subs",
     "gist": "[{\"uid\":\"81560\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"cycle\":\"monthly\",\"charge_date\":\"2026-11-05\",\"next_due\":\"2026-11-05\",\"recurring\":true,\"note\":",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-11-01T00:55:27.606173"
-  },
-  "selfact|2026-11-01t00_40_57_368536": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав кілька сповіщень про вакансії. Можливо, варто переглянути їх, адже ти активно шукаєш роботу.\"",
-    "ts": "2026-11-01T00:40:57.368536"
-  },
-  "action_detect|2026-11-01t00_34_23_658271": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T00:34:23.658271"
-  },
-  "msg_event_soon_truthfix|2026-11-01t00_34_14_987142": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Привіт Олеже! ☕  Бачу, ти зараз на нічній зміні, яка триває з 18:00 до 6 ранку. Це час, коли можна зосередитись на завданнях, що вимагають тиші та уваги.  **На ",
-    "ts": "2026-11-01T00:34:14.987142"
   }
 }
