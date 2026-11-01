@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T19:01:55.080001",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T19:01:55.823323",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -182,6 +176,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T19:15:02.572311",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .header { background-color: #f4f4f4; padding: 20px; text-align: center; border-bottom: 2px solid #ddd; } .listing-card { border: 1px solid #ddd; border-radius: 8px; margin: 20px 0; padding: 15px; display: flex; align-items: flex...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81772"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81772"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81772"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81772"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81772"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81772"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
