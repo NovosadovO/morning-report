@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T14:52:58.463448",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T14:54:15.105386",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81750"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:01:04.345951",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Claude Duet arrived last to the AI Agent race, and OpenAI ha</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81749"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81749"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81749"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81749"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81749"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81749"
             }
           ]
         ]
