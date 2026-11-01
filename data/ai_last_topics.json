@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-11-01t06_37_20_669568": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! ⚠️ Бачу, що ця ніч принесла неприємний сюрприз для портфеля, адже ринок криптовалют демонструє помітні коливання, а TRX зокрема впав на 5.8% за до",
+    "ts": "2026-11-01T06:37:20.669568"
+  },
   "mailcal_extract|2026-11-01t06_29_09_658960": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записано Google One як активну підписку. Загалом 7 пі",
     "ts": "2026-11-01T02:42:46.878108"
-  },
-  "mailcal_extract|2026-11-01t02_41_53_947870": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-11-01T02:41:53.947870"
   }
 }
