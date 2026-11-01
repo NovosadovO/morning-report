@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T01:06:33.692695+00:00",
-      "category": "calendar_confirm",
-      "question": "Зміни в графіку роботи",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Зміни в графіку роботи"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T01:06:37.182305+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14317,6 +14306,16 @@
       "answer": "Перевірити лист від Profesia.sk",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "ts": "2026-11-01T06:01:59.523540+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Avalanche Team1",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-01"
       }
     }
