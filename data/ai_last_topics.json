@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-01t03_01_05_175842": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-01T03:01:05.175842"
+  },
   "openloop_promises|2026-11-01t02_48_37_911112": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Скасувати підписку Garmin Connect+\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, нагаду",
     "ts": "2026-10-31T09:01:29.991948"
-  },
-  "action_detect|2026-10-31t09_01_01_142643": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T09:01:01.142643"
   }
 }
