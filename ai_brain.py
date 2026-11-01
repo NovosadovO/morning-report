@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 TAG = "ai_brain"
 MARK = "⁣AIBRAIN⁣"        # невидимий маркер: захист від подвійного інжекту
-MEM_MAX = 2600                       # символів пам'яті на промпт
+MEM_MAX = 1800                       # символів пам'яті на промпт
 TOPICS_FILE = "ai_last_topics.json"  # про що AI писав останнім часом
 ANSWERS_FILE = "ai_answers.json"     # відповіді Олега власними словами
 _CACHE = {"ts": None, "text": ""}
@@ -214,7 +214,7 @@ def memory_block(max_chars: int = MEM_MAX) -> str:
     # 1.5 ПОВНА ПАМ'ЯТЬ: усе, що Олег писав і натискав (recall.py)
     try:
         import recall
-        rc = recall.block(max_chars=2200)
+        rc = recall.block(max_chars=1200)
         if rc and rc.strip():
             parts.append(rc.strip())
     except Exception as e:
@@ -228,7 +228,7 @@ def memory_block(max_chars: int = MEM_MAX) -> str:
     # 3. реакції на кнопки / приховані теми (уже готовий модуль)
     try:
         import feedback_ctx
-        fb = feedback_ctx.build(days=7, max_chars=1100)
+        fb = feedback_ctx.build(days=7, max_chars=700)
         if fb and fb.strip():
             parts.append(fb.replace("\n📌 ЗВОРОТНИЙ ЗВ'ЯЗОК ОЛЕГА (реальні дані, "
                                     "спирайся на них, не вигадуй): \n", "").strip())

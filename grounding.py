@@ -25,32 +25,14 @@ TAG = "grounding"
 # Свідомо НЕ включені: action_detect / email_ai_item / qwatch_parse тощо —
 # це JSON-парсери, там grounding шкідливий і зайвий.
 GROUND_TAGS = {
-    "crypto_ai",        # аналіз крипти — потрібні свіжі новини ринку
-    "defi_digest",      # DeFi/RWA
-    "personal_ai",      # головний блок звіту
-    "themes_ai",        # теми звіту (фінанси/інвестиції)
-    "daily_rec",        # щоденні рекомендації
-    "deep_analysis",    # глибокий аналіз
-    "briefing", "briefing_v3",
-    "proactive_ai",     # проактивні повідомлення
-    "context_ask_ai",   # прямі питання Олега боту
-    "assistant",
-    "weekly_coach", "monthly_coach", "weekly_report",
-    # Реальні теги проактивних генераторів у проді (message_generator шле
-    # tag=f"MSG_{trigger}", smart_notifications_v3 — свої 4). Без них
-    # grounding не спрацьовував на найчастіших повідомленнях.
-    "MORNING_AI", "LUNCH_AI", "AFTERNOON_AI", "EVENING_AI",
-    "msg_gen",
-    # 23.08 — Олег: «перевіряй актуальну інформацію» має діяти й на генераторах,
-    # які писали текст без доступу до інтернету (реальні теги з прода).
-    "BRIEFING_GEN",       # contextual_briefing_engine — брифінг дня
-    "REC_GEN",            # recommendations_engine — рекомендації
-    "proactive_actions",  # проактивні дії/пропозиції
-    "health_ai",          # здоров'я: свіжі дані по бігу/вазі/сну + контекст
+    # Економія кредитів: пошук Google лишено тільки там, де потрібні свіжі новини
+    # або Олег питає сам. Решта (брифінги, рекомендації, здоров'я, звіти) — без нього.
+    "crypto_ai", "defi_digest", "deep_analysis", "context_ask_ai", "assistant",
+    "MSG_DEEP_ANALYSIS",
 }
 
 # Префікси тегів — MSG_CRYPTO_MOVE, MSG_DEEP_ANALYSIS, MSG_VIP_EMAIL тощо.
-GROUND_PREFIXES = ("MSG_",)
+GROUND_PREFIXES = ("MSG_CRYPTO",)
 
 _JSON_HINTS = (
     "тільки валідний json", "валідний json", "json-масив", "json масив",
