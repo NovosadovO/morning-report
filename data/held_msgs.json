@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:35:31.199106",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-01T15:35:32.042263",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T15:36:57.476152",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -148,6 +136,51 @@
       "ts": "2026-11-01T15:46:32.341246",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T15:46:33.580091",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81757"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81757"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81757"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81757"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81757"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81757"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:46:34.300751",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
