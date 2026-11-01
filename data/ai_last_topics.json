@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-01t06_20_13_742849": {
+    "topic": "healthai",
+    "gist": "Олеже, щойно завершилась твоя нічна зміна (18:00–06:00). Зараз 05:19, і ти вдома, відновлюєш сили.  Body Battery на рівні 31/100, що є низьким показником, свідч",
+    "ts": "2026-11-01T06:20:13.742849"
+  },
   "email_ai_item|2026-11-01t06_14_09_585648": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn про нову вакансію \\\"Industry Business Development Manager with Slovak and English\\\" від компанії Bureau Veritas у Братиславі.",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Support Associate (Full-Time Remote)\\\" від Wolt та \\\"Sales Manager Slovakia (m/f)\\\" ві",
     "ts": "2026-11-01T02:14:06.054761"
-  },
-  "selfact|2026-11-01t02_13_39_457239": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, ти зараз на нічній зміні. Будь уважним на роботі.\",     \"why\": \"Сьогодні, 01",
-    "ts": "2026-11-01T02:13:39.457239"
   }
 }
