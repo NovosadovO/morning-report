@@ -1,4 +1,14 @@
 {
+  "bills|2026-11-01t04_02_06_371285": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"81560\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"invoice_no\":\"\",\"due\":\"2026-11-05\",\"already_paid\":false,\"note\":\"Це повідомлення про закінченн",
+    "ts": "2026-11-01T04:02:06.371285"
+  },
+  "money|2026-11-01t03_50_56_711665": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-11-01T03:50:56.711665"
+  },
   "selfact|2026-11-01t03_49_39_555060": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, зараз 03:49, і в тебе сьогодні о 18:00 починається нічна зміна на",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-11-01T00:07:29.536037"
-  },
-  "selfact|2026-10-31t09_15_35_497649": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, LinkedIn надіслав нові вакансії: Key Account Manager Industry (M/",
-    "ts": "2026-10-31T09:15:35.497649"
-  },
-  "action_detect|2026-10-31t09_10_59_976838": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
-    "ts": "2026-10-31T09:10:59.976838"
   }
 }
