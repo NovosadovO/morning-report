@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T11:10:02.775517",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T11:10:43.525987",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; color: #333; } .listing { border-bottom: 1px solid #ccc; padding: 15px 0; display: flex; } .photo { margin-right: 15px; } .details { flex: 1; } .title { font-size: 18px; font-weight: bold; margin-bottom: 5px; } .price { color: #d32f2f; font-weight: bold; font-s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-11-01T11:24:34.134734",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T11:24:34.923561",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
