@@ -464,6 +464,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-02T00:46:03.243511",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Strengthening Critical Industries</b>\n👤 J.P. Morgan через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81776"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81776"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81776"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81776"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81776"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81776"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
