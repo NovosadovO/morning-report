@@ -56,6 +56,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-02T00:30:56.020463",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Banks are locking out AI Agents and shifting the losses to c</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81781"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81781"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81781"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81781"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81781"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81781"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
