@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_spray",
-      "label": "❌ Ні",
-      "ts": "2026-10-07T20:21:25"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-10-07T20:21:27"
@@ -7199,6 +7193,12 @@
       "kind": "cmd",
       "text": "/звички",
       "ts": "2026-11-02T00:48:28"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_shower",
+      "label": "❌",
+      "ts": "2026-11-02T00:48:36"
     }
   ]
 }
