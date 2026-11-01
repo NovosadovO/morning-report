@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T14:51:36.802359",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T14:52:57.761732",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81752"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:01:01.227276",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Britain’s boring Budget</b>\n👤 Financial Times через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81751"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81751"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81751"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81751"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81751"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81751"
             }
           ]
         ]
