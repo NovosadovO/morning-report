@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T01:06:27.603801+00:00",
-      "category": "confirm",
-      "question": "gate_cal_add: Зміни в графіку роботи",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-27T01:06:33.692695+00:00",
       "category": "calendar_confirm",
       "question": "Зміни в графіку роботи",
@@ -14315,6 +14309,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_c250dee078"
+    },
+    {
+      "ts": "2026-11-01T06:01:54.995562+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-01"
+      }
     }
   ]
 }
