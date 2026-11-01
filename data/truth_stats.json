@@ -245,6 +245,9 @@
     "run_week_synth": {
       "checked": 2,
       "issues": 1
+    },
+    "monthly_coach": {
+      "checked": 1
     }
   },
   "last": [
@@ -670,7 +673,7 @@
     "fixed": 5
   },
   "2026-11-01": {
-    "checked": 43,
+    "checked": 44,
     "issues": 30,
     "fixed": 8,
     "cut": 5
