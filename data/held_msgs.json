@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T00:46:05.884724",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Capco наймає: Data Analyst with German language</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81774"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81774"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81774"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81774"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81774"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81774"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T00:59:01.858852",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-02T01:12:15.240625",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T01:13:25.848394",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
