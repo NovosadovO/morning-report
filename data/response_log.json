@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T19:19:30.493041+00:00",
-      "category": "calendar_button",
-      "question": "tomorrow",
-      "answer": "accepted",
-      "extra": {
-        "stage": "tomorrow",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-27T19:19:31.780445+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14309,6 +14298,12 @@
       "category": "diary",
       "question": "3 питання про день",
       "answer": "завтра біг"
+    },
+    {
+      "ts": "2026-11-01T21:06:00.401510+00:00",
+      "category": "confirm",
+      "question": "gate_calrem_add: Вписати біг",
+      "answer": "no"
     }
   ]
 }
