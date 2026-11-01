@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:15:43.371539",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🚚 Doprava zadarmo nad 30 € končí dnes o polnoci!</b>\n👤 \"Lidl\" &lt;news@mail.lidlplus.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81741"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81741"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81741"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81741"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81741"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81741"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T12:15:44.776690",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Wolt наймає: Support Associate (Full-Time Remote)</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-11-01T12:29:11.332750",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T12:29:12.100308",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
