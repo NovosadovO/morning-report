@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:19:34.825229",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T12:20:43.861773",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81747"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T12:30:45.057646",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.56 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81746"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81746"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81746"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81746"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81746"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81746"
             }
           ]
         ]
