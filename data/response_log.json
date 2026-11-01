@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T03:00:46.657127+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Виступ Кевіна Ворша на Jackson Hole",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-28"
-      }
-    },
-    {
       "ts": "2026-08-27T04:30:37.859294+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14317,6 +14307,12 @@
       "category": "event_done",
       "question": "📅 💊 Вітаміни ✅\nПланувалась до 09:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-01T21:03:59.789329+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
     }
   ]
 }
