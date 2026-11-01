@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T01:06:37.182305+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e3662f4dfb"
-    },
-    {
       "ts": "2026-08-27T01:30:34.714977+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14314,6 +14308,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від Avalanche Team1",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "ts": "2026-11-01T07:31:46.092311+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Profesia.sk",
       "extra": {
         "kind": "reply",
         "date": "2026-11-01"
