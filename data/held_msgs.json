@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T00:45:57.696582",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81782"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81782"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81782"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81782"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81782"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81782"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T00:45:59.010144",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Banks are locking out AI Agents and shifting the losses to c</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-11-02T01:08:38.133230",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T01:09:47.494017",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
