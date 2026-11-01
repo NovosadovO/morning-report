@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:15:34.917949",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T12:15:36.250079",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Claude Duet arrived last to the AI Agent race, and OpenAI ha</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
@@ -379,6 +373,12 @@
       "ts": "2026-11-01T12:25:32.083923",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T12:25:32.939191",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
