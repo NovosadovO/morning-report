@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-01t07_28_00_463916": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Свіжі вакансії\",     \"text\": \"Олеже, надійшов лист про вакансію Industry Business Development Manager з вимога",
+    "ts": "2026-11-01T07:28:00.463916"
+  },
+  "openloop_promises|2026-11-01t07_20_20_372013": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-01T07:20:20.372013"
+  },
   "subs|2026-11-01t07_17_03_001515": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"81560\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, зараз 03:49, і в тебе сьогодні о 18:00 починається нічна зміна на",
     "ts": "2026-11-01T03:49:39.555060"
-  },
-  "action_detect|2026-11-01t03_36_17_387881": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T03:36:17.387881"
-  },
-  "msg_event_soon_truthfix|2026-11-01t03_36_08_679477": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Привіт Олеже!  Твої дані за минулу добу застарілі, але на найближчі 24 години є чіткий план дій. Ти зараз на нічній зміні (18:00-06:00), і поки що пульс спокою ",
-    "ts": "2026-11-01T03:36:08.679477"
   }
 }
