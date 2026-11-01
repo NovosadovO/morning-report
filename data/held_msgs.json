@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:06:16.417831",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T12:06:17.187414",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81741"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T12:15:44.776690",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Wolt наймає: Support Associate (Full-Time Remote)</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81740"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81740"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81740"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81740"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81740"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81740"
             }
           ]
         ]
