@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-01t06_01_19_775627": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-01T06:01:19.775627"
+  },
+  "selfact|2026-11-01t05_53_11_927962": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні вночі в тебе нічна зміна на заводі. Не забудь про неї.\",     \"dat",
+    "ts": "2026-11-01T05:53:11.927962"
+  },
   "openloop_promises|2026-11-01t05_49_52_332055": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 18:00.\",     \"date\": \"20",
     "ts": "2026-11-01T01:42:47.199286"
-  },
-  "action_detect|2026-11-01t01_37_21_461467": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз падіння TRX та рекомендації щодо пошуку причин",
-    "ts": "2026-11-01T01:37:21.461467"
-  },
-  "msg_crypto_move_truthfix|2026-11-01t01_37_12_628185": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже! 💹 Бачу, що ця ніч принесла неприємний сюрприз з TRX, який впав на 8.4% за добу. Це помітний рух, особливо на тлі загальної стабільності ринку, яку",
-    "ts": "2026-11-01T01:37:12.628185"
   }
 }
