@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T21:06:11.405962+00:00",
-      "category": "diary",
-      "question": "3 питання про день",
-      "answer": "чому немає звітів?"
-    },
-    {
       "ts": "2026-08-27T21:06:45.859349+00:00",
       "category": "chat",
       "question": "чому немає звітів?",
@@ -14300,6 +14294,12 @@
       "category": "confirm",
       "question": "calrem_skip: Оплата рахунку",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-01T21:06:38.908211+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_e3d5e9e98e"
     }
   ]
 }
