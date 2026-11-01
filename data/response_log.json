@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:30:06.094532+00:00",
-      "category": "confirm",
-      "question": "gate_bill_paid: 💸 НОВИЙ РАХУНОК У ПОШТІ",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-27T23:30:13.606682+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14318,6 +14312,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "sb_ok_b1ea47bb91"
+    },
+    {
+      "ts": "2026-11-02T00:48:22.641683+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_spray"
     }
   ]
 }
