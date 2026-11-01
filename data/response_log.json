@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T00:48:52.753351+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_228bc8bd36"
-    },
-    {
       "ts": "2026-08-27T01:06:27.603801+00:00",
       "category": "confirm",
       "question": "gate_cal_add: Зміни в графіку роботи",
@@ -14315,6 +14309,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-11-01T05:07:10.042049+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_c250dee078"
     }
   ]
 }
