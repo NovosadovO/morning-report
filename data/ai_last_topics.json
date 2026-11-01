@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-11-01t02_48_37_911112": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-01T02:48:37.911112"
+  },
+  "selfact|2026-11-01t02_45_11_100710": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, зараз 02:45, а твоя нічна зміна на заводі починається о 18:00. Ще є час до ",
+    "ts": "2026-11-01T02:45:11.100710"
+  },
+  "action_detect|2026-11-01t02_43_42_273900": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-01T02:43:42.273900"
+  },
+  "action_detect|2026-11-01t02_42_57_801474": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-01T02:42:57.801474"
+  },
+  "action_detect|2026-11-01t02_42_46_878108": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записано Google One як активну підписку. Загалом 7 пі",
+    "ts": "2026-11-01T02:42:46.878108"
+  },
   "mailcal_extract|2026-11-01t02_41_53_947870": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасувати",
     "ts": "2026-10-31T09:01:01.142643"
-  },
-  "healthai_truthfix|2026-10-31t08_58_50_461243": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, зараз 07:58, субота, 31 жовтня 2026 року.  *   **Сон:** Дані за 30 жовтня показують 4.2 години сну, що значно менше середнього за 7 днів (7.8 години). Да",
-    "ts": "2026-10-31T08:58:50.461243"
-  },
-  "healthai|2026-10-31t08_58_39_754982": {
-    "topic": "healthai",
-    "gist": "Привіт, Олеже!  Щойно закінчилась нічна зміна, і зараз 07:58. Цей час є ключовим для твого відновлення.  * **Сон:** За сьогодні дані по сну ще не приходили. Ост",
-    "ts": "2026-10-31T08:58:39.754982"
-  },
-  "selfact|2026-10-31t08_44_46_792745": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії від LinkedIn\",     \"text\": \"Олеже, LinkedIn прислав нові вакансії: Key Account Manager Industry ",
-    "ts": "2026-10-31T08:44:46.792745"
-  },
-  "openloop_promises|2026-10-31t08_40_43_760307": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-10-31T08:40:43.760307"
-  },
-  "selfact|2026-10-31t08_28_50_437920": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії LinkedIn\",     \"text\": \"Олеже, у тебе є нові сповіщення про вакансії на LinkedIn, які можуть бут",
-    "ts": "2026-10-31T08:28:50.437920"
   }
 }
