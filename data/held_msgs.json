@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T15:39:43.720193",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T15:39:44.603648",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81752"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T15:46:45.015246",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Britain’s boring Budget</b>\n👤 Financial Times через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81751"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81751"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81751"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81751"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81751"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81751"
             }
           ]
         ]
