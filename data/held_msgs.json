@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:35:22.825589",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-01T12:35:23.689661",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81746"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-01T12:45:56.998712",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81742"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81742"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81742"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81742"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81742"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81742"
             }
           ]
         ]
