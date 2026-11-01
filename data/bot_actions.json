@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-20",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-20T11:39:12"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Сьогодні, 01.11, заплановані 💊 Вітаміни та 🚿 Холодний душ на 07:00, а також Нічна зміна о 18:00.",
       "module": "selfact",
       "ts": "2026-11-01T06:09:27"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-01",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-01T06:19:44"
     }
   ]
 }
