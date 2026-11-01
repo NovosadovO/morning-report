@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T12:01:33.090159",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Projects paused due to unpaid invoice</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81747"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81747"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81747"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81747"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81747"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81747"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T12:01:33.967987",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -346,6 +307,12 @@
       "ts": "2026-11-01T12:12:21.179343",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T12:12:21.912300",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
