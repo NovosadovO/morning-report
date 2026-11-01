@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T00:00:18.207885+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-27"
-      }
-    },
-    {
       "ts": "2026-08-27T00:00:22.562877+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14314,6 +14304,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-01"
+      }
+    },
+    {
+      "ts": "2026-11-01T04:47:06.199251+00:00",
+      "category": "deadline_found",
+      "question": "Підписка Garmin Connect+ — закінчення пробного періоду",
+      "answer": "2026-11-05",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
