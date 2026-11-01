@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-01T18:16:19.362180",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Отримайте Balance Protectionдля своїх коштів в Aave App</b>\n👤 Aave App &lt;no-reply@aave.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81485"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81485"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81485"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81485"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81485"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81485"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-01T18:16:20.691283",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-01T18:27:43.075485",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-01T18:27:43.945093",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
