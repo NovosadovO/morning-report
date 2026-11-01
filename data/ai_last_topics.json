@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-01t09_00_29_726301": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Починаємо день правильно з повноцінного сніда",
+    "ts": "2026-11-01T09:00:29.726301"
+  },
+  "money|2026-11-01t08_51_38_835042": {
+    "topic": "money",
+    "gist": "[{\"uid\":\"81560\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"date\":\"2026-11-05\",\"kind\":\"sub\",\"note\":\"Щомісячна оплата підписки Garmin Connect+.\"}]",
+    "ts": "2026-11-01T08:51:38.835042"
+  },
   "openloop_promises|2026-11-01t08_51_27_390381": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-01T05:05:01.289436"
-  },
-  "action_detect|2026-11-01t05_04_50_269823": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T05:04:50.269823"
-  },
-  "calendar_truthfix|2026-11-01t05_02_41_780020": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, бачу, ти на нічній зміні.  Після завершення зміни зверни увагу на AVAX у портфелі. Також, нагадую про перевірку страховки авто, заплановану на 4 листопад",
-    "ts": "2026-11-01T05:02:41.780020"
   }
 }
