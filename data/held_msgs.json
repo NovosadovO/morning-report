@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T03:16:08.245448",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T03:16:09.585440",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-02T03:26:55.949430",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T03:26:56.854222",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
