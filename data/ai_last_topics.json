@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-02t21_18_03_771187": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81825\",     \"title\": \"Ранковий дайджест ринків\",     \"date\": \"2026-11-02\",     \"time\": \"16:44\",     \"kind\": \"other\",     \"why\": \"Ранко",
+    "ts": "2026-11-02T21:18:03.771187"
+  },
+  "healthai|2026-11-02t21_05_26_750920": {
+    "topic": "healthai",
+    "gist": "👋 Олено, за сьогодні дані по вазі ще не приходили, останнє відоме — 2026-11-01, 1 день тому.  Поки що зафіксовано 6.7 годин сну, але це може бути неповне значен",
+    "ts": "2026-11-02T21:05:26.750920"
+  },
   "selfact|2026-11-02t21_04_21_342690": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, нагадую, що страховка на авто потребує перевірки. Залишилося 4 дні д",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-02T18:01:32.254442"
-  },
-  "action_detect|2026-11-02t18_01_21_327331": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-02T18:01:21.327331"
-  },
-  "action_detect|2026-11-02t18_01_10_667986": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-02T18:01:10.667986"
   }
 }
