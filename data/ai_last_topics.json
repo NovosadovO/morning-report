@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-02t18_13_50_466733": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"dat",
+    "ts": "2026-11-02T18:13:50.466733"
+  },
   "healthai|2026-11-02t18_05_47_929401": {
     "topic": "healthai",
     "gist": "👋 Олеже, поки що за сьогодні дані про вагу ще не приходили, останнє відоме — 2026-11-01, 1 день тому, а тренд зростає (+0.2 кг). Сон поки що зафіксовано 6.7 год",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-02T15:01:51.443495"
-  },
-  "action_detect|2026-11-02t15_01_40_207979": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страхування Kooperativa\", \"action_date\": \"2023-11-08\", \"action_time\": null, \"action_summary\": \"Необхідно о",
-    "ts": "2026-11-02T15:01:40.207979"
   }
 }
