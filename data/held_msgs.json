@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T00:46:42.845156",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Binance Reopens Withdrawals and Publishes Reserve Proof</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81844"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81844"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81844"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81844"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81844"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81844"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T00:46:44.260454",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy adds 811 bitcoin to its holdings</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-03T00:53:14.237213",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T00:54:33.703473",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Strategy adds 811 bitcoin to its holdings\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
