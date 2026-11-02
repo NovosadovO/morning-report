@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T22:14:23.928178",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Support Associate (Full-Time Remote) в Wolt»\n\n<i>«Сповіщення про вакансії в Slovakia            \r\nSupport Associate (Full-Time Remote)\r\nWolt\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4485411570/?trackingId=q5Ld4is9YxWvYrhMbvQU%2BA%3D%3D&amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81838"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81838"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81838"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81838"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81838"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81838"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T22:25:37.871201",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-02T22:39:50.037099",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T22:41:00.423654",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
