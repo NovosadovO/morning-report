@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_k2nbhhlp27c5ulf2oupjtahn70_2026-10-07",
-      "label": "❌ Не виконано",
-      "ts": "2026-10-07T23:29:11"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_mo91v63pv67rqshqjvbrdbqfms_2026-10-07",
       "label": "❌ Не виконано",
       "ts": "2026-10-07T23:29:12"
@@ -7199,6 +7193,12 @@
       "data": "rx_read_bcf239b7c0",
       "label": "👍 Прочитав",
       "ts": "2026-11-02T16:11:33"
+    },
+    {
+      "t": "btn",
+      "data": "rx_later_1424d90983",
+      "label": "⏰ Пізніше",
+      "ts": "2026-11-02T16:11:48"
     }
   ]
 }
