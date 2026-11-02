@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:49:50.532862+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_tea"
-    },
-    {
       "ts": "2026-08-27T23:49:54.064343+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14318,6 +14312,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити нові робочі пропозиції",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-02"
+      }
+    },
+    {
+      "ts": "2026-11-02T04:30:19.658650+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові оголошення про квартири",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-02"
