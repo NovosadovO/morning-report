@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-02t12_46_54_710871": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування: перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дн",
+    "ts": "2026-11-02T12:46:54.710871"
+  },
   "selfact|2026-11-02t12_31_42_541405": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, у тебе сьогодні вільне вікно з 09:00 до 22:00. Враховуючи, що мета — знизити витрати, можливо, варто роз",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-02T09:02:35.824314"
-  },
-  "action_detect|2026-11-02t09_02_24_861760": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано інформацію про фінанси, здоров'я та по",
-    "ts": "2026-11-02T09:02:24.861760"
   }
 }
