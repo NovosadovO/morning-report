@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-02t12_54_52_592855": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=81792\",     \"title\": \"Нові квартири у Кошіці\",     \"date\": \"2026-11-02\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Звіт з",
+    "ts": "2026-11-02T12:54:52.592855"
+  },
   "selfact|2026-11-02t12_46_54_710871": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування: перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дн",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-02T09:02:47.965595"
-  },
-  "action_detect|2026-11-02t09_02_35_824314": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-02T09:02:35.824314"
   }
 }
