@@ -1844,5 +1844,18 @@
     "note": "Платіж за підписку на додаток ChatGPT відхилено. Оновіть спосіб оплати до 1 листопада, інакше підписку буде скасовано.",
     "uid": "81377",
     "ts": "2026-11-02T00:17:22.878365+00:00"
+  },
+  "9cae07bc6b": {
+    "bid": "garmin_connect_|8_99|2026-11-05",
+    "vendor": "Garmin Connect+",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-11-05",
+    "invoice_no": "EUR4369771",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Garmin Connect+ Subscription Confirmation",
+    "note": "Рахунок за місячну підписку Garmin Connect+, оплатити до 5 листопада.",
+    "uid": "80341",
+    "ts": "2026-11-03T00:17:37.618162+00:00"
   }
 }
