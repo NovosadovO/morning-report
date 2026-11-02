@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T16:23:18.597104+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Вечірній догляд за обличчям",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t30",
-        "when": "16:50–17:20",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-28T16:23:19.642153+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14309,6 +14298,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-11-02T21:58:33.963957+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
