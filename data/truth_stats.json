@@ -136,7 +136,8 @@
     "LUNCH_AI": {
       "checked": 35,
       "issues": 23,
-      "fixed": 9
+      "fixed": 9,
+      "cut": 1
     },
     "MSG_EVENING": {
       "checked": 20,
@@ -688,6 +689,6 @@
     "checked": 42,
     "issues": 36,
     "fixed": 15,
-    "cut": 6
+    "cut": 7
   }
 }
