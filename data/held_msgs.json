@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T23:51:42.424859",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-02T23:52:58.729940",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T23:52:59.565613",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -320,6 +308,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T00:01:11.742401",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Pánske vysokoelastick...vyzerá lepšie za menej peňazí</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81836"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81836"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81836"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81836"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81836"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81836"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
