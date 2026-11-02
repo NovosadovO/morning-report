@@ -1,4 +1,34 @@
 {
+  "selfact|2026-11-02t07_35_17_473625": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшов лист з LinkedIn щодо вакансії Senior Software Engineer - Frontend - Consumer в Kraken. Також є ",
+    "ts": "2026-11-02T07:35:17.473625"
+  },
+  "morning_ai_truthfix|2026-11-02t07_31_22_129589": {
+    "topic": "MORNING_AI/truthfix",
+    "gist": "Олеже, після нічної зміни твій організм потребує відновлення.  Сон за минулу добу становив 0 годин, тому сьогодні пріоритет — якісний відпочинок.  На крипторинк",
+    "ts": "2026-11-02T07:31:22.129589"
+  },
+  "msg_event_soon|2026-11-02t07_31_13_220464": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Бачу, що після твоєї нічної зміни ти зараз відпочиваєш, і це саме той час, щоб відновити сили перед новим днем.  Вже за 30-90 хвилин, о 09:00, ",
+    "ts": "2026-11-02T07:31:13.220464"
+  },
+  "morning_ai|2026-11-02t07_31_02_847916": {
+    "topic": "MORNING_AI",
+    "gist": "Привіт, Олеже!  Бачу, що ти щойно завершив нічну зміну і зараз знаходишся вдома, відновлюючись. Головне завдання зараз – це якісний відпочинок після напруженої ",
+    "ts": "2026-11-02T07:31:02.847916"
+  },
+  "proactive_actions|2026-11-02t07_30_13_907984": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"calendar\",     \"title\": \"Біг\",     \"date\": \"2026-11-02\",     \"time\": \"10:00\",     \"message\": \"Олеже, час для запланованого бігу. Це д",
+    "ts": "2026-11-02T07:30:13.907984"
+  },
+  "money|2026-11-02t07_27_43_018858": {
+    "topic": "money",
+    "gist": "[]",
+    "ts": "2026-11-02T07:27:43.018858"
+  },
   "openloop_promises|2026-11-02t07_27_32_039410": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -268,35 +298,5 @@
     "topic": "healthai",
     "gist": "Олеже, твій вечірній графік показує нічну зміну з 18:00 до 06:00. Спостерігаємо, що вага 84.4 кг є актуальною за 2026-11-01, а тривалість сну 5.5 годин також за",
     "ts": "2026-11-02T04:00:46.552048"
-  },
-  "action_detect|2026-11-02t00_24_25_352097": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-02T00:24:25.352097"
-  },
-  "action_detect|2026-11-02t00_24_14_514939": {
-    "topic": "action_detect",
-    "gist": "{ \"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null }",
-    "ts": "2026-11-02T00:24:14.514939"
-  },
-  "action_detect|2026-11-02t00_24_03_450424": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-02T00:24:03.450424"
-  },
-  "action_detect|2026-11-02t00_23_52_414771": {
-    "topic": "action_detect",
-    "gist": "{ \"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасува",
-    "ts": "2026-11-02T00:23:52.414771"
-  },
-  "action_detect|2026-11-02t00_23_30_606880": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Не буду турбувати про здоров'я 12 ",
-    "ts": "2026-11-02T00:23:30.606880"
-  },
-  "healthai_truthfix|2026-11-02t00_22_27_399251": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, твої дані про здоров'я застарілі на 1 день.  *   Сон тривав 5 год 31 хв. *   Вага — 84.4 кг, на 9.4 кг більше цілі. *   Кроки за добу: 13520.  Стрес на р",
-    "ts": "2026-11-02T00:22:27.399251"
   }
 }
