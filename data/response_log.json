@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T03:00:36.757209+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Інформація про залучення інвестицій Runable",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-28"
-      }
-    },
-    {
       "ts": "2026-08-28T03:20:40.269380+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14313,6 +14303,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_invest"
+    },
+    {
+      "ts": "2026-11-02T21:58:06.281017+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
