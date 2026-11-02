@@ -695,20 +695,21 @@
   },
   "support@profesia.sk": {
     "name": "Profesia.sk",
-    "relation": "сервіс",
+    "relation": "робота",
     "vip": false,
     "topics": [
-      "персоналізовані робочі пропозиції"
+      "персоналізовані вакансії",
+      "нові робочі пропозиції"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Переглянути нові робочі пропозиції на Profesia.sk.",
-    "ping_in_days": 7,
+    "next_step": "Переглянути нові персоналізовані робочі пропозиції на Profesia.sk.",
+    "ping_in_days": -1,
     "last_in": "",
     "last_subject": "",
     "last_out": "",
-    "updated": "2026-11-01",
+    "updated": "2026-11-02",
     "pinged_at": ""
   },
   "garminservicesbilling@garmin.com": {
