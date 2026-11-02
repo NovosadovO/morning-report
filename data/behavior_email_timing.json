@@ -1,9 +1,4 @@
 {
-  "80624": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-10-11T08:50:24.740752+00:00"
-  },
   "80627": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@myasteria.com",
     "sender_raw": "Asteria Events <events@myasteria.com>",
     "seen_ts": "2026-11-02T16:50:13.471435+00:00"
+  },
+  "81830": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-11-02T18:12:10.564971+00:00"
   }
 }
