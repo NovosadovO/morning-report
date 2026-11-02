@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T00:25:34.555835",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T00:25:35.422243",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81843"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-03T00:31:33.042878",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81842"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81842"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81842"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81842"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81842"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81842"
             }
           ]
         ]
