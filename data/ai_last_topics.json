@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-02t13_00_57_296537": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-02T13:00:57.296537"
+  },
   "mailcal_extract|2026-11-02t12_54_52_592855": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=81792\",     \"title\": \"Нові квартири у Кошіці\",     \"date\": \"2026-11-02\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Звіт з",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Олеже, ти щойно завершив нічну зміну, і зараз твоє тіло потребує відновлення; чи міг би ти поділитись, скільки годин тобі вдалось поспати сьогодні? Адже минул",
     "ts": "2026-11-02T09:05:38.448184"
-  },
-  "action_detect|2026-11-02t09_02_47_965595": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-02T09:02:47.965595"
   }
 }
