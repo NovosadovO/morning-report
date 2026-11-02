@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_good",
-      "detail": "😴 Сон за тиждень у середньому 7.4 год — стабільно добре",
-      "module": "healthai",
-      "ts": "2026-10-21T20:54:15"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи: uid=81822 | від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення. Свіжі листи: uid=81823 | від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Support Associate (Full-Time Remote) в Wolt.",
       "module": "selfact",
       "ts": "2026-11-02T18:29:23"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, схоже, ти цікавишся криптовалютами. Тобі надійшли нов",
+      "detail": "Свіжі листи: uid=81815 | від CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com> | 📰 AI-curated Daily Crypto Digest - November 2. Свіжі листи: uid=81814 | від Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com> | 📰 Daily Crypto Digest — November 2.",
+      "module": "selfact",
+      "ts": "2026-11-02T18:29:29"
     }
   ]
 }
