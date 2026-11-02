@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Новини про Bybit та інституційну торгівлю",
-      "detail": "Олег активно стежить за новинами та вакансіями у криптосфері.",
-      "module": "selfact",
-      "ts": "2026-10-21T11:40:07"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-21",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "05.11: 10:00 Нагадування: через 4 дні страховка на авто",
       "module": "selfact",
       "ts": "2026-11-02T10:12:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, нагадую, що через тиждень тобі потрібно оплатити стра",
+      "detail": "08.11: 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень",
+      "module": "selfact",
+      "ts": "2026-11-02T10:12:45"
     }
   ]
 }
