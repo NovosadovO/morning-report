@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:49:54.064343+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-27T23:49:59.417767+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14325,6 +14319,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-02"
+      }
+    },
+    {
+      "ts": "2026-11-02T04:47:57.747025+00:00",
+      "category": "deadline_found",
+      "question": "Garmin Connect+ — закінчення безкоштовного періоду",
+      "answer": "2026-11-04",
+      "extra": {
+        "kind": "contract"
       }
     }
   ]
