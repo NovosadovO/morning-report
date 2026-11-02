@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T23:50:29.918467",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-02T23:50:31.439409",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-02T23:51:41.557077",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T23:51:42.424859",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -292,6 +274,51 @@
       "ts": "2026-11-03T00:01:06.351817",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• The Daily Degen  → The Daily Degen - November 2nd, 2026\n• Temu  → Pánske vysokoelastick...vyzerá lepšie za menej peňazí\n• Asteria Events  → Asteria Business Update: webinár vo štvrtok o 20:00\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T00:01:09.111633",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - November 2nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81837"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81837"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81837"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81837"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81837"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81837"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-03T00:01:09.623657",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
