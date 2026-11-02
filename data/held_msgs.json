@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T02:47:26.681352",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T02:47:27.620083",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T03:01:02.321871",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your Garmin Connect+ Free Trial Ends Soon</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81785"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81785"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81785"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81785"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81785"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81785"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
