@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T03:00:27.904277+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Сплатити Runable $10.00",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-28"
-      }
-    },
-    {
       "ts": "2026-08-28T03:00:32.498348+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14321,6 +14311,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-11-02T16:17:07.803529+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
