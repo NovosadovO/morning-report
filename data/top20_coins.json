@@ -1,5 +1,5 @@
 {
-  "ts": 1793505407.7092485,
+  "ts": 1793591929.9036396,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -12,14 +12,14 @@
     "HYPE": "hyperliquid",
     "DOGE": "dogecoin",
     "XMR": "monero",
-    "LINK": "chainlink",
     "WBT": "whitebit",
+    "LINK": "chainlink",
     "LEO": "leo-token",
     "ADA": "cardano",
     "XLM": "stellar",
-    "NEAR": "near",
     "BCH": "bitcoin-cash",
+    "NEAR": "near",
     "UNI": "uniswap",
-    "RAIN": "rain"
+    "LTC": "litecoin"
   }
 }
