@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T00:10:24.609050+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-28T00:10:26.526568+00:00",
       "category": "event_done",
       "question": "📅 💈 Спрей для волосся ❌\nПланувалась до 20:40 — виконано?",
@@ -14329,6 +14323,12 @@
       "category": "confirm",
       "question": "calrem_skip: Оплатити поточні рахунки",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-02T16:13:02.216791+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_80abdd4d4e"
     }
   ]
 }
