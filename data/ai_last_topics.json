@@ -298,5 +298,15 @@
     "topic": "bills",
     "gist": "[{\"uid\":\"81785\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"invoice_no\":\"\",\"due\":\"2026-11-05\",\"already_paid\":false,\"note\":\"Рахунок за підписку Garmin Co",
     "ts": "2026-11-02T08:03:50.482642"
+  },
+  "action_detect|2026-11-02t11_12_03_843122": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Запропонувати зважитися та записат",
+    "ts": "2026-11-02T11:12:03.843122"
+  },
+  "healthai_truthfix|2026-11-02t11_06_07_991033": {
+    "topic": "healthai/truthfix",
+    "gist": "🌙 Олеже, ти щойно завершив нічну зміну, і зараз твоє тіло потребує відновлення. Дані за останні 7 днів показують, що твій сон зменшився на 0.7 години, а його ст",
+    "ts": "2026-11-02T11:06:07.991033"
   }
 }
