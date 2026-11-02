@@ -227,7 +227,7 @@
       "fixed": 1
     },
     "MSG_CRYPTO_MOVE": {
-      "checked": 255,
+      "checked": 256,
       "issues": 193,
       "fixed": 81,
       "cut": 2
@@ -681,7 +681,7 @@
     "cut": 5
   },
   "2026-11-02": {
-    "checked": 58,
+    "checked": 59,
     "issues": 48,
     "fixed": 24,
     "cut": 7
