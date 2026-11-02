@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-21T17:06:41"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, нагадую, що сьогодні, 21 жовтня, о 19:00 у тебе запла",
       "detail": "Запланована подія в календарі на 21.10: 19:00 Кардіо прогулянка. Поточний час 17:23, залишається достатньо часу.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-02T15:24:13"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-02T15:24:29"
     }
   ]
 }
