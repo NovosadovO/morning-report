@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-21T11:42:57"
-    },
-    {
       "kind": "notify",
       "what": "Дедлайн Socios.com минув",
       "detail": "Дедлайн 'Socios.com: зміна способу входу' з датою 2026-08-27 вже минув.",
@@ -2799,6 +2792,13 @@
       "detail": "uid=81792 | від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 2 нових оголошень",
       "module": "selfact",
       "ts": "2026-11-02T10:12:51"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-02T11:06:13"
     }
   ]
 }
