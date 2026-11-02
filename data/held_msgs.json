@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T01:17:40.006896",
-      "kind": "bills",
-      "text": "🟠 ОПЛАТА ЧЕРЕЗ 2 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin Connect+\n💰 8.99 EUR\n📆 до 2026-11-05\n\nРахунок за місячну підписку Garmin Connect+, оплатити до 5 листопада.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T01:17:42.303254",
       "kind": "bills",
       "text": "🟠 <b>ОПЛАТА ЧЕРЕЗ 2 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Garmin</b>\n💰 8.99 EUR\n📆 до <b>2026-11-05</b>\n\nРахунок за місячну підписку Garmin Connect+, оплата почнеться 5 листопада 2026 року.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-03T01:18:28.986463",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T01:19:43.396590",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Strategy adds 811 bitcoin to its holdings\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
