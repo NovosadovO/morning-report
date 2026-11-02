@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T03:00:32.498348+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити зміну логіну Socios.com",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-10"
-      }
-    },
-    {
       "ts": "2026-08-28T03:00:36.757209+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -14317,6 +14307,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-11-02T16:17:37.711874+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_invest"
     }
   ]
 }
