@@ -1,4 +1,14 @@
 {
+  "foresight|2026-11-02t19_21_49_022283": {
+    "topic": "foresight",
+    "gist": "Зараз саме час вийти за рамки звичного й спробувати щось нове в тренуваннях, адже навіть невелика зміна може дати новий поштовх твоєму прогресу. Почни з одного ",
+    "ts": "2026-11-02T19:21:49.022283"
+  },
+  "action_detect|2026-11-02t19_20_23_734119": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-02T19:20:23.734119"
+  },
   "selfact|2026-11-02t19_17_01_060445": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, нагадую, що до перевірки страховки на авто залишилось 4 дні.",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-02T16:13:25.341628"
-  },
-  "action_detect|2026-11-02t16_13_14_257737": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-02T16:13:14.257737"
-  },
-  "email_ai_item|2026-11-02t16_12_49_783849": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Це щоденний дайджест новин зі світу криптовалют, курований штучним інтелектом. Лист містить ключові новини про зростання ринку, атак",
-    "ts": "2026-11-02T16:12:49.783849"
   }
 }
