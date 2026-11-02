@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-11-02t04_39_20_892390": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Бачу, що нічна зміна принесла неприємний сюрприз у вигляді значного падіння курсу RAIN, який просів на 6.4% за останні 24 години. Це вже другий",
+    "ts": "2026-11-02T04:39:20.892390"
+  },
   "mailcal_extract|2026-11-02t04_32_19_615508": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Стабільно — і це вже добре.\"} ```",
     "ts": "2026-11-01T21:33:31.643307"
-  },
-  "action_detect|2026-11-01t21_33_20_648510": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-01T21:33:20.648510"
   }
 }
