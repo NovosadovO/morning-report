@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T00:46:47.288366",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Дізнайтеся, які можливості вам тепер доступні</b>\n👤 ChatGPT &lt;noreply@email.openai.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81840"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81840"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81840"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81840"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81840"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81840"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T00:46:48.731076",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>ChatGPT Missed This Cancer</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-11-03T00:54:38.655899",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T00:54:39.432629",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
