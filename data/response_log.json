@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:49:45.072240+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-27T23:49:50.532862+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14318,6 +14312,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-11-02T04:30:14.830110+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити нові робочі пропозиції",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-02"
+      }
     }
   ]
 }
