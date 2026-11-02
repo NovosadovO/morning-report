@@ -676,21 +676,22 @@
   },
   "dtp_keo@faxcopy.sk": {
     "name": "dtp_keo@faxcopy.sk",
-    "relation": "сервіс",
+    "relation": "інше",
     "vip": false,
     "topics": [
-      "вітальна листівка",
-      "друк"
+      "blue_greeting_A4_five_gifts_no_second_stanza",
+      "q",
+      "blue_greeting_A4_print"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Оскільки Олег надсилав листи на цю адресу, але не отримав відповіді, можливо, варто перевірити статус замовлення або уточнити, чи потрібна допомога з цим питанням.",
-    "ping_in_days": 0,
+    "next_step": "Перевірити статус листів, надісланих на dtp_keo@faxcopy.sk, та визначити, чи потрібна відповідь.",
+    "ping_in_days": 18,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-14",
-    "updated": "2026-10-31",
+    "updated": "2026-11-02",
     "pinged_at": ""
   },
   "support@profesia.sk": {
