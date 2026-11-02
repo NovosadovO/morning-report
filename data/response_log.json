@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T01:30:21.300312+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Спроба оплати Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-28"
-      }
-    },
-    {
       "ts": "2026-08-28T01:30:25.386042+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -14329,6 +14319,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 9 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-02T16:14:33.425413+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_6f611d701d"
     }
   ]
 }
