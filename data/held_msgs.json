@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T03:31:15.657037",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Banks are locking out AI Agents and shifting the losses to c</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81781"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81781"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81781"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81781"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81781"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81781"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T03:31:17.024280",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How the Houthis built their war machine</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -247,6 +208,12 @@
       "ts": "2026-11-02T03:43:45.520948",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T03:44:55.074316",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
