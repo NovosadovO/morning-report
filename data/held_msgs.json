@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T03:07:30.903137",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T03:07:31.844147",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81777"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-02T03:16:18.314503",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Strengthening Critical Industries</b>\n👤 J.P. Morgan через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81776"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81776"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81776"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81776"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81776"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81776"
             }
           ]
         ]
