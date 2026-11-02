@@ -1,9 +1,4 @@
 {
-  "80614": {
-    "sender": "support@profesia.sk",
-    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
-    "seen_ts": "2026-10-11T00:50:39.971958+00:00"
-  },
   "80615": {
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "TREND.sk через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-11-02T08:12:23.197577+00:00"
+  },
+  "81794": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-11-02T08:14:29.593147+00:00"
   }
 }
