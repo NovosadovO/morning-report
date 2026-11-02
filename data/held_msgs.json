@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T23:52:59.565613",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-02T23:54:11.229530",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81836"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-03T00:01:13.529303",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Asteria Business Update: webinár vo štvrtok o 20:00</b>\n👤 Asteria Events &lt;events@myasteria.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81835"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81835"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81835"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81835"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81835"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81835"
             }
           ]
         ]
