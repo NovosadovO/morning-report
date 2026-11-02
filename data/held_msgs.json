@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-02T23:37:58.459011",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; color: #333; } .listing { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; } .listing img { float: left; margin-right: 15px; border-radius: 4px; } .listing-content { overflow: hidden; } .listing h3 { margin-top: 0; color: #0056b3;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81842"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81842"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81842"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81842"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81842"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81842"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-02T23:38:00.648205",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-02T23:51:42.424859",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-02T23:52:58.729940",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
