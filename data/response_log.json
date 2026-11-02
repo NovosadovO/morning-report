@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T00:00:23.153638+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Оплатити Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-29"
-      }
-    },
-    {
       "ts": "2026-08-28T00:00:28.246878+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14331,6 +14321,16 @@
       "answer": "Біг",
       "extra": {
         "kind": "calendar",
+        "date": "2026-11-02"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:30:19.407723+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити особисті робочі пропозиції",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-02"
       }
     }
