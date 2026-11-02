@@ -1963,5 +1963,14 @@
     "weight_kg": 84.4,
     "hrv": 64,
     "sleep_hours": 5.52
+  },
+  "2026-11-02": {
+    "hr_avg": 49,
+    "spo2": 96,
+    "body_battery": 55,
+    "stress": 18,
+    "date": "2026-11-02",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-02 06:22"
   }
 }
