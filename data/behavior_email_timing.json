@@ -1,9 +1,4 @@
 {
-  "80622": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-11T07:43:27.310336+00:00"
-  },
   "80623": {
     "sender": "notification@service.tiktok.com",
     "sender_raw": "Erik Balla у TikTok <notification@service.tiktok.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-11-02T14:15:00.905452+00:00"
+  },
+  "81822": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-11-02T15:34:59.838329+00:00"
   }
 }
