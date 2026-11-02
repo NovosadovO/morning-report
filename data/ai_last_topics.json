@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-02t08_20_57_223710": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=81790\",     \"title\": \"Закриття тренувального рахунку IB\",     \"date\": \"2026-11-16\",     \"time\": null,     \"kind\": \"deadline\",     ",
+    "ts": "2026-11-02T08:20:57.223710"
+  },
+  "people|2026-11-02t08_17_13_883299": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"theblock@mail.beehiiv.com\",     \"name\": \"The Block\",     \"relation\": \"інше\",     \"topics\": [       \"інвестиції в крипто\",       \"зло",
+    "ts": "2026-11-02T08:17:13.883299"
+  },
   "email_ai_item|2026-11-02t08_14_37_722727": {
     "topic": "email_ai_item",
     "gist": "{   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Office & Finance Coordinator\\\" від Cardell Logistics та \\\"Dashboarding & BI Support",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"date\": \"202",
     "ts": "2026-11-02T04:42:38.534941"
-  },
-  "action_detect|2026-11-02t04_39_38_041126": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз падіння курсу RAIN на 6.4% за останні 24 годин",
-    "ts": "2026-11-02T04:39:38.041126"
-  },
-  "msg_crypto_move_truthfix|2026-11-02t04_39_28_665991": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже!  Падіння курсу RAIN на 6.4% за останні 24 години, що є другим днем поспіль негативної динаміки, вказує на специфічні проблеми цього активу на тлі ",
-    "ts": "2026-11-02T04:39:28.665991"
   }
 }
