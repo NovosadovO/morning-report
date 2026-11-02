@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-27T23:49:59.417767+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-08-28T00:00:23.153638+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14328,6 +14322,16 @@
       "answer": "2026-11-04",
       "extra": {
         "kind": "contract"
+      }
+    },
+    {
+      "ts": "2026-11-02T06:00:19.315927+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Біг",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-02"
       }
     }
   ]
