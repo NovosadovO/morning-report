@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T03:16:04.308236",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81845"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81845"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81845"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81845"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81845"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81845"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T03:16:05.762250",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Binance Reopens Withdrawals and Publishes Reserve Proof</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-03T03:18:02.982627",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Скасування підписки Garmin Connect+</b>\n📆 до <b>2026-11-04</b>\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ до 4 листопада, якщо Олег не хоче, щоб вона автоматично продовжилася.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T03:18:03.898386",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Скасування підписки Garmin Connect+\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ до 4 листопада, якщо Олег не хоче, щоб вона автоматично продовжилася.",
       "keyboard": null
     }
   ]
