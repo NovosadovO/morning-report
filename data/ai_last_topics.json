@@ -298,5 +298,10 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: Support Associate (Full-Time Remote) від Wolt у Кошице та Booking Verification Specialis",
     "ts": "2026-11-02T20:56:59.950800"
+  },
+  "action_detect|2026-11-03t06_01_09_356037": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T06:01:09.356037"
   }
 }
