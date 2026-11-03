@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:31:17.693683",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Keep your Copilot history: Sign in by December 31, 2026</b>\n👤 Microsoft &lt;microsoft-noreply@microsoft.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81904"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81904"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81904"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81904"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81904"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81904"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T00:31:19.176662",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Congrats! Your account has been upgraded to paid Tier 2</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
@@ -247,6 +208,12 @@
       "ts": "2026-11-04T00:36:41.642653",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Google Cloud and APIs billing account 01FB74-1CEEDC-1297AD is in\r\n good standing at this time.\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:36:45.010057",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
