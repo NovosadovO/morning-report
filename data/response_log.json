@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T16:32:48.929428+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "fu_skip_d94a5a07c5"
-    },
-    {
       "ts": "2026-08-28T16:32:48.930058+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14309,6 +14303,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на персоналізовані робочі пропозиції",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-03"
+      }
+    },
+    {
+      "ts": "2026-11-03T07:31:16.508656+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Profesia.sk",
       "extra": {
         "kind": "reply",
         "date": "2026-11-03"
