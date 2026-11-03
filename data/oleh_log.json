@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_bought_3a298fd735",
-      "label": "📈 Купив",
-      "ts": "2026-10-08T15:42:30"
-    },
-    {
-      "t": "btn",
-      "data": "evdone_skip_done_u0fheki5vshi45e9p5o2lapjis_2026-10-08",
-      "label": "⏭ Перенести",
-      "ts": "2026-10-08T15:42:55"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_p0n9hh8lq8448eifai528o4l7k_2026-10-08",
       "label": "✅ Виконано",
       "ts": "2026-10-08T15:42:57"
@@ -7205,6 +7193,12 @@
       "data": "am_done_1e6949b8f2",
       "label": "✅ Вдалося",
       "ts": "2026-11-03T10:21:28"
+    },
+    {
+      "t": "btn",
+      "data": "am_no_b6b48f67a4",
+      "label": "🚫 Не треба",
+      "ts": "2026-11-03T10:21:59"
     }
   ]
 }
