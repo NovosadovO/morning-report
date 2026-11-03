@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-22T20:06:01"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-22",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з календарем, 04.11 заплановано перевірити страховку авто, а 05.11 є нагадування, що через 4 дні страховка закінчується. Зараз 03.11, тому варто попередити.",
       "module": "selfact",
       "ts": "2026-11-03T12:54:57"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-03T13:05:28"
     }
   ]
 }
