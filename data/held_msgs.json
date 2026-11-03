@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:00:53.962963",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T00:00:55.288042",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>🔷 The Daily: Fake job interview, AI tool used in Binance hac</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T00:04:50.193415",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:04:51.025809",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
