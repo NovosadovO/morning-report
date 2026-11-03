@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T03:30:40.913622",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T03:30:43.255389",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Bartleby: The end of the inefficient buffet</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
@@ -346,6 +340,12 @@
       "ts": "2026-11-03T03:35:23.221722",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Strategy adds 811 bitcoin to its holdings\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T03:35:25.825635",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
