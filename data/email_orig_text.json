@@ -1569,5 +1569,42 @@
         ]
       ]
     }
+  },
+  "2100366814_122218": {
+    "text": "📩 ✉️\n📌 📰 Daily Crypto Digest — November 3\n👤 Oleh Bezuhlyi через LinkedIn<newsletters-noreply@l",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_81894"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_81894"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_81894"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_81894"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_81894"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_81894"
+          }
+        ]
+      ]
+    }
   }
 }
