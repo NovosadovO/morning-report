@@ -229,7 +229,7 @@
     "MSG_CRYPTO_MOVE": {
       "checked": 258,
       "issues": 196,
-      "fixed": 81,
+      "fixed": 82,
       "cut": 2
     },
     "etf_summary": {
@@ -683,6 +683,7 @@
   },
   "2026-11-03": {
     "checked": 6,
-    "issues": 2
+    "issues": 2,
+    "fixed": 1
   }
 }
