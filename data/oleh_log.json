@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_tea",
-      "label": "✅ Так",
-      "ts": "2026-10-08T20:25:56"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_water",
       "label": "❌ Ні",
       "ts": "2026-10-08T20:25:58"
@@ -7199,6 +7193,12 @@
       "data": "rx_done_98461ab265",
       "label": "✅ Зробив",
       "ts": "2026-11-03T13:27:47"
+    },
+    {
+      "t": "btn",
+      "data": "rx_close_fef3d8deaa",
+      "label": "👌 Прийняв",
+      "ts": "2026-11-03T13:27:56"
     }
   ]
 }
