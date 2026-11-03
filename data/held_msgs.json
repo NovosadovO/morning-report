@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:26:59.567015",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T00:27:00.453563",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81906"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T00:31:16.222311",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Auxo Talent наймає: Head of Operations</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81905"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81905"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81905"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81905"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81905"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81905"
             }
           ]
         ]
