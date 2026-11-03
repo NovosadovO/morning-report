@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Лист від Forbes про Елізабет Холмс",
-      "detail": "У свіжих листах є непрочитаний лист від Forbes через LinkedIn.",
-      "module": "selfact",
-      "ts": "2026-10-23T00:44:44"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-23",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів: 08.11: 18:00 Нічна зміна; 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень; 18:00 Нічна зміна",
       "module": "selfact",
       "ts": "2026-11-03T21:13:56"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-03",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-03T21:28:31"
     }
   ]
 }
