@@ -1532,5 +1532,42 @@
         ]
       ]
     }
+  },
+  "2100366814_122216": {
+    "text": "📩 ✉️\n📌 📰 AI-curated Daily Crypto Digest - November 3\n👤 CryptoBeholder.com через LinkedIn<newsletters-nore",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_81897"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_81897"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_81897"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_81897"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_81897"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_81897"
+          }
+        ]
+      ]
+    }
   }
 }
