@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:17:03.122297",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Keep your Copilot history: Sign in by December 31, 2026</b>\n👤 Microsoft &lt;microsoft-noreply@microsoft.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81904"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81904"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81904"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81904"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81904"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81904"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T00:17:04.783520",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Congrats! Your account has been upgraded to paid Tier 2</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
@@ -247,6 +208,12 @@
       "ts": "2026-11-04T00:18:30.361855",
       "kind": "deadlines",
       "text": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ\n━━━━━━━━━━━━━━━━━━━━\n📄 Скасування підписки Garmin Connect+\n📆 до 2026-11-04\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ до 4 листопада, якщо Олег не хоче, щоб вона автоматично продовжилася.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:18:32.691192",
+      "kind": "deadlines",
+      "text": "🔴 <b>СЬОГОДНІ ОСТАННІЙ ДЕНЬ</b>\n━━━━━━━━━━━━━━━━━━━━\n🛡 <b>Страховка авто KOOPERATIVA — оплата</b>\n📆 до <b>2026-11-04</b>\n🏢 KOOPERATIVA\n\n➡️ Оплатити страховий внесок за полісом PZ 6641172176 до 4 листопада 2026 року.",
       "keyboard": null
     }
   ]
