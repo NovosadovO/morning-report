@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-03t04_45_08_657928": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкрет",
+    "ts": "2026-11-03T04:45:08.657928"
+  },
+  "openloop_promises|2026-11-03t04_36_32_905013": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-03T04:36:32.905013"
+  },
   "selfact|2026-11-03t04_35_19_642060": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, твоя рання зміна на заводі починається о 06:00.\",     \"date\": \"2026-11-03\"",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=81821\",     \"title\": \"Вхід через Google на creativefabrica.com\",     \"date\": \"2026-11-02\",     \"time\": \"16:16\",     \"kind\": \"other",
     "ts": "2026-11-02T19:46:52.090701"
-  },
-  "selfact|2026-11-02t19_32_08_936356": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"dat",
-    "ts": "2026-11-02T19:32:08.936356"
-  },
-  "openloop_promises|2026-11-02t19_31_54_289003": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-02T19:31:54.289003"
   }
 }
