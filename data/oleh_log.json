@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "calrem_skip_crypto_move_1791491868",
-      "label": "❌ Не треба",
-      "ts": "2026-10-08T22:38:55"
-    },
-    {
       "t": "msg",
       "kind": "cmd",
       "text": "/спати",
@@ -7199,6 +7193,12 @@
       "data": "rx_done_9850baffcd",
       "label": "✅ Зробив",
       "ts": "2026-11-03T21:32:26"
+    },
+    {
+      "t": "btn",
+      "data": "rx_read_f4f9bacbb2",
+      "label": "👍 Прочитав",
+      "ts": "2026-11-03T22:00:20"
     }
   ]
 }
