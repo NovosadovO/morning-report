@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T16:32:48.930058+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_81bf53704c"
-    },
-    {
       "ts": "2026-08-28T16:32:50.537570+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14316,6 +14310,17 @@
       "extra": {
         "kind": "reply",
         "date": "2026-11-03"
+      }
+    },
+    {
+      "ts": "2026-11-03T09:28:19.692793+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Перевірити страховку авто",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "10:00–10:30",
+        "note": null
       }
     }
   ]
