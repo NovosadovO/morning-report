@@ -58,6 +58,7 @@ MARK = "⁣VARIETY⁣"      # невидимий маркер: захист ві
 LOG_FILE = "variety_log.json"     # відпечатки надісланого, по тегах
 KEEP_PER_TAG = 8                  # скільки останніх повідомлень пам'ятаємо на тег
 FP_SIZE = 48                      # розмір minhash-відпечатку
+TOO_SIM_TOPIC = 0.45              # змістова схожість по значущих словах (всі теги, 24 год)
 TOO_SIM = 0.50                    # Jaccard вище → вважаємо повтором
 MIN_LEN_FOR_SIM = 220             # короткі алерти на схожість не перевіряємо
 TEMP_MIN = 0.85                   # нижче не опускаємо для живого тексту
@@ -301,6 +302,21 @@ def opening(text, n=90):
     return (m[0] if m else t)[:n]
 
 
+def facts_of(text):
+    """Змістовий відбиток: цифри (7.9, 8,9, 2026…) і значущі слова (>=6 букв).
+    Ловить «те саме іншими словами» — коли 3-грами вже різні, а цифри й тема ті самі."""
+    raw = re.sub(r"<[^>]+>", " ", str(text or ""))
+    nums = sorted(set(n.replace(",", ".") for n in re.findall(r"\d+[.,]\d+|\d{3,5}", raw)
+                      if not re.fullmatch(r"20[0-3]\d", n)))[:20]
+    ws = set(zlib.crc32(w.encode("utf-8", "ignore")) for w in _norm(raw).split() if len(w) >= 6)
+    return nums, sorted(ws)[:30]
+
+
+def _recent_rows(hours=24):
+    cut = (datetime.now() - timedelta(hours=hours)).isoformat(timespec="seconds")
+    return [r for r in _rows() + list(_BUF) if str(r.get("ts") or "") >= cut]
+
+
 # ─── СТАН ────────────────────────────────────────────────────────────────────
 
 def _load():
@@ -338,8 +354,9 @@ def note(tag, text, force=False):
         txt = str(text or "")
         if len(_norm(txt)) < 40:
             return False
+        _n, _w = facts_of(txt)
         _BUF.append({"tag": str(tag or "gem")[:40], "open": opening(txt),
-                     "fp": fingerprint(txt),
+                     "fp": fingerprint(txt), "nums": _n, "w": _w,
                      "ts": datetime.now().isoformat(timespec="seconds")})
         if not force and (time.time() - _BUF_TS[0]) < _FLUSH_GAP:
             return True
@@ -354,7 +371,8 @@ def note(tag, text, force=False):
             lst = data.get(k) or []
             if not isinstance(lst, list):
                 lst = []
-            lst.append({"open": r["open"], "fp": r["fp"], "ts": r["ts"]})
+            lst.append({"open": r["open"], "fp": r["fp"], "ts": r["ts"],
+                        "nums": r.get("nums") or [], "w": r.get("w") or []})
             data[k] = lst[-KEEP_PER_TAG:]
         if len(data) > 60:
             items = sorted(data.items(),
@@ -392,16 +410,24 @@ def check(tag, text):
             for r in _hist:
                 if _norm(r.get("open") or "")[:len(op)] == op:
                     return "такий самий зачин, як минулого разу"
-        if len(low) < MIN_LEN_FOR_SIM:
+        if len(low) < 120:
             return ""
-        fp = fingerprint(txt)
-        if not fp:
-            return ""
-        for r in _hist:
+        fp = fingerprint(txt) if len(low) >= MIN_LEN_FOR_SIM else []
+        for r in (_hist if fp else []):
             s = similarity(fp, r.get("fp"))
             if s >= TOO_SIM:
                 return ("майже дослівний повтор попереднього (схожість "
                         + str(int(s * 100)) + "%): «" + str(r.get("open"))[:60] + "…»")
+        # ЗМІСТ: те саме іншими словами / з іншого модуля за останню добу
+        nums, ws = facts_of(txt)
+        for r in _recent_rows(24):
+            rn = set(r.get("nums") or [])
+            if len(set(nums) & rn) >= 3 and len(nums) >= 3:
+                return ("ті самі цифри (" + ", ".join(sorted(set(nums) & rn))[:40]
+                        + "), що вже були в повідомленні «" + str(r.get("open"))[:50] + "…»")
+            if ws and r.get("w") and similarity(ws, r.get("w")) >= TOO_SIM_TOPIC:
+                return ("та сама тема тими самими словами, що вже було в «"
+                        + str(r.get("open"))[:50] + "…»")
         return ""
     except Exception as e:
         _log("check error: " + str(e))
@@ -451,6 +477,14 @@ def block(tag):
     if opens:
         parts.append("• ТАК ТИ ВЖЕ ПОЧИНАВ — почни інакше, іншим словом і іншою "
                      "думкою:\n" + "\n".join("   – «" + o[:90] + "»" for o in opens[:8]))
+    _told = []
+    for r in _recent_rows(24):
+        for n in (r.get("nums") or []):
+            if "." in n and n not in _told:
+                _told.append(n)
+    if _told:
+        parts.append("• ЦІ ЦИФРИ ВЖЕ БУЛИ НЕЩОДАВНО (не подавай їх як новину; "
+                     "нема нового — скажи про інше): " + ", ".join(_told[:12]) + ".")
     parts.append("• НІКОЛИ не пиши цих мертвих фраз: "
                  + "; ".join("«" + b + "»" for b in BANNED[:9]) + ".")
     parts.append(FACTS)
