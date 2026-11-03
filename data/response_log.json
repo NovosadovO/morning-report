@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T16:29:57.347299+00:00",
-      "category": "day_energy",
-      "question": "Як ти сьогодні",
-      "answer": "Втома",
-      "extra": {
-        "shift": "night"
-      }
-    },
-    {
       "ts": "2026-08-28T16:30:03.337883+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14304,6 +14295,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-11-03T04:31:14.613564+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити страховку авто",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-04"
+      }
     }
   ]
 }
