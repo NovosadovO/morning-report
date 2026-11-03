@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T23:50:12.666907",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T23:50:13.575046",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81904"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T00:01:04.745393",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Congrats! Your account has been upgraded to paid Tier 2</b>\n👤 Google AI Studio &lt;googleaistudio-noreply@google.co",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81903"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81903"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81903"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81903"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81903"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81903"
             }
           ]
         ]
