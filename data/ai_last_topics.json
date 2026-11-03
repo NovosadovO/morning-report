@@ -298,5 +298,30 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-03T13:29:28.110739"
+  },
+  "action_detect|2026-11-03t21_13_16_868939": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-03T21:13:16.868939"
+  },
+  "email_describe|2026-11-03t21_12_38_255835": {
+    "topic": "email_describe",
+    "gist": "ВІДПРАВНИК CryptoBeholder.com – це сервіс, який надає щоденний дайджест новин з криптовалютного світу, зібраний за допомогою штучного інтелекту.  СУТЬ У листі п",
+    "ts": "2026-11-03T21:12:38.255835"
+  },
+  "action_detect|2026-11-03t21_12_25_856214": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:25.856214"
+  },
+  "action_detect|2026-11-03t21_12_14_856673": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:14.856673"
+  },
+  "action_detect|2026-11-03t21_12_03_770427": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:03.770427"
   }
 }
