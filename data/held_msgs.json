@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T22:14:13.507728",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Auxo Talent наймає: Head of Operations»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union            \r\nHead of Operations\r\nAuxo Talent\r\nCounty Sligo, Ireland\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4485481633/?trackingId=SH7hntpSbGqkH18COszmmw%3D%3D&amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81905"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81905"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81905"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81905"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81905"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81905"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T22:31:46.459647",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -181,6 +142,12 @@
       "ts": "2026-11-03T22:45:28.155191",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T22:46:38.265937",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
