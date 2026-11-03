@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:15:00.545388",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Google Cloud and APIs billing account 01FB74-1CEEDC-1297AD is in\r\n good standing at this time.\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T00:15:04.598517",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T00:17:59.452777",
       "kind": "bills",
       "text": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin\n💰 8.99 EUR\n📆 до 2026-11-05\n\nРахунок за місячну підписку Garmin Connect+, оплата почнеться 5 листопада 2026 року.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:18:01.891787",
+      "kind": "bills",
+      "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (3 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Google Play</b>\n💰 7.99 EUR\n📆 до <b>2026-11-01</b>\n\nПлатіж за підписку на додаток ChatGPT відхилено. Оновіть спосіб оплати до 1 листопада, інакше підписку буде скасовано.",
       "keyboard": null
     }
   ]
