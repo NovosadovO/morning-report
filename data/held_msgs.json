@@ -211,39 +211,39 @@
       }
     },
     {
-      "ts": "2026-11-03T03:30:46.096550",
+      "ts": "2026-11-03T03:30:47.666524",
       "kind": "offer",
-      "text": "💼 ✉️\n📌 <b>Oleh, подайте заявку на Junior Sales Representative for the </b>\n👤 LinkedIn &lt;jobs-noreply@linkedin.com&gt;",
+      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81846"
+              "callback_data": "email_reply_81845"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_81846"
+              "callback_data": "email_describe_81845"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_81846"
+              "callback_data": "email_star_81845"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_81846"
+              "callback_data": "email_cal_81845"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_81846"
+              "callback_data": "email_keep_81845"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_81846"
+              "callback_data": "email_delete_81845"
             }
           ]
         ]
