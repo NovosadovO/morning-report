@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T23:57:29.470035",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T23:57:30.262803",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T00:03:19.201001",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Google Cloud and APIs billing account 01FB74-1CEEDC-1297AD is in\r\n good standing at this time.\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:03:20.207901",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Google Cloud and APIs billing account 01FB74-1CEEDC-1297AD is in\r\n good standing at this time.\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
