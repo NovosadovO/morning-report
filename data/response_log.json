@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T16:30:03.337883+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dm_low_d2a98e5f34"
-    },
-    {
       "ts": "2026-08-28T16:32:36.344181+00:00",
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 9 дн.",
@@ -14304,6 +14298,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-04"
+      }
+    },
+    {
+      "ts": "2026-11-03T06:01:17.827075+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Рання зміна",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-03"
       }
     }
   ]
