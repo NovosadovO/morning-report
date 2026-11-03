@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T01:18:08.640231",
-      "kind": "bills",
-      "text": "🟠 <b>ОПЛАТА ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Google Play</b>\n💰 4.99 EUR\n📆 до <b>2026-11-05</b>\n\nРахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T01:18:09.604628",
       "kind": "bills",
       "text": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Google Play\n💰 4.99 EUR\n📆 до 2026-11-05\n\nРахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-04T01:20:04.021326",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T01:20:06.192727",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
