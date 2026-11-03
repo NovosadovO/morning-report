@@ -1,4 +1,54 @@
 {
+  "healthai|2026-11-03t21_28_52_999581": {
+    "topic": "healthai",
+    "gist": "🔥 Олег, сьогодні в тебе рання зміна (06:00–18:00), але поки що зафіксовано 6.3 години сну, що менше за твої середні 7.1 год за тиждень. Незважаючи на це, твій п",
+    "ts": "2026-11-03T21:28:52.999581"
+  },
+  "action_detect|2026-11-03t21_14_15_599054": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:14:15.599054"
+  },
+  "selfact|2026-11-03t21_13_51_255106": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні до кінця те",
+    "ts": "2026-11-03T21:13:51.255106"
+  },
+  "openloop_promises|2026-11-03t21_13_38_743342": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-03T21:13:38.743342"
+  },
+  "email_describe|2026-11-03t21_13_28_757900": {
+    "topic": "email_describe",
+    "gist": "ВІДПРАВНИК Автор листа – Oleh Bezuhlyi, який публікує щоденний крипто-дайджест через платформу LinkedIn.  СУТЬ Надається стислий огляд новин криптовалютного рин",
+    "ts": "2026-11-03T21:13:28.757900"
+  },
+  "action_detect|2026-11-03t21_13_16_868939": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-03T21:13:16.868939"
+  },
+  "email_describe|2026-11-03t21_12_38_255835": {
+    "topic": "email_describe",
+    "gist": "ВІДПРАВНИК CryptoBeholder.com – це сервіс, який надає щоденний дайджест новин з криптовалютного світу, зібраний за допомогою штучного інтелекту.  СУТЬ У листі п",
+    "ts": "2026-11-03T21:12:38.255835"
+  },
+  "action_detect|2026-11-03t21_12_25_856214": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:25.856214"
+  },
+  "action_detect|2026-11-03t21_12_14_856673": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:14.856673"
+  },
+  "action_detect|2026-11-03t21_12_03_770427": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-03T21:12:03.770427"
+  },
   "healthai|2026-11-03t21_08_53_750300": {
     "topic": "healthai",
     "gist": "✨ Олег, цікаво спостерігати, як твої кроки (15424.0 сьогодні, це більше за середнє за тиждень) корелюють зі зростанням HRV (63.0 мс, +11.4 за 14 днів), що свідч",
@@ -248,80 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно перевірити страховку авто\",     \"text\": \"Олеже, твоя страховка на авто потребує уваги. Залишилось 4 дні до за",
     "ts": "2026-11-03T13:56:43.882091"
-  },
-  "selfact|2026-11-03t13_40_58_152479": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, твоя страховка на авто потребує уваги. Залишилось 4 дні д",
-    "ts": "2026-11-03T13:40:58.152479"
-  },
-  "openloop_promises|2026-11-03t13_40_46_037417": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-03T13:40:46.037417"
-  },
-  "msg_crypto_move_truthfix|2026-11-03t13_32_23_958350": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже! 💹  Сьогодні, у вівторок, 3 листопада 2026 року, крипторинок демонструє помітне зниження. Особливо це стосується деяких альткоїнів: ZEC (Zcash) впа",
-    "ts": "2026-11-03T13:32:23.958350"
-  },
-  "msg_crypto_move|2026-11-03t13_32_15_683217": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 💹  Сьогодні, у вівторок, 3 листопада 2026 року, крипторинок демонструє помітне зниження, особливо це стосується деяких альткоїнів. Ми спостерігаєм",
-    "ts": "2026-11-03T13:32:15.683217"
-  },
-  "lunch_ai_truthfix|2026-11-03t13_31_56_570854": {
-    "topic": "LUNCH_AI/truthfix",
-    "gist": "Олеже, доброго дня!  Твої фінанси: портфель складає $4,979, з прирістом +$4,782. За останні 24 години спостерігалося незначне зниження на $51. Ринкова ситуація:",
-    "ts": "2026-11-03T13:31:56.570854"
-  },
-  "lunch_ai|2026-11-03t13_31_47_666950": {
-    "topic": "LUNCH_AI",
-    "gist": "Привіт, Олеже!  Перевірив твій статус: зараз ти на ранковій зміні (06:00–18:00), тож це, скоріше, коротка перерва посеред робочого дня.  Щодо термінових справ: ",
-    "ts": "2026-11-03T13:31:47.666950"
-  },
-  "proactive_actions|2026-11-03t13_31_34_460836": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"date\": \"2026-11-04\",     \"time\": \"10:00\",     \"message\": \"Олеже, завтра о 1",
-    "ts": "2026-11-03T13:31:34.460836"
-  },
-  "action_detect|2026-11-03t13_29_49_991954": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T13:29:49.991954"
-  },
-  "action_detect|2026-11-03t13_29_38_930365": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-03T13:29:38.930365"
-  },
-  "action_detect|2026-11-03t13_29_28_110739": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-03T13:29:28.110739"
-  },
-  "action_detect|2026-11-03t21_13_16_868939": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-03T21:13:16.868939"
-  },
-  "email_describe|2026-11-03t21_12_38_255835": {
-    "topic": "email_describe",
-    "gist": "ВІДПРАВНИК CryptoBeholder.com – це сервіс, який надає щоденний дайджест новин з криптовалютного світу, зібраний за допомогою штучного інтелекту.  СУТЬ У листі п",
-    "ts": "2026-11-03T21:12:38.255835"
-  },
-  "action_detect|2026-11-03t21_12_25_856214": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:25.856214"
-  },
-  "action_detect|2026-11-03t21_12_14_856673": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:14.856673"
-  },
-  "action_detect|2026-11-03t21_12_03_770427": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:03.770427"
   }
 }
