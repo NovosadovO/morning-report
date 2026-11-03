@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T03:46:01.072619",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy adds 811 bitcoin to its holdings</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T03:46:02.447974",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-11-03T03:51:31.164054",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T03:51:31.985193",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
