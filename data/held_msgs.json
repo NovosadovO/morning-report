@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T03:16:07.174458",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy adds 811 bitcoin to its holdings</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T03:16:08.604382",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-11-03T03:18:06.355771",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🛡 <b>Страховка авто KOOPERATIVA — оплата</b>\n📆 до <b>2026-11-04</b>\n🏢 KOOPERATIVA\n\n➡️ Оплатити страховий внесок за полісом PZ 6641172176 до 4 листопада 2026 року.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T03:18:07.227456",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🛡 Страховка авто KOOPERATIVA — оплата\n📆 до 2026-11-04\n🏢 KOOPERATIVA\n\n➡️ Оплатити страховий внесок за полісом PZ 6641172176 до 4 листопада 2026 року.",
       "keyboard": null
     }
   ]
