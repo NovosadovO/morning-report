@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T00:01:06.395709",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Google Cloud and APIs billing account 01FB74-1CEEDC-129</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81902"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81902"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81902"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81902"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81902"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81902"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T00:01:11.304255",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія Senior Digital Project Manager в Caterpillar Inc. –</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-11-04T00:06:15.416733",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T00:06:16.294647",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
