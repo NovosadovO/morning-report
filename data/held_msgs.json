@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T03:30:43.255389",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Bartleby: The end of the inefficient buffet</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81848"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81848"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81848"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81848"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81848"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81848"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-03T03:30:43.486116",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -346,6 +307,12 @@
       "ts": "2026-11-03T03:35:25.825635",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-03T03:35:26.732058",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
