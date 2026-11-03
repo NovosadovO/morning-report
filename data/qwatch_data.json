@@ -1982,5 +1982,22 @@
     "sleep_hours": 6.7,
     "vo2max": 43.4,
     "weight_kg": 83.8
+  },
+  "2026-11-03": {
+    "steps": 25,
+    "sleep_total_min": 381,
+    "sleep_deep_min": 62,
+    "sleep_rem_min": 56,
+    "sleep_light_min": 263,
+    "sleep_awake_min": 0,
+    "hr_avg": 45,
+    "hrv": 63,
+    "spo2": 96,
+    "body_battery": 90,
+    "stress": 11,
+    "sleep_hours": 6.35,
+    "date": "2026-11-03",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-03 06:25"
   }
 }
