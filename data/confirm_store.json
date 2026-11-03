@@ -18381,7 +18381,43 @@
     "pid": "email_cal_81846",
     "subject": "📌 Oleh, подайте заявку на Junior Sales Representative for th",
     "extra": {
-      "msg": "💼 ✉️\n📌 Oleh, подайте заявку на Junior Sales Representative for the \n👤 LinkedIn <jobs-noreply@linkedin.com>"
+      "msg": "💼 ✉️\n📌 Oleh, подайте заявку на Junior Sales Representative for the \n👤 LinkedIn <jobs-noreply@linkedin.com>",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 122041,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81846"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81846"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81846"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81846"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81846"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81846"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-03T13:29:42.804832+00:00"
   }
