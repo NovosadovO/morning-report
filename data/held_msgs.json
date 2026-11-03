@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-03T23:48:49.386324",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-03T23:50:12.666907",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81905"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T00:00:59.686076",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Keep your Copilot history: Sign in by December 31, 2026</b>\n👤 Microsoft &lt;microsoft-noreply@microsoft.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81904"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81904"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81904"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81904"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81904"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81904"
             }
           ]
         ]
