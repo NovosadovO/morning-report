@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-28T20:02:17.956540+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "lc_skip_82f9c8738e"
-    },
-    {
       "ts": "2026-08-28T20:02:37.917015+00:00",
       "category": "event_done",
       "question": "📅 💳 Платіж Google Cloud Platform & APIs\nПланувалась до 11:00 — виконано?",
@@ -14339,6 +14333,12 @@
         "kind": "note",
         "date": "2026-11-03"
       }
+    },
+    {
+      "ts": "2026-11-03T18:21:20.881135+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
