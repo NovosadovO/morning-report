@@ -470,5 +470,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-11-01"
+  },
+  "google_commerce_limited|4_99|": {
+    "vendor": "Google Commerce Limited",
+    "amount": "4.99",
+    "currency": "EUR",
+    "invoice_no": "SOP.3305-2846-3111-66753..1",
+    "due": "",
+    "uid": "81917",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Квитанція замовлення в Google Play від 4 лист. 2026 р.",
+    "note": "Підписка на сервіс Google Commerce Limited продовжена. Оплата за Google AI Plus (400 GB) (Google One) становить 4.99 € на місяць.",
+    "paid": true,
+    "paid_at": "2026-11-04",
+    "created": "2026-11-04"
   }
 }
