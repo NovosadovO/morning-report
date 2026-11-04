@@ -2000,5 +2000,23 @@
     "source": "qwatch_auto",
     "saved_at": "2026-11-03 21:28",
     "weight_kg": 84.6
+  },
+  "2026-11-04": {
+    "steps": 38,
+    "sleep_total_min": 428,
+    "sleep_deep_min": 118,
+    "sleep_rem_min": 91,
+    "sleep_light_min": 219,
+    "sleep_awake_min": 2,
+    "hr_avg": 50,
+    "weight_kg": 85.5,
+    "hrv": 44,
+    "spo2": 97,
+    "body_battery": 67,
+    "stress": 18,
+    "sleep_hours": 7.13,
+    "date": "2026-11-04",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-04 06:29"
   }
 }
