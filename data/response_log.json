@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T00:00:22.556092+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс до Малаги",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-31"
-      }
-    },
-    {
       "ts": "2026-08-29T00:00:27.605063+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14339,6 +14329,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_spray"
+    },
+    {
+      "ts": "2026-11-04T05:47:31.609884+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
