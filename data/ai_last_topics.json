@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-04t04_20_23_534147": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Наближається рання зміна\",     \"text\": \"Олеже, твоя рання зміна починається о 06:00. Зараз 04:20, у тебе є час",
+    "ts": "2026-11-04T04:20:23.534147"
+  },
   "email_ai_item|2026-11-04t04_15_25_189909": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Senior Digital Project Manager\\\" в Caterpillar Inc. та \\\"Controller (VCK)\\\" в Volvo Ca",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-03T15:01:48.897030"
-  },
-  "action_detect|2026-11-03t15_01_37_871737": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Перегляд позиції з ONDO\",   \"action_date\": \"2026-11-03\",   \"action_time\": null,   \"action_summary\": \"П",
-    "ts": "2026-11-03T15:01:37.871737"
   }
 }
