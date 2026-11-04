@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:31:05.728397",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Private keys as easy as 1,2,3</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81910"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81910"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81910"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81910"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81910"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81910"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:31:07.250763",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: BNB Chain Flips Ethereum?</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-04T03:35:57.598998",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.11</b> 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:35:58.386067",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
