@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-04t09_16_59_545277": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-04T09:16:59.545277"
+  },
   "mailcal_extract|2026-11-04t09_12_28_267464": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=81924\",     \"title\": \"Кінець виведення VRA з Crypto.com\",     \"date\": \"2026-12-03\",     \"time\": \"02:00\",     \"kind\": \"deadline\",  ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про вакансію \\\"Customer Success Manager (US customers)\\\" від компанії NATEK у Кошице, Словаччина. Компані",
     "ts": "2026-11-04T06:15:41.388079"
-  },
-  "mailcal_extract|2026-11-04t06_10_05_184405": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=81914\",     \"title\": \"Нові робочі пропозиції від Profesia.sk\",     \"date\": \"2026-11-04\",     \"time\": null,     \"kind\": \"other\",   ",
-    "ts": "2026-11-04T06:10:05.184405"
   }
 }
