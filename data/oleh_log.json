@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_run",
-      "label": "✅ Так",
-      "ts": "2026-10-09T21:01:21"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-10-09T21:01:26"
@@ -7199,6 +7193,12 @@
       "data": "rx_later_08fdd425c5",
       "label": "⏰ Пізніше",
       "ts": "2026-11-04T09:35:52"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_nk3t3s6l8f3o2beuiq3qufc26k_2026-11-04",
+      "label": "✅ Виконано",
+      "ts": "2026-11-04T09:36:02"
     }
   ]
 }
