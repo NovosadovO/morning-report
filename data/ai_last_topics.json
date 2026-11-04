@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-04t08_26_55_521616": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=81917\",     \"title\": \"Продовження підписки Google AI Plus\",     \"date\": \"2026-11-04\",     \"time\": \"05:38:16\",     \"kind\": \"payment",
+    "ts": "2026-11-04T08:26:55.521616"
+  },
+  "people|2026-11-04t08_17_39_555813": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"dtp_keo@faxcopy.sk\",     \"name\": \"dtp_keo@faxcopy.sk\",     \"relation\": \"інше\",     \"topics\": [       \"blue_greeting_A4_five_gifts_no",
+    "ts": "2026-11-04T08:17:39.555813"
+  },
   "selfact|2026-11-04t08_14_24_672774": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Невикористаний спрей для волосся\",     \"text\": \"Олеже, ти відзначив, що спрей для волосся не був використаний сьогодні",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Чому б зараз не дослідити нову стежку у парку Йоргі árvore, адже там відкривається чудова панорама на місто, що може додати нових вражень до твоєї ранкової проб",
     "ts": "2026-11-04T04:47:56.156556"
-  },
-  "openloop_promises|2026-11-04t04_46_26_724697": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-11-04T04:46:26.724697"
-  },
-  "action_detect|2026-11-04t04_45_17_135080": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Запропонувати Олегу зважитись та записати дані в Appl",
-    "ts": "2026-11-04T04:45:17.135080"
   }
 }
