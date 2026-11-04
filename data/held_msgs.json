@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:00:48.620029",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:00:49.887306",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Sign-in notification</b>\n👤 \"Youtube\" &lt;mortonfinancial@nurture.icims.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T03:04:47.972063",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:04:48.733882",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
