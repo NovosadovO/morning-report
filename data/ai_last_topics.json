@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-11-04t06_15_41_388079": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про вакансію \\\"Customer Success Manager (US customers)\\\" від компанії NATEK у Кошице, Словаччина. Компані",
+    "ts": "2026-11-04T06:15:41.388079"
+  },
+  "mailcal_extract|2026-11-04t06_10_05_184405": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=81914\",     \"title\": \"Нові робочі пропозиції від Profesia.sk\",     \"date\": \"2026-11-04\",     \"time\": null,     \"kind\": \"other\",   ",
+    "ts": "2026-11-04T06:10:05.184405"
+  },
+  "selfact|2026-11-04t06_08_56_708820": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"dat",
+    "ts": "2026-11-04T06:08:56.708820"
+  },
   "bills|2026-11-04t06_06_42_631522": {
     "topic": "bills",
     "gist": "[]",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-11-03T21:12:25.856214"
-  },
-  "action_detect|2026-11-03t21_12_14_856673": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:14.856673"
-  },
-  "action_detect|2026-11-03t21_12_03_770427": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:03.770427"
-  },
-  "healthai|2026-11-03t21_08_53_750300": {
-    "topic": "healthai",
-    "gist": "✨ Олег, цікаво спостерігати, як твої кроки (15424.0 сьогодні, це більше за середнє за тиждень) корелюють зі зростанням HRV (63.0 мс, +11.4 за 14 днів), що свідч",
-    "ts": "2026-11-03T21:08:53.750300"
   }
 }
