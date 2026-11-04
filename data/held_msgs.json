@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T02:55:54.356073",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T02:55:55.209818",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81912"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T03:00:52.683184",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>Binance Traces Its Hack to a Fake Job Interview</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81911"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81911"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81911"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81911"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81911"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81911"
             }
           ]
         ]
