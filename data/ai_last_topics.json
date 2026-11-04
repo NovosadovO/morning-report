@@ -1,4 +1,14 @@
 {
+  "foresight|2026-11-04t06_21_00_770564": {
+    "topic": "foresight",
+    "gist": "Спробуй нове на вихідних – це чудовий спосіб перезавантажитися. Давай заплануємо спільну велопрогулянку парком, адже погода вже налагоджується, і це буде чудово",
+    "ts": "2026-11-04T06:21:00.770564"
+  },
+  "openloop_promises|2026-11-04t06_16_33_446676": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-04T06:16:33.446676"
+  },
   "email_ai_item|2026-11-04t06_15_41_388079": {
     "topic": "email_ai_item",
     "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про вакансію \\\"Customer Success Manager (US customers)\\\" від компанії NATEK у Кошице, Словаччина. Компані",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-03T21:13:16.868939"
-  },
-  "email_describe|2026-11-03t21_12_38_255835": {
-    "topic": "email_describe",
-    "gist": "ВІДПРАВНИК CryptoBeholder.com – це сервіс, який надає щоденний дайджест новин з криптовалютного світу, зібраний за допомогою штучного інтелекту.  СУТЬ У листі п",
-    "ts": "2026-11-03T21:12:38.255835"
-  },
-  "action_detect|2026-11-03t21_12_25_856214": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-03T21:12:25.856214"
   }
 }
