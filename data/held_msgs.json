@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T02:54:12.495752",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Youtube</b>\n📋 Тема: «Sign-in notification»\n\n<i>«Sign-in notification Recent sign-in Novosadovoleg@gmail.com We registered a new sign-in to your account on October 27, 2026 at 23:44:54 UTC. No action is needed if you recognize this session. If you do not, secure your account by closing the other sessions. Session details IP: 142.58.164.7 Location:...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_81913"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81913"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81913"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81913"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81913"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81913"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T02:54:25.148656",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-04T02:58:52.843430",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:00:06.540502",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
