@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:31:01.897324",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Adecco наймає: Business Operations Coordinator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81912"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81912"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81912"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81912"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81912"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81912"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:31:04.233113",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Binance Traces Its Hack to a Fake Job Interview</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-04T03:35:54.066674",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:35:54.874558",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Youtube\"  → Sign-in notification\n• \"The Defiant\"  → Binance Traces Its Hack to a Fake Job Interview\n• The Block  → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
