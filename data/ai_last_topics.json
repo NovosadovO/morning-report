@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-04t15_30_33_809278": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зважаючи на твій інтерес до криптовалют, зверни увагу на вакансію Crypto Project Manager від Aurigo Logi",
+    "ts": "2026-11-04T15:30:33.809278"
+  },
   "openloop_promises|2026-11-04t15_19_50_382937": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"date\": \"2026-11-04\",     \"time\": \"10:00\",     \"message\": \"Олеже, сьогодні д",
     "ts": "2026-11-04T12:01:35.131048"
-  },
-  "action_detect|2026-11-04t12_01_12_308572": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-04T12:01:12.308572"
   }
 }
