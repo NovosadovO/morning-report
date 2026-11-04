@@ -236,5 +236,29 @@
     "uid": "81724",
     "last_seen": "2026-11-01",
     "next_due": "2026-12-01"
+  },
+  "googleaiplus": {
+    "vendor": "Google AI Plus",
+    "cycle": "monthly",
+    "currency": "EUR",
+    "charges": [
+      {
+        "date": "2026-11-04",
+        "amount": "4.99",
+        "uid": "81917"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-11-04",
+    "note": "Підписка на Google AI Plus (400 GB) продовжена, списується щомісяця. Зверніть увагу на необхідність додати резервний спосіб оплати.",
+    "amount": "4.99",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Квитанція замовлення в Google Play від 4 лист. 2026 р.",
+    "uid": "81917",
+    "last_seen": "2026-11-04",
+    "next_due": "2026-12-04"
   }
 }
