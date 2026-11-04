@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:00:55.783786",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: BNB Chain Flips Ethereum?</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81909"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81909"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81909"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81909"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81909"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81909"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:00:57.172875",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Quantitative Trader в AAA Global</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -247,6 +208,12 @@
       "ts": "2026-11-04T03:06:06.862379",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:06:09.904993",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
