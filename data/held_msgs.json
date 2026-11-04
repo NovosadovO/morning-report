@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:12:57.928263",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +5.7% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T00:12:58.781215",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +5.7% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81963"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-05T00:16:44.229575",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE OCTOBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81932"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81932"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81932"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81932"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81932"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81932"
             }
           ]
         ]
