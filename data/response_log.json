@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T08:03:28.744181+00:00",
-      "category": "day_energy",
-      "question": "Як ти сьогодні",
-      "answer": "Норма",
-      "extra": {
-        "shift": "free"
-      }
-    },
-    {
       "ts": "2026-08-29T08:03:35.899411+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14340,6 +14331,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_685c55270a"
+    },
+    {
+      "ts": "2026-11-04T18:01:42.395338+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити страховку авто",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-05"
+      }
     }
   ]
 }
