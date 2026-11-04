@@ -718,5 +718,17 @@
     "sender": "Garmin <GarminServicesBilling@garmin.com>",
     "done": false,
     "created": "2026-11-02"
+  },
+  "продовження_підписки_google_ai_plus|2026-11-04": {
+    "kind": "contract",
+    "title": "Продовження підписки Google AI Plus",
+    "org": "Google Play",
+    "deadline": "2026-11-04",
+    "action": "Додати резервний спосіб оплати для підписки Google AI Plus.",
+    "why": "Без додавання резервного способу оплати підписка може бути не продовжена, що призведе до втрати доступу до сервісу.",
+    "uid": "81917",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "done": false,
+    "created": "2026-11-04"
   }
 }
