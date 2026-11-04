@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-24T16:05:39"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±1.84 год) — тіло не встигає підлаштуватись під ритм",
@@ -2799,6 +2792,13 @@
       "detail": "Олеже, ти отримав два листи з дайджестами новин про криптовалюти від CryptoBeholder.com та Oleh Bezuhlyi. Можливо, тобі буде цікаво переглянути.",
       "module": "selfact",
       "ts": "2026-11-04T16:32:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримав листа від The Economist через LinkedIn з т",
+      "detail": "Олеже, ти отримав листа від The Economist через LinkedIn з темою \"The quality you should most wish for your children\".",
+      "module": "selfact",
+      "ts": "2026-11-04T16:47:59"
     }
   ]
 }
