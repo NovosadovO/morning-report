@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"dat",
     "ts": "2026-11-04T09:17:12.853725"
+  },
+  "mailcal_extract|2026-11-04t12_59_40_701936": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"81932\",     \"title\": \"AVALANCHE OCTOBER 2026 RECAP\",     \"date\": \"2026-10-31\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Звіт",
+    "ts": "2026-11-04T12:59:40.701936"
   }
 }
