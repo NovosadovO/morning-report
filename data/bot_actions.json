@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-23T07:06:44"
-    },
-    {
       "kind": "notify",
       "what": "Графік нічних змін",
       "detail": "Нагадування про важливі робочі зміни, що починаються сьогодні.",
@@ -2799,6 +2792,13 @@
       "detail": "Олеже, Adecco наймає на посаду Business Operations Coordinator у Празі. Можливо, тобі буде цікаво.",
       "module": "selfact",
       "ts": "2026-11-04T05:22:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, надійшов лист про можливу посаду Senior Digital Proje",
+      "detail": "Отримано лист від Сповіщення про вакансії LinkedIn (uid=81915) про вакансію Senior Digital Project Manager в Caterpillar Inc. в Кошице.",
+      "module": "selfact",
+      "ts": "2026-11-04T05:37:50"
     }
   ]
 }
