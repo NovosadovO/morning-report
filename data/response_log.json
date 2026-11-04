@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T15:23:13.183356+00:00",
-      "category": "event_done",
-      "question": "📅 🔔 Оновити платіж Runable\nПланувалась до 13:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-29T23:13:36.495282+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14344,6 +14338,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-11-04T21:31:21.211991+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😊 Добре",
+      "extra": {
+        "score": 4
+      }
     }
   ]
 }
