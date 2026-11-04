@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-24T19:05:46"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-04T18:31:35"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, згідно з листом від Morning Report, сьогодні 4 листоп",
+      "detail": "Свіжі листи: uid=81949 | від Morning Report",
+      "module": "selfact",
+      "ts": "2026-11-04T18:51:46"
     }
   ]
 }
