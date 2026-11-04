@@ -1,4 +1,29 @@
 {
+  "email_ai_item|2026-11-04t12_33_31_106943": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn містить рекомендації щодо вакансій, зокрема пропозицію на посаду \\\"Business Operations Analyst\\\" у компанії Sentinel у Празі",
+    "ts": "2026-11-04T12:33:31.106943"
+  },
+  "healthai_truthfix|2026-11-04t12_30_19_042793": {
+    "topic": "healthai/truthfix",
+    "gist": "☀️ Олег, ти зараз на ранковій зміні (06:00–18:00).  • **Сон:** За сьогодні поки що зафіксовано 7.1 години сну. Тренд за останні 7 днів показує падіння на 1.2 го",
+    "ts": "2026-11-04T12:30:19.042793"
+  },
+  "healthai|2026-11-04t12_30_04_769227": {
+    "topic": "healthai",
+    "gist": "☀️ Олег, ти зараз на ранковій зміні (06:00–18:00).  • **Сон:** За сьогодні поки що зафіксовано 7.1 години сну. Тренд за останні 7 днів показує падіння на 1.2 го",
+    "ts": "2026-11-04T12:30:04.769227"
+  },
+  "healthai|2026-11-04t12_29_42_742674": {
+    "topic": "healthai",
+    "gist": "Олеже, зважаючи на твій змінний графік роботи, сьогоднішня рання зміна (06:00-18:00) може впливати на відновлення. Поки що зафіксовано 7.1 години сну, що є част",
+    "ts": "2026-11-04T12:29:42.742674"
+  },
+  "healthai_truthfix|2026-11-04t12_29_31_581832": {
+    "topic": "healthai/truthfix",
+    "gist": "Олеже, твоя вага становить 85.5 кг. Це на 10.5 кг більше за ціль у 75 кг. За останній тиждень середня вага зросла на 0.3 кг, і загальний тренд також зростає.  Д",
+    "ts": "2026-11-04T12:29:31.581832"
+  },
   "healthai|2026-11-04t12_29_20_916348": {
     "topic": "healthai",
     "gist": "Олеже, твоя вага становить 85.5 кг, що на 10.5 кг далі від цілі 75 кг. Останній тиждень середня вага зростає (+0.3 кг), а тренд також зростає.  Наразі дані по с",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це астрологічний аналіз дня, який описує трансформаці",
     "ts": "2026-11-04T09:03:25.687475"
-  },
-  "action_detect|2026-11-04t09_03_14_385696": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-04T09:03:14.385696"
-  },
-  "action_detect|2026-11-04t09_03_03_531093": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Перевірити статус страховки авто\",   \"action_date\": null,   \"action_time\": \"10:00\",   \"action_summary\"",
-    "ts": "2026-11-04T09:03:03.531093"
-  },
-  "action_detect|2026-11-04t09_02_52_997956": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-04T09:02:52.997956"
-  },
-  "action_detect|2026-11-04t09_02_41_569240": {
-    "topic": "action_detect",
-    "gist": "{ \"action_type\": \"calendar\", \"action_title\": \"Перевірити страховку авто\", \"action_date\": \"2026-11-04\", \"action_time\": \"10:00\", \"action_summary\": \"Перевірити стр",
-    "ts": "2026-11-04T09:02:41.569240"
-  },
-  "action_detect|2026-11-04t09_02_30_388467": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-04T09:02:30.388467"
   }
 }
