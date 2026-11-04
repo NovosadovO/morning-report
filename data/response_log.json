@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T02:45:40.973417+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_note_1249378443"
-    },
-    {
       "ts": "2026-08-29T02:46:00.339584+00:00",
       "category": "calendar_button",
       "question": "День народження Олі",
@@ -14347,6 +14341,12 @@
       "category": "confirm",
       "question": "gx_later: календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-04T09:36:29.175082+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_6646e4700d"
     }
   ]
 }
