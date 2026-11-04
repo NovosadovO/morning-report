@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T23:49:29.108412",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-04T23:49:29.985011",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-04T23:50:48.960880",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T23:50:49.770161",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -227,6 +209,45 @@
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Action required: your billing account 01FB74-1CEEDC-1297AD is past\r\n due or has invalid payment information.\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:01:26.392275",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Democrats Win Congress as CLARITY Runs Out of Time</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81964"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81964"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81964"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81964"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81964"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81964"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
