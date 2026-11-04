@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-23",
-      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-23T05:47:42"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи: uid=81913 | від \"Youtube\" <mortonfinancial@icims.com> | Sign-in notification",
       "module": "selfact",
       "ts": "2026-11-04T04:04:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається рання зміна",
+      "detail": "Поточний час 04:20, а рання зміна починається о 06:00.",
+      "module": "selfact",
+      "ts": "2026-11-04T04:20:30"
     }
   ]
 }
