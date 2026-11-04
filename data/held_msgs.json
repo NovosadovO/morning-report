@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:16:48.780313",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Project: Default Gemini Project is at risk of suspensio</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81920"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81920"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81920"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81920"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81920"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81920"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T00:16:51.134569",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Action required: your billing account 01FB74-1CEEDC-1297AD i</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
@@ -214,6 +175,12 @@
       "ts": "2026-11-05T00:18:56.538518",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 06.11</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:18:57.396326",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 06.11 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
