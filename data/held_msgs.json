@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:27:09.632075",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.11</b> 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:27:10.661521",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81909"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T03:31:08.775117",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Quantitative Trader в AAA Global</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81908"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81908"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81908"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81908"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81908"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81908"
             }
           ]
         ]
