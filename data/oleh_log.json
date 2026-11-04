@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_47g8mecigutvbipgat13u7p2r8_2026-10-09",
-      "label": "✅ Виконано",
-      "ts": "2026-10-09T21:04:10"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_4a9fk8qf98gltdr775knra6djg_2026-10-09",
       "label": "✅ Виконано",
       "ts": "2026-10-09T21:04:11"
@@ -7199,6 +7193,12 @@
       "data": "rx_watch_5fcc878f03",
       "label": "👀 Спостерігаю",
       "ts": "2026-11-04T16:41:04"
+    },
+    {
+      "t": "btn",
+      "data": "pa_skip_9b3e57a742",
+      "label": "❌ Не треба",
+      "ts": "2026-11-04T16:41:10"
     }
   ]
 }
