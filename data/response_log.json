@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T01:30:30.138974+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс Ryanair",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-31"
-      }
-    },
-    {
       "ts": "2026-08-29T01:30:35.173348+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14337,6 +14327,16 @@
       "answer": "Рання зміна",
       "extra": {
         "kind": "calendar",
+        "date": "2026-11-04"
+      }
+    },
+    {
+      "ts": "2026-11-04T06:01:28.840489+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Скасування підписки Garmin Connect+",
+      "extra": {
+        "kind": "note",
         "date": "2026-11-04"
       }
     }
