@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:16:02.657135",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Private keys as easy as 1,2,3</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81910"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81910"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81910"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81910"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81910"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81910"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:16:04.294337",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: BNB Chain Flips Ethereum?</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-04T03:18:23.501020",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:18:24.275573",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
