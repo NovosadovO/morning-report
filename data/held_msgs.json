@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:42:55.717870",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 06.11 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T00:42:59.008041",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +6.6% за 24г (DefiLlama).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81932"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-05T00:46:19.819191",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your Project: Default Gemini Project is at risk of suspensio</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81920"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81920"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81920"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81920"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81920"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81920"
             }
           ]
         ]
