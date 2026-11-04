@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T02:02:30.653134+00:00",
-      "category": "confirm",
-      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-29T02:02:39.965440+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14335,6 +14329,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_ea48e70978"
+    },
+    {
+      "ts": "2026-11-04T07:49:42.619651+00:00",
+      "category": "deadline_found",
+      "question": "Продовження підписки Google AI Plus",
+      "answer": "2026-11-04",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
