@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_80566",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-09T22:28:32"
-    },
-    {
-      "t": "btn",
       "data": "rx_ok_37e1e4c6e4",
       "label": "👌 Прийняв",
       "ts": "2026-10-09T22:28:37"
@@ -7199,6 +7193,18 @@
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-11-04T21:30:16"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-11-04T21:30:17"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-11-04T21:30:19"
     }
   ]
 }
