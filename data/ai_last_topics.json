@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-04t19_50_01_235262": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-04T19:50:01.235262"
+  },
   "selfact|2026-11-04t19_39_03_778446": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Необхідно оновити платіжну інформацію для Runable\",     \"text\": \"Олеже, платіж на $10.00 до Runable був невдал",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від The Economist через LinkedIn містить статтю про важливість внутрішнього локусу контролю для дітей. Також пропонується підписатися на щ",
     "ts": "2026-11-04T16:46:56.596603"
-  },
-  "action_detect|2026-11-04t16_42_03_416740": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-04T16:42:03.416740"
   }
 }
