@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±1.84 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-10-24T16:16:57"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_field_stale",
       "detail": "😴 Сьогоднішні дані вже прийшли, але без сон — останнє відоме значення за 2026-10-23 (1 дн. тому). Скинь, будь ласка, сон окремо, якщо він є в застосунку QWatch.",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Олеже, ти отримав листа від The Economist через LinkedIn з темою \"The quality you should most wish for your children\".",
       "module": "selfact",
       "ts": "2026-11-04T16:47:59"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримав листа від CryptoBeholder.com через LinkedI",
+      "detail": "Олеже, ти отримав листа від CryptoBeholder.com через LinkedIn з темою \"📰 AI-curated Daily Crypto Digest - November 4\".",
+      "module": "selfact",
+      "ts": "2026-11-04T16:48:06"
     }
   ]
 }
