@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-04t15_19_50_382937": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-04T15:19:50.382937"
+  },
+  "mailcal_extract|2026-11-04t15_16_26_734186": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=81939\",     \"title\": \"Temu: знижка\",     \"date\": \"2026-11-04\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Temu надсилає сп",
+    "ts": "2026-11-04T15:16:26.734186"
+  },
   "selfact|2026-11-04t15_15_07_785850": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування про страховку авто\",     \"text\": \"Олеже, страхівка на авто закінчується через 4 дні. Нагад",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-04T12:01:12.308572"
-  },
-  "action_detect|2026-11-04t12_01_01_351738": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-04T12:01:01.351738"
-  },
-  "action_detect|2026-11-04t12_00_43_302869": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Середина зміни. Поїж зараз — інакше о 16:00 з",
-    "ts": "2026-11-04T12:00:43.302869"
   }
 }
