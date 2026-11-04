@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:15:59.694148",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Adecco наймає: Business Operations Coordinator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81912"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81912"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81912"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81912"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81912"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81912"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:16:01.072050",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Binance Traces Its Hack to a Fake Job Interview</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-04T03:18:19.216966",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.11</b> 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:18:20.045417",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
