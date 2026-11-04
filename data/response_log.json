@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T08:01:10.371632+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Догляд за обличчям (ранок)",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t2h",
-        "when": "08:00–08:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-29T08:01:11.432817+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14345,6 +14334,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-04T16:41:49.132192+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_9b3e57a742"
     }
   ]
 }
