@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-04t21_22_13_003194": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-04T21:22:13.003194"
+  },
   "selfact|2026-11-04t21_12_41_998643": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, нагадую, що потрібно перевірити стан страховки на авто. Зали",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз астрологічних аспектів та тем дня, що стосують",
     "ts": "2026-11-04T18:02:47.278702"
-  },
-  "action_detect|2026-11-04t18_02_36_108799": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-04T18:02:36.108799"
   }
 }
