@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:31:01.014215",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🍓 Stanford killed the AI strawberry myth</b>\n👤 GenAI Works через LinkedIn&lt;newsletters-noreply@lin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81963"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81963"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81963"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81963"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81963"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81963"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T00:31:02.413570",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AVALANCHE OCTOBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-05T00:34:50.546199",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 06.11</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:34:51.580214",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 06.11 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
