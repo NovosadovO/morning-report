@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_4a9fk8qf98gltdr775knra6djg_2026-10-09",
-      "label": "✅ Виконано",
-      "ts": "2026-10-09T21:04:11"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_7b7eepuf20nlfamtf37gjofuvk_2026-10-09",
       "label": "✅ Виконано",
       "ts": "2026-10-09T21:04:12"
@@ -7199,6 +7193,12 @@
       "data": "pa_skip_9b3e57a742",
       "label": "❌ Не треба",
       "ts": "2026-11-04T16:41:10"
+    },
+    {
+      "t": "btn",
+      "data": "pa_skip_d31862f09a",
+      "label": "❌ Не треба",
+      "ts": "2026-11-04T16:41:12"
     }
   ]
 }
