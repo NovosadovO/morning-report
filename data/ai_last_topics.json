@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-04t09_00_23_021395": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-04T09:00:23.021395"
+  },
   "selfact|2026-11-04t08_45_37_923559": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Спрей для волосся не був використаний сьогодні о 17:10, хоча було заплановано.\",     \"mail_uid\": \"81915\"   },  ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про стан криптовалют, який містить ціни та зм",
     "ts": "2026-11-04T05:10:53.044748"
-  },
-  "selfact|2026-11-04t05_07_06_717549": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, зараз 05:07, а твоя ранкова зміна починається о 06:00. Ти встигаєш?\",     ",
-    "ts": "2026-11-04T05:07:06.717549"
   }
 }
