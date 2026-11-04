@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-04t11_37_23_260557": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Спрей для волосся не було використано\",     \"text\": \"Спрей для волосся не був використаний сьогодні, хоча був ",
+    "ts": "2026-11-04T11:37:23.260557"
+  },
+  "email_ai_item|2026-11-04t11_29_30_544237": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Startitup через LinkedIn містить статтю про зміни на ринку праці, де наголошується на тому, що вища зарплата вже не єдиний ",
+    "ts": "2026-11-04T11:29:30.544237"
+  },
   "mailcal_extract|2026-11-04t11_28_29_404416": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=81924\",     \"title\": \"VRA обмежено на Crypto.com App\",     \"date\": \"2026-11-03\",     \"time\": null,     \"kind\": \"other\",     \"why\":",
@@ -288,15 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"dtp_keo@faxcopy.sk\",     \"name\": \"dtp_keo@faxcopy.sk\",     \"relation\": \"інше\",     \"topics\": [       \"blue_greeting_A4_five_gifts_no",
     "ts": "2026-11-04T08:17:39.555813"
-  },
-  "selfact|2026-11-04t08_14_24_672774": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Невикористаний спрей для волосся\",     \"text\": \"Олеже, ти відзначив, що спрей для волосся не був використаний сьогодні",
-    "ts": "2026-11-04T08:14:24.672774"
-  },
-  "bills|2026-11-04t08_06_47_982690": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"81917\",     \"vendor\": \"Google Commerce Limited\",     \"amount\": \"4.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"SOP.3305-2846-3111-66",
-    "ts": "2026-11-04T08:06:47.982690"
   }
 }
