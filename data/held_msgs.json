@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:13:37.634116",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:14:58.986178",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T03:17:57.130480",
       "kind": "bills",
       "text": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin Connect+\n💰 8.99 EUR\n📆 до 2026-11-05\n\nРахунок за місячну підписку Garmin Connect+, оплатити до 5 листопада.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:17:59.376725",
+      "kind": "bills",
+      "text": "🟠 <b>ОПЛАТА ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Garmin</b>\n💰 8.99 EUR\n📆 до <b>2026-11-05</b>\n\nРахунок за місячну підписку Garmin Connect+, оплата почнеться 5 листопада 2026 року.",
       "keyboard": null
     }
   ]
