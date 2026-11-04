@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T00:00:32.863036+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Оновити платіжні дані для Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-29"
-      }
-    },
-    {
       "ts": "2026-08-29T00:15:05.704020+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14328,6 +14318,12 @@
     },
     {
       "ts": "2026-11-04T05:47:33.112095+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-04T05:47:36.062549+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
