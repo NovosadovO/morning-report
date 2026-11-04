@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-11-04T22:49:11.426949",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>GenAI Works через LinkedIn</b>\n📋 Тема: «🍓 Stanford killed the AI strawberry myth»\n\n<i>«The Atlas\r\n\r\nАвтор: GenAI Works\r\n\r\n\r\nАвтор: GenAI Works\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/stanford-killed-ai-strawberry-myth-genai-works-ctkyf?lipi=urn%3Ali%3Apage%3Aemail_email_series_follo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_81963"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81963"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81963"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81963"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81963"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81963"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
