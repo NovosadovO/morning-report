@@ -1,9 +1,4 @@
 {
-  "80639": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-10-11T13:05:05.990542+00:00"
-  },
   "80641": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-11-03T20:14:12.265206+00:00"
+  },
+  "81913": {
+    "sender": "mortonfinancial@nurture.icims.com",
+    "sender_raw": "\"Youtube\" <mortonfinancial@nurture.icims.com>",
+    "seen_ts": "2026-11-04T00:54:11.529674+00:00"
   }
 }
