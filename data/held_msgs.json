@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:27:05.844710",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:27:06.645955",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Youtube\"  → Sign-in notification\n• \"The Defiant\"  → Binance Traces Its Hack to a Fake Job Interview\n• The Block  → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block  → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81911"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T03:31:05.728397",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Private keys as easy as 1,2,3</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81910"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81910"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81910"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81910"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81910"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81910"
             }
           ]
         ]
