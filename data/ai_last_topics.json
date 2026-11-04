@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-04t04_30_28_166908": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\": \"Початок ранньої зм",
+    "ts": "2026-11-04T04:30:28.166908"
+  },
   "selfact|2026-11-04t04_20_23_534147": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Наближається рання зміна\",     \"text\": \"Олеже, твоя рання зміна починається о 06:00. Зараз 04:20, у тебе є час",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Сплатити рахунки\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Сплатити хоча б ",
     "ts": "2026-11-03T15:01:59.800506"
-  },
-  "action_detect|2026-11-03t15_01_48_897030": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-03T15:01:48.897030"
   }
 }
