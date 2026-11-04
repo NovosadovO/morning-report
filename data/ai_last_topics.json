@@ -1,4 +1,49 @@
 {
+  "selfact|2026-11-04t18_05_49_078785": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",     \"date\": \"202",
+    "ts": "2026-11-04T18:05:49.078785"
+  },
+  "healthai_truthfix|2026-11-04t18_05_23_493981": {
+    "topic": "healthai/truthfix",
+    "gist": "☀️ Олег, сьогоднішня рання зміна (06:00–18:00) триває. Зафіксовано 7.1 год сну, що вище за середнє за тиждень (6.5 год). Дані про HRV від 2 листопада, 2 дні том",
+    "ts": "2026-11-04T18:05:23.493981"
+  },
+  "healthai|2026-11-04t18_05_12_734038": {
+    "topic": "healthai",
+    "gist": "☀️ Олег, ти зараз на ранковій зміні (06:00–18:00), і я бачу, що поки що зафіксовано 7.1 год сну, що вище за середнє за тиждень (6.5 год). Водночас, показник HRV",
+    "ts": "2026-11-04T18:05:12.734038"
+  },
+  "action_detect|2026-11-04t18_02_47_278702": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз астрологічних аспектів та тем дня, що стосують",
+    "ts": "2026-11-04T18:02:47.278702"
+  },
+  "action_detect|2026-11-04t18_02_36_108799": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-04T18:02:36.108799"
+  },
+  "action_detect|2026-11-04t18_02_25_182234": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-04T18:02:25.182234"
+  },
+  "action_detect|2026-11-04t18_02_11_727713": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-04T18:02:11.727713"
+  },
+  "action_detect|2026-11-04t18_02_00_647288": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-04T18:02:00.647288"
+  },
+  "astro_ai|2026-11-04t18_01_48_866378": {
+    "topic": "astro_ai",
+    "gist": "Олеже, поки ти на ранковій зміні, найважливіше для тебе зараз – це **фінансова стабільність та усвідомлені дії**.  На сьогоднішній день, 4 листопада 2026 року, ",
+    "ts": "2026-11-04T18:01:48.866378"
+  },
   "proactive_actions|2026-11-04t18_01_33_770071": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"date\": \"2026-11-05\",     \"time\": \"\",     \"message\": \"Олеже, нагадую, що зав",
@@ -253,50 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-04T15:19:50.382937"
-  },
-  "mailcal_extract|2026-11-04t15_16_26_734186": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=81939\",     \"title\": \"Temu: знижка\",     \"date\": \"2026-11-04\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Temu надсилає сп",
-    "ts": "2026-11-04T15:16:26.734186"
-  },
-  "selfact|2026-11-04t15_15_07_785850": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування про страховку авто\",     \"text\": \"Олеже, страхівка на авто закінчується через 4 дні. Нагад",
-    "ts": "2026-11-04T15:15:07.785850"
-  },
-  "healthai_truthfix|2026-11-04t15_05_28_037054": {
-    "topic": "healthai/truthfix",
-    "gist": "☀️ Олег, твоя рання зміна (06:00–18:00) триває. Наразі зафіксовано 7.1 год сну, що більше за середнє за тиждень (6.5 год).  Твій пульс становить 50.0 уд/хв, а H",
-    "ts": "2026-11-04T15:05:28.037054"
-  },
-  "healthai|2026-11-04t15_05_09_885094": {
-    "topic": "healthai",
-    "gist": "☀️ Олег, сьогоднішня рання зміна (06:00-18:00) триває, а поки що зафіксовано 7.1 год сну, що є вищим за середнє за тиждень (6.5 год).  Твій пульс зараз 50.0 уд/",
-    "ts": "2026-11-04T15:05:09.885094"
-  },
-  "action_detect|2026-11-04t15_01_50_485200": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Заплануй 15 хвилин після зміни, щоб",
-    "ts": "2026-11-04T15:01:50.485200"
-  },
-  "action_detect|2026-11-04t15_01_30_324691": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз даних про здоров'я, біг та астрологічні транзи",
-    "ts": "2026-11-04T15:01:30.324691"
-  },
-  "proactive_actions|2026-11-04t15_01_22_210707": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити страховку авто\",     \"date\": \"2026-11-04\",     \"time\": \"\",     \"message\": \"Олеже, твоя страховка ",
-    "ts": "2026-11-04T15:01:22.210707"
-  },
-  "action_detect|2026-11-04t15_01_19_163142": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Страховка на авто\",   \"action_date\": \"2023-11-05\",   \"action_time\": \"12:00\",   \"action_summary\": \"Нага",
-    "ts": "2026-11-04T15:01:19.163142"
-  },
-  "action_detect|2026-11-04t15_01_08_740026": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Переглянути деталі щодо страховки авто\",   \"action_date\": \"2023-11-04\",   \"action_time\": null,   \"acti",
-    "ts": "2026-11-04T15:01:08.740026"
   }
 }
