@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T23:48:18.792135",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T23:48:19.603049",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:01:20.073475",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The World's Largest Virtual Marketing Conference!</b>\n👤 AI Evolution через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81966"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81966"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81966"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81966"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81966"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81966"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
