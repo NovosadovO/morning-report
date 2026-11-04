@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:44:37.716446",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.11</b> 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:44:38.585666",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -379,6 +373,12 @@
       "ts": "2026-11-04T03:47:37.522775",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:48:57.667545",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Youtube\" <mortonfinancial@nurture.icims.com> → Sign-in notification\n• \"The Defiant\" <no-reply@mail.thedefiant.io> → Binance Traces Its Hack to a Fake Job Interview\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
