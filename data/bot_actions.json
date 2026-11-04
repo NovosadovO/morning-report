@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-23T20:48:59"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-04T11:06:08"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримав лист зі спеціальною пропозицією від Reserv",
+      "detail": "Отримано новий лист від 'Reserved' з пропозицією знижок.",
+      "module": "selfact",
+      "ts": "2026-11-04T11:06:24"
     }
   ]
 }
