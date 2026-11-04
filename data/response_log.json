@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T00:47:29.623555+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_6b61d5cc02"
-    },
-    {
       "ts": "2026-08-29T01:30:30.138974+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14335,6 +14329,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_run_297b66577f"
+    },
+    {
+      "ts": "2026-11-04T06:01:24.118084+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Рання зміна",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-04"
+      }
     }
   ]
 }
