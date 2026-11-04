@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T02:00:49.062140",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T02:02:04.574668",
       "kind": "htrend",
       "text": "😴 <b>Середній сон за тиждень: 6.4 г</b> — нижче 6.5 г.\n\nЦе через зміни чи ти сам лягаєш пізно? Якщо через зміни — можу планувати денний сон у вільні дні.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-04T02:05:28.470452",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T02:06:42.221736",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → Tokenization Briefing: BNB Chain Flips Ethereum?\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Fake job interview, AI tool used in Binance hack\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
