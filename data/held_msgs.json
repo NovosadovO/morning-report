@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:00:57.172875",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Quantitative Trader в AAA Global</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81908"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81908"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81908"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81908"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81908"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81908"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-04T03:00:58.638401",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>🔷 The Daily: Fake job interview, AI tool used in Binance hac</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-11-04T03:06:09.904993",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-04T03:06:10.738117",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
