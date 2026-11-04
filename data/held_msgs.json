@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:41:31.476999",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +6.5% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T00:41:32.467635",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +6.5% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:46:08.932593",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The World's Largest Virtual Marketing Conference!</b>\n👤 AI Evolution через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81966"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81966"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81966"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81966"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81966"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81966"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
