@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T00:47:08.101582+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "bill_due_paid_b469f4fba5"
-    },
-    {
       "ts": "2026-08-29T00:47:08.106471+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14327,6 +14321,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-04T05:48:19.096323+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
