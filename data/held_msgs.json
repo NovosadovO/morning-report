@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-04T03:12:10.633523",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.11</b> 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-04T03:12:11.768750",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.11 11:00–22:00 (660 хв)\n\nВільно 660 хв 11:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81908"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-04T03:16:08.679042",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>🔷 The Daily: Fake job interview, AI tool used in Binance hac</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81907"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81907"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81907"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81907"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81907"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81907"
             }
           ]
         ]
