@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T00:31:03.928935",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Project: Default Gemini Project is at risk of suspensio</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81920"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81920"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81920"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81920"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81920"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81920"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T00:31:05.386251",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Action required: your billing account 01FB74-1CEEDC-1297AD i</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
@@ -214,6 +175,12 @@
       "ts": "2026-11-05T00:34:55.363438",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +6.4% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T00:34:56.208299",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).\n\nETH +6.4% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
