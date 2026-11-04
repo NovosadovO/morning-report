@@ -2,6 +2,18 @@
   "items": [
     {
       "t": "btn",
+      "data": "email_delete_80552",
+      "label": "🗑 Видалити",
+      "ts": "2026-10-09T18:25:10"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_80559",
+      "label": "🗑 Видалити",
+      "ts": "2026-10-09T18:25:13"
+    },
+    {
+      "t": "btn",
       "data": "rx_useful_87b3bc3080",
       "label": "💡 Корисно",
       "ts": "2026-10-09T18:25:25"
@@ -7178,27 +7190,15 @@
     },
     {
       "t": "btn",
-      "data": "habit_no_spray",
-      "label": "❌ Ні",
-      "ts": "2026-11-04T05:47:19"
-    },
-    {
-      "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-11-04T05:47:23"
-    },
-    {
-      "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
       "ts": "2026-11-04T05:47:30"
     },
     {
       "t": "btn",
-      "data": "rx_mute_49d842392c",
-      "label": "🙈 Не нагадуй",
-      "ts": "2026-11-04T05:47:33"
+      "data": "habit_yes_shower",
+      "label": "✅ Зробив",
+      "ts": "2026-11-04T05:47:40"
     }
   ]
 }
