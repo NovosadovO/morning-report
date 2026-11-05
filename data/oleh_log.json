@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "pa_skip_382d69a321",
-      "label": "",
-      "ts": "2026-10-10T08:07:09"
-    },
-    {
-      "t": "btn",
       "data": "pa_skip_198aceb382",
       "label": "❌ Не треба",
       "ts": "2026-10-10T08:07:22"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-11-05T11:28:31"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_shower",
+      "label": "✅ Так",
+      "ts": "2026-11-05T11:28:33"
     }
   ]
 }
