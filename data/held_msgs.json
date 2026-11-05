@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:01:21.296551",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T03:01:22.907149",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-05T03:05:55.254501",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.9% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T03:05:56.221432",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.9% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
