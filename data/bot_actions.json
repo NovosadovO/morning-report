@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені видалити минулі дедлайни, такі як 'П",
-      "detail": "Бот вже питав про дедлайни, але Олег не дав чіткої відповіді, і вони все ще відображаються як невиконані.",
-      "module": "selfact",
-      "ts": "2026-10-25T06:38:50"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "СВІЖІ ЛИСТИ: - uid=81963 | від GenAI Works через LinkedIn<newsletters-noreply@linkedin.com> | 🍓 Stanford killed the AI strawberry myth",
       "module": "selfact",
       "ts": "2026-11-05T05:19:02"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-05",
+      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-05T06:32:15"
     }
   ]
 }
