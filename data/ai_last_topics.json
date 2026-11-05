@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-05t17_21_46_920136": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-05T17:21:46.920136"
+  },
   "mailcal_extract|2026-11-05t17_11_47_883065": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82003\",     \"title\": \"Asteria Business Update\",     \"date\": \"2026-11-05\",     \"time\": \"20:00\",     \"kind\": \"meeting\",     \"why\": \"",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страховки на ав",
     "ts": "2026-11-05T13:49:15.298407"
-  },
-  "selfact|2026-11-05t13_33_23_822051": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що страхування Kooperativa (€67,22) потребує оплати п",
-    "ts": "2026-11-05T13:33:23.822051"
   }
 }
