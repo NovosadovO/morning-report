@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-05t17_36_53_580068": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-05T17:36:53.580068"
+  },
+  "selfact|2026-11-05t17_25_32_116610": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Вебінар Asteria Business Update\",     \"text\": \"Нагадую, що сьогодні о 20:00 відбудеться Asteria Business Upd",
+    "ts": "2026-11-05T17:25:32.116610"
+  },
   "action_detect|2026-11-05t17_21_46_920136": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-05T13:58:11.986761"
-  },
-  "deadlines|2026-11-05t13_50_07_374051": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-05T13:50:07.374051"
-  },
-  "selfact|2026-11-05t13_49_15_298407": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страховки на ав",
-    "ts": "2026-11-05T13:49:15.298407"
   }
 }
