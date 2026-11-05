@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-05t18_34_18_642510": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Нагадати про Garmin Services\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Нагадати завтра",
+    "ts": "2026-11-05T18:34:18.642510"
+  },
+  "openloop_promises|2026-11-05t18_29_11_278171": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-05T18:29:11.278171"
+  },
   "selfact|2026-11-05t18_27_40_619294": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",    ",
@@ -288,15 +298,5 @@
     "topic": "healthai",
     "gist": "👋 Олеже, сьогодні показники сну та кроків ще не надходили, але бачу, що завтра в тебе нічна зміна. Сон за останній тиждень падає, тому варто приділити увагу від",
     "ts": "2026-11-05T15:05:58.300492"
-  },
-  "action_detect|2026-11-05t15_02_35_603640": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-05T15:02:35.603640"
-  },
-  "action_detect|2026-11-05t15_02_24_620599": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про здоров'я, трен",
-    "ts": "2026-11-05T15:02:24.620599"
   }
 }
