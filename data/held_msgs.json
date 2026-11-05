@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:09:46.330088",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.9% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T03:09:47.112583",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.9% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81964"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-05T03:16:36.686005",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🍓 Stanford killed the AI strawberry myth</b>\n👤 GenAI Works через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81963"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81963"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81963"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81963"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81963"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81963"
             }
           ]
         ]
