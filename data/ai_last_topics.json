@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-05t20_48_16_271081": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива вакансія\",     \"text\": \"Знайшов цікаву вакансію Executive Assistant to Chief Executive Officer у GymBe",
+    "ts": "2026-11-05T20:48:16.271081"
+  },
+  "selfact|2026-11-05t20_32_25_870639": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страхов",
+    "ts": "2026-11-05T20:32:25.870639"
+  },
   "action_detect|2026-11-05t20_30_43_376405": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"День пройшов спокійно, початий з х",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-11-05T17:21:46.920136"
-  },
-  "mailcal_extract|2026-11-05t17_11_47_883065": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82003\",     \"title\": \"Asteria Business Update\",     \"date\": \"2026-11-05\",     \"time\": \"20:00\",     \"kind\": \"meeting\",     \"why\": \"",
-    "ts": "2026-11-05T17:11:47.883065"
-  },
-  "selfact|2026-11-05t17_09_25_243171": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страхов",
-    "ts": "2026-11-05T17:09:25.243171"
   }
 }
