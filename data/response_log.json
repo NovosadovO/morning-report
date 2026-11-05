@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T06:00:21.738233+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн check-in для рейсу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-30"
-      }
-    },
-    {
       "ts": "2026-08-30T13:11:03.498267+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14362,6 +14352,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-05T23:08:52.458796+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😊 Добре",
+      "extra": {
+        "score": 4
+      }
     }
   ]
 }
