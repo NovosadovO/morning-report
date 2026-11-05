@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-25T17:53:42"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Нагадування про вебінар Asteria Business Update, який відбудеться сьогодні о 20:00.",
       "module": "selfact",
       "ts": "2026-11-05T16:38:26"
+    },
+    {
+      "kind": "notify",
+      "what": "Вебінар Asteria Business Update",
+      "detail": "Отримано лист про вебінар Asteria Business Update, який відбудеться сьогодні о 20:00.",
+      "module": "selfact",
+      "ts": "2026-11-05T16:54:26"
     }
   ]
 }
