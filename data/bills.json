@@ -498,5 +498,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-11-05"
+  },
+  "garmin_services|8_99|2026-11-06": {
+    "vendor": "Garmin Services",
+    "amount": "8.99",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-11-06",
+    "uid": "82012",
+    "sender": "Garmin <garminservices@billing.garmin.com>",
+    "subject": "Your Garmin Services Bill",
+    "note": "Це ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-11-05"
   }
 }
