@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T23:24:45.547469+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити новини по крипторинку",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-29T23:24:50.056845+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14372,6 +14366,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути персоналізовані робочі пропозиції",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-05"
+      }
+    },
+    {
+      "ts": "2026-11-05T07:30:23.286255+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити підтвердження підписки Garmin Connect+",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-05"
