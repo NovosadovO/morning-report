@@ -8711,5 +8711,16 @@
     "about": "Зустріч із Марошем Сіваком",
     "state": "closed",
     "ts": "2026-11-05T11:27:29"
+  },
+  "notify_ack|t|оплата страхування kooperativa": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "оплата страхування kooperativa",
+    "title": "Оплата страхування Kooperativa",
+    "action": "close",
+    "label": "👌 Прийняв",
+    "about": "Оплата страхування Kooperativa",
+    "state": "closed",
+    "ts": "2026-11-05T11:27:39"
   }
 }
