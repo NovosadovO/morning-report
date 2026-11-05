@@ -1,4 +1,14 @@
 {
+  "proactive_actions|2026-11-05t07_30_11_764225": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Нагадати про страховку авто\",     \"date\": \"2026-11-05\",     \"time\": \"12:00\",     \"message\": \"Олеже, сьогодні",
+    "ts": "2026-11-05T07:30:11.764225"
+  },
+  "selfact|2026-11-05t07_23_10_437560": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страхов",
+    "ts": "2026-11-05T07:23:10.437560"
+  },
   "subs|2026-11-05t07_20_03_694874": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"81968\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -288,15 +298,5 @@
     "topic": "money",
     "gist": "[]",
     "ts": "2026-11-04T22:14:44.750699"
-  },
-  "mailcal_extract|2026-11-04t22_08_24_275967": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=81920\",     \"title\": \"Google Cloud: рахунок заблоковано\",     \"date\": \"2026-11-04\",     \"time\": null,     \"kind\": \"payment\",     \"",
-    "ts": "2026-11-04T22:08:24.275967"
-  },
-  "bills|2026-11-04t22_07_47_997717": {
-    "topic": "bills",
-    "gist": "[{\"uid\":\"81785\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"invoice_no\":\"EUR4369771\",\"due\":\"2026-11-05\",\"already_paid\":false,\"note\":\"Повідомлення про ма",
-    "ts": "2026-11-04T22:07:47.997717"
   }
 }
