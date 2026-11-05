@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T23:48:14.333803",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.1% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-05T23:49:23.914762",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-05T23:49:24.694870",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T23:50:36.123432",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.2% за 24г (DefiLlama).",
@@ -194,6 +176,45 @@
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.0% за 24г (DefiLlama).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T00:01:44.842614",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ми оновили Ваш обліковий запис Meta в додатках Meta</b>\n👤 \"Meta\" &lt;noreply@email.meta.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82024"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82024"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82024"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82024"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82024"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82024"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
