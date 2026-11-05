@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T00:01:50.919211",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Action Required: Download Your Data</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81991"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81991"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81991"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81991"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81991"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81991"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T00:01:52.486302",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AVALANCHE OCTOBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-11-06T00:07:30.926583",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.5% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T00:07:32.017386",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -10.5% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
