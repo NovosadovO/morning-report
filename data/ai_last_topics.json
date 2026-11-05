@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-05t12_16_37_154675": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Нагадую, що через 4 дні закінчується термін дії страховки на авто. Варто перевірити це найближчим часом.\",     ",
+    "ts": "2026-11-05T12:16:37.154675"
+  },
+  "action_detect|2026-11-05t12_12_35_626528": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-05T12:12:35.626528"
+  },
+  "action_detect|2026-11-05t12_12_24_797296": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про видалений лист з персоналізованим",
+    "ts": "2026-11-05T12:12:24.797296"
+  },
   "action_detect|2026-11-05t12_12_13_678757": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2023-11-08\",   \"action_time\": \"10:00\",   \"action_",
     "ts": "2026-11-05T09:01:50.402594"
-  },
-  "action_detect|2026-11-05t09_01_39_123242": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-05T09:01:39.123242"
-  },
-  "briefing_truthfix|2026-11-05t09_01_32_903295": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 **ВЕКТОР ДНЯ**  Сьогодні, 5 листопада 2026 року, твій фокус — на трьох ключових цілях: фінансова незалежність через криптоінвестиції, досягнення ваги 75 кг та",
-    "ts": "2026-11-05T09:01:32.903295"
-  },
-  "briefing|2026-11-05t09_01_28_408232": {
-    "topic": "briefing",
-    "gist": "🧭 **ВЕКТОР ДНЯ**  Сьогодні, 5 листопада 2026 року, найважливіше для тебе — зберігати фокус на трьох ключових цілях: розбудова фінансової незалежності через крип",
-    "ts": "2026-11-05T09:01:28.408232"
   }
 }
