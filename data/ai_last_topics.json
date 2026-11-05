@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-11-05t16_15_44_609823": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn про нові вакансії за запитом 'Директор з операцій' в European Union. Зокрема, пропонується вакансія Head of Operations в ком",
+    "ts": "2026-11-05T16:15:44.609823"
+  },
+  "selfact|2026-11-05t16_07_42_819537": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, у тебе є невиконані рахунки від GASTROMILA, spol. s r.o. (B2026046). Варто звернути на це увагу.\",     \"",
+    "ts": "2026-11-05T16:07:42.819537"
+  },
   "healthai|2026-11-05t16_06_21_642949": {
     "topic": "healthai",
     "gist": "👋 Олеже, твоя вага сьогодні 84.3 кг, а середній показник за тиждень – 84.4 кг, що вказує на невелике зростання. Завтра в тебе нічна зміна, тому важливо подумати",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про видалений лист з персоналізованим",
     "ts": "2026-11-05T12:12:24.797296"
-  },
-  "action_detect|2026-11-05t12_12_13_678757": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-05T12:12:13.678757"
-  },
-  "bills|2026-11-05t12_08_15_755454": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"81968\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"EUR4369771\",     \"due\": \"2026-12-05\", ",
-    "ts": "2026-11-05T12:08:15.755454"
   }
 }
