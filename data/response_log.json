@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T23:24:10.180002+00:00",
-      "category": "ai_button",
-      "question": "crypto",
-      "answer": "more",
-      "extra": {
-        "trigger": "deep_analysis",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-29T23:24:10.796040+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14370,6 +14360,16 @@
       "answer": "Нагадати про страховку авто",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-05"
+      }
+    },
+    {
+      "ts": "2026-11-05T06:00:27.980659+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути лист від The Block",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-05"
       }
     }
