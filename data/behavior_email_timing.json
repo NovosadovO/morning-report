@@ -1,9 +1,4 @@
 {
-  "80667": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "TREND.sk через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-12T07:04:04.388025+00:00"
-  },
   "80668": {
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Ella @ Pixory\" <support@pixoryofficial.com>",
@@ -1498,5 +1493,10 @@
     "sender": "messages-noreply@linkedin.com",
     "sender_raw": "LinkedIn <messages-noreply@linkedin.com>",
     "seen_ts": "2026-11-05T08:51:50.310306+00:00"
+  },
+  "81978": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-11-05T09:08:45.577983+00:00"
   }
 }
