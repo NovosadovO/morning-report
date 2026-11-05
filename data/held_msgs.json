@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T00:28:06.784793",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata <team@athletedata.health> → welcome to athletedata mcp\n• Garmin <alerts@account.garmin.com> → Action Required: Download Your Data\n• Avalanche Team1 <avalancheteam1@substack.com> → AVALANCHE OCTOBER 2026 RECAP\n\n🧹 Реклама: 2 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T00:28:07.623335",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen  → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata  → welcome to athletedata mcp\n• Garmin  → Action Required: Download Your Data\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n\n🧹 Реклама: 2 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81991"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T00:31:39.711610",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE OCTOBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81932"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81932"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81932"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81932"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81932"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81932"
             }
           ]
         ]
