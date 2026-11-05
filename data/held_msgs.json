@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T23:51:50.457733",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.4% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T23:51:51.341420",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.\n\nXRP -6.4% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82022"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T00:01:49.198615",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>welcome to athletedata mcp</b>\n👤 Julian &amp; Daniel from athletedata &lt;team@athletedata",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82014"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82014"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82014"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82014"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82014"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82014"
             }
           ]
         ]
