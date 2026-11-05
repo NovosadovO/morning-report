@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T00:01:47.879089",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Donald Trump’s humiliation offers America an opportunity</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82022"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82022"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82022"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82022"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82022"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82022"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T00:01:49.198615",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>welcome to athletedata mcp</b>\n👤 Julian &amp; Daniel from athletedata &lt;team@athletedata",
@@ -280,6 +241,12 @@
       "ts": "2026-11-06T00:07:25.689443",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata <team@athletedata.health> → welcome to athletedata mcp\n• Garmin <alerts@account.garmin.com> → Action Required: Download Your Data\n• Avalanche Team1 <avalancheteam1@substack.com> → AVALANCHE OCTOBER 2026 RECAP\n\n🧹 Реклама: 2 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T00:07:26.699536",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen  → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata  → welcome to athletedata mcp\n• Garmin  → Action Required: Download Your Data\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n\n🧹 Реклама: 2 — можна пропустити.",
       "keyboard": null
     }
   ]
