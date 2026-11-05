@@ -1,4 +1,39 @@
 {
+  "healthai|2026-11-05t15_05_58_300492": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, сьогодні показники сну та кроків ще не надходили, але бачу, що завтра в тебе нічна зміна. Сон за останній тиждень падає, тому варто приділити увагу від",
+    "ts": "2026-11-05T15:05:58.300492"
+  },
+  "action_detect|2026-11-05t15_02_35_603640": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-05T15:02:35.603640"
+  },
+  "action_detect|2026-11-05t15_02_24_620599": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про здоров'я, трен",
+    "ts": "2026-11-05T15:02:24.620599"
+  },
+  "action_detect|2026-11-05t15_02_13_589957": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страхування Kooperativa\", \"action_date\": \"2026-11-08\", \"action_time\": \"10:00\", \"action_summary\": \"Нагадува",
+    "ts": "2026-11-05T15:02:13.589957"
+  },
+  "action_detect|2026-11-05t15_02_02_473961": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-05T15:02:02.473961"
+  },
+  "briefing|2026-11-05t15_01_56_865667": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Олеже, сьогоднішній день, 5 листопада 2026 року, вимагає зосередженості на двох ключових цілях: фінансова незалежність через криптовалюту та побудо",
+    "ts": "2026-11-05T15:01:56.865667"
+  },
+  "themes_ai_truthfix|2026-11-05t15_01_49_595979": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Привіт, Олеже!  💰 ФІНАНСИ Є 462.11€, що чекають оплати, і два рахунки вже прострочені. Варто переглянути список неоплачених рахунків та сплатити хоча б один сьо",
+    "ts": "2026-11-05T15:01:49.595979"
+  },
   "themes_ai|2026-11-05t15_01_44_113870": {
     "topic": "themes_ai",
     "gist": "Привіт, Олеже! Розглянемо, що в нас сьогодні відбувається.  💰 ФІНАНСИ Бачу, що є деякі неоплачені рахунки, а саме 462.11€, і два з них вже прострочені. Це потре",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-05T11:29:43.203026"
-  },
-  "action_detect|2026-11-05t11_29_32_206375": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не зміг розпізнати жодної події. Спробуй чіткіше: зав",
-    "ts": "2026-11-05T11:29:32.206375"
-  },
-  "planner|2026-11-05t11_29_21_070122": {
-    "topic": "planner",
-    "gist": "[]",
-    "ts": "2026-11-05T11:29:21.070122"
-  },
-  "action_detect|2026-11-05t11_28_33_859674": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-05T11:28:33.859674"
-  },
-  "action_detect|2026-11-05t11_28_22_682150": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-05T11:28:22.682150"
-  },
-  "selfact|2026-11-05t11_15_06_266676": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, через 4 дні закінчується термін дії страховки на авто. Будь лас",
-    "ts": "2026-11-05T11:15:06.266676"
-  },
-  "action_detect|2026-11-05t11_11_30_537129": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Зважитись та записати в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зваж се",
-    "ts": "2026-11-05T11:11:30.537129"
-  },
-  "email_ai_item|2026-11-05t11_08_44_504333": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Reserved інформує про випуск нової спеціальної колекції \\\"The Icon by Dawid Woliński x Reserved\\\". Лист містить посилання на сайт брен",
-    "ts": "2026-11-05T11:08:44.504333"
   }
 }
