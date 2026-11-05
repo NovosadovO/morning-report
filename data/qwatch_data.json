@@ -2020,12 +2020,21 @@
     "saved_at": "2026-11-04 21:31"
   },
   "2026-11-05": {
-    "hr_avg": 51,
-    "spo2": 96,
-    "body_battery": 42,
-    "stress": 21,
+    "hr_avg": 46,
+    "spo2": 97,
+    "body_battery": 89,
+    "stress": 15,
     "date": "2026-11-05",
     "source": "qwatch_auto",
-    "saved_at": "2026-11-05 09:32"
+    "saved_at": "2026-11-05 12:33",
+    "steps": 185,
+    "sleep_total_min": 627,
+    "sleep_deep_min": 113,
+    "sleep_rem_min": 131,
+    "sleep_light_min": 383,
+    "sleep_awake_min": 17,
+    "weight_kg": 84.3,
+    "hrv": 59,
+    "sleep_hours": 10.45
   }
 }
