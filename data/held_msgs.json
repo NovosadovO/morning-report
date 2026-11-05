@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:45:50.444293",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>AVALANCHE OCTOBER 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81932"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81932"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81932"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81932"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81932"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81932"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T03:45:51.877442",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Project: Default Gemini Project is at risk of suspensio</b>\n👤 \"Google Cloud Platform, Firebase, and APIs\" &lt;Cloud",
@@ -214,6 +175,12 @@
       "ts": "2026-11-05T03:53:06.646518",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +7.4% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T03:53:07.448183",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +7.4% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
