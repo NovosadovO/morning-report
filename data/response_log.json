@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T04:30:22.971205+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс Ryanair",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-30"
-      }
-    },
-    {
       "ts": "2026-08-30T04:30:28.030816+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14370,6 +14360,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-11-05T23:08:28.279433+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
