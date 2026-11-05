@@ -18640,7 +18640,35 @@
     "pid": "bill_due_paid_8f72fae2a6",
     "subject": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.",
     "extra": {
-      "msg": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin Services\n💰 8.99 EUR\n📆 до 2026-11-06\n\nЦе ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада."
+      "msg": "🟠 ОПЛАТА ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin Services\n💰 8.99 EUR\n📆 до 2026-11-06\n\nЦе ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 122990,
+        "kb": [
+          [
+            {
+              "text": "✅ Оплатив",
+              "callback_data": "bill_due_paid_8f72fae2a6"
+            }
+          ],
+          [
+            {
+              "text": "⏰ Нагадати завтра",
+              "callback_data": "bill_due_snooze_8f72fae2a6"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "bill_cal_8f72fae2a6"
+            }
+          ],
+          [
+            {
+              "text": "✍️ Написати постачальнику",
+              "callback_data": "vr_menu_8f72fae2a6"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-05T18:34:15.430739+00:00"
   }
