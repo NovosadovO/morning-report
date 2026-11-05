@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:45:46.536635",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Democrats Win Congress as CLARITY Runs Out of Time</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81964"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81964"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81964"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81964"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81964"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81964"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T03:45:49.026446",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🍓 Stanford killed the AI strawberry myth</b>\n👤 GenAI Works через LinkedIn&lt;newsletters-noreply@lin",
@@ -280,6 +241,12 @@
       "ts": "2026-11-05T03:53:02.455534",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Garmin <GarminServicesBilling@garmin.com> → Garmin Connect+ Subscription Confirmation\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1 <avalancheteam1@substack.com> → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T03:53:03.349435",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Garmin  → Garmin Connect+ Subscription Confirmation\n• The Block  → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
