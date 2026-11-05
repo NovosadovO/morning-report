@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T23:18:56.865357+00:00",
-      "category": "event_done",
-      "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-29T23:19:04.270819+00:00",
       "category": "event_done",
       "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 20:40 — виконано?",
@@ -14357,6 +14351,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від Garmin",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-05"
+      }
+    },
+    {
+      "ts": "2026-11-05T04:30:28.571805+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Profesia.sk",
       "extra": {
         "kind": "reply",
         "date": "2026-11-05"
