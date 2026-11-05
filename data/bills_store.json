@@ -2559,5 +2559,18 @@
     "note": "Рахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
     "uid": "81722",
     "ts": "2026-11-05T03:18:25.088048+00:00"
+  },
+  "48b9d350ce": {
+    "bid": "garmin|8_99|2026-12-05",
+    "vendor": "Garmin",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-12-05",
+    "invoice_no": "EUR4369771",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Garmin Connect+ Subscription Confirmation",
+    "note": "Підтвердження підписки Garmin Connect+ на місяць. Наступне поновлення 5 грудня 2026 року.",
+    "uid": "81968",
+    "ts": "2026-11-05T04:08:08.080089+00:00"
   }
 }
