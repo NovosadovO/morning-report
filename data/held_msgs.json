@@ -310,10 +310,43 @@
       "keyboard": null
     },
     {
-      "ts": "2026-11-06T00:47:00.439393",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.\n\nONDO -11.3% за 24г (DefiLlama).",
-      "keyboard": null
+      "ts": "2026-11-06T00:46:59.337013",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Action Required: Download Your Data</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81991"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81991"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81991"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81991"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81991"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81991"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
