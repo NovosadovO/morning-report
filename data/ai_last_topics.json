@@ -1,4 +1,19 @@
 {
+  "money|2026-11-05t18_21_10_971210": {
+    "topic": "money",
+    "gist": "[{\"uid\":\"81968\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"date\":\"2026-11-05\",\"kind\":\"sub\",\"note\":\"Щомісячна оплата підписки Garmin Connect+.\"}]",
+    "ts": "2026-11-05T18:21:10.971210"
+  },
+  "defi_digest|2026-11-05t18_15_44_391382": {
+    "topic": "defi_digest",
+    "gist": "За останні 24 години на ринку DeFi спостерігалося значне зростання токена Morpho Midnight на 17.1%, тоді як Dolomite зазнав найбільшого падіння, втративши 19.2%",
+    "ts": "2026-11-05T18:15:44.391382"
+  },
+  "action_detect|2026-11-05t18_15_06_287866": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-05T18:15:06.287866"
+  },
   "selfact|2026-11-05t18_11_40_435783": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Нагадую, що страхівка на авто закінчується через 4 дні. Переві",
@@ -283,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страхування Kooperativa\", \"action_date\": \"2026-11-08\", \"action_time\": \"10:00\", \"action_summary\": \"Нагадува",
     "ts": "2026-11-05T15:02:13.589957"
-  },
-  "action_detect|2026-11-05t15_02_02_473961": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-05T15:02:02.473961"
-  },
-  "briefing|2026-11-05t15_01_56_865667": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Олеже, сьогоднішній день, 5 листопада 2026 року, вимагає зосередженості на двох ключових цілях: фінансова незалежність через криптовалюту та побудо",
-    "ts": "2026-11-05T15:01:56.865667"
-  },
-  "themes_ai_truthfix|2026-11-05t15_01_49_595979": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Привіт, Олеже!  💰 ФІНАНСИ Є 462.11€, що чекають оплати, і два рахунки вже прострочені. Варто переглянути список неоплачених рахунків та сплатити хоча б один сьо",
-    "ts": "2026-11-05T15:01:49.595979"
-  },
-  "defi_digest|2026-11-05t18_15_44_391382": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на ринку DeFi спостерігалося значне зростання токена Morpho Midnight на 17.1%, тоді як Dolomite зазнав найбільшого падіння, втративши 19.2%",
-    "ts": "2026-11-05T18:15:44.391382"
-  },
-  "action_detect|2026-11-05t18_15_06_287866": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-05T18:15:06.287866"
   }
 }
