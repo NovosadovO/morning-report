@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-05t04_30_12_390879": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"date\": \"2026-11-05\",     \"time\": \"12:00\",     \"message\": \"Олеже, нагад",
+    "ts": "2026-11-05T04:30:12.390879"
+  },
   "subs|2026-11-05t04_20_01_310223": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"81968\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-04T19:52:03.788736"
-  },
-  "mailcal_extract|2026-11-04t19_51_49_462531": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=81953\",     \"title\": \"Прем'єра реаліті-шоу Destination X\",     \"date\": \"2026-11-17\",     \"time\": null,     \"kind\": \"other\",     \"w",
-    "ts": "2026-11-04T19:51:49.462531"
   }
 }
