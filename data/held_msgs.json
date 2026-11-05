@@ -178,10 +178,43 @@
       "keyboard": null
     },
     {
-      "ts": "2026-11-06T00:16:12.363094",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen  → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata  → welcome to athletedata mcp\n• Garmin  → Action Required: Download Your Data\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n\n🧹 Реклама: 2 — можна пропустити.",
-      "keyboard": null
+      "ts": "2026-11-06T00:16:11.196953",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ми оновили Ваш обліковий запис Meta в додатках Meta</b>\n👤 \"Meta\" &lt;noreply@email.meta.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82024"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82024"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82024"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82024"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82024"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82024"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
