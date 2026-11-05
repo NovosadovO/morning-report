@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-25",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-25T17:53:21"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Необхідно оновити платіжну інформацію для підписки Runable, яка була невдалою.",
       "module": "selfact",
       "ts": "2026-11-05T16:38:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Asteria Business Update",
+      "detail": "Нагадування про вебінар Asteria Business Update, який відбудеться сьогодні о 20:00.",
+      "module": "selfact",
+      "ts": "2026-11-05T16:38:26"
     }
   ]
 }
