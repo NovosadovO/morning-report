@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-05t06_05_15_444643": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні о 17:00 у тебе нічна зміна.\",     \"date\": \"2026-11-06\",     \"time",
+    "ts": "2026-11-05T06:05:15.444643"
+  },
+  "action_detect|2026-11-05t06_00_50_545043": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-05T06:00:50.545043"
+  },
+  "action_detect|2026-11-05t06_00_39_762679": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-05T06:00:39.762679"
+  },
   "proactive_actions|2026-11-05t06_00_12_365841": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Нагадати про страховку авто\",     \"date\": \"2026-11-05\",     \"time\": \"12:00\",     \"message\": \"Олеже, сьогодні",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Перевірити страховку авто\",   \"action_date\": \"2023-11-05\",   \"action_time\": null,   \"action_summary\": ",
     "ts": "2026-11-04T21:02:23.145092"
-  },
-  "action_detect|2026-11-04t21_02_12_005172": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-04T21:02:12.005172"
-  },
-  "action_detect|2026-11-04t21_02_00_052153": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити страховку авто\", \"action_date\": \"2026-11-04\", \"action_time\": \"10:00\", \"action_summary\": \"Перевірити стра",
-    "ts": "2026-11-04T21:02:00.052153"
-  },
-  "action_detect|2026-11-04t21_01_49_215164": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Аналіз позицій AVAX та ONDO\",   \"action_date\": \"2023-11-04\",   \"action_time\": \"21:00\",   \"action_summa",
-    "ts": "2026-11-04T21:01:49.215164"
   }
 }
