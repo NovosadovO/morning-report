@@ -484,5 +484,19 @@
     "paid": true,
     "paid_at": "2026-11-04",
     "created": "2026-11-04"
+  },
+  "garmin|8_99|2026-12-05": {
+    "vendor": "Garmin",
+    "amount": "8.99",
+    "currency": "EUR",
+    "invoice_no": "EUR4369771",
+    "due": "2026-12-05",
+    "uid": "81968",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Garmin Connect+ Subscription Confirmation",
+    "note": "Підтвердження підписки Garmin Connect+ на місяць. Наступне поновлення 5 грудня 2026 року.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-11-05"
   }
 }
