@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені додати в календар нічні зміни на 31.",
-      "detail": "У календарі на 31.10 зазначено дві нічні зміни о 18:00, що може бути помилкою або вимагати уточнення.",
-      "module": "selfact",
-      "ts": "2026-10-25T15:58:08"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-05T15:06:04"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-05",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-05T15:33:28"
     }
   ]
 }
