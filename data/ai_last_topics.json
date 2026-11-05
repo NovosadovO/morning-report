@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-05t13_00_15_770421": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-05T13:00:15.770421"
+  },
   "selfact|2026-11-05t12_47_19_163567": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні до зак",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",    ",
     "ts": "2026-11-05T09:26:25.468723"
-  },
-  "openloop_promises|2026-11-05t09_26_12_581172": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-05T09:26:12.581172"
   }
 }
