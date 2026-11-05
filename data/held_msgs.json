@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T02:52:17.992575",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.\n\nETH +7.2% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T02:53:39.773911",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Garmin <GarminServicesBilling@garmin.com> → Garmin Connect+ Subscription Confirmation\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1 <avalancheteam1@substack.com> → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_81968"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-05T03:01:24.248454",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The World's Largest Virtual Marketing Conference!</b>\n👤 AI Evolution через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_81966"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_81966"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_81966"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_81966"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_81966"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_81966"
             }
           ]
         ]
