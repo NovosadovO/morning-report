@@ -219,7 +219,7 @@
       "checked": 762,
       "issues": 535,
       "fixed": 236,
-      "cut": 13
+      "cut": 14
     },
     "ai_weekly_accuracy": {
       "checked": 3,
@@ -695,6 +695,7 @@
   "2026-11-05": {
     "checked": 73,
     "issues": 29,
-    "fixed": 19
+    "fixed": 19,
+    "cut": 1
   }
 }
