@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:45:42.199942",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81968"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81968"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81968"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81968"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81968"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81968"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T03:45:43.614654",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The World's Largest Virtual Marketing Conference!</b>\n👤 AI Evolution через LinkedIn&lt;newsletters-noreply@li",
@@ -379,6 +340,12 @@
       "ts": "2026-11-05T03:51:29.215926",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Garmin  → Garmin Connect+ Subscription Confirmation\n• The Block  → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1  → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T03:51:33.362471",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nONDO +7.7% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
