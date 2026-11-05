@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-05t15_21_58_776595": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшов лист про вакансію Executive Assistant to Chief Executive Officer в GymBeam з зарплатою 3000–400",
+    "ts": "2026-11-05T15:21:58.776595"
+  },
+  "selfact|2026-11-05t15_06_14_498005": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Олеже, з'явилася нова вакансія Executive Assistant to Chief Executive O",
+    "ts": "2026-11-05T15:06:14.498005"
+  },
   "healthai|2026-11-05t15_05_58_300492": {
     "topic": "healthai",
     "gist": "👋 Олеже, сьогодні показники сну та кроків ще не надходили, але бачу, що завтра в тебе нічна зміна. Сон за останній тиждень падає, тому варто приділити увагу від",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страхов",
     "ts": "2026-11-05T11:30:57.748365"
-  },
-  "action_detect|2026-11-05t11_30_55_199040": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Порада приготувати легкий білковий",
-    "ts": "2026-11-05T11:30:55.199040"
-  },
-  "action_detect|2026-11-05t11_29_43_203026": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-05T11:29:43.203026"
   }
 }
