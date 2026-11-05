@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T00:00:20.322686+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Оновити платіж Runable",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-30"
-      }
-    },
-    {
       "ts": "2026-08-30T00:00:25.312537+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14387,6 +14377,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_e8afbc14ea"
+    },
+    {
+      "ts": "2026-11-05T11:28:33.167368+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
