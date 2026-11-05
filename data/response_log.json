@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-29T23:18:51.152676+00:00",
-      "category": "event_done",
-      "question": "📅 💈 Спрей для волосся ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-29T23:18:52.722829+00:00",
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
@@ -14350,6 +14344,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-11-05T04:08:11.147037+00:00",
+      "category": "bill_found",
+      "question": "Garmin",
+      "answer": "8.99 EUR",
+      "extra": {
+        "due": "2026-12-05"
+      }
     }
   ]
 }
