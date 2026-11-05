@@ -298,5 +298,15 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa. Сума становить €67",
     "ts": "2026-11-05T08:09:33.315201"
+  },
+  "action_detect|2026-11-05t11_28_22_682150": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-05T11:28:22.682150"
+  },
+  "selfact|2026-11-05t11_15_06_266676": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, через 4 дні закінчується термін дії страховки на авто. Будь лас",
+    "ts": "2026-11-05T11:15:06.266676"
   }
 }
