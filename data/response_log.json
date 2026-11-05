@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T01:30:22.252304+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн-реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-30"
-      }
-    },
-    {
       "ts": "2026-08-30T01:30:26.845690+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14379,6 +14369,15 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 09:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-05T18:09:47.776175+00:00",
+      "category": "bill_found",
+      "question": "Garmin Services",
+      "answer": "8.99 EUR",
+      "extra": {
+        "due": "2026-11-06"
+      }
     }
   ]
 }
