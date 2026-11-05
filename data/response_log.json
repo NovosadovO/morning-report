@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T00:00:25.312537+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-30"
-      }
-    },
-    {
       "ts": "2026-08-30T00:15:45.003270+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14380,6 +14370,12 @@
     },
     {
       "ts": "2026-11-05T11:28:33.167368+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-11-05T11:28:35.130132+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
