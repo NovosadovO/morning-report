@@ -1,9 +1,4 @@
 {
-  "80673": {
-    "sender": "temu@orders.temu.com",
-    "sender_raw": "Temu <temu@orders.temu.com>",
-    "seen_ts": "2026-10-12T08:03:40.265189+00:00"
-  },
   "80676": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@myasteria.com",
     "sender_raw": "Asteria Events <events@myasteria.com>",
     "seen_ts": "2026-11-05T14:36:33.061902+00:00"
+  },
+  "82005": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-11-05T14:49:08.823902+00:00"
   }
 }
