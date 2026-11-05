@@ -1,9 +1,4 @@
 {
-  "80678": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-10-12T10:27:52.605361+00:00"
-  },
   "80679": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-11-05T14:51:41.494715+00:00"
+  },
+  "82009": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-11-05T15:06:22.024014+00:00"
   }
 }
