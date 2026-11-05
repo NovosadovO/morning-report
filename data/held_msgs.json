@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T03:16:35.338413",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Democrats Win Congress as CLARITY Runs Out of Time</b>\n👤 \"The Defiant\" &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_81964"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_81964"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_81964"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_81964"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_81964"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_81964"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-05T03:16:36.686005",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🍓 Stanford killed the AI strawberry myth</b>\n👤 GenAI Works через LinkedIn&lt;newsletters-noreply@lin",
@@ -280,6 +241,12 @@
       "ts": "2026-11-05T03:19:06.536811",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.8% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T03:19:07.340603",
+      "kind": "MSG_FORESIGHT_MERGED",
+      "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.\n\nETH +6.8% за 24г (DefiLlama).",
       "keyboard": null
     }
   ]
