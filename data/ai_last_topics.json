@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-05t18_27_40_619294": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, перевір стан страховки на авто. Залишилось 4 дні.\",    ",
+    "ts": "2026-11-05T18:27:40.619294"
+  },
   "money|2026-11-05t18_21_10_971210": {
     "topic": "money",
     "gist": "[{\"uid\":\"81968\",\"vendor\":\"Garmin\",\"amount\":\"8.99\",\"currency\":\"EUR\",\"date\":\"2026-11-05\",\"kind\":\"sub\",\"note\":\"Щомісячна оплата підписки Garmin Connect+.\"}]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про здоров'я, трен",
     "ts": "2026-11-05T15:02:24.620599"
-  },
-  "action_detect|2026-11-05t15_02_13_589957": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страхування Kooperativa\", \"action_date\": \"2026-11-08\", \"action_time\": \"10:00\", \"action_summary\": \"Нагадува",
-    "ts": "2026-11-05T15:02:13.589957"
   }
 }
