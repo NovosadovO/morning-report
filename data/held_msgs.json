@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-05T02:18:26.669241",
-      "kind": "bills",
-      "text": "🔴 ОПЛАТИТИ СЬОГОДНІ\n━━━━━━━━━━━━━━━━━━━━\n🏢 Google Play\n💰 4.99 EUR\n📆 до 2026-11-05\n\nРахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-05T02:18:29.723762",
       "kind": "deadlines",
       "text": "🔴 <b>СЬОГОДНІ ОСТАННІЙ ДЕНЬ</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Garmin Connect+ — закінчення пробного періоду</b>\n📆 до <b>2026-11-05</b>\n🏢 Garmin\n\n➡️ Скасувати підписку Garmin Connect+ до 4 листопада, якщо не бажаєте автоматичного продовження.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-05T02:24:11.827871",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.\n\nETH +7.2% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-05T02:25:41.017431",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Garmin <GarminServicesBilling@garmin.com> → Garmin Connect+ Subscription Confirmation\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: French bank reportedly loses $133 million in crypto hack\n• Avalanche Team1 <avalancheteam1@substack.com> → AVALANCHE OCTOBER 2026 RECAP\n• \"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-n → Your Project: Default Gemini Project is at risk of suspension\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
