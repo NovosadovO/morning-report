@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-05t12_27_23_840892": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-05T12:27:23.840892"
+  },
   "selfact|2026-11-05t12_16_37_154675": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Нагадую, що через 4 дні закінчується термін дії страховки на авто. Варто перевірити це найближчим часом.\",     ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-05T09:02:01.187328"
-  },
-  "action_detect|2026-11-05t09_01_50_402594": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2023-11-08\",   \"action_time\": \"10:00\",   \"action_",
-    "ts": "2026-11-05T09:01:50.402594"
   }
 }
