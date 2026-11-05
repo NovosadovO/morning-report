@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нічні зміни наприкінці тижня",
-      "detail": "Наявність нічних змін у календарі на 30.10 та 31.10.",
-      "module": "selfact",
-      "ts": "2026-10-25T08:10:48"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-25",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-11-05T07:01:28"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-05T07:06:49"
     }
   ]
 }
