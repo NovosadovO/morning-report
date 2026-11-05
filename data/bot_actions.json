@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-25T05:51:42"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи потрібно мені видалити минулі дедлайни, такі як 'П",
       "detail": "Бот вже питав про дедлайни, але Олег не дав чіткої відповіді, і вони все ще відображаються як невиконані.",
@@ -2799,6 +2792,13 @@
       "detail": "СВІЖІ ЛИСТИ: - uid=81966 | від AI Evolution через LinkedIn<newsletters-noreply@linkedin.com> | The World's Largest Virtual Marketing Conference! - uid=81963 | від GenAI Works через LinkedIn<newsletters-noreply@linkedin.com> | 🍓 Stanford killed the AI strawberry myth",
       "module": "selfact",
       "ts": "2026-11-05T05:18:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, отримано новий лист з LinkedIn щодо Stanford AI straw",
+      "detail": "СВІЖІ ЛИСТИ: - uid=81963 | від GenAI Works через LinkedIn<newsletters-noreply@linkedin.com> | 🍓 Stanford killed the AI strawberry myth",
+      "module": "selfact",
+      "ts": "2026-11-05T05:19:02"
     }
   ]
 }
