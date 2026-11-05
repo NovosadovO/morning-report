@@ -1,4 +1,14 @@
 {
+  "subs|2026-11-05t04_20_01_310223": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"81968\",     \"vendor\": \"Garmin\",     \"amount\": \"8.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": null,     \"nex",
+    "ts": "2026-11-05T04:20:01.310223"
+  },
+  "selfact|2026-11-05t04_15_06_104634": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні в тебе нічна зміна, яка починається о 17:00.\",     \"date\": \"2026-",
+    "ts": "2026-11-05T04:15:06.104634"
+  },
   "mailcal_extract|2026-11-05t04_13_51_795719": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=81953\",     \"title\": \"Прем'єра реаліті-шоу Destination X\",     \"date\": \"2026-11-17\",     \"time\": null,     \"kind\": \"other\",     \"w",
     "ts": "2026-11-04T19:51:49.462531"
-  },
-  "deadlines|2026-11-04t19_50_01_235262": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-04T19:50:01.235262"
-  },
-  "selfact|2026-11-04t19_39_03_778446": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Необхідно оновити платіжну інформацію для Runable\",     \"text\": \"Олеже, платіж на $10.00 до Runable був невдал",
-    "ts": "2026-11-04T19:39:03.778446"
   }
 }
