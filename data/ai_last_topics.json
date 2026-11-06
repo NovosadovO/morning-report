@@ -298,5 +298,30 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-06T18:02:12.183957"
+  },
+  "action_detect|2026-11-06t21_12_32_307323": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-06T21:12:32.307323"
+  },
+  "healthai|2026-11-06t21_05_44_901368": {
+    "topic": "healthai",
+    "gist": "🌙 Олеже, бачу, що за сьогоднішній день (2026-11-06) поки що зафіксовано 8.2 години сну, але це значення може бути неповним, оскільки годинник ще може дослати он",
+    "ts": "2026-11-06T21:05:44.901368"
+  },
+  "selfact|2026-11-06t21_04_31_345542": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, нагадую, що завтра, 7 листопада, о 17:00 розпочинається твоя нічна зміна. Також завтра у тебе ще одна нічна змін",
+    "ts": "2026-11-06T21:04:31.345542"
+  },
+  "action_detect|2026-11-06t21_02_59_987896": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Переглянути найближчі витрати\",   \"action_date\": \"2023-11-07\",   \"action_time\": null,   \"action_summar",
+    "ts": "2026-11-06T21:02:59.987896"
+  },
+  "action_detect|2026-11-06t21_02_48_987119": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
+    "ts": "2026-11-06T21:02:48.987119"
   }
 }
