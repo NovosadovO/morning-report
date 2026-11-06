@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T15:05:34.646807+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_5f0eee1b3e"
-    },
-    {
       "ts": "2026-08-31T15:07:13.821375+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14369,6 +14363,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_a85f65d978"
+    },
+    {
+      "ts": "2026-11-07T00:22:48.205164+00:00",
+      "category": "ai_button",
+      "question": "calendar",
+      "answer": "later_120",
+      "extra": {
+        "trigger": "event_soon",
+        "note": null
+      }
     }
   ]
 }
