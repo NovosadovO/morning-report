@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T15:05:29.596766+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Адаптація кар'єри до змін у домі",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-31T15:05:34.646807+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14369,6 +14363,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_ffd591bd03"
+    },
+    {
+      "ts": "2026-11-07T00:21:15.259593+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_a85f65d978"
     }
   ]
 }
