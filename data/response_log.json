@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T07:30:18.138616+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути лист про покращення сну",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-08-31T07:30:23.146832+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14376,6 +14366,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-11-06T22:37:59.442921+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
