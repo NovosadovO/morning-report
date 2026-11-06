@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:31:28.199545",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ми оновили Ваш обліковий запис Meta в додатках Meta</b>\n👤 \"Meta\" &lt;noreply@email.meta.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82024"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82024"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82024"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82024"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82024"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82024"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T03:31:29.561216",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - November 5th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-06T03:38:20.440313",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.4% за 24г (DefiLlama).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T03:39:32.516830",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata <team@athletedata.health> → welcome to athletedata mcp\n• Garmin <alerts@account.garmin.com> → Action Required: Download Your Data\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
