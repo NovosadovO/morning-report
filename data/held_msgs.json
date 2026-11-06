@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:31:17.397486",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📍Apple Cuts AI Budgets</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82055"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82055"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82055"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82055"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82055"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82055"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T15:31:18.831831",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your TransferGo account has been closed</b>\n👤 TransferGo &lt;hello@transfergo.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-11-06T15:39:35.308229",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:39:36.187094",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
