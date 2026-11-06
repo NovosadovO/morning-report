@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:01:34.202991",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:01:35.478517",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your TransferGo account has been closed</b>\n👤 TransferGo &lt;hello@transfergo.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-06T15:08:38.418498",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:09:48.514559",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
