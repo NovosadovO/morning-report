@@ -84,7 +84,7 @@ def remember_answer(question: str, answer: str, topic: str = "", source: str = "
         return False
 
 
-def _answers_block(days=14, limit=10):
+def _answers_block(days=14, limit=14):
     try:
         import storage
         data = storage.load(ANSWERS_FILE, default={}) or {}
@@ -103,7 +103,9 @@ def _answers_block(days=14, limit=10):
         out = []
         for ts, r in rows[:limit]:
             t = f"[{r.get('topic')}] " if r.get("topic") else ""
-            out.append(f"{ts.strftime('%d.%m')} {t}«{_clean(r.get('a'), 120)}»")
+            _q = str(r.get("q") or "")
+            _qs = f" на «{_clean(_q, 70)}»" if _q and _q != "вільне повідомлення" else ""
+            out.append(f"{ts.strftime('%d.%m')} {t}«{_clean(r.get('a'), 120)}»{_qs}")
         return out
     except Exception as e:
         _log(f"answers error: {e}")
@@ -223,7 +225,8 @@ def memory_block(max_chars: int = MEM_MAX) -> str:
     # 2. його відповіді власними словами
     a = _answers_block()
     if a:
-        parts.append("ЙОГО ВІДПОВІДІ (дослівно, найсвіжіші перші): " + " | ".join(a))
+        parts.append("ЙОГО ВІДПОВІДІ (дослівно, найсвіжіші перші; НЕ питай того, на що він "
+                     "уже відповів): " + " | ".join(a))
 
     # 3. реакції на кнопки / приховані теми (уже готовий модуль)
     try:

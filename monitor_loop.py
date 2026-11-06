@@ -20,6 +20,13 @@ import signal
 import os
 from datetime import datetime, timezone, timedelta
 
+# Єдиний фільтр проактивних повідомлень (дублі по змісту, вже закриті питання)
+try:
+    import outbox as _outbox
+    _outbox.install()
+except Exception as _e_ob:
+    print(f"[outbox] install skipped: {_e_ob}", flush=True)
+
 # Graceful shutdown при SIGTERM (Railway деплой)
 def _handle_sigterm(signum, frame):
     print("=== SIGTERM received — shutting down ===", flush=True)

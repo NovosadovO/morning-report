@@ -17,6 +17,11 @@ import time
 import uuid
 import urllib.request
 import urllib.error
+try:
+    import outbox as _outbox_boot
+    _outbox_boot.install()
+except Exception as _e_obb:
+    print(f"[outbox] install skipped: {_e_obb}", flush=True)
 from datetime import datetime, timezone, timedelta
 
 try:
@@ -2577,8 +2582,13 @@ def handle_command(chat_id, text):
         _t_raw = (text or "").strip()
         if _t_raw and not _t_raw.startswith("/") and len(_t_raw) >= 3:
             import ai_brain as _brain_cmd
-            _brain_cmd.remember_answer("вільне повідомлення", _t_raw,
-                                       topic="чат", source="text")
+            try:
+                import outbox as _ob_la
+                _q_linked = _ob_la.link_answer(_t_raw)
+            except Exception:
+                _q_linked = ""
+            _brain_cmd.remember_answer(_q_linked or "вільне повідомлення", _t_raw,
+                                       topic="відповідь" if _q_linked else "чат", source="text")
     except Exception as _be_cmd:
         print(f"[ai_brain] remember error: {_be_cmd}", flush=True)
     
@@ -2590,6 +2600,13 @@ def handle_command(chat_id, text):
 
     if text in ["/start", "start"]:
         send(chat_id, "👋 Привіт! Я твій асистент.\n" + HELP_TEXT)
+
+    elif text in ["/відсів", "/відсіяні", "/outbox"]:
+        try:
+            import outbox as _ob_r
+            send(chat_id, _ob_r.report())
+        except Exception as _e_ob_r:
+            send(chat_id, f"⚠️ outbox: {_e_ob_r}")
 
     elif text.startswith("/маршрут") or text.startswith("маршрут"):
         dest = text.replace("/маршрут", "").replace("маршрут", "").strip()
