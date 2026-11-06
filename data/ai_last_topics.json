@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-06t05_03_46_361607": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-11-06T05:03:46.361607"
+  },
   "selfact|2026-11-06t04_56_46_026019": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається сьогодні о 17:00. Не забудь взяти в",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Це щоденник з питаннями про енергі",
     "ts": "2026-11-05T21:00:54.307331"
-  },
-  "mailcal_extract|2026-11-05t20_59_54_644378": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82018\",     \"title\": \"Вакансія: Executive Assistant to Chief Executive Officer\",     \"date\": \"2026-11-05\",     \"time\": null,     \"",
-    "ts": "2026-11-05T20:59:54.644378"
   }
 }
