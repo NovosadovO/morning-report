@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-06t17_43_57_480059": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що тобі потрібно оплатити стра",
+    "ts": "2026-11-06T17:43:57.480059"
+  },
   "action_detect|2026-11-06t17_38_08_820337": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-06T09:10:37.239283"
-  },
-  "selfact|2026-11-06t09_06_09_605698": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Нагадую, що сьогодні, 6 листопада, у тебе нічна зміна о 17:00.\",     \"date\": \"202",
-    "ts": "2026-11-06T09:06:09.605698"
   }
 }
