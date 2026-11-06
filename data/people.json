@@ -820,5 +820,24 @@
     "last_out": "",
     "updated": "2026-11-07",
     "pinged_at": ""
+  },
+  "temu@eu.temuemail.com": {
+    "name": "Temu",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "замовлення Temu",
+      "необхідність забрати"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "Чи потрібно Олегу забрати замовлення з Temu?",
+    "next_step": "Перевірити, чи є незабране замовлення з Temu та забрати його.",
+    "ping_in_days": 0,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-11-07",
+    "pinged_at": ""
   }
 }
