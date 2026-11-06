@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:31:24.823767",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Jakub-Kra1ovansky Capitaпочав(-ла) слідкувати за тобою</b>\n👤 TikTok &lt;notification@service.tiktok.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82050"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82050"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82050"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82050"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82050"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82050"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T15:31:26.224923",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>quick hello from Daniel</b>\n👤 Daniel from athletedata &lt;daniel@athletedata.health",
@@ -214,6 +175,12 @@
       "ts": "2026-11-06T15:42:08.846948",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:42:56.079923",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
