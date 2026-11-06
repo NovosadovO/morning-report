@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:46:40.123204",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your TransferGo account has been closed</b>\n👤 TransferGo &lt;hello@transfergo.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82054"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82054"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82054"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82054"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82054"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82054"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T15:46:41.616630",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Head of Operations (Malta) в Confidential</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-11-06T15:55:53.742806",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:55:54.576301",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
