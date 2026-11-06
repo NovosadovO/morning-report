@@ -766,5 +766,17 @@
     "sender": "Garmin <GarminServicesBilling@garmin.com>",
     "done": false,
     "created": "2026-11-05"
+  },
+  "отримання_крипто-брифінгу|2026-11-06": {
+    "kind": "other",
+    "title": "Отримання крипто-брифінгу",
+    "org": "CoinMarketCap",
+    "deadline": "2026-11-06",
+    "action": "Прочитати крипто-брифінг від CoinMarketCap.",
+    "why": "Це щотижневий огляд для трейдерів та розробників, який може містити корисну інформацію.",
+    "uid": "82036",
+    "sender": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
+    "done": false,
+    "created": "2026-11-06"
   }
 }
