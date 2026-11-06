@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T07:36:38.797265+00:00",
-      "category": "calendar_button",
-      "question": "Привітати Олю з Днем народження",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t24h",
-        "when": "07:00–08:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-31T07:36:39.694442+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14373,6 +14362,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-06T22:38:10.723538+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
