@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:25:17.174775",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.7% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T03:25:18.037166",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.7% за 24г (DefiLlama).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82023"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T03:31:31.097164",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Donald Trump’s humiliation offers America an opportunity</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82022"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82022"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82022"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82022"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82022"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82022"
             }
           ]
         ]
