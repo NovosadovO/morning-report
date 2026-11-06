@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:10:22.875731",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen  → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata  → welcome to athletedata mcp\n• Garmin  → Action Required: Download Your Data\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T03:10:26.013708",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.5% за 24г (DefiLlama).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82024"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T03:16:23.335759",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - November 5th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82023"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82023"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82023"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82023"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82023"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82023"
             }
           ]
         ]
