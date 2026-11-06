@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:04:48.998185",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-06T15:06:13.676813",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-06T15:06:14.558532",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:07:23.932806",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -194,6 +176,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:15:56.606272",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Head of Operations (Malta) в Confidential</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82053"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82053"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82053"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82053"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82053"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82053"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
