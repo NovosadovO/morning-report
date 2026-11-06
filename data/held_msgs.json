@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:22:10.965532",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:22:54.076202",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82053"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T15:31:21.937141",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>40 cm/15,74 palca – r... vyzerá lepšie za menej peňazí</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82052"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82052"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82052"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82052"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82052"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82052"
             }
           ]
         ]
