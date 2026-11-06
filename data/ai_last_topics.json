@@ -1,4 +1,49 @@
 {
+  "action_detect|2026-11-06t21_02_37_510302": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-06T21:02:37.510302"
+  },
+  "action_detect|2026-11-06t21_02_26_686645": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкретних дій,",
+    "ts": "2026-11-06T21:02:26.686645"
+  },
+  "action_detect|2026-11-06t21_02_15_811015": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Звіт про нічну зміну на роботі, нагадування п",
+    "ts": "2026-11-06T21:02:15.811015"
+  },
+  "briefing_truthfix|2026-11-06t21_02_06_293653": {
+    "topic": "briefing/truthfix",
+    "gist": "🧭 **ВЕКТОР ДНЯ**  Олеже, твоя нічна зміна на заводі Minebea Mitsumi триває, що вимагає фокусу на витривалості та поточних завданнях. Найближчою до прориву видає",
+    "ts": "2026-11-06T21:02:06.293653"
+  },
+  "briefing|2026-11-06t21_02_02_027997": {
+    "topic": "briefing",
+    "gist": "🧭 **ВЕКТОР ДНЯ**  Олеже, твоя нічна зміна на заводі Minebea Mitsumi триває, що означає фокус на витривалості та зосередженості на поточних завданнях, перш ніж д",
+    "ts": "2026-11-06T21:02:02.027997"
+  },
+  "themes_ai_truthfix|2026-11-06t21_01_50_634395": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Ти зараз на нічній зміні, але це не привід зупинятися – це час для стратегічного мислення.  💰 ФІНАНСИ Наразі ти маєш 5 прострочених рахунків та 471.10€ в очікув",
+    "ts": "2026-11-06T21:01:50.634395"
+  },
+  "themes_ai|2026-11-06t21_01_46_400787": {
+    "topic": "themes_ai",
+    "gist": "Ти зараз на нічній зміні, але це не привід зупинятися – це час для стратегічного мислення.  💰 ФІНАНСИ Наразі ти маєш 5 прострочених рахунків та 471.10€ в очікув",
+    "ts": "2026-11-06T21:01:46.400787"
+  },
+  "action_detect|2026-11-06t21_00_15_023205": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-06T21:00:15.023205"
+  },
+  "action_detect|2026-11-06t21_00_04_107525": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Нагадування про легкий перекус на зміні, щоб підтрима",
+    "ts": "2026-11-06T21:00:04.107525"
+  },
   "email_ai_item|2026-11-06t20_58_33_762630": {
     "topic": "email_ai_item",
     "gist": "{   \"description\": \"Лист від GenAI Works через LinkedIn, що містить огляд новин зі світу штучного інтелекту. Обговорюються теми: нова модель OpenAI, яка не буде",
@@ -253,50 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-06T18:02:12.183957"
-  },
-  "action_detect|2026-11-06t18_01_59_836287": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-06T18:01:59.836287"
-  },
-  "action_detect|2026-11-06t18_01_49_242731": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Холодний душ\", \"action_date\": \"2026-11-06\", \"action_time\": \"09:00\", \"action_summary\": \"Прийняти холодний душ о 09:0",
-    "ts": "2026-11-06T18:01:49.242731"
-  },
-  "astro_ai_truthfix|2026-11-06t18_01_41_013036": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Олеже, 6 листопада 2026 року, у Кошице, Словаччина, астрологічна картина дня показує низку цікавих транзитів. Зараз, під час вечірньої нічної зміни, енергія дня",
-    "ts": "2026-11-06T18:01:41.013036"
-  },
-  "astro_ai|2026-11-06t18_01_33_475708": {
-    "topic": "astro_ai",
-    "gist": "Олеже, 6 листопада 2026 року, у Кошице, Словаччина, астрологічна картина дня показує цілу низку цікавих транзитів, які впливають на різні сфери твого життя. Зар",
-    "ts": "2026-11-06T18:01:33.475708"
-  },
-  "selfact|2026-11-06t17_59_27_000811": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Підготуватися до нічної зміни\",     \"text\": \"Залишилося менше години до початку нічної зміни. Потрібно підго",
-    "ts": "2026-11-06T17:59:27.000811"
-  },
-  "selfact|2026-11-06t17_43_57_480059": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що тобі потрібно оплатити стра",
-    "ts": "2026-11-06T17:43:57.480059"
-  },
-  "action_detect|2026-11-06t17_38_08_820337": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-06T17:38:08.820337"
-  },
-  "action_detect|2026-11-06t17_31_31_360185": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-06\",   \"action_time\": \"19:00\",   \"action_summary\": \"Розпочинає",
-    "ts": "2026-11-06T17:31:31.360185"
-  },
-  "msg_event_soon|2026-11-06t17_31_19_351799": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  Наближається твоя нічна зміна, яка розпочнеться сьогодні о 19:00. Враховуючи, що ти готуєшся до неї, зосередься на тому, щоб підтримувати фокус",
-    "ts": "2026-11-06T17:31:19.351799"
   }
 }
