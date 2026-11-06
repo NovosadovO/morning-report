@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:42:08.561621",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Block  → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen  → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata  → welcome to athletedata mcp\n• Garmin  → Action Required: Download Your Data\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T03:42:12.503221",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -9.0% за 24г (DefiLlama).",
@@ -380,6 +374,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-06T03:47:43.743790",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Block <theblock@mail.beehiiv.com> → 🔷 The Daily: Bitcoin falls as liquidations top $1 billion\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - November 5th, 2026\n• Julian & Daniel from athletedata <team@athletedata.health> → welcome to athletedata mcp\n• Garmin <alerts@account.garmin.com> → Action Required: Download Your Data\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
