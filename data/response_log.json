@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T07:30:23.146832+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Ознайомитися з новинами про AI-роботів",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-08-31T07:34:21.375790+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14377,6 +14367,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-11-06T22:38:00.224830+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ack_1642e65fc5"
     }
   ]
 }
