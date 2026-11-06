@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T04:30:26.008983+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прочитати The Daily Degen",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-31"
-      }
-    },
-    {
       "ts": "2026-08-31T06:00:18.026222+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14396,6 +14386,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-11-06T17:42:06.983793+00:00",
+      "category": "event_done",
+      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 09:30 — виконано?",
+      "answer": "yes"
     }
   ]
 }
