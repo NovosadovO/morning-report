@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-11-06t23_43_19_695095": {
+    "topic": "mailcal_extract",
+    "gist": "[{\"uid\": \"uid=82081\", \"title\": \"Temu: отримати знижкову карту\", \"date\": \"2026-11-06\", \"time\": null, \"kind\": \"other\", \"why\": \"Temu надіслав знижкову карту 6 лист",
+    "ts": "2026-11-06T23:43:19.695095"
+  },
+  "selfact|2026-11-06t23_38_49_446149": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія від LinkedIn\",     \"text\": \"Олеже, на LinkedIn з'явилася нова вакансія Onboarding Analyst в Cate",
+    "ts": "2026-11-06T23:38:49.446149"
+  },
+  "foresight_truthfix|2026-11-06t23_36_29_495384": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, ти на нічній зміні, а це найкращий час, щоб зануритись у світ інвестицій по-новому. Третій день поспіль ринок демонструє падіння: BTC втратив 0.4%, ETH –",
+    "ts": "2026-11-06T23:36:29.495384"
+  },
   "foresight|2026-11-06t23_36_18_550141": {
     "topic": "foresight",
     "gist": "Олеже, зараз, поки ти на нічній зміні, спробуй приділити 20 хвилин дихальній практиці — це допоможе розвантажити голову після робочого навантаження. Просто знай",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Переглянути найближчі витрати\",   \"action_date\": \"2023-11-07\",   \"action_time\": null,   \"action_summar",
     "ts": "2026-11-06T21:02:59.987896"
-  },
-  "action_detect|2026-11-06t21_02_48_987119": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-06T21:02:48.987119"
-  },
-  "action_detect|2026-11-06t21_02_37_510302": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-06T21:02:37.510302"
-  },
-  "action_detect|2026-11-06t21_02_26_686645": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкретних дій,",
-    "ts": "2026-11-06T21:02:26.686645"
   }
 }
