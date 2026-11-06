@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:16:17.486761",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T03:16:19.013126",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-06T03:18:46.908350",
       "kind": "bills",
       "text": "🔴 <b>ОПЛАТИТИ СЬОГОДНІ</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Garmin Services</b>\n💰 8.99 EUR\n📆 до <b>2026-11-06</b>\n\nЦе ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T03:18:47.737148",
+      "kind": "bills",
+      "text": "🔴 ОПЛАТИТИ СЬОГОДНІ\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin Services\n💰 8.99 EUR\n📆 до 2026-11-06\n\nЦе ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
       "keyboard": null
     }
   ]
