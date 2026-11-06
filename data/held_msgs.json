@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T14:52:50.873687",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T14:53:45.346820",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82050"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T15:01:43.186073",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>quick hello from Daniel</b>\n👤 Daniel from athletedata &lt;daniel@athletedata.health",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82048"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82048"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82048"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82048"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82048"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82048"
             }
           ]
         ]
