@@ -2845,5 +2845,18 @@
     "note": "Це ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
     "uid": "82012",
     "ts": "2026-11-06T03:18:45.422920+00:00"
+  },
+  "6173bb0209": {
+    "bid": "garmin_connect_|8_99|2026-11-05",
+    "vendor": "Garmin Connect+",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-11-05",
+    "invoice_no": "EUR4369771",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Garmin Connect+ Subscription Confirmation",
+    "note": "Рахунок за місячну підписку Garmin Connect+, оплатити до 5 листопада.",
+    "uid": "80341",
+    "ts": "2026-11-06T04:18:33.645957+00:00"
   }
 }
