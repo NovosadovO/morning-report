@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-06t20_00_37_713878": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це підсумок звичок Олега за тиждень та привітання з в",
+    "ts": "2026-11-06T20:00:37.713878"
+  },
   "deadlines|2026-11-06t19_51_07_874457": {
     "topic": "deadlines",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82037\",     \"title\": \"KONVERGENCIE / VLADIMÍR GODÁR 70\",     \"date\": \"2026-11-06\",     \"time\": null,     \"kind\": \"other\",     \"why",
     "ts": "2026-11-06T12:15:23.769598"
-  },
-  "selfact|2026-11-06t12_14_05_806199": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, у тебе сьогодні нічна зміна о 17:00. Не забудь про це.\",     \"why\": \"Сьогодні, 06.11.2026, о 17:00 розпо",
-    "ts": "2026-11-06T12:14:05.806199"
   }
 }
