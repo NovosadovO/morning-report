@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T23:20:05.660036+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-31T04:30:20.616483+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14396,6 +14390,15 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-11-06"
+      }
+    },
+    {
+      "ts": "2026-11-06T10:50:58.607441+00:00",
+      "category": "deadline_found",
+      "question": "Отримання крипто-брифінгу",
+      "answer": "2026-11-06",
+      "extra": {
+        "kind": "other"
       }
     }
   ]
