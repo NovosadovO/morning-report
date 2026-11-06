@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:07:51.254315",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:07:52.295544",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82051"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T15:16:01.000032",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Jakub-Kra1ovansky Capitaпочав(-ла) слідкувати за тобою</b>\n👤 TikTok &lt;notification@service.tiktok.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82050"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82050"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82050"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82050"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82050"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82050"
             }
           ]
         ]
