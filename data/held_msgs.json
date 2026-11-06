@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:01:38.680630",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>40 cm/15,74 palca – r... vyzerá lepšie za menej peňazí</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82052"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82052"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82052"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82052"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82052"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82052"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T15:01:40.243859",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Arthur Hayes Tells Bitcoin Holders To Be Patient</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -313,6 +274,12 @@
       "ts": "2026-11-06T15:10:59.608769",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:11:00.571228",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
