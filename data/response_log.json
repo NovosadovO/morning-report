@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T11:50:21.318736+00:00",
-      "category": "calendar_button",
-      "question": "🎂 Олі — день народження",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t24h",
-        "when": "12:15–12:45",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-31T11:50:22.568205+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14374,6 +14363,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_later_4c73f9b2c6"
+    },
+    {
+      "ts": "2026-11-07T00:21:05.611455+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
