@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-07t01_44_05_380725": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав новий лист від Securitize щодо Onchain Assets Weekly. Можеш переглянути його, щоб дізнатися п",
+    "ts": "2026-11-07T01:44:05.380725"
+  },
+  "proactive_actions|2026-11-07t01_30_17_901295": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити страховку автомобіля\",     \"date\": \"2026-11-07\",     \"time\": \"\",     \"message\": \"Олеже, нагадую п",
+    "ts": "2026-11-07T01:30:17.901295"
+  },
   "selfact|2026-11-07t01_28_17_455777": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі розпочинається о 17:00.\",     \"date\": \"2026-11-07\",    ",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Onboarding Analyst\\\" в Caterpillar Inc. та \\\"Customer Success Manager\\\" в NATEK, обидв",
     "ts": "2026-11-06T22:15:28.705878"
-  },
-  "mailcal_extract|2026-11-06t22_12_07_344435": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82079\",     \"title\": \"Запис вебінару: Asteria Business Update\",     \"date\": \"2026-11-01\",     \"time\": null,     \"kind\": \"other\",  ",
-    "ts": "2026-11-06T22:12:07.344435"
-  },
-  "selfact|2026-11-06t22_06_46_544209": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що 8 листопада потрібно оплатити страхування Kooperat",
-    "ts": "2026-11-06T22:06:46.544209"
   }
 }
