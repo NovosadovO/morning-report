@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T07:30:13.041441+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Усунути дублюючі події Дня народження Олі",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-31"
-      }
-    },
-    {
       "ts": "2026-08-31T07:30:18.138616+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14380,6 +14370,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-06T22:37:56.412385+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
