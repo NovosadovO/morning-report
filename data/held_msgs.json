@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:37:56.484313",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:38:25.074522",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82052"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T15:46:44.631408",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Arthur Hayes Tells Bitcoin Holders To Be Patient</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82051"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82051"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82051"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82051"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82051"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82051"
             }
           ]
         ]
