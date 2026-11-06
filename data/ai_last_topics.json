@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-06t04_40_43_116772": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається сьогодні о 17:00.\",     \"date\": \"20",
+    "ts": "2026-11-06T04:40:43.116772"
+  },
+  "mailcal_extract|2026-11-06t04_38_11_423737": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-06T04:38:11.423737"
+  },
+  "action_detect|2026-11-06t04_36_42_249218": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Аналіз нічного крипто-ринку та рек",
+    "ts": "2026-11-06T04:36:42.249218"
+  },
+  "msg_crypto_move_truthfix|2026-11-06t04_36_33_384141": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "Привіт Олеже! 💹  Нічний крипто-ринок показав значне падіння основних активів за останні 24 години. BTC знизився на 5.7%, ETH на 7.8%, XRP на 6.8%, SOL на 6.3%, ",
+    "ts": "2026-11-06T04:36:33.384141"
+  },
   "msg_crypto_move|2026-11-06t04_36_23_923587": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "Привіт Олеже! 💹  Схоже, нічний крипто-ринок вирішив підкинути тобі сюрприз — значне падіння майже всіх основних активів. Протягом останніх 24 годин ми бачимо зн",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива вакансія\",     \"text\": \"Знайшов цікаву вакансію Executive Assistant to Chief Executive Officer у GymBe",
     "ts": "2026-11-05T20:48:16.271081"
-  },
-  "selfact|2026-11-05t20_32_25_870639": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, нагадую, що через 4 дні закінчується термін дії страхов",
-    "ts": "2026-11-05T20:32:25.870639"
-  },
-  "action_detect|2026-11-05t20_30_43_376405": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"День пройшов спокійно, початий з х",
-    "ts": "2026-11-05T20:30:43.376405"
-  },
-  "selfact|2026-11-05t20_17_17_521458": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, нагадую про оплату страхування Kooperativa. Сума стан",
-    "ts": "2026-11-05T20:17:17.521458"
-  },
-  "mailcal_extract|2026-11-05t20_13_51_593845": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=81991\",     \"title\": \"Garmin: Завантажити дані\",     \"date\": null,     \"time\": null,     \"kind\": \"deadline\",     \"why\": \"Потрібно ",
-    "ts": "2026-11-05T20:13:51.593845"
   }
 }
