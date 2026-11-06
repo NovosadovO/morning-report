@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T15:07:13.821375+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-31T15:08:28.580104+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -14373,6 +14367,12 @@
         "trigger": "event_soon",
         "note": null
       }
+    },
+    {
+      "ts": "2026-11-07T00:22:56.882522+00:00",
+      "category": "confirm",
+      "question": "gx_later: календар",
+      "answer": "yes"
     }
   ]
 }
