@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-30T13:12:24.149170+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-30T18:15:43.017741+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14361,6 +14355,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_cardio_np"
+    },
+    {
+      "ts": "2026-11-06T04:30:18.433766+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Сплатити страхування автомобіля",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-06"
+      }
     }
   ]
 }
