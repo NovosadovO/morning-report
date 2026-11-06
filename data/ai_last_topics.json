@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-07t00_10_57_054287": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про вакансію\",     \"text\": \"Олеже, з LinkedIn надійшов лист про вакансію Onboarding Analyst",
+    "ts": "2026-11-07T00:10:57.054287"
+  },
+  "action_detect|2026-11-07t00_00_59_762609": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T00:00:59.762609"
+  },
+  "action_detect|2026-11-07t00_00_48_712493": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-07T00:00:48.712493"
+  },
   "proactive_actions|2026-11-07t00_00_09_243354": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Завершити створення облікового запису Spiko\",     \"date\": \"2026-11-07\",     \"time\": \"18:00\",     \"message\": ",
@@ -283,20 +298,5 @@
     "topic": "themes_ai",
     "gist": "Олег, тримай фокус – ти на нічній зміні, але це не зупинка, це частина гри на шляху до твоїх цілей. Давай розберемо, де ти зараз і куди рухаємось.  💰 ФІНАНСИ За",
     "ts": "2026-11-06T21:15:58.194603"
-  },
-  "action_detect|2026-11-06t21_12_42_986113": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-06T21:12:42.986113"
-  },
-  "action_detect|2026-11-06t21_12_32_307323": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-06T21:12:32.307323"
-  },
-  "healthai|2026-11-06t21_05_44_901368": {
-    "topic": "healthai",
-    "gist": "🌙 Олеже, бачу, що за сьогоднішній день (2026-11-06) поки що зафіксовано 8.2 години сну, але це значення може бути неповним, оскільки годинник ще може дослати он",
-    "ts": "2026-11-06T21:05:44.901368"
   }
 }
