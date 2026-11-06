@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-06t21_26_17_393222": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82079\",     \"title\": \"Asteria Business Update на листопад 2026\",     \"date\": \"2026-11-01\",     \"time\": null,     \"kind\": \"meeting\"",
+    "ts": "2026-11-06T21:26:17.393222"
+  },
   "hcoach|2026-11-06t21_21_45_060870": {
     "topic": "hcoach",
     "gist": "Олеже, привіт! Ось вечірній розбір твого дня, з фокусом на те, як поточні показники впливають на твою ціль – 75 кг.  **Що сьогодні вийшло добре:**  Твій пульс с",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-06T18:37:49.714673"
-  },
-  "action_detect|2026-11-06t18_37_33_005503": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом ринку криптовалют та порадами дл",
-    "ts": "2026-11-06T18:37:33.005503"
   }
 }
