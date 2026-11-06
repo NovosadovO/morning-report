@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-26T20:55:01"
-    },
-    {
       "kind": "hcoach",
       "what": "evening_review",
       "detail": "вечірній розбір, оцінка 88",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-06T09:05:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Лист від Forbes про фінансові кроки",
+      "detail": "У свіжих листах є лист від Forbes з корисною інформацією.",
+      "module": "selfact",
+      "ts": "2026-11-06T09:22:19"
     }
   ]
 }
