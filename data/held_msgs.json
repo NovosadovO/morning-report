@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:23:55.672364",
-      "kind": "MSG_FORESIGHT_MERGED",
-      "text": "✨ <b>КІЛЬКА ІДЕЙ ОДРАЗУ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.4% за 24г (DefiLlama).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T03:23:56.614230",
       "kind": "MSG_FORESIGHT_MERGED",
       "text": "✨ КІЛЬКА ІДЕЙ ОДРАЗУ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.\n\nONDO -8.4% за 24г (DefiLlama).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T03:31:25.401153",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82026"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82026"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82026"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82026"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82026"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82026"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
