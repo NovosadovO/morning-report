@@ -1,9 +1,4 @@
 {
-  "80679": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-10-12T10:29:59.742121+00:00"
-  },
   "80680": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-11-05T15:06:22.024014+00:00"
+  },
+  "82033": {
+    "sender": "crew@hey.emergent.sh",
+    "sender_raw": "Emergent <crew@hey.emergent.sh>",
+    "seen_ts": "2026-11-06T07:33:52.101804+00:00"
   }
 }
