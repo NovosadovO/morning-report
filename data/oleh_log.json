@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_later_a03742b45a",
-      "label": "⏰ Пізніше",
-      "ts": "2026-10-10T16:20:04"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_80600",
       "label": "🗑 Видалити",
       "ts": "2026-10-10T16:20:07"
@@ -7199,6 +7193,12 @@
       "data": "rx_read_92a24ed72c",
       "label": "👍 Прочитав",
       "ts": "2026-11-06T17:38:24"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_d54ndmfarej5qi5ekerakkj700_2026-11-06",
+      "label": "✅ Виконано",
+      "ts": "2026-11-06T17:42:05"
     }
   ]
 }
