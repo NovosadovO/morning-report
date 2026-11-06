@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T07:34:21.375790+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_note_98c6e30532"
-    },
-    {
       "ts": "2026-08-31T07:36:38.797265+00:00",
       "category": "calendar_button",
       "question": "Привітати Олю з Днем народження",
@@ -14373,6 +14367,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_1642e65fc5"
+    },
+    {
+      "ts": "2026-11-06T22:38:02.091379+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
