@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:04:48.104439",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-11-06T15:04:48.998185",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:06:13.676813",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -148,6 +136,51 @@
       "ts": "2026-11-06T15:15:51.260795",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:15:52.717728",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your TransferGo account has been closed</b>\n👤 TransferGo &lt;hello@transfergo.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82054"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82054"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82054"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82054"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82054"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82054"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-06T15:15:53.160171",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
