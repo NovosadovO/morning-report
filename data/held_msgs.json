@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T15:31:15.933014",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-06T15:31:17.397486",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📍Apple Cuts AI Budgets</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-06T15:38:26.122947",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T15:39:35.308229",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
