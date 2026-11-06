@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-06T03:16:20.372806",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin falls as liquidations top $1 billion</b>\n👤 The Block &lt;theblock@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82025"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82025"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82025"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82025"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82025"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82025"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-06T03:16:21.791408",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ми оновили Ваш обліковий запис Meta в додатках Meta</b>\n👤 \"Meta\" &lt;noreply@email.meta.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-06T03:18:50.775890",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 7 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Зміни в підписці Google AI Plus</b>\n📆 до <b>2026-11-13</b>\n🏢 Google One\n\n➡️ Переглянути статтю Довідкового центру про зміни та вирішити, чи потрібно керувати підпискою або скасувати її.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-06T03:18:51.623099",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 7 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Зміни в підписці Google AI Plus\n📆 до 2026-11-13\n🏢 Google One\n\n➡️ Переглянути статтю Довідкового центру про зміни та вирішити, чи потрібно керувати підпискою або скасувати її.",
       "keyboard": null
     }
   ]
