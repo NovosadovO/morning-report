@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: steps_good",
-      "detail": "🚶 Кроки за тиждень у середньому 15822 — ціль 8000 досягнута",
-      "module": "healthai",
-      "ts": "2026-10-29T18:30:37"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-07T21:06:01"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 77",
+      "module": "selfact",
+      "ts": "2026-11-07T21:22:23"
     }
   ]
 }
