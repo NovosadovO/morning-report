@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:36:35.803088",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T15:36:36.603308",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:46:51.165338",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - November 7</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82107"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82107"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82107"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82107"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82107"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82107"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
