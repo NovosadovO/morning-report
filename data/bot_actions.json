@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_unstable",
-      "detail": "😴 Сон дуже нерівний останні дні (розкид ±1.87 год) — тіло не встигає підлаштуватись під ритм",
-      "module": "healthai",
-      "ts": "2026-10-29T22:20:28"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-29",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-07T22:06:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, незабаром, 13 листопада, потрібно оплатити страхуванн",
+      "detail": "У календарі є запис про оплату страхування Kooperativa на 13.11.",
+      "module": "selfact",
+      "ts": "2026-11-07T22:55:13"
     }
   ]
 }
