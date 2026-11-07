@@ -298,5 +298,25 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Field Marketing Manager, Central East",
     "ts": "2026-11-07T20:15:10.566266"
+  },
+  "action_detect|2026-11-07t23_37_26_489193": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-07T23:37:26.489193"
+  },
+  "action_detect|2026-11-07t23_32_59_790289": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T23:32:59.790289"
+  },
+  "msg_idle_timeout_truthfix|2026-11-07t23_32_49_746165": {
+    "topic": "MSG_IDLE_TIMEOUT/truthfix",
+    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи.  Щодо даних про ва",
+    "ts": "2026-11-07T23:32:49.746165"
+  },
+  "msg_idle_timeout|2026-11-07t23_32_39_255718": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи. Пам'ятаєш, як ти м",
+    "ts": "2026-11-07T23:32:39.255718"
   }
 }
