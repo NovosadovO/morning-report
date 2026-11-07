@@ -491,11 +491,13 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "Mm"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати листа без теми Олегу Новосадову.",
+    "next_step": "Надіслати листа з темою \"Mm\" Олегу Новосадову.",
     "ping_in_days": 14,
     "last_in": "",
     "last_subject": "",
