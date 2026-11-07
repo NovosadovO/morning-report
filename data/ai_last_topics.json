@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-07t02_10_04_321809": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-07T02:10:04.321809"
+  },
   "mailcal_extract|2026-11-07t02_00_39_906744": {
     "topic": "mailcal_extract",
     "gist": "[{\"uid\": \"uid=82088\", \"title\": \"Threshold: tBTC restart target\", \"date\": \"2026-11-07\", \"time\": null, \"kind\": \"other\", \"why\": \"Threshold set a Friday night resta",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні вночі у тебе нічна зміна. Не забудь про це.\",     \"why\": \"Поточний час 22:37, а наступна нічна зміна ро",
     "ts": "2026-11-06T22:38:02.174432"
-  },
-  "msg_crypto_move_truthfix|2026-11-06t22_37_51_455933": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже! 💹  Ринок криптовалют демонструє неоднозначну динаміку. XRP зазнав падіння на 5.1%, тоді як ZEC показав зростання на 6.4%. Bitcoin Cash (BCH) також",
-    "ts": "2026-11-06T22:37:51.455933"
   }
 }
