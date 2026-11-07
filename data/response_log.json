@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T07:53:45.025957+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Деталі поїздки в Малагу",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t2h",
-        "when": "10:00–10:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-01T07:53:46.118275+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14378,6 +14367,12 @@
       "category": "event_done",
       "question": "📅 🏃 Біг ❌\nПланувалась до 19:40 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-11-07T23:43:45.990034+00:00",
+      "category": "event_done",
+      "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 19:40 — виконано?",
+      "answer": "yes"
     }
   ]
 }
