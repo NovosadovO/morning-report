@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:23:35.178023",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CryptoBeholder.com через LinkedIn</b>\n📋 Тема: «📰 AI-curated Daily Crypto Digest - November 7»\n\n<i>«AI-curated Daily Crypto Digest\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-curated-daily-crypto-digest-november-7-cryptobeholder-wn2rf?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_82107"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82107"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82107"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82107"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82107"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82107"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T15:23:38.909541",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -343,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82103"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T15:31:22.613105",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Claude won’t build this anymore</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82102"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82102"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82102"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82102"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82102"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82102"
             }
           ]
         ]
