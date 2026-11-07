@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T08:03:36.348114+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "sleep_8"
-    },
-    {
       "ts": "2026-09-01T09:00:25.057973+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14373,6 +14367,16 @@
       "category": "event_done",
       "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 19:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-08T00:00:41.385909+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Нічна зміна",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-09"
+      }
     }
   ]
 }
