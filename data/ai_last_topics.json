@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-11-07t02_37_56_086656": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 📈  Бачу, що нічний крипторинок вирішив нагадати про себе доволі різкими рухами, особливо для певних альткоїнів. Зокрема, твій портфельний токен RA",
+    "ts": "2026-11-07T02:37:56.086656"
+  },
   "selfact|2026-11-07t02_31_01_648999": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування\",     \"text\": \"Олеже, нагадую, що 8 листопада о 08:00 тобі потрібно оплатит",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-06T22:39:17.442263"
-  },
-  "action_detect|2026-11-06t22_38_50_010918": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-06T22:38:50.010918"
   }
 }
