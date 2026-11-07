@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T09:21:52.846102",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T09:23:11.739177",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82092"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T09:32:07.826506",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>A support ticket has been opened for you</b>\n👤 HTX Support &lt;noreply@goenumerate.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82091"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82091"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82091"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82091"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82091"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82091"
             }
           ]
         ]
