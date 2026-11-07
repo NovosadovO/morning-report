@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-07t06_10_18_886896": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 7 листопада, о 17:00 у тебе нічна зміна. Бажаю продуктивної роботи!\",     \"why\": \"Кале",
+    "ts": "2026-11-07T06:10:18.886896"
+  },
+  "action_detect|2026-11-07t06_01_40_322679": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надано аналіз даних про здоров'я, бігові тренування т",
+    "ts": "2026-11-07T06:01:40.322679"
+  },
+  "action_detect|2026-11-07t06_01_29_299960": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T06:01:29.299960"
+  },
+  "action_detect|2026-11-07t06_01_16_427341": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-07T06:01:16.427341"
+  },
   "action_detect|2026-11-07t06_01_05_420589": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
@@ -278,25 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "[{\"uid\": \"uid=82088\", \"title\": \"Threshold: restart tBTC\", \"date\": \"2026-11-07\", \"time\": null, \"kind\": \"other\", \"why\": \"Threshold set a Friday night restart for ",
     "ts": "2026-11-07T01:14:42.507689"
-  },
-  "selfact|2026-11-07t01_12_36_565588": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Нічна зміна\",     \"text\": \"Початок нічної зміни на заводі.\",     \"date\": \"2026-11-07\",     \"time\": \"17:00\",    ",
-    "ts": "2026-11-07T01:12:36.565588"
-  },
-  "foresight|2026-11-07t01_10_07_483081": {
-    "topic": "foresight",
-    "gist": "Олеже, поки триває нічна зміна, ідеальний час, щоб випробувати новий маршрут для бігу в Кошице, наприклад, парк біля річки, він дасть нові враження. А вже завтр",
-    "ts": "2026-11-07T01:10:07.483081"
-  },
-  "selfact|2026-11-07t00_57_37_672043": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"2026-11-07\",     \"t",
-    "ts": "2026-11-07T00:57:37.672043"
-  },
-  "email_ai_item|2026-11-07t00_50_26_946011": {
-    "topic": "email_ai_item",
-    "gist": "{ \"description\": \"Лист є щотижневим дайджестом новин від Securitize про токенізовані активи. Він містить оновлення про додавання 13 нових токенізованих акцій, п",
-    "ts": "2026-11-07T00:50:26.946011"
   }
 }
