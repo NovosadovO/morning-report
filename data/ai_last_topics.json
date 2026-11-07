@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-07t21_00_17_498230": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T21:00:17.498230"
+  },
   "email_ai_item|2026-11-07t20_56_07_957500": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Junior IT Consultant* SAP MES Support from 24h/week\\\" від concircle та \\\"GenAI Engineer\\\" від Capco",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, нагадую, що сьогодні, 07.11, у тебе нічна зміна о 17:00. Буд",
     "ts": "2026-11-07T17:42:33.650104"
-  },
-  "action_detect|2026-11-07t17_38_45_121659": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Аналіз ринкової ситуації з криптов",
-    "ts": "2026-11-07T17:38:45.121659"
   }
 }
