@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:31:25.398016",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Обновите документ, удостоверяющий личность</b>\n👤 KuCoin &lt;no-reply@kucoin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82094"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82094"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82094"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82094"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82094"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82094"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T12:31:26.803831",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>ITmatch наймає: SAP Consultant</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-11-07T12:46:13.579774",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T12:46:14.453582",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
