@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-08t00_27_03_645154": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна починається о 17:00.\",     \"date\": \"2026-11-08\",     \"tim",
+    "ts": "2026-11-08T00:27:03.645154"
+  },
+  "action_detect|2026-11-08t00_18_59_052132": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-08T00:18:59.052132"
+  },
+  "people|2026-11-08t00_18_08_531910": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"avalancheteam1@substack.com\",     \"name\": \"Avalanche Team1\",     \"relation\": \"інше\",     \"topics\": [       \"Avalanche recap\",       ",
+    "ts": "2026-11-08T00:18:08.531910"
+  },
   "email_ai_item|2026-11-08t00_15_50_007886": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Cybersecurity Co-Founder / Head of Gr",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2023-11-13\",   \"action_time\": \"11:00\",   \"action_",
     "ts": "2026-11-07T21:01:50.408688"
-  },
-  "action_detect|2026-11-07t21_01_39_530511": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Підготувати аналітичний матеріал для перегляду статті ESMA про MiCA\",   \"action_date\": null,   \"action",
-    "ts": "2026-11-07T21:01:39.530511"
-  },
-  "briefing_truthfix|2026-11-07t21_01_35_408015": {
-    "topic": "briefing/truthfix",
-    "gist": "**🧭 ВЕКТОР ДНЯ**  Олеже, твоя мета фінансової незалежності через крипту та InterFin потребує стабілізації фінансових позицій. Ринок демонструє потенціал до зрос",
-    "ts": "2026-11-07T21:01:35.408015"
-  },
-  "briefing|2026-11-07t21_01_31_654589": {
-    "topic": "briefing",
-    "gist": "**🧭 ВЕКТОР ДНЯ**  Олеже, ти зараз на найважливішому етапі для реалізації своєї мети фінансової незалежності через крипту та InterFin, оскільки ринок демонструє ",
-    "ts": "2026-11-07T21:01:31.654589"
   }
 }
