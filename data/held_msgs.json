@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T09:46:27.424979",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Why It Will Be Nearly Impossible For Congress To Break The P</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82096"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82096"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82096"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82096"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82096"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82096"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T09:46:28.748095",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Обновите документ, удостоверяющий личность</b>\n👤 KuCoin &lt;no-reply@kucoin.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-07T09:56:41.800824",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T09:57:52.759892",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
