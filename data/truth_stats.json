@@ -20,7 +20,7 @@
     },
     "astro_ai": {
       "checked": 387,
-      "issues": 139,
+      "issues": 140,
       "fixed": 65,
       "cut": 27
     },
@@ -218,7 +218,7 @@
     "foresight": {
       "checked": 817,
       "issues": 571,
-      "fixed": 254,
+      "fixed": 255,
       "cut": 14
     },
     "ai_weekly_accuracy": {
@@ -708,8 +708,8 @@
   },
   "2026-11-07": {
     "checked": 59,
-    "issues": 37,
-    "fixed": 14,
+    "issues": 38,
+    "fixed": 15,
     "cut": 4
   }
 }
