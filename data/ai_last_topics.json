@@ -1,4 +1,24 @@
 {
+  "bills|2026-11-08t00_11_00_375536": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-11-08T00:11:00.375536"
+  },
+  "action_detect|2026-11-08t00_01_19_274955": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-08T00:01:19.274955"
+  },
+  "action_detect|2026-11-08t00_01_08_239994": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-08T00:01:08.239994"
+  },
+  "proactive_actions|2026-11-08t00_00_23_457686": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
+    "ts": "2026-11-08T00:00:23.457686"
+  },
   "selfact|2026-11-07t23_56_09_065163": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що 13 листопада тобі потрібно оплатити страхув",
@@ -278,30 +298,5 @@
     "topic": "themes_ai",
     "gist": "Привіт, Олеже! Давай розберемося, як справи сьогодні, зважимо все на терезах і подумаємо, як рухатись далі.  💰 ФІНАНСИ Поки що немає чітких даних про твій поточ",
     "ts": "2026-11-07T21:01:16.042074"
-  },
-  "action_detect|2026-11-07t21_00_30_053078": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про перекус на зміні, яке містить пор",
-    "ts": "2026-11-07T21:00:30.053078"
-  },
-  "action_detect|2026-11-07t21_00_17_498230": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-07T21:00:17.498230"
-  },
-  "email_ai_item|2026-11-07t20_56_07_957500": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Junior IT Consultant* SAP MES Support from 24h/week\\\" від concircle та \\\"GenAI Engineer\\\" від Capco",
-    "ts": "2026-11-07T20:56:07.957500"
-  },
-  "selfact|2026-11-07t20_50_11_901854": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні в тебе нічна зміна о 17:00. Будь уважний на роботі.\",     \"why\": \"Поточна дата 07.11.2026, 20:5",
-    "ts": "2026-11-07T20:50:11.901854"
-  },
-  "proactive_actions|2026-11-08t00_00_23_457686": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
-    "ts": "2026-11-08T00:00:23.457686"
   }
 }
