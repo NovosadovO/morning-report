@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T14:51:30.536376",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T14:51:31.376578",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:01:44.722633",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nannying for the ultra-rich is increasingly lucrative</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82105"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82105"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82105"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82105"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82105"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82105"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
