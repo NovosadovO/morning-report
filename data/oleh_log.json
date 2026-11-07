@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_done_8ca651f958",
-      "label": "✅ Зробив",
-      "ts": "2026-10-12T18:01:30"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_80684",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-12T18:01:40"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_80684",
       "label": "🗑 Видалити",
       "ts": "2026-10-12T18:01:41"
@@ -7199,6 +7187,18 @@
       "data": "evdone_yes_done_g7uhc4bis4oa6bd1i09g8hkhic_2026-11-07",
       "label": "✅ Виконано",
       "ts": "2026-11-07T23:43:32"
+    },
+    {
+      "t": "btn",
+      "data": "rx_done_ed2676a0d0",
+      "label": "✅ Зробив",
+      "ts": "2026-11-07T23:43:33"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_0a4nm7mps2a0d5268hb8dgairc_2026-11-07",
+      "label": "❌ Не виконано",
+      "ts": "2026-11-07T23:43:35"
     }
   ]
 }
