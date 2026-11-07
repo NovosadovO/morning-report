@@ -859,5 +859,25 @@
     "last_out": "",
     "updated": "2026-11-07",
     "pinged_at": ""
+  },
+  "hello@news.railway.app": {
+    "name": "Railway",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "оновлення функціоналу",
+      "керування токенами",
+      "обертання паролів"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Ознайомитись з повним списком оновлень на railway.com.",
+    "ping_in_days": -1,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-11-07",
+    "pinged_at": ""
   }
 }
