@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:46:52.512829",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — November 7</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82106"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82106"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82106"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82106"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82106"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82106"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T15:46:53.801119",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nannying for the ultra-rich is increasingly lucrative</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-11-07T15:55:58.918029",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:56:39.124856",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
