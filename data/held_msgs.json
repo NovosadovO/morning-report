@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:37:14.482156",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T12:37:15.390563",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82096"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T12:46:37.870904",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Обновите документ, удостоверяющий личность</b>\n👤 KuCoin &lt;no-reply@kucoin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82094"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82094"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82094"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82094"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82094"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82094"
             }
           ]
         ]
