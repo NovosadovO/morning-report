@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-29T23:57:09"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-10-30",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі є запис про перегляд статті ESMA про MiCA 09.11.",
       "module": "selfact",
       "ts": "2026-11-07T22:55:18"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-07T23:06:05"
     }
   ]
 }
