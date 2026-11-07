@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T17:24:44.983062+00:00",
-      "category": "confirm",
-      "question": "gate_shop_skip: Купити кросівки New Balance 1906A зі знижкою",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-31T17:25:04.175474+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14391,6 +14385,12 @@
       "ts": "2026-11-07T06:00:56.119516+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: A market for fees",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-11-07T06:01:01.332069+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
     }
   ]
