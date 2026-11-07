@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T20:56:43.101691+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-31T20:56:47.789561+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14392,6 +14386,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_e334749586"
+    },
+    {
+      "ts": "2026-11-07T06:02:35.208571+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_92ed31cbea"
     }
   ]
 }
