@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-07t07_28_58_175483": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна сьогодні\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна. Будь уважний на робо",
+    "ts": "2026-11-07T07:28:58.175483"
+  },
+  "mailcal_extract|2026-11-07t07_20_24_959625": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82092\",     \"title\": \"Нові робочі пропозиції від Profesia.sk\",     \"date\": \"2026-11-07\",     \"time\": null,     \"kind\": \"other\",   ",
+    "ts": "2026-11-07T07:20:24.959625"
+  },
   "foresight|2026-11-07t07_19_05_396780": {
     "topic": "foresight",
     "gist": "Олеже, поки ти на нічній зміні, це чудовий час, щоб подумати про кардинальні зміни: спробуй приготувати нову страву для здорового харчування на вихідні. Це чудо",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-07T03:01:12.817959"
-  },
-  "action_detect|2026-11-07t03_01_01_988983": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-07\",   \"action_time\": \"19:00\",   \"action_summary\": \"Занотувати",
-    "ts": "2026-11-07T03:01:01.988983"
-  },
-  "proactive_actions|2026-11-07t03_00_09_804727": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, зав",
-    "ts": "2026-11-07T03:00:09.804727"
   }
 }
