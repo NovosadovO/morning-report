@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T09:32:13.080031",
-      "kind": "chunk",
-      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — ВЧОРА (06.11 08:47): 10.02 км за 63.0 хв, темп 6:20 хв/км. ВАЖЛИВО: довіряй лише слову 'вчора' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.6 кг, ціль 75 кг (тренд -0.5 кг за останні 5 замірів). Кроки: 7295 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 19:00 Нічна зміна",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T09:32:58.169825",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82097"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T09:46:27.424979",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Why It Will Be Nearly Impossible For Congress To Break The P</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82096"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82096"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82096"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82096"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82096"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82096"
             }
           ]
         ]
