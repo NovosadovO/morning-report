@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T09:46:30.351090",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>ITmatch наймає: SAP Consultant</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82093"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82093"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82093"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82093"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82093"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82093"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T09:46:31.678408",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-11-07T09:57:53.541270",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T09:59:03.880979",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
