@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-31T16:21:43.307154+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Підготовка до нічної зміни",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t3d",
-        "when": "14:00–14:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-31T16:21:44.363084+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14384,6 +14373,16 @@
       "extra": {
         "kind": "reply",
         "date": "2026-11-07"
+      }
+    },
+    {
+      "ts": "2026-11-07T03:00:17.978284+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страхування Kooperativa",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-08"
       }
     }
   ]
