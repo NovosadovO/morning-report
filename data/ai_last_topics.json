@@ -1,4 +1,9 @@
 {
+  "foresight|2026-11-07t05_00_00_392481": {
+    "topic": "foresight",
+    "gist": "Олеже, зараз, коли ти на нічній зміні, саме час спробувати новий швидкий рецепт. Тримай ідею: курка з овочами в одній сковороді – це ситно, корисно, і готується",
+    "ts": "2026-11-07T05:00:00.392481"
+  },
   "selfact|2026-11-07t04_52_16_776583": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, сьогодні о 17:00 починається нічна зміна. Не забудь про неї.",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-07T00:22:38.788165"
-  },
-  "action_detect|2026-11-07t00_22_27_904549": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-07T00:22:27.904549"
   }
 }
