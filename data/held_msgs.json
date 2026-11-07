@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:37:08.899491",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T15:38:27.388686",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82105"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T15:46:55.103023",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>USB svetielka v tvare... Môže byť lacnejšie!</b>\n👤 \"Temu\" &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82104"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82104"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82104"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82104"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82104"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82104"
             }
           ]
         ]
