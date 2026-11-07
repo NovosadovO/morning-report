@@ -491,20 +491,16 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [
-      "Ж",
-      "Mm",
-      "Погляньте на це зображення"
-    ],
+    "topics": [],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "З'ясувати контекст листів з темами \"Ж\", \"Mm\" та \"Погляньте на це зображення\", надісланих Олегу Новосадову, та надати відповідь.",
-    "ping_in_days": 0,
+    "next_step": "Надіслати листа з темою \"Ж\" Олегу Новосадову.",
+    "ping_in_days": 20,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-24",
-    "updated": "2026-11-06",
+    "updated": "2026-11-07",
     "pinged_at": ""
   },
   "ruslanakozancin@gmail.com": {
