@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:16:00.348715",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Specialist, Trading &amp; Asset Operations в Bitpanda та ще 39 в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82097"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82097"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82097"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82097"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82097"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82097"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T12:16:01.714227",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Why It Will Be Nearly Impossible For Congress To Break The P</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -280,6 +241,12 @@
       "ts": "2026-11-07T12:28:44.119209",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T12:28:44.988370",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
