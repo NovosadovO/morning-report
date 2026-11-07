@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-07t23_30_40_396385": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T23:30:40.396385"
+  },
   "selfact|2026-11-07t23_25_52_816810": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування про страхування\",     \"text\": \"Олеже, нагадую, що 13 листопада тобі потрібно оплатити страхування ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Field Marketing Manager, Central East",
     "ts": "2026-11-07T20:15:10.566266"
-  },
-  "bills|2026-11-07t20_10_25_910133": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-11-07T20:10:25.910133"
   }
 }
