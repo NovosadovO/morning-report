@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:46:53.801119",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nannying for the ultra-rich is increasingly lucrative</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82105"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82105"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82105"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82105"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82105"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82105"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T15:46:55.103023",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>USB svetielka v tvare... Môže byť lacnejšie!</b>\n👤 \"Temu\" &lt;temu@eu.temuemail.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-07T15:56:39.124856",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:56:39.973869",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
