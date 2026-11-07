@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-07t04_20_49_222719": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 починається нічна зміна. Не забудь про неї.\",     \"why\": \"Згідно з календарем, сьогодні",
+    "ts": "2026-11-07T04:20:49.222719"
+  },
+  "mailcal_extract|2026-11-07t04_17_33_440896": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82092\",     \"title\": \"Нові робочі пропозиції від Profesia.sk\",     \"date\": \"2026-11-07\",     \"time\": null,     \"kind\": \"other\",   ",
+    "ts": "2026-11-07T04:17:33.440896"
+  },
+  "email_ai_item|2026-11-07t04_15_17_994575": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Це сповіщення про вакансії з LinkedIn, яке містить дві пропозиції: SAP Consultant від ITmatch у Братиславі та Tax Manager від Bloomreach у Слов",
+    "ts": "2026-11-07T04:15:17.994575"
+  },
+  "foresight_truthfix|2026-11-07t04_14_07_833846": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, поки триває нічна зміна, це чудовий час, щоб переглянути один актив у портфелі свіжим оком.  Твоя позиція в ONDO корелює з падінням BTC, який демонструє ",
+    "ts": "2026-11-07T04:14:07.833846"
+  },
   "foresight|2026-11-07t04_13_57_149249": {
     "topic": "foresight",
     "gist": "Олеже, поки ти на нічній зміні, це ідеальний час, щоб випробувати щось нове у тренуваннях: наприклад, спробувати інтервальне навантаження або силові вправи замі",
@@ -278,25 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"researchteam@blockworks.com\",     \"name\": \"0xResearch\",     \"relation\": \"інше\",     \"topics\": [       \"припинення розсилки\",       \"",
     "ts": "2026-11-07T00:18:45.872631"
-  },
-  "email_ai_item|2026-11-07t00_15_53_427239": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"IT Operations / Site Reliability Engineer\\\" від Avenga та \\\"Technology Compliance Portfolio Operati",
-    "ts": "2026-11-07T00:15:53.427239"
-  },
-  "selfact|2026-11-07t00_10_57_054287": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про вакансію\",     \"text\": \"Олеже, з LinkedIn надійшов лист про вакансію Onboarding Analyst",
-    "ts": "2026-11-07T00:10:57.054287"
-  },
-  "action_detect|2026-11-07t00_00_59_762609": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-07T00:00:59.762609"
-  },
-  "action_detect|2026-11-07t00_00_48_712493": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-07T00:00:48.712493"
   }
 }
