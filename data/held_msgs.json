@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:46:28.060344",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T12:46:29.529779",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Claude won’t build this anymore</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-11-07T12:57:05.321925",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T12:57:06.390879",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
