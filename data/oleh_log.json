@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_80692",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-12T18:01:59"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_80693",
       "label": "🗑 Видалити",
       "ts": "2026-10-12T18:02:03"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_4cf6a7femh25jplm789sg7533k_2026-11-07",
       "label": "✅ Виконано",
       "ts": "2026-11-07T23:43:44"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-11-07T23:43:46"
     }
   ]
 }
