@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-28",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-10-28T20:56:16"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-07T03:38:28"
+    },
+    {
+      "kind": "notify",
+      "what": "11.11 о 05:00 розпочинається рання зміна.",
+      "detail": "У календарі на 11.11 зазначена рання зміна о 05:00. Це найближча рання зміна після сьогоднішньої нічної.",
+      "module": "selfact",
+      "ts": "2026-11-07T05:54:38"
     }
   ]
 }
