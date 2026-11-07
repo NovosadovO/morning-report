@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T09:00:59.899450",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Specialist, Trading &amp; Asset Operations в Bitpanda та ще 39 в</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82097"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82097"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82097"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82097"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82097"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82097"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T09:01:01.347076",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Why It Will Be Nearly Impossible For Congress To Break The P</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -379,6 +340,12 @@
       "ts": "2026-11-07T09:10:39.215851",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T09:10:47.591311",
+      "kind": "chunk",
+      "text": "💹 <b>КРИПТО ДАШБОРД</b> · 11-07\n\n🟢 <b>BTC</b>  <b>$75,934.20</b>\n   24г: +0.81%  7д: -1.8%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>ETH</b>  <b>$2,244.36</b>\n   24г: +1.17%  7д: +0.1%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🟢 <b>BNB</b>  <b>$693.89</b>\n   24г: +0.96%  7д: -1.0%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>XRP</b>  <b>$1.17</b>\n   24г: -1.35%  7д: -6.1%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>SOL</b>  <b>$90.12</b>\n   24г: +0.87%  7д: -5.9%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>TRX</b>  <b>$0.32</b>\n   24г: -0.01%  7д: -1.7%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>FIGR_HELOC</b>  <b>$1.02</b>\n   24г: -1.25%  7д: -0.5%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>ZEC</b>  <b>$1,315.84</b>\n   24г: +4.91%  7д: +3.5%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜]</code>\n\n🟢 <b>HYPE</b>  <b>$79.08</b>\n   24г: +2.19%  7д: -10.3%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🔴 <b>XMR</b>  <b>$612.18</b>\n   24г: -0.85%  7д: +2.6%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>DOGE</b>  <b>$0.07</b>\n   24г: +0.89%  7д: -4.5%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>WBT</b>  <b>$72.90</b>\n   24г: +0.57%  7д: -1.7%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>LEO</b>  <b>$9.34</b>\n   24г: -0.09%  7д: -1.0%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>LINK</b>  <b>$10.84</b>\n   24г: +1.41%  7д: -5.3%\n   ",
       "keyboard": null
     }
   ]
