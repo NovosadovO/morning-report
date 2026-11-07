@@ -1,7 +1,4 @@
 {
-  "2026-11-03": {
-    "ai_observations": true
-  },
   "2026-11-04": {
     "post_shift_checkin": true
   },
@@ -12,5 +9,8 @@
   "2026-11-06": {
     "morning_greet": true,
     "post_shift_checkin": true
+  },
+  "2026-11-07": {
+    "morning_greet": true
   }
 }
