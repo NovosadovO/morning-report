@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:15:54.904754",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T12:15:56.191268",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The beginning of the end</b>\n👤 Financial Times через LinkedIn&lt;newsletters-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-11-07T12:26:11.245115",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T12:26:12.049440",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
