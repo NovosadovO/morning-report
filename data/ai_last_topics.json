@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-07t17_32_15_242877": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-07T17:32:15.242877"
+  },
+  "action_detect|2026-11-07t08_42_32_244392": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Всі події сьогодні виконані.\" } ``",
+    "ts": "2026-11-07T08:42:32.244392"
+  },
+  "action_detect|2026-11-07t08_42_21_239484": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-07T08:42:21.239484"
+  },
   "selfact|2026-11-07t08_32_12_928841": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, у тебе сьогодні нічна зміна о 17:00. Будь уважний на роботі.",
@@ -283,25 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82092\",     \"title\": \"Нові робочі пропозиції від Profesia.sk\",     \"date\": \"2026-11-07\",     \"time\": null,     \"kind\": \"other\",   ",
     "ts": "2026-11-07T04:17:33.440896"
-  },
-  "email_ai_item|2026-11-07t04_15_17_994575": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Це сповіщення про вакансії з LinkedIn, яке містить дві пропозиції: SAP Consultant від ITmatch у Братиславі та Tax Manager від Bloomreach у Слов",
-    "ts": "2026-11-07T04:15:17.994575"
-  },
-  "foresight_truthfix|2026-11-07t04_14_07_833846": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, поки триває нічна зміна, це чудовий час, щоб переглянути один актив у портфелі свіжим оком.  Твоя позиція в ONDO корелює з падінням BTC, який демонструє ",
-    "ts": "2026-11-07T04:14:07.833846"
-  },
-  "foresight|2026-11-07t04_13_57_149249": {
-    "topic": "foresight",
-    "gist": "Олеже, поки ти на нічній зміні, це ідеальний час, щоб випробувати щось нове у тренуваннях: наприклад, спробувати інтервальне навантаження або силові вправи замі",
-    "ts": "2026-11-07T04:13:57.149249"
-  },
-  "action_detect|2026-11-07t08_42_21_239484": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-07T08:42:21.239484"
   }
 }
