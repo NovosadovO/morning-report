@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-08t01_51_46_339342": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-08T01:51:46.339342"
+  },
   "selfact|2026-11-08t01_44_03_180663": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, незабаром, о 17:00, починається нічна зміна.\",     \"date\": \"2026-11-08\",  ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-07T22:01:13.263236"
-  },
-  "action_detect|2026-11-07t22_00_37_083203": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-08\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
-    "ts": "2026-11-07T22:00:37.083203"
   }
 }
