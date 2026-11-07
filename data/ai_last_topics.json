@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-07t22_00_37_083203": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-08\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
+    "ts": "2026-11-07T22:00:37.083203"
+  },
   "selfact|2026-11-07t21_53_24_861027": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливі вакансії\",     \"text\": \"Олеже, тобі надійшли сповіщення про вакансії, які можуть тебе зацікавити:\\n\\n1",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Переглянути статтю ESMA про MiCA\",   \"action_date\": \"2023-11-09\",   \"action_time\": null,   \"action_sum",
     "ts": "2026-11-07T18:31:14.457348"
-  },
-  "msg_vip_email_truthfix|2026-11-07t18_31_05_520787": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Привіт Олеже! 🌙  Ти щойно завершив нічну зміну, і зараз найважливіше — повернути сили. Попри те, що ти зараз на роботі, вечір — чудовий час для стратегічного ог",
-    "ts": "2026-11-07T18:31:05.520787"
   }
 }
