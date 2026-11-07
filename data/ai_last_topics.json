@@ -1,4 +1,39 @@
 {
+  "foresight|2026-11-07t23_45_13_785004": {
+    "topic": "foresight",
+    "gist": "Олеже, поки ти на нічній зміні, це найкращий час, щоб приділити увагу новому швидкому рецепту, який допоможе втримати фокус на цілях. Спробуй салат з кіноа, кур",
+    "ts": "2026-11-07T23:45:13.785004"
+  },
+  "selfact|2026-11-07t23_40_36_916032": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансії\",     \"text\": \"Олеже, з'явилися нові вакансії:\\n\\n- Business Operations Director у SAG",
+    "ts": "2026-11-07T23:40:36.916032"
+  },
+  "action_detect|2026-11-07t23_37_37_443602": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-07T23:37:37.443602"
+  },
+  "action_detect|2026-11-07t23_37_26_489193": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-07T23:37:26.489193"
+  },
+  "action_detect|2026-11-07t23_32_59_790289": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-07T23:32:59.790289"
+  },
+  "msg_idle_timeout_truthfix|2026-11-07t23_32_49_746165": {
+    "topic": "MSG_IDLE_TIMEOUT/truthfix",
+    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи.  Щодо даних про ва",
+    "ts": "2026-11-07T23:32:49.746165"
+  },
+  "msg_idle_timeout|2026-11-07t23_32_39_255718": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи. Пам'ятаєш, як ти м",
+    "ts": "2026-11-07T23:32:39.255718"
+  },
   "action_detect|2026-11-07t23_30_40_396385": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -263,60 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, поки ти на нічній зміні, це ідеальний час, щоб поглянути на тренування під іншим кутом. Спробуй інтервальні заняття, силове навантаження чи плавання хоча",
     "ts": "2026-11-07T20:40:24.582658"
-  },
-  "selfact|2026-11-07t20_34_38_171279": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, завтра, 08.11, тобі потрібно оплатити стр",
-    "ts": "2026-11-07T20:34:38.171279"
-  },
-  "action_detect|2026-11-07t20_32_28_995171": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страховки Kooperativa\",   \"action_date\": \"2023-11-08\",   \"action_time\": null,   \"action_summary",
-    "ts": "2026-11-07T20:32:28.995171"
-  },
-  "msg_event_soon|2026-11-07t20_32_16_810335": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Час твоєї нічної зміни (18:00–06:00) вже розпочався, і ось короткий брифінг, щоб зорієнтуватися.  **Що взяти з собою/зосередитись:** На роботі ",
-    "ts": "2026-11-07T20:32:16.810335"
-  },
-  "selfact|2026-11-07t20_19_14_149253": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 8 листопада, тобі пот",
-    "ts": "2026-11-07T20:19:14.149253"
-  },
-  "mailcal_extract|2026-11-07t20_18_36_683919": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-11-07T20:18:36.683919"
-  },
-  "openloop_promises|2026-11-07t20_16_08_288632": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-07T20:16:08.288632"
-  },
-  "email_ai_item|2026-11-07t20_15_10_566266": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Field Marketing Manager, Central East",
-    "ts": "2026-11-07T20:15:10.566266"
-  },
-  "action_detect|2026-11-07t23_37_26_489193": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-07T23:37:26.489193"
-  },
-  "action_detect|2026-11-07t23_32_59_790289": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-07T23:32:59.790289"
-  },
-  "msg_idle_timeout_truthfix|2026-11-07t23_32_49_746165": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи.  Щодо даних про ва",
-    "ts": "2026-11-07T23:32:49.746165"
-  },
-  "msg_idle_timeout|2026-11-07t23_32_39_255718": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! ⚡  Бачу, ти зараз на нічній зміні, це той час, коли мозок особливо потребує правильного \"перезавантаження\" навіть серед роботи. Пам'ятаєш, як ти м",
-    "ts": "2026-11-07T23:32:39.255718"
   }
 }
