@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T12:36:02.012872",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T12:37:14.482156",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82097"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T12:46:36.462487",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Why It Will Be Nearly Impossible For Congress To Break The P</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82096"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82096"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82096"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82096"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82096"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82096"
             }
           ]
         ]
