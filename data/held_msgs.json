@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:17:03.559774",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The beginning of the end</b>\n👤 Financial Times через LinkedIn&lt;newsletters-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82101"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82101"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82101"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82101"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82101"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82101"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-07T15:17:05.150456",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Final warning: Subscription cancellation tomorrow</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-07T15:26:34.071354",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:26:34.908864",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
