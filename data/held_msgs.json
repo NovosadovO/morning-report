@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:22:24.551830",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T15:23:35.178023",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CryptoBeholder.com через LinkedIn</b>\n📋 Тема: «📰 AI-curated Daily Crypto Digest - November 7»\n\n<i>«AI-curated Daily Crypto Digest\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-curated-daily-crypto-digest-november-7-cryptobeholder-wn2rf?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82104"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T15:31:21.252533",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Вакансія GenAI Engineer в Capco – Активно набирає персонал</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82103"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82103"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82103"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82103"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82103"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82103"
             }
           ]
         ]
