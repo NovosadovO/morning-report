@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-07t20_19_14_149253": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 8 листопада, тобі пот",
+    "ts": "2026-11-07T20:19:14.149253"
+  },
+  "mailcal_extract|2026-11-07t20_18_36_683919": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-07T20:18:36.683919"
+  },
+  "openloop_promises|2026-11-07t20_16_08_288632": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-07T20:16:08.288632"
+  },
   "email_ai_item|2026-11-07t20_15_10_566266": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Field Marketing Manager, Central East",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-07T08:42:21.239484"
-  },
-  "selfact|2026-11-07t08_32_12_928841": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, у тебе сьогодні нічна зміна о 17:00. Будь уважний на роботі.",
-    "ts": "2026-11-07T08:32:12.928841"
-  },
-  "people|2026-11-07t08_18_02_709015": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"support@profesia.sk\",     \"name\": \"Profesia.sk\",     \"relation\": \"сервіс\",     \"topics\": [       \"персоналізовані робочі пропозиції\"",
-    "ts": "2026-11-07T08:18:02.709015"
-  },
-  "selfact|2026-11-07t08_16_19_451158": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, сьогодні, 7 листопада, о 17:00 розпочинається твоя нічна зміна. Будь",
-    "ts": "2026-11-07T08:16:19.451158"
   }
 }
