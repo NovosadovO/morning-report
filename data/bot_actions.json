@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-10-29",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-10-29T20:57:00"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Наявність невчасної оплати підписки Runable та примітка про необхідність оновлення платіжної інформації.",
       "module": "selfact",
       "ts": "2026-11-07T21:38:17"
+    },
+    {
+      "kind": "notify",
+      "what": "Важлива зустріч",
+      "detail": "Наявність зустрічі з Марошем Сіваком у календарі.",
+      "module": "selfact",
+      "ts": "2026-11-07T21:38:22"
     }
   ]
 }
