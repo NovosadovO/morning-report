@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-07t06_15_26_894573": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в компанії Bitcoin Suisse у Братиславі, Словаччина: \\\"Digital Asset Custody Specialist\\\" ",
+    "ts": "2026-11-07T06:15:26.894573"
+  },
   "selfact|2026-11-07t06_10_18_886896": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 7 листопада, о 17:00 у тебе нічна зміна. Бажаю продуктивної роботи!\",     \"why\": \"Кале",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі розпочинається о 17:00.\",     \"date\": \"2026-11-07\",    ",
     "ts": "2026-11-07T01:28:17.455777"
-  },
-  "mailcal_extract|2026-11-07t01_14_42_507689": {
-    "topic": "mailcal_extract",
-    "gist": "[{\"uid\": \"uid=82088\", \"title\": \"Threshold: restart tBTC\", \"date\": \"2026-11-07\", \"time\": null, \"kind\": \"other\", \"why\": \"Threshold set a Friday night restart for ",
-    "ts": "2026-11-07T01:14:42.507689"
   }
 }
