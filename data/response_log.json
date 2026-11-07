@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T06:00:27.852362+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Ознайомитись з деталями поїздки в Малагу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-09-01T07:25:08.627760+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14384,6 +14374,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-07T22:07:16.634012+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
