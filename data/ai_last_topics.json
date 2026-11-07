@@ -1,4 +1,9 @@
 {
+  "foresight|2026-11-08t00_31_47_457110": {
+    "topic": "foresight",
+    "gist": "🌙 <b>БЛОК НІЧНИХ</b> Ці три ночі поспіль ти працюєш на змінах. Це означає, що основна увага буде на роботі, а вільний час до зміни – для підготовки та мінімальн",
+    "ts": "2026-11-08T00:31:47.457110"
+  },
   "selfact|2026-11-08t00_27_03_645154": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна починається о 17:00.\",     \"date\": \"2026-11-08\",     \"tim",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-07T21:02:01.358086"
-  },
-  "action_detect|2026-11-07t21_01_50_408688": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2023-11-13\",   \"action_time\": \"11:00\",   \"action_",
-    "ts": "2026-11-07T21:01:50.408688"
   }
 }
