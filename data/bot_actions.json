@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-10-30T05:57:15"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: weight_up",
       "detail": "⚖️ Вага йде вгору: +0.9 кг за період, зараз 83.7 кг (до цілі 8.7 кг)",
@@ -2799,6 +2792,13 @@
       "detail": "Нагадування про оплату страхування Kooperativa, яке має бути сплачене до 13.11.",
       "module": "selfact",
       "ts": "2026-11-07T23:10:42"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-07",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-08T00:40:19"
     }
   ]
 }
