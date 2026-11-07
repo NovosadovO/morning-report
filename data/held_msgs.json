@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T15:16:56.944924",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T15:16:58.222912",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nannying for the ultra-rich is increasingly lucrative</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -445,6 +439,12 @@
       "ts": "2026-11-07T15:23:39.761078",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-07T15:24:48.298828",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
