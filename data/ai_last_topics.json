@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-11-07t20_32_16_810335": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Час твоєї нічної зміни (18:00–06:00) вже розпочався, і ось короткий брифінг, щоб зорієнтуватися.  **Що взяти з собою/зосередитись:** На роботі ",
+    "ts": "2026-11-07T20:32:16.810335"
+  },
   "selfact|2026-11-07t20_19_14_149253": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 8 листопада, тобі пот",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Всі події сьогодні виконані.\" } ``",
     "ts": "2026-11-07T08:42:32.244392"
-  },
-  "action_detect|2026-11-07t08_42_21_239484": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-07T08:42:21.239484"
   }
 }
