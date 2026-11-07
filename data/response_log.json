@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T04:30:19.967042+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Ознайомитись з деталями поїздки InterFin Malaga",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-09-01T06:00:27.852362+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14388,6 +14378,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-07T22:07:12.161484+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
