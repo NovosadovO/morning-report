@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-07t20_56_07_957500": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Junior IT Consultant* SAP MES Support from 24h/week\\\" від concircle та \\\"GenAI Engineer\\\" від Capco",
+    "ts": "2026-11-07T20:56:07.957500"
+  },
   "selfact|2026-11-07t20_50_11_901854": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні в тебе нічна зміна о 17:00. Будь уважний на роботі.\",     \"why\": \"Поточна дата 07.11.2026, 20:5",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Аналіз ринкової ситуації з криптов",
     "ts": "2026-11-07T17:38:45.121659"
-  },
-  "msg_crypto_move_truthfix|2026-11-07t17_38_33_977695": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже! 👋  Бачу, ти готуєшся до нічної зміни, а ринок тим часом показує цікаві рухи. ZEC впав на 6.6% за останні 24 години, що виділяється на тлі загально",
-    "ts": "2026-11-07T17:38:33.977695"
   }
 }
