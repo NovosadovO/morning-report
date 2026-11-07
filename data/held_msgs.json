@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-07T11:52:44.726612",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-07T11:52:45.433306",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82094"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-07T12:01:50.606941",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>ITmatch наймає: SAP Consultant</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82093"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82093"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82093"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82093"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82093"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82093"
             }
           ]
         ]
