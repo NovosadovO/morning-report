@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T09:00:25.057973+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути деталі поїздки в Малагу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-09-01T09:00:30.320638+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14375,6 +14365,16 @@
       "answer": "Нічна зміна",
       "extra": {
         "kind": "calendar",
+        "date": "2026-11-09"
+      }
+    },
+    {
+      "ts": "2026-11-08T01:30:20.034868+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Сплатити страхування Kooperativa",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-09"
       }
     }
