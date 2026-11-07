@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T09:00:30.320638+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Онлайн реєстрація на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-01"
-      }
-    },
-    {
       "ts": "2026-09-01T10:30:18.089203+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14376,6 +14366,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-09"
+      }
+    },
+    {
+      "ts": "2026-11-08T01:30:25.281723+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Oleg Novosadov",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-08"
       }
     }
   ]
