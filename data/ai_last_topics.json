@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t07_59_09_322601": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Нагадую, що до 13 листопада потрібно оплатити страхування Ko",
+    "ts": "2026-11-08T07:59:09.322601"
+  },
   "deadlines|2026-11-08t07_51_47_842250": {
     "topic": "deadlines",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Нагадую про початок нічної зміни о 17:00.\",     \"date\": \"2026-11-08\",     \"time\":",
     "ts": "2026-11-08T03:03:03.509789"
-  },
-  "action_detect|2026-11-08t03_01_34_105800": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-08T03:01:34.105800"
   }
 }
