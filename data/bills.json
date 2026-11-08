@@ -512,5 +512,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-11-05"
+  },
+  "garmin|8_99|2026-11-08": {
+    "vendor": "Garmin",
+    "amount": "8.99",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-11-08",
+    "uid": "82132",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Payment Failed for Your Garmin Services Account",
+    "note": "Несплачений рахунок за послуги Garmin. Потрібно оновити платіжну інформацію, щоб уникнути скасування підписки.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-11-08"
   }
 }
