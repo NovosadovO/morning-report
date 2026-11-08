@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-08t02_15_47_426775": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що страхування Kooperativa (€67,22) пот",
+    "ts": "2026-11-08T02:15:47.426775"
+  },
+  "email_ai_item|2026-11-08t02_15_05_232863": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії у Відні: \\\"Junior SAP Consultant (m/w/d) Möglichkeit für Einsteiger aus dem Finanzwesen\\",
+    "ts": "2026-11-08T02:15:05.232863"
+  },
   "bills|2026-11-08t02_11_06_198451": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "Привіт Олеже! 💹  Бачу, що нічний крипторинок вирішив підкинути сюрпризів, і Zcash (ZEC) опинився під прицілом, показавши відчутне падіння — мінус 5.2% за останн",
     "ts": "2026-11-07T22:38:41.834495"
-  },
-  "mailcal_extract|2026-11-07t22_35_47_807463": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82124\",     \"title\": \"Temu: повернення кредиту\",     \"date\": \"2026-11-08\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"По",
-    "ts": "2026-11-07T22:35:47.807463"
-  },
-  "selfact|2026-11-07t22_24_15_475749": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансії\",     \"text\": \"Знайшов цікаві вакансії на LinkedIn: SAGANA шукає Business Operations D",
-    "ts": "2026-11-07T22:24:15.475749"
   }
 }
