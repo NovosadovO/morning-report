@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-08t09_16_51_443923": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82132\",     \"title\": \"Платіж Garmin не пройшов\",     \"date\": \"2026-11-08\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Pa",
+    "ts": "2026-11-08T09:16:51.443923"
+  },
   "action_detect|2026-11-08t09_10_58_138883": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить статистику здоров'я, бігових ",
     "ts": "2026-11-08T06:00:52.859520"
-  },
-  "action_detect|2026-11-08t06_00_41_589214": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-08T06:00:41.589214"
   }
 }
