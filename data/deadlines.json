@@ -778,5 +778,17 @@
     "sender": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
     "done": false,
     "created": "2026-11-06"
+  },
+  "оплата_послуг_garmin_невдача|2026-11-15": {
+    "kind": "contract",
+    "title": "Оплата послуг Garmin — невдача",
+    "org": "Garmin",
+    "deadline": "2026-11-15",
+    "action": "Оновити платіжну інформацію для вашого облікового запису Garmin.",
+    "why": "Якщо платіж не буде успішно оброблено протягом наступних 7 днів, ваші підписки або послуги будуть скасовані через несплату.",
+    "uid": "82132",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "done": false,
+    "created": "2026-11-08"
   }
 }
