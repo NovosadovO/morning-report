@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t03_18_37_490902": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що 13 листопада потрібно сплатити страхування ",
+    "ts": "2026-11-08T03:18:37.490902"
+  },
   "action_detect|2026-11-08t03_11_01_657591": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування про страхування\",     \"text\": \"Олеже, нагадую, що 13 листопада тобі потрібно оплатити страхування ",
     "ts": "2026-11-07T23:25:52.816810"
-  },
-  "mailcal_extract|2026-11-07t23_21_37_265716": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82124\",     \"title\": \"Temu: повернення кредиту\",     \"date\": \"2026-11-08\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"По",
-    "ts": "2026-11-07T23:21:37.265716"
   }
 }
