@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T11:41:36.970483+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ac0a3dc9e2"
-    },
-    {
       "ts": "2026-09-01T11:41:37.101611+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14380,6 +14374,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-09"
+      }
+    },
+    {
+      "ts": "2026-11-08T10:11:22.873939+00:00",
+      "category": "bill_found",
+      "question": "Garmin",
+      "answer": "8.99 EUR",
+      "extra": {
+        "due": "2026-11-08"
       }
     }
   ]
