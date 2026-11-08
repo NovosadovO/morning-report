@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-08t04_30_09_920852": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
+    "ts": "2026-11-08T04:30:09.920852"
+  },
   "foresight|2026-11-08t04_25_12_254865": {
     "topic": "foresight",
     "gist": "Слухай, поки ти на зміні, є чудова нагода зателефонувати старому знайомому – це може бути приємним сюрпризом для обох. Всього один дзвінок зараз, і ти відчуєш, ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-08T00:01:08.239994"
-  },
-  "proactive_actions|2026-11-08t00_00_23_457686": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
-    "ts": "2026-11-08T00:00:23.457686"
   }
 }
