@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t07_27_46_102267": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що 13 листопада потрібно оплатити страхування ",
+    "ts": "2026-11-08T07:27:46.102267"
+  },
   "selfact|2026-11-08t07_11_57_313285": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що тобі потрібно оплатити страхування Kooper",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-08T02:39:25.163428"
-  },
-  "msg_crypto_move_truthfix|2026-11-08t02_39_14_795968": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже! 📉  Твоя позиція в ONDO втрачає 1.7% за останні 24 години, що корелює з загальним падінням деяких альткоїнів, як-от Zcash (-5.8%) та Bitcoin Cash (",
-    "ts": "2026-11-08T02:39:14.795968"
   }
 }
