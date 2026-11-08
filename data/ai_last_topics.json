@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t04_04_36_535930": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Нагадую про нічну зміну на заводі, яка починається о 17:00.\",     \"date\": \"2026-11-08\",  ",
+    "ts": "2026-11-08T04:04:36.535930"
+  },
   "mailcal_extract|2026-11-08t03_56_12_202194": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансії\",     \"text\": \"Олеже, з'явилися нові вакансії:\\n\\n- Business Operations Director у SAG",
     "ts": "2026-11-07T23:40:36.916032"
-  },
-  "action_detect|2026-11-07t23_37_37_443602": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-07T23:37:37.443602"
   }
 }
