@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T10:30:23.091950+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Пройти онлайн-реєстрацію на рейс",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-06"
-      }
-    },
-    {
       "ts": "2026-09-01T11:41:18.868878+00:00",
       "category": "confirm",
       "question": "gate_calrem_add: Оновити дані про здоров'я",
@@ -14375,6 +14365,16 @@
       "answer": "Переглянути статтю ESMA про MiCA",
       "extra": {
         "kind": "calendar",
+        "date": "2026-11-09"
+      }
+    },
+    {
+      "ts": "2026-11-08T04:30:15.670260+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути статтю ESMA про MiCA",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-09"
       }
     }
