@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t04_35_52_652754": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"2026-11-08\"",
+    "ts": "2026-11-08T04:35:52.652754"
+  },
   "proactive_actions|2026-11-08t04_30_09_920852": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-08T00:01:19.274955"
-  },
-  "action_detect|2026-11-08t00_01_08_239994": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-08T00:01:08.239994"
   }
 }
