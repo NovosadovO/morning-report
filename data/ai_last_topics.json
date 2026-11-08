@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-08t04_42_09_161397": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-08T04:42:09.161397"
+  },
   "selfact|2026-11-08t04_35_52_652754": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"2026-11-08\"",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-11-08T00:11:00.375536"
-  },
-  "action_detect|2026-11-08t00_01_19_274955": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-08T00:01:19.274955"
   }
 }
