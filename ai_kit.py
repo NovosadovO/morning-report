@@ -184,7 +184,7 @@ def rate_mark(state_file: str):
 # про одне й те саме (сон, здоров'я, крипто, брифінг) кожен окремо — і кожен
 # викликав Gemini. Перевірка ДО генерації -> без зайвих викликів і без дублів.
 TOPIC_FILE = "topic_gate.json"
-TOPIC_COOLDOWN_H = {"health": 5, "run": 8, "crypto": 3, "briefing": 2}
+TOPIC_COOLDOWN_H = {"health": 6, "run": 10, "crypto": 6, "briefing": 3}
 _TOPIC_OF = {
     "health": "health", "health_combined": "health", "micro_checkin": "health",
     "health_pulse": "health", "health_update": "health", "weight": "health",

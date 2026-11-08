@@ -34,6 +34,9 @@ PEOPLE_FILE = "people.json"              # {email: card}
 STORE_FILE = "people_store.json"
 SENT_FILE = "people_sent.json"
 STATE_FILE = "people_state.json"
+CLOSED_FILE = "people_closed.json"       # {email: {"items":[...], "until": "YYYY-MM-DD", "last_in": ...}}
+SKIP_SNOOZE_DAYS = 14          # «Не треба» — мовчимо про цю людину 2 тижні
+REMIND_SNOOZE_DAYS = 3         # «Нагадати» — календар уже все нагадає
 
 SCAN_MIN_GAP_MIN = 60 * 8      # оновлювати картки не частіше 3 разів на добу
 OFFER_MIN_GAP_MIN = 60 * 20    # карточку-нагадування максимум раз на ~добу
@@ -155,6 +158,83 @@ def _parse_date(s: str) -> str:
 def load_people() -> dict:
     return K.load(PEOPLE_FILE, default={}) or {}
 
+# ─── ЩО ОЛЕГ ВЖЕ ЗАКРИВ («Не треба» / «в минулому») ──────────────────────────
+
+def _norm_words(t) -> set:
+    return {w for w in re.findall(r"[\w']{4,}", str(t or "").lower())}
+
+
+def _similar(a, b, thr: float = 0.5) -> bool:
+    wa, wb = _norm_words(a), _norm_words(b)
+    if not wa or not wb:
+        return False
+    return len(wa & wb) / min(len(wa), len(wb)) >= thr
+
+
+def load_closed() -> dict:
+    return K.load(CLOSED_FILE, default={}) or {}
+
+
+def _rec_items(rec) -> list:
+    items = []
+    for k in ("my_promises", "their_promises"):
+        items += [str(x) for x in (rec.get(k) or []) if x]
+    for k in ("open_question", "next_step"):
+        if rec.get(k):
+            items.append(str(rec[k]))
+    return items
+
+
+def close_items(email: str, rec: dict, days: int = SKIP_SNOOZE_DAYS) -> None:
+    """Запам'ятовує: ці пункти й ця людина Олега більше не цікавлять."""
+    if not email:
+        return
+    cur = load_closed().get(email) or {}
+    items = list(cur.get("items") or [])
+    for it in _rec_items(rec or {}):
+        if not any(_similar(it, x, 0.8) for x in items):
+            items.append(it[:200])
+    until = (K.now() + timedelta(days=days)).strftime("%Y-%m-%d")
+    K.update_key(CLOSED_FILE, email, {
+        "items": items[-30:], "until": until, "ts": K.today_str(),
+        "last_in": (rec or {}).get("last_in", "")})
+
+
+def snooze(email: str, days: int) -> None:
+    cur = load_closed().get(email) or {}
+    until = (K.now() + timedelta(days=days)).strftime("%Y-%m-%d")
+    if str(cur.get("until") or "") < until:
+        cur["until"] = until
+    cur.setdefault("items", [])
+    K.update_key(CLOSED_FILE, email, cur)
+
+
+def _is_closed_item(email: str, text: str, closed: dict = None) -> bool:
+    c = (closed if closed is not None else load_closed()).get(email) or {}
+    return any(_similar(text, x) for x in (c.get("items") or []))
+
+
+def _filter_closed(email: str, rec: dict, closed: dict = None) -> dict:
+    """Повертає копію картки без пунктів, які Олег уже закрив."""
+    closed = closed if closed is not None else load_closed()
+    if email not in closed:
+        return rec
+    r = dict(rec)
+    for k in ("my_promises", "their_promises"):
+        r[k] = [x for x in (r.get(k) or []) if not _is_closed_item(email, x, closed)]
+    for k in ("open_question", "next_step"):
+        if r.get(k) and _is_closed_item(email, r[k], closed):
+            r[k] = ""
+    if not (r.get("open_question") or r.get("my_promises") or r.get("next_step")):
+        r["ping_in_days"] = -1
+    return r
+
+
+def _snoozed(email: str, closed: dict = None) -> bool:
+    c = (closed if closed is not None else load_closed()).get(email) or {}
+    return str(c.get("until") or "") >= K.today_str()
+
+
 
 _PROMPT = """Ти ведеш CRM-пам'ять про людей для Олега Новосадова
 (Кошице, Словаччина, Minebea Mitsumi; інтереси — інвестиції, крипто, біг).
@@ -241,6 +321,7 @@ def refresh(force: bool = False) -> int:
         return 0
 
     old = load_people()
+    closed_all = load_closed()
     # факт останнього контакту беремо з листів, а не з AI
     last_seen = {}
     last_subj = {}
@@ -286,6 +367,7 @@ def refresh(force: bool = False) -> int:
             "updated": K.today_str(),
             "pinged_at": prev.get("pinged_at", ""),
         }
+        rec = _filter_closed(email, rec, closed_all)
         K.update_key(PEOPLE_FILE, email, rec)
         n += 1
         if n >= MAX_PEOPLE:
@@ -310,9 +392,13 @@ def _silence_days(rec) -> int:
 def needs_attention() -> list:
     """[(score, email, rec)] — кому варто написати, найважливіші зверху."""
     out = []
+    closed_all = load_closed()
     for email, rec in load_people().items():
         if not isinstance(rec, dict):
             continue
+        if _snoozed(email, closed_all):
+            continue        # Олег сказав «не треба» / вже поставив нагадування
+        rec = _filter_closed(email, rec, closed_all)
         ping = rec.get("ping_in_days")
         sil = _silence_days(rec)
         score = 0
@@ -391,7 +477,7 @@ def offer(force: bool = False) -> bool:
         [{"text": "✍️ Написати листа", "callback_data": f"pm_draft_{pid}"}],
         [{"text": "⏰ Нагадати пінгнути", "callback_data": f"pm_rem_{pid}"},
          {"text": "📝 В нотатки", "callback_data": f"pm_note_{pid}"}],
-        [{"text": "❌ Не треба", "callback_data": f"pm_skip_{pid}"}],
+        [{"text": "❌ Неактуально (в минулому)", "callback_data": f"pm_skip_{pid}"}],
     ]
     ok = K.send_card("\n".join(text)[:3900], kb, tag=TAG)
     if ok:
@@ -511,6 +597,7 @@ def do_send(pid: str) -> dict:
     if not res.get("ok"):
         return {"ok": False, "error": res.get("error", "send_error")}
     _mark_pinged(p["email"])
+    snooze(p["email"], 7)
     _store.drop(pid)
     return {"ok": True, "to": p["email"], "name": p.get("name")}
 
@@ -539,6 +626,7 @@ def do_remind(pid: str) -> dict:
     res = K.calendar_event(title, start, start + timedelta(minutes=30), description=desc)
     if res.get("ok"):
         _mark_pinged(p.get("email") or "")
+        snooze(p.get("email") or "", REMIND_SNOOZE_DAYS)
         _store.drop(pid)
         return {"ok": True, "title": title, "date": d, "time": "09:00"}
     return {"ok": False, "error": res.get("error", "calendar_error")}
@@ -562,6 +650,7 @@ def do_note(pid: str) -> dict:
         ai_notes.add_note(" | ".join(parts), source="people_memory")
     except Exception as e:
         return {"ok": False, "error": str(e)}
+    snooze(p.get("email") or "", 7)
     _store.drop(pid)
     return {"ok": True, "name": p.get("name")}
 
@@ -570,6 +659,19 @@ def do_skip(pid: str) -> dict:
     p = _store.get(pid)
     if p and p.get("email"):
         _mark_pinged(p["email"])
+        # назавжди закриваємо саме ці пункти + 2 тижні тиші про людину,
+        # а відповідь Олега йде в пам'ять AI, щоб він не питав про це знов
+        close_items(p["email"], p)
+        try:
+            import ai_brain
+            what = (p.get("next_step") or p.get("open_question")
+                    or "; ".join(p.get("my_promises") or []) or "")
+            ai_brain.remember_answer(
+                f"Картка про {p.get('name')}: {what}"[:200],
+                "Не треба нагадувати про це — вже неактуально/в минулому",
+                topic="people", source="button")
+        except Exception:
+            pass
     _store.drop(pid)
     return {"ok": True}
 
