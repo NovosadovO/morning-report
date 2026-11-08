@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t02_31_40_987935": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нагадати про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що тобі потрібно оплатити страхув",
+    "ts": "2026-11-08T02:31:40.987935"
+  },
   "mailcal_extract|2026-11-08t02_24_33_809651": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі в Кошице розпочалася о 17:00. Нагадую, що вона триватиме до ранку.\",     \"why",
     "ts": "2026-11-07T22:39:28.293729"
-  },
-  "action_detect|2026-11-07t22_38_59_305614": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз ринку криптовалют, зокрема Zcash (ZEC), з р",
-    "ts": "2026-11-07T22:38:59.305614"
   }
 }
