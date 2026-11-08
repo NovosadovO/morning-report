@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-08t09_33_28_985850": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що 13 листопада потрібно оплатити страхування ",
+    "ts": "2026-11-08T09:33:28.985850"
+  },
+  "selfact|2026-11-08t09_17_28_605415": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що страхування Kooperativa (€67,22) потрібно оплатити сьогодн",
+    "ts": "2026-11-08T09:17:28.605415"
+  },
   "mailcal_extract|2026-11-08t09_16_51_443923": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82132\",     \"title\": \"Платіж Garmin не пройшов\",     \"date\": \"2026-11-08\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Pa",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-11-08T06:11:13.531302"
-  },
-  "selfact|2026-11-08t06_09_47_748430": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні о 17:00 починається нічна зміна.\",     \"date\": \"2026-11-08\",     ",
-    "ts": "2026-11-08T06:09:47.748430"
-  },
-  "action_detect|2026-11-08t06_00_52_859520": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить статистику здоров'я, бігових ",
-    "ts": "2026-11-08T06:00:52.859520"
   }
 }
