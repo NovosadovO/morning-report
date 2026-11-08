@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-08t06_56_17_720500": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 13 листопада, тобі по",
+    "ts": "2026-11-08T06:56:17.720500"
+  },
   "openloop_promises|2026-11-08t06_49_44_454919": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії у Відні: \\\"Junior SAP Consultant (m/w/d) Möglichkeit für Einsteiger aus dem Finanzwesen\\",
     "ts": "2026-11-08T02:15:05.232863"
-  },
-  "bills|2026-11-08t02_11_06_198451": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-11-08T02:11:06.198451"
   }
 }
