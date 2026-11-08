@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-11-08t03_11_01_657591": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-08T03:11:01.657591"
+  },
+  "selfact|2026-11-08t03_03_03_509789": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Нагадую про початок нічної зміни о 17:00.\",     \"date\": \"2026-11-08\",     \"time\":",
+    "ts": "2026-11-08T03:03:03.509789"
+  },
+  "action_detect|2026-11-08t03_01_34_105800": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-08T03:01:34.105800"
+  },
+  "action_detect|2026-11-08t03_01_23_105589": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-08T03:01:23.105589"
+  },
   "proactive_actions|2026-11-08t03_00_19_605493": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-08\",     \"time\": \"10:00\",     \"message\": \"Олеже, наг",
@@ -278,25 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82124\",     \"title\": \"Temu: повернення кредиту\",     \"date\": \"2026-11-08\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"По",
     "ts": "2026-11-07T23:21:37.265716"
-  },
-  "openloop_promises|2026-11-07t23_17_19_800384": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-07T23:17:19.800384"
-  },
-  "selfact|2026-11-07t23_10_35_706916": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, незабаром, 13 листопада, потрібно оплатити страхування Kooperativa (€67,22).\",     \"why\": \"Нагадування п",
-    "ts": "2026-11-07T23:10:35.706916"
-  },
-  "healthai_truthfix|2026-11-07t23_06_01_718153": {
-    "topic": "healthai/truthfix",
-    "gist": "🌙 Олеже, поки ти на нічній зміні, яка триває до 06:00, варто звернути увагу на тренд зростання ваги. Дані за 6 листопада становлять 84.3 кг, що на 9.3 кг більше",
-    "ts": "2026-11-07T23:06:01.718153"
-  },
-  "healthai|2026-11-07t23_05_50_791155": {
-    "topic": "healthai",
-    "gist": "🌙 Олеже, поки ти на нічній зміні, яка триває до 06:00, варто звернути увагу на тренд зростання ваги: дані за 6 листопада становлять 84.3 кг, що на 9.3 кг більше",
-    "ts": "2026-11-07T23:05:50.791155"
   }
 }
