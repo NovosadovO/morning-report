@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-08t05_07_57_311160": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, не забудь оплатити страхування Kooperativa (€67,22). Те",
+    "ts": "2026-11-08T05:07:57.311160"
+  },
+  "selfact|2026-11-08t04_51_55_244805": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна починається о 17:00.\",     \"date\": \"2026-11-08\",     \"tim",
+    "ts": "2026-11-08T04:51:55.244805"
+  },
+  "deadlines|2026-11-08t04_51_38_634410": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-08T04:51:38.634410"
+  },
   "mailcal_extract|2026-11-08t04_42_09_161397": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -283,25 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"avalancheteam1@substack.com\",     \"name\": \"Avalanche Team1\",     \"relation\": \"інше\",     \"topics\": [       \"Avalanche recap\",       ",
     "ts": "2026-11-08T00:18:08.531910"
-  },
-  "email_ai_item|2026-11-08t00_15_50_007886": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: \\\"Payroll Analyst\\\" від Ralliant та \\\"Cybersecurity Co-Founder / Head of Gr",
-    "ts": "2026-11-08T00:15:50.007886"
-  },
-  "selfact|2026-11-08t00_12_03_098995": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"2026-11-08\"",
-    "ts": "2026-11-08T00:12:03.098995"
-  },
-  "bills|2026-11-08t00_11_00_375536": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-11-08T00:11:00.375536"
-  },
-  "deadlines|2026-11-08t04_51_38_634410": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-08T04:51:38.634410"
   }
 }
