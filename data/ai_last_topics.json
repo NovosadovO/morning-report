@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-08t03_56_12_202194": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-08T03:56:12.202194"
+  },
+  "selfact|2026-11-08t03_48_46_810018": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна на заводі\",     \"text\": \"Олеже, твоя нічна зміна на заводі розпочинається о 17:00.\",     \"date\":",
+    "ts": "2026-11-08T03:48:46.810018"
+  },
   "openloop_promises|2026-11-08t03_48_27_821109": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-07T23:37:37.443602"
-  },
-  "action_detect|2026-11-07t23_37_26_489193": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-07T23:37:26.489193"
-  },
-  "action_detect|2026-11-07t23_32_59_790289": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-07T23:32:59.790289"
   }
 }
