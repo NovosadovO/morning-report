@@ -150,6 +150,11 @@
         "date": "2026-11-05",
         "amount": "8.99",
         "uid": "81785"
+      },
+      {
+        "date": "2026-11-08",
+        "amount": "8.99",
+        "uid": "82132"
       }
     ],
     "active": true,
@@ -157,13 +162,13 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-10-08",
-    "note": "Щомісячна підписка Garmin Connect+, яка автоматично поновлюється.",
+    "note": "Не вдалося авторизувати платіж за підписку Garmin. Потрібно оновити платіжну інформацію протягом 7 днів, інакше підписку буде скасовано.",
     "next_due": "2026-12-05",
     "amount": "8.99",
     "sender": "Garmin <GarminServicesBilling@garmin.com>",
-    "subject": "Garmin Connect+ Subscription Confirmation",
-    "uid": "81968",
-    "last_seen": "2026-11-05"
+    "subject": "Payment Failed for Your Garmin Services Account",
+    "uid": "82132",
+    "last_seen": "2026-11-08"
   },
   "googleplay": {
     "vendor": "Google Play",
