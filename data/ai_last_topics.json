@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-11-13t00_28_06_261138": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-13T00:28:06.261138"
+  },
+  "openloop_promises|2026-11-13t00_26_58_760629": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-13T00:26:58.760629"
+  },
+  "proactive_actions|2026-11-13t00_23_53_171187": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-14\",     \"time\": \"11:00\",     \"message\": \"Олеже, зав",
+    "ts": "2026-11-13T00:23:53.171187"
+  },
   "selfact|2026-11-13t00_23_43_099870": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні, 14.11, потрібно оплатити страхування Koo",
@@ -283,20 +298,5 @@
     "topic": "bills",
     "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":true,\"note\":\"Підтвердження ",
     "ts": "2026-11-12T21:24:19.662462"
-  },
-  "proactive_actions|2026-11-12t21_24_06_074035": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, зав",
-    "ts": "2026-11-12T21:24:06.074035"
-  },
-  "email_ai_item|2026-11-12t21_23_54_749270": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від NOVA Premium Spa & Wellness про різдвяні подарунки. Пропонуються 20 варіантів подарункових сертифікатів за різдвяними цінами від 22 єв",
-    "ts": "2026-11-12T21:23:54.749270"
-  },
-  "email_ai_item|2026-11-12t21_23_43_657814": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про вакансії від LinkedIn. Запити стосуються посад \\\"Head of Operations\\\" в компанії ARRISE (Sliema) та \\\"Data Center O",
-    "ts": "2026-11-12T21:23:43.657814"
   }
 }
