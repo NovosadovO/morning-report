@@ -1,14 +1,4 @@
 {
-  "80786": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-10-14T02:15:05.882713+00:00"
-  },
-  "80790": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-10-14T06:15:09.594852+00:00"
-  },
   "80806": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1488,15 @@
     "sender": "crew@hey.emergent.sh",
     "sender_raw": "Emergent <crew@hey.emergent.sh>",
     "seen_ts": "2026-11-12T10:18:00.724261+00:00"
+  },
+  "82205": {
+    "sender": "events@blockworks.com",
+    "sender_raw": "Blockworks <events@blockworks.com>",
+    "seen_ts": "2026-11-12T10:18:11.956707+00:00"
+  },
+  "82310": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-11-12T10:21:03.244134+00:00"
   }
 }
