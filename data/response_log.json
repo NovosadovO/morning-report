@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T11:42:11.720172+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_cca41c7b4b"
-    },
-    {
       "ts": "2026-09-01T13:17:54.292134+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Загальна оцінка здоров'я",
@@ -14393,6 +14387,16 @@
       "answer": "Перевірити лист від athletedata",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "ts": "2026-11-12T13:45:27.961615+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Avalanche",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-12"
       }
     }
