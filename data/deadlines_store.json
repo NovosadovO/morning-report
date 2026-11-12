@@ -4761,5 +4761,16 @@
     "why": "З 13 листопада 2026 року моделі Pro будуть доступні лише власникам підписки Google AI Pro і вищого рівня, що може вплинути на функціональність вашої поточної підписки.",
     "uid": "80783",
     "ts": "2026-11-13T00:29:03.753679+00:00"
+  },
+  "f5dc2926bd": {
+    "did": "athletedata_free_trial_ends|2026-11-13",
+    "title": "Athletedata free trial ends",
+    "deadline": "2026-11-13",
+    "kind": "contract",
+    "org": "athletedata.health",
+    "action": "Cancel the subscription before tomorrow to avoid being charged, or do nothing to continue.",
+    "why": "If you don't cancel, your card will be charged €69 for the subscription, and the chat coach will stop working.",
+    "uid": "82299",
+    "ts": "2026-11-13T00:29:07.163723+00:00"
   }
 }
