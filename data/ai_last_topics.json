@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-12t15_31_26_267484": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"82377\",     \"kind\": \"contract\",     \"title\": \"Оплата підписки AthletaData\",     \"org\": \"AthletaData\",     \"deadline\": \"2026-11-12\",   ",
+    "ts": "2026-11-12T15:31:26.267484"
+  },
   "selfact|2026-11-12t15_28_50_730193": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 13.11, тобі потрібно оплатити страх",
@@ -293,10 +298,5 @@
     "topic": "healthai/truthfix",
     "gist": "Олеже, твої дані про вагу за 7 листопада, тобто 5 днів тому, показують 84.1 кг. Це на 9.1 кг більше за цільові 75 кг, і тренд ваги зростає.  Зафіксований сон на",
     "ts": "2026-11-12T12:22:38.836926"
-  },
-  "email_ai_item|2026-11-12t12_22_27_529450": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Onboarding Analyst\\\" в Caterpillar Inc. та \\\"Business Developer Traditional Trade\\\" в The HEINEKEN ",
-    "ts": "2026-11-12T12:22:27.529450"
   }
 }
