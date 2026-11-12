@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Дедлайн Garmin Connect+",
-      "detail": "Згідно з пам'яттю про Олега, він має дедлайн 4 листопада щодо скасування підписки Garmin Connect+.",
-      "module": "selfact",
-      "ts": "2026-10-31T00:26:44"
-    },
-    {
-      "kind": "notify",
       "what": "Скасування підписки Garmin Connect+",
       "detail": "У пам'яті бота є дедлайн щодо скасування підписки Garmin Connect+ до 4 листопада.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від LinkedIn про вакансію 'Operational Risk Controller/Risk Officer в Bitcoin Suisse' містить нагадування про оплату страхування Kooperativa, яке Олег має зробити завтра, 13.11. Це може свідчити про важливість цього платежу.",
       "module": "selfact",
       "ts": "2026-11-12T12:23:57"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-12",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-12T12:33:09"
     }
   ]
 }
