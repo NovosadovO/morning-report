@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T15:52:18.556015+00:00",
-      "category": "event_done",
-      "question": "📅 📌 Ранковий дайджест ринків\nПланувалась до 14:15 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-01T15:53:46.814191+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Придбати квиток на DAS London за ранніми тарифами",
@@ -14424,6 +14418,15 @@
       "extra": {
         "kind": "reply",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "ts": "2026-11-12T23:29:02.748866+00:00",
+      "category": "bill_found",
+      "question": "athletedata.health",
+      "answer": "сума не вказана",
+      "extra": {
+        "due": ""
       }
     }
   ]
