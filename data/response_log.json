@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T15:53:46.814191+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Придбати квиток на DAS London за ранніми тарифами",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-01T15:54:04.472319+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14427,6 +14421,16 @@
       "answer": "сума не вказана",
       "extra": {
         "due": ""
+      }
+    },
+    {
+      "ts": "2026-11-13T00:23:59.908086+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страхування Kooperativa",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-14"
       }
     }
   ]
