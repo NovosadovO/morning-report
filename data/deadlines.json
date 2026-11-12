@@ -790,5 +790,17 @@
     "sender": "Garmin <GarminServicesBilling@garmin.com>",
     "done": false,
     "created": "2026-11-08"
+  },
+  "оплата_підписки_athletadata|2026-11-12": {
+    "kind": "contract",
+    "title": "Оплата підписки AthletaData",
+    "org": "AthletaData",
+    "deadline": "2026-11-12",
+    "action": "Сплатити підписку AthletaData, щоб відновити роботу MCP сервера в ChatGPT.",
+    "why": "Якщо платіж не буде здійснено, підписка залишиться на утриманні, а MCP сервер не працюватиме.",
+    "uid": "82377",
+    "sender": "Julian & Daniel from athletedata <team@athletedata.health>",
+    "done": false,
+    "created": "2026-11-12"
   }
 }
