@@ -540,5 +540,19 @@
     "paid": true,
     "paid_at": "2026-11-12",
     "created": "2026-11-12"
+  },
+  "athletedata_health||": {
+    "vendor": "athletedata.health",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "",
+    "uid": "82409",
+    "sender": "Julian & Daniel from athletedata <team@athletedata.health>",
+    "subject": "your payment didn't go through",
+    "note": "Платіжна вимога за підписку athletedata, яку було відхилено банком. Потрібно оновити платіжні дані.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-11-12"
   }
 }
