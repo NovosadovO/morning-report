@@ -1,4 +1,14 @@
 {
+  "bills|2026-11-12t14_16_22_050101": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"2026-11-12\",\"already_paid\":true,\"note\":\"Підт",
+    "ts": "2026-11-12T14:16:22.050101"
+  },
+  "email_ai_item|2026-11-12t14_13_53_309195": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від Startitup через LinkedIn інформує про значні досягнення у сфері новин в Instagram. За період з 10.10 по 9.11 було зафіксовано 219,5 мі",
+    "ts": "2026-11-12T14:13:53.309195"
+  },
   "selfact|2026-11-12t14_11_24_471616": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 13.11, тобі потрібно оплатити стр",
@@ -288,15 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"avalancheteam1@substack.com\",     \"name\": \"Avalanche Team1\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Avalanche L1 econo",
     "ts": "2026-11-12T12:16:50.329639"
-  },
-  "action_detect|2026-11-12t12_16_48_843956": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-12T12:16:48.843956"
-  },
-  "mailcal_extract|2026-11-12t12_16_34_229774": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-11-12T12:16:34.229774"
   }
 }
