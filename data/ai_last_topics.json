@@ -1,4 +1,9 @@
 {
+  "defi_digest|2026-11-12t18_16_40_107166": {
+    "topic": "defi_digest",
+    "gist": "За останні 24 години на ринку DeFi спостерігається значне падіння деяких активів, зокрема Aave Horizon RWA (-12.3%) та стейблкоїна crvUSD (-9.5%), що може вказу",
+    "ts": "2026-11-12T18:16:40.107166"
+  },
   "email_ai_item|2026-11-12t18_15_16_162226": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про вакансії від LinkedIn. Надаються дві вакансії: \\\"Head of Compliance\\\" від team.blue у Братиславі та \\\"Senior Consul",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82377\",     \"title\": \"Платіж за athletedata не пройшов\",     \"date\": null,     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Yo",
     "ts": "2026-11-12T14:33:20.625367"
-  },
-  "email_ai_item|2026-11-12t14_30_33_185844": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Inside Sales\\\" в Atlas Copco Group та \\\"Junior Actuarial Analyst\\\" в Zurich",
-    "ts": "2026-11-12T14:30:33.185844"
   }
 }
