@@ -802,5 +802,17 @@
     "sender": "Julian & Daniel from athletedata <team@athletedata.health>",
     "done": false,
     "created": "2026-11-12"
+  },
+  "athletedata_free_trial_ends|2026-11-13": {
+    "kind": "contract",
+    "title": "Athletedata free trial ends",
+    "org": "athletedata.health",
+    "deadline": "2026-11-13",
+    "action": "Cancel the subscription before tomorrow to avoid being charged, or do nothing to continue.",
+    "why": "If you don't cancel, your card will be charged €69 for the subscription, and the chat coach will stop working.",
+    "uid": "82299",
+    "sender": "Julian & Daniel from athletedata <team@athletedata.health>",
+    "done": false,
+    "created": "2026-11-12"
   }
 }
