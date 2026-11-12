@@ -21,7 +21,7 @@
     "astro_ai": {
       "checked": 392,
       "issues": 144,
-      "fixed": 67,
+      "fixed": 68,
       "cut": 27
     },
     "personal_ai": {
@@ -725,6 +725,7 @@
   },
   "2026-11-13": {
     "checked": 1,
-    "issues": 1
+    "issues": 1,
+    "fixed": 1
   }
 }
