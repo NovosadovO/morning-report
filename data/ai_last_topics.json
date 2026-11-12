@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-12t23_46_24_172119": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що сьогодні, 13.11, потрібно оплатити страхування Koop",
+    "ts": "2026-11-12T23:46:24.172119"
+  },
   "mailcal_extract|2026-11-12t23_41_55_572501": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82409\",     \"title\": \"Платіж за AthletaData не пройшов\",     \"date\": \"2026-11-12\",     \"time\": null,     \"kind\": \"payment\",     \"w",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-12T18:18:06.706799"
-  },
-  "defi_digest|2026-11-12t18_16_40_107166": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на ринку DeFi спостерігається значне падіння деяких активів, зокрема Aave Horizon RWA (-12.3%) та стейблкоїна crvUSD (-9.5%), що може вказу",
-    "ts": "2026-11-12T18:16:40.107166"
   }
 }
