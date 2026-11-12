@@ -298,5 +298,20 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-12T18:18:06.706799"
+  },
+  "action_detect|2026-11-13t00_01_11_826395": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-13T00:01:11.826395"
+  },
+  "foresight_truthfix|2026-11-12t23_47_02_092418": {
+    "topic": "foresight/truthfix",
+    "gist": "Зараз саме час спробувати новий експеримент з розкладом дня, адже наступні зміни дозв. 13 листопада у тебе вільний день, а 14 та 15 листопада — нічні зміни. Мож",
+    "ts": "2026-11-12T23:47:02.092418"
+  },
+  "foresight|2026-11-12t23_46_51_200929": {
+    "topic": "foresight",
+    "gist": "Зараз найкращий час, щоб додати різноманітності у свої тренування: спробуй силові, плавання чи інтервальні навантаження, щоб тіло не звикало до одноманітності. ",
+    "ts": "2026-11-12T23:46:51.200929"
   }
 }
