@@ -1,4 +1,9 @@
 {
+  "bills|2026-11-12t12_15_35_135317": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-11-12T12:15:35.135317"
+  },
   "action_detect|2026-11-08t11_01_06_782728": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2026-11-08\",   \"action_time\": \"10:00\",   \"action_",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-11-08T07:51:47.842250"
-  },
-  "selfact|2026-11-08t07_43_50_883028": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що сьогодні, 8 листопада, тобі потрібно оплати",
-    "ts": "2026-11-08T07:43:50.883028"
   }
 }
