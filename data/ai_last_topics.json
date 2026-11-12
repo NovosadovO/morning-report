@@ -1,4 +1,19 @@
 {
+  "healthai|2026-11-13t00_32_43_427466": {
+    "topic": "healthai",
+    "gist": "Олеже, дані за сьогодні по показнику \"Вага\" ще не приходили, останнє відоме — 2026-11-07, 6 дн. тому. Твій сон за минулу добу тривав 7.0 год, але стабільність с",
+    "ts": "2026-11-13T00:32:43.427466"
+  },
+  "subs|2026-11-13t00_29_31_842065": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-11-13T00:29:31.842065"
+  },
+  "deadlines|2026-11-13t00_29_20_912707": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-13T00:29:20.912707"
+  },
   "mailcal_extract|2026-11-13t00_28_06_261138": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -283,20 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82299\",     \"title\": \"Кінець безкоштовного пробного періоду AthletaData\",     \"date\": \"2026-11-13\",     \"time\": null,     \"kind\": ",
     "ts": "2026-11-12T21:24:54.245005"
-  },
-  "people|2026-11-12t21_24_43_396328": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"team@athletedata.health\",     \"name\": \"Julian & Daniel from athletedata\",     \"relation\": \"сервіс\",     \"topics\": [       \"оплата пі",
-    "ts": "2026-11-12T21:24:43.396328"
-  },
-  "deadlines|2026-11-12t21_24_30_781017": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"82299\",     \"kind\": \"contract\",     \"title\": \"Athletedata free trial ends\",     \"org\": \"athletedata.health\",     \"deadline\": \"2026-11-",
-    "ts": "2026-11-12T21:24:30.781017"
-  },
-  "bills|2026-11-12t21_24_19_662462": {
-    "topic": "bills",
-    "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":true,\"note\":\"Підтвердження ",
-    "ts": "2026-11-12T21:24:19.662462"
   }
 }
