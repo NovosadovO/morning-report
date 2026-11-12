@@ -329,6 +329,19 @@ def verify(prompt, answer, tag="gem"):
         _bump(tag, "issues")
         _log(str(tag) + ": " + str(len(issues)) + " претензій → " + "; ".join(issues)[:300])
 
+        # ЕКОНОМІЯ КРЕДИТІВ: спершу безкоштовний шлях — вирізати 1-2 проблемні
+        # речення. Якщо після цього аудит чистий і текст лишився змістовним,
+        # другий виклик Gemini (recheck, ~12k токенів) не потрібен.
+        try:
+            _cl0, _cut0 = sanitize(prompt, answer)
+            if _cut0 and _cut0 <= 2 and len(_cl0) > 160 and not audit(prompt, _cl0, tag):
+                _bump(tag, "cut")
+                _note_case(tag, issues, "зрізано " + str(_cut0) + " реч. без AI")
+                _log(str(tag) + ": ✂️ безкоштовне зрізання " + str(_cut0) + " реч.")
+                return _cl0
+        except Exception as _e0:
+            _log("free-cut skip: " + str(_e0))
+
         fixed = recheck(prompt, answer, issues, tag)
         if fixed and len(fixed) > 60:
             left = audit(prompt, fixed, tag)

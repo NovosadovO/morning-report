@@ -1328,6 +1328,12 @@ def run_assistant_watcher():
             except Exception as _e_gi:
                 print(f"[garmin_insight] watcher error: {_e_gi}", flush=True)
             try:
+                import market_insight as _mi_w
+                if 8 <= now_local.hour < 22:
+                    _mi_w.run()
+            except Exception as _e_mi:
+                print(f"[market_insight] watcher error: {_e_mi}", flush=True)
+            try:
                 import selfact as _sa_w
                 _sa_w.run()
             except Exception as _e_saw:
