@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-11-01T07:00:42"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-12T23:05:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Новини від LinkedIn",
+      "detail": "Отримано листи з LinkedIn про цікаві статті uid=82420 та uid=82413. Олег цікавиться криптовалютами, про що свідчать нотатки.",
+      "module": "selfact",
+      "ts": "2026-11-13T00:18:11"
     }
   ]
 }
