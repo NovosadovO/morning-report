@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-12t14_33_20_625367": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82377\",     \"title\": \"Платіж за athletedata не пройшов\",     \"date\": null,     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Yo",
+    "ts": "2026-11-12T14:33:20.625367"
+  },
+  "email_ai_item|2026-11-12t14_30_33_185844": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Inside Sales\\\" в Atlas Copco Group та \\\"Junior Actuarial Analyst\\\" в Zurich",
+    "ts": "2026-11-12T14:30:33.185844"
+  },
   "selfact|2026-11-12t14_28_03_249800": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 13.11, потрібно оплатити страхуванн",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{ \"description\": \"Це інформаційний лист від Emergent з питанням \\\"Чи ви вже пробували це?\\\". Лист містить багато HTML-коду для форматування, але не містить конк",
     "ts": "2026-11-12T12:18:00.314902"
-  },
-  "email_ai_item|2026-11-12t12_17_49_192123": {
-    "topic": "email_ai_item",
-    "gist": "{   \"description\": \"Це сповіщення про вакансію від LinkedIn для посади \\\"ASISTENT/KA VEDENIA SPOLOČNOSTI\\\" у компанії EUCOS SK s.r.o. в місті Medzev. Лист місти",
-    "ts": "2026-11-12T12:17:49.192123"
-  },
-  "email_ai_item|2026-11-12t12_17_38_177012": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить новини про технології та бізнес. Зокрема, згадується, що 60 000 працівників Microsoft отримали пропозицію про вихід, а також про т",
-    "ts": "2026-11-12T12:17:38.177012"
   }
 }
