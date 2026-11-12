@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T15:54:04.472319+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_37fd798a9e"
-    },
-    {
       "ts": "2026-09-01T15:54:38.633016+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити договір бронювання вілли",
@@ -14430,6 +14424,16 @@
       "answer": "Оплатити страхування Kooperativa",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-13T00:24:09.028082+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Seňa Classic strih UpCut",
+      "extra": {
+        "kind": "calendar",
         "date": "2026-11-14"
       }
     }
