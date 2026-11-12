@@ -265,5 +265,29 @@
     "uid": "81917",
     "last_seen": "2026-11-04",
     "next_due": "2026-12-04"
+  },
+  "athletedata": {
+    "vendor": "athletedata",
+    "cycle": "unknown",
+    "currency": "EUR",
+    "charges": [
+      {
+        "date": "2026-11-12",
+        "amount": "69.00",
+        "uid": "82299"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-11-12",
+    "note": "Безкоштовний пробний період закінчується завтра, після чого буде списано 69 EUR за підписку.",
+    "amount": "69.00",
+    "sender": "Julian & Daniel from athletedata <team@athletedata.health>",
+    "subject": "your free trial ends tomorrow",
+    "uid": "82299",
+    "last_seen": "2026-11-12",
+    "next_due": "2026-12-12"
   }
 }
