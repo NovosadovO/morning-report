@@ -1319,6 +1319,14 @@ def run_assistant_watcher():
                     print(f"[hcoach] {_hc_done}", flush=True)
             except Exception as _e_hc:
                 print(f"[hcoach] watcher error: {_e_hc}", flush=True)
+            # Garmin-розбір: метрика з найбільшим РЕАЛЬНИМ відхиленням від норми,
+            # графік 21 день + питання з відповідними кнопками. Не частіше 1/20 год.
+            try:
+                import garmin_insight as _gi_w
+                if 10 <= now_local.hour < 21:
+                    _gi_w.run()
+            except Exception as _e_gi:
+                print(f"[garmin_insight] watcher error: {_e_gi}", flush=True)
             try:
                 import selfact as _sa_w
                 _sa_w.run()
