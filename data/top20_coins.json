@@ -1,5 +1,5 @@
 {
-  "ts": 1794110916.9424977,
+  "ts": 1794478503.315279,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -8,18 +8,18 @@
     "SOL": "solana",
     "TRX": "tron",
     "FIGR_HELOC": "figure-heloc",
-    "ZEC": "zcash",
     "HYPE": "hyperliquid",
-    "XMR": "monero",
+    "ZEC": "zcash",
     "DOGE": "dogecoin",
-    "WBT": "whitebit",
+    "XMR": "monero",
     "LEO": "leo-token",
+    "WBT": "whitebit",
     "LINK": "chainlink",
     "ADA": "cardano",
     "XLM": "stellar",
     "BCH": "bitcoin-cash",
     "NEAR": "near",
-    "UNI": "uniswap",
-    "LTC": "litecoin"
+    "LTC": "litecoin",
+    "AVAX": "avalanche-2"
   }
 }
