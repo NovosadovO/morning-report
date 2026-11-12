@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T15:54:38.633016+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити договір бронювання вілли",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-01T15:54:44.124539+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14435,6 +14429,16 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-13T01:53:56.967063+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про Avalanche",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-13"
       }
     }
   ]
