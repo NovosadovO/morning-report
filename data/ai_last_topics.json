@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-12t14_28_03_249800": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 13.11, потрібно оплатити страхуванн",
+    "ts": "2026-11-12T14:28:03.249800"
+  },
   "bills|2026-11-12t14_16_22_050101": {
     "topic": "bills",
     "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"2026-11-12\",\"already_paid\":true,\"note\":\"Підт",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить новини про технології та бізнес. Зокрема, згадується, що 60 000 працівників Microsoft отримали пропозицію про вихід, а також про т",
     "ts": "2026-11-12T12:17:38.177012"
-  },
-  "people|2026-11-12t12_16_50_329639": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"avalancheteam1@substack.com\",     \"name\": \"Avalanche Team1\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Avalanche L1 econo",
-    "ts": "2026-11-12T12:16:50.329639"
   }
 }
