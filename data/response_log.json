@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:36:22.146414+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T19:36:31.692839+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14466,6 +14460,15 @@
       "category": "confirm",
       "question": "gate_calrem_add: Підготувати аналізи для Olexiho",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-13T15:50:44.918702+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Analýzy pre Olexiho :)",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-11-20"
+      }
     }
   ]
 }
