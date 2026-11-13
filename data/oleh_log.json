@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_30e8ab3f4e",
-      "label": "👌 Прийняв",
-      "ts": "2026-10-12T22:30:02"
-    },
-    {
-      "t": "btn",
       "data": "rx_close_826fc0c8cb",
       "label": "👌 Прийняв",
       "ts": "2026-10-12T22:47:14"
@@ -7199,6 +7193,12 @@
       "data": "dl_skip_1098f2bdee",
       "label": "❌ Не актуально",
       "ts": "2026-11-13T12:38:36"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_nsbgj8kjic4jsr4eje6qquqqek_2026-11-13",
+      "label": "✅ Виконано",
+      "ts": "2026-11-13T13:33:41"
     }
   ]
 }
