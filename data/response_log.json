@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:31:16.024384+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Використати знижки Temu",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-02T19:31:20.984257+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14479,6 +14469,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_1dd0293f89"
+    },
+    {
+      "ts": "2026-11-13T15:46:56.264824+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_634f9b761a"
     }
   ]
 }
