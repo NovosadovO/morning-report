@@ -1,4 +1,24 @@
 {
+  "healthai_truthfix|2026-11-13t12_05_32_755437": {
+    "topic": "healthai/truthfix",
+    "gist": "Дані про вагу та сон за сьогодні ще не надходили. Останні відомі показники ваги — від 2026-11-07 (6 днів тому), а дані про сон — від 2026-11-12 (1 день тому).  ",
+    "ts": "2026-11-13T12:05:32.755437"
+  },
+  "healthai|2026-11-13t12_05_22_316467": {
+    "topic": "healthai",
+    "gist": "💡 Дані по вазі та сну за сьогодні ще не надходили, останнє відоме — 2026-11-07 (6 днів тому) та 2026-11-12 (1 день тому) відповідно. Це означає, що тренд ваги, ",
+    "ts": "2026-11-13T12:05:22.316467"
+  },
+  "selfact|2026-11-13t12_04_09_023038": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Це потрібно",
+    "ts": "2026-11-13T12:04:09.023038"
+  },
+  "action_detect|2026-11-13t12_01_42_982728": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T12:01:42.982728"
+  },
   "action_detect|2026-11-13t12_01_31_992894": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-13T09:02:30.724757"
-  },
-  "action_detect|2026-11-13t09_02_19_824229": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2023-11-15\", \"action_time\": \"08:00\", \"action_summary\": \"Оплатити квартиру 15.11 о",
-    "ts": "2026-11-13T09:02:19.824229"
-  },
-  "action_detect|2026-11-13t09_02_08_809296": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Надіслати актуальну вагу\",   \"action_date\": \"2023-11-13\",   \"action_time\": null,   \"action_summary\": \"",
-    "ts": "2026-11-13T09:02:08.809296"
-  },
-  "action_detect|2026-11-13t09_01_57_746040": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-13T09:01:57.746040"
-  },
-  "briefing|2026-11-13t09_01_53_930536": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогодні, 13 листопада, твоя фінансова незалежність через крипто та InterFin є ключовою метою, але її реалізація вимагає дисципліни, особливо коли ",
-    "ts": "2026-11-13T09:01:53.930536"
   }
 }
