@@ -545,7 +545,7 @@ def propose_calendar_events():
         return
 
     _send(
-        f"📅 <b>Привіт! Вільний день — що плануємо?</b>\n\n"
+        f"📅 <b>Вільний день — що з цього взяти?</b>\n\n"
         f"{_esc(suggestions)}\n\n"
         f"<i>Напиши мені і я додам в Calendar 😊</i>"
     )

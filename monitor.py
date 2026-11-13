@@ -2354,7 +2354,7 @@ def get_emails():
 
         # Об'єднуємо: starred + непрочитані + останні 15 прочитаних, від нових до старих
         combined = list(dict.fromkeys(
-            list(starred_uids) + list(primary_unread_uids) + primary_all_uids[-15:]
+            list(starred_uids) + list(primary_unread_uids)
         ))
         combined = sorted(combined, key=lambda x: int(x))[::-1]
         primary_unread_uids = primary_unread_uids | starred_uids  # starred shown as important
@@ -2386,6 +2386,18 @@ def get_emails():
             email_addr = email_match.group(0) if email_match else ""
             if email_addr in _ALWAYS_SKIP:
                 continue
+            # 13.11 («повідомлення схожі, шаблонні»): у звіті — лише НЕпрочитане або
+            # позначене зіркою; уже прочитане (останні 15) щоразу виповзало знову.
+            # Розсилки/промо (TradingView, CMC, AllEvents, магазини) — не в звіт:
+            # важливе з них (дедлайни, оплати) ловить окремий AI-аналіз пошти.
+            if uid not in starred_uids:
+                if not is_unread:
+                    continue
+                try:
+                    if _classify_email(sender, subject) in ("spam", "promo"):
+                        continue
+                except Exception:
+                    pass
 
             # Зберігаємо UID + тіло листа
             primary.append((subject, sender, uid, is_unread, _imap_get_body(msg)))

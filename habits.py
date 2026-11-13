@@ -887,6 +887,11 @@ def check_persistent_reminders():
         import sys as _sys
         _sys.path.insert(0, _DIR)
         from storage import load as _st_load
+        # 13.11: ВИМКНЕНО. Щогодини слав увесь список подій «доби» (в т.ч. майбутні
+        # й за UTC-добою — «Все зроблено?» о 22:30, 23:30, 01:31) і дублював
+        # calendar_watch, який вже питає по кожній події окремо («Як пройшло?»).
+        if True:
+            raise StopIteration("calendar nag disabled: covered by calendar_watch")
         event_done = set(_st_load("monitor_event_done.json") or [])
 
         from monitor import _get_google_token, _fetch_events_all_calendars
@@ -928,6 +933,8 @@ def check_persistent_reminders():
                     state[remind_ts_key] = now_ts_c
                     changed = True
                     print(f"[persist] calendar reminder sent: {len(pending_cal)} events")
+    except StopIteration:
+        pass
     except Exception as e:
         print(f"[persist] calendar check error: {e}")
 
