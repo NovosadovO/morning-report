@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-13t02_29_44_878385": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, сьогодні потрібно оплатити страхування Kooperativa на с",
+    "ts": "2026-11-13T02:29:44.878385"
+  },
+  "email_ai_item|2026-11-13t02_14_13_090943": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Data Analyst\\\" в Caterpillar Inc. та \\\"Site HSE Manager\\\" в Kanadevia Inova",
+    "ts": "2026-11-13T02:14:13.090943"
+  },
   "selfact|2026-11-13t02_14_03_175830": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплати страхування Kooperativa на суму €67,22.\",     \"date\": \"",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82409\",     \"title\": \"Платіж за AthletaData не пройшов\",     \"date\": null,     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Ба",
     "ts": "2026-11-12T22:10:28.788765"
-  },
-  "healthai|2026-11-12t22_06_09_578218": {
-    "topic": "healthai",
-    "gist": "☀️ Олеже, твоя ранкова зміна (06:00–18:00) сьогодні завершилася, а завтра – вихідний. Зафіксовано поки що 7.0 год сну, що є частковим показником, оскільки годин",
-    "ts": "2026-11-12T22:06:09.578218"
-  },
-  "selfact|2026-11-12t21_57_26_028305": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Знайдено нову вакансію: Head of Operations в ARRISE. Можливо, тобі буде",
-    "ts": "2026-11-12T21:57:26.028305"
   }
 }
