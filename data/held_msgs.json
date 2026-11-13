@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T00:01:58.634700",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie transakcie (6641172176) – Platobná brána</b>\n👤 KOOPERATIVA poisťovňa, a.s. VIG&lt;info@koop.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82285"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82285"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82285"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82285"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82285"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82285"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-14T00:02:00.140163",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your Revolut account T&amp;Cs 🚀</b>\n👤 \"Revolut\" &lt;no-reply@revolut.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-11-14T00:08:21.786890",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 15.11</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T00:08:22.657754",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 15.11 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
