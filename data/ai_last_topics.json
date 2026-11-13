@@ -298,5 +298,35 @@
     "topic": "healthai",
     "gist": "Сьогоднішня вага 84.1 кг (останні дані за 2026-11-07, 6 днів тому) ще далека від цілі 75 кг. Змінний графік роботи та стабільність сну (7.0 год, останні дані за",
     "ts": "2026-11-13T06:45:00.669224"
+  },
+  "selfact|2026-11-13t09_46_20_138551": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що сьогодні, 13.11, потрібно оплатити страхува",
+    "ts": "2026-11-13T09:46:20.138551"
+  },
+  "mailcal_extract|2026-11-13t09_32_29_920361": {
+    "topic": "mailcal_extract",
+    "gist": "[{\"uid\": \"uid=82428\", \"title\": \"Railway: фінальний звіт та компенсація\", \"date\": \"2026-10-23\", \"time\": null, \"kind\": \"other\", \"why\": \"Railway security update: F",
+    "ts": "2026-11-13T09:32:29.920361"
+  },
+  "action_detect|2026-11-13t09_31_09_600296": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страховки Kooperativa\",   \"action_date\": \"2023-11-13\",   \"action_time\": null,   \"action_summary",
+    "ts": "2026-11-13T09:31:09.600296"
+  },
+  "msg_event_soon|2026-11-13t09_30_58_775250": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Готуйся до оплати страховки Kooperativa (€67,22) та стрижки у Seňa Classic strih UpCut. Часу вдосталь, щоб все встигнути.  **Що взяти:** *   Га",
+    "ts": "2026-11-13T09:30:58.775250"
+  },
+  "action_detect|2026-11-13t09_30_53_837242": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-13T09:30:53.837242"
+  },
+  "selfact|2026-11-13t09_30_11_635815": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплатити страхування Kooperativa на суму €67,22.\",     \"date\":",
+    "ts": "2026-11-13T09:30:11.635815"
   }
 }
