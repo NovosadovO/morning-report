@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-13t05_50_53_631767": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, сьогодні потрібно оплатити страхування Kooperativa на суму €6",
+    "ts": "2026-11-13T05:50:53.631767"
+  },
   "mailcal_extract|2026-11-13t05_45_25_062992": {
     "topic": "mailcal_extract",
     "gist": "[{\"uid\": \"uid=82425\", \"title\": \"Нові робочі пропозиції\", \"date\": \"2026-11-13\", \"time\": null, \"kind\": \"other\", \"why\": \"Персоналізовані робочі пропозиції від Prof",
@@ -293,10 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE/truthfix",
     "gist": "The current date is Thursday, November 12, 2026 at 10:39 PM UTC.  Here's the revised response based on the provided data and rules:  **Крипторинок демонструє зн",
     "ts": "2026-11-13T00:39:38.043434"
-  },
-  "msg_crypto_move|2026-11-13t00_39_24_466664": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! 📈  Нічний час, коли ти відпочиваєш, водночас приніс черговий рух на крипторинку, який цього разу виявився несприятливим для багатьох активів. За о",
-    "ts": "2026-11-13T00:39:24.466664"
   }
 }
