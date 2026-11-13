@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-13t14_01_32_504532": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-13T14:01:32.504532"
+  },
+  "proactive_actions|2026-11-13t13_53_54_030888": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Перевірити лист від KOOPERATIVA\",     \"date\": \"2026-11-13\",     \"time\": \"\",     \"message\": \"Олеже, є новий лист",
+    "ts": "2026-11-13T13:53:54.030888"
+  },
   "selfact|2026-11-13t13_53_15_359713": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koope",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-13T10:50:44.245498"
-  },
-  "email_ai_item|2026-11-13t10_50_13_082380": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Nike інформує про наближення розпродажу \\\"Nike Black Friday Days\\\". Конкретні дати або знижки не вказані, але це анонс майбутньої поді",
-    "ts": "2026-11-13T10:50:13.082380"
-  },
-  "action_detect|2026-11-13t10_50_01_812897": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-13T10:50:01.812897"
   }
 }
