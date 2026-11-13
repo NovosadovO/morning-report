@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-13t08_47_08_760378": {
+    "topic": "mailcal_extract",
+    "gist": "[{\"uid\": \"uid=82428\", \"title\": \"Railway: фінальний звіт та компенсація\", \"date\": \"2026-10-23\", \"time\": null, \"kind\": \"other\", \"why\": \"Railway ділиться фінальним",
+    "ts": "2026-11-13T08:47:08.760378"
+  },
   "selfact|2026-11-13t08_42_52_365504": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa на су",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-13T04:58:28.714236"
-  },
-  "proactive_actions|2026-11-13t04_53_49_263951": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьо",
-    "ts": "2026-11-13T04:53:49.263951"
   }
 }
