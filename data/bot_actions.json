@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-02T06:22:52"
-    },
-    {
       "kind": "notify",
       "what": "Важлива інформація про підписку Runable",
       "detail": "Дані про підписку Runable вказують на невдалий платіж та необхідність оновлення платіжної інформації.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-13T13:51:16"
+    },
+    {
+      "kind": "notify",
+      "what": "Отримано сповіщення від Garmin про реєстрацію пристрою Venu",
+      "detail": "Отримано новий лист від Garmin.",
+      "module": "selfact",
+      "ts": "2026-11-13T13:53:24"
     }
   ]
 }
