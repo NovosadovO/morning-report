@@ -2871,5 +2871,18 @@
     "note": "Це ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
     "uid": "82012",
     "ts": "2026-11-14T00:09:24.308108+00:00"
+  },
+  "b13f231df7": {
+    "bid": "garmin|8_99|2026-11-08",
+    "vendor": "Garmin",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-11-08",
+    "invoice_no": "",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Payment Failed for Your Garmin Services Account",
+    "note": "Несплачений рахунок за послуги Garmin. Потрібно оновити платіжну інформацію, щоб уникнути скасування підписки.",
+    "uid": "82132",
+    "ts": "2026-11-14T00:09:27.537980+00:00"
   }
 }
