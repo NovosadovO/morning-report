@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T19:55:43.750100+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_a25a609c4d"
-    },
-    {
       "ts": "2026-09-01T21:13:55.846274+00:00",
       "category": "diary",
       "question": "3 питання про день",
@@ -14464,6 +14458,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_fbb2994464"
+    },
+    {
+      "ts": "2026-11-13T12:23:58.968531+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Нагадування про оплату страхування Kooperativa",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-14"
+      }
     }
   ]
 }
