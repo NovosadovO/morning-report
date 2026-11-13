@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твоя страховка на авто закінчується через 4 дні. Нага",
-      "detail": "У календарі на 4.11 зазначено 'Перевірити страховку авто', а 5.11 є нагадування 'через 4 дні страхування на авто'.",
-      "module": "selfact",
-      "ts": "2026-11-02T11:29:43"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що через тиждень, 8 листопада, тобі потрібно",
       "detail": "У календарі на 8.11 є нагадування 'оплатити страхування Kooperativa (€67,22) — за тиждень'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-13T16:11:23"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-09",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-13T16:11:28"
     }
   ]
 }
