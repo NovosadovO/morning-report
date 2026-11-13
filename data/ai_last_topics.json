@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-13t04_58_28_714236": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-13T04:58:28.714236"
+  },
   "proactive_actions|2026-11-13t04_53_49_263951": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьо",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "[]",
     "ts": "2026-11-13T00:28:06.261138"
-  },
-  "openloop_promises|2026-11-13t00_26_58_760629": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-13T00:26:58.760629"
   }
 }
