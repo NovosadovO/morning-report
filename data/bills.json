@@ -554,5 +554,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-11-12"
+  },
+  "ubian_eshop|3_00|": {
+    "vendor": "Ubian Eshop",
+    "amount": "3.00",
+    "currency": "EUR",
+    "invoice_no": "15152871",
+    "due": "",
+    "uid": "82435",
+    "sender": "Ubian Eshop <no-reply@ubian.sk>",
+    "subject": "UBIAN - Potvrdenie o zaplatení",
+    "note": "Підтвердження успішної оплати кредиту Ubian на суму 3.00 EUR.",
+    "paid": true,
+    "paid_at": "2026-11-13",
+    "created": "2026-11-13"
   }
 }
