@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:36:35.585222+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: 📅 Пропоную додати в календар",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T19:36:36.326313+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14472,6 +14466,12 @@
       "extra": {
         "kind": "insurance"
       }
+    },
+    {
+      "ts": "2026-11-13T21:43:24.489186+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
