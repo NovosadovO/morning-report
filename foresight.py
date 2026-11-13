@@ -769,11 +769,14 @@ def _try_new_pick():
     last_day = str(st.get("try_new_last") or "")
     if last_day:
         try:
-            last_dt = datetime.strptime(last_day, "%Y-%m-%d")
-            if (_now() - last_dt).days < _TRY_NEW_GAP_DAYS:
+            last_dt = datetime.strptime(last_day[:10], "%Y-%m-%d")
+            if (_now().replace(tzinfo=None) - last_dt).days < _TRY_NEW_GAP_DAYS:
                 return None
-        except Exception:
-            pass
+        except Exception as e:
+            # fail-closed: якщо не змогли порахувати — НЕ шлемо (баг 13.11: виняток
+            # ковтався і картка летіла кожні 46 хв)
+            _log("trynew gap check error, skip: " + str(e))
+            return None
     used = st.get("life_used") or []
     pool = [t for t in _LIFE_POOL if t not in used]
     if not pool:

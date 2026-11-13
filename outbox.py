@@ -209,6 +209,41 @@ def _dup_reason(text, rows):
     return ""
 
 
+# Теми-«ворота» поверх змісту: різні модулі шлють одне й те саме іншими словами
+# (13.11: «СПРОБУЙ НОВЕ» ×6 за 4 год, «6 днів без пробіжки» ×3, HRV-картка ×2).
+# Збіг по змісту їх не ловить, тому — кулдаун на ТЕМУ незалежно від джерела.
+TOPIC_RULES = [
+    ("trynew", r"спробуй нове", 72),
+    ("run_nudge", r"час бігти|без пробіжк|біговий трекер мовчить|пробіжк\w* не було|не бігав", 10),
+    ("hrv_card", r"^[💡🫀❤️\s]*(твій )?(hrv|порада на день)", 6),
+    ("weigh", r"час зважитись|зваж себе|дані про вагу", 12),
+    ("garmin_sync", r"garmin connect\s*[—-]", 3),
+    ("nowexp", r"досить сидіти|розім.яти|вип.й води|час випити воду", 4),
+]
+
+
+def _topic(text):
+    low = _clean(text).lower()
+    for name, rx, hrs in TOPIC_RULES:
+        try:
+            if re.search(rx, low[:400]):
+                return name, hrs
+        except Exception:
+            continue
+    return "", 0
+
+
+def _topic_reason(text, rows):
+    name, hrs = _topic(text)
+    if not name:
+        return ""
+    cut = (_now() - timedelta(hours=hrs)).isoformat(timespec="seconds")
+    for r in rows:
+        if r.get("topic") == name and str(r.get("ts") or "") >= cut:
+            return "тема «" + name + "» вже була о " + str(r.get("ts"))[11:16] + " (пауза " + str(hrs) + " год)"
+    return ""
+
+
 def _answered_reason(text, qs):
     q = _question_line(text)
     if not q:
@@ -241,7 +276,8 @@ def _record(text):
     except Exception:
         op = ""
     d["sent"].append({"ts": _now().isoformat(timespec="seconds"), "open": _clean(text)[:70],
-                      "op": op, "fp": fp, "nums": nums, "w": ws})
+                      "op": op, "fp": fp, "nums": nums, "w": ws,
+                      "topic": _topic(text)[0]})
     q = _question_line(text)
     if q:
         d["qs"].append({"ts": _now().isoformat(timespec="seconds"), "q": q[:200],
@@ -260,7 +296,8 @@ def check_request(url, data):
         d = _load()
         why = ""
         if not _is_urgent(text):
-            why = _answered_reason(text, d["qs"]) or _dup_reason(text, d["sent"])
+            why = (_answered_reason(text, d["qs"]) or _topic_reason(text, d["sent"])
+                   or _dup_reason(text, d["sent"]))
         if why:
             _bump("dropped")
             d["drops"].append({"ts": _now().isoformat(timespec="seconds"),
