@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-13t12_51_21_930792": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koope",
+    "ts": "2026-11-13T12:51:21.930792"
+  },
+  "action_detect|2026-11-13t12_38_52_933410": {
+    "topic": "action_detect",
+    "gist": "{ \"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null }",
+    "ts": "2026-11-13T12:38:52.933410"
+  },
+  "action_detect|2026-11-13t12_38_41_986829": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T12:38:41.986829"
+  },
+  "action_detect|2026-11-13t12_38_30_968397": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T12:38:30.968397"
+  },
   "action_detect|2026-11-13t12_38_19_968988": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -278,25 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ⏰  Готуйся до оплати страховки Kooperativa (€67,22) та стрижки у Seňa Classic strih UpCut. Часу вдосталь, щоб все встигнути.  **Що взяти:** *   Га",
     "ts": "2026-11-13T09:30:58.775250"
-  },
-  "action_detect|2026-11-13t09_30_53_837242": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-13T09:30:53.837242"
-  },
-  "selfact|2026-11-13t09_30_11_635815": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплатити страхування Kooperativa на суму €67,22.\",     \"date\":",
-    "ts": "2026-11-13T09:30:11.635815"
-  },
-  "openloop_promises|2026-11-13t09_29_56_944395": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-13T09:29:56.944395"
-  },
-  "proactive_actions|2026-11-13t09_23_58_032943": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"10:59\",     \"message\": \"Олеже, сьогодні до",
-    "ts": "2026-11-13T09:23:58.032943"
   }
 }
