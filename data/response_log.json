@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T19:55:19.186486+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-09-01T19:55:42.689081+00:00",
       "category": "calendar_button",
       "question": "🔔 Підготовка до нічної зміни 03.09",
@@ -14464,6 +14458,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_5b4ed7450e"
+    },
+    {
+      "ts": "2026-11-13T10:51:35.616951+00:00",
+      "category": "calendar_button",
+      "question": "Seňa  Classic strih UpCut",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "11:00–11:30",
+        "note": null
+      }
     }
   ]
 }
