@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, сьогодні 2 листопада, і в тебе заплановано спрей для",
-      "detail": "Календар на 7 днів вказує '02.11: ... 17:10 💈 Спрей для волосся ✅'",
-      "module": "selfact",
-      "ts": "2026-11-02T10:12:35"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, увага! Твоя страховка на авто закінчується через 4 дн",
       "detail": "05.11: 10:00 Нагадування: через 4 дні страховка на авто",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Прийшли аналізи від Maroš Sivák для Олега. Він підготував порівняння портфільо INTF Dynamic ETF з VUB та OVB, а також документи з комісіями.",
       "module": "selfact",
       "ts": "2026-11-13T15:57:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-13",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-13T16:00:01"
     }
   ]
 }
