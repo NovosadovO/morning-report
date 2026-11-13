@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-11-13t07_16_46_876313": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82428\",     \"title\": \"Railway: фінальний звіт та компенсація\",     \"date\": \"2026-10-23\",     \"time\": null,     \"kind\": \"other\",   ",
+    "ts": "2026-11-13T07:16:46.876313"
+  },
+  "selfact|2026-11-13t07_09_49_300825": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, сьогодні о 09:00 потрібно оплатити страхування Kooperat",
+    "ts": "2026-11-13T07:09:49.300825"
+  },
   "healthai|2026-11-13t07_06_00_705121": {
     "topic": "healthai",
     "gist": "💪 Твій HRV — 40.0 мс (останні дані за 2026-11-12, 1 день тому), що є найнижчим показником за останні 14 днів, а це може впливати на твою загальну відновленість.",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-13T03:01:04.907184"
-  },
-  "action_detect|2026-11-13t03_00_53_949663": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-13T03:00:53.949663"
-  },
-  "foresight_truthfix|2026-11-13t02_52_26_105061": {
-    "topic": "foresight/truthfix",
-    "gist": "Наступної ранкової зміни, коли прокинешся раніше, виділи 15 хвилин на легку розтяжку.",
-    "ts": "2026-11-13T02:52:26.105061"
   }
 }
