@@ -503,7 +503,7 @@ def send_proactive_message(telegram_send_func):
     
     # Формуємо повідомлення
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    message = f"""👋 Привіт Олег! 
+    message = f"""🧭 
 
 Я сам проаналізував твою ситуацію:
 

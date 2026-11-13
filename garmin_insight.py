@@ -282,8 +282,10 @@ def run(force: bool = False) -> bool:
             pass
         if not K.rate_ok("garmin_insight_gap.json", MIN_GAP_H * 60):
             return False
-        if not K.topic_ok("health", 4):
-            return False
+        # 13.11: БЕЗ topic_ok. Старі health-картки (healthai/hcoach) ставлять мітку
+        # раз на ~годину й назавжди тримали ворота закритими — цей розбір (пріоритет
+        # №1 за словами Олега) не міг вийти взагалі. Тепер він іде за власним
+        # інтервалом (20 год) і САМ ставить мітку, щоб старі картки відступили.
     try:
         import garmin_fresh
         garmin_fresh.ensure_fresh()      # свіжий живий запит перед аналізом

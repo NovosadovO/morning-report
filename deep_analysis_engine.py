@@ -424,8 +424,7 @@ def build_deep_analysis(location="doma", idle_hours=0):
     
     # Аналізувати кожну сферу
     parts = [
-        f"Привіт Олеже! 👋\n",
-        "Ось що я помітив сьогодні:\n",
+        "🔎 Головне на сьогодні:\n",
         "\n" + _analyze_calendar(cal),
         "\n" + _analyze_health(health),
         "\n" + _analyze_emails(emails),
@@ -451,7 +450,7 @@ Socials: {json.dumps(socials)[:300]}
 Crypto: {json.dumps(crypto)[:300]}
 
 STYLE:
-- Address: "Привіт Олеже!" or "Олеже,"
+- NO greeting and no "Привіт Олеже"; start with the most important fact
 - Warm, personal tone
 - Specific observations: "Я бачу..."
 - Concrete recommendations: "Рекомендую..."

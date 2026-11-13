@@ -292,7 +292,7 @@ CONTEXT:
 - Crypto prices: {json.dumps(crypto, indent=2)}
 
 WRITE A MESSAGE THAT:
-1. Greets Oleh warmly (Привіт Олеже!)
+1. Starts straight with the key fact (NO greeting, never "Привіт Олеже")
 2. Opens by acknowledging his REAL current status above (e.g. if he's finishing/on a night shift right now, greet him accordingly — NOT as if his day is just starting at home)
 3. Summarizes key events for today
 4. Highlights key cryptocurrency moves (BTC, ETH, AVAX, ONDO)
@@ -321,7 +321,7 @@ FORMAT: Plain text, no markdown."""
     )
     
     if not result:
-        result = (f"🌅 Привіт Олеже! Реальний статус зараз: {real_status['label']}.\n"
+        result = (f"🌅 Реальний статус зараз: {real_status['label']}.\n"
                   f"💪 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')} (сьогодні буде цікаво)\n"
                   f"✅ Разом ми досягнемо цілей!")
 

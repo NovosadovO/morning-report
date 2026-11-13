@@ -199,7 +199,7 @@ def get_brief_v3(location="doma", idle_hours=0):
 
 CONTEXT: {json.dumps(context)[:800]}
 
-STYLE: "Привіт Олеже! Ось що я помітив..."
+STYLE: start directly with the key fact, no greeting
 
 Include: current time relevant message, health status, calendar, any recommendations."""
     

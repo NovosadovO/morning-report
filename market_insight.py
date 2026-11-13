@@ -247,8 +247,8 @@ def run(force=False) -> bool:
             pass
         if not K.rate_ok("market_insight_gap.json", MIN_GAP_H * 60):
             return False
-        if not K.topic_ok("crypto", 6):
-            return False
+        # 13.11: БЕЗ topic_ok — старі крипто-шаблони постійно ставили мітку й
+        # блокували цей розбір. Власний інтервал 8 год; мітку ставимо після відправки.
     hist = _history()
     rows = analyse(hist)
     state = _state()

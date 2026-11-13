@@ -3089,7 +3089,7 @@ def check_new_emails():
 
             # 2. Текст з AI аналізом + кнопки окремим повідомленням (розмовний, "живий" стиль)
             sender_short = esc(sender.split("<")[0].strip().strip('"') or sender[:40])
-            text = f"Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>{sender_short}</b>\n"
+            text = f"📩 Лист від <b>{sender_short}</b>\n"
             text += f"📋 Тема: «{esc(subject[:70])}»\n"
 
             if ai:
