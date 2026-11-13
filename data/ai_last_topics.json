@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-13t13_53_15_359713": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koope",
+    "ts": "2026-11-13T13:53:15.359713"
+  },
   "healthai_truthfix|2026-11-13t13_41_03_551990": {
     "topic": "healthai/truthfix",
     "gist": "Сьогодні, 13 листопада 2026 року, зафіксовано 11.0 годин сну. Це більше, ніж середній показник за тиждень (8.0 год) та місяць (7.4 год).  Остання відома вага — ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-11-13T10:50:01.812897"
-  },
-  "action_detect|2026-11-13t10_49_50_786435": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-13T10:49:50.786435"
   }
 }
