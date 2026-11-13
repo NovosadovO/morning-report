@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-13t06_37_40_926328": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, сьогодні до 09:00 потрібно оплатити страхування Koopera",
+    "ts": "2026-11-13T06:37:40.926328"
+  },
+  "mailcal_extract|2026-11-13t06_31_14_703027": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"uid=82428\",     \"title\": \"Railway: фінальний звіт та компенсація\",     \"date\": \"2026-10-23\",     \"time\": null,     \"kind\": \"other\",   ",
+    "ts": "2026-11-13T06:31:14.703027"
+  },
+  "openloop_promises|2026-11-13t06_29_05_399162": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-13T06:29:05.399162"
+  },
   "people|2026-11-13t06_28_55_845202": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"hello@notify.railway.app\",     \"name\": \"Railway\",     \"relation\": \"сервіс\",     \"topics\": [       \"оновлення безпеки\",       \"звіт п",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Рання зміна\",     \"text\": \"Олеже, сьогодні о 05:00 починається рання зміна.\",     \"date\": \"2026-11-13\",     \"time\": ",
     "ts": "2026-11-13T01:57:59.943314"
-  },
-  "openloop_promises|2026-11-13t01_57_45_866096": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-13T01:57:45.866096"
-  },
-  "proactive_actions|2026-11-13t01_53_50_263881": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-14\",     \"time\": \"11:00\",     \"message\": \"Олеже, зав",
-    "ts": "2026-11-13T01:53:50.263881"
-  },
-  "selfact|2026-11-13t01_42_14_655372": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплатити страхування Kooperativa на суму €67,22.\",     \"date\":",
-    "ts": "2026-11-13T01:42:14.655372"
   }
 }
