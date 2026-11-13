@@ -17,6 +17,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T00:01:55.663721",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Poďakovanie za úhradu poistného - povinného zmluvného poiste</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82462"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82462"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82462"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82462"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82462"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82462"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
