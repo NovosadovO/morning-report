@@ -19161,7 +19161,23 @@
     "pid": "cal_skip_gen_1794549662973",
     "subject": "Оплатити страхування Kooperativa",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Оплатити страхування Kooperativa» о 11:00, 2026-11-13\nОплатити страхування Kooperativa на суму €67,22.\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Оплатити страхування Kooperativa» о 11:00, 2026-11-13\nОплатити страхування Kooperativa на суму €67,22.\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 124266,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_gen_1794549662973"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_gen_1794549662973"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-13T10:48:25.273395+00:00"
   }
