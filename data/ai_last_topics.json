@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-13t19_34_53_757277": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koope",
+    "ts": "2026-11-13T19:34:53.757277"
+  },
   "action_detect|2026-11-13t19_30_24_459502": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-13T15:01:32.906461"
-  },
-  "action_detect|2026-11-13t15_01_22_242111": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Астрологічний транзит — розбір карти\", \"action_date\": \"2023-11-14\", \"action_time\": \"10:00\", \"action_summary",
-    "ts": "2026-11-13T15:01:22.242111"
   }
 }
