@@ -1,4 +1,9 @@
 {
+  "bills|2026-11-13t19_39_47_960458": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":true,\"note\":\"Підтвердження ",
+    "ts": "2026-11-13T19:39:47.960458"
+  },
   "selfact|2026-11-13t19_34_53_757277": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koope",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-13T15:01:44.203923"
-  },
-  "action_detect|2026-11-13t15_01_32_906461": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-13T15:01:32.906461"
   }
 }
