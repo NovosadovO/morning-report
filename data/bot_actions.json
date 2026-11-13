@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, схоже, ти цікавишся криптовалютами. Тобі надійшли нов",
-      "detail": "Свіжі листи: uid=81815 | від CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com> | 📰 AI-curated Daily Crypto Digest - November 2. Свіжі листи: uid=81814 | від Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com> | 📰 Daily Crypto Digest — November 2.",
-      "module": "selfact",
-      "ts": "2026-11-02T18:29:29"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-13T22:06:03"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-13",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-13T22:12:24"
     }
   ]
 }
