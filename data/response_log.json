@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:25:05.135692+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_water"
-    },
-    {
       "ts": "2026-09-02T19:31:11.124930+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14483,6 +14477,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_4bc0b1ada1"
+    },
+    {
+      "ts": "2026-11-13T15:46:40.343259+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_05aaf8f356"
     }
   ]
 }
