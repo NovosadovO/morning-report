@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-13t05_04_17_818503": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, сьогодні до 09:00 потрібно оплатити страхування Kooperativa на ",
+    "ts": "2026-11-13T05:04:17.818503"
+  },
+  "mailcal_extract|2026-11-13t04_59_45_939895": {
+    "topic": "mailcal_extract",
+    "gist": "[{\"uid\": \"uid=82425\", \"title\": \"Нові робочі пропозиції Profesia.sk\", \"date\": \"2026-11-13\", \"time\": null, \"kind\": \"other\", \"why\": \"Персоналізовані робочі пропози",
+    "ts": "2026-11-13T04:59:45.939895"
+  },
   "openloop_promises|2026-11-13t04_58_28_714236": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "subs",
     "gist": "[]",
     "ts": "2026-11-13T00:29:31.842065"
-  },
-  "deadlines|2026-11-13t00_29_20_912707": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-13T00:29:20.912707"
-  },
-  "mailcal_extract|2026-11-13t00_28_06_261138": {
-    "topic": "mailcal_extract",
-    "gist": "[]",
-    "ts": "2026-11-13T00:28:06.261138"
   }
 }
