@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-13t16_11_52_361013": {
+    "topic": "healthai",
+    "gist": "🤔 Олеже, завтра на тебе чекає нічна зміна, але поки що в календарі немає запису про це.  😴 Сон сьогодні — 11 год 01 хв, що вище твоєї середньої за 7 днів (7.6 г",
+    "ts": "2026-11-13T16:11:52.361013"
+  },
   "healthai|2026-11-13t16_05_46_335925": {
     "topic": "healthai",
     "gist": "🤔 Олеже, завтра на тебе чекає нічна зміна, але поки що в календарі немає запису про це. Чи ти зараз на зміні, чи вдома?",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-13T12:38:41.986829"
-  },
-  "action_detect|2026-11-13t12_38_30_968397": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-13T12:38:30.968397"
   }
 }
