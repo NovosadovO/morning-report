@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "calrem_add_80711",
-      "label": "",
-      "ts": "2026-10-12T21:58:59"
-    },
-    {
-      "t": "btn",
       "data": "email_keep_80711",
       "label": "📥 Залишити",
       "ts": "2026-10-12T21:59:03"
@@ -7199,6 +7193,12 @@
       "data": "cw_done_e3e21e43f3",
       "label": "✅ Було",
       "ts": "2026-11-13T12:37:49"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_otgbtqe65lalqdtvd97a74jcok_2026-11-13",
+      "label": "✅ Виконано",
+      "ts": "2026-11-13T12:37:51"
     }
   ]
 }
