@@ -1,4 +1,9 @@
 {
+  "foresight|2026-11-13t05_57_37_144491": {
+    "topic": "foresight",
+    "gist": "Зараз саме час зазирнути в минуле кіно — адже попереду робочий тиждень, і після нього знадобиться переключитися. Спробуй переглянути «Тіні забутих предків» Серг",
+    "ts": "2026-11-13T05:57:37.144491"
+  },
   "selfact|2026-11-13t05_50_53_631767": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, сьогодні потрібно оплатити страхування Kooperativa на суму €6",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Крипторинок демонструє значні коливання за останні 24",
     "ts": "2026-11-13T00:39:49.043704"
-  },
-  "msg_crypto_move_truthfix|2026-11-13t00_39_38_043434": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "The current date is Thursday, November 12, 2026 at 10:39 PM UTC.  Here's the revised response based on the provided data and rules:  **Крипторинок демонструє зн",
-    "ts": "2026-11-13T00:39:38.043434"
   }
 }
