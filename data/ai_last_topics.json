@@ -1,4 +1,14 @@
 {
+  "deadlines|2026-11-13t15_48_24_021895": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-13T15:48:24.021895"
+  },
+  "action_detect|2026-11-13t15_46_33_192299": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-13T15:46:33.192299"
+  },
   "selfact|2026-11-13t15_41_55_484024": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koo",
@@ -288,20 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82436\",     \"kind\": \"other\",     \"title\": \"Кінець паркування в Кошице\",     \"org\": \"Ubian Eshop\",     \"deadline\": \"2026-11-13\",     \"a",
     "ts": "2026-11-13T12:29:34.767020"
-  },
-  "proactive_actions|2026-11-13t12_23_53_380374": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьо",
-    "ts": "2026-11-13T12:23:53.380374"
-  },
-  "selfact|2026-11-13t12_20_14_499359": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні, 13.11, потрібно оплатити страхування Kooperativa",
-    "ts": "2026-11-13T12:20:14.499359"
-  },
-  "action_detect|2026-11-13t15_46_33_192299": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-13T15:46:33.192299"
   }
 }
