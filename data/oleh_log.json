@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_close_826fc0c8cb",
-      "label": "👌 Прийняв",
-      "ts": "2026-10-12T22:47:14"
-    },
-    {
-      "t": "btn",
       "data": "email_describe_80711",
       "label": "📖 Показати лист",
       "ts": "2026-10-12T22:47:21"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_nsbgj8kjic4jsr4eje6qquqqek_2026-11-13",
       "label": "✅ Виконано",
       "ts": "2026-11-13T13:33:41"
+    },
+    {
+      "t": "btn",
+      "data": "rx_read_e01e21687a",
+      "label": "👍 Прочитав",
+      "ts": "2026-11-13T13:33:46"
     }
   ]
 }
