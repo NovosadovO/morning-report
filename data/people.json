@@ -510,16 +510,18 @@
     "name": "Руся Мем",
     "relation": "особисте",
     "vip": false,
-    "topics": [],
+    "topics": [
+      "без теми"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати повідомлення про відсутність теми.",
+    "next_step": "З'ясувати, що Олег хотів повідомити у листі без теми до Русі Мем.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-31",
-    "updated": "2026-11-12",
+    "updated": "2026-11-13",
     "pinged_at": ""
   },
   "peter.penzes@nbs.sk": {
