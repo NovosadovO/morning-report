@@ -953,5 +953,24 @@
     "last_out": "",
     "updated": "2026-11-13",
     "pinged_at": ""
+  },
+  "ethermail@ethermail.io": {
+    "name": "EtherMail",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "блокування комунікацій",
+      "стіна приватності"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Перевірити заблоковані повідомлення в EtherMail.",
+    "ping_in_days": -1,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-11-13",
+    "pinged_at": ""
   }
 }
