@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-13t19_50_29_095963": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Kooperativa н",
+    "ts": "2026-11-13T19:50:29.095963"
+  },
   "bills|2026-11-13t19_39_47_960458": {
     "topic": "bills",
     "gist": "[{\"uid\":\"82285\",\"vendor\":\"KOOPERATIVA poisťovňa\",\"amount\":\"67.22\",\"currency\":\"EUR\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":true,\"note\":\"Підтвердження ",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "💡 Олеже, зважаючи на наближення нічної зміни завтра, варто зосередитись на відновленні організму вже сьогодні. Твоя вага 84.1 кг, яка була зафіксована 6 днів то",
     "ts": "2026-11-13T15:06:07.207085"
-  },
-  "action_detect|2026-11-13t15_01_44_203923": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-13T15:01:44.203923"
   }
 }
