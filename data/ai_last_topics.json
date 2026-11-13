@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-13t18_47_42_487033": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa",
+    "ts": "2026-11-13T18:47:42.487033"
+  },
   "mailcal_extract|2026-11-13t18_37_27_828641": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити страхування Koo",
     "ts": "2026-11-13T14:24:18.058935"
-  },
-  "selfact|2026-11-13t14_08_14_746840": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
-    "ts": "2026-11-13T14:08:14.746840"
   }
 }
