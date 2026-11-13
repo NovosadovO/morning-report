@@ -492,16 +492,20 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "без теми",
+      "Mm",
+      "зображення"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати повідомлення про відсутність теми.",
+    "next_step": "З'ясувати, що Олег хотів повідомити у листах без теми та з темою \"Mm\", а також щодо зображення.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-11-07",
-    "updated": "2026-11-12",
+    "updated": "2026-11-13",
     "pinged_at": ""
   },
   "ruslanakozancin@gmail.com": {
