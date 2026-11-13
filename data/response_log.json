@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T16:06:20.809776+00:00",
-      "category": "event_done",
-      "question": "📅 💳 Отримання повернення кредиту Temu\nПланувалась до 11:00 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-09-01T16:17:10.541566+00:00",
       "category": "deadline_found",
       "question": "Підтвердження повернення кредиту Temu",
@@ -14452,6 +14446,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "sleep_8"
+    },
+    {
+      "ts": "2026-11-13T10:48:39.755629+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_f279af7713"
     }
   ]
 }
