@@ -1,4 +1,29 @@
 {
+  "proactive_actions|2026-11-13t10_53_54_611277": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьо",
+    "ts": "2026-11-13T10:53:54.611277"
+  },
+  "action_detect|2026-11-13t10_50_44_245498": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-13T10:50:44.245498"
+  },
+  "email_ai_item|2026-11-13t10_50_13_082380": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від Nike інформує про наближення розпродажу \\\"Nike Black Friday Days\\\". Конкретні дати або знижки не вказані, але це анонс майбутньої поді",
+    "ts": "2026-11-13T10:50:13.082380"
+  },
+  "action_detect|2026-11-13t10_50_01_812897": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-13T10:50:01.812897"
+  },
+  "action_detect|2026-11-13t10_49_50_786435": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-13T10:49:50.786435"
+  },
   "selfact|2026-11-13t10_47_11_354579": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, сьогодні потрібно оплатити страхування Kooperativa на с",
@@ -273,30 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "[{\"uid\": \"uid=82428\", \"title\": \"Railway: фінальний звіт та компенсація\", \"date\": \"2026-10-23\", \"time\": null, \"kind\": \"other\", \"why\": \"Railway ділиться фінальним",
     "ts": "2026-11-13T08:01:57.091441"
-  },
-  "action_detect|2026-11-13t08_01_03_573836": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити страхування Kooperativa\",   \"action_date\": \"2026-11-13\",   \"action_time\": \"11:00\",   \"action_",
-    "ts": "2026-11-13T08:01:03.573836"
-  },
-  "openloop_promises|2026-11-13t07_59_37_755963": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-13T07:59:37.755963"
-  },
-  "selfact|2026-11-13t07_56_03_511983": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що сьогодні тобі потрібно оплатити страхуван",
-    "ts": "2026-11-13T07:56:03.511983"
-  },
-  "proactive_actions|2026-11-13t07_53_54_723581": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, сьо",
-    "ts": "2026-11-13T07:53:54.723581"
-  },
-  "selfact|2026-11-13t07_41_07_371427": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa на суму",
-    "ts": "2026-11-13T07:41:07.371427"
   }
 }
