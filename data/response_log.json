@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:31:20.984257+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Виконати вечірні звички",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-02"
-      }
-    },
-    {
       "ts": "2026-09-02T19:35:49.516301+00:00",
       "category": "calendar_button",
       "question": "🔔 Стрижка у Міріам",
@@ -14475,6 +14465,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_634f9b761a"
+    },
+    {
+      "ts": "2026-11-13T15:46:56.265112+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4bc0b1ada1"
     }
   ]
 }
