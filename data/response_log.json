@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T19:55:12.782533+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-09-01T19:55:19.186486+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14464,6 +14458,12 @@
         "when": "10:00–10:15",
         "note": null
       }
+    },
+    {
+      "ts": "2026-11-13T10:50:30.991005+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_5b4ed7450e"
     }
   ]
 }
