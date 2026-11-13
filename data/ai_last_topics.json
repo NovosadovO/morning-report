@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-13t03_16_52_152354": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa на суму",
+    "ts": "2026-11-13T03:16:52.152354"
+  },
+  "selfact|2026-11-13t03_01_16_167639": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні до 9:00 потрібно оплатити страхування Koo",
+    "ts": "2026-11-13T03:01:16.167639"
+  },
+  "action_detect|2026-11-13t03_01_04_907184": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-13T03:01:04.907184"
+  },
   "action_detect|2026-11-13t03_00_53_949663": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "foresight",
     "gist": "Чим довше зволікатимеш з новими знаннями про інвестиції, тим більше грошей залишиться лежати без діла, а не працювати на тебе. Зараз саме той час, щоб заглибити",
     "ts": "2026-11-12T23:00:03.620544"
-  },
-  "selfact|2026-11-12t22_59_35_251488": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що сьогодні потрібно оплатити страхування Ko",
-    "ts": "2026-11-12T22:59:35.251488"
-  },
-  "openloop_promises|2026-11-12t22_56_08_040345": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-12T22:56:08.040345"
-  },
-  "mailcal_extract|2026-11-12t22_55_53_927922": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"uid=82409\",     \"title\": \"Платіж за AthletaData не пройшов\",     \"date\": \"2026-11-12\",     \"time\": null,     \"kind\": \"payment\",     \"w",
-    "ts": "2026-11-12T22:55:53.927922"
   }
 }
