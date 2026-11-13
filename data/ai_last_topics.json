@@ -298,5 +298,10 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
     "ts": "2026-11-13T15:48:37.338440"
+  },
+  "action_detect|2026-11-13t20_30_41_435377": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T20:30:41.435377"
   }
 }
