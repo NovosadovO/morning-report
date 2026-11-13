@@ -934,5 +934,24 @@
     "last_out": "",
     "updated": "2026-11-12",
     "pinged_at": ""
+  },
+  "hello@notify.railway.app": {
+    "name": "Railway",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "оновлення безпеки",
+      "звіт про інцидент"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Переглянути звіт про інцидент безпеки.",
+    "ping_in_days": -1,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-11-13",
+    "pinged_at": ""
   }
 }
