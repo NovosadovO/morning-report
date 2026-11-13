@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T19:31:11.124930+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути деталі подорожі в Малагу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-02T19:31:16.024384+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14483,6 +14473,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_05aaf8f356"
+    },
+    {
+      "ts": "2026-11-13T15:46:40.343564+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_1dd0293f89"
     }
   ]
 }
