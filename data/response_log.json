@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T11:00:59.504005+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-09-02T16:31:25.503921+00:00",
       "category": "calendar_button",
       "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
@@ -14471,6 +14465,17 @@
       "category": "event_done",
       "question": "📅 Оплатити страхування Kooperativa — €67,22\nПланувалась до 11:15 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-13T12:37:53.050047+00:00",
+      "category": "calendar_button",
+      "question": "Оплатити страхування Kooperativa — €67,22",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "11:00–11:15",
+        "note": null
+      }
     }
   ]
 }
