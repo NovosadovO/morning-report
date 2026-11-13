@@ -1,9 +1,4 @@
 {
-  "80934": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-16T11:33:04.057081+00:00"
-  },
   "80936": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-11-13T17:22:32.322046+00:00"
+  },
+  "82470": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-11-13T17:24:42.339053+00:00"
   }
 }
