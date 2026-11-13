@@ -110,7 +110,7 @@ def sync_age_min(db=None):
 
 def _live_call():
     import garmin_sync
-    return garmin_sync.fetch_live(_today())
+    return garmin_sync.fetch_live(_today(), do_backfill=False)
 
 
 def ensure_fresh(force=False):

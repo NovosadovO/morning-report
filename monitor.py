@@ -5835,7 +5835,15 @@ def main():
 
         # Вага — таблиця останніх 7 ДНІВ (з прочерком якщо нема запису)
         try:
-            _wd = _st_h.load("weight_data.json") or _st_h.load_weight() or {}
+            _wd = dict(_st_h.load("weight_data.json") or _st_h.load_weight() or {})
+            # Garmin-вага з qwatch_data (ручна вага має пріоритет)
+            try:
+                _qw_w = _st_h.load("qwatch_data.json", default={}) or {}
+                for _k, _rec in _qw_w.items():
+                    _gw = (_rec or {}).get("weight_kg") if isinstance(_rec, dict) else None
+                    if _gw and not _wd.get(_k):
+                        _wd[_k] = round(float(_gw), 1)
+            except Exception: pass
             if _wd:
                 _all_w_keys = sorted(_wd.keys())
                 _last_w_key = _all_w_keys[-1] if _all_w_keys else None
@@ -5850,19 +5858,25 @@ def main():
                     _last_w_ago = (now_local.date() - __import__('datetime').date.fromisoformat(_last_w_key)).days if _last_w_key else 999
                     _w_age_str = "" if _last_w_ago == 0 else (f" <i>(дані за {_last_w_ago}д тому)</i>" if _last_w_ago <= 30 else f" <i>(⚠️ дані за {_last_w_ago}д тому — надішли вагу!)</i>")
                     _w_header = f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}{_w_age_str}"
-                    # Останні 7 ДНІВ з прочерком де нема запису
+                    # Останні 7 днів: лише дні з даними + один рядок про пропуски
                     _w_rows = []
-                    _w_empty_count = 0
+                    _w_gaps = []
                     for _di in range(6, -1, -1):
                         _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
                         _dv = _wd.get(_dk)
                         _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
-                        _dstr = f"<b>{_dv} кг</b>" if _dv else "—"
-                        if not _dv: _w_empty_count += 1
-                        _w_rows.append(f"  {_dlabel}  {_dstr}")
-                    _health_lines.append(_w_header + "\n" + "\n".join(_w_rows))
-                    if _w_empty_count == 7:
-                        _health_lines.append("  <i>📲 Надішли /weight або /health_export щоб оновити дані</i>")
+                        if _dv:
+                            _w_rows.append(f"  {_dlabel}  <b>{_dv} кг</b>")
+                        else:
+                            _w_gaps.append(_dlabel)
+                    _blk = _w_header
+                    if _w_rows:
+                        _blk += "\n" + "\n".join(_w_rows)
+                    if _w_gaps and _w_rows:
+                        _blk += f"\n  <i>нема даних: {', '.join(_w_gaps)}</i>"
+                    _health_lines.append(_blk)
+                    if not _w_rows:
+                        _health_lines.append("  <i>📲 За 7 днів ваги нема — зважся або /вага 83.5</i>")
             else:
                 _health_lines.append("⚖️ Вага: <i>немає даних — надішли /weight 83.5</i>")
         except Exception as _e_w: pass
@@ -5893,6 +5907,7 @@ def main():
             # Таблиця 7 ДНІВ з прочерком
             _st_rows = []
             _st_empty = 0
+            _st_gaps = []
             for _di in range(6, -1, -1):
                 _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
                 _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
@@ -5901,9 +5916,12 @@ def main():
                     _sicon = "✅" if _sv >= 8000 else ("🟡" if _sv >= 5000 else "🔴")
                     _st_rows.append(f"  {_dlabel}  <b>{_sv:,}</b> {_sicon}")
                 else:
-                    _st_rows.append(f"  {_dlabel}  —")
+                    _st_gaps.append(_dlabel)
                     _st_empty += 1
-            _health_lines.append(_st_header + "\n" + "\n".join(_st_rows))
+            _blk_s = _st_header + ("\n" + "\n".join(_st_rows) if _st_rows else "")
+            if _st_gaps and _st_rows:
+                _blk_s += f"\n  <i>нема даних: {', '.join(_st_gaps)}</i>"
+            _health_lines.append(_blk_s)
             if _st_empty == 7:
                 _health_lines.append("  <i>📲 Синхронізуй QWatch або надішли /health_export</i>")
         except Exception: pass
@@ -6343,43 +6361,15 @@ def main():
                 except Exception as _e_ust:
                     pass
 
-                _brief_prompt = (
-                    f"Ти — персональний AI-асистент Олега Новосадова (Кошіце, Словаччина).\n"
-                    f"Зараз {now_local.strftime('%H:%M')}, {now_local.strftime('%d.%m.%Y')}.\n"
-                    f"СТАТУС ЗМІНИ: {shift_hint}\n\n"
-                    f"КРИТИЧНО ВАЖЛИВО: якщо в статусі зміни написано 'НА РОБОТІ' або 'нічна зміна йде' або 'рання зміна' — "
-                    f"Олег ЗАРАЗ ФІЗИЧНО НА ЗАВОДІ Minebea Mitsumi. НЕ ПИШИ що він вдома. "
-                    f"Якщо статус 'недоступні' або 'невідомий' — пиши нейтрально, БЕЗ слів 'вдома' чи 'відпочиваєш'.\n\n"
-                    f"=== ДАНІ ЗВІТУ ===\n"
-                    f"{_full_report_ctx}\n"
-                    f"=================\n\n"
-                    f"ВАЖЛИВО: Звіт вже містить окремі детальні блоки (крипто, тіло, пошта тощо). НЕ ПОВТОРЮЙ їхні цифри — зроби УНІКАЛЬНИЙ персональний вступ.\n\n"
-                    f"Напиши ЛАЙФ-КОУЧ вступ до звіту. Структура ТОЧНО така:\n\n"
-                    f"🧭 ВЕКТОР ДНЯ\n"
-                    f"[3-4 речення: що НАЙВАЖЛИВІШЕ для Олега прямо зараз з точки зору його 3 цілей: "
-                    f"(1) фінансова незалежність через крипто і InterFin, (2) схуднення до 75 кг, (3) нова робота в інвестиціях. "
-                    f"Яка ціль найближча до прориву? Що блокує прогрес? Яка 1 дія дасть максимальний ефект сьогодні? "
-                    f"Враховуй зміну — якщо на заводі пиши що реально зробити на роботі або після.]\n\n"
-                    f"💡 ІНСАЙТ ДНЯ\n"
-                    f"[3-4 речення: ОДИН глибокий нестандартний інсайт. Вибери найактуальніше з:\n"
-                    f"- Астрологічне: яка транзитна планета СЬОГОДНІ впливає на Олега (натальна: Сонце+Меркурій+Марс в Дівах, Венера+Плутон в IV Скорпіоні, Місяць в Близнюках, Юпітер+Сатурн+Уран в VI Козерозі)\n"
-                    f"- Стратегічне крипто: нетиповий кут погляду на AVAX або ONDO позицію — не просто тримати\n"
-                    f"- Бігун і метаболізм: як пробіжка сьогодні впливає на вагу і жироспалення за тиждень\n"
-                    f"- Психологічне: патерн дисципліни або мотивації який допоможе Олегу прямо зараз]\n\n"
-                    f"🎯 3 КОНКРЕТНІ ДІЇ ЗАРАЗ\n"
-                    f"[Точно 3 дії. Формат: 1. [що зробити] — [чому саме зараз, яку ціль наближає]\n"
-                    f"Дії РЕАЛЬНО ВИКОНУВАНІ: якщо Олег на заводі — дія для роботи або після. Якщо вдома — домашня. "
-                    f"Привязуй до реального контексту звіту (наявні листи, події, погода, стан вага/кроки).]\n\n"
-                    f"ПОТОЧНИЙ СТАН ОЛЕГА (якщо є): {_user_state_ctx}\n\n"
-                    f"ПРАВИЛА: БЕЗ вступу типу Привіт. НЕ повторюй цифри крипто і вагу — вони в звіті нижче. "
-                    f"Стиль: розумний особистий коуч, не корпоративний бот. Тон мотивуючий але конкретний. "
-                    f"Мінімум 500 слів. Кожне речення завершувати повністю. [seed:{_seed_b}]"
-                )
+                import briefing_ctx as _bctx
+                _brief_prompt = _bctx.build_prompt(
+                    now_local, shift_hint, _full_report_ctx, _user_state_ctx,
+                    _bctx.signals(_astro_full_ctx), _bctx.prev_topics(), _seed_b)
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
                     "generationConfig": {
-                        "maxOutputTokens": 8000,
-                        "temperature": 0.85,
+                        "maxOutputTokens": 1500,
+                        "temperature": 0.8,
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
@@ -6410,7 +6400,17 @@ def main():
 
         # Вставляємо на позицію 1 — завжди перед score (позиція 0 = заголовок)
         if _ai_briefing:
+            try:
+                import ai_kit as _K_b
+                _ai_briefing = re.sub(r"<[^>]+>", "", _K_b.md_to_html(_ai_briefing))
+            except Exception:
+                pass
             parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
+            try:
+                import briefing_ctx as _bctx2
+                _bctx2.remember(_ai_briefing)
+            except Exception:
+                pass
     # Повідомлення 1: заголовок + погода + трафік + крипто + ETF + курс + календар
     # Повідомлення 2: здоров'я + біг + портфоліо + пошта + астро + AI + підсумок
     # Фото збираємо окремо в album, текст об'єднуємо в 2 повідомлення.

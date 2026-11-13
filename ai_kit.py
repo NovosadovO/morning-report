@@ -265,8 +265,22 @@ def tg(method: str, body: dict, tag="ai_kit"):
         return None
 
 
+def md_to_html(text: str) -> str:
+    """AI часто видає markdown (**жирний**, ### заголовки, ---), а Telegram показує
+    це зірочками (13.11 скрін). Перетворюємо на HTML, який він розуміє."""
+    if not text or ("**" not in text and "###" not in text and "\n---" not in text
+                    and "\n* " not in text):
+        return text
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text, flags=re.S)
+    t = re.sub(r"(?m)^\s*#{1,6}\s*(.+?)\s*$", r"<b>\1</b>", t)
+    t = re.sub(r"(?m)^\s*-{3,}\s*$\n?", "", t)
+    t = re.sub(r"(?m)^(\s*)[*]\s+", r"\1• ", t)
+    return t
+
+
 def send_card(text: str, keyboard=None, tag="ai_kit", chat_id=None) -> bool:
     """HTML-повідомлення з кнопками; при збої HTML — plain text (кнопки важливіші)."""
+    text = md_to_html(text)
     body = {
         "chat_id": chat_id or TELEGRAM_CHAT,
         "text": text[:4000],

@@ -623,78 +623,67 @@ def garmin_periodic_notify() -> bool:
         return False
 
     record = res.get("record") or {}
-    block = res.get("text") or ""
+    # 13.11: замість щотригодинного дампу всіх полів («VO2max: немає даних») —
+    # лише НОВЕ з минулої картки (garmin_news). Нічого суттєвого — мовчимо.
+    try:
+        import garmin_news as GN
+        today = K.today_str()
+        st = K.load(GN.STATE_FILE, default={}) or {}
+        try:
+            import storage
+            health = storage.load_health() or {}
+        except Exception:
+            health = {}
+        news, st2 = GN.detect(record, health, st, today,
+                              new_runs=res.get("new_runs"),
+                              backfilled=res.get("backfilled"))
+    except Exception as e:
+        K.log(TAG, f"garmin_news error: {e}")
+        return False
+    if not news:
+        K.log(TAG, "garmin_periodic: нічого нового — тиха синхронізація")
+        try:
+            K.save(GN.STATE_FILE, st2)
+        except Exception:
+            pass
+        return False
 
     ai_txt = ""
     try:
-        ctx_parts = []
-        if record.get("steps") is not None:
-            ctx_parts.append(f"кроки зараз: {record['steps']}")
-        if record.get("hr_avg") is not None:
-            ctx_parts.append(f"пульс спокою: {record['hr_avg']}")
-        if record.get("sleep_total_min") is not None:
-            hh, mm = divmod(int(record["sleep_total_min"]), 60)
-            ctx_parts.append(f"сон минулої ночі: {hh}г{mm:02d}хв")
-        if record.get("hrv") is not None:
-            ctx_parts.append(f"HRV: {record['hrv']} мс")
-        if record.get("body_battery") is not None:
-            ctx_parts.append(f"Body Battery: {record['body_battery']}/100")
-        if record.get("stress") is not None:
-            ctx_parts.append(f"стрес: {record['stress']}/100")
-        if record.get("spo2") is not None:
-            ctx_parts.append(f"SpO2: {record['spo2']}%")
-        if record.get("vo2max") is not None:
-            ctx_parts.append(f"VO2max: {record['vo2max']}")
-        if record.get("weight_kg") is not None:
-            ctx_parts.append(f"вага: {record['weight_kg']} кг")
-
-        new_runs = res.get("new_runs") or []
-        if new_runs:
-            for _r in new_runs:
-                _dkm = round((_r.get("distance") or 0) / 1000.0, 2)
-                _dmin = int((_r.get("moving_time") or 0) // 60)
-                ctx_parts.append(f"щойно автопідхоплено з Garmin пробіжку/ходу: {_dkm} км за {_dmin} хв")
-
-        # Фікс бага 12.10: Олег поскаржився, що AI написав "після ранньої
-        # зміни, яка закінчилась сьогодні о 18:00", хоча зміни не було ні
-        # сьогодні, ні в календарі. Причина — _STYLE лише каже AI, що в
-        # Олега ЗАГАЛОМ змінний графік, але це проміжне 3-годинне
-        # сповіщення не передавало РЕАЛЬНУ зміну сьогодні (на відміну від
-        # ai_analysis/ai_recommendations, де shift_today явно є в даних) —
-        # і AI сам "додумав" зміну з загального опису в _STYLE. Тепер
-        # передаємо справжнє значення явно + прямо забороняємо вигадувати.
         try:
-            shift_today_real = _shift_for(0)
+            shift_line = "Зміна сьогодні: " + _SHIFT_UA.get(_shift_for(0), "невідомо") + "."
         except Exception:
-            shift_today_real = None
-        shift_line = "Зміна зараз: " + _SHIFT_UA.get(shift_today_real, "невідомо") + "."
-
-        if ctx_parts:
-            prompt = (
-                f"{_STYLE}\n\n{shift_line} ТІЛЬКИ ця зміна — реальна, і більше ніякої "
-                "інформації про графік чи календар у тебе немає. КАТЕГОРИЧНО ЗАБОРОНЕНО "
-                "вигадувати чи додумувати будь-яку іншу зміну, час її початку/кінця, "
-                "чи події — пиши лише те, що в цьому рядку.\n\n"
-                "Поточні живі показники з Garmin Connect (саме зараз): "
-                + ", ".join(ctx_parts) + ".\n\n"
-                "Дай 2-4 короткі конкретні рекомендації на найближчі години — це "
-                "проміжне сповіщення раз на 3 години, НЕ повний звіт дня, тому "
-                "коротко і по дії. Кожна — окремий рядок з емодзі, без вступу, без "
-                "загальних порад типу «більше рухайся». Якщо показники в нормі і "
-                "конкретно радити нічого — напиши один короткий рядок підтримки, "
-                "без вигаданих порад."
-            )
-            ai_txt = (K.gemini_text(prompt, max_tokens=500, temperature=0.6, tag=TAG) or "").strip()
+            shift_line = "Зміна сьогодні: невідомо."
+        try:
+            import garmin_fresh
+            fresh = garmin_fresh.block()
+        except Exception:
+            fresh = ""
+        prev = "; ".join(st2.get("prev_ai") or []) or "—"
+        facts = "\n".join(re.sub(r"<[^>]+>", "", n) for n in news)
+        prompt = (
+            f"{_STYLE}\n\n{shift_line} Інших змін чи подій не вигадуй.\n\n"
+            f"ЩО НОВОГО В GARMIN (саме це, з порівнянням з його нормою):\n{facts}\n\n"
+            f"СВІЖИЙ ЗНІМОК УСІХ ПОКАЗНИКІВ (для зв'язків; застаріле не подавай як поточне):\n{fresh}\n\n"
+            f"ТВОЇ ПОПЕРЕДНІ ПОРАДИ (НЕ повторюй ні зміст, ні формулювання): {prev}\n\n"
+            "Напиши 2-3 рядки HTML (<b> лише для чисел), кожен ПРО КОНКРЕТНЕ число з блоку «що нового»: "
+            "що воно означає саме для Олега зараз і одна дія з часом (напр. «до 16:00», «перед сном»). "
+            "Без дати й часу доби на початку, без markdown-зірочок, без загальних порад типу "
+            "«пий воду»/«більше рухайся», без вступу. Різні емодзі на початку рядків."
+        )
+        ai_txt = (K.gemini_text(prompt, max_tokens=500, temperature=0.8, tag=TAG) or "").strip()
     except Exception as e:
         K.log(TAG, f"garmin_periodic_notify ai error: {e}")
 
-    text = block
+    text = "⌚ <b>Garmin · що нового</b>\n\n" + "\n".join(news)
     if ai_txt:
-        text += "\n\n🎯 <b>AI-рекомендації</b>\n" + ai_txt
-
+        text += "\n\n" + ai_txt
+        st2 = GN.remember_ai(st2, ai_txt)
     try:
-        K.send_card(text, _kb(), tag=TAG)
-        _journal("garmin_periodic", "Garmin: 3-годинне оновлення + AI-рекомендації")
+        ok = K.send_card(text, _kb(), tag=TAG)
+        if ok:
+            K.save(GN.STATE_FILE, st2)
+        _journal("garmin_periodic", "Garmin: що нового + AI")
     except Exception as e:
         K.log(TAG, f"garmin_periodic_notify send error: {e}")
         return False

@@ -453,7 +453,63 @@ def _local_day() -> str:
         return date.today().isoformat()
 
 
-def fetch_live(day: str = None) -> dict:
+BACKFILL_CORE = ("steps", "hrv", "sleep_total_min")
+BACKFILL_FILE = "garmin_backfill_tried.json"
+
+
+def backfill(client, today: str = None, days: int = 14, max_days: int = 3) -> list:
+    """13.11: у звіті не було даних за 09–11.11 — синк писав лише «сьогодні», тож
+    день, який пропустили (збій входу, рестарт), лишався порожнім назавжди.
+    Тепер добираємо дні за останні `days` з відсутніми кроками/HRV/сном, а вчорашній
+    день — перерахунок після півночі (кроки/сон/HRV остаточні). Кожен день не більше
+    3 спроб (годинник могли не вдягати) і не частіше разу на 12 год."""
+    from datetime import datetime, timedelta
+    import time as _t
+    try:
+        import storage, qwsync
+        today = today or _local_day()
+        db = storage.load("qwatch_data.json", default={}) or {}
+        tried = storage.load(BACKFILL_FILE, default={}) or {}
+        t0 = datetime.strptime(today, "%Y-%m-%d")
+        now = datetime.utcnow()
+        todo = []
+        for i in range(1, days + 1):
+            d = (t0 - timedelta(days=i)).strftime("%Y-%m-%d")
+            rec = db.get(d) if isinstance(db.get(d), dict) else None
+            need = rec is None or any(rec.get(k) is None for k in BACKFILL_CORE)
+            if i == 1 and rec and str(rec.get("saved_at", ""))[:10] == d:
+                need = True          # збережено до півночі — дані дня ще неповні
+            if not need:
+                continue
+            tr = tried.get(d) or {}
+            if tr.get("n", 0) >= 3:
+                continue
+            try:
+                if (now - datetime.fromisoformat(tr["ts"])).total_seconds() < 12 * 3600:
+                    continue
+            except Exception:
+                pass
+            todo.append(d)
+        done = []
+        for d in todo[:max_days]:
+            payload = _fetch_today(client, d)
+            tried[d] = {"ts": now.isoformat(timespec="seconds"),
+                        "n": (tried.get(d) or {}).get("n", 0) + 1}
+            if len([k for k in payload if k != "date"]) > 0:
+                qwsync.save(payload, notify=False)
+                done.append(d)
+            _t.sleep(1)
+        if todo:
+            storage.save(BACKFILL_FILE, tried)
+        if done:
+            print(f"[{TAG}] добрано пропущені дні: {', '.join(done)}", flush=True)
+        return done
+    except Exception as e:
+        print(f"[{TAG}] backfill error: {e}", flush=True)
+        return []
+
+
+def fetch_live(day: str = None, do_backfill: bool = True) -> dict:
     """Живий запит до Garmin Connect (не кеш) — для команди /гармін.
     Повертає {'ok', 'record', 'text'} або {'ok': False, 'error': ...}."""
     day = day or _local_day()
@@ -473,6 +529,8 @@ def fetch_live(day: str = None) -> dict:
 
     text = format_block(record, day, live=True)
 
+    bf = backfill(client, day) if do_backfill else []
+
     new_runs = []
     try:
         new_runs = sync_running_activities(day, client=client)
@@ -482,7 +540,7 @@ def fetch_live(day: str = None) -> dict:
     except Exception as e:
         print(f"[{TAG}] sync_running_activities error: {e}", flush=True)
 
-    return {"ok": True, "record": record, "text": text, "new_runs": new_runs}
+    return {"ok": True, "record": record, "text": text, "new_runs": new_runs, "backfilled": bf}
 
 
 def sync_once() -> bool:
@@ -503,6 +561,7 @@ def sync_once() -> bool:
     try:
         import qwsync
         res = qwsync.save(payload, notify=False)
+        backfill(client, today)
         if res.get("ok"):
             print(f"[{TAG}] збережено {today}: {', '.join(fields)}", flush=True)
         else:

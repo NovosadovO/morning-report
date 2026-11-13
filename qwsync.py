@@ -173,6 +173,34 @@ def _fmt(rec: dict) -> str:
     return "\n".join(bits)
 
 
+def mirror_weight(db: dict) -> int:
+    """13.11: вага з Garmin (weight_kg) лежала лише в qwatch_data, а звіт/графіки
+    читають weight_data.json (ручне /вага) → «вага за 31д тому». Дописуємо дні,
+    яких там нема. Ручний запис Олега завжди виграє. Повертає кількість доданих."""
+    try:
+        import storage
+        # _load_github: None при збої мережі — тоді НЕ пишемо (інакше затрем історію)
+        wd = storage._load_github("weight_data.json")
+        if not isinstance(wd, dict) or len(wd) < 5:
+            return 0
+        add = {}
+        for day, rec in (db or {}).items():
+            if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(day)) or not isinstance(rec, dict):
+                continue
+            w = rec.get("weight_kg")
+            if w and day not in wd and 35 <= float(w) <= 250:
+                add[day] = round(float(w), 1)
+        if not add:
+            return 0
+        wd.update(add)
+        storage.save_weight(dict(sorted(wd.items())))
+        print("[" + TAG + "] вага з Garmin дописана у weight_data: " + ", ".join(sorted(add)), flush=True)
+        return len(add)
+    except Exception as e:
+        print("[" + TAG + "] mirror_weight: " + str(e), flush=True)
+        return 0
+
+
 def save(payload: dict, notify: bool = True) -> dict:
     """Головна точка входу з вебхука. Повертає {'ok','record','fields'}."""
     rec = normalize(payload)
@@ -190,6 +218,7 @@ def save(payload: dict, notify: bool = True) -> dict:
         merged.update({k: v for k, v in rec.items() if v is not None})
         db[rec["date"]] = merged
         storage.save("qwatch_data.json", db)
+        mirror_weight(db)
         print("[" + TAG + "] збережено " + rec["date"] + ": "
               + ", ".join(k for k in rec if k not in ("date", "source", "saved_at")),
               flush=True)
