@@ -95,6 +95,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-14T00:01:58.634700",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie transakcie (6641172176) – Platobná brána</b>\n👤 KOOPERATIVA poisťovňa, a.s. VIG&lt;info@koop.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82285"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82285"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82285"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82285"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82285"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82285"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
