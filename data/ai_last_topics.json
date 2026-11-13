@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-13t12_38_19_968988": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T12:38:19.968988"
+  },
+  "action_detect|2026-11-13t12_38_09_099327": {
+    "topic": "action_detect",
+    "gist": "{ \"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасува",
+    "ts": "2026-11-13T12:38:09.099327"
+  },
+  "selfact|2026-11-13t12_35_39_464853": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa",
+    "ts": "2026-11-13T12:35:39.464853"
+  },
   "mailcal_extract|2026-11-13t12_34_12_490924": {
     "topic": "mailcal_extract",
     "gist": "[{\"uid\": \"uid=82442\", \"title\": \"Оплата паркування UBIAN\", \"date\": \"2026-11-13\", \"time\": \"09:44\", \"kind\": \"payment\", \"why\": \"Order nr. 15152884 in the amount of ",
@@ -283,20 +298,5 @@
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"10:59\",     \"message\": \"Олеже, сьогодні до",
     "ts": "2026-11-13T09:23:58.032943"
-  },
-  "calendar|2026-11-13t09_15_45_762775": {
-    "topic": "calendar",
-    "gist": "Завтра о 10:00 розпочинається розбір твоєї астрологічної карти. Це чудова нагода зазирнути в себе глибше, особливо коли ти працюєш у зміни і цілі щодо фінансово",
-    "ts": "2026-11-13T09:15:45.762775"
-  },
-  "selfact|2026-11-13t09_14_03_665177": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні, 13.11, потрібно оплатити страхування Koo",
-    "ts": "2026-11-13T09:14:03.665177"
-  },
-  "action_detect|2026-11-13t09_10_41_146403": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-13T09:10:41.146403"
   }
 }
