@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T21:21:39.076819+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Підготовка до нічних змін",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t30",
-        "when": "21:00–21:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-02T21:21:40.284936+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14468,6 +14457,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-11-13T22:58:30.982936+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
