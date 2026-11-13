@@ -6202,6 +6202,21 @@ def _route_callback(cb, confirmed: bool = False):
         except Exception as _e_micb:
             send(chat_id, f"⚠️ market_insight: {str(_e_micb)[:200]}")
         return
+    # ── run_insight: відповіді під розбором бігу / готовністю ────────────
+    if data.startswith("ri_"):
+        try:
+            import run_insight as _ri_cb
+            _r_ri = _ri_cb.handle(data)
+            try:
+                api("editMessageReplyMarkup", {"chat_id": chat_id,
+                    "message_id": cb["message"]["message_id"],
+                    "reply_markup": {"inline_keyboard": []}})
+            except Exception:
+                pass
+            send(chat_id, ("✅ " if _r_ri.get("ok") else "⚠️ ") + str(_r_ri.get("text", ""))[:200])
+        except Exception as _e_ricb:
+            send(chat_id, f"⚠️ run_insight: {str(_e_ricb)[:200]}")
+        return
     # ── garmin_insight: відповіді на питання під Garmin-розбором ─────────
     if data.startswith("gi_"):
         try:

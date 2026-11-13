@@ -224,6 +224,11 @@ def parse_and_save(text: str) -> dict:
     return record
 
 
+_GARMIN_EXTRA = ("max_hr", "aerobic_te", "anaerobic_te", "average_cadence",
+                 "calories", "training_load", "vo2max", "average_speed",
+                 "stride_m", "ground_contact_ms", "vert_osc_cm", "avg_power")
+
+
 def save_from_garmin(a: dict) -> bool:
     """Зберігає пробіжку/ходу, автопідтягнуту з Garmin Connect
     (garmin_sync.sync_running_activities) — ДОПОВНЕННЯ до ручного AI-тексту,
@@ -250,6 +255,15 @@ def save_from_garmin(a: dict) -> bool:
     data = _load()
     key = f"garmin_{aid}"
     if key in data:
+        # 13.11: доповнюємо старий запис новими метриками (max HR, ефект
+        # тренування, каденс…), якщо їх ще нема. «Нового» запису це не створює.
+        try:
+            old = data.get(key) or {}
+            add = {k: a[k] for k in _GARMIN_EXTRA if a.get(k) and not old.get(k)}
+            if add:
+                _save_key(key, {**old, **add})
+        except Exception as e:
+            print(f"running extra update error: {e}")
         return False  # цю активність уже синкали раніше
 
     for rec in data.values():
@@ -275,6 +289,7 @@ def save_from_garmin(a: dict) -> bool:
         "source": "garmin",
         "saved_at": _now_local().strftime("%Y-%m-%d %H:%M"),
     }
+    record.update({k: a[k] for k in _GARMIN_EXTRA if a.get(k)})
     ok = bool(_save_key(key, record))
     if ok:
         print(f"running: saved garmin activity {key} ({record['distance']} m)")

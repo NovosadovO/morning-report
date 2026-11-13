@@ -1327,6 +1327,13 @@ def run_assistant_watcher():
                     _gi_w.run()
             except Exception as _e_gi:
                 print(f"[garmin_insight] watcher error: {_e_gi}", flush=True)
+            # Тренер бігу (Garmin): розбір нової пробіжки + готовність перед бігом.
+            try:
+                import run_insight as _ri_w
+                if 7 <= now_local.hour < 22:
+                    _ri_w.run()
+            except Exception as _e_ri:
+                print(f"[run_insight] watcher error: {_e_ri}", flush=True)
             try:
                 import market_insight as _mi_w
                 if 8 <= now_local.hour < 22:

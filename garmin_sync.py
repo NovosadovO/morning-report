@@ -279,11 +279,45 @@ _RUN_TYPE_MAP = {
 _RUN_HABIT_TYPES = ("Run", "TrailRun", "VirtualRun")
 
 
-def _fetch_run_activities(client, day: str) -> list:
-    """Пробіжки/хода саме за `day` з останніх активностей Garmin (беремо
-    останні 20 — за 3-годинний цикл синку більше одного дня туди точно
-    не набіжить)."""
+_EXTRA_KEYS = (
+    # поле у нашому записі -> ключі Garmin (перший непорожній)
+    ("max_hr", ("maxHR",)),
+    ("aerobic_te", ("aerobicTrainingEffect",)),
+    ("anaerobic_te", ("anaerobicTrainingEffect",)),
+    ("average_cadence", ("averageRunningCadenceInStepsPerMinute",)),
+    ("calories", ("calories",)),
+    ("training_load", ("activityTrainingLoad",)),
+    ("vo2max", ("vO2MaxValue",)),
+    ("average_speed", ("averageSpeed",)),
+    ("stride_m", ("avgStrideLength",)),
+    ("ground_contact_ms", ("avgGroundContactTime",)),
+    ("vert_osc_cm", ("avgVerticalOscillation",)),
+    ("avg_power", ("avgPower",)),
+)
+
+
+def _extras(a: dict) -> dict:
+    """Додаткові метрики активності (для run_insight). Лише наявні й числові."""
+    out = {}
+    for field, keys in _EXTRA_KEYS:
+        for k in keys:
+            v = a.get(k)
+            if isinstance(v, (int, float)) and v:
+                out[field] = round(float(v), 3)
+                break
+    return out
+
+
+def _fetch_run_activities(client, day: str, back_days: int = 0) -> list:
+    """Пробіжки/хода за `day` (і до `back_days` днів назад — щоб не губити
+    пропущені синки) з останніх активностей Garmin (беремо останні 20)."""
     out = []
+    try:
+        from datetime import date as _d, timedelta as _td
+        _d0 = _d.fromisoformat(day)
+        days_ok = {(_d0 - _td(days=i)).isoformat() for i in range(back_days + 1)}
+    except Exception:
+        days_ok = {day}
     try:
         acts = client.get_activities(0, 20) or []
     except Exception as e:
@@ -294,7 +328,7 @@ def _fetch_run_activities(client, day: str) -> list:
     for a in acts:
         try:
             start = a.get("startTimeLocal") or ""
-            if not start.startswith(day):
+            if start[:10] not in days_ok:
                 continue
             type_key = ((a.get("activityType") or {}).get("typeKey") or "").lower()
             mapped = _RUN_TYPE_MAP.get(type_key)
@@ -309,6 +343,7 @@ def _fetch_run_activities(client, day: str) -> list:
                 "average_heartrate": a.get("averageHR"),
                 "total_elevation_gain": a.get("elevationGain"),
                 "name": a.get("activityName") or mapped,
+                **_extras(a),
             })
         except Exception as e:
             print(f"[{TAG}] activity parse error: {e}", flush=True)
@@ -324,7 +359,7 @@ def sync_running_activities(day: str = None, client=None) -> list:
         client = _get_client()
     if client is None:
         return []
-    acts = _fetch_run_activities(client, day)
+    acts = _fetch_run_activities(client, day, back_days=3)
     if not acts:
         return []
     try:
@@ -348,7 +383,8 @@ def sync_running_activities(day: str = None, client=None) -> list:
     # з'явився в коді), вона завжди піде в дедуп і НІКОЛИ не попаде в `saved`
     # знову → звичка лишалась незаповненою назавжди. Так кожен 3-годинний
     # синк сам "доганяє" і ставить галочку, якщо вона ще не стоїть.
-    if any(a.get("type") in _RUN_HABIT_TYPES for a in acts):
+    if any(a.get("type") in _RUN_HABIT_TYPES and
+           str(a.get("start_date_local", ""))[:10] == day for a in acts):
         _auto_mark_run_habit(day)
     return saved
 

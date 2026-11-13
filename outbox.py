@@ -214,6 +214,7 @@ def _dup_reason(text, rows):
 # Збіг по змісту їх не ловить, тому — кулдаун на ТЕМУ незалежно від джерела.
 TOPIC_RULES = [
     ("trynew", r"спробуй нове", 72),
+    ("run_ai", r"^[^\w]*біг\s*[·•]", 3),
     ("run_nudge", r"^[^\w]*(час бігти|\d+ дн\w* без пробіжк|олеже, біговий трекер мовчить)", 10),
     ("hrv_card", r"^[💡🫀❤️\s]*(твій )?(hrv|порада на день)", 6),
     ("weigh", r"^[^\w]*(час зважитись|зваж себе|дані про вагу)", 12),
@@ -237,10 +238,21 @@ def _topic(text):
     return "", 0
 
 
+# тема -> (джерело, годин): шаблонні нагадування мовчать після AI-розбору того ж
+CROSS_BLOCK = {"run_nudge": ("run_ai", 24)}
+
+
 def _topic_reason(text, rows):
     name, hrs = _topic(text)
     if not name:
         return ""
+    src = CROSS_BLOCK.get(name)
+    if src:
+        cut2 = (_now() - timedelta(hours=src[1])).isoformat(timespec="seconds")
+        for r in rows:
+            if r.get("topic") == src[0] and str(r.get("ts") or "") >= cut2:
+                return ("уже був AI-розбір бігу о " + str(r.get("ts"))[11:16]
+                        + " — шаблонне нагадування зайве")
     cut = (_now() - timedelta(hours=hrs)).isoformat(timespec="seconds")
     for r in rows:
         if r.get("topic") == name and str(r.get("ts") or "") >= cut:
