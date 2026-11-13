@@ -826,5 +826,17 @@
     "sender": "Ubian Eshop <no-reply@ubian.sk>",
     "done": false,
     "created": "2026-11-13"
+  },
+  "страховка_авто_оплата|2026-11-13": {
+    "kind": "insurance",
+    "title": "Страховка авто — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-11-13",
+    "action": "Перевірити статус оплати страховки.",
+    "why": "Це підтвердження оплати страховки, важливо переконатися, що все пройшло успішно.",
+    "uid": "82462",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-11-13"
   }
 }
