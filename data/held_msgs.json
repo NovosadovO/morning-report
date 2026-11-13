@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T01:05:12.111508",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Notifikácie KOOPERATIVA  → Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI\n• Maroš Sivák  → Analýzy pre Olexiho :)\n• KOOPERATIVA poisťovňa, a.s. VIG → Potvrdenie transakcie (6641172176) – Platobná brána\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 1 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T01:05:33.577616",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 15.11</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-14T01:09:45.586988",
       "kind": "bills",
       "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (6 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin\n💰 8.99 EUR\n📆 до 2026-11-08\n\nНесплачений рахунок за послуги Garmin. Потрібно оновити платіжну інформацію, щоб уникнути скасування підписки.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T01:09:51.983006",
+      "kind": "followup",
+      "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 6 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Oleg Novosadov</b>\n📋 https://www.facebook.com/share/r/14xMSU1tf58/?mibextid=wwXIfr\n📤 Твій лист від 2026-11-07\n\n<i></i>\n\nОлеже, тиша вже 6 дні. Хочеш, складу короткий делікатний пінг?",
       "keyboard": null
     }
   ]
