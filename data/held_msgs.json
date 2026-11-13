@@ -173,6 +173,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-14T00:02:01.566803",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80711"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80711"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80711"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80711"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80711"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80711"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
