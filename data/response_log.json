@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-01T16:17:10.541566+00:00",
-      "category": "deadline_found",
-      "question": "Підтвердження повернення кредиту Temu",
-      "answer": "2026-09-01",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-09-01T19:47:08.871604+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14452,6 +14443,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_f279af7713"
+    },
+    {
+      "ts": "2026-11-13T10:48:59.886255+00:00",
+      "category": "calendar_button",
+      "question": "Оплатити страхування Kooperativa — €67,22",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t2h",
+        "when": "11:00–11:15",
+        "note": null
+      }
     }
   ]
 }
