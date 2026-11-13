@@ -106,12 +106,12 @@ def analyse(health: dict = None) -> list:
             continue
         days = list(s)
         last_day = days[-1]
-        # свіжість: останнє значення не старше 2 днів
+        # свіжість (13.11: «тільки свіжі дані»): замір не старший за вчора
         try:
             age = (K.now().date() - K.now().date().fromisoformat(last_day)).days
         except Exception:
             continue
-        if age > 2:
+        if age > 1:
             continue
         base_vals = [s[d] for d in days[:-1]][-BASE_DAYS:]
         if len(base_vals) < MIN_BASE:
@@ -284,6 +284,11 @@ def run(force: bool = False) -> bool:
             return False
         if not K.topic_ok("health", 4):
             return False
+    try:
+        import garmin_fresh
+        garmin_fresh.ensure_fresh()      # свіжий живий запит перед аналізом
+    except Exception as e:
+        _log("ensure_fresh: " + str(e))
     health = _health()
     rows = analyse(health)
     state = _state()

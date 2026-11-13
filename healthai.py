@@ -1318,6 +1318,11 @@ def tick() -> str:
     сигналах кожні 20 хв. Дедуп чек-іну — за годиною, не за днем.
     """
     now = _now()
+    try:
+        import garmin_fresh
+        garmin_fresh.ensure_fresh()      # кеш Garmin не старший за ~25 хв
+    except Exception as e:
+        K.log(TAG, "garmin_fresh: " + str(e))
     state = K.load(STATE_FILE, default={}) or {}
     hour_key = now.strftime("%Y-%m-%d %H")
     done = []

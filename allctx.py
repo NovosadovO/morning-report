@@ -34,7 +34,7 @@ import time
 TAG = "allctx"
 MARK = "⁣ALLCTX⁣"
 CACHE_TTL = 480          # 8 хв: щоб не палити API на кожному виклику
-MAX_CHARS = 3500         # стеля блоку, щоб не рвати промпт
+MAX_CHARS = 4400         # стеля блоку, щоб не рвати промпт
                           # (20.09: +600 після розширення _src_calendar до
                           # 1500 симв. — щоб хвостові джерела (react/truth)
                           # не витіснялись повністю з бюджету)
@@ -85,8 +85,15 @@ def _src_shift():
 
 def _src_health():
     import healthai
+    gf = ""
+    try:
+        import garmin_fresh
+        garmin_fresh.ensure_fresh()          # AI завжди бачить свіжий Garmin
+        gf = garmin_fresh.block()
+    except Exception as e:
+        gf = "GARMIN: не вдалося перевірити свіжість (" + str(e)[:60] + ") — не вигадуй показники."
     a = healthai.analytics(14)
-    return _cut(healthai.facts_block(a), 900)
+    return gf + "\n\nТренд 14 днів:\n" + _cut(healthai.facts_block(a), 800)
 
 
 def _src_score():

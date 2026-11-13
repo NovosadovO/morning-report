@@ -407,10 +407,20 @@ def format_block(payload: dict, day: str, live: bool) -> str:
     return "\n".join(lines)
 
 
+def _local_day() -> str:
+    """Поточний день за часом Кошице (узгоджено з qwsync._today). Раніше було
+    date.today() за UTC: у першу-другу годину після півночі тягнувся ВЧОРАШНІЙ день."""
+    try:
+        import qwsync
+        return qwsync._today()
+    except Exception:
+        return date.today().isoformat()
+
+
 def fetch_live(day: str = None) -> dict:
     """Живий запит до Garmin Connect (не кеш) — для команди /гармін.
     Повертає {'ok', 'record', 'text'} або {'ok': False, 'error': ...}."""
-    day = day or date.today().isoformat()
+    day = day or _local_day()
     client = _get_client()
     if client is None:
         return {"ok": False, "error": "Немає підключення до Garmin Connect "
@@ -447,7 +457,7 @@ def sync_once() -> bool:
     if client is None:
         return False
 
-    today = date.today().isoformat()
+    today = _local_day()
     payload = _fetch_today(client, today)
     fields = [k for k in payload if k != "date"]
     if not fields:
