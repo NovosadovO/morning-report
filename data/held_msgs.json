@@ -56,6 +56,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-14T00:01:57.166916",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Analýzy pre Olexiho :)</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82454"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82454"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82454"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82454"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82454"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82454"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
