@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-13t03_00_53_949663": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-13T03:00:53.949663"
+  },
+  "foresight_truthfix|2026-11-13t02_52_26_105061": {
+    "topic": "foresight/truthfix",
+    "gist": "Наступної ранкової зміни, коли прокинешся раніше, виділи 15 хвилин на легку розтяжку.",
+    "ts": "2026-11-13T02:52:26.105061"
+  },
   "foresight|2026-11-13t02_52_15_601366": {
     "topic": "foresight",
     "gist": "Слухай, Олег, твоя робота в Minebea Mitsumi — це виклик, і зараз, коли твої зміни перемішані, саме час спробувати новий підхід до розкладу, щоб тримати енергію.",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"uid=82409\",     \"title\": \"Платіж за AthletaData не пройшов\",     \"date\": \"2026-11-12\",     \"time\": null,     \"kind\": \"payment\",     \"w",
     "ts": "2026-11-12T22:55:53.927922"
-  },
-  "proactive_actions|2026-11-12t22_53_51_117778": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-13\",     \"time\": \"11:00\",     \"message\": \"Олеже, зав",
-    "ts": "2026-11-12T22:53:51.117778"
-  },
-  "selfact|2026-11-12t22_44_24_194743": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa",
-    "ts": "2026-11-12T22:44:24.194743"
   }
 }
