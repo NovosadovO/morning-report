@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_keep_80711",
-      "label": "📥 Залишити",
-      "ts": "2026-10-12T21:59:03"
-    },
-    {
-      "t": "btn",
       "data": "email_star_80711",
       "label": "⭐ Важливий",
       "ts": "2026-10-12T21:59:04"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_otgbtqe65lalqdtvd97a74jcok_2026-11-13",
       "label": "✅ Виконано",
       "ts": "2026-11-13T12:37:51"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_82443",
+      "label": "🗑 Видалити",
+      "ts": "2026-11-13T12:38:04"
     }
   ]
 }
