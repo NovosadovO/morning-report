@@ -1,4 +1,14 @@
 {
+  "healthai|2026-11-13t16_05_46_335925": {
+    "topic": "healthai",
+    "gist": "🤔 Олеже, завтра на тебе чекає нічна зміна, але поки що в календарі немає запису про це. Чи ти зараз на зміні, чи вдома?",
+    "ts": "2026-11-13T16:05:46.335925"
+  },
+  "healthai_truthfix|2026-11-13t16_00_32_772229": {
+    "topic": "healthai/truthfix",
+    "gist": "Ти зараз на зміні чи вдома?  Сьогодні, 13 листопада 2026 року, зафіксовано 11 годин 1 хвилину сну. Це більше, ніж середній показник за останні 7 днів (8.0 годин",
+    "ts": "2026-11-13T16:00:32.772229"
+  },
   "healthai|2026-11-13t16_00_21_684820": {
     "topic": "healthai",
     "gist": "Ти зараз на зміні чи вдома?  • Сон минулої ночі: 11г 01хв. Це вище за середні показники останніх 7 днів (8.0 год) та 14 днів (7.4 год), і тренд сну зростає (+2.",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-13T12:38:30.968397"
-  },
-  "action_detect|2026-11-13t12_38_19_968988": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-13T12:38:19.968988"
-  },
-  "action_detect|2026-11-13t12_38_09_099327": {
-    "topic": "action_detect",
-    "gist": "{ \"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасува",
-    "ts": "2026-11-13T12:38:09.099327"
   }
 }
