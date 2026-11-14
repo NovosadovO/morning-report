@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:46:41.018410",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Poďakovanie za úhradu poistného - povinného zmluvného poiste</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_82462"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_82462"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_82462"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_82462"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_82462"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_82462"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-14T03:46:42.392119",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Analýzy pre Olexiho :)</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-11-14T03:55:41.553861",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Notifikácie KOOPERATIVA  → Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI\n• Maroš Sivák  → Analýzy pre Olexiho :)\n• KOOPERATIVA poisťovňa, a.s. VIG → Potvrdenie transakcie (6641172176) – Platobná brána\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 1 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T03:55:45.694275",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -5.0% за 24г</b>\n\nЗараз: 77.14 $\n24г тому: 81.23 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
