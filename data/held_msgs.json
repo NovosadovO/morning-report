@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:35:14.163247",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Notifikácie KOOPERATIVA  → Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI\n• Maroš Sivák  → Analýzy pre Olexiho :)\n• KOOPERATIVA poisťovňa, a.s. VIG → Potvrdenie transakcie (6641172176) – Platobná brána\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n\n🧹 Реклама: 1 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T03:35:17.613119",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 77.21 $\n24г тому: 81.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82462"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-14T03:46:42.392119",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Analýzy pre Olexiho :)</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82454"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82454"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82454"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82454"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82454"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82454"
             }
           ]
         ]
