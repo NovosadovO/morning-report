@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T01:31:26.910273+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути AVALANCHE AUGUST 2026 RECAP",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-03T01:31:31.483119+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14499,6 +14489,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_090af6f0c5"
+    },
+    {
+      "ts": "2026-11-15T00:14:07.912660+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: Faktúra od Mariia Ovsiienko",
+      "answer": "yes"
     }
   ]
 }
