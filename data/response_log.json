@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:08:25.556803+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_cbfa8bb62c"
-    },
-    {
       "ts": "2026-09-02T22:31:24.559434+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -14495,6 +14489,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_91cb31cd48"
+    },
+    {
+      "ts": "2026-11-14T14:25:40.420317+00:00",
+      "category": "event_done",
+      "question": "📅 Нагадування: оплатити страхування Kooperativa (€67,22) — завтра починається період\nПланувалась до 10:05 — виконано?",
+      "answer": "yes"
     }
   ]
 }
