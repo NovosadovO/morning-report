@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cfm_y_8a0ef7bda2",
-      "label": "✅ Так, прибери",
-      "ts": "2026-10-16T02:43:43"
-    },
-    {
-      "t": "btn",
       "data": "dl_skip_5b5623f237",
       "label": "",
       "ts": "2026-10-16T02:43:54"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_cardio_np",
       "label": "❌",
       "ts": "2026-11-15T00:39:25"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_cardio_np",
+      "label": "❌",
+      "ts": "2026-11-15T00:39:28"
     }
   ]
 }
