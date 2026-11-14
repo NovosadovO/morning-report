@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Небезпечний вхід в акаунт",
-      "detail": "uid=81913 | від \"Youtube\" <mortonfinancial@nurture.icims.com> | Sign-in notification",
-      "module": "selfact",
-      "ts": "2026-11-04T06:40:16"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 20.11 зазначено: '🔔 Лист від Maroš Sivák потребує відповіді'. Це вказує на необхідність дії.",
       "module": "selfact",
       "ts": "2026-11-14T19:39:02"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: energy_low",
+      "detail": "🔋 Енергія (body battery) за тиждень у середньому 28.6 — нижче за 30, організм виснажений",
+      "module": "healthai",
+      "ts": "2026-11-14T19:49:59"
     }
   ]
 }
