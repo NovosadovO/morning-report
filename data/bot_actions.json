@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твоя рання зміна на заводі почалася о 06:00.",
-      "detail": "Початок ранкової зміни 03.11 о 06:00.",
-      "module": "selfact",
-      "ts": "2026-11-03T06:25:29"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, отримав лист з The Economist: Bartleby: The end of th",
       "detail": "Новий лист від The Economist через LinkedIn.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-14T05:30:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-14T06:00:16"
     }
   ]
 }
