@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T04:31:35.545272+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Підготовка до відпустки в Малазі",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-03T04:31:40.134001+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14479,6 +14469,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_spray"
+    },
+    {
+      "ts": "2026-11-15T00:39:07.377257+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
