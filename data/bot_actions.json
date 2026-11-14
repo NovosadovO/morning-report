@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Новини про вибори в США",
-      "detail": "Олеже, надійшов лист від Forbes про результати виборів у США. Це може бути цікаво для тебе.",
-      "module": "selfact",
-      "ts": "2026-11-04T07:58:59"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-14T19:51:38"
+    },
+    {
+      "kind": "notify",
+      "what": "Необхідно відповісти на лист від Maroš Sivák.",
+      "detail": "Календар на 7 днів містить запис: \"20.11: 🔔 Лист від Maroš Sivák потребує відповіді\".",
+      "module": "selfact",
+      "ts": "2026-11-14T19:54:02"
     }
   ]
 }
