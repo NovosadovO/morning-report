@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T00:01:36.699530+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Запланувати активність",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-03T00:02:17.022285+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14499,6 +14493,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-15T00:13:51.092912+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: Analýzy pre Olexiho :)",
+      "answer": "no"
     }
   ]
 }
