@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:08:17.256562+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити умови кредиту Temu",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T22:08:25.556803+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14495,6 +14489,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_rem_61742c53d6"
+    },
+    {
+      "ts": "2026-11-14T14:25:39.641305+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_91cb31cd48"
     }
   ]
 }
