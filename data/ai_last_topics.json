@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t17_19_23_744591": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, завтра, 15.11, закінчується термін оплати страхування K",
+    "ts": "2026-11-14T17:19:23.744591"
+  },
   "openloop_promises|2026-11-14t17_09_48_022904": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"82285\",     \"vendor\": \"KOOPERATIVA poisťovňa\",     \"amount\": \"67.22\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\"",
     "ts": "2026-11-14T11:41:23.375570"
-  },
-  "selfact|2026-11-14t11_38_30_159696": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починається термін оплати страхуван",
-    "ts": "2026-11-14T11:38:30.159696"
   }
 }
