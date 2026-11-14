@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_water",
-      "label": "✅ Так",
-      "ts": "2026-10-15T22:19:31"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-10-15T22:19:38"
@@ -7199,6 +7193,12 @@
       "data": "pa_skip_97fef33d63",
       "label": "❌ Не треба",
       "ts": "2026-11-15T00:13:30"
+    },
+    {
+      "t": "btn",
+      "data": "pa_skip_efb877eead",
+      "label": "❌ Не треба",
+      "ts": "2026-11-15T00:13:34"
     }
   ]
 }
