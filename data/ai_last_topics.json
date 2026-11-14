@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t16_33_31_847009": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Терміново! Оплатіть страхування Kooperativa (€67,22) до завтра, 15.11. Це ваше останнє нагадування.\",     \"why\"",
+    "ts": "2026-11-14T16:33:31.847009"
+  },
   "people|2026-11-14t16_17_59_398727": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-14T11:30:32.843774"
-  },
-  "selfact|2026-11-14t11_22_13_980572": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти твоє страхування Koop",
-    "ts": "2026-11-14T11:22:13.980572"
   }
 }
