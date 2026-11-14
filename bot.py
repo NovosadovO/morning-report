@@ -2601,6 +2601,13 @@ def handle_command(chat_id, text):
     if text in ["/start", "start"]:
         send(chat_id, "👋 Привіт! Я твій асистент.\n" + HELP_TEXT)
 
+    elif text in ["/статус_ai", "/статус_аі", "/ai_status", "/watch"]:
+        try:
+            import watch_health as _wh_r
+            send(chat_id, _wh_r.report())
+        except Exception as _e_wh_r:
+            send(chat_id, f"⚠️ статус: {_e_wh_r}")
+
     elif text in ["/відсів", "/відсіяні", "/outbox"]:
         try:
             import outbox as _ob_r

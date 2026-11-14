@@ -555,9 +555,18 @@ def _deliver(head: str, body: str, question: str, kb: list, png: bytes, pid: str
     return True
 
 
+def _why(t):
+    try:
+        import watch_health
+        watch_health.why("run_insight", t)
+    except Exception:
+        pass
+
+
 def run_post(force: bool = False) -> bool:
     """Режим A: розбір нової пробіжки."""
     if not _gates(force):
+        _why("тиха година / заглушено")
         return False
     try:
         import garmin_fresh
@@ -566,6 +575,7 @@ def run_post(force: bool = False) -> bool:
         _log("ensure_fresh: " + str(e))
     rs = runs()
     if not rs:
+        _why("пробіжок у running_data нема (Garmin/Strava не віддали активностей ≥2 км)")
         return False
     st = _state()
     done = set(st.get("analysed") or [])
@@ -583,6 +593,7 @@ def run_post(force: bool = False) -> bool:
     if not todo:
         st["analysed"] = sorted(done)[-60:]
         K.save(STATE_FILE, st)
+        _why("нових пробіжок нема (остання: %s, %s км)" % (rs[-1]["date"].strftime("%d.%m %H:%M"), rs[-1]["km"]))
         return False
     last = todo[-1]
     built = build_post(rs, last, now)
@@ -621,8 +632,10 @@ def run_pre(force: bool = False) -> bool:
     st = _state()
     if not force:
         if not (PRE_WINDOW[0] <= hr < PRE_WINDOW[1]):
+            _why("поза вікном готовності %s–%s год" % PRE_WINDOW)
             return False
         if not K.rate_ok("run_insight_pre_gap.json", PRE_GAP_H * 60):
+            _why(f"інтервал {PRE_GAP_H} год ще не минув")
             return False
     try:
         import garmin_fresh
@@ -631,12 +644,15 @@ def run_pre(force: bool = False) -> bool:
         _log("ensure_fresh: " + str(e))
     rs = runs()
     if not rs:
+        _why("пробіжок у running_data нема")
         return False
     last = rs[-1]
     if last["date"].date() == now.date():
+        _why("сьогодні вже бігав")
         return False                       # сьогодні вже бігав
     gap_days = (now.date() - last["date"].date()).days
     if gap_days < 2 and not force:
+        _why("з останнього бігу %d дн. (<2) — готовність не потрібна" % gap_days)
         return False
     rd = readiness(rs=rs, now=now)
     pl = plan(rd, rs)
@@ -644,6 +660,7 @@ def run_pre(force: bool = False) -> bool:
     built = build_pre(rs, rd, pl, now)
     if not built:
         _log("AI не склав попередній розбір")
+        _why("AI не склав розбір готовності")
         return False
     icon = {"green": "🟢", "yellow": "🟡", "red": "🔴"}.get(rd["level"], "⚪")
     head = (f"🏃 <b>Біг · готовність {icon}</b> · без бігу {gap_days} дн."

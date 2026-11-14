@@ -1324,20 +1324,30 @@ def run_assistant_watcher():
             try:
                 import garmin_insight as _gi_w
                 if 10 <= now_local.hour < 21:
-                    _gi_w.run()
+                    import watch_health as _wh
+                    _wh.track("garmin_insight", _gi_w.run)
+                else:
+                    import watch_health as _wh
+                    _wh.record("garmin_insight", "skipped", "поза вікном 10–21 год")
             except Exception as _e_gi:
                 print(f"[garmin_insight] watcher error: {_e_gi}", flush=True)
             # Тренер бігу (Garmin): розбір нової пробіжки + готовність перед бігом.
             try:
                 import run_insight as _ri_w
+                import watch_health as _wh
                 if 7 <= now_local.hour < 22:
-                    _ri_w.run()
+                    _wh.track("run_insight", _ri_w.run)
+                else:
+                    _wh.record("run_insight", "skipped", "поза вікном 7–22 год")
             except Exception as _e_ri:
                 print(f"[run_insight] watcher error: {_e_ri}", flush=True)
             try:
                 import market_insight as _mi_w
+                import watch_health as _wh
                 if 8 <= now_local.hour < 22:
-                    _mi_w.run()
+                    _wh.track("market_insight", _mi_w.run)
+                else:
+                    _wh.record("market_insight", "skipped", "поза вікном 8–22 год")
             except Exception as _e_mi:
                 print(f"[market_insight] watcher error: {_e_mi}", flush=True)
             try:

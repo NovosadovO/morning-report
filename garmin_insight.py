@@ -130,6 +130,14 @@ def analyse(health: dict = None) -> list:
     return res
 
 
+def _why(t):
+    try:
+        import watch_health
+        watch_health.why(TAG, t)
+    except Exception:
+        pass
+
+
 def _state() -> dict:
     st = K.load(STATE_FILE, default={}) or {}
     return st if isinstance(st, dict) else {}
@@ -271,6 +279,7 @@ def run(force: bool = False) -> bool:
     try:
         import quiet
         if not force and quiet.blocked("msg"):
+            _why("тиха година / режим сну")
             return False
     except Exception:
         pass
@@ -278,10 +287,12 @@ def run(force: bool = False) -> bool:
         try:
             import dismissed
             if dismissed.is_muted("hcoach") or dismissed.is_muted("healthai"):
+                _why("заглушено (dismissed: hcoach/healthai)")
                 return False
         except Exception:
             pass
         if not K.rate_ok("garmin_insight_gap.json", MIN_GAP_H * 60):
+            _why(f"інтервал {MIN_GAP_H} год ще не минув")
             return False
         # 13.11: БЕЗ topic_ok. Старі health-картки (healthai/hcoach) ставлять мітку
         # раз на ~годину й назавжди тримали ворота закритими — цей розбір (пріоритет
@@ -298,12 +309,15 @@ def run(force: bool = False) -> bool:
     row = pick(rows, state)
     if not row:
         _log("відхилень ≥ порога нема (або вже розбирали) — мовчу")
+        _why("відхилень ≥ порога нема або метрику вже розбирали (рядків: %d, ротація: %s)"
+             % (len(rows), ",".join((state.get("recent") or [])[-3:])))
         return False
     K.rate_mark("garmin_insight_gap.json")
 
     built = build(row, health)
     if not built:
         _log("AI не склав розбір")
+        _why("AI не склав розбір (" + row["field"] + ")")
         return False
     png = chart(health, row)
 
@@ -334,6 +348,7 @@ def run(force: bool = False) -> bool:
         ok = K.send_card(txt, kb, tag=TAG)
     if not ok:
         _store.drop(pid)
+        _why("відправка не вдалась / відсіяна outbox (" + row["field"] + ")")
         return False
     K.topic_mark("health")
     state["recent"] = ((state.get("recent") or []) + [row["field"]])[-6:]

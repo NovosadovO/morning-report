@@ -231,10 +231,19 @@ def build(row, btc24):
             "options": opts}
 
 
+def _why(t):
+    try:
+        import watch_health
+        watch_health.why(TAG, t)
+    except Exception:
+        pass
+
+
 def run(force=False) -> bool:
     try:
         import quiet
         if not force and quiet.blocked("msg"):
+            _why("тиха година / режим сну")
             return False
     except Exception:
         pass
@@ -242,10 +251,12 @@ def run(force=False) -> bool:
         try:
             import dismissed
             if dismissed.is_muted("crypto") or dismissed.is_muted("market_insight"):
+                _why("заглушено (dismissed: crypto/market_insight)")
                 return False
         except Exception:
             pass
         if not K.rate_ok("market_insight_gap.json", MIN_GAP_H * 60):
+            _why(f"інтервал {MIN_GAP_H} год ще не минув")
             return False
         # 13.11: БЕЗ topic_ok — старі крипто-шаблони постійно ставили мітку й
         # блокували цей розбір. Власний інтервал 8 год; мітку ставимо після відправки.
@@ -255,11 +266,13 @@ def run(force=False) -> bool:
     row = pick(rows, state)
     if not row:
         _log("подій нема (або монету вже розбирали) — мовчу")
+        _why("подій нема або монету вже розбирали (кандидатів: %d, історія монет: %d)" % (len(rows), len(hist or {})))
         return False
     K.rate_mark("market_insight_gap.json")
     btc = _btc24(hist)
     built = build(row, btc)
     if not built:
+        _why("AI не склав розбір (" + str(row.get("sym")) + ")")
         return False
     png = chart(hist, row)
     arrow = "🟢" if row["r24"] >= 0 else "🔴"
