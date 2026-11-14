@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:09:19.399019",
-      "kind": "bills",
-      "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (13 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Google Play</b>\n💰 7.99 EUR\n📆 до <b>2026-11-01</b>\n\nПлатіж за підписку на додаток ChatGPT відхилено. Оновіть спосіб оплати до 1 листопада, інакше підписку буде скасовано.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T03:09:20.434782",
       "kind": "bills",
       "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (13 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 Google Play\n💰 7.99 EUR\n📆 до 2026-11-01\n\nПлатіж за підписку на додаток ChatGPT відхилено. Оновіть спосіб оплати до 1 листопада, інакше підписку буде скасовано.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82454"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-14T03:16:07.166137",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie transakcie (6641172176) – Platobná brána</b>\n👤 KOOPERATIVA poisťovňa, a.s. VIG&lt;info@koop.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82285"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82285"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82285"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82285"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82285"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82285"
             }
           ]
         ]
