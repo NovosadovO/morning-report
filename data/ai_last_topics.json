@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t06_42_32_565078": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні до кінця дня потрібно оплатити страхуванн",
+    "ts": "2026-11-14T06:42:32.565078"
+  },
   "openloop_promises|2026-11-14t06_37_18_251773": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": null   },   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null, ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-13T21:30:35.109372"
-  },
-  "selfact|2026-11-13t21_23_38_212367": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 14.11, потрібно оплатити стр",
-    "ts": "2026-11-13T21:23:38.212367"
   }
 }
