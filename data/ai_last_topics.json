@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t23_17_10_947653": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
+    "ts": "2026-11-14T23:17:10.947653"
+  },
   "openloop_promises|2026-11-14t23_11_36_355533": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-14T18:01:32.463679"
-  },
-  "astro_ai|2026-11-14t18_01_23_082467": {
-    "topic": "astro_ai",
-    "gist": "Сьогодні, 14 листопада 2026 року, твоя фінансова сфера та сфера самооцінки відчувають сильний вплив. Транзитний Марс перебуває у твоєму II домі, що означає енер",
-    "ts": "2026-11-14T18:01:23.082467"
   }
 }
