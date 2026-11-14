@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-14t23_36_00_064963": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Free Online Courses через LinkedIn пропонує безкоштовний онлайн-курс \\\"Microsoft Excel Beginner's Guide 2026\\\". Курс розрах",
+    "ts": "2026-11-14T23:36:00.064963"
+  },
   "selfact|2026-11-14t23_32_16_189371": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-11-15\",   \"action_time\": null,   \"action_summary\": \"Оплатити ",
     "ts": "2026-11-14T18:01:54.539082"
-  },
-  "action_detect|2026-11-14t18_01_43_453453": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-14T18:01:43.453453"
   }
 }
