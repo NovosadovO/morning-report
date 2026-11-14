@@ -6014,6 +6014,14 @@ def main():
         if isinstance(email_text, dict) and email_text.get("__email_block__"):
             email_parts.append(email_text["header"])
             _all_items = email_text.get("items", [])
+            _already_shown = 0
+            try:
+                import mail_seen as _ms
+                _all_items, _old_items = _ms.split(_all_items)
+                _already_shown = len(_old_items)
+                _ms.mark(_all_items[:7])
+            except Exception as _e_ms:
+                print(f"[mail_seen] skipped: {_e_ms}", flush=True)
             _remaining = max(0, len(_all_items) - 7)
             for _em in _all_items[:7]:
                 _s   = _em["subject"]
@@ -6054,6 +6062,8 @@ def main():
                     ]
                 ]}
                 email_parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
+            if _already_shown and not _all_items:
+                email_parts.append(f"📬 <i>нових листів нема — {_already_shown} непрочитаних уже показував раніше</i>")
             if _remaining > 0:
                 email_parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
         else:
@@ -6547,6 +6557,23 @@ def main():
         return chunks
 
     # Тематичний AI-аналіз — надсилаємо окремо після звіту
+    try:
+        import re as _re_th
+        _blocks = [b for b in _re_th.split(r"\n{2,}", _themes_ai_full or "") if b.strip()]
+        _keep = []
+        for _b in _blocks:
+            _body = _re_th.sub(r"<[^>]+>", "", _b).strip()
+            _low = _body.lower()
+            _lines = [l for l in _body.split("\n") if l.strip()]
+            _empty = ("немає даних" in _low or "нема даних" in _low or "даних немає" in _low) and len(_body) < 140
+            if _empty:
+                continue
+            _keep.append(_b)
+        _themes_ai_full = "\n\n".join(_keep).strip()
+        if len(_re_th.sub(r"<[^>]+>|\s", "", _themes_ai_full)) < 80:
+            _themes_ai_full = ""
+    except Exception as _e_th:
+        print(f"[themes_ai] filter err: {_e_th}", flush=True)
     if _themes_ai_full:
         _time_main.sleep(0.8)
         print(f"[themes_ai] sending themes AI ({len(_themes_ai_full)} chars) as separate messages...", flush=True)
@@ -9350,7 +9377,9 @@ def check_smart_notifications():
             15: ("☀️ Порада на другу половину дня", "Олег вдома в середині дня. Дай одну ідею — що зробити для здоров'я або продуктивності наступні 2 години. Коротко і конкретно."),
             20: ("🌙 Вечірня порада", "Вечір вільного дня Олега. 1-2 речення: коротка оцінка дня і одна порада перед сном (схуднення/здоров'я/фінанси). По суті, без загальних слів."),
         }
-        if today_shift == "free" and h in ai_slots and 30 <= m < 35:
+        # Загальні «поради дня» без реальних даних вимкнені (повторювались: «випий воду»).
+        # Реальні сигнали дають garmin_insight / run_insight / market_insight. Вмикається AI_GENERIC_TIPS=1.
+        if os.environ.get("AI_GENERIC_TIPS") == "1" and today_shift == "free" and h in ai_slots and 30 <= m < 35:
             akey = f"ai_tip_{h}"
             if not sent(akey):
                 label, prompt_text = ai_slots[h]
