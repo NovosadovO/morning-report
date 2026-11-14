@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t04_39_01_913956": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти твоє страхування Koop",
+    "ts": "2026-11-14T04:39:01.913956"
+  },
   "proactive_actions|2026-11-14t04_30_14_828740": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-14\",     \"time\": \"\",     \"message\": \"Олеже, сьогодні",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-13T19:30:24.459502"
-  },
-  "email_ai_item|2026-11-13t19_24_41_428498": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Це щоденний дайджест новин зі світу криптовалют, курований ШІ від CryptoBeholder.com за 13 листопада. Лист містить новини про арешт п'яти осіб ",
-    "ts": "2026-11-13T19:24:41.428498"
   }
 }
