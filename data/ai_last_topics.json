@@ -1,4 +1,49 @@
 {
+  "action_detect|2026-11-14t21_05_54_968562": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"AI помітив проблему з собою: перевірка пошти ",
+    "ts": "2026-11-14T21:05:54.968562"
+  },
+  "action_detect|2026-11-14t21_01_36_715691": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-14T21:01:36.715691"
+  },
+  "action_detect|2026-11-14t21_01_25_803251": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-14T21:01:25.803251"
+  },
+  "action_detect|2026-11-14t21_01_14_852301": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
+    "ts": "2026-11-14T21:01:14.852301"
+  },
+  "action_detect|2026-11-14t21_01_03_832795": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Сплата квартири\",   \"action_date\": \"2023-11-15\",   \"action_time\": null,   \"action_summary\": \"Запланова",
+    "ts": "2026-11-14T21:01:03.832795"
+  },
+  "briefing|2026-11-14t21_00_53_651890": {
+    "topic": "briefing",
+    "gist": "🧭 ГОЛОВНЕ Сьогоднішній звіт показує, що твоя фізична активність вже перевищила 15 тисяч кроків, хоча це трохи менше, ніж у цей самий день минулого тижня. Натомі",
+    "ts": "2026-11-14T21:00:53.651890"
+  },
+  "themes_ai_truthfix|2026-11-14t21_00_47_713951": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Оцінка показників за 14.11.2026:  💰 ФІНАНСИ На даний момент немає даних про поточний стан фінансів, але є 7 прострочених рахунків.  🏃 БІГ Сьогоднішній забіг на ",
+    "ts": "2026-11-14T21:00:47.713951"
+  },
+  "themes_ai|2026-11-14t21_00_44_746245": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ Стан: Враховуючи, що дані щодо твоїх активів та пасивів не надані, складно оцінити поточну фінансову картину. Проте, нагадую про прострочені рахунки, ",
+    "ts": "2026-11-14T21:00:44.746245"
+  },
+  "action_detect|2026-11-14t21_00_23_642324": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-14T21:00:23.642324"
+  },
   "selfact|2026-11-14t20_55_28_323432": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачена страховка Kooperativa\",     \"text\": \"Олеже, завтра, 15.11, закінчується термін оплати страхування K",
@@ -253,55 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Kooperativa н",
     "ts": "2026-11-14T15:46:59.954817"
-  },
-  "bills|2026-11-14t15_42_43_893671": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-14T15:42:43.893671"
-  },
-  "openloop_promises|2026-11-14t15_39_38_602531": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-14T15:39:38.602531"
-  },
-  "selfact|2026-11-14t15_31_11_457285": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
-    "ts": "2026-11-14T15:31:11.457285"
-  },
-  "action_detect|2026-11-14t15_30_45_085390": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страхування Kooperativa\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Оп",
-    "ts": "2026-11-14T15:30:45.085390"
-  },
-  "email_ai_item|2026-11-14t15_27_31_000704": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Це щоденний дайджест новин про криптовалюти від Олега Безуглого за 14 листопада. Лист містить ключові новини про падіння біткоїна ни",
-    "ts": "2026-11-14T15:27:31.000704"
-  },
-  "selfact|2026-11-14t15_15_15_853673": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 15.11, тобі потрібно оплатити страх",
-    "ts": "2026-11-14T15:15:15.853673"
-  },
-  "healthai|2026-11-14t15_05_42_784137": {
-    "topic": "healthai",
-    "gist": "😴 За сьогодні показник сну ще не приходив, останнє відоме — 2026-11-13, 1 день тому. Зважаючи на твій змінний графік роботи, важливо відстежувати, як відновлюєт",
-    "ts": "2026-11-14T15:05:42.784137"
-  },
-  "action_detect|2026-11-14t15_02_16_592048": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страхування Kooperativa\", \"action_date\": \"2023-11-14\", \"action_time\": null, \"action_summary\": \"Оплатити ст",
-    "ts": "2026-11-14T15:02:16.592048"
-  },
-  "action_detect|2026-11-14t15_02_04_436775": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та нага",
-    "ts": "2026-11-14T15:02:04.436775"
-  },
-  "action_detect|2026-11-14t21_00_23_642324": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-14T21:00:23.642324"
   }
 }
