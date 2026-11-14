@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-14t12_38_30_805999": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": \"2023-11-14\"   },   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\"",
+    "ts": "2026-11-14T12:38:30.805999"
+  },
   "selfact|2026-11-14t12_24_31_647909": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти страховка Kooperativa",
@@ -293,10 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Олексія\",   ",
     "ts": "2026-11-14T08:09:05.538858"
-  },
-  "openloop_promises|2026-11-14t08_07_12_605162": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"записати на завтра біг на 9:00\",     \"to\": null,     \"date\": null   } ] ```",
-    "ts": "2026-11-14T08:07:12.605162"
   }
 }
