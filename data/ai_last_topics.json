@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t23_47_31_269871": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що потрібно оплатити страхування Kooperativa на суму ",
+    "ts": "2026-11-14T23:47:31.269871"
+  },
   "email_ai_item|2026-11-14t23_36_00_064963": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Free Online Courses через LinkedIn пропонує безкоштовний онлайн-курс \\\"Microsoft Excel Beginner's Guide 2026\\\". Курс розрах",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "👟 Кроки: 13317 за сьогодні, але тренд за останні 14 днів падає (-2561.3). Це може впливати на відновлення, особливо враховуючи, що HRV також знижується.  Пам'ят",
     "ts": "2026-11-14T18:05:03.684463"
-  },
-  "action_detect|2026-11-14t18_01_54_539082": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-11-15\",   \"action_time\": null,   \"action_summary\": \"Оплатити ",
-    "ts": "2026-11-14T18:01:54.539082"
   }
 }
