@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:09:22.755049",
-      "kind": "bills",
-      "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (9 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>Google Play</b>\n💰 4.99 EUR\n📆 до <b>2026-11-05</b>\n\nРахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T03:09:23.687754",
       "kind": "bills",
       "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (9 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 Google Play\n💰 4.99 EUR\n📆 до 2026-11-05\n\nРахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80743"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-14T03:16:09.863328",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80711"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80711"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80711"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80711"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80711"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80711"
             }
           ]
         ]
