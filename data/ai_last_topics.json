@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t20_55_28_323432": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Неоплачена страховка Kooperativa\",     \"text\": \"Олеже, завтра, 15.11, закінчується термін оплати страхування K",
+    "ts": "2026-11-14T20:55:28.323432"
+  },
   "selfact|2026-11-14t20_40_14_573496": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, завтра, 15.11, потрібно оплатити страхування Kooperativ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та нага",
     "ts": "2026-11-14T15:02:04.436775"
-  },
-  "action_detect|2026-11-14t15_01_53_521699": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Перевірити підписку на Railway Corporation\",   \"action_date\": \"2026-10-22\",   \"action_time\": null,   \"",
-    "ts": "2026-11-14T15:01:53.521699"
   }
 }
