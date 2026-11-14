@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_shower",
-      "label": "✅ Так",
-      "ts": "2026-10-14T11:02:44"
-    },
-    {
-      "t": "btn",
       "data": "rx_done_b62dd058bd",
       "label": "✅ Зробив",
       "ts": "2026-10-14T11:02:44"
@@ -7199,6 +7193,12 @@
       "data": "evdone_skip_done_8brp8d3c1sg75t6p1089eddr38_2026-11-14",
       "label": "⏭ Перенести",
       "ts": "2026-11-14T10:40:53"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_82489",
+      "label": "🗑 Видалити",
+      "ts": "2026-11-14T10:40:55"
     }
   ]
 }
