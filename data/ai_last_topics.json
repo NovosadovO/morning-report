@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-14t23_05_57_179478": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-14T23:05:57.179478"
+  },
+  "healthai|2026-11-14t23_05_26_030773": {
+    "topic": "healthai",
+    "gist": "🚀 HRV впав до 60.0 мс (сер.7д 53.1 мс), що може вказувати на стрес, хоча сон за останній тиждень зростає (+0.7 год) до 7.9 год.  📅 Завтра з 18:00 починається ні",
+    "ts": "2026-11-14T23:05:26.030773"
+  },
   "selfact|2026-11-14t23_01_52_392783": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, завтра, 15.11, тобі потрібно оплатити страхування Koope",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це рекомендації щодо вечері для тих, хто практикує ін",
     "ts": "2026-11-14T18:00:12.529077"
-  },
-  "selfact|2026-11-14t17_49_49_014583": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
-    "ts": "2026-11-14T17:49:49.014583"
-  },
-  "bills|2026-11-14t17_48_15_492626": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-14T17:48:15.492626"
   }
 }
