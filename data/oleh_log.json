@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "pa_skip_f6099e752c",
-      "label": "",
-      "ts": "2026-10-15T15:29:55"
-    },
-    {
-      "t": "btn",
       "data": "am_no_fb3fd08a0e",
       "label": "🚫 Не треба",
       "ts": "2026-10-15T15:29:59"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_ngaluia0cblnj7vkckkq0tasm0_2026-11-14",
       "label": "✅ Виконано",
       "ts": "2026-11-14T14:25:38"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_shower",
+      "label": "✅ Так",
+      "ts": "2026-11-14T14:26:00"
     }
   ]
 }
