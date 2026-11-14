@@ -337,6 +337,38 @@ _PROMPT = """Ти — АІ-ініціатор персонального бот�
 Для note/notify/ask поля date/time можна не давати. У "text" — живою українською, без води."""
 
 
+def _norm_uid(v) -> str:
+    """'uid_82462' / 'uid=82462' / '82462' -> '82462' (AI щоразу пише по-різному)."""
+    import re as _re
+    m = _re.search(r"\d{3,}", str(v or ""))
+    return m.group(0) if m else ""
+
+
+def _infer_mail_uid(a: dict, ctx: str) -> str:
+    """Якщо AI не дав mail_uid, але дія явно про лист від людини з блоку
+    СВІЖІ ЛИСТИ — беремо uid цього листа. Інакше AI щоразу перефразовує
+    «Необхідно відповісти на лист від X», і дедуп по title не ловить."""
+    import re as _re
+    uid = _norm_uid(a.get("mail_uid"))
+    if uid:
+        return uid
+    blob = ((a.get("title") or "") + " " + (a.get("text") or "")).lower()
+    if "лист" not in blob and "mail" not in blob and "email" not in blob:
+        return ""
+    for line in (ctx or "").splitlines():
+        m = _re.match(r"- uid=(\d+) \| від (.*?) \| (.*)$", line)
+        if not m:
+            continue
+        who = m.group(2).split("<")[0].strip().strip('"').lower()
+        if len(who) >= 4 and who in blob:
+            return m.group(1)
+    return ""
+
+
+# дії, що в різному вигляді нагадують про ОДИН лист — для них спільний ключ
+_MAIL_KINDS = ("notify", "ask", "reminder")
+
+
 def decide(ctx: str = None) -> list:
     ctx = ctx if ctx is not None else context()
     if not ctx:
@@ -358,7 +390,7 @@ def decide(ctx: str = None) -> list:
         a["type"] = typ
         a["title"] = title or text[:60]
         a["text"] = text or title
-        a["mail_uid"] = _short(a.get("mail_uid"), 80)
+        a["mail_uid"] = _infer_mail_uid(a, ctx) or _short(a.get("mail_uid"), 80)
         acts.append(a)
     return acts[:MAX_ACTIONS]
 
@@ -620,7 +652,8 @@ def run(force: bool = False) -> int:
     for a in acts:
         typ = a["type"]
         title = a["title"]
-        mail_uid = str(a.get("mail_uid") or "")
+        mail_uid = _norm_uid(a.get("mail_uid")) or str(a.get("mail_uid") or "")
+        mail_kind = "mail" if typ in _MAIL_KINDS else typ
         if _dedup.seen(typ, title):
             _log("вже робив: " + typ + " / " + title)
             continue
@@ -629,7 +662,9 @@ def run(force: bool = False) -> int:
             continue
         # Дедуп по листу (ВАЖЛИВО, фікс 12.10.2026): той самий лист — та
         # сама дія того ж типу вдруге, навіть якщо AI назвав її інакше.
-        if mail_uid and _mail_act_dedup.seen(typ, mail_uid):
+        if mail_uid and (_mail_act_dedup.seen(mail_kind, mail_uid)
+                         or _mail_act_dedup.seen(typ, mail_uid)
+                         or _mail_act_dedup.seen(typ, "uid_" + mail_uid)):
             _log("вже був " + typ + " про цей лист (uid=" + mail_uid + "): " + title)
             continue
         doer = _DOERS.get(typ)
@@ -644,7 +679,7 @@ def run(force: bool = False) -> int:
             continue
         _dedup.mark(typ, title)
         if mail_uid:
-            _mail_act_dedup.mark(typ, mail_uid)
+            _mail_act_dedup.mark(mail_kind, mail_uid)
         journal(typ, title, _short(a.get("why") or a.get("text"), 300))
         done += 1
         if typ in ("note", "reminder", "event"):

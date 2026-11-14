@@ -286,3 +286,16 @@ if FAILS:
     for f in FAILS:
         print(" -", f)
     sys.exit(1)
+
+
+def _t_mail_uid_infer():
+    import selfact as S
+    ctx = "СВІЖІ ЛИСТИ:\n- uid=82500 | від Maroš Sivák <m@x.sk> | Stretnutie 20.11\n  текст: ..."
+    a = {"title": "Необхідно відповісти на лист від Maroš Sivák", "text": "...", "mail_uid": ""}
+    assert S._infer_mail_uid(a, ctx) == "82500", S._infer_mail_uid(a, ctx)
+    assert S._infer_mail_uid({"title": "Вода", "text": "пити", "mail_uid": ""}, ctx) == ""
+    assert S._norm_uid("uid_82462") == "82462" and S._norm_uid("uid=82462") == "82462"
+    print("ok   selfact: uid листа виводиться/нормалізується")
+
+
+_t_mail_uid_infer()

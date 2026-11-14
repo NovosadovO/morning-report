@@ -16,6 +16,8 @@ chk(O._topic("🏃 Біг · готовність 🟢")[0] == "run_ai", "run_ai
 chk(O._topic("🏃 Час бігти! 25-35 хв")[0] == "run_nudge", "run_nudge ще ловиться")
 chk(O._topic_reason("🏃 Час бігти! 25-35 хв", [row("run_ai", 5)]), "шаблон бігу блокується після AI-розбору")
 chk(not O._topic_reason("🏃 Час бігти! 25-35 хв", [row("run_ai", 30)]), "через 30 год шаблон вже не блокується кросом")
+chk(O._topic_reason("🚀 Сьогодні зафіксовано 10.5 годин сну — супер", [row("sleep_recap", 2)]), "сон-підсумок вдруге блокується")
+chk(not O._topic_reason("🚀 Сьогодні зафіксовано 10.5 годин сну — супер", [row("sleep_recap", 20)]), "сон-підсумок наступного дня ок")
 import foresight as F
 chk(F._try_new_pick.__doc__ is not None, "foresight loads")
 print("outbox topic: ok=%d fail=%d" % (ok, fail))
