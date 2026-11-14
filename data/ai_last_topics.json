@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-14t13_06_04_448610": {
+    "topic": "healthai",
+    "gist": "⚡️ Сон за сьогодні ще не надходив, останнє відоме — 2026-11-13, 1 день тому.",
+    "ts": "2026-11-14T13:06:04.448610"
+  },
   "action_detect|2026-11-14t13_00_35_726239": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страхування Kooperativa\",   \"action_date\": null,   \"action_time\": \"10:00\",   \"action_summary\": ",
     "ts": "2026-11-14T08:31:59.550183"
-  },
-  "msg_event_soon|2026-11-14t08_31_49_546268": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "⏰ **10:00 — Оплата страхування Kooperativa (€67,22)**  Завтра починається новий страховий період, тому сьогодні найкращий час для оплати.  **Що взяти з собою:**",
-    "ts": "2026-11-14T08:31:49.546268"
   }
 }
