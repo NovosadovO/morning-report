@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:07:55.034219+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Розібратися з документами",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T22:08:04.123409+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14495,6 +14489,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_0033b2327c"
+    },
+    {
+      "ts": "2026-11-14T14:25:17.494630+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
