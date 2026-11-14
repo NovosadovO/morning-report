@@ -19607,7 +19607,35 @@
     "pid": "pa_skip_6b4924134c",
     "subject": "Faktúra od Mariia Ovsiienko",
     "extra": {
-      "msg": "✉️ Лист чекає на відповідь\n━━━━━━━━━━━━━━━━━━━━\nПереглянути лист від Mariia Ovsiienko\n📆 2026-11-15  (весь день)\n\nОлеже, у Вас є новий лист від Mariia Ovsiienko з темою \"Faktúra od Mariia Ovsiienko\". Рекомендую переглянути його, щоб бути в курсі деталей."
+      "msg": "✉️ Лист чекає на відповідь\n━━━━━━━━━━━━━━━━━━━━\nПереглянути лист від Mariia Ovsiienko\n📆 2026-11-15  (весь день)\n\nОлеже, у Вас є новий лист від Mariia Ovsiienko з темою \"Faktúra od Mariia Ovsiienko\". Рекомендую переглянути його, щоб бути в курсі деталей.",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 124825,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "reply_manual_80646"
+            }
+          ],
+          [
+            {
+              "text": "⏰ Нагадати відповісти",
+              "callback_data": "pa_rem_6b4924134c"
+            },
+            {
+              "text": "📝 Занотувати",
+              "callback_data": "pa_note_6b4924134c"
+            }
+          ],
+          [
+            {
+              "text": "❌ Не треба",
+              "callback_data": "pa_skip_6b4924134c"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-15T00:13:52.360508+00:00"
   }
