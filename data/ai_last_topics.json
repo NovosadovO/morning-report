@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-14t12_01_07_147578": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-14T12:01:07.147578"
+  },
   "selfact|2026-11-14t11_53_01_784415": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koo",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починається дія страхування Koopera",
     "ts": "2026-11-14T07:45:28.901241"
-  },
-  "bills|2026-11-14t07_41_18_927746": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"82285\",     \"vendor\": \"KOOPERATIVA poisťovňa\",     \"amount\": \"67.22\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\"",
-    "ts": "2026-11-14T07:41:18.927746"
   }
 }
