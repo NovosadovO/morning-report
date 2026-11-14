@@ -1321,6 +1321,13 @@ def run_assistant_watcher():
                 print(f"[hcoach] watcher error: {_e_hc}", flush=True)
             # Garmin-розбір: метрика з найбільшим РЕАЛЬНИМ відхиленням від норми,
             # графік 21 день + питання з відповідними кнопками. Не частіше 1/20 год.
+            # now_local тут НЕ було визначено (NameError ковтався except-ом) — через це
+            # garmin_insight / run_insight / market_insight жодного разу не запускались.
+            try:
+                from zoneinfo import ZoneInfo as _ZI
+                now_local = datetime.now(_ZI("Europe/Bratislava"))     # Кошице
+            except Exception:
+                now_local = datetime.now(timezone.utc) + timedelta(hours=1)
             try:
                 import garmin_insight as _gi_w
                 if 10 <= now_local.hour < 21:

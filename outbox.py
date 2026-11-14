@@ -328,7 +328,7 @@ def check_request(url, data):
     fg_why = ""
     try:
         import fresh_guard as _fg
-        fg_why = _fg.contradiction(_clean(text))
+        fg_why = _fg.any_error(_clean(text))
     except Exception:
         fg_why = ""
     with _lock:

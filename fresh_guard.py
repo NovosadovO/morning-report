@@ -80,10 +80,58 @@ def contradiction(text, a=None):
     return ""
 
 
+_DOWN = re.compile(r"(впа[вл]\w*|знизил\w*|знизив\w*|зменшил\w*|зменшив\w*|просі[вл]\w*|падіння|спад\w*|"
+                   r"(?:нижч\w+|менш\w+)\s+(?:за|від|ніж)\s+(?:середн\w+|норм\w+|тижнев\w+))", re.I)
+_UP = re.compile(r"(зрі[сл]\w*|вирі[сл]\w*|підвищил\w*|підвищив\w*|збільшил\w*|збільшив\w*|піднялс\w*|піднялась|"
+                 r"(?:вищ\w+|більш\w+)\s+(?:за|від|ніж)\s+(?:середн\w+|норм\w+|тижнев\w+))", re.I)
+_TOL = 0.03          # менше 3% від середнього — не вважаємо напрямком
+
+
+def direction_error(text, a=None):
+    """'' якщо ок. Ловить «HRV впав до 60 (сер. 53)» — коли 60 > 53, тобто виріс."""
+    try:
+        if not text:
+            return ""
+        a = a or _analytics()
+        for sent in _sentences(text):
+            low = sent.lower()
+            down, up = bool(_DOWN.search(sent)), bool(_UP.search(sent))
+            if down == up:
+                continue                       # нема напрямку або обидва — не чіпаємо
+            for key, pats in METRICS.items():
+                if not any(re.search(p, low) for p in pats):
+                    continue
+                m = a.get(key) or {}
+                last, avg = m.get("last"), m.get("avg7")
+                if last is None or not avg or m.get("last_day") != a.get("today"):
+                    continue
+                rel = (float(last) - float(avg)) / abs(float(avg))
+                if down and rel > _TOL:
+                    return (f"{_LABEL[key]}: текст каже «впав/знизився», а {last} вище за середнє 7 днів {round(avg, 1)}")
+                if up and rel < -_TOL:
+                    return (f"{_LABEL[key]}: текст каже «зріс/вищий», а {last} нижче за середнє 7 днів {round(avg, 1)}")
+    except Exception:
+        pass
+    return ""
+
+
+def any_error(text, a=None):
+    """Єдина перевірка перед відправкою: застарілість + напрямок."""
+    a = a or _safe_analytics()
+    return contradiction(text, a) or direction_error(text, a)
+
+
+def _safe_analytics():
+    try:
+        return _analytics()
+    except Exception:
+        return {}
+
+
 def correction_hint(reason):
-    return ("ВИПРАВЛЕННЯ: у попередній версії ти написав, що показник «ще не приходив/застарілий». "
-            "Це НЕПРАВДА: " + reason + ". Використовуй ці числа як поточні й НЕ згадуй "
-            "відсутність даних.")
+    return ("ВИПРАВЛЕННЯ: попередня версія містила неправду про дані: " + reason +
+            ". Перепиши, звіряючись із числами в блоці ДАНІ (порівнюй поточне з сер.7д акуратно: "
+            "вище середнього = зросло, нижче = впало). Не згадуй відсутність даних.")
 
 
 def scrub_prompt(text):

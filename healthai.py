@@ -1154,12 +1154,12 @@ def hourly_checkin(send: bool = True) -> str:
     # перегенерація з виправленням; не вийшло — мовчимо (краще нічого, ніж неправда).
     try:
         import fresh_guard as _fg
-        _why = _fg.contradiction(tip, a)
+        _why = _fg.any_error(tip, a)
         if _why:
             K.log(TAG, "hourly: " + _why + " — перегенерація")
             tip = (K.gemini_text(prompt + "\n\n" + _fg.correction_hint(_why),
                                  max_tokens=320, temperature=0.6, tag=TAG) or "").strip()
-            if not tip or _fg.contradiction(tip, a):
+            if not tip or _fg.any_error(tip, a):
                 K.log(TAG, "hourly: лишилась неправда про дані — не надсилаю")
                 return ""
     except Exception as _e_fg:
