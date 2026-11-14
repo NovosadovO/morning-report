@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:07:07.150294+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T22:07:08.110450+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14487,6 +14481,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-14T10:30:29.041194+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути листа від Garmin",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-14"
