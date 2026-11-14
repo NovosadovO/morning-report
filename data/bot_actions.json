@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, помітив, що вчора (03.11) ти не використав спрей для",
-      "detail": "Календар на 7 днів: 04.11: 17:10 💈 Спрей для волосся ❌",
-      "module": "selfact",
-      "ts": "2026-11-04T11:52:38"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 20.11 зазначено: '🔔 Лист від Maroš Sivák потребує відповіді'. Також у списку 'ЩО БОТ УЖЕ ЗРОБИВ' є кілька сповіщень про необхідність відповісти на цей лист.",
       "module": "selfact",
       "ts": "2026-11-14T21:11:04"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-11-14T21:21:15"
     }
   ]
 }
