@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:01:58.674510",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80646"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80646"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80646"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80646"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80646"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80646"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-14T03:02:00.441238",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-11-14T03:09:32.822280",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Оплата послуг Garmin — невдача</b>\n📆 до <b>2026-11-15</b>\n🏢 Garmin\n\n➡️ Оновити платіжну інформацію для вашого облікового запису Garmin.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T03:09:33.641863",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Оплата послуг Garmin — невдача\n📆 до 2026-11-15\n🏢 Garmin\n\n➡️ Оновити платіжну інформацію для вашого облікового запису Garmin.",
       "keyboard": null
     }
   ]
