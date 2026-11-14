@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:06:53.702214+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_92ffe3e8c7"
-    },
-    {
       "ts": "2026-09-02T22:06:53.702477+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14473,6 +14467,16 @@
       "answer": "Розбір астрологічного транзиту",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-14T07:30:17.252402+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Розбір транзитної карти",
+      "extra": {
+        "kind": "calendar",
         "date": "2026-11-14"
       }
     }
