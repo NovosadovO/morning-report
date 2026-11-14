@@ -6239,6 +6239,27 @@ def _route_callback(cb, confirmed: bool = False):
         except Exception as _e_gicb:
             send(chat_id, f"⚠️ garmin_insight: {str(_e_gicb)[:200]}")
         return
+    # ── astro_view / garmin_weekly: кнопки під картою транзитів і тижневим Garmin ─
+    if data.startswith("av_") or data.startswith("gw_"):
+        try:
+            if data.startswith("av_"):
+                import astro_view as _mod_cb
+            else:
+                import garmin_weekly as _mod_cb
+            _r_cb = _mod_cb.handle(data)
+            try:
+                api("editMessageReplyMarkup", {"chat_id": chat_id,
+                    "message_id": cb["message"]["message_id"],
+                    "reply_markup": {"inline_keyboard": []}})
+            except Exception:
+                pass
+            if _r_cb.get("html"):
+                send(chat_id, str(_r_cb["html"])[:3800])
+            else:
+                send(chat_id, ("✅ " if _r_cb.get("ok") else "⚠️ ") + str(_r_cb.get("text", ""))[:200])
+        except Exception as _e_avcb:
+            send(chat_id, f"⚠️ {data[:2]}: {str(_e_avcb)[:200]}")
+        return
     # ── hcoach: кнопки під звітами AI-коуча 2.0 ───────────────────────────
     if data.startswith("hc_"):
         try:

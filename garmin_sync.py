@@ -281,14 +281,14 @@ _RUN_HABIT_TYPES = ("Run", "TrailRun", "VirtualRun")
 
 _EXTRA_KEYS = (
     # поле у нашому записі -> ключі Garmin (перший непорожній)
-    ("max_hr", ("maxHR",)),
+    ("max_hr", ("maxHR", "maxHr")),
     ("aerobic_te", ("aerobicTrainingEffect",)),
     ("anaerobic_te", ("anaerobicTrainingEffect",)),
-    ("average_cadence", ("averageRunningCadenceInStepsPerMinute",)),
+    ("average_cadence", ("averageRunningCadenceInStepsPerMinute", "avgDoubleCadence")),
     ("calories", ("calories",)),
     ("training_load", ("activityTrainingLoad",)),
     ("vo2max", ("vO2MaxValue",)),
-    ("average_speed", ("averageSpeed",)),
+    ("average_speed", ("averageSpeed", "avgSpeed")),
     ("stride_m", ("avgStrideLength",)),
     ("ground_contact_ms", ("avgGroundContactTime",)),
     ("vert_osc_cm", ("avgVerticalOscillation",)),

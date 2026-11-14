@@ -4770,6 +4770,11 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             try:
                 import astro_delta as _ad2
                 if transit_raw_ad:
+                    try:
+                        import astro_view as _av_cap     # що нове — ДО mark()
+                        _av_cap.capture(transit_raw_ad)
+                    except Exception as _e_avc:
+                        print(f"[astro_ai] astro_view capture skipped: {_e_avc}", flush=True)
                     _ad2.mark(transit_raw_ad)
             except Exception as _e_ad2:
                 print(f"[astro_ai] delta mark skipped: {_e_ad2}", flush=True)
@@ -6679,6 +6684,12 @@ def main():
         for _ci, _chunk_text in enumerate(_astro_chunks):
             send_telegram(_chunk_text)
             _time_main.sleep(0.6)
+        # Карта транзитів + кнопки «який аспект розібрати» (лише коли є НОВЕ)
+        try:
+            import astro_view as _av_send
+            _av_send.send_after_report()
+        except Exception as _e_avs:
+            print(f"[astro_view] skipped: {_e_avs}", flush=True)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 

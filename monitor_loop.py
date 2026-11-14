@@ -1348,6 +1348,13 @@ def run_assistant_watcher():
                     _wh.record("run_insight", "skipped", "поза вікном 7–22 год")
             except Exception as _e_ri:
                 print(f"[run_insight] watcher error: {_e_ri}", flush=True)
+            # Тижневе Garmin-зведення: неділя з 18:00 (або понеділок до 13:00 як наздоган).
+            try:
+                import garmin_weekly as _gw_w
+                import watch_health as _wh
+                _wh.track("garmin_weekly", _gw_w.run)
+            except Exception as _e_gw:
+                print(f"[garmin_weekly] watcher error: {_e_gw}", flush=True)
             try:
                 import market_insight as _mi_w
                 import watch_health as _wh

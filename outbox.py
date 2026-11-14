@@ -166,12 +166,32 @@ def _is_user_context():
 
 # ─── ВИТЯГ ТЕКСТУ ІЗ ЗАПИТУ ──────────────────────────────────────────────────
 
-def _extract(url, data):
-    """-> (text, is_reply) для sendMessage; (None, False) для всього іншого."""
-    if "api.telegram.org" not in url or "/sendMessage" not in url:
+def _multipart_field(raw, name):
+    m = re.search(r'name="' + re.escape(name) + r'"\r?\n\r?\n(.*?)\r?\n--', raw, re.S)
+    return m.group(1) if m else ""
+
+
+def _extract(url, data, json_body=None):
+    """-> (text, is_reply) для sendMessage і підпису sendPhoto; (None, False) для решти.
+    json_body — тіло, якщо його вже розібрано (requests: json=/data=dict)."""
+    if "api.telegram.org" not in url:
+        return None, False
+    is_photo = "/sendPhoto" in url
+    if "/sendMessage" not in url and not is_photo:
         return None, False
     body = {}
+    if isinstance(json_body, dict):
+        text = json_body.get("caption" if is_photo else "text")
+        if not text:
+            return None, False
+        return str(text), bool(json_body.get("reply_to_message_id"))
     try:
+        if is_photo and isinstance(data, (bytes, bytearray)) and data[:2] == b"--":
+            raw = bytes(data).decode("utf-8", "ignore")
+            cap = _multipart_field(raw, "caption")
+            if not cap:
+                return None, False
+            return cap, bool(_multipart_field(raw, "reply_to_message_id"))
         if isinstance(data, (bytes, bytearray)) and data:
             raw = bytes(data).decode("utf-8", "ignore")
             if raw.lstrip().startswith("{"):
@@ -182,7 +202,7 @@ def _extract(url, data):
             body = {k: v[0] for k, v in urllib.parse.parse_qs(url.split("?", 1)[1]).items()}
     except Exception:
         return None, False
-    text = body.get("text")
+    text = body.get("caption" if is_photo else "text")
     if not text:
         return None, False
     return str(text), bool(body.get("reply_to_message_id"))
@@ -319,9 +339,9 @@ def _record(text):
     _state["dirty"] = True
 
 
-def check_request(url, data):
+def check_request(url, data, json_body=None):
     """True -> повідомлення треба проковтнути."""
-    text, is_reply = _extract(url, data)
+    text, is_reply = _extract(url, data, json_body)
     if text is None:
         return False
     if is_reply or _is_user_context():
@@ -426,7 +446,43 @@ def _patched(url, data=None, *a, **k):
     return _orig_urlopen[0](url, data, *a, **k)
 
 
+_orig_rq = [None]
+
+
+def _patched_requests(self, method, url, *a, **k):
+    """Той самий фільтр для модулів, що шлють у Telegram через requests
+    (garmin_insight, run_insight та ін. — urlopen-хук їх не бачив)."""
+    try:
+        if str(method).upper() == "POST" and "api.telegram.org" in str(url):
+            jb = k.get("json") if isinstance(k.get("json"), dict) else None
+            if jb is None and isinstance(k.get("data"), dict):
+                jb = k.get("data")
+            if check_request(str(url), None, jb if jb is not None else {}):
+                import requests as _rq
+                resp = _rq.Response()
+                resp.status_code = 200
+                resp._content = json.dumps({"ok": True, "result": {"message_id": 0}}).encode()
+                resp.url = str(url)
+                return resp
+    except Exception as e:
+        _log("requests hook error (fail-open): " + str(e))
+    return _orig_rq[0](self, method, url, *a, **k)
+
+
+def _install_requests():
+    try:
+        import requests
+        if _orig_rq[0] is None:
+            _orig_rq[0] = requests.sessions.Session.request
+            requests.sessions.Session.request = _patched_requests
+            return True
+    except Exception as e:
+        _log("requests недоступний: " + str(e))
+    return False
+
+
 def install():
+    _install_requests()
     if _orig_urlopen[0] is not None:
         return False
     _orig_urlopen[0] = urllib.request.urlopen
