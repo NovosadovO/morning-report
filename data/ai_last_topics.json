@@ -1,4 +1,14 @@
 {
+  "bills|2026-11-14t09_41_20_757466": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"82285\",     \"vendor\": \"KOOPERATIVA poisťovňa\",     \"amount\": \"67.22\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\"",
+    "ts": "2026-11-14T09:41:20.757466"
+  },
+  "openloop_promises|2026-11-14t09_37_56_263985": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"записати на завтра біг на 9:00\",     \"to\": null,     \"date\": null   } ] ```",
+    "ts": "2026-11-14T09:37:56.263985"
+  },
   "selfact|2026-11-14t09_34_37_273191": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
     "ts": "2026-11-14T05:40:35.285384"
-  },
-  "action_detect|2026-11-14t05_31_30_729796": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Ринок криптовалют демонструє значне падіння, що потре",
-    "ts": "2026-11-14T05:31:30.729796"
-  },
-  "msg_crypto_move_truthfix|2026-11-14t05_31_20_090600": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Ринок криптовалют демонструє значне падіння, що потребує уваги. Станом на 13 листопада 2026 року, загальне падіння ринку становило 5.83%, а його капіталізація з",
-    "ts": "2026-11-14T05:31:20.090600"
   }
 }
