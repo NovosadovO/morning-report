@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T03:01:33.588827+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути звіт Avalanche August 2026 Recap",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-03T03:01:37.922489+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14491,6 +14481,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_6b4924134c"
+    },
+    {
+      "ts": "2026-11-15T00:14:14.542518+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_3f57b4759b"
     }
   ]
 }
