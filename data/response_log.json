@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T00:01:29.353920+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Ознайомитись з AVALANCHE AUGUST 2026 RECAP",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-03"
-      }
-    },
-    {
       "ts": "2026-09-03T00:01:36.699530+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Запланувати активність",
@@ -14503,6 +14493,12 @@
         "kind": "reply",
         "date": "2026-11-15"
       }
+    },
+    {
+      "ts": "2026-11-15T00:13:46.700924+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
