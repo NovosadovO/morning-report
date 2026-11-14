@@ -1,4 +1,9 @@
 {
+  "people|2026-11-14t16_17_59_398727": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
+    "ts": "2026-11-14T16:17:59.398727"
+  },
   "selfact|2026-11-14t16_17_42_566599": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти твоє страхування Koop",
     "ts": "2026-11-14T11:22:13.980572"
-  },
-  "action_detect|2026-11-14t11_11_11_273398": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкрет",
-    "ts": "2026-11-14T11:11:11.273398"
   }
 }
