@@ -513,12 +513,14 @@
     "name": "Руся Мем",
     "relation": "особисте",
     "vip": false,
-    "topics": [],
+    "topics": [
+      "Без теми"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Відповісти на лист від Руся Мем.",
-    "ping_in_days": 0,
+    "next_step": "Переглянути повідомлення від Русі Мем.",
+    "ping_in_days": 13,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-10-31",
