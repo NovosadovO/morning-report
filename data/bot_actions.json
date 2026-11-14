@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Важливе сповіщення про страхування",
-      "detail": "Календар містить подію '04.11: 08:00 🔔 Перевірити страховку авто' та нагадування '05.11: 10:00 Нагадування: через 4 дні страховка на авто' і '08.11: 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень'.",
-      "module": "selfact",
-      "ts": "2026-11-04T04:20:35"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, Adecco наймає на посаду Business Operations Coordinat",
       "detail": "Олеже, Adecco наймає на посаду Business Operations Coordinator у Празі. Можливо, тобі буде цікаво.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-14T18:21:39"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-11-14T18:51:03"
     }
   ]
 }
