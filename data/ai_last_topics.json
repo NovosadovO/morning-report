@@ -1,4 +1,34 @@
 {
+  "healthai|2026-11-14t18_05_03_684463": {
+    "topic": "healthai",
+    "gist": "👟 Кроки: 13317 за сьогодні, але тренд за останні 14 днів падає (-2561.3). Це може впливати на відновлення, особливо враховуючи, що HRV також знижується.  Пам'ят",
+    "ts": "2026-11-14T18:05:03.684463"
+  },
+  "action_detect|2026-11-14t18_01_54_539082": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-11-15\",   \"action_time\": null,   \"action_summary\": \"Оплатити ",
+    "ts": "2026-11-14T18:01:54.539082"
+  },
+  "action_detect|2026-11-14t18_01_43_453453": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-14T18:01:43.453453"
+  },
+  "action_detect|2026-11-14t18_01_32_463679": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-14T18:01:32.463679"
+  },
+  "astro_ai|2026-11-14t18_01_23_082467": {
+    "topic": "astro_ai",
+    "gist": "Сьогодні, 14 листопада 2026 року, твоя фінансова сфера та сфера самооцінки відчувають сильний вплив. Транзитний Марс перебуває у твоєму II домі, що означає енер",
+    "ts": "2026-11-14T18:01:23.082467"
+  },
+  "action_detect|2026-11-14t18_00_36_450752": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-14T18:00:36.450752"
+  },
   "action_detect|2026-11-14t18_00_12_529077": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це рекомендації щодо вечері для тих, хто практикує ін",
@@ -268,35 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-11-14T13:10:25.900828"
-  },
-  "healthai|2026-11-14t13_06_04_448610": {
-    "topic": "healthai",
-    "gist": "⚡️ Сон за сьогодні ще не надходив, останнє відоме — 2026-11-13, 1 день тому.",
-    "ts": "2026-11-14T13:06:04.448610"
-  },
-  "action_detect|2026-11-14t13_00_35_726239": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-14T13:00:35.726239"
-  },
-  "selfact|2026-11-14t12_55_09_934356": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
-    "ts": "2026-11-14T12:55:09.934356"
-  },
-  "selfact|2026-11-14t12_40_06_818166": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починається термін дії страхування ",
-    "ts": "2026-11-14T12:40:06.818166"
-  },
-  "openloop_promises|2026-11-14t12_38_30_805999": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": \"2023-11-14\"   },   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\"",
-    "ts": "2026-11-14T12:38:30.805999"
-  },
-  "selfact|2026-11-14t12_24_31_647909": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти страховка Kooperativa",
-    "ts": "2026-11-14T12:24:31.647909"
   }
 }
