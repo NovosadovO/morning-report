@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:06:34.474355+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Переглянути Підготовку до відпустки",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-02T22:06:39.231579+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
@@ -14466,6 +14460,16 @@
       "extra": {
         "kind": "calendar",
         "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-14T04:30:28.140338+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплата квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-15"
       }
     }
   ]
