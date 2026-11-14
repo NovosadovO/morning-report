@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:01:57.024545",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Avízo na zaplatenie poistného PZ 6641172176 – povinného zmlu</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80711"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80711"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80711"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80711"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80711"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80711"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-14T03:01:58.674510",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Faktúra od Mariia Ovsiienko</b>\n👤 Mariia Ovsiienko &lt;masyastadnikova@gmail.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-11-14T03:09:29.896618",
       "kind": "bills",
       "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (6 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 Garmin\n💰 8.99 EUR\n📆 до 2026-11-08\n\nНесплачений рахунок за послуги Garmin. Потрібно оновити платіжну інформацію, щоб уникнути скасування підписки.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T03:09:32.822280",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Оплата послуг Garmin — невдача</b>\n📆 до <b>2026-11-15</b>\n🏢 Garmin\n\n➡️ Оновити платіжну інформацію для вашого облікового запису Garmin.",
       "keyboard": null
     }
   ]
