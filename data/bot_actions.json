@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, Adecco наймає на посаду Business Operations Coordinat",
-      "detail": "Олеже, Adecco наймає на посаду Business Operations Coordinator у Празі. Можливо, тобі буде цікаво.",
-      "module": "selfact",
-      "ts": "2026-11-04T05:22:53"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, надійшов лист про можливу посаду Senior Digital Proje",
       "detail": "Отримано лист від Сповіщення про вакансії LinkedIn (uid=81915) про вакансію Senior Digital Project Manager в Caterpillar Inc. в Кошице.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-14T18:51:03"
+    },
+    {
+      "kind": "notify",
+      "what": "У тебе є невиконані зобов'язання щодо оплати страхування Koo",
+      "detail": "Дані показують, що страхування Kooperativa має бути оплачене завтра, а оплата квартири також запланована на завтра. Ці дії є критично важливими і потребують уваги.",
+      "module": "selfact",
+      "ts": "2026-11-14T18:52:25"
     }
   ]
 }
