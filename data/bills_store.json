@@ -3014,5 +3014,18 @@
     "note": "Рахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
     "uid": "81722",
     "ts": "2026-11-14T02:09:21.138347+00:00"
+  },
+  "c993d2ce80": {
+    "bid": "garmin_services|8_99|2026-11-06",
+    "vendor": "Garmin Services",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-11-06",
+    "invoice_no": "",
+    "sender": "Garmin <garminservices@billing.garmin.com>",
+    "subject": "Your Garmin Services Bill",
+    "note": "Це ваш рахунок за послуги Garmin, оплата буде здійснена 6 листопада.",
+    "uid": "82012",
+    "ts": "2026-11-14T02:09:24.308019+00:00"
   }
 }
