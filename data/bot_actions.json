@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Сповіщення про вхід в акаунт YouTube",
-      "detail": "Свіжі листи: uid=81913 | від \"Youtube\" <mortonfinancial@icims.com> | Sign-in notification",
-      "module": "selfact",
-      "ts": "2026-11-04T04:04:53"
-    },
-    {
-      "kind": "notify",
       "what": "Наближається рання зміна",
       "detail": "Поточний час 04:20, а рання зміна починається о 06:00.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-14T17:51:17"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-14T18:05:12"
     }
   ]
 }
