@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-14t06_00_12_348975": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-14\",     \"time\": \"10:00\",     \"message\": \"Олеже, сьо",
+    "ts": "2026-11-14T06:00:12.348975"
+  },
   "selfact|2026-11-14t05_55_38_526969": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра починається термін дії страхування Kooperat",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страхування Kooperativa\",   \"action_date\": \"2023-11-14\",   \"action_time\": null,   \"action_summa",
     "ts": "2026-11-13T21:01:59.942528"
-  },
-  "briefing_truthfix|2026-11-13t21_01_50_737905": {
-    "topic": "briefing/truthfix",
-    "gist": "Сьогодні, 13 листопада, дані зі зрізу здоров'я свідчать про 7647 кроків, що є найнижчим показником за останні 14 днів. Зафіксована вага — 84.9 кг, ці дані були ",
-    "ts": "2026-11-13T21:01:50.737905"
   }
 }
