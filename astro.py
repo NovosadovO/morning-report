@@ -1292,11 +1292,22 @@ def get_astro_alerts():
             current_aspects.add(f"{p1}_{asp}_{p2}")
 
         # Завантажуємо попередній стан
+        # Стан — у гілці data (ai_kit): локальний файл гине при кожному
+        # деплої, і тоді ВСІ поточні аспекти виглядали «новими» (14.11: двічі
+        # повний АСТРО-АЛЕРТ після редеплою).
+        old_data = {}
         try:
-            with open(STATE_FILE, "r", encoding="utf-8") as f:
-                old_data = _json.load(f)
+            import ai_kit as _KS
+            old_data = _KS.load("astro_last_aspects.json", default={}) or {}
         except Exception:
             old_data = {}
+        if not old_data:
+            try:
+                with open(STATE_FILE, "r", encoding="utf-8") as f:
+                    old_data = _json.load(f)
+            except Exception:
+                old_data = {}
+        _first_run = not old_data
 
         old_state   = old_data.get("planets", {})
         old_aspects = set(old_data.get("aspects", []))
@@ -1321,6 +1332,8 @@ def get_astro_alerts():
 
         # 2. Нові аспекти (яких не було)
         new_aspects = current_aspects - old_aspects
+        if _first_run:      # нема попереднього стану — лише запам'ятати
+            new_aspects = set()
         if new_aspects:
             # Знаходимо деталі нових аспектів
             for p1, p2, asp, emoji, exact in t_aspects:
@@ -1338,10 +1351,20 @@ def get_astro_alerts():
             "aspects": list(current_aspects),
             "updated": now_utc.isoformat(),
         }
-        with open(STATE_FILE, "w", encoding="utf-8") as f:
-            _json.dump(new_data, f, ensure_ascii=False, indent=2)
+        try:
+            import ai_kit as _KS2
+            _KS2.save("astro_last_aspects.json", new_data)
+        except Exception as _e_ks:
+            print(f"get_astro_alerts: ai_kit.save: {_e_ks}", flush=True)
+        try:
+            with open(STATE_FILE, "w", encoding="utf-8") as f:
+                _json.dump(new_data, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
 
-        return alerts
+        if _first_run:
+            return []
+        return alerts[:4]
 
     except Exception as e:
         print(f"get_astro_alerts error: {e}", flush=True)
