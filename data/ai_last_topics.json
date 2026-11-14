@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t09_49_39_557920": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa (€67,22). Термін оп",
+    "ts": "2026-11-14T09:49:39.557920"
+  },
   "bills|2026-11-14t09_41_20_757466": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"82285\",     \"vendor\": \"KOOPERATIVA poisťovňa\",     \"amount\": \"67.22\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\"",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"82285\",     \"vendor\": \"KOOPERATIVA poisťovňa\",     \"amount\": \"67.22\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\"",
     "ts": "2026-11-14T05:41:11.003405"
-  },
-  "selfact|2026-11-14t05_40_35_285384": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
-    "ts": "2026-11-14T05:40:35.285384"
   }
 }
