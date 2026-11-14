@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-14t06_11_27_874644": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплати страхування Kooperativa (€67,22). Термін оплати — завтра.\",    ",
+    "ts": "2026-11-14T06:11:27.874644"
+  },
+  "action_detect|2026-11-14t06_00_52_471517": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати біг на завтра\", \"action_date\": \"2023-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Записати біг на 14",
+    "ts": "2026-11-14T06:00:52.471517"
+  },
+  "action_detect|2026-11-14t06_00_41_485032": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-14T06:00:41.485032"
+  },
   "proactive_actions|2026-11-14t06_00_12_348975": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-14\",     \"time\": \"10:00\",     \"message\": \"Олеже, сьо",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "⚡️ Олеже, завтра на тебе чекає нічна зміна з 18:00, тож сьогодні варто було б подбати про відновлення. Твоє останнє вимірювання ваги – 84.9 кг (2 дні тому, 11.1",
     "ts": "2026-11-13T21:05:51.489041"
-  },
-  "action_detect|2026-11-13t21_02_22_687582": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-13T21:02:22.687582"
-  },
-  "action_detect|2026-11-13t21_02_10_683628": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-13T21:02:10.683628"
-  },
-  "action_detect|2026-11-13t21_01_59_942528": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страхування Kooperativa\",   \"action_date\": \"2023-11-14\",   \"action_time\": null,   \"action_summa",
-    "ts": "2026-11-13T21:01:59.942528"
   }
 }
