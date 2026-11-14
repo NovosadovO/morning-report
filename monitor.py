@@ -1866,6 +1866,22 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _e_nc:
         print("[nocache] skip: " + str(_e_nc), flush=True)
 
+    # ─── «ТІЛЬКИ СВІЖІ ДАНІ»: прибрати з промпту власні старі помилки AI ──────
+    # (14.11: пам'ять реакцій несла «сон ще не приходив» — модель повторювала це
+    # годинами, хоча сон уже був у даних.)
+    try:
+        import json as _js_fg
+        import fresh_guard as _fg
+        _b_fg = _js_fg.loads(body_bytes.decode())
+        _pp_fg = _b_fg["contents"][0]["parts"][0]["text"]
+        _new_fg = _fg.scrub_prompt(_pp_fg)
+        if _new_fg != _pp_fg:
+            _b_fg["contents"][0]["parts"][0]["text"] = _new_fg
+            body_bytes = _js_fg.dumps(_b_fg).encode()
+            print(f"[fresh_guard] прибрано {len(_pp_fg) - len(_new_fg)} симв. застарілих «спогадів» → {tag}", flush=True)
+    except Exception as _e_fg:
+        print("[fresh_guard] skip: " + str(_e_fg), flush=True)
+
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
     import re as _re0
     _cur_m = None

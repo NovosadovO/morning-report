@@ -77,14 +77,10 @@ check("сон з поміткою '1 дн. тому'", "1 дн. тому" in fb)
 check("кроки НЕ позначені як старі (вони за сьогодні)",
       "Кроки: 12035" in fb and "Кроки: 12035 [!!СТАРІ" not in fb)
 
-print("\n3. anomalies() — окрема картка sleep_field_stale, steps БЕЗ такої картки")
+print("\n3. anomalies() — НЕ просить Олега слати дані (14.11: Garmin синхронізується сам)")
 anomalies = healthai.anomalies(a)
 keys = [k for k, _ in anomalies]
-check("sleep_field_stale присутній", "sleep_field_stale" in keys, str(keys))
-check("steps_field_stale ВІДСУТНІЙ (кроки свіжі)", "steps_field_stale" not in keys)
-sleep_line = next((l for k, l in anomalies if k == "sleep_field_stale"), "")
-check("текст картки згадує дату 2026-09-21 і що сьогоднішній сон ще не приходив",
-      "2026-09-21" in sleep_line and "1 дн" in sleep_line, sleep_line)
+check("жодного *_field_stale (прохання «скинь сон»)", not any(k.endswith("_field_stale") for k in keys), str(keys))
 
 print("\n4. Коли сьогодні ВСІ показники свіжі — жодних *_field_stale і жодних маркерів")
 _HEALTH_FIXTURE_FRESH = {

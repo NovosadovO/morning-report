@@ -325,6 +325,12 @@ def check_request(url, data):
         return False
     if is_reply or _is_user_context():
         return False          # відповідь на дію Олега
+    fg_why = ""
+    try:
+        import fresh_guard as _fg
+        fg_why = _fg.contradiction(_clean(text))
+    except Exception:
+        fg_why = ""
     with _lock:
         d = _load()
         why = ""
@@ -334,6 +340,13 @@ def check_request(url, data):
                 why = "службова преамбула моделі («Нижче надано оновлену відповідь…»)"
         except Exception:
             pass
+        if not why and fg_why:
+            why = "застарілі/недостовірні дані: " + fg_why
+            try:
+                import watch_health as _wh
+                _wh.record("fresh_guard", "blocked", fg_why[:160])
+            except Exception:
+                pass
         if not why and not _is_urgent(text):
             why = (_answered_reason(text, d["qs"]) or _topic_reason(text, d["sent"])
                    or _dup_reason(text, d["sent"]))
