@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-14t18_00_12_529077": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це рекомендації щодо вечері для тих, хто практикує ін",
+    "ts": "2026-11-14T18:00:12.529077"
+  },
+  "selfact|2026-11-14t17_49_49_014583": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
+    "ts": "2026-11-14T17:49:49.014583"
+  },
   "bills|2026-11-14t17_48_15_492626": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти страховка Kooperativa",
     "ts": "2026-11-14T12:24:31.647909"
-  },
-  "email_ai_item|2026-11-14t12_14_37_542231": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії у Відні: \\\"Associate, Customer Support - Live chat\\\" та \\\"Lead, Markets Control & Analyti",
-    "ts": "2026-11-14T12:14:37.542231"
-  },
-  "selfact|2026-11-14t12_08_37_736658": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, потрібно оплатити страхування Koope",
-    "ts": "2026-11-14T12:08:37.736658"
   }
 }
