@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Потрібно перевірити страховку авто",
-      "detail": "Календар на 7 днів: 04.11: 06:00 Рання зміна; 08:00 🔔 Перевірити страховку авто, 05.11: 10:00 Нагадування: через 4 дні страховка на авто",
-      "module": "selfact",
-      "ts": "2026-11-03T13:56:52"
-    },
-    {
-      "kind": "notify",
       "what": "Наближається оплата страхування Kooperativa",
       "detail": "Календар на 7 днів: 08.11: 18:00 Нічна зміна; 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-14T12:13:57"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-11-14T12:43:15"
     }
   ]
 }
