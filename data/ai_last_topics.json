@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-14t13_10_25_900828": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-14T13:10:25.900828"
+  },
   "healthai|2026-11-14t13_06_04_448610": {
     "topic": "healthai",
     "gist": "⚡️ Сон за сьогодні ще не надходив, останнє відоме — 2026-11-13, 1 день тому.",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
     "ts": "2026-11-14T08:47:26.153378"
-  },
-  "action_detect|2026-11-14t08_31_59_550183": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата страхування Kooperativa\",   \"action_date\": null,   \"action_time\": \"10:00\",   \"action_summary\": ",
-    "ts": "2026-11-14T08:31:59.550183"
   }
 }
