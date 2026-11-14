@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:35:17.613119",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 77.21 $\n24г тому: 81.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T03:35:18.555645",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.2% за 24г\n\nЗараз: 77.21 $\n24г тому: 81.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82454"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-14T03:46:43.825897",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Potvrdenie transakcie (6641172176) – Platobná brána</b>\n👤 KOOPERATIVA poisťovňa, a.s. VIG&lt;info@koop.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82285"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82285"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82285"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82285"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82285"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82285"
             }
           ]
         ]
