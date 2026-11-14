@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-03T18:28:27"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "uid=82462 | від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> | Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI",
       "module": "selfact",
       "ts": "2026-11-14T14:59:47"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-14T15:05:49"
     }
   ]
 }
