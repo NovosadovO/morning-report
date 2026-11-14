@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-14T03:23:51.311562",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -5.1% за 24г</b>\n\nЗараз: 77.21 $\n24г тому: 81.33 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-14T03:23:52.211965",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.1% за 24г\n\nЗараз: 77.21 $\n24г тому: 81.33 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-14T03:31:17.026479",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Poďakovanie za úhradu poistného - povinného zmluvného poiste</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82462"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82462"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82462"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82462"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82462"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82462"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
