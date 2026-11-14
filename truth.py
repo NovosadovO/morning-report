@@ -183,6 +183,25 @@ _FIX_TMPL = (
 )
 
 
+_META_RE = re.compile(
+    r"^\s*(?:\W{0,3}\s*)?(?:нижче|ось|далі|наведено|надаю|виправлен\w+|оновлен\w+|"
+    r"перероблен\w+|скоригован\w+|here\s+is|below)\b[^\n]*"
+    r"(?:відповід|текст|версі|варіант|чернетк|answer|text|version|draft)[^\n]*\n+",
+    re.I)
+
+
+def strip_meta(t):
+    """14.11: у чат пішло «Нижче надано оновлену відповідь, яка відповідає наданим ДАНИМ…» —
+    модель-коректор додала пояснення, хоча просили лише текст. Зрізаємо такі преамбули."""
+    t = (t or "").strip()
+    for _ in range(2):
+        m = _META_RE.match(t + "\n")
+        if not m:
+            break
+        t = t[m.end():].strip()
+    return t
+
+
 def recheck(prompt, answer, issues, tag="gem"):
     """Один AI-прохід: модель сама виправляє те, що не тримається на даних."""
     try:
@@ -205,7 +224,7 @@ def recheck(prompt, answer, issues, tag="gem"):
                "gemini-2.5-flash:generateContent?key=" + key)
         resp = _m._gem_post(url, body, timeout=60, tag=tag + "/truthfix",
                             max_retries=2)
-        return (resp["candidates"][0]["content"]["parts"][0]["text"] or "").strip()
+        return strip_meta(resp["candidates"][0]["content"]["parts"][0]["text"] or "")
     except Exception as e:
         _log("recheck error: " + str(e))
         return ""

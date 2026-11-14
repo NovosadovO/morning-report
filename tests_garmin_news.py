@@ -17,8 +17,10 @@ ok(any("Сон" in n for n in news) and any("HRV" in n for n in news), "нови
 news2, st2 = N.detect({"sleep_total_min": 300, "hrv": 40, "steps": 1300}, health, st, T)
 ok(news2 == [], "той самий сон вдруге не повторюється")
 news3, st3 = N.detect({"steps": 5200}, health, st2, T)
-ok(any("5 000" in n for n in news3), "поріг 5000 кроків: " + str(news3))
-news4, _ = N.detect({"steps": 5300}, health, st3, T)
+ok(news3 == [], "5000 кроків — вже не новина: " + str(news3))
+news3, st3 = N.detect({"steps": 10200}, health, st3, T)
+ok(any("10 000" in n for n in news3), "поріг 10000 кроків: " + str(news3))
+news4, _ = N.detect({"steps": 10300}, health, st3, T)
 ok(news4 == [], "без нового порогу тихо")
 news5, _ = N.detect({}, health, {}, T, backfilled=["2026-11-09", "2026-11-10"])
 ok(any("09.11" in n for n in news5), "backfilled: " + str(news5))
@@ -63,6 +65,15 @@ ok(qwsync.mirror_weight({"2026-11-08": {"weight_kg": 84}}) == 0 and not wrote, "
 storage._load_github = lambda f: {"2026-11-01": 80}
 ok(qwsync.mirror_weight({"2026-11-08": {"weight_kg": 84}}) == 0 and not wrote, "підозріло малий файл — не пишемо")
 
+# ── truth.strip_meta + healthai sleep fallback
+import truth
+ok(truth.strip_meta("Нижче надано оновлену відповідь, яка відповідає наданим ДАНИМ:\n\nБіг 5 км") == "Біг 5 км", "strip_meta")
+ok(truth.strip_meta("Сон 7 год") == "Сон 7 год", "strip_meta не чіпає нормальне")
+import healthai
+healthai._now = lambda: __import__("datetime").datetime(2026, 11, 14, 12, 0)
+ser = healthai._series({"2026-11-14": {"sleep_total_min": 631}}, "sleep_hours", 7)
+ok(ser == [("2026-11-14", 10.52)], "sleep_hours з sleep_total_min: " + str(ser))
+
 # ── md_to_html
 h = K.md_to_html("### Заголовок\n**жирний** текст\n---\n* пункт")
 ok("<b>жирний</b>" in h and "###" not in h and "---" not in h and "• пункт" in h, "md_to_html: " + repr(h))
@@ -70,7 +81,7 @@ ok("<b>жирний</b>" in h and "###" not in h and "---" not in h and "• п�
 # ── briefing_ctx
 import datetime
 p = B.build_prompt(datetime.datetime(2026, 11, 13, 9, 0), "x", "REP", "", "SIG", ["старий вступ"], "sd")
-ok("500" not in p and "старий вступ" in p and "SIG" in p and "не вигадуй" in p, "промпт брифінгу")
+ok("500" not in p and "Сьогодні, …" in p and "старий вступ" in p and "SIG" in p and "не вигадуй" in p, "промпт брифінгу")
 
 print("\nFAILS:", fails if fails else "none")
 sys.exit(1 if fails else 0)

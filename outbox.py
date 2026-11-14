@@ -328,7 +328,13 @@ def check_request(url, data):
     with _lock:
         d = _load()
         why = ""
-        if not _is_urgent(text):
+        try:
+            import truth as _tr
+            if _tr._META_RE.match(_clean(text) + "\n") and len(_clean(text)) < 400:
+                why = "службова преамбула моделі («Нижче надано оновлену відповідь…»)"
+        except Exception:
+            pass
+        if not why and not _is_urgent(text):
             why = (_answered_reason(text, d["qs"]) or _topic_reason(text, d["sent"])
                    or _dup_reason(text, d["sent"]))
         if why:

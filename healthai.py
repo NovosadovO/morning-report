@@ -206,6 +206,8 @@ def _series(health: dict, field: str, days: int):
         if not isinstance(rec, dict):
             continue
         v = rec.get(field)
+        if v in (None, "", 0) and field == "sleep_hours" and rec.get("sleep_total_min"):
+            v = round(float(rec["sleep_total_min"]) / 60.0, 2)   # 14.11: «сон не приходив», хоча total_min був
         if v in (None, "", 0):
             continue
         try:
@@ -649,7 +651,10 @@ def garmin_periodic_notify() -> bool:
         return False
 
     ai_txt = ""
+    only_steps = all(n.startswith("👟") for n in news)     # поріг кроків не варте окремого AI-коментаря
     try:
+        if only_steps:
+            raise StopIteration
         try:
             shift_line = "Зміна сьогодні: " + _SHIFT_UA.get(_shift_for(0), "невідомо") + "."
         except Exception:
@@ -662,7 +667,10 @@ def garmin_periodic_notify() -> bool:
         prev = "; ".join(st2.get("prev_ai") or []) or "—"
         facts = "\n".join(re.sub(r"<[^>]+>", "", n) for n in news)
         prompt = (
-            f"{_STYLE}\n\n{shift_line} Інших змін чи подій не вигадуй.\n\n"
+            "Ти аналітик здоров'я Олега (37 р., Кошице, зміни 06-18 / 18-06, ціль 75 кг, біг). "
+            "Українською, сухо і по справі, лише факти з даних нижче; нічого не вигадуй "
+            "(настрій, енергію, стрес). Не проси надсилати дані, не хвали («чудово», «гарний показник»).\n\n"
+            f"{shift_line} Інших змін чи подій не вигадуй.\n\n"
             f"ЩО НОВОГО В GARMIN (саме це, з порівнянням з його нормою):\n{facts}\n\n"
             f"СВІЖИЙ ЗНІМОК УСІХ ПОКАЗНИКІВ (для зв'язків; застаріле не подавай як поточне):\n{fresh}\n\n"
             f"ТВОЇ ПОПЕРЕДНІ ПОРАДИ (НЕ повторюй ні зміст, ні формулювання): {prev}\n\n"
@@ -672,6 +680,8 @@ def garmin_periodic_notify() -> bool:
             "«пий воду»/«більше рухайся», без вступу. Різні емодзі на початку рядків."
         )
         ai_txt = (K.gemini_text(prompt, max_tokens=500, temperature=0.8, tag=TAG) or "").strip()
+    except StopIteration:
+        pass
     except Exception as e:
         K.log(TAG, f"garmin_periodic_notify ai error: {e}")
 

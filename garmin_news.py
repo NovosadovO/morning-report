@@ -18,7 +18,7 @@ import statistics
 import ai_kit as K
 
 STATE_FILE = "garmin_news_state.json"
-STEP_MILESTONES = (3000, 5000, 8000, 10000, 15000, 20000)
+STEP_MILESTONES = (10000, 15000, 20000)   # дрібніші пороги — шум (14.11: картка на 5000 і на 8000)
 BB_JUMP = 20
 STRESS_JUMP = 10
 
