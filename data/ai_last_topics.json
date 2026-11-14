@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t11_22_13_980572": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що завтра, 15.11, починає діяти твоє страхування Koop",
+    "ts": "2026-11-14T11:22:13.980572"
+  },
   "action_detect|2026-11-14t11_11_11_273398": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкрет",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa",
     "ts": "2026-11-14T07:13:24.461064"
-  },
-  "deadlines|2026-11-14t07_10_19_495903": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-14T07:10:19.495903"
   }
 }
