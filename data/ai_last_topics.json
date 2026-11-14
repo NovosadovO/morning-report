@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-14t23_08_32_173933": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист містить сповіщення про дві вакансії: \\\"Manažér/ka grantových programov - EEA Civil Society Fund Slovakia\\\" від Karpatská nadáci",
+    "ts": "2026-11-14T23:08:32.173933"
+  },
   "action_detect|2026-11-14t23_05_57_179478": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-14T18:00:36.450752"
-  },
-  "action_detect|2026-11-14t18_00_12_529077": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це рекомендації щодо вечері для тих, хто практикує ін",
-    "ts": "2026-11-14T18:00:12.529077"
   }
 }
