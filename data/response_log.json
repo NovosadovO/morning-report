@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:08:04.794363+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_97cf0d7d4e"
-    },
-    {
       "ts": "2026-09-02T22:08:17.256562+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити умови кредиту Temu",
@@ -14495,6 +14489,12 @@
       "category": "confirm",
       "question": "gate_pa_rem: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-14T14:25:39.640321+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_rem_61742c53d6"
     }
   ]
 }
