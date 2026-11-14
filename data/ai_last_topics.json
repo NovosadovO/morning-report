@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-15t00_00_12_382174": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити страхування Kooperativa\",     \"date\": \"2026-11-15\",     \"time\": \"\",     \"message\": \"Олеже, сьогодні",
+    "ts": "2026-11-15T00:00:12.382174"
+  },
   "bills|2026-11-14t23_52_56_607272": {
     "topic": "bills",
     "gist": "[{\"uid\":\"80646\",\"vendor\":\"Mariia Ovsiienko\",\"amount\":\"\",\"currency\":\"\",\"invoice_no\":\"20260164\",\"due\":\"\",\"already_paid\":false,\"note\":\"Рахунок від Mariia Ovsiienko",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії в Словаччині: SAP Administrator (Basis) в EY та (Junior) SAP HCM Payroll Consu",
     "ts": "2026-11-14T18:15:44.308905"
-  },
-  "selfact|2026-11-14t18_05_34_322065": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, нагадую, що завтра, 15.11, потрібно оплатити страхуванн",
-    "ts": "2026-11-14T18:05:34.322065"
   }
 }
