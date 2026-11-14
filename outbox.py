@@ -85,6 +85,23 @@ def _flush(force=False):
     try:
         import storage
         d = _state["data"]
+        # інші процеси (report2/defi/social) пишуть у той самий журнал — зливаємо, а не затираємо
+        try:
+            rem = storage.load(LOG_FILE, default={}) or {}
+            for k in ("sent", "qs", "drops"):
+                have = {json.dumps(x, sort_keys=True) for x in d[k]}
+                extra = [x for x in (rem.get(k) or []) if isinstance(x, dict)
+                         and json.dumps(x, sort_keys=True) not in have]
+                if extra:
+                    d[k] = sorted(d[k] + extra, key=lambda x: str(x.get("ts") or ""))
+            for day, st in (rem.get("stats") or {}).items():
+                if isinstance(st, dict):
+                    cur = d["stats"].setdefault(day, {})
+                    for kk, vv in st.items():
+                        if isinstance(vv, int) and vv > cur.get(kk, 0):
+                            cur[kk] = vv
+        except Exception as e:
+            _log("merge skipped: " + str(e))
         d["sent"] = d["sent"][-40:]
         d["qs"] = d["qs"][-40:]
         d["drops"] = d["drops"][-30:]
@@ -394,6 +411,11 @@ def install():
         return False
     _orig_urlopen[0] = urllib.request.urlopen
     urllib.request.urlopen = _patched
+    try:
+        import atexit
+        atexit.register(lambda: _flush(force=True))   # короткоживучі процеси не гублять журнал
+    except Exception:
+        pass
     _log("перехоплювач проактивних повідомлень увімкнено")
     return True
 

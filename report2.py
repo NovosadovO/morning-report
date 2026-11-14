@@ -346,4 +346,10 @@ def main():
 
 
 if __name__ == "__main__":
+    # окремий процес (subprocess із monitor_loop) — без цього фільтр дублів його не бачив
+    try:
+        import outbox as _outbox_sp
+        _outbox_sp.install()
+    except Exception as _e_ob:
+        print(f"[outbox] install skipped: {_e_ob}", flush=True)
     main()

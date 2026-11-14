@@ -52,8 +52,9 @@ METRICS = {
     "sleep_deep_min": ("Глибокий сон", "хв", -1),
     "sleep_rem_min":  ("REM-сон", "хв", -1),
     "steps":          ("Кроки", "", -1),
+    "body_battery":   ("Body Battery", "/100", -1),
 }
-_PARTIAL_TODAY = ("steps", "stress")      # сьогодні ще неповні — беремо вчора
+_PARTIAL_TODAY = ("steps", "stress", "body_battery")      # сьогодні ще неповні — беремо вчора
 
 
 def _log(m):
