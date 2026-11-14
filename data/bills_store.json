@@ -2962,5 +2962,18 @@
     "note": "Несплачений рахунок за послуги Garmin. Потрібно оновити платіжну інформацію, щоб уникнути скасування підписки.",
     "uid": "82132",
     "ts": "2026-11-14T01:09:40.827064+00:00"
+  },
+  "bb9fd9160a": {
+    "bid": "garmin_connect_|8_99|2026-11-05",
+    "vendor": "Garmin Connect+",
+    "amount": "8.99",
+    "currency": "EUR",
+    "due": "2026-11-05",
+    "invoice_no": "EUR4369771",
+    "sender": "Garmin <GarminServicesBilling@garmin.com>",
+    "subject": "Garmin Connect+ Subscription Confirmation",
+    "note": "Рахунок за місячну підписку Garmin Connect+, оплатити до 5 листопада.",
+    "uid": "80341",
+    "ts": "2026-11-14T02:09:11.053887+00:00"
   }
 }
