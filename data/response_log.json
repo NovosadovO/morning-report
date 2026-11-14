@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T01:31:31.483119+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Відновити вечірні звички",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-03T03:01:33.588827+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14495,6 +14485,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: Faktúra od Mariia Ovsiienko",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-15T00:14:14.541915+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_6b4924134c"
     }
   ]
 }
