@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t10_20_02_699404": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплати страхування Kooperativa (€67,22). Термін оплати — завтр",
+    "ts": "2026-11-14T10:20:02.699404"
+  },
   "email_ai_item|2026-11-14t10_14_31_466167": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Це сповіщення від LinkedIn про потенційну вакансію Projektant pozemných stavieb & BIM manažér в компанії HESCON s.r.o. у Кошице, Сло",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": null   },   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null, ",
     "ts": "2026-11-14T06:37:18.251773"
-  },
-  "selfact|2026-11-14t06_26_29_795639": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую, що сьогодні потрібно оплатити страхування Kooperativa",
-    "ts": "2026-11-14T06:26:29.795639"
   }
 }
