@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, ти сьогодні на ранковій зміні, яка розпочалася о 06:0",
-      "detail": "Поточний час 12:54, Олег на ранковій зміні, яка розпочалася о 06:00. Потрібно нагадати про це, враховуючи, що він працює на заводі.",
-      "module": "selfact",
-      "ts": "2026-11-03T12:54:52"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, твоя страховка на авто потребує уваги. Залишилося 4 д",
       "detail": "Згідно з календарем, 04.11 заплановано перевірити страховку авто, а 05.11 є нагадування, що через 4 дні страховка закінчується. Зараз 03.11, тому варто попередити.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-14T11:14:01"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-14T11:43:32"
     }
   ]
 }
