@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T00:02:17.022285+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_46f2304d11"
-    },
-    {
       "ts": "2026-09-03T00:02:21.467629+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14499,6 +14493,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: Analýzy pre Olexiho :)",
       "answer": "no"
+    },
+    {
+      "ts": "2026-11-15T00:13:51.438101+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_c93118d3b8"
     }
   ]
 }
