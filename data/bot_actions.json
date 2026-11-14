@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Наближається оплата страхування Kooperativa",
-      "detail": "Календар на 7 днів: 08.11: 18:00 Нічна зміна; 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень",
-      "module": "selfact",
-      "ts": "2026-11-03T13:56:57"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress, vo2max",
       "module": "qwsync",
       "ts": "2026-11-14T12:43:15"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-14T13:06:12"
     }
   ]
 }
