@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-02T22:06:58.696370+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_af438b50c2"
-    },
-    {
       "ts": "2026-09-02T22:07:07.150294+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
@@ -14485,6 +14479,16 @@
       "answer": "Відповісти на лист від Maroš Sivák",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-14"
+      }
+    },
+    {
+      "ts": "2026-11-14T10:30:24.085347+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-14"
       }
     }
