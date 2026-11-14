@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-14t21_27_03_561131": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплати страхування Kooperativa (€67,22). Термін оплати – завтр",
+    "ts": "2026-11-14T21:27:03.561131"
+  },
   "selfact|2026-11-14t21_10_56_631737": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, завтра останній день для оплати страхування Kooperativa",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Нагадую про оплату страхування Kooperativa на суму €67,22. Тер",
     "ts": "2026-11-14T16:17:42.566599"
-  },
-  "deadlines|2026-11-14t16_12_54_902783": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-14T16:12:54.902783"
   }
 }
