@@ -298,5 +298,10 @@
     "topic": "planner",
     "gist": "[{\"title\":\"До церкви на ранню\",\"date\":\"2026-11-20\",\"time\":\"08:00\",\"allday\":false}]",
     "ts": "2026-11-15T13:07:01.912499"
+  },
+  "action_detect|2026-11-15t20_00_20_242011": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати до",
+    "ts": "2026-11-15T20:00:20.242011"
   }
 }
