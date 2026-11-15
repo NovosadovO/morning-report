@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, згідно з листом від Morning Report, сьогодні 4 листоп",
-      "detail": "Свіжі листи: uid=81949 | від Morning Report",
-      "module": "selfact",
-      "ts": "2026-11-04T18:51:46"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-15T07:05:55"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-15",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-15T07:11:58"
     }
   ]
 }
