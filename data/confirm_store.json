@@ -19795,7 +19795,24 @@
     "action": "calrem_skip",
     "pid": "botsend_1794771607464",
     "subject": "Записати біг на завтра",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 125109,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_botsend_1794771607464"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_botsend_1794771607464"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-11-15T21:41:02.154202+00:00"
   }
 }
