@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-10-16T20:07:50"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-10-16T20:07:51"
@@ -7199,6 +7193,12 @@
       "data": "rx_close_ce1997de09",
       "label": "👌 Прийняв",
       "ts": "2026-11-15T21:40:37"
+    },
+    {
+      "t": "btn",
+      "data": "calrem_skip_botsend_1794771607464",
+      "label": "❌ Не треба",
+      "ts": "2026-11-15T21:40:56"
     }
   ]
 }
