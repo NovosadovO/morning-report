@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T14:59:23.213601+00:00",
-      "category": "calendar_button",
-      "question": "🔔 Невиконані звички",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t2h",
-        "when": "17:10–17:40",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-03T14:59:24.410208+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14472,6 +14461,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист про страхування",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-15"
+      }
+    },
+    {
+      "ts": "2026-11-15T06:00:53.346997+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути аналізи",
       "extra": {
         "kind": "reply",
         "date": "2026-11-15"
