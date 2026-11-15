@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "habit_yes_vitamins",
-      "label": "✅ 💊 Вітаміни",
-      "ts": "2026-10-16T21:30:28"
-    },
-    {
       "t": "msg",
       "kind": "cmd",
       "text": "/звички",
@@ -7199,6 +7193,12 @@
       "data": "pa_skip_728fa38d0f",
       "label": "",
       "ts": "2026-11-16T00:00:44"
+    },
+    {
+      "t": "btn",
+      "data": "bill_due_paid_a58db3203b",
+      "label": "✅ Оплатив",
+      "ts": "2026-11-16T00:37:50"
     }
   ]
 }
