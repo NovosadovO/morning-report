@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-15t17_48_11_063706": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати до",
+    "ts": "2026-11-15T17:48:11.063706"
+  },
   "action_detect|2026-11-15t14_00_50_373905": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": \"2023-11-18\",   \"action_time\": \"08:00\",   \"action_summary\": \"Зап",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"event\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадування про оплату квартири на суму €500.\",     \"date\": \"2026-11-15\",     \"time\": \"0",
     "ts": "2026-11-15T09:25:35.652262"
-  },
-  "action_detect|2026-11-15t09_10_42_980824": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-15T09:10:42.980824"
   }
 }
