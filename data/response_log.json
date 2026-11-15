@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T20:27:16.205347+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_run"
-    },
-    {
       "ts": "2026-09-03T20:27:29.337493+00:00",
       "category": "chat",
       "question": "де саме більше використовує аі кредитів?",
@@ -14481,6 +14475,16 @@
       "extra": {
         "kind": "reply",
         "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-16T00:00:21.998816+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист про страхування KOOPERATIVA (LE066BI)",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-16"
       }
     }
   ]
