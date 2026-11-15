@@ -470,9 +470,10 @@
     "sender": "Google Play <googleplay-noreply@google.com>",
     "subject": "Платіж за підписку на додаток Google One відхилено",
     "note": "Рахунок за підписку на додаток Google One відхилено, сума 4.99 €, оплатити до 5 листопада.",
-    "paid": false,
-    "paid_at": "",
-    "created": "2026-11-01"
+    "paid": true,
+    "paid_at": "2026-11-16",
+    "created": "2026-11-01",
+    "paid_by": "mail"
   },
   "google_commerce_limited|4_99|": {
     "vendor": "Google Commerce Limited",
