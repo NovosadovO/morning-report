@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-15t14_00_50_373905": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": \"2023-11-18\",   \"action_time\": \"08:00\",   \"action_summary\": \"Зап",
+    "ts": "2026-11-15T14:00:50.373905"
+  },
   "bills|2026-11-15t13_55_31_553565": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
     "ts": "2026-11-15T09:10:42.980824"
-  },
-  "selfact|2026-11-15t09_10_07_950618": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру на суму €500.\",     \"",
-    "ts": "2026-11-15T09:10:07.950618"
   }
 }
