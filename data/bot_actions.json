@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Зустріч із Марошем Сіваком",
-      "detail": "У календарі зазначено: 10.11: 16:00 Зустріч із Марошем Сіваком.",
-      "module": "selfact",
-      "ts": "2026-11-05T11:15:16"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T15:12:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-15",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-15T15:42:57"
     }
   ]
 }
