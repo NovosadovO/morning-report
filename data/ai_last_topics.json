@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-15t09_45_36_175976": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-15T09:45:36.175976"
+  },
   "selfact|2026-11-15t09_41_32_054684": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру на суму €500.\",     \"wh",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що 15.11 потрібно оплатити квартиру на суму €500.\",     \"date\": \"2026-11-15\"",
     "ts": "2026-11-15T06:01:39.979381"
-  },
-  "action_detect|2026-11-15t06_01_38_051326": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-15T06:01:38.051326"
   }
 }
