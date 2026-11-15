@@ -374,7 +374,8 @@ def _today_counts() -> list:
         recs = [r for r in (K.load(MC.ITEMS_FILE, default={}) or {}).values()
                 if isinstance(r, dict) and not r.get("empty")]
         made = [r for r in recs
-                if str(r.get("created_at", "")).startswith(today)]
+                if str(r.get("created_at", "")).startswith(today)
+                and r.get("state") in ("live", None)]
         live = [r for r in recs if r.get("state") == "live"]
         if made:
             rows.append(f"📅 створив подій з листів: {len(made)} — " +

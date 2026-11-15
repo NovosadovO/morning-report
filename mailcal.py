@@ -11,11 +11,17 @@
   • подія створюється ОДРАЗУ, без питання
   • Олег отримує картку постфактум: «створив ось це» + 🗑 видалити, якщо зайве
 
+ВИНЯТОК — дати майбутніх ПЛАТЕЖІВ (наступний платіж, продовження, поповнення,
+закінчення підписки/поліса/ліміту). Їх бот сам у календар НЕ пише: він
+ПРОПОНУЄ картку з кнопками «📅 Поставити нагадування» / «⏭ Не треба»,
+і подія з'являється лише після натискання. Це працює для листів на будь-яку
+тему, включно з підтвердженнями оплати (напр. страховка).
+
 Нічого не вигадується: якщо в листі немає явної дати — модуль молчить.
 Дедуплікація за uid листа + (назва, дата), щоб один лист не створив
 подію двічі й щоб повторний скан не дублював.
 
-Callback-префікси: mc_ok_ / mc_del_
+Callback-префікси: mc_ok_ / mc_del_ / mc_pyes_ / mc_pyes2_ / mc_pno_
 """
 
 import json
@@ -55,8 +61,13 @@ KINDS = {
     "deadline": "⏳",
     "delivery": "📦",
     "cancel": "🚫",
+    "next_payment": "💳",
+    "renewal": "🔁",
     "other": "📌",
 }
+# Ці види — лише пропозиція з кнопкою, без автостворення в календарі.
+PROPOSE_KINDS = ("next_payment", "renewal", "payment", "deadline")
+MAX_PROPOSALS_PER_RUN = 3
 
 
 # ─── ЛИСТИ ───────────────────────────────────────────────────────────────────
@@ -108,6 +119,14 @@ _PROMPT = """Ти — асистент Олега (Кошице, Словачч�
 рейси, поїздки, платежі й списання, зустрічі, візити до лікаря, дедлайни,
 доставки, скасування чи перенесення.
 
+ОСОБЛИВО УВАЖНО шукай ДАТУ НАСТУПНОГО ПЛАТЕЖУ / продовження / поповнення /
+закінчення (страховка, підписка, кредит, оренда, комунальні, телефон, карта,
+ліміт, ТО авто). Шукай її навіть у листах-підтвердженнях ВЖЕ здійсненої оплати
+("наступний платіж", "splatnosť ďalšej splátky", "next payment", "renews on",
+"platnosť do", "expires", "valid until"). Для таких постав kind="next_payment"
+(регулярний платіж) або kind="renewal" (продовження/закінчення). Сам факт
+минулої оплати подією не є. Дату в минулому не повертай.
+
 СЬОГОДНІ: {today}
 
 ЖОРСТКІ ПРАВИЛА:
@@ -122,7 +141,7 @@ _PROMPT = """Ти — асистент Олега (Кошице, Словачч�
 
 Відповідь ТІЛЬКИ JSON-масив, без markdown:
 [{{"uid": "uid листа", "title": "...", "date": "YYYY-MM-DD", "time": "HH:MM або null",
-   "kind": "flight|payment|meeting|appointment|deadline|delivery|cancel|other",
+   "kind": "flight|payment|meeting|appointment|deadline|delivery|cancel|next_payment|renewal|other",
    "why": "чому це подія — 1 короткий рядок з листа"}}]
 Якщо подій немає — [].
 """
@@ -133,7 +152,7 @@ def _ask(emails):
     for e in emails:
         blocks.append(
             f"--- uid={e['uid']}\nВід: {e['sender']}\nТема: {e['subject']}\n"
-            f"{e['body'][:1600]}"
+            f"{e['body'][:2400]}"
         )
     prompt = _PROMPT.format(today=K.today_str(), emails="\n\n".join(blocks))
     out = K.gemini_json(prompt, max_tokens=1200, temperature=0.2,
@@ -243,6 +262,8 @@ def run(force=False):
 
     by_uid = {m["uid"]: m for m in fresh}
     created = []
+    proposals = []
+    covered = _bill_covered_uids()
 
     for ev in found:
         if len(created) >= MAX_EVENTS_PER_RUN:
@@ -264,6 +285,21 @@ def run(force=False):
             kind = "other"
         why = str(ev.get("why") or "").strip()[:200]
         src = by_uid.get(uid) or {}
+
+        if kind in PROPOSE_KINDS:
+            # Платежі/продовження: не пишемо самі, а ПРОПОНУЄМО.
+            if uid in covered or len(proposals) >= MAX_PROPOSALS_PER_RUN:
+                continue    # для цього листа вже є картка рахунку з кнопкою календаря
+            rec = {
+                "uid": uid, "title": title, "date": date, "time": tm,
+                "kind": kind, "why": why,
+                "subject": src.get("subject", ""), "sender": src.get("sender", ""),
+                "created_at": K.now().isoformat(), "state": "proposed",
+            }
+            K.update_key(ITEMS_FILE, key, rec)
+            known[key] = rec
+            proposals.append((key, rec))
+            continue
 
         start = K.parse_dt(date, tm or "09:00")
         if not start:
@@ -292,11 +328,96 @@ def run(force=False):
         created.append((key, rec))
         K.log(TAG, f"створено подію: {title} {date} {tm}")
 
+    # Листи, що дали лише пропозиції, теж «проглянуті» (ключі uid_* вже записані).
+    for key, rec in proposals:
+        _propose_card(key, rec)
     if not created:
-        return 0
+        return len(proposals)
 
     _card(created)
-    return len(created)
+    return len(created) + len(proposals)
+
+
+def _bill_covered_uids() -> set:
+    """uid листів, для яких bills_watcher уже має неоплачений рахунок з дедлайном
+    (там своя картка з кнопкою календаря) — щоб не дублювати пропозицію."""
+    try:
+        bills = K.load("bills.json", default={}) or {}
+    except Exception:
+        return set()
+    return {str(b.get("uid")) for b in bills.values()
+            if isinstance(b, dict) and b.get("uid") and b.get("due") and not b.get("paid")}
+
+
+def _shift(date: str, days: int) -> str:
+    try:
+        return (datetime.strptime(date, "%Y-%m-%d") - timedelta(days=days)).strftime("%Y-%m-%d")
+    except Exception:
+        return ""
+
+
+def _propose_card(key, rec):
+    """Картка-пропозиція: Олег сам вирішує, чи ставити нагадування."""
+    dkey = "prop_" + key[:80]
+    if _dedup.seen(dkey):
+        return False
+    kind = rec.get("kind")
+    head = "💳 <b>Наступний платіж</b>" if kind in ("next_payment", "payment") else \
+           "🔁 <b>Дата продовження</b>" if kind == "renewal" else "⏳ <b>Важлива дата</b>"
+    when = rec["date"] + (f" о {rec['time']}" if rec.get("time") else "")
+    lines = [f"{head} — у листі є дата.", "",
+             f"{KINDS.get(kind, '📌')} <b>{K.esc(rec['title'])}</b>",
+             f"   🗓 {when}"]
+    if rec.get("why"):
+        lines.append(f"   <i>{K.esc(rec['why'])}</i>")
+    if rec.get("subject"):
+        lines.append(f"   📧 {K.esc(rec['subject'][:60])}")
+    lines += ["", "Поставити нагадування в календар?"]
+    pid = _store.put({"key": key})
+    kb = [[{"text": f"📅 Нагадати {rec['date']}", "callback_data": f"mc_pyes_{pid}"}]]
+    early = _shift(rec["date"], 2)
+    if early and _sane_date(early) and early != rec["date"] and early >= K.today_str():
+        kb.append([{"text": f"📅 За 2 дні ({early})", "callback_data": f"mc_pyes2_{pid}"}])
+    kb.append([{"text": "⏭ Не треба", "callback_data": f"mc_pno_{pid}"}])
+    if K.send_card("\n".join(lines), kb, tag=TAG):
+        _dedup.mark(dkey)
+        return True
+    _store.drop(pid)
+    return False
+
+
+def _accept_proposal(pid: str, days_before: int) -> dict:
+    payload = _store.get(pid) or {}
+    key = payload.get("key", "")
+    rec = items().get(key)
+    if not rec:
+        _store.drop(pid)
+        return {"text": "⚠️ Ця пропозиція вже застаріла.", "alert": True, "keyboard": []}
+    if rec.get("state") != "proposed":
+        _store.drop(pid)
+        return {"text": "ℹ️ Це вже опрацьовано.", "alert": True, "keyboard": []}
+    date = _shift(rec["date"], days_before) if days_before else rec["date"]
+    if not _sane_date(date):
+        return {"text": "⚠️ Ця дата вже минула — не ставлю.", "alert": True, "keyboard": []}
+    tm = rec.get("time") or "09:00"
+    start = K.parse_dt(date, tm)
+    res = K.calendar_event(f"{KINDS.get(rec.get('kind'), '📌')} {rec['title']}", start,
+                           end_dt=start + timedelta(hours=1),
+                           description=(f"З листа (за твоїм підтвердженням).\n"
+                                        f"Дата в листі: {rec['date']}\n"
+                                        f"Від: {rec.get('sender','')}\n"
+                                        f"Тема: {rec.get('subject','')}\n{rec.get('why','')}"))
+    if not (isinstance(res, dict) and res.get("ok")):
+        err = (res or {}).get("error", "?") if isinstance(res, dict) else "?"
+        return {"text": f"⚠️ Календар відмовив: {err}. Спробуй ще раз.", "alert": True,
+                "keyboard": None}
+    rec.update({"state": "live", "event_id": res.get("event_id", ""),
+                "link": res.get("link", ""), "reminder_date": date,
+                "accepted_at": K.now().isoformat()})
+    K.update_key(ITEMS_FILE, key, rec)
+    _store.drop(pid)
+    return {"text": f"✅ Нагадування в календарі: {rec['title']} — {date}",
+            "alert": False, "keyboard": []}
 
 
 def _card(created):
@@ -346,6 +467,20 @@ def handle(data: str, cb=None) -> dict:
     Видалення — у ДВА кроки: 🗑 лише перепитує (миттєвий попап + кнопки
     Так/Ні), сама подія зникає з календаря тільки після «Так».
     """
+    if data.startswith("mc_pyes2_"):
+        return _accept_proposal(data[len("mc_pyes2_"):], 2)
+    if data.startswith("mc_pyes_"):
+        return _accept_proposal(data[len("mc_pyes_"):], 0)
+    if data.startswith("mc_pno_"):
+        pid = data[len("mc_pno_"):]
+        payload = _store.get(pid) or {}
+        rec = items().get(payload.get("key", ""))
+        if rec and rec.get("state") == "proposed":
+            rec["state"] = "declined"
+            K.update_key(ITEMS_FILE, payload["key"], rec)
+        _store.drop(pid)
+        return {"text": "Ок, без нагадування.", "alert": False, "keyboard": []}
+
     if data.startswith("mc_ok_"):
         _store.drop(data[len("mc_ok_"):])
         return {"text": "✅ Добре, лишаю в календарі.", "alert": False,
@@ -414,7 +549,7 @@ def report() -> str:
                 "Як тільки в листі буде конкретна дата — поставлю сам і напишу тобі.")
 
     live = [r for r in recs if r.get("state") == "live"]
-    gone = [r for r in recs if r.get("state") != "live"]
+    gone = [r for r in recs if r.get("state") in ("deleted", "delete_failed")]
     live.sort(key=lambda r: r.get("date", ""))
 
     out = ["📅 <b>Події з листів, які я створив сам</b>", ""]

@@ -129,7 +129,7 @@ def _run_window() -> str:
 def _bills_text() -> str:
     try:
         import bills_watcher as B
-        unpaid = [b for b in (B.load_bills() or {}).values() if not b.get("paid")]
+        unpaid = [b for b in (B.load_bills() or {}).values() if not b.get("paid") and not b.get("auto_charge")]
         if not unpaid:
             return "неоплачених рахунків немає"
         s = sum(B._amount_f(b.get("amount")) for b in unpaid)

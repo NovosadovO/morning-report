@@ -2571,6 +2571,17 @@ def handle_command(chat_id, text):
                     print(f"[healthai] збережено з повідомлення: {_hf}", flush=True)
         except Exception as _e_hm:
             print(f"[healthai] capture error: {_e_hm}", flush=True)
+        # «оплатив Garmin» / «все оплатив» -> закрити рахунки, більше не нагадувати.
+        try:
+            if any(_w in (text or "").lower() for _w in
+                   ("оплатив", "сплатив", "заплатив", "оплатила", "сплатила", "заплатила",
+                    "оплачено", "сплачено")):
+                import bills_watcher as _bw_paid
+                _bp = _bw_paid.paid_from_text(text)
+                if _bp:
+                    send(chat_id, _bp)
+        except Exception as _e_bp:
+            print(f"[bills] paid_from_text error: {_e_bp}", flush=True)
         import recall as _rc_msg
         _rc_msg.log_message(text or "",
                             kind=("cmd" if str(text or "").strip().startswith("/") else "msg"))

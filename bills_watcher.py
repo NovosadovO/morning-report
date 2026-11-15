@@ -13,6 +13,11 @@
      (і в день дедлайну) пише нагадування з кнопкою «✅ Оплачено».
   5. monthly_report() — «скільки рахунків прийшло, на яку суму, що не оплачено».
 
+Прострочені: нагадування НЕ щодня. Один раз коли рахунок став простроченим,
+максимум один повтор через 7 днів, і стоп після 14 днів. Якщо в пошті прийшло
+підтвердження оплати (той самий постачальник + сума/№) або Олег написав в чаті
+«оплатив …» — рахунок закривається і більше не з'являється.
+
 Дані НЕ вигадуються: якщо суми/дедлайну в листі немає — поле пусте,
 а якщо AI не знайшов жодного рахунку — модуль просто молчить.
 
@@ -22,6 +27,7 @@ bill_skip_ / bill_due_paid_ / bill_due_snooze_
 
 import re
 import json
+import unicodedata
 from datetime import datetime, timedelta
 
 import ai_kit as K
@@ -33,10 +39,15 @@ STORE_FILE = "bills_store.json"            # payload кнопок
 SENT_FILE = "bills_sent.json"              # антидубль карточок
 SCAN_STATE = "bills_scan.json"             # rate-limit скану
 DUE_STATE = "bills_due_sent.json"          # антидубль нагадувань про дедлайн
+OVERDUE_STATE = "bills_overdue.json"       # {bid: {n, last}} — скільки разів нагадували про прострочку
 
 SCAN_MIN_GAP_MIN = 120     # не частіше ніж раз на 2 години
 MAX_CARDS_PER_SCAN = 3
 DUE_WARN_DAYS = 2          # попереджати за 2 дні
+OVERDUE_REPEAT_DAYS = 7    # повтор про прострочку — не раніше ніж через 7 днів
+OVERDUE_STOP_DAYS = 14     # після 14 днів прострочки — мовчимо
+SAME_BILL_DAYS = 20        # той самий постачальник + сума протягом 20 днів = той самий рахунок
+MAX_DUE_CARDS = 6
 
 _store = K.PayloadStore(STORE_FILE)
 _dedup = K.Dedup(SENT_FILE, ttl_days=30)
@@ -105,8 +116,14 @@ _PROMPT = """Ти — фінансовий асистент Олега (Коши
 
 ПРАВИЛА:
 1. Нічого не вигадуй. Якщо суми або дедлайну в тексті немає — залиш поле "".
-2. Реклама, підтвердження оплати, виписки без вимоги оплати — НЕ рахунок, пропусти.
-3. Якщо лист — підтвердження ВЖЕ здійсненої оплати, постав "already_paid": true.
+2. Реклама, виписки без вимоги оплати, сповіщення про використання/ліміти,
+   "завдання виконано", підтвердження підписки/замовлення без вимоги платити,
+   закінчення паркувального талона — НЕ рахунок, пропусти.
+3. Якщо лист — підтвердження ВЖЕ здійсненої оплати (квитанція, "payment received",
+   "zaplatené", "potvrdenie o zaplatení", "платіж зараховано"), постав "already_paid": true.
+3a. Якщо в листі сказано, що оплата БУДЕ списана автоматично ("will be charged",
+   "оплата буде здійснена", "automatic payment", "bude stiahnuté") — постав
+   "auto_charge": true (це не вимога платити вручну).
 4. due — дата оплати у форматі YYYY-MM-DD (шукай "splatnosť", "due date",
    "termín úhrady", "оплатити до"). Якщо є лише період — візьми останній день.
 5. amount — тільки число (наприклад 47.90), без валюти. currency — "EUR"/"USD"/"CZK".
@@ -115,7 +132,7 @@ _PROMPT = """Ти — фінансовий асистент Олега (Коши
 
 Формат — ТІЛЬКИ валідний JSON-масив, без markdown:
 [{{"uid":"12345","vendor":"GASTROMILA","amount":"47.90","currency":"EUR",
-   "invoice_no":"2026/0812","due":"2026-08-12","already_paid":false,
+   "invoice_no":"2026/0812","due":"2026-08-12","already_paid":false,"auto_charge":false,
    "note":"Рахунок за обіди за липень, оплатити до 12.08."}}]
 Якщо рахунків немає — поверни []."""
 
@@ -139,6 +156,89 @@ def _extract(cands):
 
 def _bill_id(vendor, amount, due) -> str:
     return K.Dedup.key(vendor, amount, due)[:48]
+
+
+_NOISE_WORDS = {"spol", "sro", "s", "r", "o", "ltd", "limited", "inc", "corp",
+                "corporation", "gmbh", "services", "service", "eshop", "the",
+                "poistovna", "poisťovňa", "com", "sk", "a", "as"}
+
+
+def _norm(s) -> str:
+    s = unicodedata.normalize("NFKD", str(s or "").lower())
+    return "".join(ch for ch in s if not unicodedata.combining(ch))
+
+
+def _vendor_key(vendor) -> str:
+    """Перше значуще слово назви: «Garmin Services» / «Garmin Connect+» -> garmin."""
+    for w in re.findall(r"[a-zа-яіїєґ0-9]+", _norm(vendor)):
+        if w not in _NOISE_WORDS and len(w) > 1:
+            return w
+    return ""
+
+
+def _same_amount(a, b) -> bool:
+    x, y = _amount_f(a), _amount_f(b)
+    return bool(x) and bool(y) and abs(x - y) < 0.01
+
+
+def _date_of(s):
+    try:
+        return datetime.strptime(str(s)[:10], "%Y-%m-%d").date()
+    except Exception:
+        return None
+
+
+def _matches_paid(unpaid: dict, paid: dict) -> bool:
+    """Підтвердження оплати `paid` закриває неоплачений `unpaid`?
+    Той самий постачальник + (та сама сума або той самий № рахунку),
+    і підтвердження не старіше за сам рахунок."""
+    vk = _vendor_key(unpaid.get("vendor"))
+    if not vk or vk != _vendor_key(paid.get("vendor")):
+        return False
+    inv_u, inv_p = str(unpaid.get("invoice_no") or "").strip(), str(paid.get("invoice_no") or "").strip()
+    same = (inv_u and inv_u == inv_p) or _same_amount(unpaid.get("amount"), paid.get("amount"))
+    if not same:
+        return False
+    du, dp = _date_of(unpaid.get("created")), _date_of(paid.get("created"))
+    if du and dp and dp < du:
+        return False
+    return True
+
+
+def reconcile_paid() -> int:
+    """Закриває неоплачені рахунки, для яких у пошті вже є підтвердження оплати."""
+    bills = load_bills()
+    receipts = [b for b in bills.values() if b.get("paid") and not b.get("manual_paid")]
+    closed = 0
+    for bid, b in bills.items():
+        if b.get("paid"):
+            continue
+        if any(_matches_paid(b, r) for r in receipts):
+            b["paid"] = True
+            b["paid_at"] = K.today_str()
+            b["paid_by"] = "mail"
+            K.update_key(BILLS_FILE, bid, b)
+            closed += 1
+    if closed:
+        K.log(TAG, f"закрито за підтвердженням з пошти: {closed}")
+    return closed
+
+
+def _similar_open_bill(bills: dict, b: dict):
+    """Вже є відкритий рахунок того ж постачальника з тією ж сумою (свіжий)?"""
+    vk = _vendor_key(b.get("vendor"))
+    if not vk or not _amount_f(b.get("amount")):
+        return None
+    today = K.now().date()
+    for bid, o in bills.items():
+        if o.get("paid") or _vendor_key(o.get("vendor")) != vk:
+            continue
+        if not _same_amount(o.get("amount"), b.get("amount")):
+            continue
+        d = _date_of(o.get("created"))
+        if d and (today - d).days <= SAME_BILL_DAYS:
+            return bid
+    return None
 
 
 def load_bills() -> dict:
@@ -172,6 +272,7 @@ def _save_bill(b: dict) -> str:
         "subject": str(b.get("subject") or "")[:140],
         "note": (b.get("note") or "")[:300],
         "paid": bool(b.get("already_paid")),
+        "auto_charge": bool(b.get("auto_charge")),
         "paid_at": K.today_str() if b.get("already_paid") else "",
         "created": K.today_str(),
     }
@@ -305,10 +406,21 @@ def scan(force: bool = False) -> int:
         bid = _bill_id(vendor, b.get("amount"), b.get("due"))
         if bid in existing:
             continue
-        _save_bill(b)
         if b.get("already_paid"):
+            _save_bill(b)
             K.log(TAG, f"вже оплачено, тільки записав: {vendor}")
+            reconcile_paid()
+            existing = load_bills()
             continue
+        if b.get("auto_charge"):
+            _save_bill(b)
+            K.log(TAG, f"авто-списання, не вимога оплати: {vendor}")
+            continue
+        if _similar_open_bill(existing, b):
+            K.log(TAG, f"той самий рахунок вже є: {vendor} {b.get('amount')}")
+            continue
+        _save_bill(b)
+        existing = load_bills()
         if _offer(b, bid):
             sent += 1
         if sent >= MAX_CARDS_PER_SCAN:
@@ -320,41 +432,95 @@ def scan(force: bool = False) -> int:
 
 # ─── НАГАДУВАННЯ ПРО ДЕДЛАЙН ─────────────────────────────────────────────────
 
+def _overdue_state() -> dict:
+    return K.load(OVERDUE_STATE, default={}) or {}
+
+
+def _seed_overdue_state(bills: dict, today) -> dict:
+    """Перший запуск нової логіки: усе, що вже прострочене, вважаємо
+    «вже нагадували» (вичерпано) — щоб не було нового шквалу карток."""
+    st = {"_migrated": K.today_str()}
+    for bid, b in bills.items():
+        d = _date_of(b.get("due"))
+        if d and (d - today).days < 0 and not b.get("paid"):
+            st[bid] = {"n": 2, "last": K.today_str()}
+    K.save(OVERDUE_STATE, st)
+    return st
+
+
+def _overdue_due_now(st: dict, bid: str, today) -> bool:
+    rec = st.get(bid)
+    if not rec:
+        return True
+    n = int(rec.get("n") or 0)
+    if n >= 2:
+        return False
+    last = _date_of(rec.get("last"))
+    return not last or (today - last).days >= OVERDUE_REPEAT_DAYS
+
+
 def check_due_soon() -> int:
-    """За DUE_WARN_DAYS днів до дедлайну (і в день дедлайну/просрочки) — нагадати."""
+    """За DUE_WARN_DAYS днів до дедлайну і в день дедлайну — нагадати (раз на день).
+    Прострочені: 1 раз, ще 1 повтор через 7 днів, стоп після 14 днів."""
+    try:
+        reconcile_paid()
+    except Exception as e:
+        K.log(TAG, f"reconcile error: {e}")
     bills = load_bills()
     today = K.now().date()
-    sent = 0
+    st = _overdue_state()
+    if "_migrated" not in st:
+        st = _seed_overdue_state(bills, today)
+    items = []
     for bid, b in bills.items():
-        if b.get("paid"):
+        if b.get("paid") or b.get("auto_charge"):
             continue
         due = b.get("due") or ""
-        if not re.match(r"^\d{4}-\d{2}-\d{2}$", due):
-            continue
-        try:
-            d = datetime.strptime(due, "%Y-%m-%d").date()
-        except Exception:
+        d = _date_of(due) if re.match(r"^\d{4}-\d{2}-\d{2}$", due) else None
+        if not d:
             continue
         left = (d - today).days
         if left > DUE_WARN_DAYS:
             continue
-        if left < -30:
-            continue  # дуже старе — не спамимо
-        if _due_dedup.seen("due", bid, str(left)):
+        if left < 0:
+            if -left > OVERDUE_STOP_DAYS:
+                continue
+            if not _overdue_due_now(st, bid, today):
+                continue
+        elif _due_dedup.seen("due", bid, str(left)):
             continue
+        items.append((bid, b, due, left))
 
+    if not items:
+        return 0
+    items.sort(key=lambda x: x[3])
+    sent = 0
+    batch = items[:MAX_DUE_CARDS]
+
+    def _mark(bid, left):
+        if left < 0:
+            rec = st.get(bid) or {"n": 0}
+            st[bid] = {"n": int(rec.get("n") or 0) + 1, "last": K.today_str()}
+            K.update_key(OVERDUE_STATE, bid, st[bid])
+        else:
+            _due_dedup.mark("due", bid, str(left))
+
+    def _payload(bid, b, due):
+        return _store.put({"bid": bid, "vendor": b.get("vendor"),
+                           "amount": b.get("amount"), "currency": b.get("currency"),
+                           "due": due, "invoice_no": b.get("invoice_no"),
+                           "sender": b.get("sender"), "subject": b.get("subject"),
+                           "note": b.get("note"), "uid": b.get("uid")})
+
+    if len(batch) == 1:
+        bid, b, due, left = batch[0]
         if left < 0:
             head = f"🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> ({abs(left)} дн.)"
         elif left == 0:
             head = "🔴 <b>ОПЛАТИТИ СЬОГОДНІ</b>"
         else:
             head = f"🟠 <b>ОПЛАТА ЧЕРЕЗ {left} дн.</b>"
-
-        pid = _store.put({"bid": bid, "vendor": b.get("vendor"),
-                          "amount": b.get("amount"), "currency": b.get("currency"),
-                          "due": due, "invoice_no": b.get("invoice_no"),
-                          "sender": b.get("sender"), "subject": b.get("subject"),
-                          "note": b.get("note"), "uid": b.get("uid")})
+        pid = _payload(bid, b, due)
         text = (f"{head}\n━━━━━━━━━━━━━━━━━━━━\n"
                 f"🏢 <b>{K.esc(b.get('vendor'))}</b>\n"
                 f"💰 {K.esc(_fmt_money(b))}\n📆 до <b>{due}</b>")
@@ -367,8 +533,26 @@ def check_due_soon() -> int:
             [{"text": "✍️ Написати постачальнику", "callback_data": f"vr_menu_{pid}"}],
         ]
         if K.send_card(text, kb, tag=TAG):
-            _due_dedup.mark("due", bid, str(left))
-            sent += 1
+            _mark(bid, left)
+            sent = 1
+    else:
+        # Кілька рахунків — ОДНЕ повідомлення, а не купа карток підряд.
+        lines, kb = ["💸 <b>РАХУНКИ БЕЗ ПІДТВЕРДЖЕННЯ ОПЛАТИ</b>",
+                     "━━━━━━━━━━━━━━━━━━━━"], []
+        for bid, b, due, left in batch:
+            tag = (f"прострочено {abs(left)} дн." if left < 0
+                   else "сьогодні" if left == 0 else f"через {left} дн.")
+            lines.append(f"• <b>{K.esc(b.get('vendor'))}</b> — {K.esc(_fmt_money(b))}, "
+                         f"до {due} ({tag})")
+            pid = _payload(bid, b, due)
+            kb.append([{"text": f"✅ Оплатив: {str(b.get('vendor') or '')[:24]}",
+                        "callback_data": f"bill_due_paid_{pid}"}])
+        lines.append("\n<i>Це нагадування не повториться щодня. "
+                     "Якщо вже оплатив — натисни кнопку або напиши «оплатив …».</i>")
+        if K.send_card("\n".join(lines), kb, tag=TAG):
+            for bid, b, due, left in batch:
+                _mark(bid, left)
+            sent = len(batch)
     if sent:
         K.log(TAG, f"нагадувань про дедлайн: {sent}")
     return sent
@@ -462,6 +646,7 @@ def _mark_paid(bid: str):
         return False
     b["paid"] = True
     b["paid_at"] = K.today_str()
+    b["manual_paid"] = True
     K.update_key(BILLS_FILE, bid, b)
     return True
 
@@ -475,11 +660,64 @@ def do_paid(pid: str) -> dict:
     return {"ok": True, "vendor": p.get("vendor"), "amount": _fmt_money(p)}
 
 
+_PAID_RE = re.compile(r"\b(оплатив|оплатила|сплатив|сплатила|заплатив|заплатила|оплачено|сплачено)\b", re.I)
+_ALL_RE = re.compile(r"\b(все|всі|усе|усі|всі\s+рахунки)\b", re.I)
+_ALIASES = {"гарм": "garmin", "гугл": "google", "чатгпт": "chatgpt", "чат гпт": "chatgpt",
+            "кооператив": "kooperativa", "рейлвей": "railway", "рейвей": "railway",
+            "ранебл": "runable", "рунабл": "runable", "букінг": "booking",
+            "капкат": "capcut", "пелікан": "pelikan"}
+
+
+def paid_from_text(text: str) -> str:
+    """«оплатив Garmin» / «все оплатив» в чаті -> закрити відповідні рахунки.
+    Повертає коротку відповідь або "" (якщо нічого не знайшлось — мовчимо)."""
+    t = _norm(text)
+    raw = str(text or "").lower()
+    if not _PAID_RE.search(raw):
+        return ""
+    bills = load_bills()
+    open_ = {bid: b for bid, b in bills.items()
+             if not b.get("paid") and not b.get("auto_charge")}
+    if not open_:
+        return ""
+    wanted = set()
+    for k, v in _ALIASES.items():
+        if k in raw:
+            wanted.add(v)
+    for w in re.findall(r"[a-z0-9]{4,}", t):
+        wanted.add(w)
+    hits = []
+    for bid, b in open_.items():
+        blob = _norm(f"{b.get('vendor')} {b.get('subject')} {b.get('note')}")
+        if any(w in blob for w in wanted):
+            hits.append(bid)
+    if not hits and _ALL_RE.search(raw):
+        today = K.now().date()
+        for bid, b in open_.items():
+            d = _date_of(b.get("due"))
+            if d and d <= today:
+                hits.append(bid)
+    if not hits:
+        return ""
+    names = []
+    for bid in hits:
+        _mark_paid(bid)
+        names.append(str(open_[bid].get("vendor") or "?"))
+    uniq = list(dict.fromkeys(names))
+    return "✅ Закрив як оплачені: " + ", ".join(uniq[:6]) + ". Більше не нагадуватиму."
+
+
 def do_snooze(pid: str) -> dict:
     """Нагадати завтра: просто чистить дедуп на завтра (нагадування прийде знову)."""
     p = _store.get(pid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
+    bid = p.get("bid", "")
+    rec = _overdue_state().get(bid)
+    if bid and rec:
+        # прострочений: дозволяємо ще одне нагадування завтра
+        back = (K.now().date() - timedelta(days=OVERDUE_REPEAT_DAYS - 1)).strftime("%Y-%m-%d")
+        K.update_key(OVERDUE_STATE, bid, {"n": min(int(rec.get("n") or 0), 1), "last": back})
     return {"ok": True, "vendor": p.get("vendor")}
 
 

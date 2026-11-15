@@ -243,7 +243,7 @@ def _unpaid_bills() -> list:
     out = []
     today = K.now().date()
     for b in bills.values():
-        if b.get("paid") or b.get("skipped"):
+        if b.get("paid") or b.get("skipped") or b.get("auto_charge"):
             continue
         a = _amount_f(b.get("amount"))
         due = str(b.get("due") or "")[:10]
