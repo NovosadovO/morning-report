@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T16:36:48.094778+00:00",
-      "category": "calendar_button",
-      "question": "🔔 🧳 Зібрати речі: Málaga",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t3d",
-        "when": "18:00–18:30",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-03T16:36:49.302621+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14478,6 +14467,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-15T20:48:53.577372+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
