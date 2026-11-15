@@ -1,4 +1,29 @@
 {
+  "bills|2026-11-16t00_07_51_099055": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-16T00:07:51.099055"
+  },
+  "action_detect|2026-11-16t00_01_16_677504": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-16T00:01:16.677504"
+  },
+  "action_detect|2026-11-16t00_01_05_877533": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та спог",
+    "ts": "2026-11-16T00:01:05.877533"
+  },
+  "action_detect|2026-11-16t00_00_54_737201": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-16\",   \"action_time\": \"00:00\",   \"action_summary\": \"Переглянут",
+    "ts": "2026-11-16T00:00:54.737201"
+  },
+  "proactive_actions|2026-11-16t00_00_08_432883": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити листа про страхування KOOPERATIVA\",     \"date\": \"2026-11-16\",     \"time\": \"18:00\",     \"message\":",
+    "ts": "2026-11-16T00:00:08.432883"
+  },
   "selfact|2026-11-15t23_57_35_427037": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Оплати квартиру на суму €500.\",     \"date\": \"2026-11-15\",     \"time\": \"23:59\"",
@@ -273,30 +298,5 @@
     "topic": "run_week_synth",
     "gist": "HRV за ніч 41 мс — це нижче за середнє за 7 днів (49.1 мс) та 14 днів (54.5 мс). Така тенденція може впливати на відновлення.  Зміна показників за останній тижд",
     "ts": "2026-11-15T20:01:08.178413"
-  },
-  "action_detect|2026-11-15t20_00_20_242011": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати до",
-    "ts": "2026-11-15T20:00:20.242011"
-  },
-  "bills|2026-11-15t19_56_14_523220": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-15T19:56:14.523220"
-  },
-  "selfact|2026-11-15t19_48_37_840790": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що 15.11 потрібно оплатити квартиру на суму €500.\",     \"date\": \"202",
-    "ts": "2026-11-15T19:48:37.840790"
-  },
-  "deadlines|2026-11-15t19_38_47_749804": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-15T19:38:47.749804"
-  },
-  "people|2026-11-15t19_38_05_562810": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Олексія\",   ",
-    "ts": "2026-11-15T19:38:05.562810"
   }
 }
