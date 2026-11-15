@@ -39,5 +39,14 @@ ok("сон 10.5 > 7.9 «значно більше за середні» -> ок"
 ok("сон «нижчий за норму» при 10.5 -> помилка", fg.direction_error("Сон нижчий за норму.", A2) != "")
 ok("різниця <3% не чіпаємо", fg.direction_error("HRV впав до 53.5", {"today":"2026-11-14","hrv":{"last_day":"2026-11-14","last":53.5,"avg7":53.1}}) == "")
 ok("any_error ловить напрямок", fg.any_error("HRV впав до 60", A2) != "")
+# false-positive: тижневі/відсоткові тренди не блокуємо (15.11 заблоковано тижневий звіт)
+_a = {"today": "2026-11-15", "hrv": {"last": 41, "avg7": 49.1, "last_day": "2026-11-15"},
+      "energy": {"last": 60, "avg7": 40, "last_day": "2026-11-15"}}
+ok("fp", fg.direction_error("Body Battery впав на 24% за тиждень.", _a) == "")
+ok("fp", fg.direction_error("Минулого тижня Body Battery впав до 27.", _a) == "")
+ok("fp", fg.direction_error("Body Battery впав до 25 (сер. 40).", _a) == "")
+ok("fp", fg.direction_error("Body Battery впав до 60 (сер. 40).", _a) != "")
+
 print("FAILS:", FAILS or "none")
 sys.exit(1 if FAILS else 0)
+

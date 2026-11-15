@@ -105,6 +105,14 @@ def direction_error(text, a=None):
                 last, avg = m.get("last"), m.get("avg7")
                 if last is None or not avg or m.get("last_day") != a.get("today"):
                     continue
+                # Перевіряємо лише речення, що називає саме СЬОГОДНІШНЄ значення
+                # (тижневі/вчорашні/відсоткові тренди — не чіпаємо: це не про «last»).
+                if re.search(r"тижн|вчора|минул|місяц|\d\s*%", low):
+                    continue
+                nums = [float(x.replace(",", ".")) for x in re.findall(r"\d+(?:[.,]\d+)?", sent)]
+                tol = max(0.51, abs(float(last)) * 0.005)
+                if nums and not any(abs(n - float(last)) <= tol for n in nums):
+                    continue
                 rel = (float(last) - float(avg)) / abs(float(avg))
                 if down and rel > _TOL:
                     return (f"{_LABEL[key]}: текст каже «впав/знизився», а {last} вище за середнє 7 днів {round(avg, 1)}")
