@@ -1,4 +1,14 @@
 {
+  "astro_ai|2026-11-15t13_42_07_035722": {
+    "topic": "astro_ai",
+    "gist": "Нічний перехід на роботу позначився на твоєму фізичному стані: Пульс спокою 51 уд/хв (на 4.07 вище норми) та HRV 41 мс (на 15.14 нижче норми) сигналізують про в",
+    "ts": "2026-11-15T13:42:07.035722"
+  },
+  "deadlines|2026-11-15t13_38_40_769045": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-11-15T13:38:40.769045"
+  },
   "selfact|2026-11-15t13_35_39_180844": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про оплату квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2023-11-15\",   \"action_time\": \"10:00\",   \"action_summary\": \"Сплати",
     "ts": "2026-11-15T09:03:05.356277"
-  },
-  "action_detect|2026-11-15t09_02_54_376993": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-11-15\",   \"action_time\": \"10:00\",   \"action_summary\": \"Заплан",
-    "ts": "2026-11-15T09:02:54.376993"
-  },
-  "action_detect|2026-11-15t09_02_43_376602": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-15T09:02:43.376602"
   }
 }
