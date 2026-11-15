@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T20:30:28.006264+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-03T20:30:31.199515+00:00",
       "category": "event_done",
       "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 20:40 — виконано?",
@@ -14486,6 +14480,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-16T00:00:47.449095+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_728fa38d0f"
     }
   ]
 }
