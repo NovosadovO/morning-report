@@ -298,5 +298,10 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Це лист від Reserved із проханням оцінити відвідування магазину. Мета листа — отримати зворотний зв'язок для покращення сервісу. Одержувача дяк",
     "ts": "2026-11-15T18:03:02.827939"
+  },
+  "action_detect|2026-11-15t21_40_09_252747": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-15T21:40:09.252747"
   }
 }
