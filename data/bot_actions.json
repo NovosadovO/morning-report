@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Новини щодо криптовалют",
-      "detail": "Олеже, ти отримав два листи з дайджестами новин про криптовалюти від CryptoBeholder.com та Oleh Bezuhlyi. Можливо, тобі буде цікаво переглянути.",
-      "module": "selfact",
-      "ts": "2026-11-04T16:32:39"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, ти отримав листа від The Economist через LinkedIn з т",
       "detail": "Олеже, ти отримав листа від The Economist через LinkedIn з темою \"The quality you should most wish for your children\".",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T05:32:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-15",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-15T05:40:22"
     }
   ]
 }
