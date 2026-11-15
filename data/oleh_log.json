@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_80964",
-      "label": "🗑 Видалити",
-      "ts": "2026-10-16T19:01:53"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_4tj0fvpkh6bvq1g7laa9oglfls_2026-10-16",
       "label": "✅ Виконано",
       "ts": "2026-10-16T19:01:59"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_cardio_np",
       "label": "❌",
       "ts": "2026-11-15T20:56:26"
+    },
+    {
+      "t": "msg",
+      "kind": "cmd",
+      "text": "/статус_аі",
+      "ts": "2026-11-15T20:59:25"
     }
   ]
 }
