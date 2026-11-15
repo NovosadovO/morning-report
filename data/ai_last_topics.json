@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-15t20_59_34_273779": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"До церкви на ранню\", \"action_date\": \"2023-11-18\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календар: д",
+    "ts": "2026-11-15T20:59:34.273779"
+  },
   "selfact|2026-11-15t20_51_04_002833": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що 15.11 потрібно оплатити квартиру на суму €500.\",     \"date\": \"202",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати до",
     "ts": "2026-11-15T17:48:11.063706"
-  },
-  "action_detect|2026-11-15t14_00_50_373905": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": \"2023-11-18\",   \"action_time\": \"08:00\",   \"action_summary\": \"Зап",
-    "ts": "2026-11-15T14:00:50.373905"
   }
 }
