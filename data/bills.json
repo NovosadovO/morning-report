@@ -159,9 +159,10 @@
     "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
     "subject": "$10.00 payment to Runable was unsuccessful",
     "note": "Невдала спроба оплати $10.00 за Runable. Потрібно оновити платіжну інформацію.",
-    "paid": false,
-    "paid_at": "",
-    "created": "2026-08-23"
+    "paid": true,
+    "paid_at": "2026-11-16",
+    "created": "2026-08-23",
+    "paid_by": "mail"
   },
   "railway_corporation|12_32|": {
     "vendor": "Railway Corporation",
