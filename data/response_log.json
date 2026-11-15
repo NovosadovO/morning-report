@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T16:28:20.436793+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_b4fc725cad"
-    },
-    {
       "ts": "2026-09-03T16:36:48.094778+00:00",
       "category": "calendar_button",
       "question": "🔔 🧳 Зібрати речі: Málaga",
@@ -14478,6 +14472,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-11-15T20:48:51.697697+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
