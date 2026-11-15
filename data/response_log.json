@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T14:59:24.410208+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_1ba99e03d9"
-    },
-    {
       "ts": "2026-09-03T15:03:18.010675+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14471,6 +14465,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Переглянути аналізи",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-15"
+      }
+    },
+    {
+      "ts": "2026-11-15T07:30:22.538509+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на листа про аналізи",
       "extra": {
         "kind": "reply",
         "date": "2026-11-15"
