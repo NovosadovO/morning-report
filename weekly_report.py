@@ -97,13 +97,16 @@ def get_habits_data():
         return load_json("/tmp/habits_data.json", {})
 
 def get_weight_data():
-    """Завантажує дані ваги."""
-    path = "/tmp/weight_data.json"
-    data = load_json(path, {})
-    if not data:
-        initial = os.path.join(_DIR, "weight_data_initial.json")
-        data = load_json(initial, {})
-    return data
+    """Вага за ~45 днів: Garmin (qwatch_data.json) має пріоритет, ручна — лише на дні без Garmin.
+    Раніше читало /tmp/weight_data.json (порожній після деплою) → «ВАГА: Даних немає»,
+    хоч свіжа вага з Garmin була (15.11 тижневий звіт)."""
+    try:
+        import healthai
+        return {d: round(v, 1) for d, v in healthai._weight_series(45)}
+    except Exception as e:
+        print(f"[weekly_report] weight error: {e}")
+    data = load_json("/tmp/weight_data.json", {})
+    return data or {}
 
 def get_runs_from_health():
     """Пробіжки за останні 7 днів — з Garmin Connect (running.py, пише garmin_sync).
