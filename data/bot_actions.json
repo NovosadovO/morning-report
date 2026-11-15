@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, у тебе є невиконані рахунки від GASTROMILA, spol. s r",
-      "detail": "У блоці 'НЕОПЛАТНІ РАХУНКИ' є записи для 'GASTROMILA, spol. s r.o.' з uid '76543', де в полі 'note' зазначено, що оплата прийнята, але також є інформація про виставлений рахунок. Це може свідчити про потенційну проблему з оплатою, яку варто перевірити.",
-      "module": "selfact",
-      "ts": "2026-11-05T13:49:22"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T18:13:06"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-15",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-15T18:43:11"
     }
   ]
 }
