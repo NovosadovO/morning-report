@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-11-15t06_15_47_555579": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-15T06:15:47.555579"
+  },
+  "action_detect|2026-11-15t06_01_49_153736": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-15T06:01:49.153736"
+  },
+  "selfact|2026-11-15t06_01_39_979381": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що 15.11 потрібно оплатити квартиру на суму €500.\",     \"date\": \"2026-11-15\"",
+    "ts": "2026-11-15T06:01:39.979381"
+  },
+  "action_detect|2026-11-15t06_01_38_051326": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-15T06:01:38.051326"
+  },
+  "action_detect|2026-11-15t06_01_27_114220": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2023-11-15\",   \"action_time\": null,   \"action_summary\": \"Оплатити ",
+    "ts": "2026-11-15T06:01:27.114220"
+  },
   "proactive_actions|2026-11-15t06_00_16_402527": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити квартиру\",     \"date\": \"2026-11-15\",     \"time\": \"10:00\",     \"message\": \"Олеже, сьогодні до 10:00 ",
@@ -273,30 +298,5 @@
     "topic": "EVENING_AI/truthfix",
     "gist": "Олеже, вечір суботи, 14 листопада 2026 року. Згідно з даними, ти перевищив денну ціль по кроках, маючи 18103. За минулу ніч зафіксовано 10 годин 31 хвилину сну.",
     "ts": "2026-11-14T21:31:04.749480"
-  },
-  "evening_ai|2026-11-14t21_30_53_687360": {
-    "topic": "EVENING_AI",
-    "gist": "Олеже, вечір суботи, 14 листопада 2026 року, настає, і ти в Кошице, де, схоже, завершується твій робочий день. Сьогодні ти перевищив свою ціль по кроках, здобув",
-    "ts": "2026-11-14T21:30:53.687360"
-  },
-  "action_detect|2026-11-14t21_30_40_813362": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Це підсумок дня з інформацією про ",
-    "ts": "2026-11-14T21:30:40.813362"
-  },
-  "selfact|2026-11-14t21_27_03_561131": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Оплати страхування Kooperativa (€67,22). Термін оплати – завтр",
-    "ts": "2026-11-14T21:27:03.561131"
-  },
-  "selfact|2026-11-14t21_10_56_631737": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата страхування Kooperativa\",     \"text\": \"Олеже, завтра останній день для оплати страхування Kooperativa",
-    "ts": "2026-11-14T21:10:56.631737"
-  },
-  "healthai_truthfix|2026-11-14t21_06_19_280760": {
-    "topic": "healthai/truthfix",
-    "gist": "Сьогодні зафіксовано 10.5 годин сну. Це більше за середній показник за тиждень, який становить 7.9 годин.  З огляду на те, що завтра Олег матиме нічну зміну, ва",
-    "ts": "2026-11-14T21:06:19.280760"
   }
 }
