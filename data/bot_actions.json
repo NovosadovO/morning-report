@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, ти отримав листа від The Economist через LinkedIn з т",
-      "detail": "Олеже, ти отримав листа від The Economist через LinkedIn з темою \"The quality you should most wish for your children\".",
-      "module": "selfact",
-      "ts": "2026-11-04T16:47:59"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, ти отримав листа від CryptoBeholder.com через LinkedI",
       "detail": "Олеже, ти отримав листа від CryptoBeholder.com через LinkedIn з темою \"📰 AI-curated Daily Crypto Digest - November 4\".",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T05:40:22"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-14",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
+      "module": "qwsync",
+      "ts": "2026-11-15T05:40:25"
     }
   ]
 }
