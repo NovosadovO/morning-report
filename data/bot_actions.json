@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-04T19:06:33"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T07:11:58"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-15",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-15T07:41:37"
     }
   ]
 }
