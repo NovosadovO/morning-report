@@ -7,6 +7,15 @@ fails = []
 def chk(c, m):
     print(("ok   " if c else "FAIL ") + m)
     if not c: fails.append(m)
+chk(astro._alert_allowed("🌙 Місяць", "☀️ Сонце"), "Місяць–Сонце дозволено")
+chk(astro._alert_allowed("♂ Марс", "🌙 Місяць"), "Марс–Місяць дозволено")
+chk(astro._alert_allowed("🌙 Місяць", "Асцендент (ASC)"), "Місяць–ASC дозволено")
+chk(not astro._alert_allowed("🌙 Місяць", "♃ Юпітер"), "Місяць–Юпітер глушимо")
+chk(not astro._alert_allowed("☿ Меркурій", "🌙 Місяць"), "Меркурій–Місяць глушимо")
+chk(not astro._alert_allowed("🌙 Місяць"), "вхід Місяця в знак/дім глушимо")
+chk(astro._alert_allowed("♄ Сатурн"), "вхід Сатурна дозволено")
+chk(astro._alert_allowed("♄ Сатурн", "♃ Юпітер"), "повільні планети дозволено")
+
 if not astro._KERYKEION_OK:
     print("kerykeion відсутній — пропуск"); raise SystemExit(0)
 import os

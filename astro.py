@@ -1237,6 +1237,26 @@ def get_astro_report():
     return "\n".join(lines)
 
 
+_MOON_OK_PARTNERS = ("Сонце", "Марс", "Асцендент", "ASC")
+
+
+def _is_moon(name):
+    return "Місяць" in str(name)
+
+
+def _alert_allowed(p1, p2=None):
+    """Фільтр шуму (Олег, 15.11): швидкий Місяць — лише аспекти до Сонця, Марса й
+    Асцендента; входи Місяця в знак/дім не сповіщаємо (стан усе одно оновлюється)."""
+    if p2 is None:
+        return not _is_moon(p1)
+    if _is_moon(p1) and _is_moon(p2):
+        return False
+    if _is_moon(p1) or _is_moon(p2):
+        other = p2 if _is_moon(p1) else p1
+        return any(k in str(other) for k in _MOON_OK_PARTNERS)
+    return True
+
+
 def get_astro_alerts():
     """
     Порівнює поточні аспекти + позиції планет (знак/дім) з попереднім збереженим станом.
@@ -1316,6 +1336,8 @@ def get_astro_alerts():
 
         # 1. Перевіряємо зміну знаку або дому у планет
         for name_ua, info in current_state.items():
+            if not _alert_allowed(name_ua):
+                continue
             old_info = old_state.get(name_ua, {})
             if old_info.get("sign") and old_info["sign"] != info["sign"]:
                 _key_map = {v: k for k, v in PLANETS_LIST}
@@ -1338,7 +1360,7 @@ def get_astro_alerts():
             # Знаходимо деталі нових аспектів
             for p1, p2, asp, emoji, exact in t_aspects:
                 key = f"{p1}_{asp}_{p2}"
-                if key in new_aspects:
+                if key in new_aspects and _alert_allowed(p1, p2):
                     desc = get_aspect_description(p1, asp, p2)
                     line = f"{emoji} <b>АСТРО-АЛЕРТ:</b> {p1} {asp} {p2}  <i>(орб {exact:.1f}°)</i>"
                     if desc:
@@ -1504,12 +1526,12 @@ def get_astro_alerts_fallback():
     alerts = []
     for name, sign in cur_signs.items():
         prev = old_signs.get(name)
-        if prev and prev != sign:
+        if prev and prev != sign and _alert_allowed(name):
             alerts.append(f"🪐 <b>{name}</b> перейшов з {prev} у <b>{sign}</b>")
 
     if old_signs:      # перший запуск лише запам'ятовує стан, не спамить
         for key, a in cur_aspects.items():
-            if key in old_aspects:
+            if key in old_aspects or not _alert_allowed(a["t"], a["n"]):
                 continue
             desc = ""
             try:
