@@ -174,9 +174,10 @@
     "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "subject": "$12.32 payment to Railway Corporation was unsuccessful",
     "note": "Невдала спроба оплати $12.32 за підписку Railway Corporation. Потрібно оновити платіжну інформацію.",
-    "paid": false,
-    "paid_at": "",
-    "created": "2026-08-23"
+    "paid": true,
+    "paid_at": "2026-11-16",
+    "created": "2026-08-23",
+    "paid_by": "mail"
   },
   "google_play|7_99|2026-08-25": {
     "vendor": "Google Play",
