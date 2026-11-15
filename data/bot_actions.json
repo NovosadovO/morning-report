@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Потрібно оплатити страхування Kooperativa",
-      "detail": "У календарі на 8.11 зазначено 'Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень'.",
-      "module": "selfact",
-      "ts": "2026-11-04T17:49:56"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-15T06:41:39"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-15T07:01:31"
     }
   ]
 }
