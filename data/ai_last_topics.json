@@ -1,4 +1,24 @@
 {
+  "foresight|2026-11-16t00_26_42_433837": {
+    "topic": "foresight",
+    "gist": "📬 від Notifikácie KOOPERATIVA → Сповіщення про оплату страховки авто EČV LE066BI. 📬 від Maroš Sivák → Аналіз для тебе, ймовірно, щодо інвестицій чи крипти. 📬 ві",
+    "ts": "2026-11-16T00:26:42.433837"
+  },
+  "action_detect|2026-11-16t00_16_05_215155": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-16T00:16:05.215155"
+  },
+  "action_detect|2026-11-16t00_15_54_114055": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
+    "ts": "2026-11-16T00:15:54.114055"
+  },
+  "action_detect|2026-11-16t00_15_43_028456": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-16T00:15:43.028456"
+  },
   "selfact|2026-11-16t00_12_47_403615": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Оплати квартиру. Сума €500.\",     \"date\": \"2026-11-16\",     \"time\": \"08:00\", ",
@@ -278,25 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-15T20:18:50.292230"
-  },
-  "email_ai_item|2026-11-15t20_15_40_921803": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Senior SAP Basis Administrator (m/w/d) in Košice\\\" від itesys AG та \\\"(Seni",
-    "ts": "2026-11-15T20:15:40.921803"
-  },
-  "healthai_truthfix|2026-11-15t20_05_33_193352": {
-    "topic": "healthai/truthfix",
-    "gist": "HRV за ніч 41 мс — це нижче за середнє за 7 днів (49.1 мс) та 14 днів (54.5 мс). Зміна сьогодні: нічна зміна 18:00–06:00.",
-    "ts": "2026-11-15T20:05:33.193352"
-  },
-  "healthai|2026-11-15t20_05_22_710521": {
-    "topic": "healthai",
-    "gist": "🌙 HRV за ніч 41 мс — це нижче за середнє за 7 днів (49.1 мс) та 14 днів (54.5 мс). Із зайнятістю на нічній зміні, твоє самопочуття та відновлення зараз пріорите",
-    "ts": "2026-11-15T20:05:22.710521"
-  },
-  "selfact|2026-11-15t20_04_04_917739": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру на суму €500.\",     \"",
-    "ts": "2026-11-15T20:04:04.917739"
   }
 }
