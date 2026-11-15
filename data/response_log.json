@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T20:26:53.033407+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-09-03T20:27:06.732149+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14474,6 +14468,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_1f0c9e5f75"
+    },
+    {
+      "ts": "2026-11-16T00:00:13.189214+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити листа про страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-16"
+      }
     }
   ]
 }
