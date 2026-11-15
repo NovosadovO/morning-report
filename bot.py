@@ -4127,7 +4127,7 @@ def handle_command(chat_id, text):
             from running import format_run_analysis
             from strava_charts import plot_month_chart
             result = format_run_analysis(short=False)
-            send(chat_id, result if result else "⚠️ Немає даних про біг — напиши мені про пробіжку вільним текстом")
+            send(chat_id, result if result else "⚠️ Немає пробіжок у Garmin за цей період. Оновити: /гармін")
             chart = plot_month_chart()
             if chart:
                 send_photo(chat_id, chart, caption="📊 Місяць по днях")

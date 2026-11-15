@@ -5022,12 +5022,11 @@ def _check_event_reminders(gmail_service, gemini_key: str = None) -> list:
     try:
         # Завантажимо деду по
         dedup_map = {}
-        if os.path.exists(dedup_file):
-            try:
-                with open(dedup_file, "r", encoding="utf-8") as f:
-                    dedup_map = json.load(f) or {}
-            except:
-                pass
+        try:
+            import durable
+            dedup_map = durable.load("event_reminders_sent.json", dedup_file) or {}
+        except Exception:
+            dedup_map = {}
         
         now = datetime.now(timezone.utc) + timedelta(hours=2)
         today_str = now.strftime("%Y-%m-%d")
@@ -5103,9 +5102,8 @@ def _check_event_reminders(gmail_service, gemini_key: str = None) -> list:
                     dedup_map[key] = True
         
         # Зберігаємо дедуп-карту
-        os.makedirs(os.path.dirname(dedup_file), exist_ok=True)
-        with open(dedup_file, "w", encoding="utf-8") as f:
-            json.dump(dedup_map, f, indent=2, ensure_ascii=False)
+        import durable
+        durable.save("event_reminders_sent.json", dedup_map, dedup_file, keep=300)
     
     except Exception as e:
         print(f"[EVENT_REMINDERS] error: {e}", flush=True)

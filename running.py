@@ -586,7 +586,7 @@ def format_run_block():
             lines.append(f"\n<b>Останнє тренування ({date_short}):</b>")
         lines.extend(_format_run_lines(last))
     else:
-        lines.append("\n  Немає даних про тренування — напиши мені про пробіжку вільним текстом")
+        lines.append("\n  Немає пробіжок у Garmin за цей період (підтягуються автоматично, /гармін — оновити)")
 
     if week:
         lines.append(f"\n<b>Цей тиждень</b> (з {week['week_start']}):")

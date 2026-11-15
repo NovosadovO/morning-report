@@ -1815,16 +1815,15 @@ def run_report_card_watcher():
 
     def _load_sent_persistent():
         try:
-            with open(_SENT_FILE) as _f:
-                return json.load(_f)
-        except:
+            import durable
+            return durable.load("report_card_sent.json", _SENT_FILE)
+        except Exception:
             return {}
 
     def _save_sent_persistent(data):
         try:
-            os.makedirs(os.path.dirname(_SENT_FILE), exist_ok=True)
-            with open(_SENT_FILE, "w") as _f:
-                json.dump(data, _f)
+            import durable
+            durable.save("report_card_sent.json", data, _SENT_FILE, keep=60)
         except Exception as _e:
             print(f"[report_card] dedup save error: {_e}", flush=True)
 

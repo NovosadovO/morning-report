@@ -430,11 +430,10 @@ def should_send_proactive_message(unused_param=None, user_activity_idle_minutes=
     
     # 1. Читаємо останній час
     try:
-        if os.path.exists(dedup_file):
-            with open(dedup_file, "r") as f:
-                data = json.load(f) or {}
-                last_send_ts = data.get("last_sent_timestamp", 0.0)
-                last_send_hour = data.get("last_sent_hour", "")
+        import durable
+        data = durable.load("proactive_last_send.json", dedup_file) or {}
+        last_send_ts = data.get("last_sent_timestamp", 0.0)
+        last_send_hour = data.get("last_sent_hour", "")
     except Exception as e:
         print(f"[proactive] dedup read error: {e}", flush=True)
     
@@ -525,14 +524,13 @@ def send_proactive_message(telegram_send_func):
         dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_last_send.json")
         
         try:
-            os.makedirs(os.path.dirname(dedup_file), exist_ok=True)
             dedup_data = {
                 "last_sent_timestamp": now_local_ts.timestamp(),
                 "last_sent_hour": current_hour,
                 "last_sent_iso": now_local_ts.isoformat()
             }
-            with open(dedup_file, "w") as f:
-                json.dump(dedup_data, f, indent=2)
+            import durable
+            durable.save("proactive_last_send.json", dedup_data, dedup_file)
             
             print(f"✅ Проактивне повідомлення надіслано о {now_local_ts.strftime('%H:%M')} | dedup recorded", flush=True)
         except Exception as _de:
