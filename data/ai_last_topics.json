@@ -1,4 +1,14 @@
 {
+  "market_insight|2026-11-15t22_37_03_220794": {
+    "topic": "market_insight",
+    "gist": "```json {   \"text\": \"HYPE демонструє незвично сильний рух +4.67% за 24 години, значно випереджаючи BTC (-0.73%). Це свідчить про потенційну локальну силу монети",
+    "ts": "2026-11-15T22:37:03.220794"
+  },
+  "selfact|2026-11-15t22_24_13_654697": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру на суму €500.\",     \"",
+    "ts": "2026-11-15T22:24:13.654697"
+  },
   "email_ai_item|2026-11-15t22_20_18_383994": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від Free Online Courses через LinkedIn анонсує майстер-клас \\\"Microsoft Excel Supply Chain Analytics Dashboard Masterclass\\\". Курс навчає ",
@@ -288,15 +298,5 @@
     "topic": "weekly_report",
     "gist": "Як ти плануєш досягти цілі у 75 кг, якщо вага вчора була 84.7 кг, а даних про неї за цей тиждень немає взагалі? Поки що лише 17% звичок виконано, і це не додає ",
     "ts": "2026-11-15T18:46:50.463867"
-  },
-  "action_detect|2026-11-15t18_46_39_049916": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Церква на ранню\", \"action_date\": \"2023-10-21\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календ",
-    "ts": "2026-11-15T18:46:39.049916"
-  },
-  "action_detect|2026-11-15t18_46_28_078108": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати до",
-    "ts": "2026-11-15T18:46:28.078108"
   }
 }
