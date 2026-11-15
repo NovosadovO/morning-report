@@ -1,9 +1,4 @@
 {
-  "80979": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-10-16T20:23:02.393110+00:00"
-  },
   "80980": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-11-15T08:14:47.555446+00:00"
+  },
+  "82689": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-11-15T08:31:05.447532+00:00"
   }
 }
