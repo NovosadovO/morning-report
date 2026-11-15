@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-15t09_41_32_054684": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплата квартири\",     \"text\": \"Нагадую, що сьогодні, 15.11, потрібно оплатити квартиру на суму €500.\",     \"wh",
+    "ts": "2026-11-15T09:41:32.054684"
+  },
+  "action_detect|2026-11-15t09_32_23_490323": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2023-11-15\", \"action_time\": \"10:00\", \"action_summary\": \"Оплатити квартиру",
+    "ts": "2026-11-15T09:32:23.490323"
+  },
+  "msg_event_soon_truthfix|2026-11-15t09_32_12_593793": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "⏰ **10:00 — Оплата квартири: €500.** Нагадую про оплату квартири, яка запланована на сьогодні. Ти відклав це нагадування о 01:02, натиснувши «⏰ Пізніше».",
+    "ts": "2026-11-15T09:32:12.593793"
+  },
   "msg_event_soon|2026-11-15t09_32_02_300207": {
     "topic": "MSG_EVENT_SOON",
     "gist": "✅ **10:00 — Оплата квартири: €500.** Олеже, ти щойно після нічної зміни, але пам'ятай про оплату квартири вже за 30-90 хвилин. Головне зараз — зберегти спокій і",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-15T06:01:38.051326"
-  },
-  "action_detect|2026-11-15t06_01_27_114220": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2023-11-15\",   \"action_time\": null,   \"action_summary\": \"Оплатити ",
-    "ts": "2026-11-15T06:01:27.114220"
-  },
-  "proactive_actions|2026-11-15t06_00_16_402527": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити квартиру\",     \"date\": \"2026-11-15\",     \"time\": \"10:00\",     \"message\": \"Олеже, сьогодні до 10:00 ",
-    "ts": "2026-11-15T06:00:16.402527"
-  },
-  "bills|2026-11-15t05_54_10_674447": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-15T05:54:10.674447"
   }
 }
