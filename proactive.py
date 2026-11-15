@@ -739,7 +739,7 @@ def check_ai_observations():
                 if parts:
                     h_lines.append(f"{d}: {', '.join(parts)}")
             if h_lines:
-                data_parts.append("ЗДОРОВ'Я/QWATCH (7 днів):\n" + "\n".join(h_lines))
+                data_parts.append("ЗДОРОВ'Я/GARMIN (7 днів):\n" + "\n".join(h_lines))
     except Exception as e:
         print(f"[ai_obs] health error: {e}")
 

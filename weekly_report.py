@@ -106,76 +106,21 @@ def get_weight_data():
     return data
 
 def get_runs_from_health():
-    """Витягує пробіжки з Apple Health XML за останні 7 днів."""
-    import re
-    XML = "/tmp/health_export/apple_health_export/export.xml"
+    """Пробіжки за останні 7 днів — з Garmin Connect (running.py, пише garmin_sync).
+    Раніше читало Apple Health XML, якого більше нема (Олег, 15.11: усе з Garmin)."""
     try:
-        with open(XML, "r", encoding="utf-8", errors="replace") as f:
-            content = f.read()
-    except:
+        import running
+        week = set(get_week_dates())
+        out = []
+        for r in running.get_runs(days=8):
+            ds = r["date"].strftime("%Y-%m-%d")
+            if ds in week and r.get("dist_km", 0) > 0:
+                out.append({"date": ds, "km": float(r["dist_km"]),
+                            "min": round(r["dur_sec"] / 60, 1)})
+        return out
+    except Exception as e:
+        print(f"[weekly_report] garmin runs error: {e}")
         return []
-
-    # Шукаємо WorkoutActivityTypeRunning
-    pattern = re.compile(
-        r'workoutActivityType="HKWorkoutActivityTypeRunning"[^>]*'
-        r'startDate="([^"]+)"[^>]*'
-        r'endDate="([^"]+)"[^>]*'
-        r'totalDistance="([^"]+)"[^>]*'
-        r'(?:totalEnergyBurned="([^"]*)"[^>]*)?'
-        r'duration="([^"]+)"'
-    )
-    # Alternate pattern
-    pattern2 = re.compile(
-        r'<Workout workoutActivityType="HKWorkoutActivityTypeRunning"[^>]+'
-        r'duration="([^"]+)"[^>]+'
-        r'totalDistance="([^"]+)"[^>]+'
-        r'startDate="([^"]+)"'
-    )
-
-    week_dates = get_week_dates()
-    runs = []
-
-    for line in content.split('\n'):
-        if 'HKWorkoutActivityTypeRunning' not in line:
-            continue
-        m = re.search(
-            r'startDate="([^"]+)".*?duration="([^"]+)".*?totalDistance="([^"]+)"',
-            line
-        )
-        if not m:
-            m = re.search(
-                r'duration="([^"]+)".*?totalDistance="([^"]+)".*?startDate="([^"]+)"',
-                line
-            )
-            if m:
-                dur_s, dist_s, start_s = m.groups()
-            else:
-                continue
-        else:
-            start_s, dur_s, dist_s = m.groups()
-
-        try:
-            # Парсимо дату
-            start_s_clean = re.sub(r' ([+-]\d{4})$', r'\1', start_s.strip()).replace(' ', 'T', 1)
-            dt = datetime.fromisoformat(start_s_clean).astimezone(timezone.utc)
-            local_dt = dt + timedelta(hours=2)
-            date_str = local_dt.strftime("%Y-%m-%d")
-
-            if date_str not in week_dates:
-                continue
-
-            dist_km = float(dist_s)
-            dur_min = float(dur_s)
-
-            runs.append({
-                "date": date_str,
-                "km":   round(dist_km, 2),
-                "min":  round(dur_min, 1),
-            })
-        except Exception as e:
-            continue
-
-    return runs
 
 # ─── БЛОКИ ЗВІТУ ──────────────────────────────────────────────────────────────
 

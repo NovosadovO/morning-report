@@ -3463,48 +3463,6 @@ def _check_fear_greed():
 
 # ─── 5. ПІДСУМОК ТА РЕКОМЕНДАЦІЇ ─────────────────────────────────────────────
 
-def _get_run_recommendation(weather_text):
-    """Рекомендація бігти сьогодні."""
-    import re as _re
-    XML = "/tmp/health_export/apple_health_export/export.xml"
-    last_run_days = None
-    try:
-        with open(XML, "r", encoding="utf-8", errors="replace") as f:
-            xml_content = f.read()
-        now_utc = datetime.now(timezone.utc)
-        run_dates = []
-        for line in xml_content.split("\n"):
-            if "HKWorkoutActivityTypeRunning" not in line:
-                continue
-            m2 = _re.search('startDate="([^"]+)"', line)
-            if m2:
-                s = m2.group(1).strip()
-                # parse datetime safely
-                import re as re2
-                s2 = re2.sub(r" ([+-][0-9]{4})$", r"\1", s).replace(" ", "T", 1)
-                try:
-                    dt = datetime.fromisoformat(s2).astimezone(timezone.utc)
-                    run_dates.append(dt)
-                except Exception:
-                    pass
-        if run_dates:
-            last_run_days = (now_utc - max(run_dates)).days
-    except Exception as e:
-        print(f"run recommendation error: {e}")
-
-    bad_weather = any(x in weather_text.lower() for x in ["гроза", "сильний дощ", "сніг", "злива"])
-    if last_run_days is None:
-        return "🏃 Даних про пробіжки немає — саме час вийти!"
-    elif last_run_days == 0:
-        return "🏃 Сьогодні вже бігав — молодець! 💪"
-    elif last_run_days <= 2:
-        return f"🏃 {last_run_days} дн. без бігу — гарний момент вийти!"
-    else:
-        if bad_weather:
-            return f"🏃 {last_run_days} днів без бігу... Погода не дуже, але ліньки гірше 😄"
-        return f"🏃 <b>{last_run_days} днів без бігу!</b> Сьогодні — обов\'язково! 💨"
-
-
 def _get_current_shift_context(calendar_text=""):
     """Визначає поточний статус зміни Олега.
     Повертає dict: {shift, is_working_now, greeting_override}
@@ -5902,7 +5860,7 @@ def main():
                 _health_lines.append("⚖️ Вага: <i>немає даних — надішли /weight 83.5</i>")
         except Exception as _e_w: pass
 
-        # Кроки — з QWatch (основне), fallback Apple Health (health.json)
+        # Кроки — з Garmin Connect (qwatch_data.json пише лише garmin_sync)
         try:
             _qw_s = _st_h.load("qwatch_data.json", default={})
             # Fallback: якщо qwatch_data пустий — беремо кроки з health.json
@@ -5944,7 +5902,7 @@ def main():
                 _blk_s += f"\n  <i>нема даних: {', '.join(_st_gaps)}</i>"
             _health_lines.append(_blk_s)
             if _st_empty == 7:
-                _health_lines.append("  <i>📲 Синхронізуй QWatch або надішли /health_export</i>")
+                _health_lines.append("  <i>⌚ Нема даних — синхронізуй годинник із Garmin Connect (/гармін)</i>")
         except Exception: pass
 
         # Звички сьогодні — рядок іконок
@@ -8657,8 +8615,8 @@ def check_weight_reminder():
 
         msg = (
             "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n\n"
-            "Зваж себе зараз і запиши в Apple Health.\n\n"
-            "Потім надішли мені свою вагу, наприклад:\n"
+            "Зваж себе зараз.\n\n"
+            "Вага підтягнеться з Garmin Connect, або надішли її мені, наприклад:\n"
             "<code>82.5</code>"
         )
         send_telegram(msg)

@@ -552,20 +552,10 @@ def run_reminders_watcher():
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         safe_id = reminder_id.replace("/","_").replace("@","_")[:50]
 
-        # Для health нагадування — спеціальні кнопки
-        if reminder_id == "health_data_daily":
-            keyboard = [[
-                {"text": "📸 Надішли фото", "callback_data": "reminder_health_photo"},
-                {"text": "📊 Мої дані", "callback_data": "reminder_health_view"},
-            ], [
-                {"text": "✅ Вже ввів", "callback_data": f"reminder_yes_{safe_id}"},
-                {"text": "⏭ Пропустити", "callback_data": f"reminder_no_{safe_id}"},
-            ]]
-        else:
-            keyboard = [[
-                {"text": "✅ Зробив", "callback_data": f"reminder_yes_{safe_id}"},
-                {"text": "❌ Не зробив", "callback_data": f"reminder_no_{safe_id}"},
-            ]]
+        keyboard = [[
+            {"text": "✅ Зробив", "callback_data": f"reminder_yes_{safe_id}"},
+            {"text": "❌ Не зробив", "callback_data": f"reminder_no_{safe_id}"},
+        ]]
 
         data = json.dumps({
             "chat_id": TELEGRAM_CHAT,
@@ -610,6 +600,12 @@ def run_reminders_watcher():
             reminders, sha = gh_get()
             now_local = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M")
             changed = False
+            # Застарілі ручні нагадування (Apple Health / QWatch) — видалені за
+            # запитом Олега 15.11: усі дані здоров'я тільки з Garmin Connect.
+            _obsolete = {"health_data_daily"}
+            if any(r.get("id") in _obsolete for r in reminders):
+                reminders = [r for r in reminders if r.get("id") not in _obsolete]
+                changed = True
             for r in reminders:
                 rid = r.get("id", "")
                 if r.get("sent"):

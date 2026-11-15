@@ -83,14 +83,15 @@ def capture(text: str, source: str = "telegram") -> dict:
     if not raw:
         return {}
 
+    # 15.11 (Олег): уся інформація про здоров'я — тільки з Garmin. Числа з чату
+    # більше НЕ пишемо в qwatch_data.json (це канонічний Garmin-кеш); у журнал
+    # лишається лише сирий текст як пам'ять розмови.
     fields = {}
     try:
         import qwsync
         fields = qwsync.normalize(_kv_from_text(raw)) or {}
-        if fields:
-            qwsync.save(fields, notify=False)
     except Exception as e:
-        K.log(TAG, f"parse/save error: {e}")
+        K.log(TAG, f"parse error: {e}")
 
     items = load_journal()
     items.append({
@@ -734,7 +735,7 @@ def tracker_report(send: bool = True) -> str:
     parts = [f"📋 <b>AI-ТРЕКЕР — {_now().strftime('%d.%m')}</b>", "", facts_block(a), ""]
     parts.append(f"✅ Сьогодні є: {', '.join(got) if got else '— нічого'}")
     if missing:
-        parts.append(f"❓ Бракує: {', '.join(missing)} — надішли одним рядком")
+        parts.append(f"⌚ Garmin ще не віддав: {', '.join(missing)} — підтягнеться при наступному синку")
     if todays:
         parts.append(f"📥 Твоїх записів за сьогодні збережено: {len(todays)}")
 

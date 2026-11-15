@@ -2475,7 +2475,7 @@ HELP_TEXT = """
 /звички — відмітити звички
 /статус — статус звичок (7 днів)
 /вага — динаміка ваги
-/аналіз_сну — аналіз сну (Apple Health)
+/аналіз_сну — аналіз сну (Garmin)
 
 <b>🌙 Режим сну</b>
 /сон — тиша: без сповіщень, без нагадувань, без витрат AI
@@ -4543,7 +4543,7 @@ def handle_command(chat_id, text):
                 from weight import save_weight, get_trend
                 save_weight(kg)
                 trend = get_trend()
-                reply = f"⚖️ <b>{kg} кг</b> — збережено!\n\nНе забудь записати в Apple Health 🍎"
+                reply = f"⚖️ <b>{kg} кг</b> — збережено!"
                 if trend:
                     reply += f"\n\n{trend}"
                 send(chat_id, reply)

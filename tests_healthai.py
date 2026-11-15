@@ -129,7 +129,7 @@ j = H.load_journal()
 check("поля розібрані", bool(f), f)
 check("журнал не порожній", len(j) == 1, len(j))
 check("сирий текст цілий", "83.4" in j[0]["raw"], j[0]["raw"])
-check("qwsync викликано", len(sys.modules["qwsync"]._saved) == 1)
+check("qwsync НЕ викликано (дані лише з Garmin)", len(sys.modules["qwsync"]._saved) == 0)
 check("selfact журнал", any(x[0] == "note" for x in JOURNALED), JOURNALED)
 
 print("\n3. capture ігнорує порожнє")
