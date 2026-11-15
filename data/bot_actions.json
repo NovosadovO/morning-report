@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-05T18:05:52"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-05",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Запланована подія 'Оплата квартири' на 08:00 сьогодні, 15.11.2026, сума €500.",
       "module": "selfact",
       "ts": "2026-11-15T21:37:17"
+    },
+    {
+      "kind": "notify",
+      "what": "Підтвердження страховки",
+      "detail": "У запланованих нагадуваннях є '2026-11-04T10:00:00 — 🔔 Перевірити страховку авто'. Поточна дата 15.11.2026, тому нагадування актуальне.",
+      "module": "selfact",
+      "ts": "2026-11-15T21:37:21"
     }
   ]
 }
