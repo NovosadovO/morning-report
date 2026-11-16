@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-16t22_35_17_844878": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олег! Нагадую, що сьогодні в тебе нічна зміна. Не забудь про неї.\",     \"why\": \"Сьогодні у Олега нічна ",
+    "ts": "2026-11-16T22:35:17.844878"
+  },
+  "bills|2026-11-16t22_21_05_353915": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-16T22:21:05.353915"
+  },
   "selfact|2026-11-16t22_19_44_200707": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Майже 22:20, а ти ще на роботі. Не забудь про нічну зміну, яка почалася о 17:00. Відпочивай!\",     \"why\": \"Пото",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-16T18:02:08.125192"
-  },
-  "action_detect|2026-11-16t18_01_57_270858": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-16T18:01:57.270858"
-  },
-  "action_detect|2026-11-16t18_01_46_178950": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-16T18:01:46.178950"
   }
 }
