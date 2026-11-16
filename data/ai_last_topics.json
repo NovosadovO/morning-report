@@ -1,4 +1,69 @@
 {
+  "selfact|2026-11-16t09_04_48_268791": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Ти отримав лист від Maroš Sivák з аналізом інвестиційних портфелів. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },",
+    "ts": "2026-11-16T09:04:48.268791"
+  },
+  "action_detect|2026-11-16t09_02_53_793674": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-16T09:02:53.793674"
+  },
+  "action_detect|2026-11-16t09_02_42_892587": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сплатити за квартиру\", \"action_date\": \"2023-12-15\", \"action_time\": null, \"action_summary\": \"Сплатити 500€ за кварти",
+    "ts": "2026-11-16T09:02:42.892587"
+  },
+  "action_detect|2026-11-16t09_02_32_013103": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-16T09:02:32.013103"
+  },
+  "action_detect|2026-11-16t09_02_20_704085": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-16T09:02:20.704085"
+  },
+  "action_detect|2026-11-16t09_02_09_696561": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-16T09:02:09.696561"
+  },
+  "briefing|2026-11-16t09_01_59_726599": {
+    "topic": "briefing",
+    "gist": "🧭 ГОЛОВНЕ: Твоє тіло подає чіткі сигнали про необхідність відновлення: Body Battery на 12/100, а HRV за ніч впав до 41 мс, що нижче норми. Це означає, що сьогод",
+    "ts": "2026-11-16T09:01:59.726599"
+  },
+  "themes_ai_truthfix|2026-11-16t09_01_52_064873": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Зараз 09:01. Ти вдома після нічної зміни.  💰 ФІНАНСИ На 15.12 заплановано оплату квартири на 500€. Витрати за листопад склали 16.95€.  🏃 БІГ Останнє тренування ",
+    "ts": "2026-11-16T09:01:52.064873"
+  },
+  "themes_ai|2026-11-16t09_01_49_126436": {
+    "topic": "themes_ai",
+    "gist": "Зараз 09:01. Ти вдома після нічної зміни.  💰 ФІНАНСИ Немає даних про поточний стан. Єдине відоме: 15.12 потрібно буде сплатити 500€ за квартиру. Оплата за листо",
+    "ts": "2026-11-16T09:01:49.126436"
+  },
+  "astro_ai_truthfix|2026-11-16t09_01_39_498531": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Нічна зміна завершилася, а показники твого організму сигналізують про потребу у відновленні. Пульс спокою становить 51 уд/хв, а показник HRV — 41 мс.  Сфера фін",
+    "ts": "2026-11-16T09:01:39.498531"
+  },
+  "astro_ai|2026-11-16t09_01_36_206752": {
+    "topic": "astro_ai",
+    "gist": "Нічна зміна щойно закінчилася, а твоє тіло вже сигналізує про перевантаження. Пульс спокою 51 уд/хв, що вище за норму, та HRV 41 мс – показники, що потребують у",
+    "ts": "2026-11-16T09:01:36.206752"
+  },
+  "action_detect|2026-11-16t09_01_02_549445": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-16T09:01:02.549445"
+  },
+  "action_detect|2026-11-16t09_00_51_446037": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
+    "ts": "2026-11-16T09:00:51.446037"
+  },
   "action_detect|2026-11-16t09_00_40_468789": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
@@ -233,70 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 починається нічна зміна. Не забудь про неї.\",     \"why\": \"Календар на 7 днів: 16.11: 17",
     "ts": "2026-11-16T04:08:48.211709"
-  },
-  "selfact|2026-11-16t03_52_43_866458": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні в тебе нічна зміна з 17:00. Зверни увагу, що це друга нічна зміна поспіль, а завтра теж нічна з",
-    "ts": "2026-11-16T03:52:43.866458"
-  },
-  "healthai|2026-11-16t03_52_02_409207": {
-    "topic": "healthai",
-    "gist": "❤️ Пульс спокою: <b>52</b> уд/хв. Це вище за твою норму за 14 днів (47 уд/хв), що може вказувати на навантаження. Перед початком наступної зміни додай 15-20 хви",
-    "ts": "2026-11-16T03:52:02.409207"
-  },
-  "openloop_promises|2026-11-16t03_51_31_307394": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-16T03:51:31.307394"
-  },
-  "selfact|2026-11-16t03_36_57_657421": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про робочий день\",     \"text\": \"Олеже, сьогодні, 16 листопада, о 17:00 розпочинається нічна зміна. Не забу",
-    "ts": "2026-11-16T03:36:57.657421"
-  },
-  "selfact|2026-11-16t03_21_13_135141": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Марош Сівак надіслав аналізи для Олега. Потрібно відповісти на його лист.\",     \"why\": \"Лист від Maroš Sivák з ",
-    "ts": "2026-11-16T03:21:13.135141"
-  },
-  "selfact|2026-11-16t03_05_53_590051": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Марош Сівáк надіслав тобі аналізи для Олега. Потрібно відпо",
-    "ts": "2026-11-16T03:05:53.590051"
-  },
-  "action_detect|2026-11-16t03_00_57_965644": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-16T03:00:57.965644"
-  },
-  "action_detect|2026-11-16t03_00_47_029944": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та спог",
-    "ts": "2026-11-16T03:00:47.029944"
-  },
-  "action_detect|2026-11-16t03_00_35_936917": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-16T03:00:35.936917"
-  },
-  "proactive_actions|2026-11-16t03_00_10_873471": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту про страхування KOOPERATIVA\",     \"date\": \"2026-11-16\",     \"time\": \"\",     \"message\": \"Оле",
-    "ts": "2026-11-16T03:00:10.873471"
-  },
-  "selfact|2026-11-16t02_50_48_515323": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна. Не забудь про неї.\",     \"why\": \"Сьогодні: 16.11.2026 02:50",
-    "ts": "2026-11-16T02:50:48.515323"
-  },
-  "selfact|2026-11-16t02_34_46_608885": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, сьогодні о 17:00 починається нічна зміна. Враховуй це.\",     \"why\": ",
-    "ts": "2026-11-16T02:34:46.608885"
-  },
-  "openloop_promises|2026-11-16t02_20_55_167398": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {\"what\": \"Скасувати підписку Garmin Connect+\", \"to\": null, \"date\": \"2026-11-04\"},   {\"what\": \"виконати завдання по Revolut\", \"to\": null, \"date\": \"20",
-    "ts": "2026-11-16T02:20:55.167398"
   }
 }
