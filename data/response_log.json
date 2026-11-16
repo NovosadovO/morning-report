@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T07:24:04.360335+00:00",
-      "category": "calendar_button",
-      "question": "Зібрати речі",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t3d",
-        "when": "17:00–18:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-04T07:24:05.170543+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14493,6 +14482,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_1fcda1dec8"
+    },
+    {
+      "ts": "2026-11-17T01:30:15.146384+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути аналізи",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
     }
   ]
 }
