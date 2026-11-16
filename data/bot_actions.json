@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нагадую, що завтра, 08.11, о 08:00 тобі потрібно оплатити ст",
-      "detail": "08.11: 08:00 Нагадування: оплатити страхування Kooperativa (€67,22) — за тиждень",
-      "module": "selfact",
-      "ts": "2026-11-07T03:33:39"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, завтра, 09.11, о 09:00 тобі потрібно переглянути стат",
       "detail": "09.11: 09:00 Переглянути статтю ESMA про MiCA — розбір і звіт",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T18:22:37"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-16",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-16T18:52:29"
     }
   ]
 }
