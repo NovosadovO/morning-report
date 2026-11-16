@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:35:32.018178+00:00",
-      "category": "calendar_confirm",
-      "question": "Зібрати речі",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Зібрати речі"
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T04:35:35.250790+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14503,6 +14492,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_26adc5218c"
+    },
+    {
+      "ts": "2026-11-17T00:24:06.024991+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_3091643f49"
     }
   ]
 }
