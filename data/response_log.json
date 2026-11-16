@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:35:35.250790+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_a5a89ea5f7"
-    },
-    {
       "ts": "2026-09-04T04:36:02.956821+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
@@ -14498,6 +14492,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_3091643f49"
+    },
+    {
+      "ts": "2026-11-17T00:24:20.497875+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
+      "answer": "yes"
     }
   ]
 }
