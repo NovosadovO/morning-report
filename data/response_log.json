@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T01:09:34.860983+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_ba09cbd260"
-    },
-    {
       "ts": "2026-09-04T01:09:34.861268+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14498,6 +14492,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-16T22:52:55.935751+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
