@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-16t21_16_36_804399": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Маєш важливий лист від Maroš Sivák щодо аналізів д",
+    "ts": "2026-11-16T21:16:36.804399"
+  },
+  "healthai|2026-11-16t21_05_43_300651": {
+    "topic": "healthai",
+    "gist": "🌙 Нічна зміна попереду, і поки що зафіксовано 5.2 години сну, що нижче за середнє за 7 днів (8.1 год). Це може впливати на енергію, адже Body Battery на рівні 4",
+    "ts": "2026-11-16T21:05:43.300651"
+  },
   "email_ai_item|2026-11-16t21_05_13_535190": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Це лист-новина від GenAI Works через LinkedIn, що містить статтю про можливе повернення Дженсена Хуанга в Nvidia, правила безпеки від Anthropic",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Нагадую, що лист від Maroš Sivák щодо аналізів для Olexiho",
     "ts": "2026-11-16T17:37:51.720124"
-  },
-  "action_detect|2026-11-16t17_36_11_872120": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-16T17:36:11.872120"
-  },
-  "action_detect|2026-11-16t17_31_38_577418": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": null,   \"action_time\": \"19:00\",   \"action_summary\": \"Початок нічної змі",
-    "ts": "2026-11-16T17:31:38.577418"
   }
 }
