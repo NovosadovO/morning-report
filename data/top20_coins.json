@@ -1,5 +1,5 @@
 {
-  "ts": 1794737952.7837873,
+  "ts": 1794824427.9166834,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -16,10 +16,10 @@
     "WBT": "whitebit",
     "LINK": "chainlink",
     "ADA": "cardano",
+    "RAIN": "rain",
     "XLM": "stellar",
-    "BCH": "bitcoin-cash",
     "NEAR": "near",
-    "LTC": "litecoin",
-    "AVAX": "avalanche-2"
+    "BCH": "bitcoin-cash",
+    "LTC": "litecoin"
   }
 }
