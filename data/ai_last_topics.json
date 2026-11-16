@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-17t01_30_08_231978": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-17\",     \"time\": \"\",     \"message\": \"Олеже, є два не",
+    "ts": "2026-11-17T01:30:08.231978"
+  },
   "selfact|2026-11-17t01_25_31_450550": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"20",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-16T21:00:29.876686"
-  },
-  "astro_ai_truthfix|2026-11-16t20_54_14_520126": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Твоя нічна зміна щойно завершилася, а організм сигналізує про напруження: HRV — 39 мс, пульс спокою — 51 уд/хв, SpO2 — 95%.  Транзитний Меркурій у IV домі робит",
-    "ts": "2026-11-16T20:54:14.520126"
   }
 }
