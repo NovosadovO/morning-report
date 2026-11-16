@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T07:24:05.170543+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_2feca0f7cf"
-    },
-    {
       "ts": "2026-09-04T16:15:48.386490+00:00",
       "category": "event_done",
       "question": "📅 🔔 Переглянути вакансію Regionalny kierownik sprzedaży\nПланувалась до 11:30 — виконано?",
@@ -14488,6 +14482,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути аналізи",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-17T01:30:19.851008+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути рахунок",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-17"
