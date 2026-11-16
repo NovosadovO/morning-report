@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T01:30:18.656649+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T01:30:25.220188+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14503,6 +14493,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_3cbae596a2"
+    },
+    {
+      "ts": "2026-11-16T23:00:28.172643+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😐 Нормально",
+      "extra": {
+        "score": 3
+      }
     }
   ]
 }
