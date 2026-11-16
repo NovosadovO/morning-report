@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "pa_skip_36f8466891",
-      "label": "",
-      "ts": "2026-10-17T06:37:16"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-10-17T07:19:32"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_cardio_np",
       "label": "❌ Ні",
       "ts": "2026-11-16T22:52:54"
+    },
+    {
+      "t": "btn",
+      "data": "rx_useful_a19bb02696",
+      "label": "💡 Корисно",
+      "ts": "2026-11-16T22:54:17"
     }
   ]
 }
