@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-16t09_00_40_468789": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
+    "ts": "2026-11-16T09:00:40.468789"
+  },
   "selfact|2026-11-16t08_49_08_596545": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна. Нагадую, що це незручний час для важливих справ.\",     \"why\": \"Сьог",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [   {\"what\": \"Скасувати підписку Garmin Connect+\", \"to\": null, \"date\": \"2026-11-04\"},   {\"what\": \"виконати завдання по Revolut\", \"to\": null, \"date\": \"20",
     "ts": "2026-11-16T02:20:55.167398"
-  },
-  "bills|2026-11-16t02_19_44_779225": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-16T02:19:44.779225"
   }
 }
