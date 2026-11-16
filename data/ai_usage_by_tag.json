@@ -296,5 +296,151 @@
       1,
       10433
     ]
+  },
+  "2026-11-16": {
+    "openloop_promises": [
+      16,
+      22730
+    ],
+    "selfact": [
+      88,
+      745210
+    ],
+    "healthai": [
+      37,
+      424369
+    ],
+    "proactive_actions": [
+      2,
+      5995
+    ],
+    "email_ai_item": [
+      13,
+      39159
+    ],
+    "deadlines": [
+      8,
+      21141
+    ],
+    "bills": [
+      11,
+      35305
+    ],
+    "action_detect": [
+      45,
+      82365
+    ],
+    "people": [
+      3,
+      11245
+    ],
+    "calendar": [
+      8,
+      86982
+    ],
+    "calendar/truthfix": [
+      4,
+      40616
+    ],
+    "proactive_ai": [
+      2,
+      21036
+    ],
+    "proactive_ai/truthfix": [
+      1,
+      9821
+    ],
+    "assistant": [
+      2,
+      20897
+    ],
+    "hcoach": [
+      5,
+      67265
+    ],
+    "hcoach/truthfix": [
+      1,
+      12309
+    ],
+    "MORNING_AI": [
+      1,
+      11517
+    ],
+    "MORNING_AI/truthfix": [
+      2,
+      20255
+    ],
+    "run_insight": [
+      1,
+      2358
+    ],
+    "astro_ai": [
+      5,
+      78153
+    ],
+    "astro_ai/truthfix": [
+      4,
+      41283
+    ],
+    "themes_ai": [
+      5,
+      56518
+    ],
+    "themes_ai/truthfix": [
+      2,
+      20767
+    ],
+    "briefing": [
+      4,
+      55334
+    ],
+    "healthai/truthfix": [
+      8,
+      78978
+    ],
+    "garmin_insight": [
+      1,
+      2434
+    ],
+    "market_insight": [
+      1,
+      1669
+    ],
+    "LUNCH_AI": [
+      1,
+      11713
+    ],
+    "LUNCH_AI/truthfix": [
+      1,
+      10329
+    ],
+    "MSG_EVENT_SOON": [
+      3,
+      39305
+    ],
+    "MSG_EVENT_SOON/truthfix": [
+      4,
+      41000
+    ],
+    "run_planner": [
+      1,
+      2084
+    ],
+    "defi_digest": [
+      1,
+      10411
+    ],
+    "MSG_CRYPTO_MOVE": [
+      1,
+      13702
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      1,
+      11028
+    ],
+    "EVENING_AI": [
+      2,
+      22362
+    ]
   }
 }
