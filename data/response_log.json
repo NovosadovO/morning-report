@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-03T20:33:40.443097+00:00",
-      "category": "chat",
-      "question": "від gemini",
-      "answer": "Олег, привіт. Зараз 20:33, ти на нічній зміні.\n\nПам'ятаю про Armolopid Plus після зміни перед сном.\n\nПоки що все стабільно, працюємо."
-    },
-    {
       "ts": "2026-09-03T20:34:29.593197+00:00",
       "category": "chat",
       "question": "а мій аі gemini використовує кредити?",
@@ -14502,6 +14496,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-16"
+      }
+    },
+    {
+      "ts": "2026-11-16T03:00:36.680159+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути рахунок від Mariia Ovsiienko",
       "extra": {
         "kind": "reply",
         "date": "2026-11-16"
