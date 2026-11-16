@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:30:16.752629+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Maroš Sivák про InterFin Malaga trip",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T04:35:25.681196+00:00",
       "category": "confirm",
       "question": "gate_cal_add: Зібрати речі",
@@ -14507,6 +14497,12 @@
         "kind": "reminder",
         "date": "2026-11-17"
       }
+    },
+    {
+      "ts": "2026-11-17T00:23:56.626898+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
