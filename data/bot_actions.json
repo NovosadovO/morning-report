@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нагадую, що 9 листопада о 09:00 тобі потрібно переглянути ст",
-      "detail": "У календарі зазначено: 09.11: 09:00 Переглянути статтю ESMA про MiCA — розбір і звіт.",
-      "module": "selfact",
-      "ts": "2026-11-06T08:34:36"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T06:31:53"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-16",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-16T06:52:09"
     }
   ]
 }
