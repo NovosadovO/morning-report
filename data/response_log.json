@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:35:25.681196+00:00",
-      "category": "confirm",
-      "question": "gate_cal_add: Зібрати речі",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T04:35:32.018178+00:00",
       "category": "calendar_confirm",
       "question": "Зібрати речі",
@@ -14503,6 +14497,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-17T00:24:06.024701+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_26adc5218c"
     }
   ]
 }
