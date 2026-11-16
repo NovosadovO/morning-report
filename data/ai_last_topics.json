@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-16t06_13_17_669888": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна. Нагадую, що ти працюєш на заводі в Кошице.\",     \"why\": \"Ка",
+    "ts": "2026-11-16T06:13:17.669888"
+  },
+  "action_detect|2026-11-16t06_00_49_357902": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-16T06:00:49.357902"
+  },
+  "action_detect|2026-11-16t06_00_38_350891": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-16T06:00:38.350891"
+  },
+  "action_detect|2026-11-16t06_00_27_533104": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-16T06:00:27.533104"
+  },
   "selfact|2026-11-16t05_57_58_232239": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна.\",     \"why\": \"К",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-16\",   \"action_time\": \"00:00\",   \"action_summary\": \"Переглянут",
     "ts": "2026-11-16T00:00:54.737201"
-  },
-  "proactive_actions|2026-11-16t00_00_08_432883": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити листа про страхування KOOPERATIVA\",     \"date\": \"2026-11-16\",     \"time\": \"18:00\",     \"message\":",
-    "ts": "2026-11-16T00:00:08.432883"
-  },
-  "selfact|2026-11-15t23_57_35_427037": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оплата квартири\",     \"text\": \"Оплати квартиру на суму €500.\",     \"date\": \"2026-11-15\",     \"time\": \"23:59\"",
-    "ts": "2026-11-15T23:57:35.427037"
-  },
-  "selfact|2026-11-15t23_41_49_817644": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Прийшов лист від Maroš Sivák з аналізами для Olexiho. Потрібно ві",
-    "ts": "2026-11-15T23:41:49.817644"
-  },
-  "action_detect|2026-11-15t23_35_05_838641": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-10-21\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
-    "ts": "2026-11-15T23:35:05.838641"
   }
 }
