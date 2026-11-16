@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T01:09:29.622760+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_fc1a18247d"
-    },
-    {
       "ts": "2026-09-04T01:09:29.623022+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14498,6 +14492,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-11-16T22:52:41.716242+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
