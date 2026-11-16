@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "12 листопада о 05:00 розпочинається рання зміна.",
-      "detail": "Календар на 7 днів вказує на ранню зміну 12 листопада.",
-      "module": "selfact",
-      "ts": "2026-11-07T06:10:24"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, у тебе сьогодні нічна зміна о 17:00. Будь уважний на",
       "detail": "Сьогодні, 07.11, Олег має нічну зміну о 17:00, що зазначено в календарі.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T19:52:03"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-16T20:02:52"
     }
   ]
 }
