@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-16t20_27_17_347595": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {\"what\": \"Оплатив\", \"to\": null, \"date\": \"2026-11-16\"},   {\"what\": \"Оплатив\", \"to\": null, \"date\": \"2026-11-16\"},   {\"what\": \"Зробив\", \"to\": null, \"da",
+    "ts": "2026-11-16T20:27:17.347595"
+  },
+  "bills|2026-11-16t20_21_12_843660": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-16T20:21:12.843660"
+  },
   "deadlines|2026-11-16t20_20_45_215444": {
     "topic": "deadlines",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-10-21\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
     "ts": "2026-11-16T16:30:41.351034"
-  },
-  "bills|2026-11-16t16_20_50_932281": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-16T16:20:50.932281"
-  },
-  "selfact|2026-11-16t16_19_50_412468": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, нагадую, що сьогодні о 17:00 починається нічна зміна. Скоро ",
-    "ts": "2026-11-16T16:19:50.412468"
   }
 }
