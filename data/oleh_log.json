@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "cmd",
-      "text": "/звички",
-      "ts": "2026-10-16T21:30:39"
-    },
-    {
       "t": "btn",
       "data": "habit_no_cardio_np",
       "label": "❌",
@@ -7199,6 +7193,12 @@
       "data": "bill_due_paid_a58db3203b",
       "label": "✅ Оплатив",
       "ts": "2026-11-16T00:37:50"
+    },
+    {
+      "t": "btn",
+      "data": "rx_paid_fe53f6f07b",
+      "label": "💸 Оплатив",
+      "ts": "2026-11-16T03:51:35"
     }
   ]
 }
