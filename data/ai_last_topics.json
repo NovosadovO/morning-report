@@ -1,4 +1,19 @@
 {
+  "bills|2026-11-17t00_21_06_483363": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-17T00:21:06.483363"
+  },
+  "action_detect|2026-11-17t00_16_53_257515": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-17T00:16:53.257515"
+  },
+  "action_detect|2026-11-17t00_16_42_175213": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T00:16:42.175213"
+  },
   "action_detect|2026-11-17t00_16_31_211990": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Є важливий лист від Maroš Sivák з аналізом інвестиційних п",
     "ts": "2026-11-16T20:13:03.008346"
-  },
-  "healthai_truthfix|2026-11-16t20_05_28_340327": {
-    "topic": "healthai/truthfix",
-    "gist": "🌙 Нічна зміна попереду. Наразі зафіксовано 5.2 години сну. Середній пульс за 7 днів становить 48.1 уд/хв, тренд зростає на 0.8 уд/хв.",
-    "ts": "2026-11-16T20:05:28.340327"
-  },
-  "healthai|2026-11-16t20_05_17_376192": {
-    "topic": "healthai",
-    "gist": "🌙 Нічна зміна попереду, поки що зафіксовано 5.2 години сну, а стрес на рівні 36.0.  *   Зафіксований сон наразі становить 5.2 год. *   Середній пульс за 7 днів ",
-    "ts": "2026-11-16T20:05:17.376192"
-  },
-  "hcoach|2026-11-16t20_02_46_506534": {
-    "topic": "hcoach",
-    "gist": "Олеже, вітаю! Сьогодні понеділок, 16 листопада 2026 року. Нічна зміна триває, і організм твоєї ваги, сну та енергії потребує уваги.  **1. Стан здоров'я: Загальн",
-    "ts": "2026-11-16T20:02:46.506534"
   }
 }
