@@ -1,4 +1,9 @@
 {
+  "bills|2026-11-16t10_20_42_735197": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-16T10:20:42.735197"
+  },
   "email_ai_item|2026-11-16t10_14_58_691217": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Finančný účtovník (m/ž)\\\" в Carmeuse та \\\"Solution Architect – Financial Services\\\" в Capco, обидві",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-16T05:22:10.345296"
-  },
-  "deadlines|2026-11-16t05_19_47_993250": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-11-16T05:19:47.993250"
   }
 }
