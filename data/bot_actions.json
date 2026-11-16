@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, отримав лист від The Economist з темою \"Donald Trump’",
-      "detail": "Олеже, отримав лист від The Economist з темою \"Donald Trump’s humiliation offers America an opportunity\".",
-      "module": "selfact",
-      "ts": "2026-11-06T20:18:27"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що 8 листопада о 08:00 тобі потрібно оплатит",
       "detail": "Календар на 7 днів містить нагадування про оплату страхування Kooperativa.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T13:22:12"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-16",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-16T13:53:12"
     }
   ]
 }
