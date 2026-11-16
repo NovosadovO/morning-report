@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T01:09:45.515888+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T01:09:51.820204+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14498,6 +14492,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_aa5f7052ec"
+    },
+    {
+      "ts": "2026-11-16T22:57:56.580124+00:00",
+      "category": "confirm",
+      "question": "gate_cal_add: 20.11 поліції руслані",
+      "answer": "yes"
     }
   ]
 }
