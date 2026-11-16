@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-16t10_52_51_412865": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аналізи для Олега\",     \"text\": \"Марош Сівáк надіслав тобі дві аналізи для Олега: \\\"INTF Dynamic ETF vs. VUB -",
+    "ts": "2026-11-16T10:52:51.412865"
+  },
   "selfact|2026-11-16t10_37_08_617644": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібна відповідь від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав аналізи для Olexi. Потрібна відповідь.\",     \"m",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-16T06:00:27.533104"
-  },
-  "selfact|2026-11-16t05_57_58_232239": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна.\",     \"why\": \"К",
-    "ts": "2026-11-16T05:57:58.232239"
   }
 }
