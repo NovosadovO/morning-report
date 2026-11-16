@@ -1,4 +1,9 @@
 {
+  "garmin_insight|2026-11-16t11_00_09_543091": {
+    "topic": "garmin_insight",
+    "gist": "```json {   \"text\": \"Ваш показник SpO2 на рівні <b>95.0%</b> є нижчим за вашу норму (96.07%). Це вказує на потенційне зниження рівня кисню в крові, що може впли",
+    "ts": "2026-11-16T11:00:09.543091"
+  },
   "selfact|2026-11-16t10_52_51_412865": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аналізи для Олега\",     \"text\": \"Марош Сівáк надіслав тобі дві аналізи для Олега: \\\"INTF Dynamic ETF vs. VUB -",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-16T06:00:38.350891"
-  },
-  "action_detect|2026-11-16t06_00_27_533104": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-16T06:00:27.533104"
   }
 }
