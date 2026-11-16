@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T02:25:51.780866+00:00",
-      "category": "confirm",
-      "question": "gate_email_star: Byt1",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T02:25:57.856480+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14499,6 +14493,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_2162cfca87"
+    },
+    {
+      "ts": "2026-11-17T00:00:22.965150+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити пошту від KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
     }
   ]
 }
