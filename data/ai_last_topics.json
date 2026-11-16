@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-16t06_29_21_650402": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна.\",     \"date\": \"2026-11-16\",  ",
+    "ts": "2026-11-16T06:29:21.650402"
+  },
+  "bills|2026-11-16t06_20_20_228580": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"80711\",\"vendor\":\"KOOPERATIVA\",\"amount\":\"\",\"currency\":\"\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":false,\"auto_charge\":false,\"note\":\"Це сповіщен",
+    "ts": "2026-11-16T06:20:20.228580"
+  },
   "calendar|2026-11-16t06_20_00_141120": {
     "topic": "calendar",
     "gist": "Олеже, бачу, що після нічної зміни ти потребуєш відновлення, і це цілком природно! 💪  На цьому тижні важливо знайти баланс між роботою та особистими цілями. Зве",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
     "ts": "2026-11-16T00:07:51.099055"
-  },
-  "action_detect|2026-11-16t00_01_16_677504": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-16T00:01:16.677504"
-  },
-  "action_detect|2026-11-16t00_01_05_877533": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та спог",
-    "ts": "2026-11-16T00:01:05.877533"
   }
 }
