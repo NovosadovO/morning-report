@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:36:02.956821+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T04:36:10.166212+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14498,6 +14492,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-17T00:24:31.204606+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_501c5ef563"
     }
   ]
 }
