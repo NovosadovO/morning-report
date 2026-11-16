@@ -298,5 +298,10 @@
     "topic": "proactive_ai/truthfix",
     "gist": "З кінцем нічної зміни тебе, Олеже! Зараз 05:53, понеділок, 16 листопада 2026 року.  Згідно з даними Garmin, твій сон минулої ночі тривав 7 годин 44 хвилини, з я",
     "ts": "2026-11-16T06:53:18.691971"
+  },
+  "action_detect|2026-11-16t12_01_17_937078": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-16T12:01:17.937078"
   }
 }
