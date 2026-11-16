@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-16t03_05_53_590051": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Марош Сівáк надіслав тобі аналізи для Олега. Потрібно відпо",
+    "ts": "2026-11-16T03:05:53.590051"
+  },
+  "action_detect|2026-11-16t03_00_57_965644": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
+    "ts": "2026-11-16T03:00:57.965644"
+  },
+  "action_detect|2026-11-16t03_00_47_029944": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та спог",
+    "ts": "2026-11-16T03:00:47.029944"
+  },
+  "action_detect|2026-11-16t03_00_35_936917": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-16T03:00:35.936917"
+  },
   "proactive_actions|2026-11-16t03_00_10_873471": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту про страхування KOOPERATIVA\",     \"date\": \"2026-11-16\",     \"time\": \"\",     \"message\": \"Оле",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2023-11-22\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
     "ts": "2026-11-15T22:01:02.743173"
-  },
-  "selfact|2026-11-15t21_53_06_087180": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Марош Сівак надіслав аналізи для Олега, які потребують відповіді.",
-    "ts": "2026-11-15T21:53:06.087180"
-  },
-  "openloop_promises|2026-11-15t21_49_20_736184": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-15T21:49:20.736184"
-  },
-  "action_detect|2026-11-15t21_40_20_269314": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Записати біг на завтра\",   \"action_date\": null,   \"action_time\": \"09:00\",   \"action_summary\": \"Записат",
-    "ts": "2026-11-15T21:40:20.269314"
-  },
-  "action_detect|2026-11-15t21_40_09_252747": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
-    "ts": "2026-11-15T21:40:09.252747"
   }
 }
