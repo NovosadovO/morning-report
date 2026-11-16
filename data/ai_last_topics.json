@@ -1,4 +1,14 @@
 {
+  "healthai|2026-11-16t11_06_26_634673": {
+    "topic": "healthai",
+    "gist": "🌙 Після нічної зміни, час для відновлення, але зважаємо на стабільність сну: розкид ±1.9 год.  *   **HRV** 41.0 мс (за 2026-11-15) — це нижче середнього за 7 дн",
+    "ts": "2026-11-16T11:06:26.634673"
+  },
+  "action_detect|2026-11-16t11_01_02_369875": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-11-16\", \"action_time\": \"19:00\", \"action_summary\": \"Занотувати подію: Нічна зміна",
+    "ts": "2026-11-16T11:01:02.369875"
+  },
   "garmin_insight|2026-11-16t11_00_09_543091": {
     "topic": "garmin_insight",
     "gist": "```json {   \"text\": \"Ваш показник SpO2 на рівні <b>95.0%</b> є нижчим за вашу норму (96.07%). Це вказує на потенційне зниження рівня кисню в крові, що може впли",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 17:00 розпочинається нічна зміна. Нагадую, що ти працюєш на заводі в Кошице.\",     \"why\": \"Ка",
     "ts": "2026-11-16T06:13:17.669888"
-  },
-  "action_detect|2026-11-16t06_00_49_357902": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-11-16T06:00:49.357902"
-  },
-  "action_detect|2026-11-16t06_00_38_350891": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-16T06:00:38.350891"
   }
 }
