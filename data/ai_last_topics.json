@@ -298,5 +298,15 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-16T15:02:25.173825"
+  },
+  "email_ai_item|2026-11-16t19_41_17_180598": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Платіж на суму $20.00 для Abacus.AI не пройшов успішно. Система не змогла списати кошти з вашої картки Visa. Потрібно оновити платіж",
+    "ts": "2026-11-16T19:41:17.180598"
+  },
+  "selfact|2026-11-16t19_25_50_963204": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав тобі аналізи для Olexiho. Потрібно відп",
+    "ts": "2026-11-16T19:25:50.963204"
   }
 }
