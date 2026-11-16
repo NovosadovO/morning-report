@@ -1,4 +1,34 @@
 {
+  "selfact|2026-11-17t00_07_54_075119": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Отримав від Maroš Sivák лист з аналізами для тебе.",
+    "ts": "2026-11-17T00:07:54.075119"
+  },
+  "foresight_truthfix|2026-11-17t00_02_23_647021": {
+    "topic": "foresight/truthfix",
+    "gist": "📬 від Notifikácie KOOPERATIVA — сповіщення про оплату страхування авто (EČV LE066BI). 📬 від Maroš Sivák — лист з аналізом для Олега. 📅 20.11 о 09:00 — нагадуван",
+    "ts": "2026-11-17T00:02:23.647021"
+  },
+  "foresight|2026-11-17t00_02_12_987913": {
+    "topic": "foresight",
+    "gist": "📬 від Notifikácie KOOPERATIVA → Сповіщення про сплату страхового полісу (EČV LE066BI). Потрібно перевірити статус оплати. 📬 від Maroš Sivák → Аналіз для Олега. ",
+    "ts": "2026-11-17T00:02:12.987913"
+  },
+  "action_detect|2026-11-17t00_01_50_521071": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-17T00:01:50.521071"
+  },
+  "action_detect|2026-11-17t00_01_39_654716": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-17T00:01:39.654716"
+  },
+  "action_detect|2026-11-17t00_01_28_576234": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-17T00:01:28.576234"
+  },
   "proactive_actions|2026-11-17t00_00_15_451443": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-17\",     \"time\": \"\",     \"message\": \"Олеже, є два не",
@@ -268,35 +298,5 @@
     "topic": "assistant",
     "gist": "Щоб якнайкраще підготуватися до завтрашнього дня, зосередься на якісному сні після своєї поточної нічної зміни, адже попереду ще один тренувальний день та нова ",
     "ts": "2026-11-16T20:01:06.508582"
-  },
-  "selfact|2026-11-16t19_57_14_330755": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав аналізи для Olexiho. Потрібно переглянути та ві",
-    "ts": "2026-11-16T19:57:14.330755"
-  },
-  "selfact|2026-11-16t19_41_29_023235": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Маєш важливий лист від Maroš Sivák щодо аналізів д",
-    "ts": "2026-11-16T19:41:29.023235"
-  },
-  "email_ai_item|2026-11-16t19_41_17_180598": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Платіж на суму $20.00 для Abacus.AI не пройшов успішно. Система не змогла списати кошти з вашої картки Visa. Потрібно оновити платіж",
-    "ts": "2026-11-16T19:41:17.180598"
-  },
-  "selfact|2026-11-16t19_25_50_963204": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав тобі аналізи для Olexiho. Потрібно відп",
-    "ts": "2026-11-16T19:25:50.963204"
-  },
-  "action_detect|2026-11-16t19_23_08_315733": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Погода на завтра: мряка, 98% імовірність опадів, 2.4 ",
-    "ts": "2026-11-16T19:23:08.315733"
-  },
-  "selfact|2026-11-16t19_10_17_439305": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, зараз 19:10, а твоя нічна зміна почалася о 17:00. Не забувай",
-    "ts": "2026-11-16T19:10:17.439305"
   }
 }
