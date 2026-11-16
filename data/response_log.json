@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T00:39:15.912735+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "ONDO (твоя позиція) виріс на 5.5% за 24 години (зараз $0.36194)"
-    },
-    {
       "ts": "2026-09-04T01:09:18.372164+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
@@ -14498,6 +14492,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-16T22:50:20.888137+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
