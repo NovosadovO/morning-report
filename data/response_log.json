@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T00:00:18.646745+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T00:00:24.679731+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14506,6 +14496,12 @@
       "category": "confirm",
       "question": "calrem_skip: Quick question",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-16T17:41:03.428870+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_394fade87f"
     }
   ]
 }
