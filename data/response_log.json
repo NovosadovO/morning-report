@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T04:36:10.166212+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_80817abd08"
-    },
-    {
       "ts": "2026-09-04T04:36:10.178286+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14498,6 +14492,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_501c5ef563"
+    },
+    {
+      "ts": "2026-11-17T00:24:31.205012+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_1fa373a8dd"
     }
   ]
 }
