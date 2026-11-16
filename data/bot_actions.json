@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-06T21:37:20"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, завтра, 07.11, у тебе також нічна зміна о 17:00. Потр",
       "detail": "Календар на 7 днів вказує на нічну зміну о 17:00 07.11.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T15:52:25"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-16T16:06:14"
     }
   ]
 }
