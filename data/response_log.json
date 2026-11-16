@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T03:00:16.944379+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Maroš Sivák",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T04:30:16.752629+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -14505,6 +14495,16 @@
       "answer": "Відповісти Maroš Sivák",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-17T00:00:35.897033+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист від Mariia Ovsiienko",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-17"
       }
     }
