@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-11-06T07:00:41"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів: 20.11: 12:00 Завтра до церкви на 8:00",
       "module": "selfact",
       "ts": "2026-11-16T02:50:58"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-16",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-16T03:51:44"
     }
   ]
 }
