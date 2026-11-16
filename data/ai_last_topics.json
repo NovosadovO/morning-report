@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-16t13_59_11_398692": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається сьогодні о 17:00.\",     \"date\": \"20",
+    "ts": "2026-11-16T13:59:11.398692"
+  },
   "selfact|2026-11-16t13_43_52_362918": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, нагадую, що сьогодні о 17:00 у тебе нічна зміна. Щоб уникнут",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Скасування підписки Garmin Connect+\",   \"action_date\": \"2026-11-04\",   \"action_time\": null,   \"action_",
     "ts": "2026-11-16T09:00:51.446037"
-  },
-  "action_detect|2026-11-16t09_00_40_468789": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"Скасуват",
-    "ts": "2026-11-16T09:00:40.468789"
   }
 }
