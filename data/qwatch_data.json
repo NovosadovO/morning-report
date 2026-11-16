@@ -2216,13 +2216,21 @@
     "sleep_hours": 7.73
   },
   "2026-11-16": {
-    "steps": 8406,
+    "steps": 8488,
     "hr_avg": 51,
     "spo2": 95,
-    "body_battery": 9,
-    "stress": 31,
+    "body_battery": 41,
+    "stress": 35,
     "date": "2026-11-16",
     "source": "qwatch_auto",
-    "saved_at": "2026-11-16 15:52"
+    "saved_at": "2026-11-16 16:22",
+    "sleep_total_min": 314,
+    "sleep_deep_min": 44,
+    "sleep_rem_min": 0,
+    "sleep_light_min": 270,
+    "sleep_awake_min": 36,
+    "weight_kg": 85.9,
+    "hrv": 39,
+    "sleep_hours": 5.23
   }
 }
