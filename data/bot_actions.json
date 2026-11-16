@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Початок нічної зміни",
-      "detail": "Поточний час 18:45, а в календарі зазначено, що 06.11 о 17:00 розпочалася нічна зміна.",
-      "module": "selfact",
-      "ts": "2026-11-06T18:45:31"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-16T12:22:14"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-16",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-16T12:52:20"
     }
   ]
 }
