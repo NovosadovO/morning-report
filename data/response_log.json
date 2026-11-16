@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T00:00:14.390651+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Maroš Sivák про поїздку",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T00:00:18.646745+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14509,6 +14499,12 @@
       "ts": "2026-11-16T17:36:35.962752+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 09:30 — виконано?",
+      "answer": "yes"
+    },
+    {
+      "ts": "2026-11-16T17:40:57.047945+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Quick question",
       "answer": "yes"
     }
   ]
