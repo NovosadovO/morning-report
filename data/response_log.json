@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T01:30:31.317513+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти на лист Byt1",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-04"
-      }
-    },
-    {
       "ts": "2026-09-04T02:25:51.780866+00:00",
       "category": "confirm",
       "question": "gate_email_star: Byt1",
@@ -14503,6 +14493,12 @@
         "when": "09:00–09:30",
         "note": null
       }
+    },
+    {
+      "ts": "2026-11-16T23:53:19.376351+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_2162cfca87"
     }
   ]
 }
