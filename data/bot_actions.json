@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 95",
-      "module": "selfact",
-      "ts": "2026-11-06T21:21:50"
-    },
-    {
       "kind": "notify",
       "what": "Новий лист від Asteria Events",
       "detail": "Новий лист від Asteria Events.",
@@ -2799,6 +2792,13 @@
       "detail": "• HRV 41.0 мс — нижче сер.7д 49.5 мс на 17.2%",
       "module": "healthai",
       "ts": "2026-11-16T15:01:41"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-16T15:05:44"
     }
   ]
 }
