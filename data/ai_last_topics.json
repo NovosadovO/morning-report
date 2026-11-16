@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-16t19_23_08_315733": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Погода на завтра: мряка, 98% імовірність опадів, 2.4 ",
+    "ts": "2026-11-16T19:23:08.315733"
+  },
   "selfact|2026-11-16t19_10_17_439305": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, зараз 19:10, а твоя нічна зміна почалася о 17:00. Не забувай",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Скасування підписки Garmin Connect+\", \"action_date\": \"2026-11-04\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-11-16T15:02:25.173825"
-  },
-  "action_detect|2026-11-16t15_02_13_764136": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-16T15:02:13.764136"
   }
 }
