@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:16:20.389060+00:00",
-      "category": "calendar_button",
-      "question": "Доволенка в Іспанії",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t3d",
-        "when": "10:00–11:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-04T16:16:20.821134+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14496,6 +14485,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити пошту від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-17T03:00:19.688528+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити пошту від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-17"
