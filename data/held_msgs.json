@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-17T16:31:49.093732",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-17T16:36:48.826391",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -215,6 +209,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-17T18:15:47.467615",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Poďakovanie za úhradu poistného - povinného zmluvného poiste</b>\n👤 Notifikácie KOOPERATIVA &lt;notifikacie@ekooperativa.",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82462"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82462"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82462"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82462"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82462"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82462"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
