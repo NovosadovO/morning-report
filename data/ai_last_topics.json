@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-17t22_15_34_949179": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить сповіщення про вакансії від LinkedIn, зокрема про позицію \\\"Account Manager\\\" в компанії Scrambly та \\\"Privátny bankár/bankárka\\\" ",
+    "ts": "2026-11-17T22:15:34.949179"
+  },
   "email_ai_item|2026-11-17t22_10_56_076725": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист повідомляє про запуск мобільного додатку Aave на Android. Для дострокового доступу пропонується використати промокод ANDROID. П",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз показників здоров'я свідчить про потребу у від",
     "ts": "2026-11-17T09:02:25.110683"
-  },
-  "briefing|2026-11-17t09_02_14_752486": {
-    "topic": "briefing",
-    "gist": "🧭 **ГОЛОВНЕ** Твої показники здоров'я за минулу ніч свідчать про потребу у відпочинку: Body Battery на 7/100, а HRV знизився до 39 мс, що нижче твоєї норми. Це ",
-    "ts": "2026-11-17T09:02:14.752486"
   }
 }
