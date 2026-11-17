@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-17t02_44_39_092194": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Підготовка до нічної зміни\",     \"text\": \"Олеже, твоя нічна зміна починається о 17:00. Пора готуватися.\",   ",
+    "ts": "2026-11-17T02:44:39.092194"
+  },
+  "selfact|2026-11-17t02_28_46_167147": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexiho. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {     ",
+    "ts": "2026-11-17T02:28:46.167147"
+  },
   "openloop_promises|2026-11-17t02_28_25_925661": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Ти отримав листа від Maroš Sivák з аналізом для Olexiho. Також є лист від Mariia Ovsiienko з рах",
     "ts": "2026-11-16T22:03:47.240768"
-  },
-  "openloop_promises|2026-11-16t21_57_26_000521": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {\"what\": \"Оплатив\", \"to\": null, \"date\": null},   {\"what\": \"Оплатив\", \"to\": null, \"date\": null},   {\"what\": \"Зробив\", \"to\": null, \"date\": null},   {\"",
-    "ts": "2026-11-16T21:57:26.000521"
-  },
-  "selfact|2026-11-16t21_47_45_652055": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав тобі аналізи для Olexiho, які потребуют",
-    "ts": "2026-11-16T21:47:45.652055"
   }
 }
