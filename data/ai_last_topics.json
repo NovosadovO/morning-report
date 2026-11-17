@@ -1,4 +1,9 @@
 {
+  "calendar|2026-11-17t05_56_15_166138": {
+    "topic": "calendar",
+    "gist": "Через 3 дні, 16:00–17:00, у тебе запланована важлива справа – поміняти колеса в машині. 🚗 На цей день, 20 листопада, ти маєш повну свободу від роботи, що чудово",
+    "ts": "2026-11-17T05:56:15.166138"
+  },
   "selfact|2026-11-17t05_48_56_740653": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Потрібно відповісти на лист від Maroš Sivák щодо аналізів дл",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-17T00:16:53.257515"
-  },
-  "action_detect|2026-11-17t00_16_42_175213": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T00:16:42.175213"
   }
 }
