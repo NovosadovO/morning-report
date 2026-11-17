@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: steps_good",
-      "detail": "🚶 Кроки за тиждень у середньому 17818 — ціль 8000 досягнута",
-      "module": "healthai",
-      "ts": "2026-11-08T02:52:10"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-08",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-17T07:55:37"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-17T08:05:37"
     }
   ]
 }
