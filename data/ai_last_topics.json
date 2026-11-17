@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-11-17t03_05_13_116670": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не вдалось поставити нагадування: calgate: че",
+    "ts": "2026-11-17T03:05:13.116670"
+  },
+  "action_detect|2026-11-17t03_01_57_632295": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
+    "ts": "2026-11-17T03:01:57.632295"
+  },
+  "action_detect|2026-11-17t03_01_46_171239": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T03:01:46.171239"
+  },
+  "action_detect|2026-11-17t03_01_35_306435": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-17\",   \"action_time\": \"19:00\",   \"action_summary\": \"Занотувати",
+    "ts": "2026-11-17T03:01:35.306435"
+  },
+  "proactive_actions|2026-11-17t03_00_09_699938": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від Maroš Sivák\",     \"date\": \"2026-11-17\",     \"time\": \"\",     \"message\": \"Олеже, є лист з",
+    "ts": "2026-11-17T03:00:09.699938"
+  },
   "selfact|2026-11-17t02_59_36_738420": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів для Olexi.\",  ",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Maros Sivák чекає на відповідь щодо аналізів для Olexi. Будь ласка, пер",
     "ts": "2026-11-16T22:51:09.122036"
-  },
-  "selfact|2026-11-16t22_35_17_844878": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олег! Нагадую, що сьогодні в тебе нічна зміна. Не забудь про неї.\",     \"why\": \"Сьогодні у Олега нічна ",
-    "ts": "2026-11-16T22:35:17.844878"
-  },
-  "bills|2026-11-16t22_21_05_353915": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-16T22:21:05.353915"
-  },
-  "selfact|2026-11-16t22_19_44_200707": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Майже 22:20, а ти ще на роботі. Не забудь про нічну зміну, яка почалася о 17:00. Відпочивай!\",     \"why\": \"Пото",
-    "ts": "2026-11-16T22:19:44.200707"
-  },
-  "healthai_truthfix|2026-11-16t22_05_27_699165": {
-    "topic": "healthai/truthfix",
-    "gist": "🌙 Нічна зміна триває. Зафіксовано 5 год 14 хв сну.  Вага становить 85.9 кг, що на 10.9 кг більше за ціль 75 кг. Середньотижневий тренд ваги зростає.  Кроки за с",
-    "ts": "2026-11-16T22:05:27.699165"
-  },
-  "healthai|2026-11-16t22_05_16_916481": {
-    "topic": "healthai",
-    "gist": "🌙 Нічна зміна триває, поки що зафіксовано 5.2 години сну, а стабільність цього сну викликає питання — розкид ±1.95 год. Це могло вплинути на енергію, яка зараз ",
-    "ts": "2026-11-16T22:05:16.916481"
   }
 }
