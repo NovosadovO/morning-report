@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:15:48.386490+00:00",
-      "category": "event_done",
-      "question": "📅 🔔 Переглянути вакансію Regionalny kierownik sprzedaży\nПланувалась до 11:30 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-09-04T16:16:20.389060+00:00",
       "category": "calendar_button",
       "question": "Доволенка в Іспанії",
@@ -14492,6 +14486,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути рахунок",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-17T03:00:15.602152+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити пошту від Maroš Sivák",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-17"
