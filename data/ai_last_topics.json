@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-17t22_19_44_918717": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відновити після нічної зміни\",     \"text\": \"Олеже, сьогодні в тебе була нічна зміна. Не забудь про відновлен",
+    "ts": "2026-11-17T22:19:44.918717"
+  },
+  "email_ai_item|2026-11-17t22_15_46_132472": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист нагадує про незавершений проект зі створення персонального дашборду для здоров'я та бігу. Пропонується додати графіки тижневого пробігу т",
+    "ts": "2026-11-17T22:15:46.132472"
+  },
   "email_ai_item|2026-11-17t22_15_34_949179": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про вакансії від LinkedIn, зокрема про позицію \\\"Account Manager\\\" в компанії Scrambly та \\\"Privátny bankár/bankárka\\\" ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-17T09:02:47.120947"
-  },
-  "action_detect|2026-11-17t09_02_36_024451": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T09:02:36.024451"
-  },
-  "action_detect|2026-11-17t09_02_25_110683": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз показників здоров'я свідчить про потребу у від",
-    "ts": "2026-11-17T09:02:25.110683"
   }
 }
