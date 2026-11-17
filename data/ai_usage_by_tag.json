@@ -442,5 +442,151 @@
       2,
       22362
     ]
+  },
+  "2026-11-17": {
+    "proactive_actions": [
+      3,
+      8991
+    ],
+    "action_detect": [
+      34,
+      64011
+    ],
+    "foresight": [
+      2,
+      22066
+    ],
+    "foresight/truthfix": [
+      1,
+      10155
+    ],
+    "selfact": [
+      54,
+      459267
+    ],
+    "bills": [
+      7,
+      22640
+    ],
+    "astro_ai": [
+      4,
+      63168
+    ],
+    "astro_ai/truthfix": [
+      2,
+      20791
+    ],
+    "healthai": [
+      25,
+      288880
+    ],
+    "healthai/truthfix": [
+      3,
+      30345
+    ],
+    "openloop_promises": [
+      10,
+      14157
+    ],
+    "MSG_CRYPTO_MOVE": [
+      3,
+      41220
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      2,
+      44899
+    ],
+    "deadlines": [
+      5,
+      16539
+    ],
+    "email_ai_item": [
+      8,
+      22522
+    ],
+    "people": [
+      2,
+      7171
+    ],
+    "calendar": [
+      3,
+      32641
+    ],
+    "calendar/truthfix": [
+      2,
+      20088
+    ],
+    "mailcal_extract": [
+      1,
+      2179
+    ],
+    "proactive_ai": [
+      3,
+      31541
+    ],
+    "hcoach": [
+      2,
+      25227
+    ],
+    "hcoach/truthfix": [
+      1,
+      11145
+    ],
+    "assistant": [
+      2,
+      20797
+    ],
+    "MORNING_AI": [
+      1,
+      11675
+    ],
+    "market_insight": [
+      1,
+      1687
+    ],
+    "themes_ai": [
+      2,
+      22768
+    ],
+    "themes_ai/truthfix": [
+      1,
+      10362
+    ],
+    "briefing": [
+      2,
+      27838
+    ],
+    "astro_view": [
+      1,
+      10219
+    ],
+    "astro_view/truthfix": [
+      1,
+      10081
+    ],
+    "planner": [
+      1,
+      1344
+    ],
+    "garmin_insight": [
+      1,
+      2438
+    ],
+    "run_insight": [
+      1,
+      2447
+    ],
+    "MSG_EVENT_SOON": [
+      1,
+      12943
+    ],
+    "MSG_EVENT_SOON/truthfix": [
+      2,
+      20466
+    ],
+    "EVENING_AI": [
+      2,
+      22919
+    ]
   }
 }
