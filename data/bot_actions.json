@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-07T23:06:05"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, незабаром, 13 листопада, тобі потрібно оплатити страх",
       "detail": "Нагадування про оплату страхування Kooperativa, яке має бути сплачене до 13.11.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-17T06:31:52"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-17",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-17T06:54:14"
     }
   ]
 }
