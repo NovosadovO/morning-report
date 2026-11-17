@@ -1,4 +1,9 @@
 {
+  "market_insight|2026-11-17t09_00_59_679765": {
+    "topic": "market_insight",
+    "gist": "```json {   \"text\": \"RAIN продемонстрував значне зниження на <b>-14.11%</b> за 24 години, що суттєво перевищує рух BTC (<b>-0.13%</b>). Це вказує на можливий ін",
+    "ts": "2026-11-17T09:00:59.679765"
+  },
   "selfact|2026-11-17t08_55_57_124576": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák. Завданн",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-17T03:01:46.171239"
-  },
-  "action_detect|2026-11-17t03_01_35_306435": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-17\",   \"action_time\": \"19:00\",   \"action_summary\": \"Занотувати",
-    "ts": "2026-11-17T03:01:35.306435"
   }
 }
