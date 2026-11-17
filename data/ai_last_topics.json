@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-17t19_26_55_338019": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прогноз погоди на завтра: дощ, 80% імовірніст",
+    "ts": "2026-11-17T19:26:55.338019"
+  },
   "email_ai_item|2026-11-17t19_19_17_761897": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Це щоденний дайджест криптоновин від Олега Безуглого за 17 листопада. У листі обговорюються новини про екстремальний страх на ринку ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
     "ts": "2026-11-17T06:00:39.060203"
-  },
-  "action_detect|2026-11-17t06_00_27_987319": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T06:00:27.987319"
   }
 }
