@@ -1,4 +1,14 @@
 {
+  "msg_crypto_move|2026-11-17t19_33_27_460305": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "📉 Ринком криптовалют сьогодні спостерігається помітна волатильність, особливо виділяються ZEC з ростом на +5.2% та RAIN зі значним падінням на -29.1%.  Аналізую",
+    "ts": "2026-11-17T19:33:27.460305"
+  },
+  "selfact|2026-11-17t19_29_52_194910": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Надійшов лист від Maroš Sivák з аналізами для тебе",
+    "ts": "2026-11-17T19:29:52.194910"
+  },
   "action_detect|2026-11-17t19_26_55_338019": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прогноз погоди на завтра: дощ, 80% імовірніст",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák щодо аналі",
     "ts": "2026-11-17T06:19:25.464195"
-  },
-  "selfact|2026-11-17t06_03_57_351959": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація від Maroš Sivák\",     \"text\": \"Марош Сівáк надіслав тобі дві аналізи для Олега: INTF Dynami",
-    "ts": "2026-11-17T06:03:57.351959"
-  },
-  "action_detect|2026-11-17t06_00_39_060203": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
-    "ts": "2026-11-17T06:00:39.060203"
   }
 }
