@@ -1,4 +1,14 @@
 {
+  "astro_ai|2026-11-17t22_26_06_986648": {
+    "topic": "astro_ai",
+    "gist": "Твої показники здоров'я сьогодні сигналізують про потребу уваги. SpO2 94% (норма 96%) та пульс спокою 53 уд/хв (норма 47.71) вказують на те, що організм працює ",
+    "ts": "2026-11-17T22:26:06.986648"
+  },
+  "bills|2026-11-17t22_22_44_272904": {
+    "topic": "bills",
+    "gist": "[{\"uid\": \"80711\", \"vendor\": \"KOOPERATIVA\", \"amount\": \"\", \"currency\": \"\", \"invoice_no\": \"6641172176\", \"due\": \"\", \"already_paid\": false, \"auto_charge\": false, \"no",
+    "ts": "2026-11-17T22:22:44.272904"
+  },
   "selfact|2026-11-17t22_19_44_918717": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відновити після нічної зміни\",     \"text\": \"Олеже, сьогодні в тебе була нічна зміна. Не забудь про відновлен",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповідь на лист від Maroš Sivák\", \"action_date\": \"2023-11-20\", \"action_time\": null, \"action_summary\": \"Дати відпо",
     "ts": "2026-11-17T09:03:09.142492"
-  },
-  "action_detect|2026-11-17t09_02_58_214117": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка як активне відновлення\", \"action_date\": \"2026-11-22\", \"action_time\": \"12:00\", \"action_summary\": \"З",
-    "ts": "2026-11-17T09:02:58.214117"
-  },
-  "action_detect|2026-11-17t09_02_47_120947": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T09:02:47.120947"
   }
 }
