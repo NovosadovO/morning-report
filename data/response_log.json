@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T18:09:20.169664+00:00",
-      "category": "deadline_found",
-      "question": "Підтвердження повернення кредиту Temu",
-      "answer": "2026-09-04",
-      "extra": {
-        "kind": "submit"
-      }
-    },
-    {
       "ts": "2026-09-04T19:08:27.738820+00:00",
       "category": "confirm",
       "question": "calrem_skip: Перевірити статус оплати",
@@ -14513,6 +14504,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-18"
+      }
+    },
+    {
+      "ts": "2026-11-18T00:00:37.791808+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Mariia Ovsiienko",
       "extra": {
         "kind": "reply",
         "date": "2026-11-18"
