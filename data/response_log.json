@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:36:45.982567+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_9c131c2d8d"
-    },
-    {
       "ts": "2026-09-04T16:39:46.994321+00:00",
       "category": "day_energy",
       "question": "Як ти сьогодні",
@@ -14503,6 +14497,12 @@
       "category": "confirm",
       "question": "gate_pa_rem: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-17T03:05:07.777053+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_rem_3bd41a8857"
     }
   ]
 }
