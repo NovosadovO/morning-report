@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:39:46.994321+00:00",
-      "category": "day_energy",
-      "question": "Як ти сьогодні",
-      "answer": "Норма",
-      "extra": {
-        "shift": "night"
-      }
-    },
-    {
       "ts": "2026-09-04T16:39:55.288107+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14503,6 +14494,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_rem_3bd41a8857"
+    },
+    {
+      "ts": "2026-11-17T03:05:07.778297+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_0167e8e0fd"
     }
   ]
 }
