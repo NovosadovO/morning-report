@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:42:27.373511+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dm_skip_15cee04794"
-    },
-    {
       "ts": "2026-09-04T16:42:27.373715+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14503,6 +14497,12 @@
       "extra": {
         "kind": "insurance"
       }
+    },
+    {
+      "ts": "2026-11-17T19:30:21.711710+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
