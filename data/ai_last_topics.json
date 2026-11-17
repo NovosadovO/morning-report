@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-11-17t05_15_22_609960": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-11-17T05:15:22.609960"
+  },
   "calendar_truthfix|2026-11-17t05_06_37_533114": {
     "topic": "calendar/truthfix",
     "gist": "Олеже, зараз 04:06, вівторок, 17 листопада. Ти на нічній зміні.  20 листопада о 09:00 тобі потрібно виконати завдання для Maroš Sivák. Також 20 листопада очікує",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-17T00:01:50.521071"
-  },
-  "action_detect|2026-11-17t00_01_39_654716": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-17T00:01:39.654716"
   }
 }
