@@ -173,6 +173,45 @@
       "kind": "chunk",
       "text": "🥗 <b>Обід!</b>\n\nЧас заправитись 🍽\n• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n• Не переїдай — вечеря ще буде\n\n<i>Слідкуй за порціями → 75 кг реальні!</i>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-17T14:15:07.738756",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Scrambly наймає: Account Manager»\n\n<i>«Сповіщення про вакансії в Slovakia            \r\nAccount Manager\r\nScrambly\r\nSlovakia\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4490656275/?trackingId=s3S1oAK%2BDgDwYA7OSfGiaw%3D%3D&amp;refId=CtK%2BysLZeGb3pddLO98MqQ%3D%3D&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BzAAb%...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83030"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83030"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83030"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83030"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83030"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83030"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
