@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-17t06_00_27_987319": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T06:00:27.987319"
+  },
+  "calendar_truthfix|2026-11-17t05_56_25_418699": {
+    "topic": "calendar/truthfix",
+    "gist": "Через 3 дні, 16:00, у тебе заплановано поміняти колеса в машині. 20 листопада — вільний від роботи день.",
+    "ts": "2026-11-17T05:56:25.418699"
+  },
   "calendar|2026-11-17t05_56_15_166138": {
     "topic": "calendar",
     "gist": "Через 3 дні, 16:00–17:00, у тебе запланована важлива справа – поміняти колеса в машині. 🚗 На цей день, 20 листопада, ти маєш повну свободу від роботи, що чудово",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexi. Потрібно відпові",
     "ts": "2026-11-17T00:23:38.195510"
-  },
-  "bills|2026-11-17t00_21_06_483363": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-17T00:21:06.483363"
-  },
-  "action_detect|2026-11-17t00_16_53_257515": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-17T00:16:53.257515"
   }
 }
