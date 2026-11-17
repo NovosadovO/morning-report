@@ -251,7 +251,8 @@
       "checked": 1
     },
     "astro_view": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
@@ -750,7 +751,7 @@
   },
   "2026-11-17": {
     "checked": 24,
-    "issues": 13,
+    "issues": 14,
     "fixed": 6,
     "cut": 3
   }
