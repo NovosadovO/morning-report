@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Несправна підписка Runable",
-      "detail": "У даних про підписки зазначено: \"Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.\"",
-      "module": "selfact",
-      "ts": "2026-11-08T05:55:14"
-    },
-    {
-      "kind": "notify",
       "what": "Важлива робоча задача",
       "detail": "Календар на 7 днів містить запис '09.11: 09:00 Переглянути статтю ESMA про MiCA — розбір і звіт'. Сьогодні 08.11.2026, тому ця задача актуальна на завтра.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-17T08:55:35"
+    },
+    {
+      "kind": "notify",
+      "what": "Oleg, you have a night shift starting at 17:00 today. Rememb",
+      "detail": "Today's calendar entry for 17.11 is '17:00 Нічна зміна'.",
+      "module": "selfact",
+      "ts": "2026-11-17T08:56:05"
     }
   ]
 }
