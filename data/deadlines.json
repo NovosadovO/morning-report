@@ -850,5 +850,17 @@
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
     "done": false,
     "created": "2026-11-17"
+  },
+  "термін_дії_посилання_для_скидання_паролю_google|": {
+    "kind": "document",
+    "title": "Термін дії посилання для скидання паролю Google",
+    "org": "Google Workspace",
+    "deadline": "2026-11-19",
+    "action": "Скинути пароль до облікового запису Google.",
+    "why": "Посилання для скидання паролю дійсне лише 48 годин, після чого потрібно буде звертатися до адміністратора.",
+    "uid": "82946",
+    "sender": "The Google Workspace Team <workspace-noreply@google.com>",
+    "done": false,
+    "created": "2026-11-17"
   }
 }
