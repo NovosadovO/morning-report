@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-11-17t04_56_47_514026": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від Forbes через LinkedIn містить новину про те, що Воррен Баффет пожертвує акції Berkshire Hathaway на суму близько 5,47 мільярда доларі",
+    "ts": "2026-11-17T04:56:47.514026"
+  },
+  "people|2026-11-17t04_49_43_376716": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Olexiho\",   ",
+    "ts": "2026-11-17T04:49:43.376716"
+  },
   "selfact|2026-11-17t04_46_32_506993": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про аналіз від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Маю для тебе важливі аналізи від Maroš Si",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Маєш новий лист від Maroš Sivák з аналізом для Olexiho. Він містить два варіанти портфоліо та документи з комісіями.\", ",
     "ts": "2026-11-16T23:52:25.259295"
-  },
-  "selfact|2026-11-16t23_37_18_398300": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається зараз.\",     \"date\": \"2026-11-16\", ",
-    "ts": "2026-11-16T23:37:18.398300"
-  },
-  "action_detect|2026-11-16t23_34_37_936030": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Початок нічної зміни\",   \"action_date\": null,   \"action_time\": \"19:00\",   \"action_summary\": \"Початок н",
-    "ts": "2026-11-16T23:34:37.936030"
   }
 }
