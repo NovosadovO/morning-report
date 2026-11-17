@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-17T15:46:29.333828",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-17T15:46:30.296057",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -182,6 +176,45 @@
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-17T16:50:38.249699",
+      "kind": "offer",
+      "text": "📩 Лист від <b>LinkedIn</b>\n📋 Тема: «Не пропустіть обговорення в Artificial Intelligence, Deep Learning, Ma»\n\n<i>«Не пропустіть обговорення в Artificial Intelligence, Deep Learning, Machine Learning\r\n\r\n.....................................Artificial Intelligence, Deep Learning, Machine Learning\r\nAIAI is an alliance of builders &amp; executives facilitating the LLM &amp; multimodal AI era, sharing tools to scale powerfu...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83051"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83051"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83051"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83051"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83051"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83051"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
