@@ -61,7 +61,7 @@
     "MORNING_AI": {
       "checked": 52,
       "issues": 34,
-      "cut": 8,
+      "cut": 9,
       "fixed": 18
     },
     "MSG_MORNING": {
@@ -748,6 +748,7 @@
   "2026-11-17": {
     "checked": 18,
     "issues": 10,
-    "fixed": 5
+    "fixed": 5,
+    "cut": 1
   }
 }
