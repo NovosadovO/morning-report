@@ -298,5 +298,85 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-17T03:01:46.171239"
+  },
+  "action_detect|2026-11-17t18_52_45_667813": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-17T18:52:45.667813"
+  },
+  "planner|2026-11-17t09_04_32_544240": {
+    "topic": "planner",
+    "gist": "[{\"title\":\"Спати\",\"date\":\"2026-11-16\",\"time\":null,\"allday\":true}]",
+    "ts": "2026-11-17T09:04:32.544240"
+  },
+  "action_detect|2026-11-17t09_04_21_749271": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Дані застаріли на 1 день. Наразі н",
+    "ts": "2026-11-17T09:04:21.749271"
+  },
+  "astro_view_truthfix|2026-11-17t09_04_11_095369": {
+    "topic": "astro_view/truthfix",
+    "gist": "```json {   \"text\": \"Олег, дані застаріли на 1 день. Наразі немає актуальної інформації щодо твоїх показників здоров'я, окрім тих, що були синхронізовані вчора,",
+    "ts": "2026-11-17T09:04:11.095369"
+  },
+  "astro_view|2026-11-17t09_04_00_224545": {
+    "topic": "astro_view",
+    "gist": "Меркурій у секстилі до Сатурна зараз дає тобі можливість для **структурованої комунікації** та **планування**. У найближчі дні це вплине на твою роботу, допомаг",
+    "ts": "2026-11-17T09:04:00.224545"
+  },
+  "action_detect|2026-11-17t09_03_09_142492": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповідь на лист від Maroš Sivák\", \"action_date\": \"2023-11-20\", \"action_time\": null, \"action_summary\": \"Дати відпо",
+    "ts": "2026-11-17T09:03:09.142492"
+  },
+  "action_detect|2026-11-17t09_02_58_214117": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка як активне відновлення\", \"action_date\": \"2026-11-22\", \"action_time\": \"12:00\", \"action_summary\": \"З",
+    "ts": "2026-11-17T09:02:58.214117"
+  },
+  "action_detect|2026-11-17t09_02_47_120947": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T09:02:47.120947"
+  },
+  "action_detect|2026-11-17t09_02_36_024451": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T09:02:36.024451"
+  },
+  "action_detect|2026-11-17t09_02_25_110683": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз показників здоров'я свідчить про потребу у від",
+    "ts": "2026-11-17T09:02:25.110683"
+  },
+  "briefing|2026-11-17t09_02_14_752486": {
+    "topic": "briefing",
+    "gist": "🧭 **ГОЛОВНЕ** Твої показники здоров'я за минулу ніч свідчать про потребу у відпочинку: Body Battery на 7/100, а HRV знизився до 39 мс, що нижче твоєї норми. Це ",
+    "ts": "2026-11-17T09:02:14.752486"
+  },
+  "themes_ai_truthfix|2026-11-17t09_02_08_382887": {
+    "topic": "themes_ai/truthfix",
+    "gist": "🤔 Ти впевнений, що плануєш відновлення після нічної зміни саме так, як це закладено в твоїх цілях?  ⚖️ ЗДОРОВ'Я + ВАГА Вага становить 85.9 кг станом на 16 листо",
+    "ts": "2026-11-17T09:02:08.382887"
+  },
+  "themes_ai|2026-11-17t09_02_05_001305": {
+    "topic": "themes_ai",
+    "gist": "🤔 Ти впевнений, що плануєш відновлення після нічної зміни саме так, як це закладено в твоїх цілях?  💰 ФІНАНСИ Твої фінансові дані наразі обмежені, тому складно ",
+    "ts": "2026-11-17T09:02:05.001305"
+  },
+  "astro_ai|2026-11-17t09_01_54_625176": {
+    "topic": "astro_ai",
+    "gist": "Твоя нічна зміна щойно завершилася, а організм вже сигналізує про напруження: HRV – 39 (норма 54.5) і пульс спокою 53 (норма 47.71) свідчать про значний стрес. ",
+    "ts": "2026-11-17T09:01:54.625176"
+  },
+  "action_detect|2026-11-17t09_01_12_338703": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про важливість сніданку для енергії н",
+    "ts": "2026-11-17T09:01:12.338703"
+  },
+  "action_detect|2026-11-17t09_01_00_894425": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-17T09:01:00.894425"
   }
 }
