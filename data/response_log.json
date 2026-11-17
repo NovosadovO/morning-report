@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T16:16:20.821134+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_549988a48c"
-    },
-    {
       "ts": "2026-09-04T16:36:43.274710+00:00",
       "category": "confirm",
       "question": "calrem_skip: Випити склянку води",
@@ -14495,6 +14489,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити пошту від Mariia Ovsiienko",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-17"
+      }
+    },
+    {
+      "ts": "2026-11-17T03:00:23.898335+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити пошту від Garmin",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-17"
