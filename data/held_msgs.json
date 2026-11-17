@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-17T16:36:48.826391",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-17T16:36:50.019604",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_82462"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-11-17T18:15:49.281168",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Analýzy pre Olexiho :)</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_82454"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_82454"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_82454"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_82454"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_82454"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_82454"
             }
           ]
         ]
