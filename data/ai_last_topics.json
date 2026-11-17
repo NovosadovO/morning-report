@@ -1,4 +1,14 @@
 {
+  "deadlines|2026-11-17t05_20_57_582993": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-11-17\",     \"",
+    "ts": "2026-11-17T05:20:57.582993"
+  },
+  "selfact|2026-11-17t05_17_49_477364": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Олега. Потрібно відпов",
+    "ts": "2026-11-17T05:17:49.477364"
+  },
   "mailcal_extract|2026-11-17t05_15_22_609960": {
     "topic": "mailcal_extract",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "📬 від Notifikácie KOOPERATIVA — сповіщення про оплату страхування авто (EČV LE066BI). 📬 від Maroš Sivák — лист з аналізом для Олега. 📅 20.11 о 09:00 — нагадуван",
     "ts": "2026-11-17T00:02:23.647021"
-  },
-  "foresight|2026-11-17t00_02_12_987913": {
-    "topic": "foresight",
-    "gist": "📬 від Notifikácie KOOPERATIVA → Сповіщення про сплату страхового полісу (EČV LE066BI). Потрібно перевірити статус оплати. 📬 від Maroš Sivák → Аналіз для Олега. ",
-    "ts": "2026-11-17T00:02:12.987913"
-  },
-  "action_detect|2026-11-17t00_01_50_521071": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-17T00:01:50.521071"
   }
 }
