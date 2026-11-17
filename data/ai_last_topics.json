@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-17t05_29_14_057818": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-17T05:29:14.057818"
+  },
   "deadlines|2026-11-17t05_20_57_582993": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-11-17\",     \"",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Отримав від Maroš Sivák лист з аналізами для тебе.",
     "ts": "2026-11-17T00:07:54.075119"
-  },
-  "foresight_truthfix|2026-11-17t00_02_23_647021": {
-    "topic": "foresight/truthfix",
-    "gist": "📬 від Notifikácie KOOPERATIVA — сповіщення про оплату страхування авто (EČV LE066BI). 📬 від Maroš Sivák — лист з аналізом для Олега. 📅 20.11 о 09:00 — нагадуван",
-    "ts": "2026-11-17T00:02:23.647021"
   }
 }
