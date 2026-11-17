@@ -1,4 +1,14 @@
 {
+  "calendar_truthfix|2026-11-17t05_06_37_533114": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, зараз 04:06, вівторок, 17 листопада. Ти на нічній зміні.  20 листопада о 09:00 тобі потрібно виконати завдання для Maroš Sivák. Також 20 листопада очікує",
+    "ts": "2026-11-17T05:06:37.533114"
+  },
+  "calendar|2026-11-17t05_06_27_325004": {
+    "topic": "calendar",
+    "gist": "Олеже, поки ти на нічній зміні, давай швидко пройдемося по найважливішому. Сьогодні, 17 листопада, твій день вільний від запланованих зустрічей, але це не означ",
+    "ts": "2026-11-17T05:06:27.325004"
+  },
   "selfact|2026-11-17t05_02_31_042835": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Отримав лист від Maroš Sivák з аналізами для тебе. ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-17T00:01:39.654716"
-  },
-  "action_detect|2026-11-17t00_01_28_576234": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-17T00:01:28.576234"
-  },
-  "proactive_actions|2026-11-17t00_00_15_451443": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-17\",     \"time\": \"\",     \"message\": \"Олеже, є два не",
-    "ts": "2026-11-17T00:00:15.451443"
   }
 }
