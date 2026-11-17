@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-17t21_00_32_528542": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це щоденник з питаннями про енергію, зроблені справи ",
+    "ts": "2026-11-17T21:00:32.528542"
+  },
+  "people|2026-11-17t20_50_00_590082": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Олега\",     ",
+    "ts": "2026-11-17T20:50:00.590082"
+  },
   "selfact|2026-11-17t20_47_54_787825": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Надійшов лист від Maroš Sivák з аналізом інвестицій",
@@ -288,15 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Нічна зміна щойно закінчилася, але ось зв'язок між показниками: HRV 39.0 мс (дані від 2026-11-16) значно знизився порівняно із середніми за 14 днів (52.2 мс),",
     "ts": "2026-11-17T08:05:30.509906"
-  },
-  "action_detect|2026-11-17t08_01_23_893459": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T08:01:23.893459"
-  },
-  "selfact|2026-11-17t07_53_19_577283": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Olex",
-    "ts": "2026-11-17T07:53:19.577283"
   }
 }
