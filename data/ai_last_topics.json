@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-11-17t08_30_40_771441": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-17T08:30:40.771441"
+  },
+  "selfact|2026-11-17t08_24_40_862099": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізом інвестиційних портфелів.",
+    "ts": "2026-11-17T08:24:40.862099"
+  },
+  "bills|2026-11-17t08_21_47_399246": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
+    "ts": "2026-11-17T08:21:47.399246"
+  },
   "deadlines|2026-11-17t08_20_59_009579": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexiho. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {     ",
     "ts": "2026-11-17T02:28:46.167147"
-  },
-  "openloop_promises|2026-11-17t02_28_25_925661": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-17T02:28:25.925661"
-  },
-  "bills|2026-11-17t02_21_13_843374": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-17T02:21:13.843374"
-  },
-  "deadlines|2026-11-17t02_20_49_017219": {
-    "topic": "deadlines",
-    "gist": "```json [] ```",
-    "ts": "2026-11-17T02:20:49.017219"
   }
 }
