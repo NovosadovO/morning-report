@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-17T17:27:34.289431",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>SOL +5.5% за 24г</b>\n\nЗараз: 73.78 $\n24г тому: 69.94 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-17T17:27:35.432041",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +5.5% за 24г\n\nЗараз: 73.78 $\n24г тому: 69.94 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -347,6 +341,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних\n\n📬 <i>нових листів нема — 7 непрочитаних уже показував раніше</i>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-17T18:38:33.857516",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Morning Report</b>\n📋 Тема: «📊 Ранковий дайджест ринків — 17.11.2026»\n\n<i>«📊 РАНКОВИЙ РИНКОВИЙ ДАЙДЖЕСТ\r\n\r\n🗓 17 November 2026, 16:36\r\n📈 Відкрити живі графіки TradingView → https://040d5yvqudeeuhzw0s13dcp9yjftfazu.runable.site\r\n\r\n\r\n📉 ІНДЕКСИ\r\n\r\nІндексРівеньЗміна S&amp;P 500 $7,323.09 -1.26% NASDAQ 100 $26,802.48 -1.45% Dow Jones $50,806.14 -1.55% VIX $25.25 +10.21%\r\n\r\n\r\n🪙 КРИПТ...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83063"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83063"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83063"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83063"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83063"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83063"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
