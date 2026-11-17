@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-17t05_48_56_740653": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Потрібно відповісти на лист від Maroš Sivák щодо аналізів дл",
+    "ts": "2026-11-17T05:48:56.740653"
+  },
+  "selfact|2026-11-17t05_33_03_574264": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від Maroš Sivák\",     \"text\": \"Maroš Sivák надіслав тобі аналізи для Olexiho щодо інвести",
+    "ts": "2026-11-17T05:33:03.574264"
+  },
   "openloop_promises|2026-11-17t05_29_14_057818": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-17T00:16:42.175213"
-  },
-  "action_detect|2026-11-17t00_16_31_211990": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T00:16:31.211990"
-  },
-  "selfact|2026-11-17t00_07_54_075119": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Отримав від Maroš Sivák лист з аналізами для тебе.",
-    "ts": "2026-11-17T00:07:54.075119"
   }
 }
