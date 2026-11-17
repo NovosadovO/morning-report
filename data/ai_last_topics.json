@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-17t21_49_18_197471": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {   ",
+    "ts": "2026-11-17T21:49:18.197471"
+  },
+  "selfact|2026-11-17t21_34_08_750519": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Вам надійшов лист від Maroš Sivák з аналізами для Olexiho. Також, є лист від Mariia Ovsiienko з рахунком № 2026",
+    "ts": "2026-11-17T21:34:08.750519"
+  },
   "evening_ai|2026-11-17t21_30_48_137458": {
     "topic": "EVENING_AI",
     "gist": "Олеже, нічна зміна триває, і це її серцевина, а не завершення дня. В цей час, коли для багатьох настає відпочинок, ти тримаєш темп роботи, що вимагає особливої ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про важливість сніданку для енергії н",
     "ts": "2026-11-17T09:01:12.338703"
-  },
-  "action_detect|2026-11-17t09_01_00_894425": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-17T09:01:00.894425"
-  },
-  "market_insight|2026-11-17t09_00_59_679765": {
-    "topic": "market_insight",
-    "gist": "```json {   \"text\": \"RAIN продемонстрував значне зниження на <b>-14.11%</b> за 24 години, що суттєво перевищує рух BTC (<b>-0.13%</b>). Це вказує на можливий ін",
-    "ts": "2026-11-17T09:00:59.679765"
   }
 }
