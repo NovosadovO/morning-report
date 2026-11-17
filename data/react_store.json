@@ -2638,5 +2638,13 @@
     "text": "Oleg, you have a night shift starting at 17:00 today. Rememb",
     "tag": "notify_ack",
     "ts": "2026-11-17T08:56:00.556968+00:00"
+  },
+  "96da2300bd": {
+    "kind": "notify_ack",
+    "key": "",
+    "title": "Oleg, today is a recovery day. No running is scheduled.",
+    "text": "Oleg, today is a recovery day. No running is scheduled.",
+    "tag": "notify_ack",
+    "ts": "2026-11-17T08:56:06.872703+00:00"
   }
 }
