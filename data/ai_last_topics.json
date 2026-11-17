@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-17t04_31_32_198808": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {   ",
+    "ts": "2026-11-17T04:31:32.198808"
+  },
   "bills|2026-11-17t04_21_16_652908": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -293,10 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "⏰ **19:00 — Початок нічної зміни.** Олеже, поки ти на роботі, тримай у фокусі ключові моменти. Зосередься на ефективності та збереженні енергії протягом зміни. ",
     "ts": "2026-11-16T23:34:27.149083"
-  },
-  "action_detect|2026-11-16t23_31_07_570950": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-16T23:31:07.570950"
   }
 }
