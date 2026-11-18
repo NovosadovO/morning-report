@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-18t19_14_08_883575": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-18T19:14:08.883575"
+  },
+  "selfact|2026-11-18t19_11_14_262846": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібн",
+    "ts": "2026-11-18T19:11:14.262846"
+  },
   "calendar|2026-11-18t19_09_46_547380": {
     "topic": "calendar",
     "gist": "Олеже, твій завтрашній день, 19 листопада, обіцяє бути насиченим, хоча й із певним викликом через ранкову зміну. ☀️ Але пам'ятай, що кожна зміна — це ще один кр",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Olexiho.\"",
     "ts": "2026-11-18T14:46:07.168610"
-  },
-  "openloop_promises|2026-11-18t14_42_14_905299": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-18T14:42:14.905299"
-  },
-  "action_detect|2026-11-18t14_36_49_195731": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-18T14:36:49.195731"
   }
 }
