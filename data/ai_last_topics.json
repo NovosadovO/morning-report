@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-18t09_00_14_013714": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це інформація про стратегію фінансової незалежності (",
+    "ts": "2026-11-18T09:00:14.013714"
+  },
   "selfact|2026-11-18t08_47_17_938867": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олег",
@@ -293,10 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "📬 від Notifikácie KOOPERATIVA — сповіщення про оплату страховки авто, EČV LE066BI. 📅 У календарі на 20.11 зазначено, що лист від Maroš Sivák вимагає відповіді. ",
     "ts": "2026-11-18T04:02:50.913253"
-  },
-  "foresight|2026-11-18t04_02_39_468724": {
-    "topic": "foresight",
-    "gist": "📬 від Notifikácie KOOPERATIVA → Це сповіщення про сплату страховки авто, ЕЧВ LE066BI. Необхідно перевірити, чи вже оплачено. 📬 від Maroš Sivák → Лист з аналізом",
-    "ts": "2026-11-18T04:02:39.468724"
   }
 }
