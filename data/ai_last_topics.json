@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-18t06_10_56_246425": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація від Maroš Sivák\",     \"text\": \"Марош Сівáк надіслав аналізи для Олега. Потрібно звернути ув",
+    "ts": "2026-11-18T06:10:56.246425"
+  },
+  "action_detect|2026-11-18t06_01_39_456320": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та збе",
+    "ts": "2026-11-18T06:01:39.456320"
+  },
+  "action_detect|2026-11-18t06_01_28_280966": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T06:01:28.280966"
+  },
+  "action_detect|2026-11-18t06_01_17_271868": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T06:01:17.271868"
+  },
   "proactive_actions|2026-11-18t06_00_14_666782": {
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-18\",     \"time\": \"\",     \"message\": \"Олеже, є два непрочитан",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "🏠 Сьогодні вихідний, а завтра знову рання зміна о 06:00. При цьому, поки що зафіксовано 6.2 години сну, що є значно менше норми, а HRV знизився до 46 мс. Це мож",
     "ts": "2026-11-17T22:06:15.267398"
-  },
-  "selfact|2026-11-17t22_04_49_876594": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexiho. Потрібно з",
-    "ts": "2026-11-17T22:04:49.876594"
-  },
-  "openloop_promises|2026-11-17t22_04_16_128139": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-17T22:04:16.128139"
-  },
-  "selfact|2026-11-17t21_49_18_197471": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {   ",
-    "ts": "2026-11-17T21:49:18.197471"
-  },
-  "selfact|2026-11-17t21_34_08_750519": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Вам надійшов лист від Maroš Sivák з аналізами для Olexiho. Також, є лист від Mariia Ovsiienko з рахунком № 2026",
-    "ts": "2026-11-17T21:34:08.750519"
   }
 }
