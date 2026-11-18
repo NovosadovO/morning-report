@@ -1,4 +1,9 @@
 {
+  "people|2026-11-18t04_49_53_398734": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
+    "ts": "2026-11-18T04:49:53.398734"
+  },
   "action_detect|2026-11-18t04_45_49_286638": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про те, як",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Початок нічної зміни\",   \"action_date\": null,   \"action_time\": \"19:00\",   \"action_summary\": \"Початок н",
     "ts": "2026-11-17T20:34:03.663497"
-  },
-  "msg_event_soon_truthfix|2026-11-17t20_33_53_047141": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "⏰ **19:00 — Початок нічної зміни.** Олег, зараз ти на роботі, тому короткий брифінг.  Останній запис у твоєму календарі стосується події \"поліції руслані\", запл",
-    "ts": "2026-11-17T20:33:53.047141"
   }
 }
