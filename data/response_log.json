@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T19:37:04.788598+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-09-04T19:37:09.600807+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14533,6 +14527,12 @@
         "kind": "reminder",
         "date": "2026-11-18"
       }
+    },
+    {
+      "ts": "2026-11-18T10:58:26.831050+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
