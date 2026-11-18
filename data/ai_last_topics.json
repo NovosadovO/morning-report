@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-18t10_53_38_716920": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Терміновий лист від Maroš Sivák\",     \"text\": \"Олеже, отримав важливий лист від Maroš Sivák з аналізами для те",
+    "ts": "2026-11-18T10:53:38.716920"
+  },
   "selfact|2026-11-18t10_38_23_526552": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Маєш лист від Maroš Sivák, який потребує відповіді. Також є завда",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та збе",
     "ts": "2026-11-18T06:01:39.456320"
-  },
-  "action_detect|2026-11-18t06_01_28_280966": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T06:01:28.280966"
   }
 }
