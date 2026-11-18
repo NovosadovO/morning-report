@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-18t21_00_31_885735": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-18T21:00:31.885735"
+  },
   "people|2026-11-18t20_50_03_563371": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-18T16:18:21.006380"
-  },
-  "openloop_promises|2026-11-18t16_13_18_859226": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-18T16:13:18.859226"
   }
 }
