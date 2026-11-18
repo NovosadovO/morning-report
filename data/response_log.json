@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T19:36:58.191980+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ack_bcae2aee0a"
-    },
-    {
       "ts": "2026-09-04T19:37:02.152933+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14523,6 +14517,16 @@
       "answer": "Переглянути лист від Mariia Ovsiienko",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-18"
+      }
+    },
+    {
+      "ts": "2026-11-18T06:00:23.468791+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-18"
       }
     }
