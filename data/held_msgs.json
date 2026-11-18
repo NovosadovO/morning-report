@@ -56,6 +56,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-18T23:11:32.950747",
+      "kind": "offer",
+      "text": "📩 Лист від <b>GenAI Works через LinkedIn</b>\n📋 Тема: «💸 OpenAI just undercut Claude by 20x»\n\n<i>«The Atlas\r\n\r\nАвтор: GenAI Works\r\n\r\n\r\nАвтор: GenAI Works\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/openai-just-undercut-claude-20x-genai-works-qbacf?lipi=urn%3Ali%3Apage%3Aemail_email_series_follow_n...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83261"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83261"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83261"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83261"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83261"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83261"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
