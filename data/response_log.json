@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T19:08:27.738820+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити статус оплати",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T19:08:30.896176+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14516,6 +14510,16 @@
       "answer": "Відповісти Mariia Ovsiienko",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-18"
+      }
+    },
+    {
+      "ts": "2026-11-18T04:30:27.908278+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити сповіщення про страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-18"
       }
     }
