@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-18t20_31_10_793123": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Прийшов лист від Maroš Sivák з аналізом для Olexi. Потрібно зверн",
+    "ts": "2026-11-18T20:31:10.793123"
+  },
+  "bills|2026-11-18t20_25_05_829386": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-18T20:25:05.829386"
+  },
   "deadlines|2026-11-18t20_22_19_283713": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,     \"action\":",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Маєш новий лист від Maroš Sivák з аналізами для Olexi. Він потреб",
     "ts": "2026-11-18T15:49:02.015535"
-  },
-  "email_ai_item|2026-11-18t15_46_52_749333": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від carVertical інформує про знижку 40% на звіти про історію автомобілів. Пропонується перевірити історію авто перед покупкою, щоб уникнут",
-    "ts": "2026-11-18T15:46:52.749333"
-  },
-  "selfact|2026-11-18t15_33_40_255065": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно від",
-    "ts": "2026-11-18T15:33:40.255065"
   }
 }
