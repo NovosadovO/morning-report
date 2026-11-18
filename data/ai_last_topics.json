@@ -1,4 +1,64 @@
 {
+  "healthai|2026-11-18t09_05_48_422714": {
+    "topic": "healthai",
+    "gist": "🌙 Після нічної зміни ви вдома, час для відновлення. Поки що зафіксовано 4.8 години сну, що значно менше за середнє за 7 днів (7.5 год). 📊 На щастя, тренд середн",
+    "ts": "2026-11-18T09:05:48.422714"
+  },
+  "selfact|2026-11-18t09_03_07_873148": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Необхідно відповісти на лист від Maroš Sivák. Ця задача стосується фінансових аналізів для Олега.\",     \"why\": ",
+    "ts": "2026-11-18T09:03:07.873148"
+  },
+  "action_detect|2026-11-18t09_02_59_994074": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Maroš Sivák та виконати завдання\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action",
+    "ts": "2026-11-18T09:02:59.994074"
+  },
+  "action_detect|2026-11-18t09_02_48_953635": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-18T09:02:48.953635"
+  },
+  "action_detect|2026-11-18t09_02_38_162321": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
+    "ts": "2026-11-18T09:02:38.162321"
+  },
+  "action_detect|2026-11-18t09_02_26_916889": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T09:02:26.916889"
+  },
+  "action_detect|2026-11-18t09_02_16_129775": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогоднішній звіт містить інформацію про стан здоров'",
+    "ts": "2026-11-18T09:02:16.129775"
+  },
+  "briefing|2026-11-18t09_02_05_516645": {
+    "topic": "briefing",
+    "gist": "🧭 **ГОЛОВНЕ** Сьогодні твій організм подає чіткі сигнали втоми: сон за минулу ніч склав лише 4 години 50 хвилин, а показник HRV знизився до 45 мс, що вказує на ",
+    "ts": "2026-11-18T09:02:05.516645"
+  },
+  "themes_ai_truthfix|2026-11-18t09_02_00_441063": {
+    "topic": "themes_ai/truthfix",
+    "gist": "💰 ФІНАНСИ Твій портфель демонструє незначне зниження за добу. NEAR показав 4% зростання.  🏃 БІГ Останнє тренування на 10 км відбулося 4 дні тому. Сьогоднішній д",
+    "ts": "2026-11-18T09:02:00.441063"
+  },
+  "themes_ai|2026-11-18t09_01_55_832649": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ Твій портфель зараз демонструє незначне зниження за добу, але загальна прибутковість залишається сильною. Зверни увагу на 4% зростання NEAR, це цікави",
+    "ts": "2026-11-18T09:01:55.832649"
+  },
+  "astro_ai_truthfix|2026-11-18t09_01_49_333333": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Твої показники здоров'я сьогодні сигналізують про потребу уваги. Зафіксовано 4 години 50 хвилин сну за ніч з 17 на 18 листопада. HRV (варіабельність серцевого р",
+    "ts": "2026-11-18T09:01:49.333333"
+  },
+  "astro_ai|2026-11-18t09_01_44_674106": {
+    "topic": "astro_ai",
+    "gist": "Твоє самопочуття після нічної зміни виглядає тривожним. Сон триває лише 4 години 50 хвилин, що значно нижче за твою норму 7.6 годин, а показник HRV (варіабельні",
+    "ts": "2026-11-18T09:01:44.674106"
+  },
   "action_detect|2026-11-18t09_00_14_013714": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це інформація про стратегію фінансової незалежності (",
@@ -238,65 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
     "ts": "2026-11-18T04:49:53.398734"
-  },
-  "action_detect|2026-11-18t04_45_49_286638": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про те, як",
-    "ts": "2026-11-18T04:45:49.286638"
-  },
-  "selfact|2026-11-18t04_39_28_793983": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, зараз 04:39, а твоя ранкова зміна на заводі починається о 05:00. ",
-    "ts": "2026-11-18T04:39:28.793983"
-  },
-  "action_detect|2026-11-18t04_35_14_079105": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-18T04:35:14.079105"
-  },
-  "msg_crypto_move|2026-11-18t04_35_02_703631": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "📈 Ринок криптовалют демонструє помітну волатильність, і сьогодні виділяються два ключові рухи: різке падіння RAIN на 23.0% та зростання NEAR на 5.4% за останні ",
-    "ts": "2026-11-18T04:35:02.703631"
-  },
-  "action_detect|2026-11-18t04_30_54_305105": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Нагадування про ранню зміну з 06:0",
-    "ts": "2026-11-18T04:30:54.305105"
-  },
-  "proactive_actions|2026-11-18t04_30_20_375693": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Перевірити сповіщення про страхування KOOPERATIVA\",     \"date\": \"2026-11-18\",     \"time\": \"06:00\",     \"message\": \"О",
-    "ts": "2026-11-18T04:30:20.375693"
-  },
-  "selfact|2026-11-18t04_23_36_437153": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, твоя рання зміна на заводі починається о 05:00.\",     \"date\": \"",
-    "ts": "2026-11-18T04:23:36.437153"
-  },
-  "bills|2026-11-18t04_23_15_966916": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-18T04:23:15.966916"
-  },
-  "email_ai_item|2026-11-18t04_14_38_115639": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про вакансії з LinkedIn. За запитом користувача надаються дві вакансії: \\\"Head of Consumer Financial Operations\\\" в Blo",
-    "ts": "2026-11-18T04:14:38.115639"
-  },
-  "selfact|2026-11-18t04_07_37_730947": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, від Maroš Sivák надійшов лист з аналізом інвестиційних портфелів. ",
-    "ts": "2026-11-18T04:07:37.730947"
-  },
-  "openloop_promises|2026-11-18t04_07_18_231204": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-18T04:07:18.231204"
-  },
-  "foresight_truthfix|2026-11-18t04_02_50_913253": {
-    "topic": "foresight/truthfix",
-    "gist": "📬 від Notifikácie KOOPERATIVA — сповіщення про оплату страховки авто, EČV LE066BI. 📅 У календарі на 20.11 зазначено, що лист від Maroš Sivák вимагає відповіді. ",
-    "ts": "2026-11-18T04:02:50.913253"
   }
 }
