@@ -2,11 +2,12 @@
   "recent": [
     "hr_avg",
     "spo2",
-    "stress"
+    "stress",
+    "sleep_hours"
   ],
   "last": {
-    "field": "stress",
-    "day": "2026-11-17",
-    "z": 1.49
+    "field": "sleep_hours",
+    "day": "2026-11-18",
+    "z": -1.43
   }
 }
