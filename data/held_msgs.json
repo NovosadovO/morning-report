@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-18T02:43:53.490068",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>SOL +5.1% за 24г</b>\n\nЗараз: 75.19 $\n24г тому: 71.53 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-18T02:43:54.341237",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +5.1% за 24г\n\nЗараз: 75.19 $\n24г тому: 71.53 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-11-18T02:51:11.765304",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n🪪 <b>Скидання паролю Google</b>\n📆 до <b>2026-11-19</b>\n🏢 Google Workspace\n\n➡️ Скинути пароль до облікового запису Google.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-18T02:51:12.576798",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n🪪 Скидання паролю Google\n📆 до 2026-11-19\n🏢 Google Workspace\n\n➡️ Скинути пароль до облікового запису Google.",
       "keyboard": null
     }
   ]
