@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-18t17_52_41_071462": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"202",
+    "ts": "2026-11-18T17:52:41.071462"
+  },
   "openloop_promises|2026-11-18t17_43_58_937133": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від Maroš Sivák\",     \"text\": \"Прийшов лист від Maroš Sivák з аналізами для Олега. Здаєть",
     "ts": "2026-11-18T12:25:54.778461"
-  },
-  "bills|2026-11-18t12_24_09_152871": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-18T12:24:09.152871"
   }
 }
