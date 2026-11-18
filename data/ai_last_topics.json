@@ -1,4 +1,14 @@
 {
+  "calendar|2026-11-18t05_08_36_477311": {
+    "topic": "calendar",
+    "gist": "Олеже, сьогодні ранкова зміна, але твоє тіло вже о 04:08 готове до роботи, що видно по пульсу спокою 50 уд/хв та високому SpO2 96%. Це чудовий фундамент для дос",
+    "ts": "2026-11-18T05:08:36.477311"
+  },
+  "action_detect|2026-11-18t05_01_25_245061": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": \"2026-11-18\",   \"action_time\": \"07:00\",   \"action_summary\": \"Початок ра",
+    "ts": "2026-11-18T05:01:25.245061"
+  },
   "action_detect|2026-11-18t05_01_04_368318": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Просто інформація про сніданок та енергію.\"}",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це щоденник з питаннями про енергію, зроблені справи ",
     "ts": "2026-11-17T21:00:32.528542"
-  },
-  "people|2026-11-17t20_50_00_590082": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Олега\",     ",
-    "ts": "2026-11-17T20:50:00.590082"
-  },
-  "selfact|2026-11-17t20_47_54_787825": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Надійшов лист від Maroš Sivák з аналізом інвестицій",
-    "ts": "2026-11-17T20:47:54.787825"
   }
 }
