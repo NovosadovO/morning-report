@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T20:17:33.302846+00:00",
-      "category": "event_done",
-      "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-04T23:28:09.557547+00:00",
       "category": "diary",
       "question": "3 питання про день",
@@ -14538,6 +14532,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_a07fbf4b5f"
+    },
+    {
+      "ts": "2026-11-18T16:18:10.345229+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 6 дн.",
+      "answer": "yes"
     }
   ]
 }
