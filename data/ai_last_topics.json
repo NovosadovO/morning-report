@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-18t16_18_21_006380": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T16:18:21.006380"
+  },
   "openloop_promises|2026-11-18t16_13_18_859226": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Хоча поки що зафіксовано 4.8 години сну, що може бути неповними даними, варто пам'ятати, що стабільність сну дуже нерівна (розкид ±2.08 год), а HRV падає (-8.",
     "ts": "2026-11-18T11:06:11.670471"
-  },
-  "selfact|2026-11-18t10_53_38_716920": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Терміновий лист від Maroš Sivák\",     \"text\": \"Олеже, отримав важливий лист від Maroš Sivák з аналізами для те",
-    "ts": "2026-11-18T10:53:38.716920"
   }
 }
