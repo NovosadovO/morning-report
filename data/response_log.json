@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T19:08:30.896176+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_1af80edba7"
-    },
-    {
       "ts": "2026-09-04T19:36:57.728802+00:00",
       "category": "calendar_button",
       "question": "tomorrow",
@@ -14520,6 +14514,16 @@
       "answer": "Перевірити сповіщення про страхування KOOPERATIVA",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-18"
+      }
+    },
+    {
+      "ts": "2026-11-18T04:30:32.892750+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-18"
       }
     }
