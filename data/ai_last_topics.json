@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-18t16_30_32_291247": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від The Economist через LinkedIn пропонує прочитати статтю на тему боротьби з прокрастинацією. Він містить посилання на статтю та інші мат",
+    "ts": "2026-11-18T16:30:32.291247"
+  },
   "bills|2026-11-18t16_24_47_138562": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": null,     \"currency\": null,     \"invoice_no\": \"6641172176\",     \"due\": null,     \"a",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів ",
     "ts": "2026-11-18T11:24:18.623702"
-  },
-  "deadlines|2026-11-18t11_22_10_026586": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,",
-    "ts": "2026-11-18T11:22:10.026586"
   }
 }
