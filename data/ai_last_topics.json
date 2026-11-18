@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-18t14_22_19_598406": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
+    "ts": "2026-11-18T14:22:19.598406"
+  },
   "selfact|2026-11-18t14_14_36_566723": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливо: лист від Maroš Sivák\",     \"text\": \"Олеже, від Maroš Sivák надійшов лист з аналізами для тебе. Потріб",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-18T09:02:26.916889"
-  },
-  "action_detect|2026-11-18t09_02_16_129775": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогоднішній звіт містить інформацію про стан здоров'",
-    "ts": "2026-11-18T09:02:16.129775"
   }
 }
