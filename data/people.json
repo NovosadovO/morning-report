@@ -494,16 +494,18 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "Посилання на Facebook"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "З'ясувати, що означає ідентифікатор '1fd66d1d-f26f-4a06-b87b-c984b5b52eb9', надісланий Олегу Новосадову.",
-    "ping_in_days": 5,
+    "next_step": "Перевірити, чи є відповідь від Oleg Novosadov на лист від 07.11.",
+    "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-11-12",
-    "updated": "2026-11-17",
+    "updated": "2026-11-18",
     "pinged_at": ""
   },
   "ruslanakozancin@gmail.com": {
