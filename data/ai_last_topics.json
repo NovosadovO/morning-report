@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-18t17_37_45_832507": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák. Аналізи ",
+    "ts": "2026-11-18T17:37:45.832507"
+  },
+  "selfact|2026-11-18t17_22_43_159661": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олег! Тобі прийшов лист від Maroš Sivák з аналізами для Olexi. Також є лист про сплату страховки від KO",
+    "ts": "2026-11-18T17:22:43.159661"
+  },
   "deadlines|2026-11-18t17_22_27_409419": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-18T12:01:45.758192"
-  },
-  "action_detect|2026-11-18t12_01_34_758263": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-18T12:01:34.758263"
-  },
-  "calendar|2026-11-18t12_00_42_938872": {
-    "topic": "calendar",
-    "gist": "На тебе чекає легка прогулянка — активне відновлення, як частина твого шляху до фінансової незалежності та здорового тіла.  Оскільки ти щойно з нічної зміни, це",
-    "ts": "2026-11-18T12:00:42.938872"
   }
 }
