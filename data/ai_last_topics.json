@@ -1,4 +1,14 @@
 {
+  "bills|2026-11-18t16_24_47_138562": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": null,     \"currency\": null,     \"invoice_no\": \"6641172176\",     \"due\": null,     \"a",
+    "ts": "2026-11-18T16:24:47.138562"
+  },
+  "selfact|2026-11-18t16_19_49_209881": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів для O",
+    "ts": "2026-11-18T16:19:49.209881"
+  },
   "action_detect|2026-11-18t16_18_21_006380": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,",
     "ts": "2026-11-18T11:22:10.026586"
-  },
-  "selfact|2026-11-18t11_09_16_428010": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Maroš Sivák надіслав аналізи для Olexi. Потрібно відповісти на його лист.\",     \"mail_uid\": \"82454\"   },   {   ",
-    "ts": "2026-11-18T11:09:16.428010"
-  },
-  "healthai|2026-11-18t11_06_11_670471": {
-    "topic": "healthai",
-    "gist": "🌙 Хоча поки що зафіксовано 4.8 години сну, що може бути неповними даними, варто пам'ятати, що стабільність сну дуже нерівна (розкид ±2.08 год), а HRV падає (-8.",
-    "ts": "2026-11-18T11:06:11.670471"
   }
 }
