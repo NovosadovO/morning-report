@@ -1,5 +1,5 @@
 {
-  "ts": 1794910960.0714307,
+  "ts": 1794997495.242313,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -17,9 +17,9 @@
     "LINK": "chainlink",
     "ADA": "cardano",
     "XLM": "stellar",
-    "RAIN": "rain",
-    "BCH": "bitcoin-cash",
     "NEAR": "near",
-    "LTC": "litecoin"
+    "BCH": "bitcoin-cash",
+    "LTC": "litecoin",
+    "CC": "canton-network"
   }
 }
