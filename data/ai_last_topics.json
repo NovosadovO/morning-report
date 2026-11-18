@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-18t13_28_24_186886": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Терміново: лист від Maroš Sivák\",     \"text\": \"Зверни увагу на лист від Maroš Sivák (uid=82454). Він потребує ",
+    "ts": "2026-11-18T13:28:24.186886"
+  },
+  "selfact|2026-11-18t13_12_49_712350": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, від Maroš Sivák надійшов лист з аналізами для Olexi. Потрі",
+    "ts": "2026-11-18T13:12:49.712350"
+  },
   "openloop_promises|2026-11-18t13_11_15_578428": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це інформація про стратегію фінансової незалежності (",
     "ts": "2026-11-18T09:00:14.013714"
-  },
-  "selfact|2026-11-18t08_47_17_938867": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олег",
-    "ts": "2026-11-18T08:47:17.938867"
-  },
-  "openloop_promises|2026-11-18t08_39_53_548874": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-18T08:39:53.548874"
   }
 }
