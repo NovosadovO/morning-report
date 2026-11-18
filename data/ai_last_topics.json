@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-18t14_30_02_649523": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, отримано лист від Maroš Sivák з аналізами для тебе. Він по",
+    "ts": "2026-11-18T14:30:02.649523"
+  },
+  "bills|2026-11-18t14_24_31_522664": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-18T14:24:31.522664"
+  },
   "deadlines|2026-11-18t14_22_19_598406": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-18T09:02:48.953635"
-  },
-  "action_detect|2026-11-18t09_02_38_162321": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
-    "ts": "2026-11-18T09:02:38.162321"
-  },
-  "action_detect|2026-11-18t09_02_26_916889": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T09:02:26.916889"
   }
 }
