@@ -543,16 +543,17 @@
   },
   "masyastadnikova@gmail.com": {
     "name": "Mariia Ovsiienko",
-    "relation": "інше",
+    "relation": "сервіс",
     "vip": false,
     "topics": [
-      "Фактура № 20260164"
+      "Надсилання рахунку",
+      "Оплата рахунку"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Перевірити та оплатити фактуру № 20260164 від Mariia Ovsiienko.",
-    "ping_in_days": -1,
+    "next_step": "Перевірити рахунок від Mariia Ovsiienko та сплатити його.",
+    "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "",
