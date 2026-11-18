@@ -1,4 +1,14 @@
 {
+  "msg_crypto_move|2026-11-18t04_35_02_703631": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "📈 Ринок криптовалют демонструє помітну волатильність, і сьогодні виділяються два ключові рухи: різке падіння RAIN на 23.0% та зростання NEAR на 5.4% за останні ",
+    "ts": "2026-11-18T04:35:02.703631"
+  },
+  "action_detect|2026-11-18t04_30_54_305105": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Нагадування про ранню зміну з 06:0",
+    "ts": "2026-11-18T04:30:54.305105"
+  },
   "proactive_actions|2026-11-18t04_30_20_375693": {
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Перевірити сповіщення про страхування KOOPERATIVA\",     \"date\": \"2026-11-18\",     \"time\": \"06:00\",     \"message\": \"О",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
     "ts": "2026-11-17T20:22:41.143318"
-  },
-  "deadlines|2026-11-17t20_22_02_295500": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,",
-    "ts": "2026-11-17T20:22:02.295500"
-  },
-  "selfact|2026-11-17t20_17_37_199008": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно відповісти ",
-    "ts": "2026-11-17T20:17:37.199008"
   }
 }
