@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-13",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-13T15:21:17"
-    },
-    {
       "kind": "notify",
       "what": "Отримано лист від Notifikácie KOOPERATIVA про страхування PZ",
       "detail": "Свіжий лист від Notifikácie KOOPERATIVA стосується страхування, що співпадає з запланованою оплатою.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-18T19:55:38"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-18T20:01:26"
     }
   ]
 }
