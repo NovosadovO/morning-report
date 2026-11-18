@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-18t04_54_39_851280": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливо: Лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Надійшов лист від Maroš Sivák з аналізами для тебе",
+    "ts": "2026-11-18T04:54:39.851280"
+  },
   "people|2026-11-18t04_49_53_398734": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-17T20:34:14.616628"
-  },
-  "action_detect|2026-11-17t20_34_03_663497": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Початок нічної зміни\",   \"action_date\": null,   \"action_time\": \"19:00\",   \"action_summary\": \"Початок н",
-    "ts": "2026-11-17T20:34:03.663497"
   }
 }
