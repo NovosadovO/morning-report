@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-04T19:36:57.728802+00:00",
-      "category": "calendar_button",
-      "question": "tomorrow",
-      "answer": "accepted",
-      "extra": {
-        "stage": "tomorrow",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-04T19:36:58.191980+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14522,6 +14511,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-18"
+      }
+    },
+    {
+      "ts": "2026-11-18T04:30:37.500653+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути лист від Mariia Ovsiienko",
       "extra": {
         "kind": "reply",
         "date": "2026-11-18"
