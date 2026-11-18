@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-11-18t14_36_36_303744": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "✅ **13:36 — час перевірити прогрес.** Ти вдома після нічної зміни, і це чудовий момент, щоб швидко оцінити, як просуваються твої цілі, перш ніж зосередитись на ",
+    "ts": "2026-11-18T14:36:36.303744"
+  },
   "selfact|2026-11-18t14_30_02_649523": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, отримано лист від Maroš Sivák з аналізами для тебе. Він по",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Maroš Sivák та виконати завдання\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action",
     "ts": "2026-11-18T09:02:59.994074"
-  },
-  "action_detect|2026-11-18t09_02_48_953635": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-18T09:02:48.953635"
   }
 }
