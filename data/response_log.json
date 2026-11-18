@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:15:51.949012+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-05T01:15:58.758943+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
@@ -14529,6 +14523,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dl_skip_eab0644f6a"
+    },
+    {
+      "ts": "2026-11-18T17:40:12.566053+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_6fd3f28491"
     }
   ]
 }
