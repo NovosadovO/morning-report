@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-18t12_57_08_751584": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Необхідно відповісти на лист від Maroš Sivák\",     \"text\": \"Прийшов лист від Maroš Sivák з аналізами для Олега",
+    "ts": "2026-11-18T12:57:08.751584"
+  },
   "people|2026-11-18t12_50_02_003571": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Олексія\",   ",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
     "ts": "2026-11-18T08:23:53.314675"
-  },
-  "deadlines|2026-11-18t08_22_10_216139": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,     \"action\":",
-    "ts": "2026-11-18T08:22:10.216139"
   }
 }
