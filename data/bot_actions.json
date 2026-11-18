@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Новини від Spiko",
-      "detail": "Олег отримує багато новинних розсилок. Знайдено новий випуск новин від Spiko.",
-      "module": "selfact",
-      "ts": "2026-11-12T21:57:34"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-18T06:55:13"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-18T07:01:11"
     }
   ]
 }
