@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-18t08_22_10_216139": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,     \"action\":",
+    "ts": "2026-11-18T08:22:10.216139"
+  },
   "selfact|2026-11-18t08_15_45_078809": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Maros Sivak надіслав аналізи для Olexiho. Не забудь відпові",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
     "ts": "2026-11-18T00:01:17.193054"
-  },
-  "action_detect|2026-11-18t00_01_06_111618": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-18T00:01:06.111618"
   }
 }
