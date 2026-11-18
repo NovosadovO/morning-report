@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-18t05_01_04_368318": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Просто інформація про сніданок та енергію.\"}",
+    "ts": "2026-11-18T05:01:04.368318"
+  },
   "selfact|2026-11-18t04_54_39_851280": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливо: Лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Надійшов лист від Maroš Sivák з аналізами для тебе",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олег! Надійшов лист від Maroš Sivák з аналізом інвестицій",
     "ts": "2026-11-17T20:47:54.787825"
-  },
-  "openloop_promises|2026-11-17t20_34_14_616628": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-17T20:34:14.616628"
   }
 }
