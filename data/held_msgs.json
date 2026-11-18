@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-19T00:51:15.340332",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Виведення VRA на Crypto.com</b>\n📆 до <b>2026-12-03</b>\n🏢 Crypto.com\n\n➡️ Вивести залишки VRA до 3 грудня 2026 року.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-19T00:51:16.264044",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Виведення VRA на Crypto.com\n📆 до 2026-12-03\n🏢 Crypto.com\n\n➡️ Вивести залишки VRA до 3 грудня 2026 року.",
@@ -148,6 +142,12 @@
       "ts": "2026-11-19T00:57:34.367263",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.3% за 24г</b>\n\nЗараз: 0.2925 $\n24г тому: 0.3088 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-19T00:57:35.274135",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.3% за 24г\n\nЗараз: 0.2925 $\n24г тому: 0.3088 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
