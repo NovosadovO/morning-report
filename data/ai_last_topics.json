@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-18t15_33_40_255065": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно від",
+    "ts": "2026-11-18T15:33:40.255065"
+  },
   "selfact|2026-11-18t15_17_40_250682": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно відповісти.",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Reliability Operations Specialist\\\" в Nexcess та \\\"Account Executive\\\" в Te",
     "ts": "2026-11-18T10:14:21.746336"
-  },
-  "email_ai_item|2026-11-18t10_12_08_878601": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Це інформаційний лист від Nike про розпродаж зі знижками до 30%. Лист містить посилання на сайт та інформацію про шрифти. Від одержувача нічого",
-    "ts": "2026-11-18T10:12:08.878601"
   }
 }
