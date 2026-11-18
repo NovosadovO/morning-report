@@ -1,4 +1,49 @@
 {
+  "healthai|2026-11-18t21_05_03_302600": {
+    "topic": "healthai",
+    "gist": "☀️ Стабільність сну \"дуже нерівний ритм\" (розкид ±2.08 год) у поєднанні з поки що зафіксованими 4.8 годинами сну може впливати на відновлення. • HRV за ніч стан",
+    "ts": "2026-11-18T21:05:03.302600"
+  },
+  "action_detect|2026-11-18t21_01_48_735895": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Maroš Sivák\", \"action_date\": \"2023-11-20\", \"action_time\": null, \"action_summary\": \"Звернути ",
+    "ts": "2026-11-18T21:01:48.735895"
+  },
+  "action_detect|2026-11-18t21_01_37_637241": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T21:01:37.637241"
+  },
+  "selfact|2026-11-18t21_01_33_327777": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"20",
+    "ts": "2026-11-18T21:01:33.327777"
+  },
+  "action_detect|2026-11-18t21_01_26_745401": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-18T21:01:26.745401"
+  },
+  "action_detect|2026-11-18t21_01_15_745953": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": \"2023-11-19\",   \"action_time\": \"07:00\",   \"action_summary\": \"Запланован",
+    "ts": "2026-11-18T21:01:15.745953"
+  },
+  "briefing|2026-11-18t21_01_05_438713": {
+    "topic": "briefing",
+    "gist": "🧭 **ГОЛОВНЕ** Олег, сьогодні твій показник Body Battery впав до 19/100, що є чітким сигналом перевтоми. Це безпосередньо пов'язано з зафіксованими 4 годинами 50",
+    "ts": "2026-11-18T21:01:05.438713"
+  },
+  "themes_ai_truthfix|2026-11-18t21_01_01_477176": {
+    "topic": "themes_ai/truthfix",
+    "gist": "💰 ФІНАНСИ За минулу добу твій портфель зменшився на $44, але загальна прибутковість становить $3,836. Це свідчить про незначні коливання на ринку, які не вплива",
+    "ts": "2026-11-18T21:01:01.477176"
+  },
+  "themes_ai|2026-11-18t21_00_55_839892": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ Портфель зараз на мінус $44 за добу, але загальна прибутковість $3,836. Це означає, що хоч ринок і коливається, ти тримаєш курс на стратегічне зростан",
+    "ts": "2026-11-18T21:00:55.839892"
+  },
   "action_detect|2026-11-18t21_00_31_885735": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -253,50 +298,5 @@
     "topic": "healthai",
     "gist": "☀️ Поки що зафіксовано 4.8 години сну, що може бути неповними даними. Стабільність сну — \"дуже нерівний ритм\" (розкид ±2.08 год), а HRV вчора складав 45.0 мс, щ",
     "ts": "2026-11-18T17:05:48.012602"
-  },
-  "email_ai_item|2026-11-18t16_51_40_637844": {
-    "topic": "email_ai_item",
-    "gist": "{ \"description\": \"Лист від LinkedIn про обговорення в групі \\\"Information Technology (IT) Professionals\\\". Група охоплює широкий спектр тем, пов'язаних з інформ",
-    "ts": "2026-11-18T16:51:40.637844"
-  },
-  "selfact|2026-11-18t16_50_20_646384": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо страхування авто\",     \"text\": \"Отримано лист від KOOPERATIVA щодо обов'язкового страхування в",
-    "ts": "2026-11-18T16:50:20.646384"
-  },
-  "email_ai_item|2026-11-18t16_49_23_339974": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист містить інформацію про нову статтю на LinkedIn \\\"Claude Beats ChatGPT and Gemini\\\", яка обговорює переваги моделі Claude від An",
-    "ts": "2026-11-18T16:49:23.339974"
-  },
-  "action_detect|2026-11-18t16_37_57_964053": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T16:37:57.964053"
-  },
-  "selfact|2026-11-18t16_34_52_786433": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав тобі аналізи для Olexiho. Потрібно відп",
-    "ts": "2026-11-18T16:34:52.786433"
-  },
-  "email_ai_item|2026-11-18t16_30_32_291247": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від The Economist через LinkedIn пропонує прочитати статтю на тему боротьби з прокрастинацією. Він містить посилання на статтю та інші мат",
-    "ts": "2026-11-18T16:30:32.291247"
-  },
-  "bills|2026-11-18t16_24_47_138562": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": null,     \"currency\": null,     \"invoice_no\": \"6641172176\",     \"due\": null,     \"a",
-    "ts": "2026-11-18T16:24:47.138562"
-  },
-  "selfact|2026-11-18t16_19_49_209881": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів для O",
-    "ts": "2026-11-18T16:19:49.209881"
-  },
-  "action_detect|2026-11-18t16_18_21_006380": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T16:18:21.006380"
   }
 }
