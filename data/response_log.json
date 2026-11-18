@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T00:00:29.763527+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-06"
-      }
-    },
-    {
       "ts": "2026-09-05T00:00:34.804024+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14537,6 +14527,12 @@
       "extra": {
         "kind": "insurance"
       }
+    },
+    {
+      "ts": "2026-11-18T17:40:04.237746+00:00",
+      "category": "confirm",
+      "question": "gate_dl_skip: 🛡 ДЕДЛАЙН У ПОШТІ — СТРАХОВКА",
+      "answer": "yes"
     }
   ]
 }
