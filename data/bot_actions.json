@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: 3-годинне оновлення + AI-рекомендації",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-12T21:51:52"
-    },
-    {
       "kind": "notify",
       "what": "Новини від Spiko",
       "detail": "Олег отримує багато новинних розсилок. Знайдено новий випуск новин від Spiko.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-18T06:54:41"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: що нового + AI",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-18T06:55:13"
     }
   ]
 }
