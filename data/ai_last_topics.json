@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-18t20_22_19_283713": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,     \"action\":",
+    "ts": "2026-11-18T20:22:19.283713"
+  },
   "selfact|2026-11-18t20_15_03_631510": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від Maroš Sivák\",     \"text\": \"Олеже, від Maroš Sivák надійшов лист з аналізами для Олекс",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно від",
     "ts": "2026-11-18T15:33:40.255065"
-  },
-  "selfact|2026-11-18t15_17_40_250682": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Від Maroš Sivák надійшов лист з аналізами для Olexi. Потрібно відповісти.",
-    "ts": "2026-11-18T15:17:40.250682"
   }
 }
