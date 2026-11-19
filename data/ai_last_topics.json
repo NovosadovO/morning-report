@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-19t14_45_09_433048": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
+    "ts": "2026-11-19T14:45:09.433048"
+  },
+  "action_detect|2026-11-19t14_34_46_704840": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Відповідь та виконання завдання щодо листа від Maroš Sivák\",   \"action_date\": \"2023-11-20\",   \"action_",
+    "ts": "2026-11-19T14:34:46.704840"
+  },
+  "msg_event_soon_truthfix|2026-11-19t14_34_33_049110": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "⏰ **07:00 — Початок ранкової зміни.** Олег, ти на роботі, до завершення зміни ще багато годин.  **Нагадування:** *   20 листопада — термін відповіді та виконанн",
+    "ts": "2026-11-19T14:34:33.049110"
+  },
   "msg_event_soon|2026-11-19t14_34_20_607108": {
     "topic": "MSG_EVENT_SOON",
     "gist": "✅ **07:00 — Готовність до ранкової зміни.** Олег, ти зараз на роботі, до завершення ранкової зміни ще багато годин (до 18:00).  **Що взяти/зробити:** *   **З со",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-19T09:02:56.915541"
-  },
-  "action_detect|2026-11-19t09_02_45_871388": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T09:02:45.871388"
-  },
-  "action_detect|2026-11-19t09_02_34_883288": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T09:02:34.883288"
-  },
-  "action_detect|2026-11-19t09_02_23_928515": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про стан здоров'я, погоду та трафік з",
-    "ts": "2026-11-19T09:02:23.928515"
   }
 }
