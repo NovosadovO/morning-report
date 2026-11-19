@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-19t17_28_44_559243": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"submit\",     \"title\": \"Скидання паролю Google\",     \"org\": \"Google Workspace\",     \"deadline\": \"2026-11-21\",     ",
+    "ts": "2026-11-19T17:28:44.559243"
+  },
   "selfact|2026-11-19t17_21_54_104505": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо ан",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
     "ts": "2026-11-19T12:25:29.857296"
-  },
-  "selfact|2026-11-19t12_25_07_208514": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák щодо аналізів. Також у ",
-    "ts": "2026-11-19T12:25:07.208514"
   }
 }
