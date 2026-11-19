@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t10_18_59_066148": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2026-11-",
+    "ts": "2026-11-19T10:18:59.066148"
+  },
   "email_ai_item|2026-11-19t10_14_12_913940": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Purchasing Specialist\\\" від Carmeuse та \\\"ASISTENT/KA PREDAJA V PREDAJNI\\\" від JYSK, обидві в місті",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Ранкова зміна\",     \"text\": \"Олеже, сьогодні 19.11, у тебе ранкова зміна о 05:00.\",     \"date\": \"2026-11-19\"",
     "ts": "2026-11-19T05:21:43.915208"
-  },
-  "action_detect|2026-11-19t05_10_53_164707": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T05:10:53.164707"
   }
 }
