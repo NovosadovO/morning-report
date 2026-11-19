@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-19t11_21_59_985872": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти Maroš Sivák\",     \"text\": \"Нагадую, що потрібно відповісти на лист від Maroš Sivák.\",     \"date\":",
+    "ts": "2026-11-19T11:21:59.985872"
+  },
+  "calendar_truthfix|2026-11-19t11_15_38_303826": {
+    "topic": "calendar/truthfix",
+    "gist": "Сьогодні, 19 листопада, ти на ранній зміні, яка триває до 18:00.  Нагадую, що 20 листопада о 09:00 у тебе завдання по Maroš Sivák.  Зважаючи на робочий графік, ",
+    "ts": "2026-11-19T11:15:38.303826"
+  },
   "calendar|2026-11-19t11_15_25_578798": {
     "topic": "calendar",
     "gist": "Ти сьогодні на ранній зміні, тому, ймовірно, вже активно працюєш. Пам'ятаєш, що сьогодні о 10:00 у тебе була запланована зустріч \"20.11 поліції руслані\". Наскіл",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та інф",
     "ts": "2026-11-19T06:01:25.913655"
-  },
-  "action_detect|2026-11-19t06_01_14_718957": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T06:01:14.718957"
-  },
-  "action_detect|2026-11-19t06_01_03_895700": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T06:01:03.895700"
   }
 }
