@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:16:08.397899+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_29afe68432"
-    },
-    {
       "ts": "2026-09-05T01:16:08.398623+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14539,6 +14533,16 @@
       "answer": "Церква",
       "extra": {
         "kind": "calendar",
+        "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-19T06:00:27.680349+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-20"
       }
     }
