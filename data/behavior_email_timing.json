@@ -1,9 +1,4 @@
 {
-  "81220": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-10-21T18:15:08.437882+00:00"
-  },
   "81234": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-11-19T14:51:25.714013+00:00"
+  },
+  "83382": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-11-19T16:13:13.748713+00:00"
   }
 }
