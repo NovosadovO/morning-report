@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:30:11.310296+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Переглянути вакансії на Profesia.sk",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-05"
-      }
-    },
-    {
       "ts": "2026-09-05T01:30:15.297999+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14562,6 +14552,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_8decbd824d"
+    },
+    {
+      "ts": "2026-11-19T09:00:38.270440+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák щодо аналізів",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-20"
+      }
     }
   ]
 }
