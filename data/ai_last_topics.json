@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-19t05_00_18_864869": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це просто інформація про сніданок та нагадува",
+    "ts": "2026-11-19T05:00:18.864869"
+  },
+  "selfact|2026-11-19t04_50_42_164019": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, твоя ранкова зміна на заводі починається о 05:00.\",     \"date\":",
+    "ts": "2026-11-19T04:50:42.164019"
+  },
   "people|2026-11-19t04_50_14_526884": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
@@ -288,15 +298,5 @@
     "topic": "email_describe",
     "gist": "ВІДПРАВНИК Це CryptoBeholder.com, сервіс, що надає щоденний дайджест новин з криптовалютної сфери, відібраних за допомогою штучного інтелекту.  СУТЬ Лист містит",
     "ts": "2026-11-18T18:32:50.590619"
-  },
-  "email_ai_item|2026-11-18t18_25_48_539526": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Це щоденний дайджест криптоновин, курований ШІ від CryptoBeholder.com за 18 листопада. Лист містить новини про заявку Bitwise на лістинг ETF на",
-    "ts": "2026-11-18T18:25:48.539526"
-  },
-  "bills|2026-11-18t18_24_53_403912": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": null,     \"currency\": null,     \"invoice_no\": \"6641172176\",     \"due\": null,     \"a",
-    "ts": "2026-11-18T18:24:53.403912"
   }
 }
