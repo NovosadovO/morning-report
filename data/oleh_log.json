@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_cardio_np",
-      "label": "❌",
-      "ts": "2026-10-17T20:53:52"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_hnsdjtgvub9tti6f5pmba3s868_2026-10-17",
       "label": "✅ Виконано",
       "ts": "2026-10-17T20:54:26"
@@ -7199,6 +7193,12 @@
       "data": "calrem_add_gen_1795107699063",
       "label": "✅ Поставити",
       "ts": "2026-11-19T20:26:00"
+    },
+    {
+      "t": "btn",
+      "data": "cfm_y_5a82251ac3",
+      "label": "✅ Так, постав",
+      "ts": "2026-11-19T20:26:06"
     }
   ]
 }
