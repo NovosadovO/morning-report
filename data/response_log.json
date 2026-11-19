@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:58:47.065719+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: 📅 Пропоную додати в календар",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-05T01:58:48.007971+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
@@ -14560,6 +14554,16 @@
       "answer": "Сплатити обов'язкове страхування автомобіля",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-19"
+      }
+    },
+    {
+      "ts": "2026-11-19T09:00:52.447317+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути листа від Mariia Ovsiienko",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-19"
       }
     }
