@@ -2271,11 +2271,11 @@
   "2026-11-19": {
     "hr_avg": 50,
     "spo2": 96,
-    "body_battery": 48,
-    "stress": 21,
+    "body_battery": 43,
+    "stress": 22,
     "date": "2026-11-19",
     "source": "qwatch_auto",
-    "saved_at": "2026-11-19 12:27",
+    "saved_at": "2026-11-19 12:56",
     "sleep_total_min": 359,
     "sleep_deep_min": 33,
     "sleep_rem_min": 44,
@@ -2283,6 +2283,6 @@
     "sleep_awake_min": 3,
     "hrv": 47,
     "sleep_hours": 5.98,
-    "steps": 5714
+    "steps": 9124
   }
 }
