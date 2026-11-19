@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:17:37.504182+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Розібратися з простроченими дедлайнами",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-05T01:17:40.196401+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14545,6 +14539,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити пошту від KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-19"
+      }
+    },
+    {
+      "ts": "2026-11-19T06:00:41.748132+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-19"
