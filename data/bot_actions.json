@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-13",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-13T19:12:06"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-08",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-11-19T07:00:51"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-19T07:06:02"
     }
   ]
 }
