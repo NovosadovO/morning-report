@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t13_57_58_035686": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2026",
+    "ts": "2026-11-19T13:57:58.035686"
+  },
   "selfact|2026-11-19t13_42_03_627527": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Будь ласка, дай відповідь на лист від Maroš Sivák щодо ана",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T09:00:28.937765"
-  },
-  "proactive_actions|2026-11-19t09_00_17_759812": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák щодо аналізів\",     \"date\": \"2026-11-20\",     \"time\": \"09:00\",     \"message\": \"Олеже, у тебе зап",
-    "ts": "2026-11-19T09:00:17.759812"
   }
 }
