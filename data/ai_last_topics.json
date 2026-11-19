@@ -1,4 +1,9 @@
 {
+  "people|2026-11-19t04_50_14_526884": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
+    "ts": "2026-11-19T04:50:14.526884"
+  },
   "action_detect|2026-11-19t04_45_58_874811": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про необхідність зважитися та",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": null,     \"currency\": null,     \"invoice_no\": \"6641172176\",     \"due\": null,     \"a",
     "ts": "2026-11-18T18:24:53.403912"
-  },
-  "selfact|2026-11-18t18_24_20_424687": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Oleg, отримана відповідь від Maroš Sivák з аналізами для Olexi. П",
-    "ts": "2026-11-18T18:24:20.424687"
   }
 }
