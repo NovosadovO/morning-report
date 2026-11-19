@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:59:00.500185+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_90b68af7d2"
-    },
-    {
       "ts": "2026-09-05T01:59:00.500488+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14571,6 +14565,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_3f4fa76392"
+    },
+    {
+      "ts": "2026-11-19T14:22:38.327071+00:00",
+      "category": "deadline_found",
+      "question": "Скидання паролю Google",
+      "answer": "2026-11-21",
+      "extra": {
+        "kind": "submit"
+      }
     }
   ]
 }
