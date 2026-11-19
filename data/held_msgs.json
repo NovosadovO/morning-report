@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-11-19T21:15:01.053963",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Security Architect в Wincent»\n\n<i>«Сповіщення про вакансії за запитом Cryptocurrency в Slovakia            \r\nSecurity Architect\r\nWincent\r\nBratislava\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4443542295/?trackingId=1TJc8cKcfuvN0g9YYPXyLQ%3D%3D&amp;refId=ETWH0aEfUVGSlv5HAf4qUg%3D%3D&amp;lipi=urn%3Ali%3Apage%3Aemail_email_j...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83411"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83411"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83411"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83411"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83411"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83411"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
