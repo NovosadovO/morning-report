@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t07_27_23_735430": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від Maroš Sivák\",     \"text\": \"Ви отримали лист від Maroš Sivák з аналізами для Olexi. По",
+    "ts": "2026-11-19T07:27:23.735430"
+  },
   "openloop_promises|2026-11-19t07_20_24_225839": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "themes_ai",
     "gist": "💰 ФІНАНСИ Портфель зараз на мінус $44 за добу, але загальна прибутковість $3,836. Це означає, що хоч ринок і коливається, ти тримаєш курс на стратегічне зростан",
     "ts": "2026-11-18T21:00:55.839892"
-  },
-  "action_detect|2026-11-18t21_00_31_885735": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-18T21:00:31.885735"
   }
 }
