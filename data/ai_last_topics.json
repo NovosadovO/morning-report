@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t17_53_40_845416": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібна відповідь на лист від Maroš Sivák\",     \"text\": \"Maros Sivak надіслав тобі аналізи для Olexi. Потрібн",
+    "ts": "2026-11-19T17:53:40.845416"
+  },
   "selfact|2026-11-19t17_38_09_245797": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олег, потрібно відповісти на лист від Maroš Sivák. Також, ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák. У листі аналізи для Олега та докум",
     "ts": "2026-11-19T12:55:44.760177"
-  },
-  "people|2026-11-19t12_50_09_597451": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Олексія\",   ",
-    "ts": "2026-11-19T12:50:09.597451"
   }
 }
