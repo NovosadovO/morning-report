@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T03:57:07.922687+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_rem_3b3a0f362b"
-    },
-    {
       "ts": "2026-09-05T03:57:07.923231+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14569,6 +14563,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_invest"
+    },
+    {
+      "ts": "2026-11-19T21:03:11.526215+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
