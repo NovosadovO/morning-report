@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-19T21:15:01.053963",
-      "kind": "offer",
-      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Security Architect в Wincent»\n\n<i>«Сповіщення про вакансії за запитом Cryptocurrency в Slovakia            \r\nSecurity Architect\r\nWincent\r\nBratislava\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4443542295/?trackingId=1TJc8cKcfuvN0g9YYPXyLQ%3D%3D&amp;refId=ETWH0aEfUVGSlv5HAf4qUg%3D%3D&amp;lipi=urn%3Ali%3Apage%3Aemail_email_j...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_83411"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_83411"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_83411"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_83411"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_83411"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_83411"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-19T21:16:14.254503",
       "kind": "chunk",
       "text": "🌙\n<b>ЗВІТ  ·  Чт 19.11  ·  21:15</b>\n🏠 Вдома\n<i>Вечірній аналіз: 1 добрий лист InterFin > 10 поганих рішень 💼</i>\n📌 Відновлення — день без бігу +13\n\n⚡ <b>День: ⭐⭐☆☆☆ 41/100</b>  ↑+6 vs вчора\n\n🌦️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>10°C</b>\n<i>😊 Свіжо — легка куртка</i>\n<i>☂️ парасолька  ·  🌧️ 7.1 мм дощу</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:49   🌇 15:50  09:00 ☁️8°  │  12:00 ☁️10°  │  15:00 🌤10°  │  18:00 ☁️8°  │  21:00 ☁️7°  22:00 (100%)  23:00 (100%)\n\n<b>Завтра:</b>  🌦 Мряка  🔻6°  /  🔺10°  🌧 2.6 мм\n<code>09:00</code> ☁️8°  │  <code>12:00</code> ☁️10°  │  <code>15:00</code> 🌤10°  │  <code>18:00</code> ☁️8°  │  <code>21:00</code> ☁️7°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n<i>🚧 7 довготривалих перекриттів — без змін від минулого разу:</i>\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n<i>+ ще 5</i>\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$62,147.30</code>  -0.15%\n🔻 <b>ETH</b> <code>$1,757.03</code>  -0.57%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$35.15</code>  <i>-0.59% за день</i>\n🟢 <b>ETHA</b>  <code>$39.76</code>  <i>+0.45% за день</i>\n🟢 <b>VAVA</b>  <code>$0.65</code>  <i>+1.08% за день</i>\n🟢 <b>GAVA</b>  <code>$16.95</code>  <i>+0.24% за день</i>\n🔴 <b>QQQ</b>  <co",
@@ -181,6 +142,12 @@
       "ts": "2026-11-20T00:02:56.147141",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Notifikácie KOOPERATIVA  → Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI\n• Maroš Sivák  → Analýzy pre Olexiho :)\n• Notifikácie KOOPERATIVA  → Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného poistenia MV, EČV LE066BI\n• Mariia Ovsiienko  → Faktúra od Mariia Ovsiienko\n• Garmin  → Thanks for Registering Your Venu X1\n\n🧹 Реклама: 2 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-20T00:02:59.067926",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
