@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-19t06_08_00_595897": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олега",
+    "ts": "2026-11-19T06:08:00.595897"
+  },
+  "action_detect|2026-11-19t06_01_25_913655": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та інф",
+    "ts": "2026-11-19T06:01:25.913655"
+  },
+  "action_detect|2026-11-19t06_01_14_718957": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T06:01:14.718957"
+  },
+  "action_detect|2026-11-19t06_01_03_895700": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T06:01:03.895700"
+  },
   "proactive_actions|2026-11-19t06_00_20_152338": {
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"09:00\",     \"message\": \"Олеже, лист від Mar",
@@ -278,25 +298,5 @@
     "topic": "hcoach",
     "gist": "Олеже, завершилася ранкова зміна, тож головний пріоритет — відновити сили. Дані за останні тижні показують певну динаміку, яка потребує уваги.  **1. Стан здоров",
     "ts": "2026-11-18T20:01:22.198531"
-  },
-  "assistant|2026-11-18t20_01_05_759121": {
-    "topic": "assistant",
-    "gist": "Щоб якнайкраще підготуватися до завтрашнього дня, зосередься на якісному сні сьогодні ввечері, адже в тебе ранкова зміна о 7:00. Враховуючи, що завтра день без ",
-    "ts": "2026-11-18T20:01:05.759121"
-  },
-  "selfact|2026-11-18t19_58_17_274369": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Отримав листа від Maroš Sivák з аналізом інвестиці",
-    "ts": "2026-11-18T19:58:17.274369"
-  },
-  "selfact|2026-11-18t19_42_47_696590": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Отримано аналізи від Maroš Sivák для Olexi. Потрібно відпові",
-    "ts": "2026-11-18T19:42:47.696590"
-  },
-  "action_detect|2026-11-18t19_36_31_607078": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз ринку криптовалют з акцентом на зростання моне",
-    "ts": "2026-11-18T19:36:31.607078"
   }
 }
