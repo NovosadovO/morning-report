@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-19t18_25_36_405360": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
+    "ts": "2026-11-19T18:25:36.405360"
+  },
+  "action_detect|2026-11-19t18_16_11_124557": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T18:16:11.124557"
+  },
+  "action_detect|2026-11-19t18_15_40_996209": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T18:15:40.996209"
+  },
   "defi_digest|2026-11-19t18_15_39_369920": {
     "topic": "defi_digest",
     "gist": "За останні 24 години на ринку DeFi спостерігається значна волатильність, про що свідчить різке зростання Tydro на 46.6% та падіння Figure Markets Prime на 15.6%",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
     "ts": "2026-11-19T14:13:57.853283"
-  },
-  "healthai|2026-11-19t14_06_22_707732": {
-    "topic": "healthai",
-    "gist": "☀️ Твій сон поки що зафіксовано 6.0 годин, що може бути неповним показником, а HRV сьогодні 47 мс — це нижче за середнє за 14 днів (50.9 мс), що може вказувати ",
-    "ts": "2026-11-19T14:06:22.707732"
-  },
-  "selfact|2026-11-19t13_57_58_035686": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2026",
-    "ts": "2026-11-19T13:57:58.035686"
-  },
-  "selfact|2026-11-19t13_42_03_627527": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Будь ласка, дай відповідь на лист від Maroš Sivák щодо ана",
-    "ts": "2026-11-19T13:42:03.627527"
   }
 }
