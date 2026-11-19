@@ -1,4 +1,14 @@
 {
+  "market_insight|2026-11-19t18_30_49_565807": {
+    "topic": "market_insight",
+    "gist": "```json {   \"text\": \"Ціна LTC досягла нового мінімуму за 19.9 дня, тоді як BTC демонструє позитивну динаміку (+0.42%). Це вказує на індивідуальний тиск на LTC, ",
+    "ts": "2026-11-19T18:30:49.565807"
+  },
+  "bills|2026-11-19t18_29_02_023181": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-19T18:29:02.023181"
+  },
   "selfact|2026-11-19t18_25_36_405360": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
@@ -288,15 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"submit\",     \"title\": \"Скидання паролю Google\",     \"org\": \"Google Workspace\",     \"deadline\": \"2026-11-21\",     ",
     "ts": "2026-11-19T14:22:28.952852"
-  },
-  "email_ai_item|2026-11-19t14_15_27_669823": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про вакансію \\\"Store Manager in Training\\\" в компанії O'Reilly Auto Parts у місті Кошице. Надає",
-    "ts": "2026-11-19T14:15:27.669823"
-  },
-  "selfact|2026-11-19t14_13_57_853283": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
-    "ts": "2026-11-19T14:13:57.853283"
   }
 }
