@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-19t16_50_42_053810": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Терміново потрібно відповісти на лист від Maroš Sivák. Це з",
+    "ts": "2026-11-19T16:50:42.053810"
+  },
+  "action_detect|2026-11-19t16_36_31_603743": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Завершення ранкової зміни наближається, але ще є час.",
+    "ts": "2026-11-19T16:36:31.603743"
+  },
+  "msg_event_soon|2026-11-19t16_36_21_197473": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "⏰ **16:36 — завершення ранкової зміни наближається, але ще є час.**  Оскільки ти все ще на роботі, не час для глибоких аналізів. Зосередься на ключових моментах",
+    "ts": "2026-11-19T16:36:21.197473"
+  },
   "selfact|2026-11-19t16_34_41_069521": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо ан",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T12:01:49.480900"
-  },
-  "action_detect|2026-11-19t12_01_38_559525": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T12:01:38.559525"
-  },
-  "action_detect|2026-11-19t12_00_34_956926": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення нагадує про необхідність поїс",
-    "ts": "2026-11-19T12:00:34.956926"
-  },
-  "astro_ai|2026-11-19t11_58_40_311459": {
-    "topic": "astro_ai",
-    "gist": "Твій сон сьогодні, поки що 6.0 годин, може бути неповним, адже це ранкова зміна. Це впливає на стрес – 21, що вище за норму (29.71).  Транзитний Меркурій у IV д",
-    "ts": "2026-11-19T11:58:40.311459"
   }
 }
