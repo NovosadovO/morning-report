@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:15:58.758943+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-05T01:16:00.944011+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14529,6 +14523,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_6fd3f28491"
+    },
+    {
+      "ts": "2026-11-19T04:30:28.166849+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-20"
+      }
     }
   ]
 }
