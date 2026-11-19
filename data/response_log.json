@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:59:01.878467+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_0ecb667d98"
-    },
-    {
       "ts": "2026-09-05T01:59:01.878747+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14574,6 +14568,15 @@
       "category": "confirm",
       "question": "gate_calrem_add: Рішення по Maroš Sivák",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-19T20:26:16.715756+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Рішення по Maroš Sivák",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-11-20"
+      }
     }
   ]
 }
