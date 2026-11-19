@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_shower",
-      "label": "✅ Зробив",
-      "ts": "2026-10-18T05:27:19"
-    },
-    {
-      "t": "btn",
       "data": "dm_ok_258ccb8f84",
       "label": "😐 Норма",
       "ts": "2026-10-18T05:27:28"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-11-19T20:26:37"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-11-19T20:26:39"
     }
   ]
 }
