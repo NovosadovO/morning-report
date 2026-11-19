@@ -2267,5 +2267,14 @@
     "sleep_awake_min": 1,
     "hrv": 45,
     "sleep_hours": 4.83
+  },
+  "2026-11-19": {
+    "hr_avg": 53,
+    "spo2": 95,
+    "body_battery": 28,
+    "stress": 15,
+    "date": "2026-11-19",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-19 05:00"
   }
 }
