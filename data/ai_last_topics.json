@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-19t11_00_31_803079": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Це аналіз від AI-асистента, який в",
+    "ts": "2026-11-19T11:00:31.803079"
+  },
   "selfact|2026-11-19t10_50_24_344767": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák, який містить ан",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-19T05:49:18.772719"
-  },
-  "selfact|2026-11-19t05_36_39_933645": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо страхування авто\",     \"text\": \"Олеже, отримав повідомлення від KOOPERATIVA щодо обов'",
-    "ts": "2026-11-19T05:36:39.933645"
   }
 }
