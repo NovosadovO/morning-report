@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-19t16_30_19_572301": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T16:30:19.572301"
+  },
   "openloop_promises|2026-11-19t16_24_54_414617": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація від Maroš Sivák\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно відпов",
     "ts": "2026-11-19T11:53:30.463704"
-  },
-  "openloop_promises|2026-11-19t11_52_05_876998": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-19T11:52:05.876998"
   }
 }
