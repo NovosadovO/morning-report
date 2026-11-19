@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-19t04_45_58_874811": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення про необхідність зважитися та",
+    "ts": "2026-11-19T04:45:58.874811"
+  },
+  "action_detect|2026-11-19t04_36_48_413838": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз ринку криптовалют з акцентом на Zcash (ZEC) та",
+    "ts": "2026-11-19T04:36:48.413838"
+  },
+  "msg_crypto_move|2026-11-19t04_36_38_289865": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "📉 Ринок криптовалют демонструє помітну волатильність, і сьогодні виділяється Zcash (ZEC) з падінням на 6.2% за останні 24 години. Це значний рух, особливо врахо",
+    "ts": "2026-11-19T04:36:38.289865"
+  },
   "selfact|2026-11-19t04_34_58_701265": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Ранкова зміна\",     \"text\": \"Олеже, сьогодні, 19 листопада, твоя рання зміна починається о 05:00.\",     \"dat",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Oleg, отримана відповідь від Maroš Sivák з аналізами для Olexi. П",
     "ts": "2026-11-18T18:24:20.424687"
-  },
-  "action_detect|2026-11-18t18_23_17_059794": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T18:23:17.059794"
-  },
-  "action_detect|2026-11-18t18_15_52_192989": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлення про завершення ранньої зм",
-    "ts": "2026-11-18T18:15:52.192989"
-  },
-  "defi_digest|2026-11-18t18_15_49_907123": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на ринку DeFi спостерігається значна волатильність, з помітним зростанням Tydro (+49.1%) та падінням Figure Markets Prime (-14.5%). Варто в",
-    "ts": "2026-11-18T18:15:49.907123"
   }
 }
