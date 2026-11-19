@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t19_59_08_321356": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів для Ol",
+    "ts": "2026-11-19T19:59:08.321356"
+  },
   "selfact|2026-11-19t19_43_24_695126": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів для O",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T15:01:19.966528"
-  },
-  "selfact|2026-11-19t15_01_15_558477": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Ви отримали лист від Maroš Sivák з аналізом інвестицій. Потрібно відповісти.\",     \"mail_uid\": \"82454\"   },   {",
-    "ts": "2026-11-19T15:01:15.558477"
   }
 }
