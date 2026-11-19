@@ -1,4 +1,9 @@
 {
+  "calendar|2026-11-19t07_49_17_241003": {
+    "topic": "calendar",
+    "gist": "Ти на ранній зміні, це означає, що твій день вже активно триває. ⏰ «Поліції руслані» призначено на 10:00, це цілком реальний час для перерви між робочими процес",
+    "ts": "2026-11-19T07:49:17.241003"
+  },
   "selfact|2026-11-19t07_42_55_592955": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо листа від Maroš Sivák\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexi. Потрібно",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-18T21:01:26.745401"
-  },
-  "action_detect|2026-11-18t21_01_15_745953": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": \"2023-11-19\",   \"action_time\": \"07:00\",   \"action_summary\": \"Запланован",
-    "ts": "2026-11-18T21:01:15.745953"
   }
 }
