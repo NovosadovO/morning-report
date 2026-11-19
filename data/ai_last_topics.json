@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-19t14_06_22_707732": {
+    "topic": "healthai",
+    "gist": "☀️ Твій сон поки що зафіксовано 6.0 годин, що може бути неповним показником, а HRV сьогодні 47 мс — це нижче за середнє за 14 днів (50.9 мс), що може вказувати ",
+    "ts": "2026-11-19T14:06:22.707732"
+  },
   "selfact|2026-11-19t13_57_58_035686": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2026",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"",
     "ts": "2026-11-19T09:01:00.622803"
-  },
-  "action_detect|2026-11-19t09_00_28_937765": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T09:00:28.937765"
   }
 }
