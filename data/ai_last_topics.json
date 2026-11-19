@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-19t07_20_24_225839": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-19T07:20:24.225839"
+  },
   "selfact|2026-11-19t07_10_58_738964": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-18T21:00:31.885735"
-  },
-  "people|2026-11-18t20_50_03_563371": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"Аналізи для Olexiho\",   ",
-    "ts": "2026-11-18T20:50:03.563371"
   }
 }
