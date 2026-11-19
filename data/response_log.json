@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:16:00.944011+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_b2a73235cc"
-    },
-    {
       "ts": "2026-09-05T01:16:00.944785+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14532,6 +14526,16 @@
       "extra": {
         "kind": "reply",
         "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-19T04:30:33.031566+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-19"
       }
     }
   ]
