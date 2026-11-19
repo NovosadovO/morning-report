@@ -436,6 +436,15 @@ def analytics(days: int = 30) -> dict:
     return out
 
 
+def _shift_state() -> str:
+    """Детермінований рядок «зараз HH:MM, зміна триває/ще не почалась/закінчилась»."""
+    try:
+        import nowctx
+        return nowctx.shift_line() or ""
+    except Exception:
+        return ""
+
+
 def facts_block(a: dict) -> str:
     """Числа одним компактним блоком — і для AI-промпту, і для звіту."""
     def line(label, m, unit="", extra="", same_day_caveat=False):
@@ -536,7 +545,7 @@ _STYLE = (
 
 
 def ai_analysis(a: dict) -> str:
-    ctx = (facts_block(a) + "\n"
+    ctx = (facts_block(a) + "\n" + _shift_state() + "\n"
            + "Зміна сьогодні: " + _SHIFT_UA.get(a.get("shift_today"), "—")
            + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—"))
     prompt = (f"{_STYLE}\n\nДАНІ:\n{ctx}\n\n"
@@ -551,7 +560,7 @@ def ai_analysis(a: dict) -> str:
 
 
 def ai_recommendations(a: dict) -> str:
-    ctx = (facts_block(a) + "\n"
+    ctx = (facts_block(a) + "\n" + _shift_state() + "\n"
            + "Зміна сьогодні: " + _SHIFT_UA.get(a.get("shift_today"), "—")
            + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—"))
     prompt = (f"{_STYLE}\n\nДАНІ:\n{ctx}\n\n"
@@ -951,7 +960,7 @@ def initiative(force: bool = False) -> int:
         if not _due(key, hours):
             continue
 
-        prompt = f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n\nПРИВІД: {line}\n\n{tone}"
+        prompt = f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n{_shift_state()}\n\nПРИВІД: {line}\n\n{tone}"
         ai = (K.gemini_text(prompt, max_tokens=450, temperature=0.6, tag=TAG) or "").strip()
         text = f"{header}\n\n{line}"
         if ai:
@@ -1128,7 +1137,7 @@ def hourly_checkin(send: bool = True) -> str:
     missing = _missing_today(a)
     events_txt = _upcoming_events_text()
 
-    ctx = (facts_block(a) + "\n"
+    ctx = (facts_block(a) + "\n" + _shift_state() + "\n"
            + "Зміна сьогодні: " + _SHIFT_UA.get(a.get("shift_today"), "—")
            + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—") + "\n"
            + "Сьогодні в календарі: " + events_txt + "\n"

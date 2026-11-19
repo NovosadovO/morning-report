@@ -4,6 +4,7 @@
 Включає: сон, звички, ліки, вага, біг + рекомендації.
 """
 
+from tzclock import local_offset, local_tz
 import os, json, urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -59,7 +60,7 @@ def send(text):
     return result
 
 def now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 def load_json(path, default=None):
     try:

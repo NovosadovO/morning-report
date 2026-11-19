@@ -3,6 +3,7 @@ Intelligent Assistant v2.0 — Event-Driven Listener
 Постійно слідкує за тригерами та САМ пише коли потребує
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import time
@@ -606,7 +607,7 @@ class IntelligentListener:
 
                 try:
                     import run_planner as _rp_l
-                    _hh = (datetime.now(timezone.utc) + timedelta(hours=2))
+                    _hh = (datetime.now(timezone.utc) + local_offset())
                     # план бігу пропонуємо ввечері (18-21), коли він точно не на зміні
                     if _hh.weekday() in (0, 6) and 18 <= _hh.hour < 22 and _due("runplan", 3600):
                         if _rp_l.offer():

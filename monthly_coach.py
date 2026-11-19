@@ -8,6 +8,7 @@ monthly_coach.py — AI Місячний Коуч
 Надсилає в Telegram: текст + місячний графік.
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import base64 as _b64
@@ -20,7 +21,7 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _tg(method, params=None, files=None):

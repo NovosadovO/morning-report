@@ -5,6 +5,7 @@ report_card.py — Великий фото-репорт для Telegram (album �
 Фото 3: Портфель (монети + PnL)
 """
 
+from tzclock import local_offset, local_tz
 import io
 import os
 import math
@@ -967,7 +968,7 @@ def generate_report_album(period: str = "morning") -> list[bytes]:
     except ImportError:
         return []
 
-    now   = datetime.now(timezone.utc) + timedelta(hours=2)
+    now   = datetime.now(timezone.utc) + local_offset()
     today = now.date()
     raw   = load_habits() or {}
     wdata = load("weight_data.json") or load_weight() or {}

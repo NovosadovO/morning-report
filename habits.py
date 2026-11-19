@@ -10,6 +10,7 @@
 Inline кнопки ✅ / ❌ в Telegram.
 """
 
+from tzclock import local_offset, local_tz
 import os, json, time, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
@@ -293,7 +294,7 @@ def save_sent(sent):
         print(f"[habits] save_sent github error: {_e}")
 
 def now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 def today_key():
     """

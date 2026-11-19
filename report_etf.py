@@ -12,6 +12,7 @@ rate-limit або бути відкликаний SoSoValue. Щоб мати с�
 взяти свій Demo API key і додати його як SOSOVALUE_API_KEY на Railway.
 """
 
+from tzclock import local_offset, local_tz
 import os, json, time, urllib.request, urllib.error
 from datetime import datetime, timezone, timedelta
 
@@ -190,7 +191,7 @@ def compact_block(symbols=("BTC", "ETH")):
 
 
 def build_report_text():
-    local = datetime.now(timezone.utc) + timedelta(hours=2)
+    local = datetime.now(timezone.utc) + local_offset()
     time_str = local.strftime("%H:%M")
     date_str = local.strftime("%d.%m.%Y")
 

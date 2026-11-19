@@ -3,6 +3,7 @@
 Трекер ваги — зберігає дані через GitHub storage (persistent).
 """
 
+from tzclock import local_offset, local_tz
 import os, json
 from datetime import datetime, timezone, timedelta
 import storage
@@ -33,7 +34,7 @@ def save_data(data):
 
 
 def today_key():
-    return (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    return (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
 
 
 def save_weight(kg: float):
@@ -45,7 +46,7 @@ def save_weight(kg: float):
 def get_trend():
     """Повертає рядок з динамікою ваги за останні 7 та 30 днів."""
     data = load_data()
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
 
     def avg_days(n):
         vals = []
@@ -85,7 +86,7 @@ def get_trend():
 def format_weekly_weight_report():
     """Тижневий звіт ваги."""
     data = load_data()
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
 
     days = []
     for i in range(6, -1, -1):
@@ -118,7 +119,7 @@ def make_weight_chart(days=30) -> bytes | None:
         import io
 
         data = load_data()
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
 
         dates = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(days - 1, -1, -1)]
         weights = [data.get(d) for d in dates]

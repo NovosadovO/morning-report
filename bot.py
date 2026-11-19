@@ -11,6 +11,7 @@ Telegram bot — відповідає на команди користувача
   /допомога — список команд
 """
 
+from tzclock import local_offset, local_tz, iso_offset
 import os
 import json
 import time
@@ -865,9 +866,10 @@ def log_to_calendar(summary, date_str, hour, minute):
         token = _get_google_token(
             creds_data, "https://www.googleapis.com/auth/calendar.events")
 
-        start_str = f"{date_str}T{hour:02d}:{minute:02d}:00+02:00"
+        _off_ = iso_offset(datetime.strptime(f"{date_str} {hour:02d}:{minute:02d}", "%Y-%m-%d %H:%M"))
+        start_str = f"{date_str}T{hour:02d}:{minute:02d}:00{_off_}"
         end_dt = datetime.strptime(f"{date_str} {hour:02d}:{minute:02d}", "%Y-%m-%d %H:%M") + timedelta(minutes=30)
-        end_str = f"{date_str}T{end_dt.hour:02d}:{end_dt.minute:02d}:00+02:00"
+        end_str = f"{date_str}T{end_dt.hour:02d}:{end_dt.minute:02d}:00{_off_}"
 
         event = {
             "summary": summary,
@@ -1343,9 +1345,9 @@ def handle_email_callback(callback_query):
                     date_str = ev["date"]
                     time_str = ev.get("time")
                     if time_str and time_str != "null":
-                        start = {"dateTime": f"{date_str}T{time_str}:00+02:00", "timeZone": "Europe/Prague"}
+                        start = {"dateTime": f"{date_str}T{time_str}:00{iso_offset(_dt4.datetime.fromisoformat(f'{date_str}T{time_str}:00'))}", "timeZone": "Europe/Prague"}
                         end_dt = _dt4.datetime.fromisoformat(f"{date_str}T{time_str}:00") + _dt4.timedelta(hours=1)
-                        end = {"dateTime": end_dt.strftime(f"%Y-%m-%dT%H:%M:00+02:00"), "timeZone": "Europe/Prague"}
+                        end = {"dateTime": end_dt.strftime("%Y-%m-%dT%H:%M:00") + iso_offset(end_dt), "timeZone": "Europe/Prague"}
                     else:
                         start = {"date": date_str}
                         end = {"date": date_str}
@@ -1969,7 +1971,7 @@ def handle_event_done_callback(callback_query):
         try:
             import re as _re
             from datetime import datetime as _dt, timezone as _tz, timedelta as _td
-            now_local = _dt.now(_tz.utc) + _td(hours=2)
+            now_local = _dt.now(_tz.utc) + local_offset()
             today_str = now_local.strftime("%Y-%m-%d")
             # Витягуємо summary з тексту повідомлення (перший рядок без emoji і тегів)
             first_line = orig.split("\n")[0] if orig else ""
@@ -2167,7 +2169,7 @@ def handle_habit_callback(callback_query):
     # Логуємо в Calendar — окремо, помилка не критична
     try:
         from datetime import datetime, timezone, timedelta
-        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_l = datetime.now(timezone.utc) + local_offset()
         mark = "✅" if answer == "yes" else "❌"
         # shower не має hour/minute у конфізі — раніше тут летів KeyError: 'hour'
         log_to_calendar(f"{habit['emoji']} {habit['name']} {mark}", now_l.strftime("%Y-%m-%d"),
@@ -2658,7 +2660,7 @@ def handle_command(chat_id, text):
         all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
 
         from datetime import datetime, timezone, timedelta
-        date_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m")
+        date_str = (datetime.now(timezone.utc) + local_offset()).strftime("%d.%m")
 
         lines = [f"📋 <b>Звички {date_str}</b>\n"]
         for h in all_habits:
@@ -4579,7 +4581,7 @@ def handle_command(chat_id, text):
                 import os as _os_d
                 from datetime import datetime as _dtc_d, timezone as _tzc_d, timedelta as _tdc_d
                 _il_d.reload(_mon_d)
-                _now_l = _dtc_d.now(_tzc_d.utc) + _tdc_d(hours=2)
+                _now_l = _dtc_d.now(_tzc_d.utc) + local_offset()
                 _diary_data = _mon_d.load_json_file(
                     _os_d.path.join(_os_d.path.dirname(_os_d.path.abspath(__file__)), "data", "monitor_diary.json"),
                     default={"entries": {}}
@@ -6425,7 +6427,7 @@ def _route_callback(cb, confirmed: bool = False):
                 _sys.path.insert(0, _os.path.dirname(__file__))
                 from storage import load as _st_load, save as _st_save
                 from datetime import datetime, timezone, timedelta
-                today_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+                today_str = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
                 ps = _st_load("habits_persist_remind.json") or {}
                 import time as _time
                 # Виставляємо timestamp далеко в майбутнє — щоб не нагадувало сьогодні
@@ -6513,13 +6515,13 @@ def _route_callback(cb, confirmed: bool = False):
                     st = get_state()
                     if not st.get("mode"):
                         from datetime import datetime, timezone, timedelta
-                        now = datetime.now(timezone.utc) + timedelta(hours=2)
+                        now = datetime.now(timezone.utc) + local_offset()
                         set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
                     _send_force_reply("✏️ <b>Напиши свої плани:</b>\n\n<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>")
                 elif data == "planner_write_today":
                     # Кнопка "записати" в денному нагадуванні — ставимо стан today
                     from datetime import datetime, timezone, timedelta
-                    now = datetime.now(timezone.utc) + timedelta(hours=2)
+                    now = datetime.now(timezone.utc) + local_offset()
                     set_state("awaiting_today", {"base_date": now.strftime("%Y-%m-%d"), "context": "today"})
                     _send_force_reply("✏️ <b>Що занотуємо?</b>\n\n<i>Зустріч, ідея, завдання — будь що</i>")
                 elif data == "planner_skip":

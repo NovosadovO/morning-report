@@ -17,6 +17,7 @@ followup_watcher.py, weekly_review.py.
 повертає {"ok": False, "error": "payload_missing"} і UI це показує.
 """
 
+from tzclock import local_offset, local_tz
 import os
 import re
 import json
@@ -33,12 +34,12 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-TZ = timedelta(hours=2)  # Europe/Bratislava
+TZ = local_offset()  # застаріле: зсув на момент імпорту; використовуйте now()
 
 
 def now():
     """Локальний час Олега (UTC+2), naive-aware."""
-    return datetime.now(timezone.utc) + TZ
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def today_str():
@@ -436,7 +437,7 @@ def classify_shift(events: list) -> str:
             if start_str:
                 try:
                     from datetime import datetime as _dt, timedelta as _td
-                    dt_local = _dt.fromisoformat(start_str.replace("Z", "+00:00")) + _td(hours=2)
+                    dt_local = _dt.fromisoformat(start_str.replace("Z", "+00:00")) + local_offset()
                     h = dt_local.hour
                     if 14 <= h < 23:
                         return "night"

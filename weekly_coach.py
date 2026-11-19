@@ -8,6 +8,7 @@ weekly_coach.py — AI Тижневий Коуч (Компонент C)
 Надсилає в Telegram: текст + графіки.
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import urllib.request
@@ -18,7 +19,7 @@ TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _tg(method, params=None, files=None):

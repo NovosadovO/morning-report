@@ -9,6 +9,7 @@ quick-reply, підтвердження календаря/покупок тощ
 
 Зберігання: storage.py (GitHub data-гілка, persistent).
 """
+from tzclock import local_offset, local_tz
 import os
 import sys
 from datetime import datetime, timezone, timedelta
@@ -16,7 +17,6 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 LOG_FILE = "response_log.json"
-_TZ_OFFSET = timedelta(hours=2)
 
 
 def _storage():
@@ -33,7 +33,7 @@ def log_response(category: str, question: str, answer: str, extra: dict = None):
     кнопки й міг вішати весь колбек.
     """
     entry = {
-        "ts": (datetime.now(timezone.utc) + _TZ_OFFSET).isoformat(),
+        "ts": (datetime.now(timezone.utc) + local_offset()).isoformat(),
         "category": category,
         "question": (question or "")[:300],
         "answer": (answer or "")[:500],
@@ -69,7 +69,7 @@ def get_responses(days: int = 7, category: str = None) -> list:
         s = _storage()
         data = s.load(LOG_FILE, default={"entries": []})
         entries = data.get("entries", []) if isinstance(data, dict) else []
-        cutoff = datetime.now(timezone.utc) + _TZ_OFFSET - timedelta(days=days)
+        cutoff = datetime.now(timezone.utc) + local_offset() - timedelta(days=days)
         result = []
         for e in entries:
             try:

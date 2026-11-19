@@ -2,6 +2,7 @@
 """
 Health звіти: тижневий і місячний аналіз здоров'я.
 """
+from tzclock import local_offset, local_tz
 import os, sys
 from datetime import datetime, timezone, timedelta
 
@@ -10,7 +11,7 @@ from storage import load_health, save_health
 
 
 def now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _bar(value, max_val, length=7, fill="🟩", empty="⬜️"):

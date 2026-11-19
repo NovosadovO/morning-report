@@ -91,6 +91,15 @@ _SHIFT_UA = {"early": "☀️ рання 06:00–18:00",
              "free": "🏠 вихідний"}
 
 
+def _shift_state_line() -> str:
+    """Детермінований «зараз HH:MM, зміна триває/не почалась/закінчилась»."""
+    try:
+        import nowctx
+        return nowctx.shift_line() or ("ЗАРАЗ: " + nowctx.stamp())
+    except Exception:
+        return ""
+
+
 def _muted() -> bool:
     try:
         import quiet
@@ -295,6 +304,7 @@ def morning_plan(send: bool = True) -> str:
 
     ctx = [
         "СЬОГОДНІ: " + _now().strftime("%d.%m.%Y (%a)"),
+        _shift_state_line(),
         "ЗМІНА сьогодні: " + _SHIFT_UA.get(today, today),
         "ЗМІНА завтра: " + _SHIFT_UA.get(tomorrow, tomorrow),
         "",
@@ -359,6 +369,7 @@ def evening_review(send: bool = True) -> str:
            "Зміна завтра: " + _SHIFT_UA.get(_shift_for(1), "—"),
            "",
            HA.facts_block(a)]
+    ctx.insert(0, _shift_state_line())
     prompt = (_STYLE + "\n\nДАНІ:\n" + "\n".join(ctx) + "\n\n"
               "Зроби ВЕЧІРНІЙ РОЗБІР ДНЯ:\n"
               "1) Що сьогодні вийшло добре (по цифрах)\n"
@@ -587,7 +598,7 @@ def _period_report(days: int, title: str, tag: str, send: bool) -> str:
     except Exception:
         pass
 
-    facts = HA.facts_block(a) + ("\n" + "\n".join(extra) if extra else "")
+    facts = _shift_state_line() + "\n" + HA.facts_block(a) + ("\n" + "\n".join(extra) if extra else "")
     prompt = (_STYLE + "\n\nДАНІ ЗА " + str(days) + " ДНІВ:\n" + facts + "\n\n"
               "Напиши " + title + ":\n"
               "1) Головний висновок періоду одним абзацом\n"

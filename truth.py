@@ -108,6 +108,44 @@ def _has_date(s):
                           r"|\d+\s*(дн|дні|днів|тижн|міс|рок|год|хв)", s, re.I))
 
 
+# ─── ЗМІНА: не брехати про стан поточної зміни ───────────────────────────────
+_END_RE = re.compile(r"(завершил|закінчил|скінчил|відпрацював|відробив|позаду)", re.I)
+_PAST_RE = re.compile(r"(щойно з|щойно після|після (?:ранкової|ранньої|нічної|цієї) зміни,? (?:ти|тож|час))", re.I)
+_HOME_RE = re.compile(r"\bти (?:зараз |вже )?(?:вдома|удома)\b", re.I)
+_OLD_RE = re.compile(r"(вчора|учора|минул|вчорашн|позавчора)", re.I)
+_KIND_W = {"early": ("ранн", "ранк"), "night": ("нічн", "ніч")}
+
+
+def _shift_lie(sentence, w):
+    """True, якщо речення суперечить тому, що зміна ТРИВАЄ просто зараз."""
+    if not w or w.get("phase") != "in_progress" or w.get("state") != "work":
+        return False
+    sl = sentence.lower()
+    if "змін" not in sl and not _HOME_RE.search(sl):
+        return False
+    if _HOME_RE.search(sl):
+        return True
+    if _OLD_RE.search(sl):
+        return False
+    cur = _KIND_W.get(w.get("shift"), ())
+    oth = [x for k, v in _KIND_W.items() if k != w.get("shift") for x in v]
+    has_cur = any(x in sl for x in cur)
+    has_oth = any(x in sl for x in oth)
+    if has_oth and not has_cur:
+        return False          # мова про іншу зміну (напр. нічну вчора)
+    if re.search(r"(буде|завершиться|закінчиться|коли|до кінця|після того)", sl):
+        return False          # майбутнє
+    return bool(_END_RE.search(sl) or _PAST_RE.search(sl))
+
+
+def _where_safe():
+    try:
+        import nowctx
+        return nowctx.where()
+    except Exception:
+        return None
+
+
 # ─── АУДИТ ───────────────────────────────────────────────────────────────────
 
 def audit(prompt, answer, tag="gem"):
@@ -152,6 +190,14 @@ def audit(prompt, answer, tag="gem"):
         if not any(k in a_low for k in ("стар", "кеш", "недоступ", "останні відомі")):
             issues.append("дані в промпті позначені як старі/кеш, а текст подає їх "
                           "як актуальні — треба прямо сказати, що дані не свіжі")
+
+    # 3b. неправда про стан зміни (рання зміна триває, а текст каже «завершилась»)
+    _w = _where_safe()
+    for s in _sentences(answer):
+        if _shift_lie(s, _w):
+            issues.append("зміна ТРИВАЄ зараз (Олег на роботі), а текст каже інакше: «"
+                          + s.strip()[:90] + "»")
+            break
 
     # 4. вигадані посилання
     for m in re.finditer(r"https?://[^\s<>\)\"]+", answer):
@@ -236,8 +282,12 @@ def sanitize(prompt, answer):
     """Ріже речення, які не тримаються на даних. Повертає (текст, скільки зрізано)."""
     pool = _numbers(prompt)
     keep, cut = [], 0
+    _w = _where_safe()
     for s in _sentences(answer):
         bad = False
+        if _shift_lie(s, _w):
+            cut += 1          # брехня про зміну ріжеться без ліміту
+            continue
         for m in _NUM_RE.finditer(s):
             v = _norm_num(m.group(1))
             if v is None or (v < 10 and float(v).is_integer()):

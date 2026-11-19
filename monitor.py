@@ -3,6 +3,7 @@
 Monitor — надсилає один зведений звіт кожні 3 години.
 """
 
+from tzclock import local_offset, local_tz
 import os
 import re
 import json
@@ -1015,7 +1016,7 @@ def get_weather():
     h_probs = hourly.get("precipitation_probability", [])
     h_winds = hourly.get("windspeed_10m", [])
 
-    local_hour = (datetime.now(timezone.utc).hour + 2) % 24
+    local_hour = (datetime.now(timezone.utc) + local_offset()).hour
     forecast_lines = []
     for i, t in enumerate(times):
         try:
@@ -1173,11 +1174,11 @@ def _get_today_shift_type():
         cal_id  = "novosadovoleg%40gmail.com"
 
         now_utc   = datetime.now(timezone.utc)
-        now_local_ = now_utc + timedelta(hours=2)
+        now_local_ = now_utc + local_offset()
         h_now     = now_local_.hour
 
         # ── Сьогоднішні події ──────────────────────────────────────────
-        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
         day_end   = day_start + timedelta(hours=24)
 
         url = (
@@ -1324,7 +1325,7 @@ def _calendar_access_token():
 
 def get_calendar():
     now = datetime.now(timezone.utc)
-    tz_local_top   = timezone(timedelta(hours=2))
+    tz_local_top   = local_tz()
     now_local_top  = now.astimezone(tz_local_top)
     date_today    = now_local_top.strftime("%d.%m.%Y")
     date_tomorrow = (now_local_top + timedelta(hours=24)).strftime("%d.%m.%Y")
@@ -1337,7 +1338,7 @@ def get_calendar():
         headers = {"Authorization": f"Bearer {token}"}
 
         # Часові межі (Košice UTC+2)
-        tz_local = timezone(timedelta(hours=2))
+        tz_local = local_tz()
         now_local = now.astimezone(tz_local)
         today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
         today_end      = today_start + timedelta(hours=24)
@@ -1355,7 +1356,7 @@ def get_calendar():
                 summary = ev.get("summary", "(без назви)")
                 try:
                     dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                    t  = dt.astimezone(timezone(timedelta(hours=2))).strftime("%H:%M") if "T" in start else "весь день"
+                    t  = dt.astimezone(local_tz()).strftime("%H:%M") if "T" in start else "весь день"
                 except Exception:
                     t = start
                 lines.append(f"• {t} — <b>{esc(summary)}</b>")
@@ -1384,7 +1385,7 @@ def get_calendar_events_upcoming(minutes_ahead=90):
         return []
     try:
         headers = {"Authorization": f"Bearer {token}"}
-        tz_local = timezone(timedelta(hours=2))
+        tz_local = local_tz()
         now = datetime.now(timezone.utc)
         t_end = now + timedelta(minutes=minutes_ahead)
         events = _fetch_events_all_calendars(headers, now, t_end, max_per_cal=20)
@@ -1428,7 +1429,7 @@ def get_upcoming_events(days_ahead=7):
         return ""
     try:
         headers = {"Authorization": f"Bearer {token}"}
-        tz_local = timezone(timedelta(hours=2))
+        tz_local = local_tz()
         now = datetime.now(timezone.utc)
         now_local = now.astimezone(tz_local)
         # Починаємо з ПІСЛЯЗАВТРА (сьогодні+завтра вже в основному блоці КАЛЕНДАР)
@@ -2901,7 +2902,7 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
         # («поїздка на Корфу вже пройшла», «страховка до 15.08» коли вже 20.08).
         if action_date:
             try:
-                _now_loc_aa = datetime.now(timezone.utc) + timedelta(hours=2)
+                _now_loc_aa = datetime.now(timezone.utc) + local_offset()
                 _today_aa = _now_loc_aa.date().isoformat()
                 if str(action_date) < _today_aa:
                     print(f"[action] ⏮ дата {action_date} у минулому "
@@ -3191,8 +3192,8 @@ def check_calendar_reminders():
         headers = {"Authorization": f"Bearer {token}"}
 
         now_utc = datetime.now(timezone.utc)
-        now_loc = now_utc + timedelta(hours=2)
-        today_start = now_loc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        now_loc = now_utc + local_offset()
+        today_start = now_loc.replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
         today_end   = today_start + timedelta(hours=24)
 
         events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=25)
@@ -3232,7 +3233,7 @@ def check_calendar_reminders():
                 # Подія з часом — нагадуємо за 30 хвилин
                 try:
                     dt_event = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                    dt_loc   = dt_event + timedelta(hours=2)
+                    dt_loc   = dt_event + local_offset(dt_event)
                     minutes_left = int((dt_event - now_utc).total_seconds() / 60)
                     key = f"30min_{today_str}_{uid}"
                     if not sent_reminders.get(key) and 28 <= minutes_left <= 32:
@@ -3265,7 +3266,7 @@ def check_weather_alert():
     Якщо очікується дощ/гроза/сніг — шле сповіщення.
     Також: якщо зараз різка зміна погоди (>5° за 3г) — миттєве сповіщення.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
 
     url = (
         "https://api.open-meteo.com/v1/forecast"
@@ -3384,7 +3385,7 @@ def check_crypto_news():
     """
     state = load_json_file(CRYPTO_NEWS_FILE, default={"sent": [], "last_check": ""})
 
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     now_str   = now_local.strftime("%Y-%m-%d %H")
     last      = state.get("last_check", "")
 
@@ -3433,7 +3434,7 @@ def _check_fear_greed():
     """Шле Fear & Greed якщо екстремальне значення (< 20 або > 80)."""
     state = load_json_file(CRYPTO_NEWS_FILE, default={})
     last_fg = state.get("last_fg_date", "")
-    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    today = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
     if last_fg == today:
         return
 
@@ -3477,7 +3478,7 @@ def _get_current_shift_context(calendar_text=""):
     except Exception:
         # fallback: парсимо calendar_text
         cl = (calendar_text or "").lower()
-        h_now = (datetime.now(timezone.utc) + timedelta(hours=2)).hour
+        h_now = (datetime.now(timezone.utc) + local_offset()).hour
         if "нічна" in cl or "нічн" in cl:
             # якщо вже ранок/день — скоріш за все повернувся з нічної
             shift = "after_night" if h_now >= 6 else "night"
@@ -3486,7 +3487,7 @@ def _get_current_shift_context(calendar_text=""):
         else:
             shift = "free"
 
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h = now_local.hour
 
     is_working_now = False
@@ -3796,8 +3797,8 @@ def _get_calendar_context_for_report():
     try:
         headers = {"Authorization": f"Bearer {token}"}
         now = datetime.now(timezone.utc)
-        now_local = now + timedelta(hours=2)
-        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        now_local = now + local_offset()
+        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
         today_end = today_start + timedelta(hours=48)
         # Читаємо ВСІ календарі
         events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=20)
@@ -3807,7 +3808,7 @@ def _get_calendar_context_for_report():
             summary = ev.get("summary", "")
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                tz_local = timezone(timedelta(hours=2))
+                tz_local = local_tz()
                 t = dt.astimezone(tz_local).strftime("%H:%M") if "T" in start else "весь день"
                 ev_date = dt.astimezone(tz_local).strftime("%Y-%m-%d")
             except:
@@ -4454,7 +4455,7 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         print(f"[themes_ai] skipped: no gemini_key", flush=True)
         return ""
     try:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         _weekday_ua_th = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"][now_local.weekday()]
 
         # Збираємо реальний контекст у текст
@@ -4613,7 +4614,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     # ПРОМПТ З НАТАЛЬНОЮ КАРТОЮ + ТРАНЗИТАМИ
     # Динамічна дата. 12.10.2026 (запит Олега): локальний час (UTC+2), а не
     # UTC — "перевіряти дату, годину" точно, без зсуву доби.
-    _now_local_astro = datetime.now(timezone.utc) + timedelta(hours=2)
+    _now_local_astro = datetime.now(timezone.utc) + local_offset()
     _weekday_ua_astro = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"][_now_local_astro.weekday()]
     today_str = _now_local_astro.strftime("%d.%m.%Y")
 
@@ -4988,7 +4989,7 @@ def _should_send_daily_recommendations(active_events: dict) -> bool:
     - Ранок 06:00-07:00
     - Після роботи 18:00-19:00
     """
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     hour = now.hour
     
     # Перевіряємо активні события
@@ -5028,7 +5029,7 @@ def _check_event_reminders(gmail_service, gemini_key: str = None) -> list:
         except Exception:
             dedup_map = {}
         
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
         today_str = now.strftime("%Y-%m-%d")
         
         # Отримуємо события з календаря на наступні 4 години
@@ -5162,7 +5163,7 @@ def main():
     _FORCE_REPORT = False  # скидаємо після використання
 
     now = datetime.now(timezone.utc)
-    now_local = now + timedelta(hours=2)
+    now_local = now + local_offset()
     # Дедлайн збору AI-блоків: монітор має timeout 600s. Лишаємо запас на надсилання.
     # Усі AI-блоки разом не повинні перетягнути за цей дедлайн — інакше пропускаємо їх,
     # АЛЕ звіт усе одно надсилається (краще без AI, ніж зовсім без звіту).
@@ -5369,7 +5370,7 @@ def main():
             _working_now = _sc["is_working_now"]
 
             shift_hint = ""
-            _h_now = (datetime.now(timezone.utc) + timedelta(hours=2)).hour
+            _h_now = (datetime.now(timezone.utc) + local_offset()).hour
             if _shift == "early":
                 if 6 <= _h_now < 18:
                     shift_hint = "Олег ЗАРАЗ на ранній зміні (06:00–18:00)."
@@ -5390,7 +5391,7 @@ def main():
                 # ── FALLBACK: Calendar не відповів (free) — визначаємо по часу ──
                 # Олег працює або ранню (06-18) або нічну (18-06). Якщо "free" від calendar
                 # — скоріш за все проблема з токеном. Використовуємо розумний fallback.
-                _dow_now = (datetime.now(timezone.utc) + timedelta(hours=2)).weekday()  # 0=пн
+                _dow_now = (datetime.now(timezone.utc) + local_offset()).weekday()  # 0=пн
                 if _h_now >= 18 or _h_now < 6:
                     # Вечір/ніч — ймовірно нічна зміна або підготовка до неї
                     shift_hint = ("УВАГА: дані з Calendar недоступні. "
@@ -6723,7 +6724,7 @@ def main():
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
         from planner import _tg as _planner_tg, set_state as _planner_set_state
-        _now_btn = datetime.now(timezone.utc) + timedelta(hours=2)
+        _now_btn = datetime.now(timezone.utc) + local_offset()
         _planner_tg("sendMessage", {
             "chat_id": TELEGRAM_CHAT,
             "text": (
@@ -6797,7 +6798,7 @@ def check_calendar_reminders():
 
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                local_dt = dt.astimezone(timezone(timedelta(hours=2)))
+                local_dt = dt.astimezone(local_tz())
                 t = local_dt.strftime("%H:%M")
             except Exception:
                 t = start
@@ -6937,7 +6938,7 @@ def check_shift_reminders():
             # визначаємо час
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                local_dt = dt.astimezone(timezone(timedelta(hours=2)))
+                local_dt = dt.astimezone(local_tz())
                 t = local_dt.strftime("%H:%M")
             except Exception:
                 t = start
@@ -6981,7 +6982,7 @@ def check_morning_brief():
              статус звичок вчора, вага (графік 7 днів), AI порада.
     """
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
     yesterday = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
@@ -7208,7 +7209,7 @@ def _get_calendar_events_text() -> str:
         return "нічого не заплановано"
     try:
         headers = {"Authorization": f"Bearer {token}"}
-        tz_local = timezone(timedelta(hours=2))
+        tz_local = local_tz()
         now = datetime.now(timezone.utc)
         now_local = now.astimezone(tz_local)
         day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
@@ -7304,7 +7305,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     try:
         from habits import load_data as _lhab
         hab_data = _lhab()
-        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_l = datetime.now(timezone.utc) + local_offset()
         days7 = [(now_l - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6,-1,-1)]
         run_count = sum(1 for d in days7 if hab_data.get(d,{}).get("run") is True)
         ctx_parts.append(f"Пробіжки за 7 днів: {run_count}/7")
@@ -7341,7 +7342,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         for k, v in context.items():
             ctx_parts.append(f"{k}: {v}")
 
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
     # Унікальний seed — гарантує що Gemini не дає однаковий текст
     msg_seed = str(_uuid.uuid4())[:8]
@@ -7399,7 +7400,7 @@ def check_proactive_insights():
     - Нагадування про цілі
     """
     now_utc  = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=2)  # CEST UTC+2 (Кошіце)
+    now_local = now_utc + local_offset()  # CEST UTC+2 (Кошіце)
     h, m  = now_local.hour, now_local.minute
     dow   = now_local.weekday()  # 0=пн, 6=нд
     today = now_local.strftime("%Y-%m-%d")
@@ -7452,13 +7453,13 @@ def check_proactive_insights():
             if "рання" in s:
                 start = ev["start"].get("dateTime","")
                 try:
-                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + local_offset()
                     return ("early", dt)
                 except: return ("early", None)
             if "нічна" in s:
                 start = ev["start"].get("dateTime","")
                 try:
-                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + local_offset()
                     return ("night", dt)
                 except: return ("night", None)
         return (None, None)
@@ -7578,7 +7579,7 @@ def check_crypto_price_alert():
     порівняння цифр, жодного Gemini-виклику. Не додавати AI-опис сюди.
     """
     now_ts  = int(time.time())
-    now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
+    now_str = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d %H")
 
     # ── Завантажуємо поточні ціни ────────────────────────────────────────────
     data = llama_prices.to_simple_price_shape(_coins(), periods=())
@@ -7665,7 +7666,7 @@ def check_crypto_price_alert():
 
     # Чистимо старі ключі алертів (старші 6г)
     if "_alerts_sent" in snapshots:
-        cutoff = (datetime.now(timezone.utc) + timedelta(hours=2) - timedelta(hours=6)).strftime("%Y-%m-%d %H")
+        cutoff = (datetime.now(timezone.utc) + local_offset() - timedelta(hours=6)).strftime("%Y-%m-%d %H")
         snapshots["_alerts_sent"] = {
             k: v for k, v in snapshots["_alerts_sent"].items()
             if k.split("_")[-1] >= cutoff
@@ -7710,7 +7711,7 @@ def check_etf_price_alert():
 
     now_utc = datetime.now(timezone.utc)
     now_ts  = int(time.time())
-    now_str = (now_utc + timedelta(hours=2)).strftime("%Y-%m-%d %H")
+    now_str = (now_utc + local_offset()).strftime("%Y-%m-%d %H")
 
     # NYSE торгується 14:30–21:00 UTC, пн-пт
     weekday = now_utc.weekday()  # 0=пн, 6=нд
@@ -7779,7 +7780,7 @@ def check_etf_price_alert():
 
     # Чистимо старі ключі алертів
     if "_alerts_sent" in snaps:
-        cutoff = (now_utc + timedelta(hours=2) - timedelta(hours=6)).strftime("%Y-%m-%d %H")
+        cutoff = (now_utc + local_offset() - timedelta(hours=6)).strftime("%Y-%m-%d %H")
         snaps["_alerts_sent"] = {
             k: v for k, v in snaps["_alerts_sent"].items()
             if k.split("_")[-1] >= cutoff
@@ -7802,7 +7803,7 @@ def check_weekly_habit_stats():
     📊 WEEKLY HABIT DASHBOARD — щопонеділка о 09:00.
     Красивий ASCII дашборд: стрік, відсотки, тренди, AI аналіз.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.weekday() == 0 and now_local.hour == 9 and now_local.minute < 5):
         return
 
@@ -7954,7 +7955,7 @@ def check_water_reminder():
       Рання зміна: 05:00 08:00 11:00 14:00 17:00 (на роботі з 06:00)
       Нічна зміна: 15:00 18:00 21:00 00:00 03:00 (на роботі з 18:00)
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     if not (0 <= m < 5):
         return
@@ -8002,7 +8003,7 @@ WEEK_PLAN_FILE = os.path.join(_DATA_DIR, "monitor_week_plan.json")
 
 def check_weekly_plan():
     """Щопонеділка о 8:00 і щонеділі о 18:00 шле план на тиждень з календаря."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     is_monday_8  = (now_local.weekday() == 0 and now_local.hour == 8  and now_local.minute < 5)
     is_sunday_18 = (now_local.weekday() == 6 and now_local.hour == 18 and now_local.minute < 5)
     if not (is_monday_8 or is_sunday_18):
@@ -8048,7 +8049,7 @@ def check_weekly_plan():
                 continue
             start = ev["start"].get("dateTime") or ev["start"].get("date")
             try:
-                dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                dt = datetime.fromisoformat(start.replace("Z","+00:00")) + local_offset()
                 d  = dt.strftime("%Y-%m-%d")
                 t  = dt.strftime("%H:%M")
             except:
@@ -8092,7 +8093,7 @@ def check_event_done():
             return
     except Exception:
         pass
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if now_local.hour < 7:
         return
 
@@ -8106,7 +8107,7 @@ def check_event_done():
         now = datetime.now(timezone.utc)
 
         # Беремо всі події з початку сьогоднішнього дня (місцевого) до зараз
-        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
@@ -8180,7 +8181,7 @@ def check_event_done():
                 continue
             _seen_summaries_today.add(summary_key)
 
-            local_end = end_dt + timedelta(hours=2)
+            local_end = end_dt + local_offset(end_dt)
             t = local_end.strftime("%H:%M")
 
             s_lower = summary.lower()
@@ -8309,7 +8310,7 @@ def check_day_summary():
     Містить: підсумок звичок + графік дня, ліки, вага, Apple Health,
              AI персональний підсумок з рекомендацією.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
 
     # Час відправки залежить від зміни: нічна → 23:30, рання/вихідний → 21:30
@@ -8523,7 +8524,7 @@ def check_day_summary():
 
 def check_traffic_before_shift():
     """За 1 год до зміни надсилає стан трафіку в Кошіце."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
 
     # О 05:00 (перед ранньою 06:00) і о 17:00 (перед нічною 17:00)
@@ -8560,7 +8561,7 @@ def check_weight_reminder():
     - 04:45 — якщо сьогодні рання зміна (06:00)
     - 11:11 — якщо вихідний (немає змін)
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -8581,8 +8582,8 @@ def check_weight_reminder():
         headers = {"Authorization": f"Bearer {token}"}
         cal_id = "novosadovoleg%40gmail.com"
 
-        day_start_utc = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        day_end_utc   = now_local.replace(hour=23, minute=59, second=59, microsecond=0) - timedelta(hours=2)
+        day_start_utc = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
+        day_end_utc   = now_local.replace(hour=23, minute=59, second=59, microsecond=0) - local_offset()
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
@@ -8637,7 +8638,7 @@ def check_health_alert():
     - Стрес зріс на 15+ від середнього → алерт
     Надсилає не частіше 1 разу на день.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today = now_local.strftime("%Y-%m-%d")
 
     state = load_json_file(HEALTH_ALERT_FILE, default={})
@@ -8743,7 +8744,7 @@ def check_health_data_reminder():
 
 def check_crypto_weekly_summary():
     """Щонеділі о 19:00: % зміна BTC/ETH/AVAX/ONDO за тиждень + AI коментар."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.weekday() == 6 and now_local.hour == 19 and now_local.minute < 5):
         return
 
@@ -8834,7 +8835,7 @@ NET_WORTH_FILE = os.path.join(_DATA_DIR, "monitor_net_worth.json")
 
 def check_net_worth_reminder():
     """1-го числа кожного місяця о 10:00 — нагадування оновити net worth."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.day == 1 and now_local.hour == 10 and now_local.minute < 5):
         return
 
@@ -8871,7 +8872,7 @@ INVEST_DIGEST_FILE = os.path.join(_DATA_DIR, "monitor_invest_digest.json")
 
 def check_investment_news_digest():
     """Щовівторка о 08:00: AI дайджест новин по інвестиціях/ETF/крипто-регуляції."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.weekday() == 1 and now_local.hour == 8 and now_local.minute < 5):
         return
 
@@ -8952,7 +8953,7 @@ FASTING_FILE = os.path.join(_DATA_DIR, "monitor_fasting.json")
 
 def check_fasting_reminder():
     """О 20:00 у вільний день: нагадування закінчити їсти (ціль — схуднення до 75 кг)."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.hour == 20 and now_local.minute < 5):
         return
 
@@ -9013,7 +9014,7 @@ PRE_SHIFT_WEATHER_FILE = os.path.join(_DATA_DIR, "monitor_pre_shift_weather.json
 
 def check_pre_shift_weather():
     """За 1.5 години до зміни: погода на час дороги + чи потрібна куртка/парасоля."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -9136,7 +9137,7 @@ def check_learning_streak():
     Якщо 2+ дні підряд немає запису в habits про навчання → нагадування.
     Перевіряємо щодня о 18:00.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.hour == 18 and now_local.minute < 5):
         return
 
@@ -9220,7 +9221,7 @@ def check_smart_notifications():
         print(f"context import error: {e}"); return
 
     try:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h = now_local.hour
         m = now_local.minute
         today = now_local.strftime("%Y-%m-%d")
@@ -9266,7 +9267,7 @@ def check_smart_notifications():
                 max_tokens=180
             )
             # Час до виходу
-            now_l2 = datetime.now(timezone.utc) + timedelta(hours=2)
+            now_l2 = datetime.now(timezone.utc) + local_offset()
             mins_to_go = max(0, (6*60 - (now_l2.hour*60 + now_l2.minute)) - 30)
             weather_line = f"\n🌡 <b>{weather_ctx}</b>" if weather_ctx else ""
             header = (
@@ -9531,7 +9532,7 @@ def check_morning_context():
     """
     import sys, uuid as _uuid
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -9720,7 +9721,7 @@ def check_run_coach():
     - Пн/Ср/Пт вихідного дня о 09:30: нагадування + план тренування
     - Якщо не бігав 3+ дні — нагадування будь-якого дня о 17:00
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
     dow = now_local.weekday()  # 0=Пн
@@ -9810,7 +9811,7 @@ def check_nutrition_reminder():
         13:00 — обід
         18:00 — вечеря (і нагадування про 16:8)
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -9928,7 +9929,7 @@ def check_sleep_quality():
             return
     except Exception:
         pass
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -9995,7 +9996,7 @@ def check_crypto_morning():
     💹 CRYPTO DASHBOARD ЗРАНКУ — рання о 05:10, решта о 09:10.
     Ціни + міні-бар графік + Fear&Greed + AI сигнал.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -10103,7 +10104,7 @@ def check_week_goals():
     Неділя о 20:30 — підсумок + цілі на наступний тиждень.
     AI аналізує тиждень і пропонує 3 конкретні цілі.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     dow = now_local.weekday()
     today = now_local.strftime("%Y-%m-%d")
@@ -10204,7 +10205,7 @@ def check_calendar_live():
     - За 15 хв до події — "⏰ Через 15 хв: [назва]"
     - Нагадування про незаплановані вихідні (нічого в календарі — пропонує щось корисне)
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
 
     # Тільки в активний час (07:00–23:00)
@@ -10259,7 +10260,7 @@ def check_calendar_live():
             start_str = ev["start"].get("dateTime") or ev["start"].get("date")
             try:
                 dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                dt_local = dt_start + timedelta(hours=2)
+                dt_local = dt_start + local_offset(dt_start)
                 mins_until = int((dt_start - now_utc).total_seconds() / 60)
             except Exception:
                 continue
@@ -10308,7 +10309,7 @@ def check_mood_evening():
             return
     except Exception:
         pass
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -10355,7 +10356,7 @@ def check_step_goal():
     👟 О 18:00 у вільний день — перевіряє кроки з Health даних.
     Якщо < 8000 — мотивує дійти. Якщо > 10000 — хвалить.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -10443,7 +10444,7 @@ def check_friday_recap():
     🎉 П'ятниця 20:00 — підсумок робочого тижня + AI мотивація на вихідні.
     Статистика змін, звички, вага.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -10548,7 +10549,7 @@ def check_weight_trend_alert():
     ⚠️ Якщо вага росте 3+ дні поспіль — проактивний алерт о 10:00.
     Мотивує скоригувати харчування/активність.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -10634,7 +10635,7 @@ def check_planet_ingress():
         return
 
     now_utc   = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=2)
+    now_local = now_utc + local_offset()
 
     try:
         transit = _AS(
@@ -10964,7 +10965,7 @@ def check_transit_aspects():
 
 def check_important_emails_followup():
     """Щогодини (08:00-22:00): нагадує про важливі листи без відповіді > 24г."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (8 <= now_local.hour < 22):
         return
 
@@ -11050,7 +11051,7 @@ def check_email_deadlines():
     Якщо є подія завтра (або сьогодні) — надсилає нагадування.
     """
     import base64 as _b64ed
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
 
     if not (h == 9 and 5 <= m < 10):
@@ -11131,7 +11132,7 @@ def check_shopping_reminder():
         import sys, os
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h, m = now_local.hour, now_local.minute
 
         # Вікна: 12:44–12:46 і 19:14–19:16
@@ -11495,7 +11496,7 @@ def check_stress_alert():
     - менше 7 год сну 2+ дні поспіль
     Якщо 2+ сигнали — надсилає AI мотивацію + конкретний план на сьогодні.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     if not (h == 11 and 0 <= m < 5):
         return
@@ -11625,7 +11626,7 @@ def check_monthly_summary():
     1-го числа о 09:00: повний місячний підсумок.
     Вага, km бігу, звички %, кроки, найкращі дні.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     if not (now_local.day == 1 and h == 9 and 0 <= m < 5):
         return
@@ -11787,7 +11788,7 @@ def get_weekly_dashboard() -> str:
     Зведений дашборд за поточний тиждень:
     біг, вага, звички, кроки — одним повідомленням.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     week_start = now_local - timedelta(days=now_local.weekday())
     week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -11892,7 +11893,7 @@ def check_currency_alert():
     try:
         import urllib.request as _ur_ca, json as _json_ca
 
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h, m = now_local.hour, now_local.minute
         today = now_local.strftime("%Y-%m-%d")
 
@@ -11985,7 +11986,7 @@ def check_invest_coach():
     """
     🎓 Щодня о 9:00 — урок по інвестиціях з AI поясненням та питанням.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
@@ -12057,7 +12058,7 @@ def check_diary_evening():
     📔 О 21:00 бот ставить 3 питання про день.
     Щонеділі о 20:00 — AI аналіз тижня.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
     weekday = now_local.weekday()  # 6 = неділя
@@ -12103,7 +12104,7 @@ def _send_diary_weekly_analysis(diary: dict):
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
     entries = diary.get("entries", {})
 
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     week_days = [(now_local - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
     week_entries = {d: entries[d] for d in week_days if d in entries and entries[d].get("answers")}
 
@@ -12155,7 +12156,7 @@ def _send_diary_weekly_analysis(diary: dict):
 
 def save_diary_answer(text: str):
     """Зберігає відповідь Олега на щоденник."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today = now_local.strftime("%Y-%m-%d")
     diary = load_json_file(_DIARY_FILE, default={"entries": {}})
     entry = diary.setdefault("entries", {}).setdefault(today, {"asked": True, "date": today})
@@ -12176,7 +12177,7 @@ def check_health_weekly_tracker():
     💪 Щонеділі о 19:00 — AI аналіз здоров'я за тиждень.
     Вага, кроки, біг, звички — тренди + конкретні рекомендації.
     """
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     h, m = now_local.hour, now_local.minute
     weekday = now_local.weekday()  # 6 = неділя
 
@@ -12304,7 +12305,7 @@ UNREAD_DIGEST_FILE = os.path.join(_DATA_DIR, "monitor_unread_digest.json")
 def check_unread_digest():
     """Раз/день (19:00-19:10) — коротке нагадування скільки листів досі непрочитано
     (БЕЗ Gemini, просто підрахунок IMAP), щоб Олег стежив за поштою довше."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (19 <= now_local.hour < 20 and now_local.minute < 10):
         return
     today_key = now_local.strftime("%Y-%m-%d")
@@ -12343,7 +12344,7 @@ def check_ai_weekly_accuracy():
     """Щонеділі о 19:30 — AI чесно оцінює себе: наскільки точними/корисними
     були його поради/прогнози цього тижня (крипто-заклики vs реальна ціна,
     рекомендації vs що Олег реально зробив, чи не було занадто generic-порад)."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.weekday() == 6 and now_local.hour == 19 and 30 <= now_local.minute < 40):
         return
 
@@ -12432,7 +12433,7 @@ _YEARLY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_yearly_summary.json")
 def check_yearly_summary():
     """1 січня — річний підсумок активності: скільки і чого Олег відповідав
     боту за весь рік (з response_log.py), + AI-рефлексія про рік."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     if not (now_local.month == 1 and now_local.day == 1 and now_local.hour == 12):
         return
 

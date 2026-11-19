@@ -3,16 +3,16 @@ LIFE OS TRACKER — повна система управління життям 
 Стежить за 10 сферами і генерує персоналізовані рекомендації
 """
 
+from tzclock import local_offset, local_tz
 import json
 import os
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple
 
-TZ_OFFSET = 2  # UTC+2
 
 def _get_hour():
-    """Поточна година UTC+2"""
-    return (datetime.utcnow().hour + TZ_OFFSET) % 24
+    """Поточна година (Кошице)"""
+    return (datetime.utcnow() + local_offset()).hour
 
 def load_json(filename: str, default=None):
     """Загрузити JSON"""

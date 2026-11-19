@@ -4,6 +4,7 @@ DeFi & RWA звіт — надсилається 2 рази на день: 07:00
 Джерело: DeFiLlama публічний API (без ключа).
 """
 
+from tzclock import local_offset, local_tz
 import os, json, time, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone, timedelta
 
@@ -521,7 +522,7 @@ def full_overview():
     DeFi, Chain TVL, RWA, Liquid Staking, Restaking, Lending, DEX обсяги,
     Yield-пули, стейблкоіни. Надсилається окремими повідомленнями (Telegram
     ліміт 4096), бо блоків багато."""
-    local = datetime.now(timezone.utc) + timedelta(hours=2)
+    local = datetime.now(timezone.utc) + local_offset()
     time_str = local.strftime("%H:%M")
     date_str = local.strftime("%d.%m.%Y")
 
@@ -598,7 +599,7 @@ def _defi_dedup_check():
         import sys as _sys, os as _os
         _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
         from storage import _load_github, _save_github
-        local = datetime.now(timezone.utc) + timedelta(hours=2)
+        local = datetime.now(timezone.utc) + local_offset()
         slot  = "am" if local.hour < 13 else "pm"
         key   = f"defi_{local.strftime('%Y-%m-%d')}_{slot}"
         data  = _load_github("defi_sent.json") or {}
@@ -619,7 +620,7 @@ def _defi_dedup_save(data, key):
 
 def main():
     now      = datetime.now(timezone.utc)
-    local    = now + timedelta(hours=2)
+    local    = now + local_offset()
     time_str = local.strftime("%H:%M")
     date_str = local.strftime("%d.%m.%Y")
     period   = "🌅 Ранковий" if local.hour < 13 else "🌆 Вечірній"
@@ -787,7 +788,7 @@ def _digest_dedup_check():
         import sys as _sys, os as _os
         _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
         from storage import _load_github, _save_github
-        local = datetime.now(timezone.utc) + timedelta(hours=2)
+        local = datetime.now(timezone.utc) + local_offset()
         key   = f"digest_18h_{local.strftime('%Y-%m-%d')}"
         data  = _load_github("defi_sent.json") or {}
         return data.get(key, False), data, key
@@ -943,7 +944,7 @@ def _send_photo_digest(photo_path: str, caption: str):
 
 def digest_24h(force: bool = False):
     """Компактний дайджест змін DeFi за останні 24год."""
-    local    = datetime.now(timezone.utc) + timedelta(hours=2)
+    local    = datetime.now(timezone.utc) + local_offset()
     time_str = local.strftime("%H:%M")
     date_str = local.strftime("%d.%m.%Y")
 

@@ -4,6 +4,7 @@
 Використовує OpenRouteService API.
 """
 
+from tzclock import local_offset, local_tz
 import os, json, re, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
@@ -199,7 +200,7 @@ def check_calendar_traffic():
         # Надсилаємо за 60 хв до події
         if 55 <= diff_min <= 65:
             route = get_route(HOME, dest_coords)
-            local_dt = dt + timedelta(hours=2)
+            local_dt = dt + local_offset(dt)
             t_str = local_dt.strftime("%H:%M")
 
             if route:
@@ -207,7 +208,7 @@ def check_calendar_traffic():
                 total = base + delay
                 advice = traffic_advice(delay)
                 depart = dt - timedelta(minutes=total + 10)
-                depart_local = (depart + timedelta(hours=2)).strftime("%H:%M")
+                depart_local = (depart + local_offset(depart)).strftime("%H:%M")
 
                 delay_str = f"\n⚠️ Затримка через пробки: <b>+{delay:.0f} хв</b>" if delay >= 3 else ""
 
@@ -244,7 +245,7 @@ def handle_route_command(destination_text):
     km, base, delay = route
     total = base + delay
     advice = traffic_advice(delay)
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     arrive = (now_local + timedelta(minutes=total)).strftime("%H:%M")
     delay_str = f"\n⚠️ Затримка через пробки: <b>+{delay:.0f} хв</b>" if delay >= 3 else ""
 

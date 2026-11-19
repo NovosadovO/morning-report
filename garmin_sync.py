@@ -38,6 +38,7 @@ fetch_live — тобто і в 3-годинному фоновому синку
 ж вікна часу пропускається (дедуп у running.save_from_garmin), щоб
 кілометраж не рахувався двічі в тижневих/місячних звітах.
 """
+from tzclock import local_offset, local_tz
 import os
 from datetime import date
 
@@ -427,7 +428,7 @@ def format_block(payload: dict, day: str, live: bool) -> str:
     """Текстовий блок усіх полів Garmin — навіть відсутні показуються як
     'немає даних' (Олег просив ВСІ дані, щоб було видно прогалини)."""
     from datetime import datetime, timezone, timedelta
-    now = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m.%Y %H:%M")
+    now = (datetime.now(timezone.utc) + local_offset()).strftime("%d.%m.%Y %H:%M")
     tag = "⚡ живий запит до Garmin саме зараз" if live else "з кешу (фоновий синк кожні 3г)"
     lines = [f"⌚ <b>Garmin Connect — {day}</b>", f"<i>{tag}, {now}</i>", ""]
     for key, label, unit in FIELDS:

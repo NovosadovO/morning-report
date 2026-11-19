@@ -27,6 +27,7 @@ garmin_fresh.py — AI ЗАВЖДИ має доступ до Garmin і бачи�
 API: ensure_fresh(force=False) -> dict, snapshot() -> dict, block() -> str,
      fresh_value(metric, max_age_days=0) -> value|None, silent_refresh_tick()
 """
+from tzclock import local_offset, local_tz
 import os
 import sys
 import threading
@@ -67,7 +68,7 @@ def _log(m):
 
 def _local_now():
     # Кошице: узгоджено з qwsync._today (UTC+2, як у решті модулів)
-    return datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=2)
+    return datetime.now(timezone.utc).replace(tzinfo=None) + local_offset()
 
 
 def _today():

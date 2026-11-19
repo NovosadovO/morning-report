@@ -8,6 +8,7 @@ AI-коуч для схуднення Олега
 - Gemini-мотивація щодня
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import sys
@@ -92,7 +93,7 @@ def calculate_weight_progress():
     if not history or len(history) < 2:
         return None
     
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today_str = now_local.strftime("%Y-%m-%d")
     
     # Останні записи (сортуємо по даті)

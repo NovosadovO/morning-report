@@ -17,6 +17,7 @@ AI-промпти їх майже не читали. Тобто Олег тис�
 
 Ніколи не падає: будь-яка помилка джерела → цей блок просто коротший.
 """
+from tzclock import local_offset, local_tz
 import os
 import re
 import sys
@@ -24,14 +25,14 @@ from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-TZ = timezone(timedelta(hours=2))
+TZ = local_tz()
 MAX_CHARS = 1400
 _CACHE = {"ts": None, "days": None, "text": "", "stats": {}}
 _CACHE_TTL = 180  # сек — промпти будуються часто, GitHub-читання дороге
 
 
 def _now():
-    return datetime.now(TZ).replace(tzinfo=None)
+    return datetime.now(local_tz()).replace(tzinfo=None)
 
 
 def _ts(rec, field="ts"):

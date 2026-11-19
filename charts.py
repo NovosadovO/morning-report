@@ -2,6 +2,7 @@
 charts.py — Комбіновані графіки для підсумків дня / тижня / місяця.
 Темна тема, стиль GitHub/Strava.
 """
+from tzclock import local_offset, local_tz
 import io
 import os
 from datetime import datetime, timedelta, date, timezone
@@ -853,7 +854,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
         import calendar as _cal
         from datetime import date as _date_cls2
 
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
         today = now.date()
 
         # Від 1 січня 2026 до сьогодні
@@ -1311,7 +1312,7 @@ def plot_combined_dashboard() -> bytes | None:
         import matplotlib.patches as _mpatch
         from datetime import date as _date_cls
 
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
         today = now.date()
         start_date = _date_cls(2026, 1, 1)
         all_dates = [start_date + timedelta(days=i)
@@ -1610,7 +1611,7 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
         _rc()
         
         # Дата
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
         if year is None:
             year = now.year
         if month is None:

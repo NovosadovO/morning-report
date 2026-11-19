@@ -7,6 +7,7 @@ Week Planner 📅
 - Gemini-рекомендації для балансу
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import sys
@@ -47,7 +48,7 @@ def parse_calendar_events(cal_text):
     events = []
     lines = cal_text.split('\n') if isinstance(cal_text, str) else []
     
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today = now_local.date()
     week_start = today - timedelta(days=today.weekday())  # Понеділок
     week_end = week_start + timedelta(days=6)  # Неділя
@@ -107,7 +108,7 @@ def calculate_week_load():
         cal_text = get_calendar_with_times()
         events = parse_calendar_events(cal_text)
         
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         today = now_local.date()
         week_start = today - timedelta(days=today.weekday())
         

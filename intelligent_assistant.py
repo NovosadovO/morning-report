@@ -3,6 +3,7 @@
 Сам розуміє що робити, коли писати, що актуально.
 """
 
+from tzclock import local_offset, local_tz
 import os, sys, json, time, re, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 import threading
@@ -46,7 +47,7 @@ def _save_state():
 
 def _now_local():
     """Поточний час у Кошіце (UTC+2)."""
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _send_telegram(text: str):

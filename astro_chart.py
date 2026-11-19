@@ -5,6 +5,7 @@
 Натальні планети: зовні між R_TRANSIT і R_SIGN_IN, чорні, великі.
 Транзитні планети: між R_NATAL і R_SIGN_IN (зовнє кільце), зеленувато-жовті крапки.
 """
+from tzclock import local_offset, local_tz
 import os, math, tempfile, warnings, subprocess, sys
 warnings.filterwarnings("ignore")
 
@@ -120,7 +121,7 @@ def generate_natal_chart(output_path=None):
         tmp.close()
 
     now_utc   = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=2)
+    now_local = now_utc + local_offset()
 
     natal = AstrologicalSubject(
         "natal", BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,

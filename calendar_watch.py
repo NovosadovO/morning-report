@@ -32,6 +32,7 @@ cw_bills_ / cw_showweek_ / cw_showmonth_ /
                    cw_done_ / cw_miss_ / cw_moved_ / cw_ack_
 """
 
+from tzclock import local_offset, local_tz
 import re
 from datetime import datetime, timedelta, timezone
 
@@ -184,7 +185,7 @@ def _parse(raw: str):
         if "T" in raw:
             dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
             if dt.tzinfo:
-                dt = (dt.astimezone(timezone.utc) + K.TZ).replace(tzinfo=None)
+                dt = (dt.astimezone(timezone.utc) + local_offset(dt)).replace(tzinfo=None)
             return dt
         return datetime.strptime(raw[:10], "%Y-%m-%d")
     except Exception:

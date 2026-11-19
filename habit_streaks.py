@@ -10,6 +10,7 @@ habit_streaks.py — Комбінований стрік звичок + гейм
 або від ВЧОРА назад, якщо сьогодні ще нічого не відмічено.
 """
 
+from tzclock import local_offset, local_tz
 import os
 from datetime import datetime, timezone, timedelta
 
@@ -24,7 +25,7 @@ _BADGES = {
 
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _day_result(day_data: dict) -> str:

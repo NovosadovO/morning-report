@@ -39,6 +39,7 @@ API:
     set_manual(loc)    -> bool   # 'robota' | 'doma'
     report()           -> str    # /де
 """
+from tzclock import local_offset, local_tz
 import os
 import sys
 from datetime import datetime, timedelta, timezone
@@ -66,7 +67,7 @@ def now():
         from zoneinfo import ZoneInfo
         return datetime.now(ZoneInfo("Europe/Bratislava"))
     except Exception:
-        return datetime.now(timezone.utc) + timedelta(hours=2)
+        return datetime.now(timezone.utc) + local_offset()
 
 
 def part_of_day(h=None):
@@ -202,9 +203,64 @@ def _calendar_shift():
         return None, False
 
 
+_LAST = {"shift": None}
+
+
+def _phase(kind, h):
+    """Де ми в межах зміни `kind` о годині h: before | in_progress | ended."""
+    if kind == "early":
+        return "before" if h < 6 else ("in_progress" if h < 18 else "ended")
+    if kind == "night":
+        if h >= 18 or h < 6:
+            return "in_progress"
+        return "ended" if h < 10 else "before"
+    if kind == "after_night":
+        return "ended"
+    return ""
+
+
 def where():
-    """{state, label, source, sure}
-    state: 'work' | 'home' | 'after_night' | 'unknown'"""
+    """{state, label, source, sure, shift, phase}
+    state: 'work' | 'home' | 'after_night' | 'unknown'
+    shift: early|night|after_night|free|None; phase: before|in_progress|ended|''"""
+    _LAST["shift"] = None
+    w = dict(_where_impl())
+    kind = _LAST.get("shift")
+    w["shift"] = kind
+    w["phase"] = _phase(kind, now().hour) if kind else ""
+    return w
+
+
+def shift_line():
+    """Детермінований рядок про стан зміни ЗАРАЗ (для промптів). '' якщо невідомо."""
+    try:
+        w = where()
+        kind, ph = w.get("shift"), w.get("phase")
+        t = now().strftime("%H:%M")
+        if kind == "early":
+            nm, rng, end = "РАННЯ зміна", "06:00–18:00", "18:00"
+        elif kind == "night":
+            nm, rng, end = "НІЧНА зміна", "18:00–06:00", "06:00"
+        elif kind == "free":
+            return "ЗМІНА: зараз " + t + ", у календарі зміни немає."
+        else:
+            return ""
+        if ph == "in_progress":
+            return ("СТАН ЗМІНИ: зараз " + t + ". " + nm + " (" + rng + ") ТРИВАЄ "
+                    "просто зараз, Олег на роботі. Зміна ЩЕ НЕ закінчилась (до "
+                    + end + "). Заборонено писати, що зміна завершилась/закінчилась.")
+        if ph == "before":
+            return ("СТАН ЗМІНИ: зараз " + t + ". " + nm + " (" + rng
+                    + ") ще НЕ почалась.")
+        if ph == "ended":
+            return ("СТАН ЗМІНИ: зараз " + t + ". " + nm + " (" + rng
+                    + ") вже закінчилась.")
+    except Exception as e:
+        _log("shift_line error: " + str(e))
+    return ""
+
+
+def _where_impl():
     n = now()
     h = n.hour
 
@@ -219,6 +275,7 @@ def where():
                 "label": "вдома (сказав сам)"}
 
     ms = manual_shift()
+    _LAST["shift"] = ms
     if ms == "early":
         if 6 <= h < 18:
             return {"state": "work", "sure": True,
@@ -249,6 +306,7 @@ def where():
                 "label": "вдома, вихідний (зміни немає)"}
 
     shift, cal_ok = _calendar_shift()
+    _LAST["shift"] = shift
 
     if shift == "night":
         if h >= 18 or h < 6:
@@ -322,6 +380,9 @@ def block():
         lines.append(
             "⛔ Олег щойно з нічної зміни. Головне зараз — сон і відновлення. "
             "ЗАБОРОНЕНО бадьорити на активність і навантаження.")
+    _sl = shift_line()
+    if _sl:
+        lines.append("• " + _sl)
     lines.append(
         "• Час використовуй буквально: «сьогодні», «зараз», «через 2 години» "
         "рахуй від часу вище, а не від абстрактного дня. Не пиши «доброго "

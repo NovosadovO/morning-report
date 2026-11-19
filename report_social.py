@@ -4,6 +4,7 @@
 Стиль: короткий інсайт-пост, жива мова, без зайвих цифр.
 """
 
+from tzclock import local_offset, local_tz
 import os, json, time, random
 import urllib.request
 from datetime import datetime, timezone, timedelta
@@ -95,7 +96,7 @@ def save_state(state):
 
 def should_post(state):
     last  = state.get("last_post_date", "")
-    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    today = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
     if not last:
         return True
     try:
@@ -303,7 +304,7 @@ def main():
 
     send_post(text, topic)
 
-    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    today = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
     state["last_post_date"] = today
     state["topic_index"] = (topic_index + 1) % len(TOPICS)
     save_state(state)

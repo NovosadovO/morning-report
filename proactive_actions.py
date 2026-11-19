@@ -18,6 +18,7 @@
 тому кнопки живі навіть після рестарту Railway.
 """
 
+from tzclock import local_offset, local_tz
 import os
 import re
 import json
@@ -34,7 +35,6 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-_TZ = timedelta(hours=2)                       # Europe/Bratislava
 STORE_FILE = "proactive_actions_store.json"    # payload кнопок (persistent)
 SENT_FILE = "proactive_actions_sent.json"      # антидубль
 SCAN_STATE = "proactive_actions_scan.json"     # коли останній скан
@@ -46,7 +46,7 @@ SCAN_MIN_GAP_MIN = 90     # мінімум 90 хв між сканами
 
 
 def _now():
-    return datetime.now(timezone.utc) + _TZ
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def _log(msg):

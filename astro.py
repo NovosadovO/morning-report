@@ -5,6 +5,7 @@
 Транзитні будинки: натальні (Placidus, Львів) — як у Sotis.
 """
 
+from tzclock import local_offset, local_tz
 import os, warnings
 warnings.filterwarnings("ignore")
 
@@ -580,7 +581,7 @@ def _get_natal_transits_fallback(max_aspects=6):
     import math
 
     now_utc   = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=2)
+    now_local = now_utc + local_offset()
     weekday_ua = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"][now_local.weekday()]
     date_str = now_local.strftime("%d.%m.%Y")
 
@@ -1088,7 +1089,7 @@ def get_astro_report():
     if not _KERYKEION_OK:
         return _get_natal_transits_fallback()
     now_utc = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=2)
+    now_local = now_utc + local_offset()
     today_str = now_local.strftime("%d.%m.%Y")
     weekday_ua = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"][now_local.weekday()]
 

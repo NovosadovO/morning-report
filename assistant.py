@@ -12,6 +12,7 @@ assistant.py — серце персонального асистента Оле
   send_email_reply()           — надіслати відповідь на лист
 """
 
+from tzclock import local_offset, local_tz
 import os, json, re, urllib.request, urllib.parse, base64
 from datetime import datetime, timezone, timedelta
 
@@ -23,7 +24,7 @@ _GMAIL_USER    = "novosadovoleg@gmail.com"
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
 def _now():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 def _get_google_token(creds_data, scope):
     """JWT service account token — inline copy, no monitor import needed."""
@@ -256,7 +257,7 @@ def check_calendar_day_ahead():
 
     now_utc = datetime.now(timezone.utc)
     tomorrow_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) \
-                     + timedelta(days=1) - timedelta(hours=2)
+                     + timedelta(days=1) - local_offset()
     tomorrow_end = tomorrow_start + timedelta(hours=24)
     events = _fetch_events(token, tomorrow_start, tomorrow_end)
 
@@ -280,7 +281,7 @@ def check_calendar_day_ahead():
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         try:
             dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-            t = (dt + timedelta(hours=2)).strftime("%H:%M")
+            t = (dt + local_offset(dt)).strftime("%H:%M")
         except Exception:
             t = "—"
         emoji = _event_emoji(summary)
@@ -343,7 +344,7 @@ def check_calendar_10min():
 
         try:
             dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-            t  = (dt + timedelta(hours=2)).strftime("%H:%M")
+            t  = (dt + local_offset(dt)).strftime("%H:%M")
         except Exception:
             t = "—"
 
@@ -434,7 +435,7 @@ def find_event_by_summary(summary_query: str) -> list:
             start_str = ev["start"].get("dateTime") or ev["start"].get("date")
             try:
                 dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                t = (dt + timedelta(hours=2)).strftime("%d.%m %H:%M")
+                t = (dt + local_offset(dt)).strftime("%d.%m %H:%M")
             except Exception:
                 t = start_str
             results.append({"id": ev["id"], "summary": s, "time": t})
@@ -637,7 +638,7 @@ def check_calendar_3days():
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         try:
             dt = datetime.fromisoformat(start_str.replace("Z","+00:00"))
-            t  = (dt + timedelta(hours=2)).strftime("%d.%m о %H:%M")
+            t  = (dt + local_offset(dt)).strftime("%d.%m о %H:%M")
         except Exception:
             t = "—"
         emoji = _event_emoji(summary)
@@ -685,7 +686,7 @@ def check_calendar_1day():
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         try:
             dt = datetime.fromisoformat(start_str.replace("Z","+00:00"))
-            t  = (dt + timedelta(hours=2)).strftime("%H:%M")
+            t  = (dt + local_offset(dt)).strftime("%H:%M")
         except Exception:
             t = "—"
         emoji = _event_emoji(summary)
@@ -1024,7 +1025,7 @@ def check_birthdays():
             start_str = ev["start"].get("dateTime") or ev["start"].get("date")
             try:
                 if "T" in start_str:
-                    dt = datetime.fromisoformat(start_str.replace("Z","+00:00")) + timedelta(hours=2)
+                    dt = datetime.fromisoformat(start_str.replace("Z","+00:00")) + local_offset()
                     when = dt.strftime("%d.%m")
                 else:
                     dt = datetime.fromisoformat(start_str)

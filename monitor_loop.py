@@ -12,6 +12,7 @@
 - check_calendar_reminders() — нагадування за 30хв до подій кожні 5хв
 """
 
+from tzclock import local_offset, local_tz
 import time
 import subprocess
 import sys
@@ -212,7 +213,7 @@ def run_news_watcher():
     print("=== Starting crypto news watcher (daily 19:30) ===", flush=True)
     time.sleep(90)
     while True:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h, m = now_local.hour, now_local.minute
         if h == 19 and 30 <= m < 35:
             print(f"[Crypto news] Running at {now_local.strftime('%H:%M')}...", flush=True)
@@ -244,7 +245,7 @@ def run_defi_report_loop():
     DeFi дайджест (24h зміни) — о 18:15."""
     print("=== Starting DeFi report loop (07:00 + 18:15 digest + 19:00) ===", flush=True)
     while True:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h, m = now_local.hour, now_local.minute
 
         # Повний звіт о 07:00 і 19:00
@@ -292,7 +293,7 @@ def run_monitor_loop():
     print("=== Starting monitor loop v2026-06-16 (check every 1min, only at :00, sleep 180s after run) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
-        now_local = now + timedelta(hours=2)
+        now_local = now + local_offset()
         m = now_local.minute
         # Запускаємо ТІЛЬКИ на першій хвилині години (:00)
         # Вікно звужено до m == 0 щоб виключити дублі при m=1,2
@@ -341,7 +342,7 @@ def run_social_post_loop():
     print("=== Starting social post loop (every 3 days at 10:00) ===", flush=True)
     time.sleep(120)  # затримка старту
     while True:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local = datetime.now(timezone.utc) + local_offset()
         h, m = now_local.hour, now_local.minute
         if h == 10 and m < 5:
             print(f"[Social post] Checking at {now_local.strftime('%H:%M')}...", flush=True)
@@ -598,7 +599,7 @@ def run_reminders_watcher():
     while True:
         try:
             reminders, sha = gh_get()
-            now_local = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M")
+            now_local = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%dT%H:%M")
             changed = False
             # Застарілі ручні нагадування (Apple Health / QWatch) — видалені за
             # запитом Олега 15.11: усі дані здоров'я тільки з Garmin Connect.
@@ -616,7 +617,7 @@ def run_reminders_watcher():
                 r_dt_local = r_dt_utc[:16]
                 try:
                     _rdt = datetime.fromisoformat(r_dt_utc)
-                    r_dt_local = (_rdt + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M")
+                    r_dt_local = (_rdt + local_offset(_rdt)).strftime("%Y-%m-%dT%H:%M")
                 except Exception:
                     pass
 
@@ -801,7 +802,7 @@ def run_astro_watcher():
 
     while True:
         try:
-            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            now_local = datetime.now(timezone.utc) + local_offset()
             today = now_local.strftime("%Y-%m-%d")
             h, m = now_local.hour, now_local.minute
 
@@ -1484,7 +1485,7 @@ def run_strava_charts_loop():
 
     while True:
         try:
-            now = datetime.now(timezone.utc) + timedelta(hours=2)
+            now = datetime.now(timezone.utc) + local_offset()
             h, m = now.hour, now.minute
             day_str = now.strftime("%Y-%m-%d")
             week_str = now.strftime("%Y-W%W")
@@ -1755,7 +1756,7 @@ def _run_evening_charts_watcher_DISABLED():
 
     while True:
         try:
-            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            now_local = datetime.now(timezone.utc) + local_offset()
             h, m = now_local.hour, now_local.minute
             date_str = now_local.strftime("%Y-%m-%d")
 
@@ -1873,7 +1874,7 @@ def run_report_card_watcher():
 
     while True:
         try:
-            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            now_local = datetime.now(timezone.utc) + local_offset()
             h, m = now_local.hour, now_local.minute
             ds = now_local.strftime("%Y-%m-%d")
 

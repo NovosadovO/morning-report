@@ -14,6 +14,7 @@ health.json, тому дані одразу бачать усі звіти, AI-�
 Приймає «як завгодно названі» поля (Shortcuts віддає рядки й різні ключі),
 нормалізує, зберігає, підтверджує в Telegram і пише в журнал дій бота.
 """
+from tzclock import local_offset, local_tz
 import os
 import re
 import sys
@@ -139,12 +140,12 @@ def normalize(payload: dict) -> dict:
 
 def _today() -> str:
     from datetime import datetime, timezone, timedelta
-    return (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    return (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
 
 
 def _nowstr() -> str:
     from datetime import datetime, timezone, timedelta
-    return (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H:%M")
+    return (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d %H:%M")
 
 
 def _fmt(rec: dict) -> str:

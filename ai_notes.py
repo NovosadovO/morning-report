@@ -6,6 +6,7 @@ AI-нотатки — бот запам'ятовує важливі факти �
 
 Зберігання: storage.py (GitHub data-гілка, persistent, переживає редеплой).
 """
+from tzclock import local_offset, local_tz
 import os
 import sys
 import json
@@ -15,7 +16,6 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 NOTES_FILE = "ai_notes.json"
-_TZ_OFFSET = timedelta(hours=2)
 
 
 def _storage():
@@ -44,7 +44,7 @@ def add_note(text: str, source: str = "manual"):
     notes.append({
         "text": text.strip()[:500],
         "source": source,
-        "ts": (datetime.now(timezone.utc) + _TZ_OFFSET).isoformat(),
+        "ts": (datetime.now(timezone.utc) + local_offset()).isoformat(),
     })
     # Тримаємо останні 150 нотаток — досить для контексту, не роздуває prompt
     notes = notes[-150:]
@@ -67,7 +67,7 @@ _NOTE_MAX_AGE_DAYS = 35
 def _note_age_days(n: dict) -> float:
     try:
         ts = datetime.fromisoformat(str(n.get("ts") or "")).replace(tzinfo=None)
-        now = (datetime.now(timezone.utc) + _TZ_OFFSET).replace(tzinfo=None)
+        now = (datetime.now(timezone.utc) + local_offset()).replace(tzinfo=None)
         return (now - ts).total_seconds() / 86400.0
     except Exception:
         return 0.0

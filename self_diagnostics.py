@@ -7,6 +7,7 @@
 Легкий in-memory лічильник (не потребує GitHub — швидко і без зайвих записів),
 періодичні перевірки шле через окремий watcher у monitor_loop.py.
 """
+from tzclock import local_offset, local_tz
 import os
 import sys
 import time
@@ -15,7 +16,6 @@ from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-_TZ_OFFSET = timedelta(hours=2)
 
 # In-memory лічильники (по процесу — досить, бо перевірка раз на N хв все одно
 # читає "свіжий" стан цього ж процесу; переживати редеплой не критично для
@@ -50,7 +50,7 @@ def record_tag(tag, tokens=0):
 
 
 def _today_str():
-    return (datetime.now(timezone.utc) + _TZ_OFFSET).strftime("%Y-%m-%d")
+    return (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
 
 
 def record_gemini_result(ok: bool):
@@ -69,7 +69,7 @@ def flush_daily_count(force: bool = False):
     """Раз на день (викликається з check_self_health) дописує сьогоднішній
     підсумок викликів Gemini в storage — щоб був історичний ряд для
     тижневого звіту витрат, без запису в GitHub на кожен окремий виклик."""
-    now = datetime.now(timezone.utc) + _TZ_OFFSET
+    now = datetime.now(timezone.utc) + local_offset()
     today = now.strftime("%Y-%m-%d")
     if not force and not (now.hour == 23 and now.minute >= 50):
         return
@@ -111,7 +111,7 @@ def weekly_usage_report() -> str:
             hist = {}
     except Exception:
         hist = {}
-    now = datetime.now(timezone.utc) + _TZ_OFFSET
+    now = datetime.now(timezone.utc) + local_offset()
     today = now.strftime("%Y-%m-%d")
     hist = dict(hist)
     if _TODAY_CALLS["day"] == today and _TODAY_CALLS["n"] > 0:

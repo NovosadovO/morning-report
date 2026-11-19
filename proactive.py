@@ -24,6 +24,7 @@ PROACTIVE SLOTS (data/proactive_sent.json):
   { "2026-05-09": {"morning": true, "midday": true, ...} }
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import urllib.request
@@ -118,7 +119,7 @@ def update_user_state_from_message(text: str):
 # ─── PROACTIVE SLOTS ──────────────────────────────────────────────────────────
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 # In-memory lock — захист від race condition в межах одного процесу

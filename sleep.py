@@ -15,11 +15,12 @@ Garmin Connect, фоновий синк кожні 3 год або команд�
   - format_sleep_week_block() → готовий HTML-блок
   - parse_sleep_records()    → всі дні з Garmin-даними по сну
 """
+from tzclock import local_offset, local_tz
 from datetime import datetime, timezone, timedelta
 
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 
 def parse_sleep_records():

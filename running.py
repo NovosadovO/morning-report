@@ -46,6 +46,7 @@ Flow:
   }
 """
 
+from tzclock import local_offset, local_tz
 import os, re, json, urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -84,7 +85,7 @@ def _save_key(key: str, record: dict):
 # ─── AI-ПАРСЕР (головне джерело правди) ──────────────────────────────────────
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)
+    return datetime.now(timezone.utc) + local_offset()
 
 def _regex_parse(text: str) -> dict:
     """Дешева попередня спроба / аварійний fallback, якщо Gemini впав.

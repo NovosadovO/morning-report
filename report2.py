@@ -4,6 +4,7 @@
 Містить: 🌍 Світові новини | 🚗 Трафік Košice | 💶 Курси валют | 🌬 Якість повітря
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import time
@@ -322,8 +323,8 @@ def get_air_quality():
 
 def main():
     now        = datetime.now(timezone.utc)
-    local_time = (now + timedelta(hours=2)).strftime("%H:%M")
-    local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
+    local_time = (now + local_offset()).strftime("%H:%M")
+    local_date = (now + local_offset()).strftime("%d.%m.%Y")
 
     print(f"=== Report2 run at {now.isoformat()} ===")
 

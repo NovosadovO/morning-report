@@ -5,6 +5,7 @@ Intelligent Assistant v2.1 — Проактивний помічник Олег�
 Gemini-аналіз: персоналізований з точними даними
 """
 
+from tzclock import local_offset, local_tz
 import os
 import json
 import time
@@ -150,7 +151,7 @@ def analyze_crypto_changes(watch_list):
 
 def get_health_data():
     """Витягує поточні дані про здоров'я"""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today_str = now_local.strftime("%Y-%m-%d")
     yest_str = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
     
@@ -196,7 +197,7 @@ def get_health_data():
 
 def get_habits_data():
     """Витягує дані про звички сьогодні"""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     today_str = now_local.strftime("%Y-%m-%d")
     
     habits = {
@@ -223,7 +224,7 @@ def get_habits_data():
 
 def get_work_shift():
     """Визначає чи Олег на ранній чи нічній зміні"""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     hour = now_local.hour
     
     # Рання: 06:00-18:00, Нічна: 18:00-06:00
@@ -422,7 +423,7 @@ def should_send_proactive_message(unused_param=None, user_activity_idle_minutes=
     # Замість того: витягаємо ОСТАННЮ відправку з файлу
     dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_last_send.json")
     
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)  # UTC+2 (Київ/Кошіце)
+    now_local = datetime.now(timezone.utc) + local_offset()  # UTC+2 (Київ/Кошіце)
     current_hour = now_local.strftime("%Y-%m-%d %H")  # 2026-06-26 14
     
     last_send_ts = 0.0
@@ -501,7 +502,7 @@ def send_proactive_message(telegram_send_func):
     )
     
     # Формуємо повідомлення
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_local = datetime.now(timezone.utc) + local_offset()
     message = f"""🧭 
 
 Я сам проаналізував твою ситуацію:
@@ -519,7 +520,7 @@ def send_proactive_message(telegram_send_func):
             return False
         
         # Записуємо dedup — ТІЛЬКИ ПІСЛЯ успішної відправки!
-        now_local_ts = datetime.now(timezone.utc) + timedelta(hours=2)
+        now_local_ts = datetime.now(timezone.utc) + local_offset()
         current_hour = now_local_ts.strftime("%Y-%m-%d %H")
         dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_last_send.json")
         

@@ -12,6 +12,7 @@ planner.py — Планувальник подій через чат
 Надіслані: data/planner_sent.json
 """
 
+from tzclock import local_offset, local_tz, iso_offset
 import os, json, re, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
@@ -263,7 +264,7 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
     else:
         try:
             dt_local = datetime.strptime(f"{date} {time_str}", "%Y-%m-%d %H:%M")
-            dt_local = dt_local.replace(tzinfo=timezone(timedelta(hours=2)))
+            dt_local = dt_local.replace(tzinfo=timezone(timedelta(hours=1)) if iso_offset(dt_local)=='+01:00' else timezone(timedelta(hours=2)))
             start_iso = dt_local.isoformat()
             end_iso   = (dt_local + timedelta(hours=1)).isoformat()
         except:
@@ -310,7 +311,7 @@ def get_today_planned_events() -> list:
         token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
         headers = {"Authorization": f"Bearer {token}"}
         now = datetime.now(timezone.utc)
-        today_start = (now + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_start = (now + local_offset()).replace(hour=0, minute=0, second=0, microsecond=0) - local_offset()
         today_end   = today_start + timedelta(hours=24)
         return _fetch_events_all_calendars(headers, today_start, today_end)
     except Exception as e:
@@ -319,7 +320,7 @@ def get_today_planned_events() -> list:
 
 def format_planner_for_report() -> str:
     """Секція для щоденного звіту: плани на сьогодні + чи щось занотовано."""
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     today_str = now.strftime("%Y-%m-%d")
     recorded = _has_recorded_today(today_str)
 
@@ -333,7 +334,7 @@ def format_planner_for_report() -> str:
             try:
                 from datetime import datetime as _dt
                 dt = _dt.fromisoformat(start.replace("Z", "+00:00"))
-                t = (dt + timedelta(hours=2)).strftime("%H:%M") if "T" in start else "весь день"
+                t = (dt + local_offset(dt)).strftime("%H:%M") if "T" in start else "весь день"
             except:
                 t = "?"
             lines.append(f"• {t} — {summary}")
@@ -352,7 +353,7 @@ def format_planner_for_report() -> str:
 
 def ask_today_plans():
     """О 10:00 — питання про плани на сьогодні."""
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     today = now.strftime("%A")
     weekday_ua = {
         "Monday":"понеділок","Tuesday":"вівторок","Wednesday":"середа",
@@ -376,7 +377,7 @@ def ask_today_plans():
 
 def ask_tomorrow_plans():
     """О 19:30 — питання про плани на завтра."""
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     today_str = now.strftime("%Y-%m-%d")
     already_recorded = _has_recorded_today(today_str)
 
@@ -412,7 +413,7 @@ def ask_tomorrow_plans():
 
 def ask_week_plans():
     """В неділю о 10:00 — плани на тиждень."""
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     set_state("awaiting_week", {"base_date": now.strftime("%Y-%m-%d")})
     send(
         "━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -428,7 +429,7 @@ def ask_week_plans():
 
 def ask_midday_reminder():
     """О 14:00 — легке нагадування якщо нічого не записано."""
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     today_str = now.strftime("%Y-%m-%d")
 
     if _has_recorded_today(today_str):
@@ -470,9 +471,9 @@ def handle_planner_reply(user_text: str) -> bool:
     context = state.get("data", {}).get("context", "")
     try:
         base_date = datetime.strptime(base_date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-        base_date = base_date + timedelta(hours=2)
+        base_date = base_date + local_offset(base_date)
     except:
-        base_date = datetime.now(timezone.utc) + timedelta(hours=2)
+        base_date = datetime.now(timezone.utc) + local_offset()
 
     send("⏳ Аналізую...")
 
@@ -675,7 +676,7 @@ def handle_planner_confirm() -> bool:
             lines.append(f"❌ <b>{title}</b> — помилка запису")
 
     # Відмічаємо що сьогодні записали
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    now = datetime.now(timezone.utc) + local_offset()
     _mark_recorded(now.strftime("%Y-%m-%d"))
 
     clear_state()
@@ -699,7 +700,7 @@ def handle_planner_edit():
         base_date = datetime.strptime(base_date_str, "%Y-%m-%d")
         base_date_out = base_date.strftime("%Y-%m-%d")
     except:
-        base_date_out = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+        base_date_out = (datetime.now(timezone.utc) + local_offset()).strftime("%Y-%m-%d")
 
     set_state("awaiting_tomorrow", {"base_date": base_date_out})
     _send_force_reply("✏️ <b>Напиши плани ще раз:</b>")
@@ -709,7 +710,7 @@ def handle_planner_edit():
 def check_planner_triggers():
     """Щохвилинно перевіряє чи час надіслати нагадування."""
     try:
-        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        now = datetime.now(timezone.utc) + local_offset()
         h, m = now.hour, now.minute
 
         if m > 4:  # вікно 5 хвилин

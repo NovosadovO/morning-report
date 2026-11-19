@@ -10,6 +10,7 @@ create_calendar_event() → створити подію в Google Calendar
 should_notify()      → чи доречно зараз писати
 """
 
+from tzclock import local_offset, local_tz, iso_offset
 import os
 import sys
 import json
@@ -44,7 +45,7 @@ _CAL_ID = "novosadovoleg%40gmail.com"
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
 def _now_local():
-    return datetime.now(timezone.utc) + timedelta(hours=2)  # CEST
+    return datetime.now(timezone.utc) + local_offset()  # CEST
 
 def _get_token():
     """Отримує Google OAuth token."""
@@ -91,7 +92,7 @@ def _fetch_events_for_day(token: str, day_offset: int = 0) -> list:
             return events
 
     day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) \
-                + timedelta(days=day_offset) - timedelta(hours=2)
+                + timedelta(days=day_offset) - local_offset()
     day_end = day_start + timedelta(hours=24)
 
     url = (
@@ -120,7 +121,7 @@ def _format_events_plain(events: list) -> str:
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         try:
             dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-            dt_local = dt + timedelta(hours=2)
+            dt_local = dt + local_offset(dt)
             t = dt_local.strftime("%H:%M")
         except Exception:
             t = start_str[:10] if start_str else "?"
@@ -271,7 +272,7 @@ def get_shift_from_calendar():
                 start_str = ev["start"].get("dateTime") or ev["start"].get("date")
                 try:
                     dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                    dt_local = dt_start + timedelta(hours=2)
+                    dt_local = dt_start + local_offset(dt_start)
                 except Exception:
                     dt_local = None
                 if _classify_event_shift(s, dt_local) == "night":
@@ -299,7 +300,7 @@ def get_shift_from_calendar():
                     start_str = ev["start"].get("dateTime") or ev["start"].get("date")
                     try:
                         dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                        dt_local = dt_start + timedelta(hours=2)
+                        dt_local = dt_start + local_offset(dt_start)
                     except Exception:
                         dt_local = None
 
@@ -414,7 +415,7 @@ def create_calendar_event(summary: str, start_dt: datetime, end_dt: datetime = N
         end_dt = start_dt + timedelta(hours=1)
 
     # Конвертуємо в UTC для API (UTC+2 → UTC)
-    tz_offset = "+02:00"
+    tz_offset = iso_offset(start_dt)
     start_iso = start_dt.strftime("%Y-%m-%dT%H:%M:%S") + tz_offset
     end_iso   = end_dt.strftime("%Y-%m-%dT%H:%M:%S") + tz_offset
 
