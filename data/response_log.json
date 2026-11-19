@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T01:16:00.944785+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ca48dc857d"
-    },
-    {
       "ts": "2026-09-05T01:16:08.397899+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14536,6 +14530,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-19"
+      }
+    },
+    {
+      "ts": "2026-11-19T04:30:38.441611+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Церква",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-11-20"
       }
     }
   ]
