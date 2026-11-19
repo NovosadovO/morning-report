@@ -24,10 +24,25 @@
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізом інвестиційних портфелів. Потрібно відповісти.\",     \"mail_uid\": \"uid=82454\"   ",
     "ts": "2026-11-19T16:03:41.093327"
   },
+  "email_ai_item|2026-11-19t15_51_20_775788": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn інформує про спільноту \\\"AI Innovators Network\\\", яка об'єднує професіоналів у сфері ШІ. Спільнота пропонує доступ до новітн",
+    "ts": "2026-11-19T15:51:20.775788"
+  },
   "selfact|2026-11-19t15_48_11_755201": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
     "ts": "2026-11-19T15:48:11.755201"
+  },
+  "email_ai_item|2026-11-19t15_47_08_395408": {
+    "topic": "email_ai_item",
+    "gist": "{   \"description\": \"Це щоденний дайджест новин зі світу криптовалют від CryptoBeholder.com за 19 листопада. Лист містить ключові новини про падіння ціни Bitcoin",
+    "ts": "2026-11-19T15:47:08.395408"
+  },
+  "action_detect|2026-11-19t15_45_07_235870": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-19T15:45:07.235870"
   },
   "email_ai_item|2026-11-19t15_44_54_267052": {
     "topic": "email_ai_item",
@@ -283,20 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-19T11:52:05.876998"
-  },
-  "selfact|2026-11-19t11_37_50_717637": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Ви отримали лист від Maroš Sivák з аналізами для Olexiho. Він пот",
-    "ts": "2026-11-19T11:37:50.717637"
-  },
-  "action_detect|2026-11-19t11_33_48_517196": {
-    "topic": "action_detect",
-    "gist": "{ \"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Maroš Sivák\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Відповісти н",
-    "ts": "2026-11-19T11:33:48.517196"
-  },
-  "msg_event_soon|2026-11-19t11_33_36_434943": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "⏰ **07:00 — На початку ранкової зміни.** Олег, ти на роботі, і до кінця зміни ще багато часу (до 18:00).  Зважаючи на це, тримай напоготові:  *   **Фокус на зад",
-    "ts": "2026-11-19T11:33:36.434943"
   }
 }
