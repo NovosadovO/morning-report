@@ -1,4 +1,14 @@
 {
+  "bills|2026-11-19t04_25_26_117724": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-19T04:25:26.117724"
+  },
+  "selfact|2026-11-19t04_18_58_567029": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Ранкова зміна\",     \"text\": \"Олеже, твоя ранкова зміна починається о 05:00.\",     \"date\": \"2026-11-19\",     ",
+    "ts": "2026-11-19T04:18:58.567029"
+  },
   "openloop_promises|2026-11-19t04_18_25_653206": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "healthai",
     "gist": "☀️ Сьогодні фіксується 4.8 години сну, що може бути неповними даними, а HRV становить 45.0 мс, що нижче середнього за 14 днів. Це вказує на нерівномірний ритм в",
     "ts": "2026-11-18T18:05:13.449182"
-  },
-  "action_detect|2026-11-18t18_02_52_652024": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-18T18:02:52.652024"
-  },
-  "action_detect|2026-11-18t18_02_41_774238": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-18T18:02:41.774238"
   }
 }
