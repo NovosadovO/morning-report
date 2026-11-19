@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-19t17_21_54_104505": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо ан",
+    "ts": "2026-11-19T17:21:54.104505"
+  },
   "email_ai_item|2026-11-19t17_13_09_874324": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Це ранковий дайджест ринків від 19 листопада 2026 року. Лист містить інформацію про поточні рівні індексів S&P 500, NASDAQ 100, Dow Jones та VI",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповідь Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák щодо аналізів. Також у ",
     "ts": "2026-11-19T12:25:07.208514"
-  },
-  "email_ai_item|2026-11-19t12_14_01_613651": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Business Development Manager\\\" в компанії Temu та \\\"Sales Development Repre",
-    "ts": "2026-11-19T12:14:01.613651"
   }
 }
