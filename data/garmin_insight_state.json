@@ -3,11 +3,12 @@
     "hr_avg",
     "spo2",
     "stress",
-    "sleep_hours"
+    "sleep_hours",
+    "body_battery"
   ],
   "last": {
-    "field": "sleep_hours",
-    "day": "2026-11-18",
-    "z": -1.43
+    "field": "body_battery",
+    "day": "2026-11-20",
+    "z": -1.32
   }
 }
