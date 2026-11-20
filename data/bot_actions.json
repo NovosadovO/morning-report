@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Купити піжаму і тапочки",
-      "detail": "У запланованих нагадуваннях є: 2026-10-14T10:00:00 — 🔔 Купити піжаму і тапочки Олеже, завтра, 14 жовтня о 10:00, тобі потрібно купити пі. Поточна дата 15.11.2026, це нагадування вже минуло, але варто повідомити про це.",
-      "module": "selfact",
-      "ts": "2026-11-15T07:04:20"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T17:02:11"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-20T17:05:58"
     }
   ]
 }
