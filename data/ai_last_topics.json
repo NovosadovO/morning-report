@@ -1,4 +1,29 @@
 {
+  "selfact|2026-11-20t06_11_40_661214": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
+    "ts": "2026-11-20T06:11:40.661214"
+  },
+  "action_detect|2026-11-20t06_01_16_066805": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T06:01:16.066805"
+  },
+  "action_detect|2026-11-20t06_01_04_977675": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T06:01:04.977675"
+  },
+  "proactive_actions|2026-11-20t06_00_10_718757": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, згідно з календарем, тоб",
+    "ts": "2026-11-20T06:00:10.718757"
+  },
+  "openloop_promises|2026-11-20t05_58_50_487993": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-20T05:58:50.487993"
+  },
   "selfact|2026-11-20t05_56_18_448754": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
@@ -273,45 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Виконати завдання по Maroš Sivák\",     \"date\": \"2026-11-20\",     \"ti",
     "ts": "2026-11-19T19:27:51.145238"
-  },
-  "openloop_promises|2026-11-19t19_26_13_639519": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-19T19:26:13.639519"
-  },
-  "email_ai_item|2026-11-19t19_14_18_614681": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист містить сповіщення про вакансії з LinkedIn. Запити стосуються посад 'Head of Operations' в компаніях ARRISE та TwoBirds Company",
-    "ts": "2026-11-19T19:14:18.614681"
-  },
-  "calendar|2026-11-19t19_14_00_375075": {
-    "topic": "calendar",
-    "gist": "Схоже, завтрашній вільний день може стати чудовою нагодою для тебе, Олег, щоб приділити увагу своїм довгостроковим цілям. Попри зайнятість, важливо пам'ятати пр",
-    "ts": "2026-11-19T19:14:00.375075"
-  },
-  "selfact|2026-11-19t19_11_36_347933": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     ",
-    "ts": "2026-11-19T19:11:36.347933"
-  },
-  "healthai|2026-11-19t19_06_15_882399": {
-    "topic": "healthai",
-    "gist": "☀️ Твій сон поки що зафіксовано 6.0 годин, що менше за середнє за 7 днів (7.3 год), а HRV, який впав на 5.0 мс за 14 днів, може вказувати на недостатнє відновле",
-    "ts": "2026-11-19T19:06:15.882399"
-  },
-  "action_detect|2026-11-20t06_01_04_977675": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T06:01:04.977675"
-  },
-  "proactive_actions|2026-11-20t06_00_10_718757": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, згідно з календарем, тоб",
-    "ts": "2026-11-20T06:00:10.718757"
-  },
-  "openloop_promises|2026-11-20t05_58_50_487993": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-20T05:58:50.487993"
   }
 }
