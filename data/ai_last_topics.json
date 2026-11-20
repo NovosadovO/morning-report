@@ -1,4 +1,19 @@
 {
+  "market_insight|2026-11-20t16_01_15_581469": {
+    "topic": "market_insight",
+    "gist": "```json {   \"text\": \"<b>-9.32%</b> за 24 години та <b>-15.66%</b> за 7 днів. Це значне падіння, що перевищує загальний ринковий рух BTC (<b>-2.65%</b> за 24 год",
+    "ts": "2026-11-20T16:01:15.581469"
+  },
+  "email_ai_item|2026-11-20t15_53_21_338316": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить оновлення календаря Олега, де вказано найближчі події та наступні 10 запланованих завдань, включаючи зміни та технічне обслуговува",
+    "ts": "2026-11-20T15:53:21.338316"
+  },
+  "email_ai_item|2026-11-20t15_51_13_729245": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від LinkedIn запрошує долучитися до групи \\\"Artificial Intelligence, Machine Learning, Data Science & Robotics\\\", яка об'єднує ентузіастів",
+    "ts": "2026-11-20T15:51:13.729245"
+  },
   "selfact|2026-11-20t15_50_28_305013": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, отримано лист від Maroš Sivák з аналізами для тебе. Потріб",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-20T12:00:53.957521"
-  },
-  "action_detect|2026-11-20t12_00_43_119176": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T12:00:43.119176"
-  },
-  "proactive_actions|2026-11-20t12_00_13_350957": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák щодо аналізів\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, ли",
-    "ts": "2026-11-20T12:00:13.350957"
-  },
-  "selfact|2026-11-20t11_57_06_430784": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
-    "ts": "2026-11-20T11:57:06.430784"
   }
 }
