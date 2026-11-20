@@ -298,5 +298,10 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти.\",     \"why\": \"Лист від Maroš Sivák потребує в",
     "ts": "2026-11-20T11:10:11.290023"
+  },
+  "people|2026-11-20t15_29_23_728825": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про оплату стра",
+    "ts": "2026-11-20T15:29:23.728825"
   }
 }
