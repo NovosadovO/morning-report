@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: energy_low",
-      "detail": "🔋 Енергія (body battery) за тиждень у середньому 28.6 — нижче за 30, організм виснажений",
-      "module": "healthai",
-      "ts": "2026-11-14T19:49:59"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: steps_good",
       "detail": "🚶 Кроки за тиждень у середньому 15019 — ціль 8000 досягнута",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Заплановане нагадування на 04.11 'Перевірити страховку авто' вказує на близький термін перевірки.",
       "module": "selfact",
       "ts": "2026-11-20T08:33:09"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-20",
+      "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-20T09:02:05"
     }
   ]
 }
