@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-11-20t12_02_28_050301": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-20T12:02:28.050301"
+  },
+  "action_detect|2026-11-20t12_01_05_096991": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та наг",
+    "ts": "2026-11-20T12:01:05.096991"
+  },
+  "action_detect|2026-11-20t12_00_53_957521": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-20T12:00:53.957521"
+  },
+  "action_detect|2026-11-20t12_00_43_119176": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T12:00:43.119176"
+  },
+  "proactive_actions|2026-11-20t12_00_13_350957": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák щодо аналізів\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, ли",
+    "ts": "2026-11-20T12:00:13.350957"
+  },
   "selfact|2026-11-20t11_57_06_430784": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
     "ts": "2026-11-20T08:33:05.860832"
-  },
-  "bills|2026-11-20t08_29_44_201261": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-20T08:29:44.201261"
-  },
-  "deadlines|2026-11-20t08_29_16_986613": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто KOOPERATIVA — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-1",
-    "ts": "2026-11-20T08:29:16.986613"
-  },
-  "selfact|2026-11-20t08_17_27_284501": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! Тобі потрібно відповісти на лист від Maroš Sivák, ",
-    "ts": "2026-11-20T08:17:27.284501"
-  },
-  "healthai_truthfix|2026-11-20t08_06_23_668951": {
-    "topic": "healthai/truthfix",
-    "gist": "Твій сон минулої ночі тривав 5 год 59 хв. Це менше, ніж середній показник за 7 днів (6.7 год) і за 14 днів (7.0 год).  Body Battery становить 49/100, тоді як се",
-    "ts": "2026-11-20T08:06:23.668951"
-  },
-  "healthai|2026-11-20t08_06_12_847070": {
-    "topic": "healthai",
-    "gist": "🔥 Твоє тіло сигналізує про потребу у відновленні, адже середня тривалість сну за останні 7 днів становить 6.7 год, а за 14 днів — 7.0 год, але тренд зростання +",
-    "ts": "2026-11-20T08:06:12.847070"
   }
 }
