@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T03:57:10.705325+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_rem_dda2f83e85"
-    },
-    {
       "ts": "2026-09-05T03:57:10.705585+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14569,6 +14563,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-20T04:30:13.932262+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
+      }
     }
   ]
 }
