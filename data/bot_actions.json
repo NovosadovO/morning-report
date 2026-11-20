@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-15",
-      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-15T06:41:39"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано листи від Notifikácie KOOPERATIVA щодо сплати страхування (uid=82462, uid=80711).",
       "module": "selfact",
       "ts": "2026-11-20T16:38:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Необхідно переглянути рахунок",
+      "detail": "Отримано лист від Mariia Ovsiienko з рахунком (uid=80646).",
+      "module": "selfact",
+      "ts": "2026-11-20T16:38:19"
     }
   ]
 }
