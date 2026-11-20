@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-20t18_00_52_848557": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T18:00:52.848557"
+  },
+  "action_detect|2026-11-20t18_00_07_834980": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-20T18:00:07.834980"
+  },
   "selfact|2026-11-20t17_56_14_667020": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, ти отримав лист від Maroš Sivák з аналізами для Olexiho. З",
@@ -288,15 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE/truthfix",
     "gist": "Ринок криптовалют переживає значні корекції. За останню добу Zcash (ZEC) впав на 14.8%, NEAR Protocol (NEAR) – на 12.83%, Hyperliquid (HYPE) – на 3.35%, Monero ",
     "ts": "2026-11-20T14:31:21.171150"
-  },
-  "msg_crypto_move|2026-11-20t14_31_04_618919": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "📉 Ринок криптовалют демонструє помітне зниження, і сьогоднішня корекція охопила значну частину альткоїнів, які показали падіння від 5% до понад 14% за останні 2",
-    "ts": "2026-11-20T14:31:04.618919"
-  },
-  "bills|2026-11-20t14_30_00_446398": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-20T14:30:00.446398"
   }
 }
