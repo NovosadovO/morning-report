@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T01:30:12.471764+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти Maroš Sivák (InterFin)",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-06"
-      }
-    },
-    {
       "ts": "2026-09-06T01:30:16.704252+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14576,6 +14566,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-20T19:14:19.216618+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
