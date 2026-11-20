@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-20t16_05_56_499792": {
+    "topic": "healthai",
+    "gist": "🔥 20.11, 16:05 — твоя вага 84.7 кг (стан на 17.11), що на 9.7 кг більше за цільові 75 кг, при цьому тренд зростає (+0.7). Змін вчора та завтра не очікується, то",
+    "ts": "2026-11-20T16:05:56.499792"
+  },
   "market_insight|2026-11-20t16_01_15_581469": {
     "topic": "market_insight",
     "gist": "```json {   \"text\": \"<b>-9.32%</b> за 24 години та <b>-15.66%</b> за 7 днів. Це значне падіння, що перевищує загальний ринковий рух BTC (<b>-2.65%</b> за 24 год",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та наг",
     "ts": "2026-11-20T12:01:05.096991"
-  },
-  "action_detect|2026-11-20t12_00_53_957521": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-20T12:00:53.957521"
   }
 }
