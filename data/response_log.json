@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T00:00:11.330857+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прочитати лист від Maroš Sivák",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-06"
-      }
-    },
-    {
       "ts": "2026-09-06T00:00:15.184137+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14584,6 +14574,12 @@
       "category": "confirm",
       "question": "calrem_skip: Update from your agent",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-20T19:06:01.233713+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b5d8afaa4c"
     }
   ]
 }
