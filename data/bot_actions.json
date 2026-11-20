@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-14T21:06:23"
-    },
-    {
       "kind": "notify",
       "what": "Потреба у відповіді на лист від Maroš Sivák",
       "detail": "У календарі на 20.11 зазначено: '🔔 Лист від Maroš Sivák потребує відповіді'. Також у списку 'ЩО БОТ УЖЕ ЗРОБИВ' є кілька сповіщень про необхідність відповісти на цей лист.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T11:31:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Потрібно відновити платіжну інформацію для Runable",
+      "detail": "У розділі 'ПІДПИСКИ' вказано, що платіж до Runable був невдалим і потребує оновлення платіжної інформації.",
+      "module": "selfact",
+      "ts": "2026-11-20T11:57:14"
     }
   ]
 }
