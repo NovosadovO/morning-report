@@ -20461,7 +20461,24 @@
     "action": "calrem_skip",
     "pid": "83509",
     "subject": "Update from your agent",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 126199,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_83509"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_83509"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-11-20T18:06:16.652843+00:00"
   }
 }
