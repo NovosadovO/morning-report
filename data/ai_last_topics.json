@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t17_41_00_604254": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про лист від Maroš Sivák\",     \"text\": \"Олег, тобі потрібно відповісти на лист від Maroš Sivák. Та",
+    "ts": "2026-11-20T17:41:00.604254"
+  },
   "deadlines|2026-11-20t17_29_52_499223": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
     "ts": "2026-11-20T14:29:23.527639"
-  },
-  "selfact|2026-11-20t14_17_47_665134": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів ",
-    "ts": "2026-11-20T14:17:47.665134"
   }
 }
