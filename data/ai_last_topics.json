@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t11_00_19_387019": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T11:00:19.387019"
+  },
   "selfact|2026-11-20t10_54_13_542830": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів ",
@@ -293,10 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про страхування",
     "ts": "2026-11-20T07:28:47.464696"
-  },
-  "calendar|2026-11-20t07_19_15_342251": {
-    "topic": "calendar",
-    "gist": "Завдання по Maroš Sivák на 08:00–08:30 вже близько! 😉 Сьогодні вихідний, тож є чудова нагода зосередитись на цьому. Пам'ятаєш, як минулого тижня ти відмітив, що",
-    "ts": "2026-11-20T07:19:15.342251"
   }
 }
