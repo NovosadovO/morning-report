@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-20t18_26_39_352850": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexi. Потрібно н",
+    "ts": "2026-11-20T18:26:39.352850"
+  },
+  "action_detect|2026-11-20t18_16_19_172856": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T18:16:19.172856"
+  },
+  "defi_digest|2026-11-20t18_16_12_951138": {
+    "topic": "defi_digest",
+    "gist": "За останні 24 години ринок DeFi демонструє високу волатильність, що видно зі значних падінь деяких протоколів, як-от Sky Lending (-41.7%), на противагу різкому ",
+    "ts": "2026-11-20T18:16:12.951138"
+  },
+  "action_detect|2026-11-20t18_16_08_153882": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T18:16:08.153882"
+  },
   "action_detect|2026-11-20t18_15_57_360398": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Відновлення — день без бігу\",   \"action_date\": \"2026-11-20\",   \"action_time\": null,   \"action_summary\"",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "🔥 20.11, 15:05 — твоя вага 84.7 кг станом на 17.11, це на 9.7 кг більше за цільові 75 кг, а тренд ваги зростає. Зважаючи на вихідні сьогодні і завтра, як планує",
     "ts": "2026-11-20T15:05:43.302681"
-  },
-  "healthai|2026-11-20t15_05_31_440354": {
-    "topic": "healthai",
-    "gist": "🔥 84.7 кг — твоя вага станом на 17.11, що на 9.7 кг більше за цільові 75 кг. Але є й хороша новина: поки що зафіксовано 10.6 години сну сьогодні, що значно біль",
-    "ts": "2026-11-20T15:05:31.440354"
-  },
-  "selfact|2026-11-20t15_04_17_046284": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олек",
-    "ts": "2026-11-20T15:04:17.046284"
-  },
-  "openloop_promises|2026-11-20t15_02_54_471731": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-20T15:02:54.471731"
-  },
-  "action_detect|2026-11-20t15_01_59_849761": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка\", \"action_date\": \"2023-11-22\", \"action_time\": \"11:00\", \"action_summary\": \"Запланована легка прогул",
-    "ts": "2026-11-20T15:01:59.849761"
   }
 }
