@@ -1,4 +1,34 @@
 {
+  "selfact|2026-11-20t15_35_13_539236": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
+    "ts": "2026-11-20T15:35:13.539236"
+  },
+  "action_detect|2026-11-20t15_31_36_163701": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T15:31:36.163701"
+  },
+  "action_detect|2026-11-20t15_31_31_398474": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T15:31:31.398474"
+  },
+  "msg_crypto_move_truthfix|2026-11-20t15_31_25_317256": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "📉 Ринок криптовалют демонструє спадну динаміку, але є й менш вражаючі показники.  За останню добу ключові криптовалюти зазнали помітних втрат. Bitcoin (BTC) зни",
+    "ts": "2026-11-20T15:31:25.317256"
+  },
+  "msg_crypto_move|2026-11-20t15_31_02_296574": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "📈 Падіння ринку криптовалют продовжується: ключові альткоїни демонструють двозначні втрати за добу.  Сьогоднішня динаміка ринку показує значне зниження, що особ",
+    "ts": "2026-11-20T15:31:02.296574"
+  },
+  "people|2026-11-20t15_29_23_728825": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про оплату стра",
+    "ts": "2026-11-20T15:29:23.728825"
+  },
   "selfact|2026-11-20t15_19_58_237531": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák, який містить ",
@@ -268,40 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олек",
     "ts": "2026-11-20T11:41:28.434760"
-  },
-  "action_detect|2026-11-20t11_30_58_996634": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква\",   \"action_date\": \"2023-11-21\",   \"action_time\": \"08:00\",   \"action_summary\": \"Відвідати церкв",
-    "ts": "2026-11-20T11:30:58.996634"
-  },
-  "msg_event_soon|2026-11-20t11_30_48_487880": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "✅ Завтра о 8:00 — церква. Поки є час, подумай про це:  1.  **Підготовка:** Візьми з собою все необхідне: гаманець, телефон, ключі. Переконайся, що одяг зручний ",
-    "ts": "2026-11-20T11:30:48.487880"
-  },
-  "deadlines|2026-11-20t11_29_19_182442": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
-    "ts": "2026-11-20T11:29:19.182442"
-  },
-  "selfact|2026-11-20t11_25_56_587197": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš S",
-    "ts": "2026-11-20T11:25:56.587197"
-  },
-  "action_detect|2026-11-20t11_11_45_874810": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано текст, але не виявлено конкретних дій,",
-    "ts": "2026-11-20T11:11:45.874810"
-  },
-  "selfact|2026-11-20t11_10_11_290023": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти.\",     \"why\": \"Лист від Maroš Sivák потребує в",
-    "ts": "2026-11-20T11:10:11.290023"
-  },
-  "people|2026-11-20t15_29_23_728825": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про оплату стра",
-    "ts": "2026-11-20T15:29:23.728825"
   }
 }
