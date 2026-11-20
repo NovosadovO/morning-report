@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T21:23:04.304909+00:00",
-      "category": "deadline_found",
-      "question": "Відліт до Малаги",
-      "answer": "2026-09-07",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-09-05T21:23:09.434555+00:00",
       "category": "deadline_found",
       "question": "Приліт до Малаги",
@@ -14593,6 +14584,12 @@
       "category": "event_done",
       "question": "📅 Завтра до церкви на 8:00\nПланувалась до 14:00 — виконано?",
       "answer": "skip"
+    },
+    {
+      "ts": "2026-11-20T19:04:52.139359+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Update from your agent",
+      "answer": "yes"
     }
   ]
 }
