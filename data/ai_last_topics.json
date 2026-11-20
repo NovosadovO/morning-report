@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-11-20t22_36_44_750317": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-20T22:36:44.750317"
+  },
+  "selfact|2026-11-20t22_34_18_423486": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів для Олек",
+    "ts": "2026-11-20T22:34:18.423486"
+  },
+  "action_detect|2026-11-20t22_33_05_859493": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз ринку криптовалют, що демонструє значне падінн",
+    "ts": "2026-11-20T22:33:05.859493"
+  },
+  "msg_crypto_move_truthfix|2026-11-20t22_32_53_151280": {
+    "topic": "MSG_CRYPTO_MOVE/truthfix",
+    "gist": "На ринку криптовалют спостерігається значне падіння, про що свідчать дані станом на п'ятницю, 20 листопада 2026 року. Bitcoin (BTC) зазнав зниження на 4.7% за д",
+    "ts": "2026-11-20T22:32:53.151280"
+  },
   "msg_crypto_move|2026-11-20t22_32_33_707479": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "📉 Ринок криптовалют демонструє значне зниження, і станом на вечір п'ятниці, 20 листопада 2026 року, спостерігаються суттєві падіння по ключових активах. Bitcoin",
@@ -278,25 +298,5 @@
     "topic": "planner",
     "gist": "[{\"title\":\"Завдання по Revolut\",\"date\":\"2026-11-20\",\"time\":\"09:00\",\"allday\":false},{\"title\":\"Завдання по Revolut\",\"date\":\"2026-11-20\",\"time\":\"10:00\",\"allday\":fa",
     "ts": "2026-11-20T19:25:23.819218"
-  },
-  "action_detect|2026-11-20t19_24_53_988978": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T19:24:53.988978"
-  },
-  "email_ai_item|2026-11-20t19_14_13_505814": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про вакансії за запитом \\\"Cryptocurrency\\\" в Словаччині. Надаються посилання на вакансії \\\"Secu",
-    "ts": "2026-11-20T19:14:13.505814"
-  },
-  "selfact|2026-11-20t19_13_34_357859": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно звернути ув",
-    "ts": "2026-11-20T19:13:34.357859"
-  },
-  "action_detect|2026-11-20t19_11_19_380330": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T19:11:19.380330"
   }
 }
