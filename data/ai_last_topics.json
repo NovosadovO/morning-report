@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-20t11_06_16_778908": {
+    "topic": "healthai",
+    "gist": "🔥 Дивно, але твій пульс спокою сьогодні — 48 уд/хв, що на 3 уд/хв вище за середнє за 14 днів. Це може бути пов'язано з тим, що вага (84.7 кг) все ще зростає, хо",
+    "ts": "2026-11-20T11:06:16.778908"
+  },
   "action_detect|2026-11-20t11_00_19_387019": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": null   },   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null, ",
     "ts": "2026-11-20T07:29:30.251644"
-  },
-  "people|2026-11-20t07_28_47_464696": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про страхування",
-    "ts": "2026-11-20T07:28:47.464696"
   }
 }
