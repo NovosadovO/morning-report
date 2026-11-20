@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T15:54:18.783695+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_61edede2f2"
-    },
-    {
       "ts": "2026-09-05T15:54:45.642732+00:00",
       "category": "confirm",
       "question": "gate_email_cal: 📌 1€ Svet",
@@ -14575,6 +14569,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Сплатити страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-20T07:30:14.168201+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити страхування KOOPERATIVA",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-20"
