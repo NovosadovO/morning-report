@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-21t00_54_23_749389": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів ",
+    "ts": "2026-11-21T00:54:23.749389"
+  },
+  "selfact|2026-11-21t00_38_23_899053": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák. Він надіслав ана",
+    "ts": "2026-11-21T00:38:23.899053"
+  },
   "bills|2026-11-21t00_37_44_942801": {
     "topic": "bills",
     "gist": "[{\"uid\": \"80711\", \"vendor\": \"KOOPERATIVA\", \"amount\": \"\", \"currency\": \"\", \"invoice_no\": \"6641172176\", \"due\": \"\", \"already_paid\": false, \"auto_charge\": false, \"no",
@@ -288,15 +298,5 @@
     "topic": "EVENING_AI",
     "gist": "Олеже, твоя нічна зміна триває, це її серцевина, а не завершення дня.  Сьогоднішній день, 20 листопада, отримав оцінку 85, що на 8 балів вище за вчорашній показ",
     "ts": "2026-11-20T20:31:12.025066"
-  },
-  "selfact|2026-11-20t20_30_30_711865": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно від",
-    "ts": "2026-11-20T20:30:30.711865"
-  },
-  "action_detect|2026-11-20t20_23_48_570932": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T20:23:48.570932"
   }
 }
