@@ -898,5 +898,17 @@
     "sender": "The Google Workspace Team <workspace-noreply@google.com>",
     "done": false,
     "created": "2026-11-20"
+  },
+  "страховка_авто_kooperativa_оплата|2026-11-20": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-11-20",
+    "action": "Оплатити обов'язкове страхування автомобіля.",
+    "why": "Без своєчасної оплати страховки автомобіль не буде допущено до руху, що може призвести до штрафів та інших юридичних наслідків.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-11-20"
   }
 }
