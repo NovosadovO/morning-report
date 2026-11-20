@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T03:57:11.467335+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_later_afe94f13e5"
-    },
-    {
       "ts": "2026-09-05T04:30:15.488429+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14576,6 +14570,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-20T05:29:16.807591+00:00",
+      "category": "deadline_found",
+      "question": "Скидання паролю Google — термін дії",
+      "answer": "2026-11-22",
+      "extra": {
+        "kind": "document"
       }
     }
   ]
