@@ -1,9 +1,4 @@
 {
-  "81332": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-23T21:25:47.952198+00:00"
-  },
   "81339": {
     "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "myagent+telegram-agent-oleh-128fcf@abacus.ai",
     "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-128fcf@abacus.ai>",
     "seen_ts": "2026-11-20T16:26:21.542863+00:00"
+  },
+  "83569": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-11-20T18:14:14.324471+00:00"
   }
 }
