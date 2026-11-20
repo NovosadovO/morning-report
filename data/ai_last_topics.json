@@ -1,4 +1,54 @@
 {
+  "openloop_promises|2026-11-20t19_36_03_158464": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-20T19:36:03.158464"
+  },
+  "action_detect|2026-11-20t19_33_24_416990": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T19:33:24.416990"
+  },
+  "context_ask_ai|2026-11-20t19_33_14_385186": {
+    "topic": "context_ask_ai",
+    "gist": "Назви конкретної платформи, через яку я отримую дані, немає в моєму розпорядженні. Я працюю в рамках інфраструктури Google, яка забезпечує мені доступ до необхі",
+    "ts": "2026-11-20T19:33:14.385186"
+  },
+  "action_detect|2026-11-20t19_32_42_138104": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-20T19:32:42.138104"
+  },
+  "context_ask_ai|2026-11-20t19_32_32_684194": {
+    "topic": "context_ask_ai",
+    "gist": "Олеже, я працюю на платформі Google. Ця платформа обробляє дані, які надходять із різних джере, включаючи дані, що можуть бути синхронізовані з Garmin Connect, ",
+    "ts": "2026-11-20T19:32:32.684194"
+  },
+  "action_detect|2026-11-20t19_31_31_328165": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-20T19:31:31.328165"
+  },
+  "context_ask_ai|2026-11-20t19_31_22_314378": {
+    "topic": "context_ask_ai",
+    "gist": "Олеже, я не маю прямого доступу до жодної конкретної програми чи сервісу, як-от Garmin Connect.  Дані про твоє здоров'я надходять до мене через платформу, яка м",
+    "ts": "2026-11-20T19:31:22.314378"
+  },
+  "action_detect|2026-11-20t19_30_42_765166": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T19:30:42.765166"
+  },
+  "context_ask_ai|2026-11-20t19_30_32_901875": {
+    "topic": "context_ask_ai",
+    "gist": "Олеже, я не \"бачу\" дані очима, як людина. Коли ти запитуєш мене про здоров'я, ця інформація надходить до мене через систему, яка мене підтримує.  Ця система, сх",
+    "ts": "2026-11-20T19:30:32.901875"
+  },
+  "action_detect|2026-11-20t19_29_58_230987": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T19:29:58.230987"
+  },
   "context_ask_ai|2026-11-20t19_29_49_448105": {
     "topic": "context_ask_ai",
     "gist": "Олеже, я отримую дані про здоров'я з тих джерел, які мені надаються в цьому інтерфейсі. Здається, ці дані синхронізуються з Garmin Connect, оскільки я бачу інфо",
@@ -248,55 +298,5 @@
     "topic": "astro_ai",
     "gist": "Твоя рання зміна в Кошице сьогодні, 20 листопада 2026 року, розпочалася о 18:01. Місяць у Овні у твоєму IX домі активізує теми далеких поїздок, вищої освіти та ",
     "ts": "2026-11-20T18:01:40.106596"
-  },
-  "action_detect|2026-11-20t18_00_52_848557": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-20T18:00:52.848557"
-  },
-  "action_detect|2026-11-20t18_00_07_834980": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-20T18:00:07.834980"
-  },
-  "selfact|2026-11-20t17_56_14_667020": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, ти отримав лист від Maroš Sivák з аналізами для Olexiho. З",
-    "ts": "2026-11-20T17:56:14.667020"
-  },
-  "selfact|2026-11-20t17_41_00_604254": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про лист від Maroš Sivák\",     \"text\": \"Олег, тобі потрібно відповісти на лист від Maroš Sivák. Та",
-    "ts": "2026-11-20T17:41:00.604254"
-  },
-  "deadlines|2026-11-20t17_29_52_499223": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
-    "ts": "2026-11-20T17:29:52.499223"
-  },
-  "email_ai_item|2026-11-20t17_26_20_706320": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист містить оновлення календаря з майбутніми подіями, такими як \\\"Легка прогулянка\\\" 22.11 та \\\"Поміняти колеса в машині\\\" 23.11. Т",
-    "ts": "2026-11-20T17:26:20.706320"
-  },
-  "selfact|2026-11-20t17_25_41_517119": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Лист від Maroš Sivák потребує відповіді\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Олега. Потріб",
-    "ts": "2026-11-20T17:25:41.517119"
-  },
-  "email_ai_item|2026-11-20t17_14_03_154726": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист містить сповіщення про вакансії на посади Sales Operations Analyst в SITA та Customer Success Operations Specialist в Filevine,",
-    "ts": "2026-11-20T17:14:03.154726"
-  },
-  "selfact|2026-11-20t17_09_47_689050": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Тобі потрібно відповісти на нього.\",     \"why\": \"Є лист від Maro",
-    "ts": "2026-11-20T17:09:47.689050"
-  },
-  "healthai|2026-11-20t17_05_53_871612": {
-    "topic": "healthai",
-    "gist": "👋 Зафіксовано 10.6 години сну, але це поки що часткове значення — годинник може дослати більше. 📉 Твій пульс спокою 48 уд/хв, що зростає (+2.3) за останні 14 дн",
-    "ts": "2026-11-20T17:05:53.871612"
   }
 }
