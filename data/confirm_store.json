@@ -20417,7 +20417,43 @@
     "pid": "email_cal_83486",
     "subject": "The Ment Labs Brief",
     "extra": {
-      "msg": "📩 Лист від Ment Tech Labs через LinkedIn\n📋 Тема: «The Ment Labs Brief»\n\nЛист від Ment Tech Labs через LinkedIn містить огляд ключових подій тижня у сфері ШІ та цифрових фінансів. Зокрема, згадується рекордне IPO компанії Anthropic на суму $81.3 мільярда та звіт NVIDIA про квартальний дохід у $115.8 мільярда. Лист запрошує прочитати статтю на LinkedIn для участі в обговоренні.\n\n🤖 Це інформаційний л"
+      "msg": "📩 Лист від Ment Tech Labs через LinkedIn\n📋 Тема: «The Ment Labs Brief»\n\nЛист від Ment Tech Labs через LinkedIn містить огляд ключових подій тижня у сфері ШІ та цифрових фінансів. Зокрема, згадується рекордне IPO компанії Anthropic на суму $81.3 мільярда та звіт NVIDIA про квартальний дохід у $115.8 мільярда. Лист запрошує прочитати статтю на LinkedIn для участі в обговоренні.\n\n🤖 Це інформаційний л",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 126164,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83486"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83486"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83486"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83486"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83486"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83486"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-11-20T10:48:22.732863+00:00"
   }
