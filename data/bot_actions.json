@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Терміново: оплата квартири",
-      "detail": "У календарі на 15.11 вказано: '08:00 Оплатити квартиру — €500'. Також є заплановане нагадування '2026-11-15T08:00:00 — 🔔 <b>Оплата квартири</b> Нагадую, що 15.11 потрібно оплатити квартиру на суму €500.'",
-      "module": "selfact",
-      "ts": "2026-11-15T00:50:11"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: energy_low",
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 26.0 — нижче за 30, організм виснажений",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T15:32:16"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-20",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-20T16:02:30"
     }
   ]
 }
