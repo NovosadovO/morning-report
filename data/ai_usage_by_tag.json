@@ -734,5 +734,91 @@
       1,
       1336
     ]
+  },
+  "2026-11-20": {
+    "email_ai_item": [
+      2,
+      5783
+    ],
+    "selfact": [
+      16,
+      133681
+    ],
+    "action_detect": [
+      11,
+      19002
+    ],
+    "assistant": [
+      1,
+      10488
+    ],
+    "hcoach": [
+      3,
+      42242
+    ],
+    "hcoach/truthfix": [
+      1,
+      13700
+    ],
+    "healthai": [
+      9,
+      106979
+    ],
+    "healthai/truthfix": [
+      2,
+      20072
+    ],
+    "EVENING_AI": [
+      1,
+      11585
+    ],
+    "bills": [
+      2,
+      6431
+    ],
+    "context_ask_ai": [
+      1,
+      15474
+    ],
+    "context_ask_ai/truthfix": [
+      2,
+      20922
+    ],
+    "deadlines": [
+      2,
+      6838
+    ],
+    "themes_ai": [
+      2,
+      23928
+    ],
+    "themes_ai/truthfix": [
+      1,
+      10604
+    ],
+    "briefing": [
+      1,
+      14077
+    ],
+    "briefing/truthfix": [
+      2,
+      20718
+    ],
+    "openloop_promises": [
+      2,
+      2728
+    ],
+    "MSG_CRYPTO_MOVE": [
+      1,
+      14013
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      2,
+      44751
+    ],
+    "people": [
+      1,
+      3892
+    ]
   }
 }
