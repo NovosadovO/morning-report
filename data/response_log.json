@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T14:27:54.884419+00:00",
-      "category": "calendar_button",
-      "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t2h",
-        "when": "16:30–17:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-06T14:27:55.212076+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14552,6 +14541,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Події",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-20T20:47:59.009999+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_bcbba9e354"
     }
   ]
 }
