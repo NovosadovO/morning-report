@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T15:57:27.552894+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_107ed80911"
-    },
-    {
       "ts": "2026-09-05T16:49:42.610464+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14593,6 +14587,16 @@
       "answer": "2026-11-22",
       "extra": {
         "kind": "document"
+      }
+    },
+    {
+      "ts": "2026-11-20T13:30:25.471199+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити пошту від KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
       }
     }
   ]
