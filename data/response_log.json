@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T19:22:50.761693+00:00",
-      "category": "calendar_button",
-      "question": "tomorrow",
-      "answer": "accepted",
-      "extra": {
-        "stage": "tomorrow",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-05T19:22:51.085148+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14598,6 +14587,12 @@
       "category": "confirm",
       "question": "calrem_skip: Update from your agent",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-20T19:01:04.168406+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_1a171bac56"
     }
   ]
 }
