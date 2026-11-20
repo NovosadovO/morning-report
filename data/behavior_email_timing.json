@@ -1,9 +1,4 @@
 {
-  "81288": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-23T08:26:26.312355+00:00"
-  },
   "81292": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Ment Tech Labs через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "myagent+telegram-agent-oleh-128fcf@abacus.ai",
     "sender_raw": "Telegram Agent  Oleh <myagent+telegram-agent-oleh-128fcf@abacus.ai>",
     "seen_ts": "2026-11-20T12:48:52.449912+00:00"
+  },
+  "83527": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-11-20T14:14:39.106791+00:00"
   }
 }
