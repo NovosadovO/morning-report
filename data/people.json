@@ -978,5 +978,24 @@
     "last_out": "",
     "updated": "2026-11-13",
     "pinged_at": ""
+  },
+  "notifikacie@ekooperativa.sk": {
+    "name": "KOOPERATIVA",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "сповіщення про страхування",
+      "обов'язкове страхування"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Перевірити статус обов'язкового страхування автомобіля.",
+    "ping_in_days": -1,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-11-20",
+    "pinged_at": ""
   }
 }
