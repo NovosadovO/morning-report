@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t21_31_17_614937": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це підсумок дня з інформацією про звички, вагу та дан",
+    "ts": "2026-11-20T21:31:17.614937"
+  },
   "selfact|2026-11-20t21_17_12_686904": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
@@ -293,10 +298,5 @@
     "topic": "healthai/truthfix",
     "gist": "Зафіксовано 10.6 годин сну, хоча це поки що часткове значення, годинник ще може дослати. Середнє за 7 днів становить 7.3 години.  Вага становить 84.3 кг, що на ",
     "ts": "2026-11-20T19:09:02.243664"
-  },
-  "action_detect|2026-11-20t19_08_50_450021": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-20T19:08:50.450021"
   }
 }
