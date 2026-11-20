@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Вітаміни",
-      "detail": "Календар на 7 днів: 15.11: 07:00 💊 Вітаміни ✅",
-      "module": "selfact",
-      "ts": "2026-11-15T09:41:40"
-    },
-    {
-      "kind": "notify",
       "what": "Сауна",
       "detail": "Календар на 7 днів: 15.11: 17:10 🧖 Сауна ❌",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T19:54:26"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-20T20:02:02"
     }
   ]
 }
