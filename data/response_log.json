@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T04:30:15.488429+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові квартири у Кошице",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-05"
-      }
-    },
-    {
       "ts": "2026-09-05T15:54:18.416031+00:00",
       "category": "calendar_button",
       "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
@@ -14579,6 +14569,16 @@
       "answer": "2026-11-22",
       "extra": {
         "kind": "document"
+      }
+    },
+    {
+      "ts": "2026-11-20T06:00:15.552484+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Поміняти колеса в машині",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
       }
     }
   ]
