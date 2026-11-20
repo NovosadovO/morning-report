@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T22:19:51.516500+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-09-06T22:19:53.177093+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14549,6 +14543,16 @@
       "answer": "Перевірити пошту від KOOPERATIVA",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T00:00:37.720027+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про аналізи",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-21"
       }
     }
