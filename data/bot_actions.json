@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Необхідно відповісти на лист від Maroš Sivák",
-      "detail": "У календарі на 20.11 зазначено: '🔔 Лист від Maroš Sivák потребує відповіді'. Це вказує на необхідність дії.",
-      "module": "selfact",
-      "ts": "2026-11-14T19:39:02"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: energy_low",
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 28.6 — нижче за 30, організм виснажений",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T08:32:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Потрібно сплатити страховку",
+      "detail": "Заплановане нагадування на 04.11 'Перевірити страховку авто' вказує на близький термін перевірки.",
+      "module": "selfact",
+      "ts": "2026-11-20T08:33:09"
     }
   ]
 }
