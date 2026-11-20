@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-20t19_56_05_740675": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Vedúci/Vedúca oddelenia / Department Manager\\\" в H&M в місті Кошице та \\\"Loyalty Program Senior Spe",
+    "ts": "2026-11-20T19:56:05.740675"
+  },
   "selfact|2026-11-20t19_44_50_467363": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Відповісти на лист від Maroš Sivák щодо аналізів для Олекс",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Відновлення — день без бігу\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action_summary\": \"Відновит",
     "ts": "2026-11-20T18:01:52.595215"
-  },
-  "astro_ai_truthfix|2026-11-20t18_01_43_475847": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Твоя зміна в Кошице розпочалася 20 листопада 2026 року о 18:01.  Зафіксовано 10 годин 38 хвилин сну. Останній запис пробіжки був 14 листопада. Кількість кроків ",
-    "ts": "2026-11-20T18:01:43.475847"
   }
 }
