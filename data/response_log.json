@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T15:54:45.642732+00:00",
-      "category": "confirm",
-      "question": "gate_email_cal: 📌 1€ Svet",
-      "answer": "no"
-    },
-    {
       "ts": "2026-09-05T15:54:45.979648+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14579,6 +14573,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-20T07:30:19.134203+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-20"
