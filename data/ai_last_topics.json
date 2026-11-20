@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t20_23_48_570932": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T20:23:48.570932"
+  },
   "selfact|2026-11-20t20_15_30_266256": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! У тебе є лист від Maroš Sivák, який потребує відпов",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-20T18:16:19.172856"
-  },
-  "defi_digest|2026-11-20t18_16_12_951138": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години ринок DeFi демонструє високу волатильність, що видно зі значних падінь деяких протоколів, як-от Sky Lending (-41.7%), на противагу різкому ",
-    "ts": "2026-11-20T18:16:12.951138"
   }
 }
