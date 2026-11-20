@@ -1,4 +1,9 @@
 {
+  "calendar|2026-11-20t07_19_15_342251": {
+    "topic": "calendar",
+    "gist": "Завдання по Maroš Sivák на 08:00–08:30 вже близько! 😉 Сьогодні вихідний, тож є чудова нагода зосередитись на цьому. Пам'ятаєш, як минулого тижня ти відмітив, що",
+    "ts": "2026-11-20T07:19:15.342251"
+  },
   "selfact|2026-11-20t07_15_06_349061": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-19T21:00:55.507349"
-  },
-  "openloop_promises|2026-11-19t20_56_50_730221": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-19T20:56:50.730221"
   }
 }
