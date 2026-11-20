@@ -1,4 +1,9 @@
 {
+  "calendar|2026-11-20t05_14_44_348964": {
+    "topic": "calendar",
+    "gist": "Олеже, сьогодні чудовий день, щоб зробити внесок у своє майбутнє! 💪 Попри те, що в тебе вільний день, а це рідкісна можливість для відпочинку, не забувай про св",
+    "ts": "2026-11-20T05:14:44.348964"
+  },
   "selfact|2026-11-20t05_09_53_210780": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Завдання від Maroš Sivák\",     \"text\": \"Виконати завдання по Maroš Sivák.\",     \"date\": \"2026-11-20\",     \"t",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T18:16:11.124557"
-  },
-  "action_detect|2026-11-19t18_15_40_996209": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T18:15:40.996209"
   }
 }
