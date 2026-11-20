@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-20t09_30_52_293897": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T09:30:52.293897"
+  },
+  "selfact|2026-11-20t09_19_11_057468": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
+    "ts": "2026-11-20T09:19:11.057468"
+  },
   "email_ai_item|2026-11-20t09_15_21_298999": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист містить сповіщення про вакансії від LinkedIn. Надаються посилання на дві вакансії: \\\"Project Manager (slots)\\\" в ENJOY Gaming у",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
     "ts": "2026-11-20T06:11:40.661214"
-  },
-  "action_detect|2026-11-20t06_01_16_066805": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T06:01:16.066805"
-  },
-  "action_detect|2026-11-20t06_01_04_977675": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T06:01:04.977675"
   }
 }
