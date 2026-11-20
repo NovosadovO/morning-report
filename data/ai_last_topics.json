@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-20t18_11_30_844216": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібна відповідь на лист від Maroš Sivák\",     \"text\": \"Maros Sivak надіслав тобі аналізи для Olexi. Потрібн",
+    "ts": "2026-11-20T18:11:30.844216"
+  },
+  "healthai_truthfix|2026-11-20t18_05_54_281637": {
+    "topic": "healthai/truthfix",
+    "gist": "Сьогоднішній показник енергії 63/100 (Body Battery), що є частиною даних за 20.11. Середнє споживання сну за 7 днів становить 7.3 години, що є стабільним показн",
+    "ts": "2026-11-20T18:05:54.281637"
+  },
+  "healthai|2026-11-20t18_05_42_682528": {
+    "topic": "healthai",
+    "gist": "👋 Нерівний ритм сну (розкид ±2.12 год) та спадний тренд кроків (-441.2 за тиждень) можуть впливати на показник енергії, який наразі 36.0.",
+    "ts": "2026-11-20T18:05:42.682528"
+  },
   "openloop_promises|2026-11-20t18_05_31_364140": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"Запиши на завтра біг на 9:00\",     \"to\": null,     \"date\": null   } ] ```",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та інф",
     "ts": "2026-11-20T15:01:47.821799"
-  },
-  "action_detect|2026-11-20t15_01_36_675341": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T15:01:36.675341"
-  },
-  "action_detect|2026-11-20t15_01_25_974613": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити квартиру\", \"action_date\": \"2026-12-15\", \"action_time\": null, \"action_summary\": \"Оплатити квартиру на суму ",
-    "ts": "2026-11-20T15:01:25.974613"
-  },
-  "briefing_truthfix|2026-11-20t15_01_18_490517": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 **ГОЛОВНЕ** Олег, твої показники Body Battery тримаються на 63/100. Сон за сьогодні тривав 10 годин 38 хвилин.  🪙 **КРИПТОВАЛЮТИ** Ринок демонструє помітне па",
-    "ts": "2026-11-20T15:01:18.490517"
   }
 }
