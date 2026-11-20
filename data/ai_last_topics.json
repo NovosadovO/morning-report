@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t05_09_53_210780": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Завдання від Maroš Sivák\",     \"text\": \"Виконати завдання по Maroš Sivák.\",     \"date\": \"2026-11-20\",     \"t",
+    "ts": "2026-11-20T05:09:53.210780"
+  },
   "selfact|2026-11-20t04_53_54_973580": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T18:15:40.996209"
-  },
-  "defi_digest|2026-11-19t18_15_39_369920": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на ринку DeFi спостерігається значна волатильність, про що свідчить різке зростання Tydro на 46.6% та падіння Figure Markets Prime на 15.6%",
-    "ts": "2026-11-19T18:15:39.369920"
   }
 }
