@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T21:23:12.782829+00:00",
-      "category": "deadline_found",
-      "question": "Відліт з Малаги",
-      "answer": "2026-09-11",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-09-06T00:00:11.330857+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14587,6 +14578,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_59bd5c2490"
+    },
+    {
+      "ts": "2026-11-20T19:05:54.223147+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Update from your agent",
+      "answer": "yes"
     }
   ]
 }
