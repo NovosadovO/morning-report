@@ -494,12 +494,14 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "посилання на Facebook"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати відповідь на лист від Олега Новосадова без теми.",
-    "ping_in_days": 4,
+    "next_step": "Надіслати відповідь на лист від Олега Новосадова з посиланням на Facebook.",
+    "ping_in_days": 12,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-11-16",
