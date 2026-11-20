@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-11-20t19_24_53_988978": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T19:24:53.988978"
+  },
+  "email_ai_item|2026-11-20t19_14_13_505814": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про вакансії за запитом \\\"Cryptocurrency\\\" в Словаччині. Надаються посилання на вакансії \\\"Secu",
+    "ts": "2026-11-20T19:14:13.505814"
+  },
+  "selfact|2026-11-20t19_13_34_357859": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно звернути ув",
+    "ts": "2026-11-20T19:13:34.357859"
+  },
+  "action_detect|2026-11-20t19_11_19_380330": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-20T19:11:19.380330"
+  },
+  "healthai|2026-11-20t19_11_09_898068": {
+    "topic": "healthai",
+    "gist": "👋 Олег, твоя вага 84.3 кг, що на 9.3 кг від цілі 75 кг. За останні 7 днів середня вага становила 84.9 кг, і тренд зростає на +0.7 кг.  • Поки що зафіксовано 10.",
+    "ts": "2026-11-20T19:11:09.898068"
+  },
   "healthai_truthfix|2026-11-20t19_10_56_724157": {
     "topic": "healthai/truthfix",
     "gist": "Надто нерівний ритм сну — ±2.12 години розкиду — це сигнал, що організм не встигає повністю відновитись, навіть попри зафіксовані 10.6 год. Це може пояснювати, ",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Терміново потрібно відповісти на лист від Maroš Sivák щодо ан",
     "ts": "2026-11-20T16:53:53.358134"
-  },
-  "email_ai_item|2026-11-20t16_53_25_061992": {
-    "topic": "email_ai_item",
-    "gist": "{ \"description\": \"Це ранковий дайджест ринків від 20.11.2026, що містить інформацію про індекси, криптовалюти та акції США. Також у листі згадується обов'язкове",
-    "ts": "2026-11-20T16:53:25.061992"
-  },
-  "action_detect|2026-11-20t16_46_48_080079": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про ETF (IBIT, NVDA, COI",
-    "ts": "2026-11-20T16:46:48.080079"
-  },
-  "selfact|2026-11-20t16_38_07_041633": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Oleg, терміново потрібно відповісти на лист від Mar",
-    "ts": "2026-11-20T16:38:07.041633"
-  },
-  "openloop_promises|2026-11-20t16_34_31_525084": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-20T16:34:31.525084"
-  },
-  "action_detect|2026-11-20t16_31_40_742295": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T16:31:40.742295"
   }
 }
