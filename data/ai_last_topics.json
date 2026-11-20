@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t16_46_48_080079": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про ETF (IBIT, NVDA, COI",
+    "ts": "2026-11-20T16:46:48.080079"
+  },
   "selfact|2026-11-20t16_38_07_041633": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Oleg, терміново потрібно відповісти на лист від Mar",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить оновлення з календаря та важливе сповіщення про збій розгортання Vercel. У календарі зазначено, що сьогодні день відновлення без б",
     "ts": "2026-11-20T13:18:16.032564"
-  },
-  "selfact|2026-11-20t13_15_10_388987": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák стосовно ",
-    "ts": "2026-11-20T13:15:10.388987"
   }
 }
