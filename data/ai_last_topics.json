@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-20t04_38_18_277784": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
+    "ts": "2026-11-20T04:38:18.277784"
+  },
+  "proactive_actions|2026-11-20t04_30_10_606879": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, тобі потрібно відповісти",
+    "ts": "2026-11-20T04:30:10.606879"
+  },
+  "bills|2026-11-20t04_29_33_129006": {
+    "topic": "bills",
+    "gist": "[{\"uid\":\"80711\",\"vendor\":\"KOOPERATIVA\",\"amount\":\"\",\"currency\":\"\",\"invoice_no\":\"6641172176\",\"due\":\"\",\"already_paid\":false,\"auto_charge\":false,\"note\":\"Це сповіщен",
+    "ts": "2026-11-20T04:29:33.129006"
+  },
   "openloop_promises|2026-11-20t04_28_50_267774": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-19T18:01:44.793260"
-  },
-  "action_detect|2026-11-19t18_01_33_471976": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-19T18:01:33.471976"
-  },
-  "action_detect|2026-11-19t18_01_22_534984": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-19T18:01:22.534984"
-  },
-  "astro_ai_truthfix|2026-11-19t18_01_12_425069": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Твоя рання зміна в Кошице щойно закінчилась. Сон триває 6 годин.  **Фокус сьогодні: кар'єра та особисті цілі.**  Транзитний Сатурн у 9-му домі робить аспект до ",
-    "ts": "2026-11-19T18:01:12.425069"
   }
 }
