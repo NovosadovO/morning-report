@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T01:44:28.145831+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA втратив 32.1% за 24 години (капіталізація $47.85B)"
-    },
-    {
       "ts": "2026-09-06T03:00:45.053283+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14568,6 +14562,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-20T19:14:28.921371+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
