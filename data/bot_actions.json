@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Відповідь на лист від Maroš Sivák",
-      "detail": "У секції 'КАЛЕНДАР НА 7 ДНІВ' зазначено: '20.11: 🔔 Лист від Maroš Sivák потребує відповіді'. Також у 'ЩО БОТ УЖЕ ЗРОБИВ' є сповіщення: 'Необхідно відповісти на лист від Maroš Sivák.'. Це повторне нагадування, оскільки лист ще не оброблено.",
-      "module": "selfact",
-      "ts": "2026-11-14T20:09:20"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-14",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T10:01:04"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-20T10:06:55"
     }
   ]
 }
