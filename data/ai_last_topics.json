@@ -298,5 +298,20 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, терм",
     "ts": "2026-11-20T13:30:16.356897"
+  },
+  "action_detect|2026-11-20t17_01_53_995666": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T17:01:53.995666"
+  },
+  "email_ai_item|2026-11-20t16_55_38_419191": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить оновлення від агента Telegram. Зазначається відсутність нових подій у календарі на найближчі 3 години, але згадується день відновл",
+    "ts": "2026-11-20T16:55:38.419191"
+  },
+  "selfact|2026-11-20t16_53_53_358134": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Терміново потрібно відповісти на лист від Maroš Sivák щодо ан",
+    "ts": "2026-11-20T16:53:53.358134"
   }
 }
