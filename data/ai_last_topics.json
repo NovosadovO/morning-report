@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-21t00_22_28_007434": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олег, у тебе сьогодні день відновлення, без бігу. Також є два листи, що потребують відповіді.\",     \"why\": \"Календар на",
+    "ts": "2026-11-21T00:22:28.007434"
+  },
+  "action_detect|2026-11-21t00_16_19_813229": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Олега.\"}",
+    "ts": "2026-11-21T00:16:19.813229"
+  },
+  "action_detect|2026-11-21t00_16_09_002972": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про здоров'я, біговий тр",
+    "ts": "2026-11-21T00:16:09.002972"
+  },
   "action_detect|2026-11-21t00_15_57_722372": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про лист від Maroš Sivák\",     \"text\": \"Привіт, Олеже! У тебе є лист від Maroš Sivák, який потребує відпов",
     "ts": "2026-11-20T20:15:30.266256"
-  },
-  "healthai_truthfix|2026-11-20t20_05_33_107533": {
-    "topic": "healthai/truthfix",
-    "gist": "Середній показник кроків за останні 14 днів становить 15256.4. Наразі спостерігається спад на 408.9 кроків.",
-    "ts": "2026-11-20T20:05:33.107533"
-  },
-  "healthai|2026-11-20t20_05_21_957049": {
-    "topic": "healthai",
-    "gist": "🤔 Цікаво, що після тривалого періоду стабільних кроків (сер.14д 15256.4) зараз спостерігається спад (-408.9) — можливо, це пов'язано з вихідними днями, коли реж",
-    "ts": "2026-11-20T20:05:21.957049"
-  },
-  "action_detect|2026-11-20t20_03_59_757428": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про інтервальне голодува",
-    "ts": "2026-11-20T20:03:59.757428"
   }
 }
