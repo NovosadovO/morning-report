@@ -1,4 +1,44 @@
 {
+  "openloop_promises|2026-11-21t00_06_54_590328": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T00:06:54.590328"
+  },
+  "foresight_truthfix|2026-11-21t00_02_13_462560": {
+    "topic": "foresight/truthfix",
+    "gist": "Зверни увагу на сповіщення від KOOPERATIVA щодо сплати страхового полісу на авто (EČV LE066BI). Також є лист від Maroš Sivák з аналізами, який варто переглянути",
+    "ts": "2026-11-21T00:02:13.462560"
+  },
+  "foresight|2026-11-21t00_02_03_485527": {
+    "topic": "foresight",
+    "gist": "📬 від Notifikácie KOOPERATIVA → Сповіщення про сплату обов'язкового страхування авто (EČV LE066BI). Потрібно перевірити, чи сплачено, якщо ні — оплатити. 📬 від ",
+    "ts": "2026-11-21T00:02:03.485527"
+  },
+  "foresight_truthfix|2026-11-21t00_01_48_462150": {
+    "topic": "foresight/truthfix",
+    "gist": "🌙 **БЛОК НІЧНИХ** — попереду дві нічні зміни. 📌 **ДО НІЧНИХ** — до початку змін варто виконати: реконструкцію UniCredit Bank (2026-09-04, 08:00) та реєстрацію д",
+    "ts": "2026-11-21T00:01:48.462150"
+  },
+  "foresight|2026-11-21t00_01_38_012238": {
+    "topic": "foresight",
+    "gist": "🌙 <b>БЛОК НІЧНИХ</b> — Це означає, що попереду дві поспіль нічні зміни, які вимагатимуть перегляду звичного режиму дня та ночі. 📌 <b>ЗРОБИТИ ДО НІЧНИХ</b> — Пер",
+    "ts": "2026-11-21T00:01:38.012238"
+  },
+  "action_detect|2026-11-21t00_01_03_344583": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Ол",
+    "ts": "2026-11-21T00:01:03.344583"
+  },
+  "action_detect|2026-11-21t00_00_52_293479": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
+    "ts": "2026-11-21T00:00:52.293479"
+  },
+  "action_detect|2026-11-21t00_00_41_278186": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-21T00:00:41.278186"
+  },
   "proactive_actions|2026-11-21t00_00_13_876348": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-21\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є",
@@ -258,45 +298,5 @@
     "topic": "hcoach",
     "gist": "Олеже, завершилася ранкова зміна, тож час розібратися з тим, що відбувалося, поки ти був активним.  ### 📌 Стан здоров'я: чесний погляд  Зараз твоє тіло надсилає",
     "ts": "2026-11-20T20:01:48.726024"
-  },
-  "assistant|2026-11-20t20_01_12_117860": {
-    "topic": "assistant",
-    "gist": "Привіт! Щоб завтрашній день відновлення пройшов якнайкраще, спробуй сьогодні ввечері максимально розслабитись і добре виспатись, адже якісний відпочинок — це ос",
-    "ts": "2026-11-20T20:01:12.117860"
-  },
-  "action_detect|2026-11-20t20_00_56_927195": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз звичок за тиждень та прогресу у зниженні ваги.",
-    "ts": "2026-11-20T20:00:56.927195"
-  },
-  "selfact|2026-11-20t19_59_53_728336": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування щодо Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák. З",
-    "ts": "2026-11-20T19:59:53.728336"
-  },
-  "email_ai_item|2026-11-20t19_56_05_740675": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Vedúci/Vedúca oddelenia / Department Manager\\\" в H&M в місті Кошице та \\\"Loyalty Program Senior Spe",
-    "ts": "2026-11-20T19:56:05.740675"
-  },
-  "selfact|2026-11-20t19_44_50_467363": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Відповісти на лист від Maroš Sivák щодо аналізів для Олекс",
-    "ts": "2026-11-20T19:44:50.467363"
-  },
-  "openloop_promises|2026-11-20t19_36_03_158464": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-20T19:36:03.158464"
-  },
-  "action_detect|2026-11-20t19_33_24_416990": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T19:33:24.416990"
-  },
-  "context_ask_ai|2026-11-20t19_33_14_385186": {
-    "topic": "context_ask_ai",
-    "gist": "Назви конкретної платформи, через яку я отримую дані, немає в моєму розпорядженні. Я працюю в рамках інфраструктури Google, яка забезпечує мені доступ до необхі",
-    "ts": "2026-11-20T19:33:14.385186"
   }
 }
