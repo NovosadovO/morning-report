@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Необхідно відповісти на лист від Maroš Sivák.",
-      "detail": "Календар на 7 днів містить запис: \"20.11: 🔔 Лист від Maroš Sivák потребує відповіді\".",
-      "module": "selfact",
-      "ts": "2026-11-14T19:54:02"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-20T09:31:43"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: що нового + AI",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-20T09:32:07"
     }
   ]
 }
