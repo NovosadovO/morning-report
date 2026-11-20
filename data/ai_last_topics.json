@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t23_37_01_640547": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від Maroš Sivák\",     \"text\": \"Maros Sivák надіслав тобі аналізи для Olexiho. Переглянь їх, будь ла",
+    "ts": "2026-11-20T23:37:01.640547"
+  },
   "selfact|2026-11-20t23_21_17_760790": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, ти отримав лист від Maroš Sivák з аналізами для Olexiho. Н",
@@ -293,10 +298,5 @@
     "topic": "context_ask_ai",
     "gist": "Олеже, я не маю прямого доступу до жодної конкретної програми чи сервісу, як-от Garmin Connect.  Дані про твоє здоров'я надходять до мене через платформу, яка м",
     "ts": "2026-11-20T19:31:22.314378"
-  },
-  "action_detect|2026-11-20t19_30_42_765166": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T19:30:42.765166"
   }
 }
