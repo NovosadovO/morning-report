@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t17_56_14_667020": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Олеже, ти отримав лист від Maroš Sivák з аналізами для Olexiho. З",
+    "ts": "2026-11-20T17:56:14.667020"
+  },
   "selfact|2026-11-20t17_41_00_604254": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про лист від Maroš Sivák\",     \"text\": \"Олег, тобі потрібно відповісти на лист від Maroš Sivák. Та",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
     "ts": "2026-11-20T14:30:00.446398"
-  },
-  "deadlines|2026-11-20t14_29_23_527639": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
-    "ts": "2026-11-20T14:29:23.527639"
   }
 }
