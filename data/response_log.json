@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T15:54:45.979648+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_529b641aeb"
-    },
-    {
       "ts": "2026-09-05T15:56:28.138157+00:00",
       "category": "day_energy",
       "question": "Як ти сьогодні",
@@ -14586,6 +14580,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-20T08:29:27.185377+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — оплата",
+      "answer": "2026-11-20",
+      "extra": {
+        "kind": "insurance"
       }
     }
   ]
