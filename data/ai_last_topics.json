@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t18_15_57_360398": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Відновлення — день без бігу\",   \"action_date\": \"2026-11-20\",   \"action_time\": null,   \"action_summary\"",
+    "ts": "2026-11-20T18:15:57.360398"
+  },
   "selfact|2026-11-20t18_11_30_844216": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібна відповідь на лист від Maroš Sivák\",     \"text\": \"Maros Sivak надіслав тобі аналізи для Olexi. Потрібн",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка\", \"action_date\": \"2023-11-22\", \"action_time\": \"11:00\", \"action_summary\": \"Запланована легка прогул",
     "ts": "2026-11-20T15:01:59.849761"
-  },
-  "action_detect|2026-11-20t15_01_47_821799": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення про 7 непрочитаних листів та інф",
-    "ts": "2026-11-20T15:01:47.821799"
   }
 }
