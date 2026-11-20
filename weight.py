@@ -30,7 +30,9 @@ def load_data():
 
 
 def save_data(data):
-    storage.save(WEIGHT_FILE, data)
+    # Вага — ТІЛЬКИ з Garmin Connect (запит Олега). Ручний запис вимкнено,
+    # weight_data.json більше не перезаписується ботом.
+    return None
 
 
 def today_key():
@@ -38,9 +40,8 @@ def today_key():
 
 
 def save_weight(kg: float):
-    data = load_data()
-    data[today_key()] = kg
-    save_data(data)
+    """Вимкнено: вага береться лише з Garmin Connect, ручні числа з чату не зберігаються."""
+    return False
 
 
 def get_trend():

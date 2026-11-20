@@ -51,19 +51,10 @@ fetched.clear()
 G.backfill(object(), T, days=7, max_days=3)
 ok(fetched == [], "3 спроби — більше не пробуємо")
 
-# ── mirror_weight
-w = {f"2026-10-{d:02d}": 82.0 for d in range(1, 9)}
-w["2026-11-07"] = 83.0
+# ── mirror_weight (21.11: вимкнено — вага тільки Garmin, нічого не пишемо в weight_data.json)
 wrote = {}
-storage._load_github = lambda f: dict(w)
 storage.save_weight = lambda d: wrote.update(d) or True
-n = qwsync.mirror_weight({"2026-11-07": {"weight_kg": 90}, "2026-11-08": {"weight_kg": 84.34}})
-ok(n == 1 and wrote.get("2026-11-08") == 84.3 and wrote["2026-11-07"] == 83.0, "ручна вага виграє, нова дописана")
-wrote.clear()
-storage._load_github = lambda f: None
-ok(qwsync.mirror_weight({"2026-11-08": {"weight_kg": 84}}) == 0 and not wrote, "збій читання — не пишемо")
-storage._load_github = lambda f: {"2026-11-01": 80}
-ok(qwsync.mirror_weight({"2026-11-08": {"weight_kg": 84}}) == 0 and not wrote, "підозріло малий файл — не пишемо")
+ok(qwsync.mirror_weight({"2026-11-08": {"weight_kg": 84.34}}) == 0 and not wrote, "mirror_weight вимкнено")
 
 # ── truth.strip_meta + healthai sleep fallback
 import truth

@@ -310,7 +310,7 @@ def _weight_series(days: int):
     merged = {}
     for day, v in (wd or {}).items():
         if v not in (None, "", 0):
-            merged[day] = v  # базовий шар — ручний ввід
+            merged[day] = v  # storage.load_weight(): Garmin (+ архів ДО початку синку)
     for day, rec in (health or {}).items():
         if not isinstance(rec, dict):
             continue

@@ -89,6 +89,9 @@ def _num_supported(v, pool):
                 return True
         if abs(abs(p - v) - 0) < 1e-9:
             return True
+        # хвилини → «5 год 59 хв»: 359 → 5 і 59
+        if p >= 60 and float(p).is_integer() and (abs(p % 60 - v) < 1e-9 or abs(p // 60 - v) < 1e-9):
+            return True
     # різниці й суми пар (AI законно рахує «мінус 2.4 кг», «на 3 дні більше»)
     for a in pool:
         for b in pool:
@@ -96,6 +99,42 @@ def _num_supported(v, pool):
                 if abs(cand - v) <= max(0.05, abs(cand) * 0.01):
                     return True
     return False
+
+
+# 21.11 (запит Олега): здоров'я — ТІЛЬКИ Garmin, нічого не вигадувати. Виміряні
+# показники (кг, уд/хв, кроки, ккал, мс, %) перевіряємо навіть коли число <10 і
+# навіть у реченні з годиною — раніше такі речення пропускались повністю.
+_HEALTH_RE = re.compile(r"вага|ваг[иуі]|пульс|чсс|hrv|варіабельн|крок|стрес|body\s*battery|"
+                        r"батаре|калор|ккал|spo2|сатурац|кисн|сон\b|сну\b|спав|виспав|"
+                        r"глибок|rem|vo2", re.I)
+_MEASURED_RE = re.compile(r"(?<![\w/])(\d+(?:[.,]\d+)?)\s*(кг|уд\.?|bpm|кроків|кроки|крок|ккал|мс|ms|%)(?!\w)", re.I)
+
+
+_TIMEUNIT_RE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(год|хв|г\b|д\b|дн|день|тиж|міс|рок|сек|с\b)", re.I)
+
+
+def _small_pool(prompt):
+    """Числа з промпту БЕЗ тих, що є тривалістю/днями («5 год», «3 дні») — щоб
+    «5 год сну» не виправдовувало вигадане «пульс 5»."""
+    t = _TIMEUNIT_RE.sub(" ", prompt or "")
+    return _numbers(t)
+
+
+def _health_bad_nums(s, pool, small=None):
+    """Виміряні здоров'я-числа в реченні, яких немає в даних (Garmin)."""
+    if not _HEALTH_RE.search(s or ""):
+        return []
+    bad = []
+    for m in _MEASURED_RE.finditer(s):
+        v = _norm_num(m.group(1))
+        if v is None:
+            continue
+        if v < 10 and small is not None:
+            if not any(abs(p - v) <= max(0.05, abs(p) * 0.005) for p in small):
+                bad.append(m.group(1) + " " + m.group(2))
+        elif not _num_supported(v, pool):
+            bad.append(m.group(1) + " " + m.group(2))
+    return bad
 
 
 def _sentences(text):
@@ -171,6 +210,9 @@ def audit(prompt, answer, tag="gem"):
                 continue
             if not _num_supported(v, pool):
                 bad_nums.append(m.group(1))
+    _sp = _small_pool(prompt)
+    for s in _sentences(answer):
+        bad_nums += _health_bad_nums(s, pool, _sp)
     bad_nums = list(dict.fromkeys(bad_nums))[:6]
     if bad_nums:
         issues.append("числа, яких НЕМА в даних: " + ", ".join(bad_nums))
@@ -281,6 +323,7 @@ def recheck(prompt, answer, issues, tag="gem"):
 def sanitize(prompt, answer):
     """Ріже речення, які не тримаються на даних. Повертає (текст, скільки зрізано)."""
     pool = _numbers(prompt)
+    _sp = _small_pool(prompt)
     keep, cut = [], 0
     _w = _where_safe()
     for s in _sentences(answer):
@@ -297,6 +340,9 @@ def sanitize(prompt, answer):
             if not _num_supported(v, pool):
                 bad = True
                 break
+        if not bad and _health_bad_nums(s, pool, _sp):
+            cut += 1          # вигадане здоров'я-число ріжеться без ліміту (тільки Garmin)
+            continue
         if not bad:
             sl = s.lower()
             if any(w in sl for w in _TIME_WORDS) and not _has_date(s):

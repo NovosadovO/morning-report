@@ -281,59 +281,7 @@ def _get_live_health() -> dict:
     except Exception as e:
         _log(f"storage.load_health error: {e}")
 
-    # 3) Fallback: local weight.json (only if storage.py gave nothing)
-    if not result.get("weight"):
-        try:
-            wfile = os.path.join(_DATA_DIR, "weight.json")
-            if os.path.exists(wfile):
-                with open(wfile) as f:
-                    wdata = json.load(f)
-                if wdata:
-                    latest = sorted(wdata.keys())[-1]
-                    result["weight"] = wdata[latest]
-                    result["weight_date"] = latest
-        except Exception as e:
-            _log(f"Weight local fallback error: {e}")
-
-    # 4) Fallback: local daily_health.json (only if storage.py gave nothing)
-    if not result.get("steps") or not result.get("sleep"):
-        try:
-            hfile = os.path.join(_DATA_DIR, "daily_health.json")
-            if os.path.exists(hfile):
-                with open(hfile) as f:
-                    hdata = json.load(f)
-                entries = hdata.get("entries", hdata) if isinstance(hdata, dict) else {}
-                for day in [today_str, yesterday]:
-                    if day in entries:
-                        e = entries[day]
-                        if not result.get("steps"):
-                            result["steps"] = e.get("steps") or e.get("steps_count")
-                        if not result.get("sleep"):
-                            result["sleep"] = e.get("sleep_hours") or e.get("sleep")
-                        result["health_date"] = day
-                        break
-        except Exception as e:
-            _log(f"daily_health read error: {e}")
-
-    # 3) Fallback: health.json (older format with steps)
-    try:
-        hfile2 = os.path.join(_DATA_DIR, "health.json")
-        if os.path.exists(hfile2):
-            with open(hfile2) as f:
-                hdata2 = json.load(f)
-            if isinstance(hdata2, dict):
-                for day in [today_str, yesterday]:
-                    if day in hdata2:
-                        e = hdata2[day]
-                        if isinstance(e, dict):
-                            if not result.get("steps") and e.get("steps"):
-                                result["steps"] = e["steps"]
-                            if not result.get("weight") and e.get("weight"):
-                                result["weight"] = e["weight"]
-                                result["weight_date"] = day
-                        break
-    except Exception as e:
-        _log(f"health.json read error: {e}")
+    # (21.11) Локальні daily_health.json / health.json більше НЕ читаємо: здоров'я — лише Garmin (storage.load_health).
 
     # 4) Fallback: monitor_day_summary.json for today's stats
     try:

@@ -4553,13 +4553,9 @@ def handle_command(chat_id, text):
         try:
             kg = float(text.replace(",", "."))
             if 30 < kg < 250:
-                from weight import save_weight, get_trend
-                save_weight(kg)
-                trend = get_trend()
-                reply = f"⚖️ <b>{kg} кг</b> — збережено!"
-                if trend:
-                    reply += f"\n\n{trend}"
-                send(chat_id, reply)
+                # Вага — тільки з Garmin Connect (запит Олега): ручні числа не зберігаємо.
+                send(chat_id, "⚖️ Вагу я беру лише з Garmin Connect — ручні числа з чату "
+                              "не зберігаю. Зважся на вагах Garmin, і вона підтягнеться сама.")
                 return
         except ValueError:
             pass

@@ -178,6 +178,7 @@ def mirror_weight(db: dict) -> int:
     """13.11: вага з Garmin (weight_kg) лежала лише в qwatch_data, а звіт/графіки
     читають weight_data.json (ручне /вага) → «вага за 31д тому». Дописуємо дні,
     яких там нема. Ручний запис Олега завжди виграє. Повертає кількість доданих."""
+    return 0  # 21.11: вага — тільки Garmin (storage.load_weight читає qwatch_data напряму); дзеркало в weight_data.json не потрібне
     try:
         import storage
         # _load_github: None при збої мережі — тоді НЕ пишемо (інакше затрем історію)

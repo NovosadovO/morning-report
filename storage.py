@@ -285,28 +285,43 @@ def load_habits():
 def save_habits(data):
     return _save_github("habits.json", data)
 
-def load_weight():
-    """
-    Канонічне джерело — weight_data.json (сюди пише weight.py при кожному /вазі
-    від Олега, тут завжди АКТУАЛЬНІ дані). weight.json — старий/покинутий файл
-    (востаннє оновлювався у квітні) і використовується лише як довіджерело для
-    ДАТ, яких немає у weight_data.json (щоб не втратити стару історію).
-    Раніше 14+ місць у monitor.py читали weight.json напряму → AI бачив вагу
-    3-місячної давності. Фікс тут виправляє це одразу для всіх викликів.
-    """
-    canonical = _load_github("weight_data.json") or {}
-    legacy = _load_github("weight.json") or {}
-    if not canonical and not legacy:
-        initial = os.path.join(_DIR, "weight_data_initial.json")
+def garmin_weight():
+    """{день: кг} ТІЛЬКИ з Garmin Connect (qwatch_data.json -> weight_kg, пише
+    garmin_sync.py). Запит Олега: дані здоров'я — лише з Garmin, нічого не вигадувати."""
+    out = {}
+    try:
+        qw = _load_github("qwatch_data.json") or {}
+    except Exception:
+        qw = {}
+    for day, rec in (qw.items() if isinstance(qw, dict) else []):
+        if not isinstance(rec, dict):
+            continue
+        v = rec.get("weight_kg")
         try:
-            with open(initial) as f:
-                canonical = json.load(f)
-            save_weight(canonical)
-        except:
-            pass
-    merged = dict(legacy)
-    merged.update(canonical)  # canonical (weight_data.json) виграє при перетині дат
-    return merged
+            v = float(v)
+        except (TypeError, ValueError):
+            continue
+        if 35 <= v <= 250:
+            out[str(day)] = round(v, 1)
+    return out
+
+
+def load_weight():
+    """ВАГА — тільки Garmin Connect. Ручні записи з чату (weight_data.json /
+    weight.json) після першого Garmin-зважування НЕ читаються. Старий архів до
+    початку Garmin-синку лишається лише як історія для довгих графіків."""
+    g = garmin_weight()
+    out = {}
+    if g:
+        first = min(g)
+        for fn in ("weight.json", "weight_data.json"):
+            old = _load_github(fn) or {}
+            if isinstance(old, dict):
+                for d, v in old.items():
+                    if str(d) < first and isinstance(v, (int, float)):
+                        out[d] = v
+    out.update(g)
+    return dict(sorted(out.items()))
 
 def save_weight(data):
     """Пише в weight_data.json — канонічний файл, який читає load_weight()."""
@@ -372,6 +387,8 @@ def save_price_history(data):
 
 def load(filename, default=None):
     """Generic load — читає будь-який JSON файл з GitHub data/."""
+    if filename in ("weight_data.json", "weight.json"):
+        return load_weight()  # вага — лише Garmin (див. load_weight)
     data = _load_github(filename)
     if data is None:
         return default if default is not None else {}
