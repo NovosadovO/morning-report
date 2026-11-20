@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t06_27_51_452896": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
+    "ts": "2026-11-20T06:27:51.452896"
+  },
   "selfact|2026-11-20t06_11_40_661214": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-19T19:29:31.864027"
-  },
-  "selfact|2026-11-19t19_27_51_145238": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Виконати завдання по Maroš Sivák\",     \"date\": \"2026-11-20\",     \"ti",
-    "ts": "2026-11-19T19:27:51.145238"
   }
 }
