@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-20t20_30_30_711865": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Отримано лист від Maroš Sivák з аналізами для Olexi. Потрібно від",
+    "ts": "2026-11-20T20:30:30.711865"
+  },
   "action_detect|2026-11-20t20_23_48_570932": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Потрібно відповісти на лист від Maroš Sivák\",     \"text\": \"Маєш лист від Maroš Sivák з аналізами для Olexi. Потрібно н",
     "ts": "2026-11-20T18:26:39.352850"
-  },
-  "action_detect|2026-11-20t18_16_19_172856": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-20T18:16:19.172856"
   }
 }
