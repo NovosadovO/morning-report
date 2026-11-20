@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-20t21_00_30_226326": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це щоденник з питаннями про день та збереженими даним",
+    "ts": "2026-11-20T21:00:30.226326"
+  },
   "deadlines|2026-11-20t20_52_14_027489": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-20T19:02:11.831132"
-  },
-  "action_detect|2026-11-20t19_00_38_328429": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-20T19:00:38.328429"
   }
 }
