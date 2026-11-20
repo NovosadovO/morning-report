@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-20t19_02_11_831132": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T19:02:11.831132"
+  },
+  "action_detect|2026-11-20t19_00_38_328429": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-20T19:00:38.328429"
+  },
+  "calendar|2026-11-20t19_00_24_108390": {
+    "topic": "calendar",
+    "gist": "Олеже, завтра, 21 листопада, для тебе день у вільний від роботи графік, що є чудовою можливістю для прогресу в твоїх цілях. Враховуючи, що ти активно працюєш на",
+    "ts": "2026-11-20T19:00:24.108390"
+  },
   "selfact|2026-11-20t18_57_50_297465": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливий лист від Maroš Sivák\",     \"text\": \"Maros Sivak надіслав тобі аналізи для Olexiho. Потрібно звернути увагу на",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
     "ts": "2026-11-20T15:35:13.539236"
-  },
-  "action_detect|2026-11-20t15_31_36_163701": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T15:31:36.163701"
-  },
-  "action_detect|2026-11-20t15_31_31_398474": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T15:31:31.398474"
-  },
-  "msg_crypto_move_truthfix|2026-11-20t15_31_25_317256": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "📉 Ринок криптовалют демонструє спадну динаміку, але є й менш вражаючі показники.  За останню добу ключові криптовалюти зазнали помітних втрат. Bitcoin (BTC) зни",
-    "ts": "2026-11-20T15:31:25.317256"
   }
 }
