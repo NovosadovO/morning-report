@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-20t20_00_56_927195": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз звичок за тиждень та прогресу у зниженні ваги.",
+    "ts": "2026-11-20T20:00:56.927195"
+  },
+  "selfact|2026-11-20t19_59_53_728336": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе нагадування щодо Maroš Sivák\",     \"text\": \"Олеже, тобі потрібно відповісти на лист від Maroš Sivák. З",
+    "ts": "2026-11-20T19:59:53.728336"
+  },
   "email_ai_item|2026-11-20t19_56_05_740675": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Vedúci/Vedúca oddelenia / Department Manager\\\" в H&M в місті Кошице та \\\"Loyalty Program Senior Spe",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Легка прогулянка — активне відновлення\",   \"action_date\": \"2026-11-20\",   \"action_time\": \"11:00\",   \"a",
     "ts": "2026-11-20T18:02:14.878082"
-  },
-  "action_detect|2026-11-20t18_02_03_532626": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T18:02:03.532626"
-  },
-  "action_detect|2026-11-20t18_01_52_595215": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Відновлення — день без бігу\", \"action_date\": \"2026-11-20\", \"action_time\": null, \"action_summary\": \"Відновит",
-    "ts": "2026-11-20T18:01:52.595215"
   }
 }
