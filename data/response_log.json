@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-05T15:54:18.416031+00:00",
-      "category": "calendar_button",
-      "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t24h",
-        "when": "16:30–17:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-05T15:54:18.783695+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14576,6 +14565,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Поміняти колеса в машині",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-20"
+      }
+    },
+    {
+      "ts": "2026-11-20T06:00:21.577224+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Сплатити страхування KOOPERATIVA",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-20"
