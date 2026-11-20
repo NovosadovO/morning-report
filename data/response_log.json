@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T00:00:15.184137+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Підготувати речі до відпустки",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-06"
-      }
-    },
-    {
       "ts": "2026-09-06T00:13:55.033937+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14577,6 +14567,12 @@
     },
     {
       "ts": "2026-11-20T19:06:01.233713+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b5d8afaa4c"
+    },
+    {
+      "ts": "2026-11-20T19:06:16.121384+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_b5d8afaa4c"
