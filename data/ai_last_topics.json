@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-20t17_14_03_154726": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист містить сповіщення про вакансії на посади Sales Operations Analyst в SITA та Customer Success Operations Specialist в Filevine,",
+    "ts": "2026-11-20T17:14:03.154726"
+  },
   "selfact|2026-11-20t17_09_47_689050": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Тобі потрібно відповісти на нього.\",     \"why\": \"Є лист від Maro",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
     "ts": "2026-11-20T14:02:00.106440"
-  },
-  "run_insight|2026-11-20t14_01_31_253636": {
-    "topic": "run_insight",
-    "gist": "```json {   \"text\": \"🟢 Готовий до бігу. Сьогодні варто провести рівний аеробний біг на ~10 км з пульсом до <b>140</b>. Це добре вписується у твій графік, адже з",
-    "ts": "2026-11-20T14:01:31.253636"
   }
 }
