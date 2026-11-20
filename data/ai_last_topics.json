@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-20t13_45_41_582205": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"d",
+    "ts": "2026-11-20T13:45:41.582205"
+  },
+  "openloop_promises|2026-11-20t13_32_42_722519": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-20T13:32:42.722519"
+  },
+  "selfact|2026-11-20t13_30_27_854893": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Відповідь на лист від Maroš Sivák\",     \"text\": \"Є лист від Maroš Sivák з аналізом для Olexi. Потрібно переглянути та ",
+    "ts": "2026-11-20T13:30:27.854893"
+  },
   "proactive_actions|2026-11-20t13_30_16_356897": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"date\": \"2026-11-20\",     \"time\": \"08:00\",     \"message\": \"Олеже, терм",
@@ -283,20 +298,5 @@
     "topic": "proactive_ai",
     "gist": "Друже, минуло вже 5 днів без бігу, а сьогодні гарний ранок, щоб це змінити. Давай вийдемо на 20 хвилин, поки день не розгулявся?",
     "ts": "2026-11-20T09:05:28.272734"
-  },
-  "selfact|2026-11-20t09_03_37_328383": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Виконати завдання по Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák.\",     \"date\": \"2",
-    "ts": "2026-11-20T09:03:37.328383"
-  },
-  "action_detect|2026-11-20t09_02_22_676157": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-20T09:02:22.676157"
-  },
-  "action_detect|2026-11-20t09_02_11_759760": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Підготуватися до церкви та поміняти колеса\",   \"action_date\": null,   \"action_time\": null,   \"action_s",
-    "ts": "2026-11-20T09:02:11.759760"
   }
 }
