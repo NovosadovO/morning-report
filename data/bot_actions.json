@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-14",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-11-15T05:40:25"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: що нового + AI",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "🚶 Кроки за тиждень у середньому 14695 — ціль 8000 досягнута",
       "module": "healthai",
       "ts": "2026-11-20T16:27:40"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_good",
+      "detail": "😴 Сон за тиждень у середньому 7.3 год — стабільно добре",
+      "module": "healthai",
+      "ts": "2026-11-20T16:27:51"
     }
   ]
 }
