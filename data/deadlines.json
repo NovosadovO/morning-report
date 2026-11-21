@@ -947,5 +947,17 @@
     "done": true,
     "created": "2026-11-21",
     "done_at": "2026-11-21"
+  },
+  "страховка_авто_оплата|2026-11-21": {
+    "kind": "insurance",
+    "title": "Страховка авто — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-11-21",
+    "action": "Оплатити обов'язкове страхування автомобіля.",
+    "why": "Без сплати страховки автомобіль не буде допущений до руху.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-11-21"
   }
 }
