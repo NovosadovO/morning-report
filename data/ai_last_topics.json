@@ -298,5 +298,15 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"other\",     \"title\": \"Скидання паролю Google\",     \"org\": \"Google Workspace\",     \"deadline\": \"2026-11-23\",     \"",
     "ts": "2026-11-21T08:53:06.828458"
+  },
+  "action_detect|2026-11-21t13_00_50_019450": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"20 хв бігу\",   \"action_date\": null,   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв бігу ",
+    "ts": "2026-11-21T13:00:50.019450"
+  },
+  "selfact|2026-11-21t12_47_09_977675": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Надійшов лист від Maroš Sivák з аналізами для тебе. Нагадую, що потрібно відповісти на нього, як",
+    "ts": "2026-11-21T12:47:09.977675"
   }
 }
