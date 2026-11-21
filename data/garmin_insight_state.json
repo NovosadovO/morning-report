@@ -4,11 +4,12 @@
     "spo2",
     "stress",
     "sleep_hours",
-    "body_battery"
+    "body_battery",
+    "steps"
   ],
   "last": {
-    "field": "body_battery",
-    "day": "2026-11-20",
-    "z": -1.32
+    "field": "steps",
+    "day": "2026-11-21",
+    "z": -1.61
   }
 }
