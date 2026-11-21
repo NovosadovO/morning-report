@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-11-21t06_09_45_620651": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T06:09:45.620651"
+  },
+  "selfact|2026-11-21t06_04_24_473925": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Схоже, що твоє обов'язкове страхування автомобіля (EČV LE066BI) від KOOPERATIVA потребує уваги. Отримав листа п",
+    "ts": "2026-11-21T06:04:24.473925"
+  },
+  "action_detect|2026-11-21t06_01_33_428503": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
+    "ts": "2026-11-21T06:01:33.428503"
+  },
+  "action_detect|2026-11-21t06_01_22_276216": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T06:01:22.276216"
+  },
   "action_detect|2026-11-21t06_01_11_171107": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
     "ts": "2026-11-21T00:00:52.293479"
-  },
-  "action_detect|2026-11-21t00_00_41_278186": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-21T00:00:41.278186"
-  },
-  "proactive_actions|2026-11-21t00_00_13_876348": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити пошту від KOOPERATIVA\",     \"date\": \"2026-11-21\",     \"time\": \"\",     \"message\": \"Олеже, у тебе є",
-    "ts": "2026-11-21T00:00:13.876348"
-  },
-  "deadlines|2026-11-20t23_52_43_365553": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страховки PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": nul",
-    "ts": "2026-11-20T23:52:43.365553"
-  },
-  "people|2026-11-20t23_52_22_248174": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Olexiho\",   ",
-    "ts": "2026-11-20T23:52:22.248174"
   }
 }
