@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "weekly",
-      "detail": "Тижневий звіт по здоров'ю",
-      "module": "selfact",
-      "ts": "2026-11-15T19:30:50"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-15",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "СВІЖІ ЛИСТИ: uid=82454 | від Maroš Sivák <maros.sivak.sro@gmail.com> | Analýzy pre Olexiho :)",
       "module": "selfact",
       "ts": "2026-11-21T07:52:03"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-21",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-21T07:55:24"
     }
   ]
 }
