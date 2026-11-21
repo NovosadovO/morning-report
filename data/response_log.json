@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T23:56:57.439113+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-09-07T23:57:00.547189+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14572,6 +14566,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-21T22:28:24.940431+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
     }
   ]
 }
