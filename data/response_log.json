@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T01:32:18.687899+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "LINK виріс на 9.6% за 24 години (зараз $13.180)"
-    },
-    {
       "ts": "2026-09-07T03:02:16.684695+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14571,6 +14565,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити листа від KOOPERATIVA про страхування",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T03:00:24.406870+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути аналізи від Maroš Sivák",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-21"
