@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-21t20_00_25_210154": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T20:00:25.210154"
+  },
   "email_ai_item|2026-11-21t19_56_09_684783": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист містить сповіщення про вакансії від LinkedIn, зокрема про позиції AML & Compliance Manager в Y&Y Group та Senior Payroll & HR O",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз фізичної активності та рекомендації щодо відно",
     "ts": "2026-11-21T15:01:14.474482"
-  },
-  "briefing|2026-11-21t15_01_04_232034": {
-    "topic": "briefing",
-    "gist": "🧭 **Сьогоднішній день, 21.11.2026, в Кошице, за даними Garmin, характеризується зниженою фізичною активністю: зафіксовано лише 1,141 крок.** Це значно нижче сер",
-    "ts": "2026-11-21T15:01:04.232034"
   }
 }
