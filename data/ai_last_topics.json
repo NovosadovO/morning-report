@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t17_26_05_385890": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"У тебе є два листи від KOOPERATIVA щодо обов'язкового страхування автомобіля (EČV LE066BI). Один — подяка за сп",
+    "ts": "2026-11-21T17:26:05.385890"
+  },
   "selfact|2026-11-21t17_10_54_553970": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Потрібно відповісти на нього, згідно з нагадуванням від ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-21T12:01:00.885093"
-  },
-  "selfact|2026-11-21t11_59_55_019922": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, отримав від Maroš Sivák аналізи для Olexiho. Потрібно їх переглянути.\",     \"why\": \"Отримано новий лист ",
-    "ts": "2026-11-21T11:59:55.019922"
   }
 }
