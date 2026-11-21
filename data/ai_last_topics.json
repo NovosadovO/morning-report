@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-21t10_42_22_161404": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T10:42:22.161404"
+  },
+  "bills|2026-11-21t10_38_35_032799": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-21T10:38:35.032799"
+  },
   "action_detect|2026-11-21t10_37_14_364886": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страховки\",     \"text\": \"Олеже, надійшов лист про подяку за оплату обов'язкового страхування ав",
     "ts": "2026-11-21T06:34:44.359566"
-  },
-  "action_detect|2026-11-21t06_31_03_706895": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Олег, йди до церкви ",
-    "ts": "2026-11-21T06:31:03.706895"
-  },
-  "msg_event_soon|2026-11-21t06_30_53_230196": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "✅ **08:00 — До церкви.** Олег, поки є цінні хвилини до виходу, візьми з собою: гаманець (невелику суму готівкою, якщо плануєш пожертву), можливо, окуляри, якщо ",
-    "ts": "2026-11-21T06:30:53.230196"
   }
 }
