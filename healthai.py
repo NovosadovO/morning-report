@@ -1374,6 +1374,13 @@ def tick() -> str:
         K.log(TAG, f"initiative error: {e}")
 
     try:
+        import healthideas
+        if healthideas.run():
+            done.append("idea")
+    except Exception as e:
+        K.log(TAG, f"healthideas error: {e}")
+
+    try:
         if recovery_precheck():
             done.append("recovery")
     except Exception as e:

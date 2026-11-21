@@ -468,6 +468,23 @@ def get_status(shift_info=None):
     now = _now_local()
     h = now.hour
 
+    # 21.11: слово Олега («/дома», «/робота», «/зміна нічна») вище за календар.
+    # Раніше цей шлях (smart_notifications_v3, привітання, коуч) його ігнорував
+    # і писав «твоя нічна зміна триває», коли він уже вдома.
+    try:
+        import nowctx as _nw
+        _m = _nw._manual_fresh()
+        if _m:
+            if _m["loc"] == "doma":
+                return "home"
+            return "working_night" if (h >= 18 or h < 6) else "working_early"
+        _ms = _nw.manual_shift()
+        if _ms in ("early", "night", "free"):
+            shift_info = dict(shift_info or {})
+            shift_info["today"] = _ms
+    except Exception:
+        pass
+
     if shift_info is None:
         shift_info = get_shift_from_calendar()
 
