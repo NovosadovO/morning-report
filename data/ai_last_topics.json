@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-21t14_05_55_237039": {
+    "topic": "healthai",
+    "gist": "🏠 Вихідний день, але середня вага за 7 днів (84.8 кг) ще вища за сьогоднішню (84.3 кг), а тренд росту ваги (+0.1 кг) триває. Сон поки що зафіксовано 8.3 год, хо",
+    "ts": "2026-11-21T14:05:55.237039"
+  },
   "selfact|2026-11-21t13_49_54_508839": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від KOOPERATIVA\",     \"text\": \"Надійшло підтвердження про оплату обов'язкового страхуванн",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-21T09:02:28.194835"
-  },
-  "action_detect|2026-11-21t09_02_17_235261": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка\", \"action_date\": \"2026-11-22\", \"action_time\": null, \"action_summary\": \"Наступний запланований пунк",
-    "ts": "2026-11-21T09:02:17.235261"
   }
 }
