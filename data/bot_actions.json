@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, нагадую про страховку авто. Залишилось 4 дні до перев",
-      "detail": "ЗАПЛАНОВАНІ НАГАДУВАННЯ: 2026-11-04T10:00:00 — 🔔 Перевірити страховку авто",
-      "module": "selfact",
-      "ts": "2026-11-16T08:49:17"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-16",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-21T18:05:14"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-21",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-21T18:31:46"
     }
   ]
 }
