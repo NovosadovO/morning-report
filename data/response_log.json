@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T22:19:59.329959+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-09-07T00:02:11.370684+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14563,6 +14557,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити листи від KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T01:30:30.949895+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити лист від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-21"
