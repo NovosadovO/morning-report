@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про попередні ро",
     "ts": "2026-11-21T11:11:21.224143"
+  },
+  "selfact|2026-11-21t16_39_09_212796": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Потрібно переглянути та відповісти.\",     \"why\": \"Надійшов",
+    "ts": "2026-11-21T16:39:09.212796"
   }
 }
