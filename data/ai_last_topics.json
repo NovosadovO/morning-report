@@ -1,4 +1,29 @@
 {
+  "healthai|2026-11-21t12_05_51_457011": {
+    "topic": "healthai",
+    "gist": "✨ Тренд ваги зростає (+0.1 кг) і від цілі 75 кг ще +9.3 кг, а середньотижневі кроки падають (-2853.2). 😴 Поки що зафіксовано 8.3 год сну, але тренд за 14 днів п",
+    "ts": "2026-11-21T12:05:51.457011"
+  },
+  "action_detect|2026-11-21t12_01_22_960320": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Ол",
+    "ts": "2026-11-21T12:01:22.960320"
+  },
+  "action_detect|2026-11-21t12_01_11_744195": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T12:01:11.744195"
+  },
+  "action_detect|2026-11-21t12_01_00_885093": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T12:01:00.885093"
+  },
+  "selfact|2026-11-21t11_59_55_019922": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, отримав від Maroš Sivák аналізи для Olexiho. Потрібно їх переглянути.\",     \"why\": \"Отримано новий лист ",
+    "ts": "2026-11-21T11:59:55.019922"
+  },
   "deadlines|2026-11-21t11_58_34_631580": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто KOOPERATIVA — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-1",
@@ -273,30 +298,5 @@
     "topic": "market_insight",
     "gist": "```json {   \"text\": \"<b>-9.15%</b> зміна BTC за 24 години свідчить про значний рух, що виходить за межі звичайних коливань, але BTC сам по собі показує схожу ди",
     "ts": "2026-11-21T08:00:20.830393"
-  },
-  "healthai_truthfix|2026-11-21t07_55_51_468364": {
-    "topic": "healthai/truthfix",
-    "gist": "Сон триває 8 год 21 хв, що на 0.8 год перевищує норму за останні 14 днів (7.5 год). Однак, тренд цього показника падає. HRV за ніч — 45 мс, що відповідає нормі.",
-    "ts": "2026-11-21T07:55:51.468364"
-  },
-  "healthai|2026-11-21t07_55_39_734505": {
-    "topic": "healthai",
-    "gist": "😴 Сон: <b>8 год 21 хв</b> зафіксовано за ніч; норма сну за 14 днів — 7.5 год, тренд падає. 💓 HRV за ніч: <b>45 мс</b>, що відповідає нормі за 14 днів. 🔋 Body Ba",
-    "ts": "2026-11-21T07:55:39.734505"
-  },
-  "action_detect|2026-11-21t07_54_33_427366": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про криптовалюту ETH та ",
-    "ts": "2026-11-21T07:54:33.427366"
-  },
-  "people|2026-11-21t07_52_11_831740": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Olexiho\",   ",
-    "ts": "2026-11-21T07:52:11.831740"
-  },
-  "selfact|2026-11-21t07_51_48_985213": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні 21 листопада, день відновлення, без бігу. Заплановано легку прогулянку о 10:00.\",     \"",
-    "ts": "2026-11-21T07:51:48.985213"
   }
 }
