@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "evdone_yes_done_aqufc60941h7tm8d0qd0u0b9rc_2026-10-18",
-      "label": "✅ Виконано",
-      "ts": "2026-10-18T20:49:48"
-    },
-    {
       "t": "msg",
       "kind": "cmd",
       "text": "/спати",
@@ -7199,6 +7193,12 @@
       "kind": "cmd",
       "text": "/звички",
       "ts": "2026-11-21T22:28:16"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_invest",
+      "label": "❌",
+      "ts": "2026-11-21T22:28:23"
     }
   ]
 }
