@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T23:56:46.737069+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-09-07T23:56:47.604951+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14572,6 +14566,12 @@
       "extra": {
         "kind": "insurance"
       }
+    },
+    {
+      "ts": "2026-11-21T22:27:25.818580+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_water"
     }
   ]
 }
