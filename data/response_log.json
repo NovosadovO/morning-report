@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T07:22:09.391666+00:00",
-      "category": "calendar_button",
-      "question": "06.09 :Блокнот ,ручка, повербанк, наушники, дезодорант, зубна щітка,",
-      "answer": "done",
-      "extra": {
-        "stage": "after",
-        "when": "16:00–06:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-07T07:22:09.737940+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14582,6 +14571,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T08:53:15.141591+00:00",
+      "category": "deadline_found",
+      "question": "Скидання паролю Google",
+      "answer": "2026-11-23",
+      "extra": {
+        "kind": "other"
       }
     }
   ]
