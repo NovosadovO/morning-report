@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-15",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-15T15:42:57"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-15",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-15T16:12:25"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.17 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
       "ts": "2026-11-21T02:20:10"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, сьогодні 21 листопада, день відновлення. Заплановано",
+      "detail": "Календар на 7 днів вказує на день відновлення та відвідування церкви сьогодні о 07:00.",
+      "module": "selfact",
+      "ts": "2026-11-21T02:59:02"
     }
   ]
 }
