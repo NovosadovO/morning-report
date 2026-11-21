@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-06T22:19:56.127274+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_water"
-    },
-    {
       "ts": "2026-09-06T22:19:59.329959+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14559,6 +14553,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити листа від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T01:30:25.672208+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити листи від KOOPERATIVA",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-21"
