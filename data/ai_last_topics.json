@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-21t21_35_48_527343": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страховки\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо сплати обов'язкового страхув",
+    "ts": "2026-11-21T21:35:48.527343"
+  },
+  "action_detect|2026-11-21t21_30_40_370775": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T21:30:40.370775"
+  },
+  "selfact|2026-11-21t21_19_53_751761": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування авто\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо обов'язкового страху",
+    "ts": "2026-11-21T21:19:53.751761"
+  },
   "openloop_promises|2026-11-21t21_17_12_994240": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -283,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування авто\",     \"text\": \"Олеже, отримав лист від KOOPERATIVA щодо страхування ав",
     "ts": "2026-11-21T17:57:01.859523"
-  },
-  "selfact|2026-11-21t17_41_31_293665": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізом для Olexi. Варто переглянути.\",     \"mail_uid\": \"82454\"   },   {     \"",
-    "ts": "2026-11-21T17:41:31.293665"
-  },
-  "selfact|2026-11-21t17_26_05_385890": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"У тебе є два листи від KOOPERATIVA щодо обов'язкового страхування автомобіля (EČV LE066BI). Один — подяка за сп",
-    "ts": "2026-11-21T17:26:05.385890"
-  },
-  "selfact|2026-11-21t17_10_54_553970": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Потрібно відповісти на нього, згідно з нагадуванням від ",
-    "ts": "2026-11-21T17:10:54.553970"
-  },
-  "action_detect|2026-11-21t21_30_40_370775": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-21T21:30:40.370775"
-  },
-  "selfact|2026-11-21t21_19_53_751761": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування авто\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо обов'язкового страху",
-    "ts": "2026-11-21T21:19:53.751761"
   }
 }
