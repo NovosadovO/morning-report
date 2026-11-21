@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-21t06_01_11_171107": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-21T06:01:11.171107"
+  },
   "deadlines|2026-11-21t05_53_05_930310": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"document\",     \"title\": \"Термін дії посилання для скидання паролю Google\",     \"org\": \"Google Workspace\",     \"de",
@@ -293,10 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Olexiho\",   ",
     "ts": "2026-11-20T23:52:22.248174"
-  },
-  "selfact|2026-11-20t23_52_10_294840": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, отримав лист від Maroš Sivák з аналізами для Olexi. Потрібно відповісти на цей лист.\",     \"mail_uid\": \"",
-    "ts": "2026-11-20T23:52:10.294840"
   }
 }
