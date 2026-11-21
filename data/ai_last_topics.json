@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t02_58_52_028977": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні 21 листопада, день відновлення. Заплановано відвідування церкви о 07:00.\",     \"why\": \"Календар",
+    "ts": "2026-11-21T02:58:52.028977"
+  },
   "deadlines|2026-11-21t02_53_02_358506": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"document\",     \"title\": \"Термін дії посилання для скидання паролю Google\",     \"org\": \"Google Workspace\",     \"de",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Олега.\"}",
     "ts": "2026-11-20T21:02:37.706293"
-  },
-  "action_detect|2026-11-20t21_02_26_557063": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про здоров'я, біговий трекер, астрологічний п",
-    "ts": "2026-11-20T21:02:26.557063"
   }
 }
