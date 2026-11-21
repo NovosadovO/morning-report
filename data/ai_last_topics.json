@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-21t13_43_44_511997": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T13:43:44.511997"
+  },
   "selfact|2026-11-21t13_34_19_896595": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про страхування авто\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо страхування твого авт",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-21T09:02:06.185613"
-  },
-  "action_detect|2026-11-21t09_01_55_151176": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-21T09:01:55.151176"
   }
 }
