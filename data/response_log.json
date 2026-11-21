@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T03:02:16.684695+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "LINK виріс на 8.2% за 24 години (зараз $13.150)"
-    },
-    {
       "ts": "2026-09-07T07:22:09.391666+00:00",
       "category": "calendar_button",
       "question": "06.09 :Блокнот ,ручка, повербанк, наушники, дезодорант, зубна щітка,",
@@ -14575,6 +14569,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "ts": "2026-11-21T03:00:31.236021+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити рахунок від Mariia Ovsiienko",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-21"
