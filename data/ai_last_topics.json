@@ -1,4 +1,59 @@
 {
+  "healthai|2026-11-21t09_05_58_211254": {
+    "topic": "healthai",
+    "gist": "✨ Сьогоднішній пульс спокою — 46 уд/хв, що на 4.1 уд/хв нижче за середнє за 14 днів. Це може вказувати на покращення відновлення, але тренд HRV падає (-8.1 за 1",
+    "ts": "2026-11-21T09:05:58.211254"
+  },
+  "action_detect|2026-11-21t09_02_28_194835": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T09:02:28.194835"
+  },
+  "action_detect|2026-11-21t09_02_17_235261": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка\", \"action_date\": \"2026-11-22\", \"action_time\": null, \"action_summary\": \"Наступний запланований пунк",
+    "ts": "2026-11-21T09:02:17.235261"
+  },
+  "action_detect|2026-11-21t09_02_06_185613": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-21T09:02:06.185613"
+  },
+  "action_detect|2026-11-21t09_01_55_151176": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T09:01:55.151176"
+  },
+  "action_detect|2026-11-21t09_01_44_195680": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T09:01:44.195680"
+  },
+  "briefing|2026-11-21t09_01_33_900824": {
+    "topic": "briefing",
+    "gist": "🧭 **ГОЛОВНЕ** Твоє відновлення наразі виглядає в пріоритеті: сьогодні відмічений день без бігу, а показники Body Battery на 74/100, що є хорошим показником, хоч",
+    "ts": "2026-11-21T09:01:33.900824"
+  },
+  "themes_ai|2026-11-21t09_01_23_934461": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ За минулу добу ваш портфель втратив $252, що знизило його загальну вартість до $3,661. Цей показник є найбільш суттєвим зниженням за останні кілька дн",
+    "ts": "2026-11-21T09:01:23.934461"
+  },
+  "astro_ai|2026-11-21t09_01_12_963844": {
+    "topic": "astro_ai",
+    "gist": "Твоє сьогоднішнє положення транзитного Меркурія у IV домі (дім, сім'я, приватність) в секстилі з натальним Нептуном у VI домі (робота, рутина, здоров'я) – це ві",
+    "ts": "2026-11-21T09:01:12.963844"
+  },
+  "assistant|2026-11-21t09_01_05_138974": {
+    "topic": "assistant",
+    "gist": "Ось кілька корисних справ, які можна додати в календар на сьогодні, враховуючи твій вільний день:  - Приділи 30 хвилин для ознайомлення з новими матеріалами з о",
+    "ts": "2026-11-21T09:01:05.138974"
+  },
+  "action_detect|2026-11-21t09_00_59_808584": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-21T09:00:59.808584"
+  },
   "action_detect|2026-11-21t09_00_25_221281": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про показник P/E ratio т",
@@ -243,60 +298,5 @@
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "📉 Ринок криптовалют переживає значну корекцію: за останню добу ключові альткоїни демонструють помітні втрати, що вимагає спокійного аналізу, а не паніки.  За да",
     "ts": "2026-11-21T04:33:41.584799"
-  },
-  "selfact|2026-11-21t04_31_42_884516": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"У тебе є два незакритих листа від KOOPERATIVA щодо страхування автомобіля (EČV LE066BI). Один з них — подяка за",
-    "ts": "2026-11-21T04:31:42.884516"
-  },
-  "selfact|2026-11-21t04_15_57_662951": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування авто\",     \"text\": \"Олеже, надійшов лист з KOOPERATIVA щодо страхування тво",
-    "ts": "2026-11-21T04:15:57.662951"
-  },
-  "selfact|2026-11-21t04_00_55_445727": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про оплату страховки\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо страховки на авто з ",
-    "ts": "2026-11-21T04:00:55.445727"
-  },
-  "selfact|2026-11-21t03_45_31_054528": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні 21 листопада, день відновлення. Заплановано відвідування церкви о 07:00.\",     \"why\": \"Календар ",
-    "ts": "2026-11-21T03:45:31.054528"
-  },
-  "selfact|2026-11-21t03_29_41_674482": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування авто\",     \"text\": \"Олеже, згідно з листами від KOOPERATIVA, тобі прийшло сповіщен",
-    "ts": "2026-11-21T03:29:41.674482"
-  },
-  "selfact|2026-11-21t03_14_32_511064": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Зверни увагу, що сьогодні, 21 листопада, у тебе день відновлення, без бігу. Також заплановано похід до церкви о 07:00.\"",
-    "ts": "2026-11-21T03:14:32.511064"
-  },
-  "email_ai_item|2026-11-21t03_14_14_606428": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Vedúci/Vedúca oddelenia / Department Manager\\\" в H&M та \\\"Loyalty Program Senior Specialist\\\" в Del",
-    "ts": "2026-11-21T03:14:14.606428"
-  },
-  "openloop_promises|2026-11-21t03_08_25_237541": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-21T03:08:25.237541"
-  },
-  "action_detect|2026-11-21t03_01_21_812848": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збереженої інформації п",
-    "ts": "2026-11-21T03:01:21.812848"
-  },
-  "action_detect|2026-11-21t03_01_10_855450": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-21T03:01:10.855450"
-  },
-  "action_detect|2026-11-21t03_00_59_814922": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-21T03:00:59.814922"
   }
 }
