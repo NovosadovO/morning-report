@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T07:22:32.402801+00:00",
-      "category": "event_done",
-      "question": "📅 Підстригти ногті\nПланувалась до 06:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-07T07:22:39.772910+00:00",
       "category": "calendar_button",
       "question": "🤝 Зустріч команди зі Східної Словаччини (InterFin Discovery Day)",
@@ -14581,6 +14575,15 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 09:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-21T11:58:42.599444+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — оплата",
+      "answer": "2026-11-21",
+      "extra": {
+        "kind": "insurance"
+      }
     }
   ]
 }
