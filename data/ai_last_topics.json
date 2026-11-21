@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-11-21t02_53_02_358506": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"document\",     \"title\": \"Термін дії посилання для скидання паролю Google\",     \"org\": \"Google Workspace\",     \"de",
+    "ts": "2026-11-21T02:53:02.358506"
+  },
   "selfact|2026-11-21t02_43_46_206381": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування\",     \"text\": \"Олеже, прийшло сповіщення від KOOPERATIVA щодо обов'язкового страхув",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про здоров'я, біговий трекер, астрологічний п",
     "ts": "2026-11-20T21:02:26.557063"
-  },
-  "action_detect|2026-11-20t21_02_15_465608": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-20T21:02:15.465608"
   }
 }
