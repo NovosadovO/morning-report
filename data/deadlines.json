@@ -922,5 +922,17 @@
     "sender": "The Google Workspace Team <workspace-noreply@google.com>",
     "done": false,
     "created": "2026-11-20"
+  },
+  "скидання_паролю_google|2026-11-23": {
+    "kind": "other",
+    "title": "Скидання паролю Google",
+    "org": "Google Workspace",
+    "deadline": "2026-11-23",
+    "action": "Скинути пароль до облікового запису Google, скориставшись наданим посиланням.",
+    "why": "Посилання для скидання паролю дійсне лише 48 годин, після чого потрібно буде знову звертатися до адміністратора.",
+    "uid": "82946",
+    "sender": "The Google Workspace Team <workspace-noreply@google.com>",
+    "done": false,
+    "created": "2026-11-21"
   }
 }
