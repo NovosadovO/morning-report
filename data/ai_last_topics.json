@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-21t09_00_25_221281": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить інформацію про показник P/E ratio т",
+    "ts": "2026-11-21T09:00:25.221281"
+  },
+  "selfact|2026-11-21t08_53_53_482655": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Потрібно ознайомитись.\",     \"why\": \"Отримано лист від M",
+    "ts": "2026-11-21T08:53:53.482655"
+  },
   "deadlines|2026-11-21t08_53_06_828458": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"82946\",     \"kind\": \"other\",     \"title\": \"Скидання паролю Google\",     \"org\": \"Google Workspace\",     \"deadline\": \"2026-11-23\",     \"",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-21T03:00:59.814922"
-  },
-  "proactive_actions|2026-11-21t03_00_12_872324": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити листа від KOOPERATIVA про страхування\",     \"date\": \"2026-11-21\",     \"time\": \"\",     \"message\": ",
-    "ts": "2026-11-21T03:00:12.872324"
-  },
-  "selfact|2026-11-21t02_58_52_028977": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні 21 листопада, день відновлення. Заплановано відвідування церкви о 07:00.\",     \"why\": \"Календар",
-    "ts": "2026-11-21T02:58:52.028977"
   }
 }
