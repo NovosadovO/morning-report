@@ -38,6 +38,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-11-21T23:13:58.515788",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Siemens Healthineers наймає: Executive Associate Junior»\n\n<i>«Сповіщення про вакансії в Košice            \r\nExecutive Associate Junior\r\nSiemens Healthineers\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4491947294/?trackingId=J8wqn123WKY8I5P4vU8v7g%3D%3D&amp;refId=g95HuUN9m2TbapXPoJ1e3w%3D%3D&amp;lipi=urn...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83735"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83735"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83735"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83735"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83735"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83735"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
