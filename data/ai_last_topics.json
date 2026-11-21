@@ -298,5 +298,15 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexiho. Потрібно відповісти на нього, згідно з нагадуванням від ",
     "ts": "2026-11-21T17:10:54.553970"
+  },
+  "action_detect|2026-11-21t21_30_40_370775": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T21:30:40.370775"
+  },
+  "selfact|2026-11-21t21_19_53_751761": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування авто\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо обов'язкового страху",
+    "ts": "2026-11-21T21:19:53.751761"
   }
 }
