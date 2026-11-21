@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t10_11_58_737518": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшов лист від Maroš Sivák з аналізами для Olexiho. Можливо, варто ознайомитись.\",     \"mail_uid\": \"82454\",  ",
+    "ts": "2026-11-21T10:11:58.737518"
+  },
   "healthai|2026-11-21t10_05_49_501928": {
     "topic": "healthai",
     "gist": "✨ HRV за ніч — 45 мс, це на 8.1 мс менше, ніж середнє за 14 днів, що разом із падінням тренду кроків (-2965.3) та тим, що вага 84.3 кг — заміри від 20.11, свідч",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-21T06:01:22.276216"
-  },
-  "action_detect|2026-11-21t06_01_11_171107": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-21T06:01:11.171107"
   }
 }
