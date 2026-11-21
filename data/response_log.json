@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T09:26:37.996116+00:00",
-      "category": "calendar_button",
-      "question": "Доволенка в Іспанії",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t24h",
-        "when": "10:00–11:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-07T09:26:38.439338+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14579,6 +14568,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dl_due_done_eed779be47"
+    },
+    {
+      "ts": "2026-11-21T13:23:53.655713+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b9e348dd11"
     }
   ]
 }
