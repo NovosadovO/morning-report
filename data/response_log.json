@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T07:22:40.096466+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_done_a8e98ea47e"
-    },
-    {
       "ts": "2026-09-07T09:26:37.996116+00:00",
       "category": "calendar_button",
       "question": "Доволенка в Іспанії",
@@ -14579,6 +14573,12 @@
       "category": "confirm",
       "question": "gate_dl_due_done: 🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-21T13:23:53.655231+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_due_done_eed779be47"
     }
   ]
 }
