@@ -1,9 +1,4 @@
 {
-  "81362": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-25T08:00:22.013299+00:00"
-  },
   "81365": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "phantom@updates.phantom.com",
     "sender_raw": "\"Phantom\" <phantom@updates.phantom.com>",
     "seen_ts": "2026-11-21T12:16:15.371699+00:00"
+  },
+  "83682": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-11-21T13:23:33.656128+00:00"
   }
 }
