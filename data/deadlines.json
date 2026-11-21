@@ -934,5 +934,17 @@
     "sender": "The Google Workspace Team <workspace-noreply@google.com>",
     "done": false,
     "created": "2026-11-21"
+  },
+  "страховка_авто_kooperativa_оплата|2026-11-21": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-11-21",
+    "action": "Оплатити страховий поліс PZ 6641172176.",
+    "why": "Необхідно сплатити страховку, щоб автомобіль залишався застрахованим.",
+    "uid": "80711",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-11-21"
   }
 }
