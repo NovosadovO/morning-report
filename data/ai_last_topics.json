@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-11-21t03_08_25_237541": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T03:08:25.237541"
+  },
+  "action_detect|2026-11-21t03_01_21_812848": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збереженої інформації п",
+    "ts": "2026-11-21T03:01:21.812848"
+  },
+  "action_detect|2026-11-21t03_01_10_855450": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T03:01:10.855450"
+  },
+  "action_detect|2026-11-21t03_00_59_814922": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-21T03:00:59.814922"
+  },
+  "proactive_actions|2026-11-21t03_00_12_872324": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити листа від KOOPERATIVA про страхування\",     \"date\": \"2026-11-21\",     \"time\": \"\",     \"message\": ",
+    "ts": "2026-11-21T03:00:12.872324"
+  },
   "selfact|2026-11-21t02_58_52_028977": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні 21 листопада, день відновлення. Заплановано відвідування церкви о 07:00.\",     \"why\": \"Календар",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це підсумок дня з інформацією про звички, вагу та дан",
     "ts": "2026-11-20T21:31:17.614937"
-  },
-  "selfact|2026-11-20t21_17_12_686904": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо аналізів д",
-    "ts": "2026-11-20T21:17:12.686904"
-  },
-  "healthai|2026-11-20t21_06_41_565566": {
-    "topic": "healthai",
-    "gist": "👋 Олег, твоя вага 84.3 кг — це на 9.3 кг далі від цілі 75 кг, а середнє споживання калорій за 7 днів поки що невідоме. Зміна графіку роботи на вихідний означає,",
-    "ts": "2026-11-20T21:06:41.565566"
-  },
-  "openloop_promises|2026-11-20t21_06_29_151940": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-20T21:06:29.151940"
-  },
-  "action_detect|2026-11-20t21_02_48_544732": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата квартири\", \"action_date\": \"2023-12-15\", \"action_time\": null, \"action_summary\": \"Заплановано оплату квартири ",
-    "ts": "2026-11-20T21:02:48.544732"
-  },
-  "action_detect|2026-11-20t21_02_37_706293": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Олега.\"}",
-    "ts": "2026-11-20T21:02:37.706293"
   }
 }
