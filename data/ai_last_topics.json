@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t06_19_39_418984": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні 21 листопада, день відновлення. Заплановано 07:00 До церкви. Наступна подія — легка прогулянка о 10:00.",
+    "ts": "2026-11-21T06:19:39.418984"
+  },
   "openloop_promises|2026-11-21t06_09_45_620651": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Ол",
     "ts": "2026-11-21T00:01:03.344583"
-  },
-  "action_detect|2026-11-21t00_00_52_293479": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологічні транз",
-    "ts": "2026-11-21T00:00:52.293479"
   }
 }
