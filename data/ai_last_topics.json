@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-21t01_37_45_566392": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-21T01:37:45.566392"
+  },
   "proactive_actions|2026-11-21t01_30_11_882455": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити листа від Maroš Sivák\",     \"date\": \"2026-11-21\",     \"time\": \"\",     \"message\": \"Олеже, є новий ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Події\",   \"action_date\": \"2026-11-21\",   \"action_time\": \"08:00\",   \"action_summary\": \"Занотувати подію",
     "ts": "2026-11-20T20:46:08.534341"
-  },
-  "context_ask_ai_truthfix|2026-11-20t20_45_58_098959": {
-    "topic": "context_ask_ai/truthfix",
-    "gist": "Олеже, я працюю на платформі Google.  20 листопада 2026, 20:45 (Кошице). Garmin синхронізовано 21 хв тому. HRV за ніч: 52 мс. Пульс спокою: 48 уд/хв. Сон: 10 го",
-    "ts": "2026-11-20T20:45:58.098959"
   }
 }
