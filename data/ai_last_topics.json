@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t13_49_54_508839": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе повідомлення від KOOPERATIVA\",     \"text\": \"Надійшло підтвердження про оплату обов'язкового страхуванн",
+    "ts": "2026-11-21T13:49:54.508839"
+  },
   "openloop_promises|2026-11-21t13_43_44_511997": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка прогулянка\", \"action_date\": \"2026-11-22\", \"action_time\": null, \"action_summary\": \"Наступний запланований пунк",
     "ts": "2026-11-21T09:02:17.235261"
-  },
-  "action_detect|2026-11-21t09_02_06_185613": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-21T09:02:06.185613"
   }
 }
