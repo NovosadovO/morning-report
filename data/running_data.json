@@ -152,5 +152,26 @@
     "ground_contact_ms": 284.3,
     "vert_osc_cm": 9.0,
     "avg_power": 329.0
+  },
+  "garmin_25155152904": {
+    "type": "Walk",
+    "distance": 9188.5595703125,
+    "moving_time": 6418.945007324219,
+    "start_date_local": "2026-11-21T16:46:41",
+    "start_date": "2026-11-21T16:46:41",
+    "average_heartrate": 88.0,
+    "total_elevation_gain": 41.0,
+    "name": "Kosice Walking",
+    "notes": "авто з Garmin Connect",
+    "source": "garmin",
+    "saved_at": "2026-11-21 19:32",
+    "max_hr": 114.0,
+    "aerobic_te": 1.7,
+    "average_cadence": 100.953,
+    "calories": 622.0,
+    "training_load": 15.561,
+    "vo2max": 45.0,
+    "average_speed": 1.324,
+    "stride_m": 78.836
   }
 }
