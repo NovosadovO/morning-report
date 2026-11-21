@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-21t17_57_01_859523": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування авто\",     \"text\": \"Олеже, отримав лист від KOOPERATIVA щодо страхування ав",
+    "ts": "2026-11-21T17:57:01.859523"
+  },
   "selfact|2026-11-21t17_41_31_293665": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізом для Olexi. Варто переглянути.\",     \"mail_uid\": \"82454\"   },   {     \"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Ол",
     "ts": "2026-11-21T12:01:22.960320"
-  },
-  "action_detect|2026-11-21t12_01_11_744195": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-21T12:01:11.744195"
   }
 }
