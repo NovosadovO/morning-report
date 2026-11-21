@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T07:22:39.772910+00:00",
-      "category": "calendar_button",
-      "question": "🤝 Зустріч команди зі Східної Словаччини (InterFin Discovery Day)",
-      "answer": "done",
-      "extra": {
-        "stage": "after",
-        "when": "06:00–07:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-07T07:22:40.096466+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14584,6 +14573,12 @@
       "extra": {
         "kind": "insurance"
       }
+    },
+    {
+      "ts": "2026-11-21T13:23:43.914049+00:00",
+      "category": "confirm",
+      "question": "gate_dl_due_done: 🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
+      "answer": "yes"
     }
   ]
 }
