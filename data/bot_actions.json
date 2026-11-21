@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: що нового + AI",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-16T03:52:05"
-    },
-    {
       "kind": "notify",
       "what": "Oleg, you have an unpaid invoice from GASTROMILA, spol. s r.",
       "detail": "Неоплачені рахунки: {\"gastromila_spol_s_r_o_|4680_00|\": {\"vendor\": \"GASTROMILA, spol. s r.o.\", \"amount\": \"4680.00\", \"currency\": \"EUR\", \"invoice_no\": \"B2026046\", \"due\": \"\", \"uid\": \"76543\", \"note\": \"Виставлений рахунок за послуги від GASTROMILA, spol. s r.o.\", \"paid\": true, \"paid_at\": \"2026-08-04\", \"c",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-21T15:00:07"
+    },
+    {
+      "kind": "idea",
+      "what": "ідея здоров'я: steps_pace",
+      "detail": "Зараз 1141 кроків при цілі 8000",
+      "module": "healthai",
+      "ts": "2026-11-21T15:00:40"
     }
   ]
 }
