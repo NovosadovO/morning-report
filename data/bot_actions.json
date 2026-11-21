@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Oleg, you have an unpaid invoice from GASTROMILA, spol. s r.",
-      "detail": "Неоплачені рахунки: {\"gastromila_spol_s_r_o_|4680_00|\": {\"vendor\": \"GASTROMILA, spol. s r.o.\", \"amount\": \"4680.00\", \"currency\": \"EUR\", \"invoice_no\": \"B2026046\", \"due\": \"\", \"uid\": \"76543\", \"note\": \"Виставлений рахунок за послуги від GASTROMILA, spol. s r.o.\", \"paid\": true, \"paid_at\": \"2026-08-04\", \"c",
-      "module": "selfact",
-      "ts": "2026-11-16T04:08:55"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-16",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Зараз 1141 кроків при цілі 8000",
       "module": "healthai",
       "ts": "2026-11-21T15:00:40"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-21T15:05:52"
     }
   ]
 }
