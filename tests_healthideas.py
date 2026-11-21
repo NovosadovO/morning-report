@@ -14,7 +14,7 @@ def m(last, avg7=None, days_ago=0, day="2026-11-21", delta=None, n=7):
 
 def base(**kw):
     a = {"today": "2026-11-21", "shift_today": "free", "shift_tomorrow": "free",
-         "hrv": m(48, 50), "sleep": m(7.5, 7), "steps": m(5000), "energy": m(70),
+         "hrv": m(48, 50), "sleep": m(7.2, 7), "steps": m(5000), "energy": m(70),
          "hr": m(60, 60), "vo2max": m(None), "weight": {"last": 80.0, "days_ago": 1, "to_goal": 5.0}}
     a.update(kw); return a
 
@@ -99,10 +99,23 @@ check("after gap sends next (other key)", n == 1 and "Пульс" in SENT[1], SE
 K.now = lambda: datetime(2026, 11, 21, 15, 0)
 n = HI.run()
 check("cooldown: same keys not repeated", n == 0, SENT)
-STORE["healthideas_state.json"]["count"] = 4
+STORE["healthideas_state.json"]["count"] = 8
 STORE["healthideas_state.json"]["seen"] = {}
 K.now = lambda: datetime(2026, 11, 21, 18, 0)
 check("daily cap", HI.run() == 0)
 K.now = lambda: datetime(2026, 11, 22, 11, 0)
 check("next day resets cap", HI.run() == 1)
+# нові типи
+k = keys(base(sleep=m(8.0, 7)), 9); check("sleep_good", "sleep_good" in k, k)
+k = keys(base(stress=m(70, 50)), 15); check("stress_today", "stress_today" in k, k)
+k = keys(base(steps=m(9000)), 18); check("steps_done", "steps_done" in k and "steps_pace" not in k, k)
+k = keys(base(hrv=m(56, 50)), 11); check("hrv_good", "hrv_good" in k, k)
+k = keys(base(weight={"last": 84.0, "days_ago": 1, "to_goal": 9.0, "delta": -0.8, "n": 6}), 12); check("weight_move", "weight_move" in k, k)
+# однаковий текст за добу не шлемо двічі
+STORE.clear(); SENT.clear()
+K.now = lambda: datetime(2026, 11, 25, 11, 0)
+HI.H.analytics = lambda d=14: base(hrv=m(40, 50))
+check("sig first", HI.run() == 1)
+st = STORE["healthideas_state.json"]; st["seen"] = {}; st["last_sent"] = None
+check("same text same day blocked", HI.run() == 0 and len(SENT) == 1, SENT)
 print("FAILS:", FAILS); sys.exit(1 if FAILS else 0)

@@ -19,8 +19,8 @@ import healthai as H
 TAG = "healthideas"
 STATE_FILE = "healthideas_state.json"
 
-DAILY_CAP = 4              # не більше стількох ідей на добу
-MIN_GAP_MIN = 90           # мін. проміжок між двома ідеями
+DAILY_CAP = 8              # не більше стількох ідей на добу
+MIN_GAP_MIN = 60           # мін. проміжок між двома ідеями
 WINDOW = (8, 21)           # година, коли можна писати (включно з 8, до 21:59)
 POST_NIGHT_HOUR = 7        # 06:30–07:59 — порада перед сном після нічної
 
@@ -29,6 +29,8 @@ COOLDOWN_H = {
     "recovery_easy": 20, "run_ready": 20, "sleep_short": 20, "steps_pace": 20,
     "energy_low_now": 20, "rhr_up": 24, "weight_week": 24 * 6, "vo2_trend": 24 * 6,
     "steps_streak": 24 * 3, "post_night": 20, "early_tomorrow": 20,
+    "sleep_good": 20, "stress_today": 20, "steps_done": 20, "hrv_good": 24 * 2,
+    "weight_move": 24 * 3,
 }
 
 
@@ -165,6 +167,39 @@ def candidates(a: dict, now: datetime = None, streak: int = None) -> list:
                     f"Ціль {H.STEPS_GOAL} кроків виконана {st} дні(в) підряд",
                     "Не ламай серію: навіть коротка вечірня прогулянка її збереже."))
 
+    # 9b. Нові типи (кожен раз на добу максимум)
+    if _fresh(sleep, 0) and sleep["last"] >= 7.5 and 8 <= h <= 12 and shift != "after_night":
+        out.append(("sleep_good", "😴 Гарний сон",
+                    f"Сон за ніч за Garmin — {sleep['last']} год",
+                    "Використай цей запас: найважче на сьогодні роби зараз, поки голова "
+                    "свіжа, а вечір залиш під легку прогулянку."))
+    stress = a.get("stress") or {}
+    if stress.get("last_day") == a.get("today") and stress.get("last") is not None \
+            and stress["last"] >= H.STRESS_HIGH and 11 <= h <= 21 and shift != "night":
+        out.append(("stress_today", "😣 Стрес сьогодні підвищений",
+                    f"Стрес за Garmin — {stress['last']} зі 100",
+                    "5 хвилин дихання (вдих 4 с, видих 6 с) або коротка прогулянка без "
+                    "телефону — це швидко знижує навантаження."))
+    if steps.get("last_day") == a.get("today") and steps.get("last") is not None \
+            and steps["last"] >= H.STEPS_GOAL and 12 <= h <= 21:
+        out.append(("steps_done", "✅ Ціль по кроках виконана",
+                    f"Сьогодні {int(steps['last'])} кроків при цілі {H.STEPS_GOAL}",
+                    "Чудово. Решту дня — розтяжка 5–10 хв і спокійний вечір, "
+                    "додатково себе не навантажуй."))
+    if _fresh(hrv) and hrv.get("avg7") and hrv["last"] > hrv["avg7"] * 1.1 and 9 <= h <= 19:
+        out.append(("hrv_good", "🫀 HRV вище за норму",
+                    f"HRV {hrv['last']} мс проти тижневої норми {hrv['avg7']} мс",
+                    "Нервова система відновилась — гарний момент для запланованого "
+                    "бігу чи силового."))
+    if w.get("delta") is not None and w.get("n", 0) >= 4 and abs(w["delta"]) >= 0.4 \
+            and w.get("days_ago") is not None and w["days_ago"] <= 3 and 10 <= h <= 19:
+        dn = w["delta"] < 0
+        out.append(("weight_move", "⚖️ Вага " + ("йде вниз" if dn else "йде вгору"),
+                    f"Вага {w['last']} кг ({w['delta']:+} кг за період), до цілі "
+                    f"{H.WEIGHT_GOAL:g} кг — {w.get('to_goal')} кг",
+                    "Так тримати: не змінюй режим сну й харчування." if dn else
+                    "Подивись на вечері й солодке цього тижня та додай 20 хв ходьби щодня."))
+
     # 10. Завтра рання — вечірнє налаштування
     if tomorrow == "early" and shift != "night" and 20 <= h <= 21:
         fact = "Завтра рання зміна (06:00)"
@@ -196,6 +231,7 @@ def run(force: bool = False) -> int:
     if state.get("day") != day:
         state["day"] = day
         state["count"] = 0
+        state["sigs"] = []
     if not force:
         if state.get("count", 0) >= DAILY_CAP:
             return 0
@@ -221,9 +257,13 @@ def run(force: bool = False) -> int:
                   "Без вступів, без нових чисел.")
         ai = (K.gemini_text(prompt, max_tokens=300, temperature=0.6, tag=TAG) or "").strip()
         text = f"<b>{header}</b>\n\n{fact}.\n\n{ai or action}"
+        sig = " ".join((ai or action).lower().split())[:120]
+        if not force and sig in (state.get("sigs") or []):
+            continue
         if K.send_card(text, H._kb(), tag=TAG):
             state.setdefault("seen", {})[key] = now.isoformat(timespec="seconds")
             state["count"] = state.get("count", 0) + 1
+            state.setdefault("sigs", []).append(sig)
             state["last_sent"] = now.isoformat(timespec="seconds")
             K.rate_mark(H._INSIGHT_GATE_FILE)
             H._journal("idea", f"ідея здоров'я: {key}", fact)
