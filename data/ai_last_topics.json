@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-21t18_01_02_757490": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Нагадування про вечерю для тих, хто практикує 16:8, з",
+    "ts": "2026-11-21T18:01:02.757490"
+  },
+  "action_detect|2026-11-21t18_00_14_195191": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-21T18:00:14.195191"
+  },
+  "deadlines|2026-11-21t17_58_43_394724": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"82462\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто — подяка за оплату\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,    ",
+    "ts": "2026-11-21T17:58:43.394724"
+  },
   "selfact|2026-11-21t17_57_01_859523": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування авто\",     \"text\": \"Олеже, отримав лист від KOOPERATIVA щодо страхування ав",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізом для Olexiho. Потрібно переглянути.\",     \"why\": \"Свіжий лист від Maroš",
     "ts": "2026-11-21T12:15:37.484037"
-  },
-  "openloop_promises|2026-11-21t12_12_52_805671": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-21T12:12:52.805671"
-  },
-  "healthai|2026-11-21t12_05_51_457011": {
-    "topic": "healthai",
-    "gist": "✨ Тренд ваги зростає (+0.1 кг) і від цілі 75 кг ще +9.3 кг, а середньотижневі кроки падають (-2853.2). 😴 Поки що зафіксовано 8.3 год сну, але тренд за 14 днів п",
-    "ts": "2026-11-21T12:05:51.457011"
-  },
-  "action_detect|2026-11-21t12_01_22_960320": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Ол",
-    "ts": "2026-11-21T12:01:22.960320"
   }
 }
