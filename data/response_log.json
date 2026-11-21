@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-07T12:24:37.296052+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_b6735b7da9"
-    },
-    {
       "ts": "2026-09-07T23:56:46.737069+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14569,6 +14563,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_run_a80488a472"
+    },
+    {
+      "ts": "2026-11-21T20:59:12.393012+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто — оплата",
+      "answer": "2026-11-21",
+      "extra": {
+        "kind": "insurance"
+      }
     }
   ]
 }
