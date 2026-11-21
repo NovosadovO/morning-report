@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-11-21T22:41:29.437964",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Free Online Courses через LinkedIn</b>\n📋 Тема: «Introduction to Artificial Intelligence»\n\n<i>«Online Tutorials\r\n\r\nАвтор: Free Online Courses\r\n\r\n\r\nАвтор: Free Online Courses\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/introduction-artificial-intelligence-vmkif?lipi=urn%3Ali%3Apage%3Aemail_email...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_83732"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_83732"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_83732"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_83732"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_83732"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_83732"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
