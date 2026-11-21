@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-21t03_14_14_606428": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Vedúci/Vedúca oddelenia / Department Manager\\\" в H&M та \\\"Loyalty Program Senior Specialist\\\" в Del",
+    "ts": "2026-11-21T03:14:14.606428"
+  },
   "openloop_promises|2026-11-21t03_08_25_237541": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Відповісти на лист від Maroš Sivák\",     \"text\": \"Олеже, потрібно відповісти на лист від Maroš Sivák щодо ан",
     "ts": "2026-11-20T21:32:03.144593"
-  },
-  "action_detect|2026-11-20t21_31_17_614937": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це підсумок дня з інформацією про звички, вагу та дан",
-    "ts": "2026-11-20T21:31:17.614937"
   }
 }
