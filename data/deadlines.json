@@ -959,5 +959,17 @@
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
     "done": false,
     "created": "2026-11-21"
+  },
+  "страховка_авто_kooperativa_оплата|2026-11-22": {
+    "kind": "insurance",
+    "title": "Страховка авто KOOPERATIVA — оплата",
+    "org": "KOOPERATIVA",
+    "deadline": "2026-11-22",
+    "action": "Оплатити страховий поліс.",
+    "why": "Несвоєчасна оплата страховки може призвести до штрафів або втрати чинності полісу.",
+    "uid": "82462",
+    "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
+    "done": false,
+    "created": "2026-11-22"
   }
 }
