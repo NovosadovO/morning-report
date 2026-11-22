@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T20:07:00.412481+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Останній прийом їжі",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-12T20:07:04.920008+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14603,6 +14597,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-22T23:26:33.284059+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
