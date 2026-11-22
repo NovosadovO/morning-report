@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-17",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-17T06:01:33"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-17",
-      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-17T06:31:52"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-22T14:32:38"
+    },
+    {
+      "kind": "idea",
+      "what": "ідея здоров'я: steps_pace",
+      "detail": "Зараз 2704 кроків при цілі 8000",
+      "module": "healthai",
+      "ts": "2026-11-22T15:00:41"
     }
   ]
 }
