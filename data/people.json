@@ -496,16 +496,18 @@
     "name": "Oleg Novosadov",
     "relation": "робота",
     "vip": true,
-    "topics": [],
+    "topics": [
+      "посилання на Facebook"
+    ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати повідомлення Олегу Новосадову, оскільки лист без теми.",
-    "ping_in_days": 0,
+    "next_step": "Переглянути посилання на Facebook, надіслане Олегом.",
+    "ping_in_days": 10,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-11-16",
-    "updated": "2026-11-21",
+    "updated": "2026-11-22",
     "pinged_at": ""
   },
   "ruslanakozancin@gmail.com": {
