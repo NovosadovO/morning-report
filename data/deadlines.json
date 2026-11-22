@@ -672,8 +672,10 @@
     "why": "Без оплати страховка авто може бути анульована, що призведе до відсутності покриття у разі ДТП.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-10-25"
+    "done": true,
+    "created": "2026-10-25",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "страховка_авто_kooperativa_оплата|2026-11-04": {
     "kind": "insurance",
