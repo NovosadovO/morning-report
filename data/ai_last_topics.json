@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-22t21_10_44_160728": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування авто\",     \"text\": \"Олеже, ти отримав лист від KOOPERATIVA щодо обов'язкового страх",
+    "ts": "2026-11-22T21:10:44.160728"
+  },
   "healthai|2026-11-22t21_05_16_817528": {
     "topic": "healthai",
     "gist": "👟 Вчорашній день мав оцінку 100, але тренд сну падає (-1.0 год) за останні 14 днів, що може впливати на відновлення. Завтра нічна зміна, тож варто подбати про в",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"до церкви на ранню\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записати до церкви на ран",
     "ts": "2026-11-22T18:01:47.403047"
-  },
-  "action_detect|2026-11-22t18_01_36_344444": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-22T18:01:36.344444"
   }
 }
