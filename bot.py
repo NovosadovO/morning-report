@@ -2580,8 +2580,15 @@ def handle_command(chat_id, text):
                     "оплачено", "сплачено")):
                 import bills_watcher as _bw_paid
                 _bp = _bw_paid.paid_from_text(text)
-                if _bp:
-                    send(chat_id, _bp)
+                try:
+                    import deadlines_watcher as _dl_paid
+                    _bp2 = _dl_paid.paid_from_text(text)
+                except Exception as _e_dp:
+                    _bp2 = ""
+                    print(f"[deadlines] paid_from_text error: {_e_dp}", flush=True)
+                _bp_all = "\n".join(x for x in (_bp, _bp2) if x)
+                if _bp_all:
+                    send(chat_id, _bp_all)
         except Exception as _e_bp:
             print(f"[bills] paid_from_text error: {_e_bp}", flush=True)
         import recall as _rc_msg
@@ -5403,6 +5410,12 @@ def handle_automation_callback(cb):
                     send(chat_id, f"📝 <b>Записав у нотатки</b>\n{r['title']} — до {r['deadline']}\n\n<i>Всі нотатки: /нотатки</i>")
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "записати в нотатки")
+            elif data.startswith("dl_paid_"):
+                r = _dl.do_paid(data[len("dl_paid_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"✅ <b>Записав: оплачено / зроблено</b>\n{r['title']}\n\n<i>Більше про це не нагадуватиму.</i>")
+                else: _stale()
             elif data.startswith("dl_due_done_"):
                 r = _dl.do_done(data[len("dl_due_done_"):])
                 if r.get("ok"):
@@ -6839,6 +6852,7 @@ def _dispatch_callback_async(cb):
         ("dl_rem_",         "⏰ Ставлю нагадування..."),
         ("dl_note_",        "📝 Записую в нотатки..."),
         ("dl_due_done_",    "✅ Позначаю зробленим..."),
+        ("dl_paid_",        "✅ Записую: оплачено..."),
         ("dl_due_snooze_",  "⏰ Нагадаю завтра"),
         ("dl_skip_",        "Ок, прибрав"),
         ("vr_menu_",        "✍️ Готую варіанти..."),

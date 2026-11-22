@@ -31,6 +31,7 @@ import json
 from datetime import datetime, timedelta
 
 import ai_kit as K
+import paidfacts as PF
 
 TAG = "deadlines"
 
@@ -39,6 +40,7 @@ STORE_FILE = "deadlines_store.json"     # payload кнопок
 SENT_FILE = "deadlines_sent.json"       # антидубль карточок
 SCAN_STATE = "deadlines_scan.json"      # rate-limit скану
 DUE_STATE = "deadlines_due_sent.json"   # антидубль нагадувань
+MEM_FILE = "deadlines_memory.json"      # {uids:{uid:{state,ts}}, migrations:{}}
 
 SCAN_MIN_GAP_MIN = 180        # раз на 3 години
 MAX_CARDS_PER_SCAN = 3
@@ -91,6 +93,7 @@ def _email_candidates(limit=10):
         return []
 
     bodies = K.load("email_body_cache.json", default={}) or {}
+    known = _mem().get("uids", {})
     out = []
     for e in items:
         if not isinstance(e, dict):
@@ -98,7 +101,11 @@ def _email_candidates(limit=10):
         uid = str(e.get("uid") or "")
         sender = str(e.get("sender") or e.get("from") or "")
         subject = str(e.get("subject") or "")
-        body = str((bodies.get(uid) or {}).get("body") or "")
+        body = PF.strip_html((bodies.get(uid) or {}).get("body") or "")
+        if uid and uid in known:
+            continue  # цей лист уже дав картку / закритий / відхилений
+        if PF.is_paid_mail(subject, body):
+            continue  # «дякуємо за оплату» — це не дедлайн, а закриття
         blob = f"{sender} {subject} {body[:1800]}".lower()
         if not any(h in blob for h in _HINTS):
             continue
@@ -133,6 +140,10 @@ _PROMPT = """Ти — асистент Олега (Кошице, Словачч�
 ПРАВИЛА:
 1. РАХУНКИ НА ОПЛАТУ пропускай — ними займається інший модуль.
 2. Реклама, новини, промо — НЕ дедлайн.
+2a. Листи-ПІДТВЕРДЖЕННЯ оплати («дякуємо за оплату», «Poďakovanie za úhradu»,
+   «payment received») — НЕ дедлайн, пропускай. Те саме для листа, де
+   сказано, що все вже оплачено / зроблено.
+2b. З ОДНОГО листа — лише ті дати, що ПРЯМО в ньому написані. Не рахуй нові дати.
 3. Якщо конкретної дати в тексті НЕМАЄ — пропусти рядок повністю.
    Не здогадуйся і не вигадуй дату.
 4. deadline — рівно YYYY-MM-DD. Якщо в листі «31.10.2026» → "2026-10-31".
@@ -158,6 +169,127 @@ _KIND_NAME = {
     "document": "Документ", "submit": "Подати документи",
     "warranty": "Гарантія", "appointment": "Візит", "other": "Термін",
 }
+
+
+# ─── ПАМ'ЯТЬ: один лист = одна картка; «оплачено» запам'ятовується ──────────
+
+_PAYLIKE_RE = re.compile(
+    r"оплат|сплат|плат[іеи]ж|страхов|поліс|продовж|підписк|poistn|poistk|"
+    r"zaplat|uhrad|úhrad|platb|renew|invoice|subscription|payment", re.I)
+
+
+def _mem() -> dict:
+    m = K.load(MEM_FILE, default={}) or {}
+    if not isinstance(m, dict):
+        m = {}
+    m.setdefault("uids", {})
+    m.setdefault("migrations", {})
+    return m
+
+
+def _mem_set_uid(uid, state: str):
+    uid = str(uid or "")
+    if not uid:
+        return
+    m = _mem()
+    m["uids"][uid] = {"state": state, "ts": K.today_str()}
+    K.save(MEM_FILE, m)
+
+
+def _payment_like(it: dict) -> bool:
+    if (it.get("kind") or "").lower() == "insurance":
+        return True
+    return bool(_PAYLIKE_RE.search(
+        f"{it.get('title') or ''} {it.get('action') or ''} {it.get('why') or ''}"))
+
+
+def _item_ids(it: dict) -> list:
+    return PF.ids_in(f"{it.get('title') or ''} {it.get('action') or ''} "
+                     f"{it.get('why') or ''} {it.get('sender') or ''}")
+
+
+def _close_item(did: str, it: dict, by: str) -> None:
+    it["done"] = True
+    it["done_at"] = K.today_str()
+    it["paid_by"] = by
+    K.update_key(ITEMS_FILE, did, it)
+
+
+def _org_of(it: dict) -> str:
+    return PF.org_token(it.get("org")) or PF.org_token(it.get("sender"))
+
+
+def reconcile_paid() -> int:
+    """Закрити відкриті картки, для яких у пошті вже є підтвердження оплати."""
+    n = 0
+    uid_paid = []
+    for did, it in load_items().items():
+        if it.get("done") or not _payment_like(it):
+            continue
+        if PF.mail_closes(it.get("org") or it.get("sender"), it.get("uid"), _item_ids(it)):
+            _close_item(did, it, "mail")
+            uid_paid.append(it.get("uid"))
+            n += 1
+    for u in uid_paid:
+        _mem_set_uid(u, "paid")
+    if n:
+        K.log(TAG, f"закрито за листом-підтвердженням: {n}")
+    return n
+
+
+def learn_paid_mails() -> int:
+    """Прочитати всі відомі листи (не лише ті, де є «термін») і запам'ятати
+    підтвердження оплат. Джерела: свіжий список + кеш тіл листів."""
+    seen = 0
+    try:
+        cache = K.load("email_body_cache.json", default={}) or {}
+        for uid, rec in cache.items():
+            if isinstance(rec, dict) and PF.learn_mail(
+                    uid, rec.get("sender"), rec.get("subject"), rec.get("body")):
+                seen += 1
+    except Exception as e:
+        K.log(TAG, f"learn cache error: {e}")
+    try:
+        import monitor as _m
+        raw = _m.get_emails()
+        lst = raw.get("items") if isinstance(raw, dict) else raw
+        if isinstance(lst, list):
+            for e in lst:
+                if isinstance(e, dict) and PF.learn_mail(
+                        e.get("uid"), e.get("sender") or e.get("from"),
+                        e.get("subject"), ""):
+                    seen += 1
+    except Exception as e:
+        K.log(TAG, f"learn list error: {e}")
+    return seen
+
+
+def _migrate() -> None:
+    """Одноразово: (1) усі вже відомі листи більше не переписуємо заново;
+    (2) страховка Kooperativa — Олег сказав, що оплатив (22.11.2026)."""
+    m = _mem()
+    mig = m["migrations"]
+    changed = False
+    if not mig.get("seed_uids"):
+        for did, it in load_items().items():
+            u = str(it.get("uid") or "")
+            if u and u not in m["uids"]:
+                m["uids"][u] = {"state": "done" if it.get("done") else "offered",
+                                "ts": K.today_str()}
+        mig["seed_uids"] = K.today_str()
+        changed = True
+    if changed:
+        K.save(MEM_FILE, m)
+    if not mig.get("kooperativa_paid_2026_11_22"):
+        PF.record_user("KOOPERATIVA", src="oleh_2026-11-22")
+        for did, it in load_items().items():
+            if not it.get("done") and _org_of(it) == "kooperativa":
+                _close_item(did, it, "user")
+                _mem_set_uid(it.get("uid"), "paid")
+        m = _mem()
+        m["migrations"]["kooperativa_paid_2026_11_22"] = K.today_str()
+        K.save(MEM_FILE, m)
+        K.log(TAG, "міграція: страховка Kooperativa закрита (Олег оплатив)")
 
 
 def _extract(cands):
@@ -268,6 +400,9 @@ def _offer(it: dict, did: str) -> bool:
         [{"text": "⏰ Нагадати заздалегідь", "callback_data": f"dl_rem_{pid}"},
          {"text": "📝 В нотатки", "callback_data": f"dl_note_{pid}"}],
     ]
+    if _payment_like(it):
+        kb.insert(0, [{"text": "✅ Вже оплачено / зроблено",
+                       "callback_data": f"dl_paid_{pid}"}])
     row = [{"text": "❌ Не актуально", "callback_data": f"dl_skip_{pid}"}]
     if str(it.get("uid") or "").isdigit():
         row.insert(0, {"text": "📖 Показати лист",
@@ -299,6 +434,13 @@ def scan(force: bool = False) -> int:
         return 0
     K.rate_mark(SCAN_STATE)
 
+    try:
+        _migrate()
+        learn_paid_mails()
+        reconcile_paid()
+    except Exception as e:
+        K.log(TAG, f"paid-reconcile error: {e}")
+
     cands = _email_candidates()
     if cands is None:
         K.log(TAG, "пошта недоступна — скан скасовано (не вигадуємо)")
@@ -314,6 +456,8 @@ def scan(force: bool = False) -> int:
         return 0
 
     senders = {str(c["uid"]): c["sender"] for c in cands}
+    mem_uids = _mem().get("uids", {})
+    new_uids = set()
     existing = load_items()
     sent = 0
     for it in found:
@@ -323,17 +467,29 @@ def scan(force: bool = False) -> int:
         deadline = (it.get("deadline") or "").strip()
         if not title or not re.match(r"^\d{4}-\d{2}-\d{2}$", deadline):
             continue  # без реальної дати — не дедлайн
+        uid = str(it.get("uid") or "")
+        if uid not in senders:
+            K.log(TAG, f"uid {uid!r} не з наданих листів — відкидаю (не вигадуємо)")
+            continue
+        if uid in mem_uids and uid not in new_uids:
+            continue  # цей лист уже оброблено раніше: нових «варіантів» не треба
         left = _days_left(deadline)
         if left is not None and left < -60:
             continue  # дуже старе
         did = _did(title, deadline)
         if did in existing:
             continue
-        _save_item(it, senders.get(str(it.get("uid") or ""), ""))
+        _save_item(it, senders.get(uid, ""))
+        new_uids.add(uid)
         if _offer(it, did):
             sent += 1
         if sent >= MAX_CARDS_PER_SCAN:
             break
+    if new_uids:
+        m = _mem()
+        for u in new_uids:
+            m["uids"][u] = {"state": "offered", "ts": K.today_str()}
+        K.save(MEM_FILE, m)
     K.log(TAG, f"скан завершено: {sent} карточок")
     _store.gc(days=60)
     return sent
@@ -342,15 +498,27 @@ def scan(force: bool = False) -> int:
 # ─── НАГАДУВАННЯ ─────────────────────────────────────────────────────────────
 
 def check_due_soon() -> int:
+    try:
+        _migrate()
+        reconcile_paid()
+    except Exception as e:
+        K.log(TAG, f"paid-reconcile error: {e}")
     items = load_items()
     sent = 0
+    uid_states = _mem().get("uids", {})
     for did, it in items.items():
         if it.get("done"):
+            continue
+        uid = str(it.get("uid") or "")
+        if uid_states.get(uid, {}).get("state") in ("done", "skipped", "paid"):
             continue
         left = _days_left(it.get("deadline"))
         if left is None or left < 0 or left not in WARN_DAYS:
             continue
         if _due_dedup.seen("dlr", did, str(left)):
+            continue
+        # один лист = одне нагадування на добу (навіть якщо збереглось кілька «варіантів»)
+        if uid and _due_dedup.seen("dlru", uid, K.today_str()):
             continue
 
         kind = (it.get("kind") or "other").lower()
@@ -371,8 +539,13 @@ def check_due_soon() -> int:
             [{"text": "📅 В календар", "callback_data": f"dl_cal_{pid}"},
              {"text": "⏰ Нагадати завтра", "callback_data": f"dl_due_snooze_{pid}"}],
         ]
+        if _payment_like(it):
+            kb[0] = [{"text": "✅ Вже оплачено / зроблено",
+                      "callback_data": f"dl_paid_{pid}"}]
         if K.send_card(text, kb, tag=TAG):
             _due_dedup.mark("dlr", did, str(left))
+            if uid:
+                _due_dedup.mark("dlru", uid, K.today_str())
             sent += 1
     if sent:
         K.log(TAG, f"нагадувань про дедлайни: {sent}")
@@ -496,8 +669,104 @@ def do_done(pid: str) -> dict:
     if not p:
         return {"ok": False, "error": "payload_missing"}
     _mark_done(p.get("did", ""))
+    _close_siblings(p.get("uid"), "button")
+    _mem_set_uid(p.get("uid"), "done")
     _store.drop(pid)
     return {"ok": True, "title": p.get("title")}
+
+
+def _close_siblings(uid, by: str) -> int:
+    uid = str(uid or "")
+    if not uid:
+        return 0
+    n = 0
+    for did, it in load_items().items():
+        if not it.get("done") and str(it.get("uid") or "") == uid:
+            _close_item(did, it, by)
+            n += 1
+    return n
+
+
+def do_paid(pid: str) -> dict:
+    """«✅ Вже оплачено / зроблено»: закриває картку, усі її «варіанти» з того
+    самого листа та всі відкриті картки цієї організації; запам'ятовує факт."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    _mark_done(p.get("did", ""))
+    _close_siblings(p.get("uid"), "button")
+    _mem_set_uid(p.get("uid"), "paid")
+    tok = PF.record_user(p.get("org") or "", src="button")
+    if tok:
+        for did, it in load_items().items():
+            if not it.get("done") and _org_of(it) == tok and _payment_like(it):
+                _close_item(did, it, "button")
+                _mem_set_uid(it.get("uid"), "paid")
+    try:
+        import ai_brain
+        ai_brain.remember_answer(f"Дедлайн: {p.get('title')}",
+                                 f"Оплатив / зробив: {p.get('title')} ({p.get('org') or ''})",
+                                 topic="deadline", source="button")
+    except Exception:
+        pass
+    _store.drop(pid)
+    return {"ok": True, "title": p.get("title")}
+
+
+_PAID_TXT_RE = re.compile(r"(оплатив|оплатила|сплатив|сплатила|заплатив|заплатила|"
+                          r"оплачено|сплачено|вже заплачено|вже оплачено)", re.I)
+_STOP_STEMS = {"оплат", "сплат", "заплат", "рахун", "платі", "вже", "щойно",
+               "сьогод", "вчора", "тільк", "тепер", "нарешт", "також"}
+
+
+def paid_from_text(text: str) -> str:
+    """«оплатив страховку» / «заплатив Kooperativa» у чаті -> закрити відкриті
+    картки-дедлайни. Порожній рядок, якщо нічого не знайшли (мовчимо)."""
+    raw = str(text or "").lower()
+    if not _PAID_TXT_RE.search(raw):
+        return ""
+    items = {d: it for d, it in load_items().items() if not it.get("done")}
+    if not items:
+        return ""
+    stems = set()
+    for w in re.findall(r"[а-яіїєґ]{4,}", raw):
+        if w[:5] not in _STOP_STEMS and w[:6] not in _STOP_STEMS:
+            stems.add(w[:5])
+    words = {w for w in re.findall(r"[a-z0-9]{4,}", PF.norm(raw))}
+    try:
+        import bills_watcher as _bw
+        for k, v in _bw._ALIASES.items():
+            if k in raw:
+                words.add(v)
+    except Exception:
+        pass
+    hits = []
+    for did, it in items.items():
+        blob = PF.norm(f"{it.get('org')} {it.get('title')} {it.get('sender')}")
+        blob_cy = f"{it.get('org')} {it.get('title')}".lower()
+        by_word = any(w in blob for w in words)
+        by_stem = any(st in blob_cy for st in stems)
+        if (by_word or by_stem) and _payment_like(it):
+            hits.append(did)
+    if not hits:
+        return ""
+    names = []
+    for did in hits:
+        it = items[did]
+        _close_item(did, it, "chat")
+        _mem_set_uid(it.get("uid"), "paid")
+        PF.record_user(it.get("org") or it.get("sender") or "", src="chat")
+        names.append(str(it.get("title") or "?"))
+    try:
+        import ai_brain
+        ai_brain.remember_answer("Оплата дедлайнів", str(text)[:200],
+                                 topic="deadline", source="text")
+    except Exception:
+        pass
+    uniq = list(dict.fromkeys(names))
+    return ("✅ Закрив дедлайни як оплачені/зроблені: " + "; ".join(uniq[:4])
+            + (f" (+{len(uniq) - 4})" if len(uniq) > 4 else "")
+            + ". Більше не нагадуватиму.")
 
 
 def do_snooze(pid: str) -> dict:
@@ -514,6 +783,12 @@ def do_skip(pid: str) -> dict:
     did = p.get("did", "")
     if did:
         K.remove_key(ITEMS_FILE, did)
+    # не просто прибрати картку, а й запам'ятати: з цього листа нових не буде
+    uid = str(p.get("uid") or "")
+    for d2, it in load_items().items():
+        if uid and str(it.get("uid") or "") == uid:
+            K.remove_key(ITEMS_FILE, d2)
+    _mem_set_uid(uid, "skipped")
     _store.drop(pid)
     return {"ok": True, "title": p.get("title")}
 

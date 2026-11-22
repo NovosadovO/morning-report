@@ -213,7 +213,15 @@ def reconcile_paid() -> int:
     for bid, b in bills.items():
         if b.get("paid"):
             continue
-        if any(_matches_paid(b, r) for r in receipts):
+        _fact = False
+        try:
+            import paidfacts as _pf
+            _fact = _pf.mail_closes(
+                b.get("vendor"), b.get("uid"),
+                _pf.ids_in(f"{b.get('invoice_no')} {b.get('subject')}"))
+        except Exception:
+            _fact = False
+        if _fact or any(_matches_paid(b, r) for r in receipts):
             b["paid"] = True
             b["paid_at"] = K.today_str()
             b["paid_by"] = "mail"
@@ -648,6 +656,18 @@ def _mark_paid(bid: str):
     b["paid_at"] = K.today_str()
     b["manual_paid"] = True
     K.update_key(BILLS_FILE, bid, b)
+    # спільна пам'ять: «оплачено» також закриває дедлайн тієї ж організації
+    try:
+        import paidfacts as _pf
+        import deadlines_watcher as _dw
+        tok = _pf.record_user(b.get("vendor") or "", src="bills")
+        if tok:
+            for did, it in _dw.load_items().items():
+                if not it.get("done") and _dw._org_of(it) == tok and _dw._payment_like(it):
+                    _dw._close_item(did, it, "bills")
+                    _dw._mem_set_uid(it.get("uid"), "paid")
+    except Exception as e:
+        K.log(TAG, f"shared paid error: {e}")
     return True
 
 
