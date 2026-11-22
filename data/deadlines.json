@@ -999,8 +999,10 @@
     "why": "Це нагадування про необхідність сплати обов'язкового страхування автомобіля.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-22"
+    "done": true,
+    "created": "2026-11-22",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "обліковий_запис_google_скидання_пароля|2026-11-2": {
     "kind": "document",
