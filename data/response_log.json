@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-10T15:33:56.868249+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "ONDO (твоя позиція) впав на 8.0% за 24 години (зараз $0.34950)"
-    },
-    {
       "ts": "2026-09-10T20:03:55.647392+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14613,6 +14607,15 @@
       "ts": "2026-11-22T14:59:51.562256+00:00",
       "category": "deadline_found",
       "question": "Обліковий запис Google — скидання пароля",
+      "answer": "2026-11-24",
+      "extra": {
+        "kind": "document"
+      }
+    },
+    {
+      "ts": "2026-11-22T18:00:00.978472+00:00",
+      "category": "deadline_found",
+      "question": "Google Workspace — скидання паролю",
       "answer": "2026-11-24",
       "extra": {
         "kind": "document"
