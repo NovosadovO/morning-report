@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-16",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-16T17:52:52"
-    },
-    {
       "kind": "notify",
       "what": "Привіт, Олег! Нагадую, що сьогодні в тебе нічна зміна. Не за",
       "detail": "Сьогоднішній день (16.11) починається з нічної зміни о 17:00, яка вже триває.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-22T07:31:03"
+    },
+    {
+      "kind": "notify",
+      "what": "Нагадую, що сьогодні ввечері о 17:00 у тебе нічна зміна. Не",
+      "detail": "Нагадую, що сьогодні ввечері о 17:00 у тебе нічна зміна. Не забудь про неї!",
+      "module": "selfact",
+      "ts": "2026-11-22T07:43:16"
     }
   ]
 }
