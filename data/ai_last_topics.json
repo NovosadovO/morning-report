@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-22t17_47_22_414060": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування авто\",     \"text\": \"Олеже, отримано листа від KOOPERATIVA щодо обов'язковог",
+    "ts": "2026-11-22T17:47:22.414060"
+  },
   "selfact|2026-11-22t17_32_01_231754": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 22 листопада, у тебе запланована легка прогулянка о 10:00. Не забудь про неї!\",     \"w",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": \"2026-10-23\",   \"action_time\": \"08:00\",   \"action_summary\": \"Записа",
     "ts": "2026-11-22T13:00:47.611366"
-  },
-  "action_detect|2026-11-22t13_00_16_478233": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Пробіжка\",   \"action_date\": null,   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв бігу пі",
-    "ts": "2026-11-22T13:00:16.478233"
   }
 }
