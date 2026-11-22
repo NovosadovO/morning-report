@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-22t04_21_59_865348": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Є також додатки з документами про комісії.\",     \"mail_uid\": \"8245",
+    "ts": "2026-11-22T04:21:59.865348"
+  },
   "selfact|2026-11-22t04_06_18_519749": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про страхування авто\",     \"text\": \"Олеже, ти отримав сповіщення від KOOPERATIVA про сплату",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Легка прогулянка — активне відновлення\",   \"action_date\": \"2026-11-22\",   \"action_time\": \"11:00\",   \"a",
     "ts": "2026-11-21T18:02:03.501267"
-  },
-  "action_detect|2026-11-21t18_01_52_454007": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз повідомлень та збережених даних про Олега.\"}",
-    "ts": "2026-11-21T18:01:52.454007"
   }
 }
