@@ -644,8 +644,10 @@
     "why": "Без оплати поліс може бути анульований, і авто залишиться без обов'язкового страхування.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-10-23"
+    "done": true,
+    "created": "2026-10-23",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "страховка_авто_kooperativa_нагадування|2026-10-3": {
     "kind": "insurance",
