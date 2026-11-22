@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-22t17_32_01_231754": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 22 листопада, у тебе запланована легка прогулянка о 10:00. Не забудь про неї!\",     \"w",
+    "ts": "2026-11-22T17:32:01.231754"
+  },
+  "selfact|2026-11-22t17_16_33_924850": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна на заводі\",     \"text\": \"Олеже, завтра, 23 листопада, у тебе нічна зміна. Початок о 17:00. Не за",
+    "ts": "2026-11-22T17:16:33.924850"
+  },
   "email_ai_item|2026-11-22t17_15_46_177896": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від LinkedIn з сповіщенням про вакансію \\\"Senior Software Engineer - React Native - Consumer\\\" від компанії Kraken у Словаччині",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Пробіжка\",   \"action_date\": null,   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв бігу пі",
     "ts": "2026-11-22T13:00:16.478233"
-  },
-  "selfact|2026-11-22t12_54_19_355684": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі надійшов лист від Maroš Sivák з аналізами для Olexiho. Також є документ з інформацією про комісії V",
-    "ts": "2026-11-22T12:54:19.355684"
-  },
-  "bills|2026-11-22t12_47_06_577651": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-22T12:47:06.577651"
   }
 }
