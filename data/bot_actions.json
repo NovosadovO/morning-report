@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Oleg, you have a night shift starting at 17:00 today. Rememb",
-      "detail": "Today's calendar entry for 17.11 is '17:00 Нічна зміна'.",
-      "module": "selfact",
-      "ts": "2026-11-17T08:56:05"
-    },
-    {
-      "kind": "notify",
       "what": "Oleg, today is a recovery day. No running is scheduled.",
       "detail": "Today's calendar entry for 17.11 is 'Відновлення — день без бігу'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-22T16:33:25"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-22",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-22T17:04:08"
     }
   ]
 }
