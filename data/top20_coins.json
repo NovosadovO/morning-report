@@ -1,5 +1,5 @@
 {
-  "ts": 1795257110.5603976,
+  "ts": 1795343527.3204014,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -11,8 +11,8 @@
     "HYPE": "hyperliquid",
     "ZEC": "zcash",
     "XMR": "monero",
-    "LEO": "leo-token",
     "DOGE": "dogecoin",
+    "LEO": "leo-token",
     "WBT": "whitebit",
     "LINK": "chainlink",
     "ADA": "cardano",
@@ -20,6 +20,6 @@
     "BCH": "bitcoin-cash",
     "NEAR": "near",
     "LTC": "litecoin",
-    "CC": "canton-network"
+    "AVAX": "avalanche-2"
   }
 }
