@@ -844,8 +844,10 @@
     "why": "Це нагадування про необхідність оплати страховки, щоб уникнути прострочення.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-13"
+    "done": true,
+    "created": "2026-11-13",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "страховка_авто_оплата|2026-11-17": {
     "kind": "insurance",
