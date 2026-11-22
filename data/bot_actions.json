@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-16",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-16T20:53:15"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів містить подію '08:00 Поміняти колеса в машині' на 23.11.2026.",
       "module": "selfact",
       "ts": "2026-11-22T09:32:17"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається твоя рання зміна о 05:00. Час готуватися!",
+      "detail": "Календар на 7 днів: 27.11: 05:00 Рання зміна",
+      "module": "selfact",
+      "ts": "2026-11-22T09:47:46"
     }
   ]
 }
