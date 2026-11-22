@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T20:04:57.661456+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -1.96% за 24 години — такі інструменти мають стояти на м"
-    },
-    {
       "ts": "2026-09-12T20:07:00.412481+00:00",
       "category": "confirm",
       "question": "calrem_skip: Останній прийом їжі",
@@ -14600,6 +14594,12 @@
     },
     {
       "ts": "2026-11-22T23:25:58.763148+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-22T23:26:02.586181+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
