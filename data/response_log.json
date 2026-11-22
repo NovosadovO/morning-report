@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-10T12:33:52.794737+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA додав 45.5% за 24 години (капіталізація $70.41B)"
-    },
-    {
       "ts": "2026-09-10T15:33:56.868249+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14614,6 +14608,15 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 09:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-22T14:59:51.562256+00:00",
+      "category": "deadline_found",
+      "question": "Обліковий запис Google — скидання пароля",
+      "answer": "2026-11-24",
+      "extra": {
+        "kind": "document"
+      }
     }
   ]
 }
