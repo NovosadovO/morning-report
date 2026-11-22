@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-16",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-16T18:52:29"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-16",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-16T18:52:34"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів: 22.11: 10:00 Легка прогулянка — активне відновлення",
       "module": "selfact",
       "ts": "2026-11-22T08:29:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Залишилось менше години до твоєї нічної зміни. Не забудь про",
+      "detail": "Календар на 7 днів: 23.11: 08:00 Поміняти колеса в машині; 17:00 Нічна зміна",
+      "module": "selfact",
+      "ts": "2026-11-22T08:29:33"
     }
   ]
 }
