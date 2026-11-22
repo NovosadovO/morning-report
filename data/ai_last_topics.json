@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-22t04_51_32_703809": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-22T04:51:32.703809"
+  },
   "bills|2026-11-22t04_45_46_280066": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -293,10 +298,5 @@
     "topic": "defi_digest",
     "gist": "За останні 24 години на ринку DeFi спостерігається помітна волатильність, з деякими протоколами, як-от Figure Markets Prime, що втратили понад 18%, тоді як Sky ",
     "ts": "2026-11-21T18:16:31.807674"
-  },
-  "openloop_promises|2026-11-21t18_16_11_058183": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-21T18:16:11.058183"
   }
 }
