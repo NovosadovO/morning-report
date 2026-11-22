@@ -1,4 +1,49 @@
 {
+  "selfact|2026-11-22t18_50_10_224512": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні тобі потрібно поміняти колеса в машині. Нагадую, що це заплановано на 23.11.\",     \"why\": \"Кален",
+    "ts": "2026-11-22T18:50:10.224512"
+  },
+  "bills|2026-11-22t18_48_19_586245": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-22T18:48:19.586245"
+  },
+  "action_detect|2026-11-22t18_46_58_744080": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": \"2024-11-29\",   \"action_time\": null,   \"action_summary\": \"Записа",
+    "ts": "2026-11-22T18:46:58.744080"
+  },
+  "weekly_report_truthfix|2026-11-22t18_46_48_098566": {
+    "topic": "weekly_report/truthfix",
+    "gist": "За останні 7 днів ваша вага знизилася в середньому на 0.7 кг, досягнувши 83.4 кг. Це показує позитивний тренд у напрямку до вашої цілі у 75 кг.  Однак, активніс",
+    "ts": "2026-11-22T18:46:48.098566"
+  },
+  "weekly_report|2026-11-22t18_46_36_343224": {
+    "topic": "weekly_report",
+    "gist": "Вага тішить: мінус 2.5 кг за тиждень — це круто, ти добре рухаєшся до цілі. Але звичок, крім холодного душу (5/7), майже немає, особливо біг — він зовсім просів",
+    "ts": "2026-11-22T18:46:36.343224"
+  },
+  "action_detect|2026-11-22t18_46_24_663354": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запис до церкви\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Записати на насту",
+    "ts": "2026-11-22T18:46:24.663354"
+  },
+  "action_detect|2026-11-22t18_46_13_661717": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Записати на на",
+    "ts": "2026-11-22T18:46:13.661717"
+  },
+  "action_detect|2026-11-22t18_46_02_762705": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Записати на насту",
+    "ts": "2026-11-22T18:46:02.762705"
+  },
+  "action_detect|2026-11-22t18_45_51_765414": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква\",   \"action_date\": \"2026-10-24\",   \"action_time\": null,   \"action_summary\": \"Записати на наступ",
+    "ts": "2026-11-22T18:45:51.765414"
+  },
   "action_detect|2026-11-22t18_45_40_797897": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"до церкви на ранню\",   \"action_date\": \"2026-11-27\",   \"action_time\": null,   \"action_summary\": \"Записа",
@@ -253,50 +298,5 @@
     "topic": "themes_ai",
     "gist": "15:00, неділя, 22 листопада 2026. Олег, аналізуємо твій стан.  💰 ФІНАНСИ — Минулої доби твій портфель приріс на $213, загальна сума — $3,847. Це позитивно, але ",
     "ts": "2026-11-22T15:00:46.480384"
-  },
-  "healthideas_truthfix|2026-11-22t15_00_38_177330": {
-    "topic": "healthideas/truthfix",
-    "gist": "Твій сон за сьогодні тривав 9 год 18 хв. Середній показник за останні 14 днів становить 7.7 год, з трендом на падіння (-1.0 год).  Сьогодні зафіксовано 2704 кро",
-    "ts": "2026-11-22T15:00:38.177330"
-  },
-  "healthideas|2026-11-22t15_00_26_328357": {
-    "topic": "healthideas",
-    "gist": "Твій сон поки що зафіксовано 9.3 години, але тренд за останні 14 днів падає (-1.0 год). Це могло вплинути на енергію, адже Body Battery наразі 64, що нижче сере",
-    "ts": "2026-11-22T15:00:26.328357"
-  },
-  "deadlines|2026-11-22t14_59_45_873215": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Обов'язкове страхування авто — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": null,",
-    "ts": "2026-11-22T14:59:45.873215"
-  },
-  "selfact|2026-11-22t14_57_32_923726": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, у тебе є лист від Maroš Sivák з аналізами для Olexiho. Також є лист від Mariia Ovsiienko з фактурою №202",
-    "ts": "2026-11-22T14:57:32.923726"
-  },
-  "bills|2026-11-22t14_47_37_619626": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-22T14:47:37.619626"
-  },
-  "selfact|2026-11-22t14_42_17_334060": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від Maroš Sivák з аналізами для Olexi. Потрібно звернути увагу на порівняння портфоліо з VUB та OVB, а та",
-    "ts": "2026-11-22T14:42:17.334060"
-  },
-  "healthai_truthfix|2026-11-22t14_32_35_458497": {
-    "topic": "healthai/truthfix",
-    "gist": "🪫 Body Battery: 64/100. Показник знизився з 95 кількома годинами раніше.",
-    "ts": "2026-11-22T14:32:35.458497"
-  },
-  "action_detect|2026-11-22t14_32_24_370206": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-22T14:32:24.370206"
-  },
-  "healthai|2026-11-22t14_32_14_174251": {
-    "topic": "healthai",
-    "gist": "🪫 Body Battery: 64/100, показник знизився з 95 кількома годинами раніше. Це може вказувати на виснаження ресурсів організму, тому до 18:00 варто планувати діяль",
-    "ts": "2026-11-22T14:32:14.174251"
   }
 }
