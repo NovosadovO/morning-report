@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-22t13_00_16_478233": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Пробіжка\",   \"action_date\": null,   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв бігу пі",
+    "ts": "2026-11-22T13:00:16.478233"
+  },
   "selfact|2026-11-22t12_54_19_355684": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, тобі надійшов лист від Maroš Sivák з аналізами для Olexiho. Також є документ з інформацією про комісії V",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква\",   \"action_date\": \"2026-10-24\",   \"action_time\": \"08:00\",   \"action_summary\": \"Записати на нас",
     "ts": "2026-11-22T09:00:35.081314"
-  },
-  "deadlines|2026-11-22t08_59_33_429338": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"82462\",     \"kind\": \"insurance\",     \"title\": \"Страховка авто KOOPERATIVA — оплата\",     \"org\": \"KOOPERATIVA\",     \"deadline\": \"2026-1",
-    "ts": "2026-11-22T08:59:33.429338"
   }
 }
