@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T20:07:04.920008+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_794dffa6a0"
-    },
-    {
       "ts": "2026-09-12T21:30:55.838407+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14603,6 +14597,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-11-22T23:26:43.303802+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_cardio_np"
     }
   ]
 }
