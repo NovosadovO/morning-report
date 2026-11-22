@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cw_ok_5671329a21",
-      "label": "✅ Пам'ятаю",
-      "ts": "2026-10-19T13:16:51"
-    },
-    {
-      "t": "btn",
       "data": "rx_done_e72631abf7",
       "label": "✅ Зробив",
       "ts": "2026-10-19T13:16:58"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Так",
       "ts": "2026-11-22T13:09:02"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_5p6th6tftfprhgskav3i5ou7u8_2026-11-22",
+      "label": "✅ Виконано",
+      "ts": "2026-11-22T13:10:33"
     }
   ]
 }
