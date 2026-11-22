@@ -920,8 +920,10 @@
     "why": "Без своєчасної оплати страховки автомобіль не буде допущено до руху, що може призвести до штрафів та інших юридичних наслідків.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-20"
+    "done": true,
+    "created": "2026-11-20",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "скидання_паролю_google|2026-11-22": {
     "kind": "document",
