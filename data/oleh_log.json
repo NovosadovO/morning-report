@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "am_no_7beefa6961",
-      "label": "🚫 Не треба",
-      "ts": "2026-10-19T19:36:22"
-    },
-    {
-      "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-10-19T19:36:25"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-10-19T19:36:26"
@@ -7199,6 +7187,18 @@
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-11-22T23:25:48"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-11-22T23:25:50"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_water",
+      "label": "❌ Ні",
+      "ts": "2026-11-22T23:25:52"
     }
   ]
 }
