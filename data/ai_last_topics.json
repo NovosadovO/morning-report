@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-22t21_42_27_884528": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні ввечері (22.11) о 21:42. Вже пізно для активностей, але завтра в тебе нічна зміна. Варто подума",
+    "ts": "2026-11-22T21:42:27.884528"
+  },
   "action_detect|2026-11-22t21_31_06_019795": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, не забудь завтра, 23 листопада, поміняти колеса в машині.\",     \"date",
     "ts": "2026-11-22T18:34:34.057678"
-  },
-  "openloop_promises|2026-11-22t18_27_17_699974": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-22T18:27:17.699974"
   }
 }
