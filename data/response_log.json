@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-08T20:03:09.385584+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA додав 47.5% за 24 години (капіталізація $72.29B)"
-    },
-    {
       "ts": "2026-09-08T22:01:39.640107+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14572,6 +14566,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити листи від KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-22"
+      }
+    },
+    {
+      "ts": "2026-11-22T04:30:23.093274+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути аналізи",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-22"
