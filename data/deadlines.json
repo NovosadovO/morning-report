@@ -985,8 +985,10 @@
     "why": "Несвоєчасна оплата страховки може призвести до штрафів або втрати чинності полісу.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-22"
+    "done": true,
+    "created": "2026-11-22",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "страховка_авто_kooperativa_авізо_оплати|2026-11-": {
     "kind": "insurance",
