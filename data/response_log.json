@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-09T20:03:29.741379+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -1.58% за 24 години — такі інструменти мають стояти на м"
-    },
-    {
       "ts": "2026-09-09T21:33:35.354981+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14610,6 +14604,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-22"
+      }
+    },
+    {
+      "ts": "2026-11-22T08:59:42.305471+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — авізо оплати",
+      "answer": "2026-11-22",
+      "extra": {
+        "kind": "insurance"
       }
     }
   ]
