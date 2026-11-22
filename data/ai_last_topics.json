@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-22t15_25_46_161075": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-22T15:25:46.161075"
+  },
+  "email_ai_item|2026-11-22t15_15_53_399112": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Global Technical Support Engineer I (m/f/n)\\\" в ESET та \\\"Data Analyst with German la",
+    "ts": "2026-11-22T15:15:53.399112"
+  },
   "selfact|2026-11-22t15_13_08_122055": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібно звернути увагу на платіж за страховку\",     \"text\": \"Олеже, ти отримав лист від KOOPERATIVA про сплат",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати на на",
     "ts": "2026-11-22T11:11:54.804217"
-  },
-  "healthai|2026-11-22t11_06_19_920012": {
-    "topic": "healthai",
-    "gist": "🏠 Сьогодні вихідний, але вага за 2026-11-21 становить 84.3 кг, що на 9.3 кг вище цільових 75 кг, а тренд ваги зростає. На цьому тлі, середня тривалість сну за о",
-    "ts": "2026-11-22T11:06:19.920012"
-  },
-  "selfact|2026-11-22t11_05_11_653612": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Аналізи від Maroš Sivák\",     \"text\": \"Отримано аналізи від Maroš Sivák для Olexiho. Потрібно переглянути та надіслати",
-    "ts": "2026-11-22T11:05:11.653612"
   }
 }
