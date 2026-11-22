@@ -1,4 +1,44 @@
 {
+  "healthai|2026-11-22t21_05_16_817528": {
+    "topic": "healthai",
+    "gist": "👟 Вчорашній день мав оцінку 100, але тренд сну падає (-1.0 год) за останні 14 днів, що може впливати на відновлення. Завтра нічна зміна, тож варто подбати про в",
+    "ts": "2026-11-22T21:05:16.817528"
+  },
+  "action_detect|2026-11-22t21_02_19_130271": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-22T21:02:19.130271"
+  },
+  "action_detect|2026-11-22t21_02_08_147729": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Записати на на",
+    "ts": "2026-11-22T21:02:08.147729"
+  },
+  "action_detect|2026-11-22t21_01_57_208212": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"До церкви на ранню\", \"action_date\": \"2026-10-23\", \"action_time\": null, \"action_summary\": \"Записати в календар: до ц",
+    "ts": "2026-11-22T21:01:57.208212"
+  },
+  "action_detect|2026-11-22t21_01_46_258383": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-23\",   \"action_time\": \"18:00\",   \"action_summary\": \"Підготуват",
+    "ts": "2026-11-22T21:01:46.258383"
+  },
+  "briefing|2026-11-22t21_01_36_358375": {
+    "topic": "briefing",
+    "gist": "🧭 **Сьогодні, 22.11.2026, в Кошице:** Твоя фізична активність залишається на високому рівні: 17 356 кроків сьогодні — це чудово. Водночас, \"готовність до бігу\" ",
+    "ts": "2026-11-22T21:01:36.358375"
+  },
+  "themes_ai|2026-11-22t21_01_26_841841": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ  У листопаді твої витрати поки що мінімальні – лише 16.95€. Це чудовий старт, але ще потрібно погасити 475.10€ і врахувати місячні підписки на 138.82€",
+    "ts": "2026-11-22T21:01:26.841841"
+  },
+  "action_detect|2026-11-22t21_01_00_813895": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запис до церкви\",   \"action_date\": \"2026-11-27\",   \"action_time\": null,   \"action_summary\": \"Записати ",
+    "ts": "2026-11-22T21:01:00.813895"
+  },
   "deadlines|2026-11-22t20_59_52_787071": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"80711\",     \"kind\": \"insurance\",     \"title\": \"Авізо на сплату страхування PZ 6641172176\",     \"org\": \"KOOPERATIVA\",     \"deadline\": n",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-22T18:01:36.344444"
-  },
-  "action_detect|2026-11-22t18_01_25_410868": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Холодний душ\",   \"action_date\": \"2026-11-22\",   \"action_time\": \"09:00\",   \"action_summary\": \"Виконати ",
-    "ts": "2026-11-22T18:01:25.410868"
-  },
-  "astro_ai_truthfix|2026-11-22t18_01_16_558844": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Транзитна Венера в Терезах у IV домі означає приємні домовленості вдома та з родиною.  Транзитний Місяць у Тельці у X домі кар'єри може вказувати на емоційну пр",
-    "ts": "2026-11-22T18:01:16.558844"
-  },
-  "astro_ai|2026-11-22t18_01_13_083023": {
-    "topic": "astro_ai",
-    "gist": "Сонце сьогодні робить трин до твого Асцендента, це означає, що твоя особистість, твоя енергія та твій вигляд зараз на піку. Це чудовий час для того, щоб заявити",
-    "ts": "2026-11-22T18:01:13.083023"
-  },
-  "action_detect|2026-11-22t18_01_00_061200": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-22T18:01:00.061200"
-  },
-  "garmin_weekly|2026-11-22t18_00_42_871821": {
-    "topic": "garmin_weekly",
-    "gist": "```json {   \"text\": \"Показники відновлення значно погіршилися: сон скоротився на <b>12.3%</b>, HRV на <b>5.2%</b>, а стрес зріс на <b>3.2%</b>. Body Battery так",
-    "ts": "2026-11-22T18:00:42.871821"
-  },
-  "action_detect|2026-11-22t18_00_22_931547": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запис до церкви\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Записати на насту",
-    "ts": "2026-11-22T18:00:22.931547"
-  },
-  "action_detect|2026-11-22t18_00_12_078498": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна в церкві\",   \"action_date\": \"2024-11-27\",   \"action_time\": \"06:00\",   \"action_summary\": \"З",
-    "ts": "2026-11-22T18:00:12.078498"
-  },
-  "run_planner|2026-11-22t18_00_05_684611": {
-    "topic": "run_planner",
-    "gist": "```json [   {     \"date\": \"2026-11-22\",     \"time\": \"09:30\",     \"type\": \"довгий\",     \"dist_km\": 11.0,     \"why\": \"Сьогодні вільний день, тому варто скористати",
-    "ts": "2026-11-22T18:00:05.684611"
   }
 }
