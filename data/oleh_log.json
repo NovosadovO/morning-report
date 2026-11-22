@@ -2,6 +2,18 @@
   "items": [
     {
       "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-10-19T19:36:25"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-10-19T19:36:26"
+    },
+    {
+      "t": "btn",
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-10-19T19:36:28"
