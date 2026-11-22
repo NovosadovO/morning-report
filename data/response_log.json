@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-08T22:01:43.437690+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-09-08T23:03:09.446389+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14583,6 +14577,15 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-11-22"
+      }
+    },
+    {
+      "ts": "2026-11-22T05:59:39.490070+00:00",
+      "category": "deadline_found",
+      "question": "Страховка авто KOOPERATIVA — оплата",
+      "answer": "2026-11-22",
+      "extra": {
+        "kind": "insurance"
       }
     }
   ]
