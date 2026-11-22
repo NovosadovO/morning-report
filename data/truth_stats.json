@@ -257,7 +257,8 @@
     },
     "healthideas": {
       "checked": 9,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     }
   },
   "last": [
@@ -785,7 +786,7 @@
   "2026-11-22": {
     "checked": 41,
     "issues": 15,
-    "fixed": 9,
+    "fixed": 10,
     "cut": 2
   }
 }
