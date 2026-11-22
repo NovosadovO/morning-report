@@ -1,4 +1,14 @@
 {
+  "astro_ai|2026-11-22t14_03_45_205206": {
+    "topic": "astro_ai",
+    "gist": "Транзитна Венера в Терезах у IV домі, що означає приємні домовленості вдома та з родиною, зараз з'єднується з транзитним Меркурієм у цьому ж домі. Це час, коли ",
+    "ts": "2026-11-22T14:03:45.205206"
+  },
+  "selfact|2026-11-22t13_56_38_379976": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Нагадування про страховку авто\",     \"text\": \"Олеже, у тебе є сповіщення від KOOPERATIVA про обов'язкове страхування а",
+    "ts": "2026-11-22T13:56:38.379976"
+  },
   "openloop_promises|2026-11-22t13_55_12_633114": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": \"2026-10-23\",   \"action_time\": \"08:00\",   \"action_summary\": \"Записа",
     "ts": "2026-11-22T09:02:10.585040"
-  },
-  "action_detect|2026-11-22t09_02_00_222995": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"до церкви на ранню\", \"action_date\": \"2026-11-27\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календар: д",
-    "ts": "2026-11-22T09:02:00.222995"
-  },
-  "action_detect|2026-11-22t09_01_48_695475": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Поміняти колеса в машині\",   \"action_date\": \"2023-11-23\",   \"action_time\": \"09:00\",   \"action_summary\"",
-    "ts": "2026-11-22T09:01:48.695475"
   }
 }
