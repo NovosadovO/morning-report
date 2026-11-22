@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T21:30:58.562960+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_tea"
-    },
-    {
       "ts": "2026-09-12T21:31:06.289681+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14607,6 +14601,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути аналізи для Олега",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-23"
+      }
+    },
+    {
+      "ts": "2026-11-23T00:00:38.970274+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити сповіщення про страхування",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-23"
