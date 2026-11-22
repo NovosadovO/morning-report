@@ -218,7 +218,7 @@
     },
     "foresight": {
       "checked": 891,
-      "issues": 613,
+      "issues": 614,
       "fixed": 274,
       "cut": 14
     },
@@ -791,6 +791,7 @@
     "cut": 2
   },
   "2026-11-23": {
-    "checked": 1
+    "checked": 1,
+    "issues": 1
   }
 }
