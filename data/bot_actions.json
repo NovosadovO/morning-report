@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Сьогодні ввечері Олег має нічну зміну о 17:00. Поточний час",
-      "detail": "Календар містить запис про нічну зміну о 17:00 17.11.",
-      "module": "selfact",
-      "ts": "2026-11-17T03:30:02"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-17",
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Вага 83.4 кг (-0.7 кг за період), до цілі 75 кг — 8.4 кг",
       "module": "healthai",
       "ts": "2026-11-22T13:32:19"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-22",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-22T14:01:04"
     }
   ]
 }
