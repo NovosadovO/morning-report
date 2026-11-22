@@ -208,7 +208,8 @@
     },
     "weekly_report": {
       "checked": 9,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     },
     "MSG_WEEKLY_RUN_COMPARE": {
       "checked": 3,
@@ -786,7 +787,7 @@
   "2026-11-22": {
     "checked": 54,
     "issues": 21,
-    "fixed": 12,
+    "fixed": 13,
     "cut": 2
   }
 }
