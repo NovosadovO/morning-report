@@ -971,8 +971,10 @@
     "why": "Без сплати страховки автомобіль не буде допущений до руху.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-21"
+    "done": true,
+    "created": "2026-11-21",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "страховка_авто_kooperativa_оплата|2026-11-22": {
     "kind": "insurance",
