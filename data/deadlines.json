@@ -858,8 +858,10 @@
     "why": "Необхідно сплатити страховку до сьогоднішнього дня, щоб уникнути штрафів та проблем з поліцією.",
     "uid": "80711",
     "sender": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
-    "done": false,
-    "created": "2026-11-17"
+    "done": true,
+    "created": "2026-11-17",
+    "done_at": "2026-11-22",
+    "paid_by": "user"
   },
   "термін_дії_посилання_для_скидання_паролю_google|": {
     "kind": "document",
