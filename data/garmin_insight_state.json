@@ -1,15 +1,15 @@
 {
   "recent": [
-    "hr_avg",
     "spo2",
     "stress",
     "sleep_hours",
     "body_battery",
-    "steps"
+    "steps",
+    "spo2"
   ],
   "last": {
-    "field": "steps",
-    "day": "2026-11-21",
-    "z": -1.61
+    "field": "spo2",
+    "day": "2026-11-22",
+    "z": 1.37
   }
 }
