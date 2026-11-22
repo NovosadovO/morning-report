@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "recovery",
-      "what": "скор відновлення перед нічною: mid",
-      "detail": "• HRV 41.0 мс — нижче сер.7д 49.5 мс на 17.2%",
-      "module": "healthai",
-      "ts": "2026-11-16T15:01:41"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-22T05:00:20"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-22",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-22T05:30:49"
     }
   ]
 }
