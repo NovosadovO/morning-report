@@ -173,5 +173,29 @@
     "vo2max": 45.0,
     "average_speed": 1.324,
     "stride_m": 78.836
+  },
+  "garmin_25165844291": {
+    "type": "Run",
+    "distance": 10051.3603515625,
+    "moving_time": 3764.227020263672,
+    "start_date_local": "2026-11-22T17:53:35",
+    "start_date": "2026-11-22T17:53:35",
+    "average_heartrate": 164.0,
+    "total_elevation_gain": 15.0,
+    "name": "Kosice Running",
+    "notes": "авто з Garmin Connect",
+    "source": "garmin",
+    "saved_at": "2026-11-22 19:03",
+    "max_hr": 175.0,
+    "aerobic_te": 5.0,
+    "average_cadence": 156.438,
+    "calories": 831.0,
+    "training_load": 204.87,
+    "vo2max": 44.0,
+    "average_speed": 2.663,
+    "stride_m": 101.74,
+    "ground_contact_ms": 289.7,
+    "vert_osc_cm": 9.15,
+    "avg_power": 316.0
   }
 }
