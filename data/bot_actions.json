@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-16",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-16T17:22:14"
-    },
-    {
       "kind": "notify",
       "what": "Перевірити страховку авто",
       "detail": "Планований нагадування про перевірку страховки авто.",
@@ -2799,6 +2792,13 @@
       "detail": "Сьогодні запланована легка прогулянка о 10:00.",
       "module": "selfact",
       "ts": "2026-11-22T07:27:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Залишилось менше години до зміни. Не забудь про нічну зміну",
+      "detail": "Завтра, 23.11, запланована нічна зміна о 17:00.",
+      "module": "selfact",
+      "ts": "2026-11-22T07:27:53"
     }
   ]
 }
