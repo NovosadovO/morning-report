@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-09T11:28:48.098037+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-09-09T11:28:50.095320+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14589,6 +14583,16 @@
       "answer": "Перевірити страхування авто",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-22"
+      }
+    },
+    {
+      "ts": "2026-11-22T06:00:40.109057+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на аналізи",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-22"
       }
     }
