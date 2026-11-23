@@ -9744,5 +9744,16 @@
     "about": "Підтвердження оплати замовлення",
     "state": "closed",
     "ts": "2026-11-23T23:55:33"
+  },
+  "report|t|останні 10 листів непрочитані": {
+    "kind": "report",
+    "key": "",
+    "tkey": "останні 10 листів непрочитані",
+    "title": "📬 Останні 10 листів (🔴 непрочитані)",
+    "action": "useful",
+    "label": "💡 Корисно",
+    "about": "📬 Останні 10 листів (🔴 непрочитані)\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n🔴 Informácie k objednávke č. 261123443: Platba prijatá — TonerDepot.sk\n▫️ Informácie k objednávke č. 261123443: Čakanie na platbu — TonerDepot.sk\n🔴 Your Garmin Connect Weekly Wellness Report for 16-22 No — Garmin Connect Summary Repor\n🔴 \r\nAdministrát",
+    "state": "open",
+    "ts": "2026-11-24T00:10:32"
   }
 }
