@@ -1295,12 +1295,15 @@
     "saved_at": "2026-11-08 00:40"
   },
   "2026-11-08": {
-    "steps": 6431,
-    "hr_avg": 51,
+    "steps": 20766,
+    "sleep_hours": 5.7,
+    "weight_kg": 85.0,
+    "hr_avg": 46,
+    "hrv": 69,
     "spo2": 95,
-    "stress": 27,
-    "body_battery": 23,
-    "saved_at": "2026-11-08 09:41"
+    "stress": 28,
+    "body_battery": 31,
+    "saved_at": "2026-11-13 19:12"
   },
   "2026-11-12": {
     "steps": 20707,
@@ -1313,12 +1316,154 @@
     "saved_at": "2026-11-13 01:31"
   },
   "2026-11-13": {
-    "steps": 43,
+    "steps": 9048,
+    "sleep_hours": 11.0,
     "hr_avg": 44,
+    "hrv": 61,
     "spo2": 96,
-    "stress": 12,
-    "body_battery": 100,
-    "saved_at": "2026-11-13 10:33",
+    "stress": 24,
+    "body_battery": 36,
+    "saved_at": "2026-11-14 04:12"
+  },
+  "2026-11-11": {
+    "steps": 22312,
+    "sleep_hours": 5.6,
+    "weight_kg": 84.9,
+    "hr_avg": 49,
+    "hrv": 40,
+    "spo2": 96,
+    "stress": 38,
+    "body_battery": 12,
+    "saved_at": "2026-11-13 16:11"
+  },
+  "2026-11-10": {
+    "steps": 3063,
+    "sleep_hours": 9.7,
+    "weight_kg": 84.0,
+    "hr_avg": 46,
+    "hrv": 55,
+    "spo2": 97,
+    "stress": 27,
+    "body_battery": 39,
+    "saved_at": "2026-11-13 16:11"
+  },
+  "2026-11-09": {
+    "steps": 13291,
+    "sleep_hours": 6.0,
+    "hr_avg": 50,
+    "hrv": 47,
+    "spo2": 95,
+    "stress": 31,
+    "body_battery": 33,
+    "saved_at": "2026-11-13 16:11"
+  },
+  "2026-11-14": {
+    "steps": 18482,
+    "sleep_hours": 10.5,
+    "weight_kg": 84.7,
+    "hr_avg": 45,
+    "hrv": 60,
+    "spo2": 96,
+    "stress": 32,
+    "body_battery": 21,
+    "vo2max": 44.0,
+    "saved_at": "2026-11-15 05:40"
+  },
+  "2026-11-15": {
+    "steps": 9314,
+    "sleep_hours": 7.7,
+    "hr_avg": 53,
+    "hrv": 41,
+    "spo2": 96,
+    "stress": 32,
+    "body_battery": 21,
+    "saved_at": "2026-11-16 00:40"
+  },
+  "2026-11-16": {
+    "steps": 15601,
+    "sleep_hours": 5.2,
+    "weight_kg": 85.9,
+    "hr_avg": 51,
+    "hrv": 39,
+    "spo2": 95,
+    "stress": 36,
+    "body_battery": 19,
+    "saved_at": "2026-11-17 00:53"
+  },
+  "2026-11-17": {
+    "steps": 14578,
+    "sleep_hours": 6.2,
+    "weight_kg": 84.7,
+    "hr_avg": 53,
+    "hrv": 46,
+    "spo2": 94,
+    "stress": 32,
+    "body_battery": 28,
+    "saved_at": "2026-11-18 06:54"
+  },
+  "2026-11-18": {
+    "steps": 19708,
+    "sleep_hours": 4.8,
+    "hr_avg": 50,
+    "hrv": 45,
+    "spo2": 96,
+    "stress": 36,
+    "body_battery": 23,
+    "saved_at": "2026-11-19 06:55"
+  },
+  "2026-11-19": {
+    "steps": 20317,
+    "sleep_hours": 6.0,
+    "hr_avg": 50,
+    "hrv": 47,
+    "spo2": 96,
+    "stress": 30,
+    "body_battery": 14,
+    "saved_at": "2026-11-20 06:31"
+  },
+  "2026-11-20": {
+    "steps": 7373,
+    "sleep_hours": 10.6,
+    "weight_kg": 84.3,
+    "hr_avg": 48,
+    "hrv": 52,
+    "spo2": 97,
+    "stress": 30,
+    "body_battery": 22,
+    "saved_at": "2026-11-21 01:54"
+  },
+  "2026-11-21": {
+    "steps": 14061,
+    "sleep_hours": 8.3,
+    "weight_kg": 84.3,
+    "hr_avg": 46,
+    "hrv": 45,
+    "spo2": 97,
+    "stress": 27,
+    "body_battery": 29,
+    "saved_at": "2026-11-22 05:31"
+  },
+  "2026-11-22": {
+    "steps": 18048,
+    "sleep_hours": 9.3,
+    "weight_kg": 83.4,
+    "hr_avg": 46,
+    "hrv": 52,
+    "spo2": 96,
+    "stress": 33,
+    "body_battery": 15,
+    "vo2max": 43.8,
+    "saved_at": "2026-11-23 02:37"
+  },
+  "2026-11-23": {
+    "steps": 371,
+    "sleep_hours": 8.0,
+    "hr_avg": 50,
+    "hrv": 41,
+    "spo2": 97,
+    "stress": 26,
+    "body_battery": 57,
+    "saved_at": "2026-11-23 09:08",
     "sleep_quality": "3",
     "sleep_quality_label": "😊 Добре"
   }
