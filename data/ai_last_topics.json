@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-23t06_15_31_619295": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-23T06:15:31.619295"
+  },
   "calendar|2026-11-23t06_06_14_150149": {
     "topic": "calendar",
     "gist": "Олеже, бачу, як ти старанно працюєш над своїми цілями! 💪 Цей тиждень видається спокійнішим, але саме це — чудова нагода сфокусуватися на найважливішому. Зверни ",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "📬 від Notifikácie KOOPERATIVA → Нагадування про оплату автостраховки (EČV LE066BI). Потрібно сплатити. 📬 від Maroš Sivák → Аналізи. Можна переглянути після змін",
     "ts": "2026-11-23T00:01:31.157218"
-  },
-  "action_detect|2026-11-23t00_01_21_519008": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Церква на ранню\", \"action_date\": \"2026-11-27\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календ",
-    "ts": "2026-11-23T00:01:21.519008"
   }
 }
