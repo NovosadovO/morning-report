@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-23t21_00_23_507921": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-23T21:00:23.507921"
+  },
+  "bills|2026-11-23t20_52_06_002736": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
+    "ts": "2026-11-23T20:52:06.002736"
+  },
   "selfact|2026-11-23t20_49_15_027886": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливі листи від KOOPERATIVA\",     \"text\": \"Отримано сповіщення про сплату страхування автомобіля (EČV LE066B",
@@ -288,15 +298,5 @@
     "topic": "context_ask_ai",
     "gist": "Привіт, Олеже!  На жаль, я не можу створити візуальний графік трендової лінії. Проте, я можу проаналізувати, як у тебе з цією звичкою.  Згідно з даними, ти регу",
     "ts": "2026-11-23T16:28:53.585107"
-  },
-  "action_detect|2026-11-23t16_25_56_647773": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не зміг розпізнати жодної події. Спробуй чіткіше: зав",
-    "ts": "2026-11-23T16:25:56.647773"
-  },
-  "planner|2026-11-23t16_25_45_537893": {
-    "topic": "planner",
-    "gist": "[]",
-    "ts": "2026-11-23T16:25:45.537893"
   }
 }
