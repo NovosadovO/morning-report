@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T09:05:17.691913+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -1.59% за 24 години — такі інструменти мають стояти на м"
-    },
-    {
       "ts": "2026-09-13T16:31:01.048142+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14603,6 +14597,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_fc07796917"
+    },
+    {
+      "ts": "2026-11-24T00:09:37.604528+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
