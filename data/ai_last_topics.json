@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-23t03_40_29_085903": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні о 08:00 тобі потрібно поміняти колеса в ",
+    "ts": "2026-11-23T03:40:29.085903"
+  },
   "people|2026-11-23t03_35_27_695622": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"notifikacie@ekooperativa.sk\",     \"name\": \"KOOPERATIVA\",     \"relation\": \"сервіс\",     \"topics\": [       \"сповіщення про страхування",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування авто\",     \"text\": \"Олеже, отримав два листи від KOOPERATIVA щодо обов'язкового стр",
     "ts": "2026-11-22T21:26:39.702957"
-  },
-  "email_ai_item|2026-11-22t21_24_39_596650": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Free Online Courses через LinkedIn про курс \\\"SQL for Excel Users: Build an Interactive Sales Dashboard\\\". Курс навчає використовувати",
-    "ts": "2026-11-22T21:24:39.596650"
   }
 }
