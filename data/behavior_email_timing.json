@@ -1,9 +1,4 @@
 {
-  "81511": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-10-28T10:42:16.780522+00:00"
-  },
   "81522": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-11-23T20:15:31.716636+00:00"
+  },
+  "84029": {
+    "sender": "obchod@soft-tech.sk",
+    "sender_raw": "\"TonerDepot.sk\" <obchod@soft-tech.sk>",
+    "seen_ts": "2026-11-23T22:17:42.699771+00:00"
   }
 }
