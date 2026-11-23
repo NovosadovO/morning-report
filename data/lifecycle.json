@@ -153,5 +153,16 @@
     "keyword": "Temu замовлення",
     "source": "email:80673",
     "ts": "2026-10-12T10:03:41.534388+00:00"
+  },
+  "замовлення 261123443": {
+    "entity": "Замовлення № 261123443",
+    "kind": "other",
+    "state": "paid",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "TonerDepot",
+    "source": "email:84029",
+    "ts": "2026-11-23T23:17:45.901542+00:00"
   }
 }
