@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T21:31:52.897891+00:00",
-      "category": "mood",
-      "question": "Оцінка настрою",
-      "answer": "😐 Нормально",
-      "extra": {
-        "score": 3
-      }
-    },
-    {
       "ts": "2026-09-12T21:34:21.280601+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -14627,6 +14618,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-23"
+      }
+    },
+    {
+      "ts": "2026-11-23T04:30:19.043642+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про страхування KOOPERATIVA",
       "extra": {
         "kind": "reply",
         "date": "2026-11-23"
