@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-23t23_30_51_532508": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-23T23:30:51.532508"
+  },
   "selfact|2026-11-23t23_24_33_037306": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування автомобіля\",     \"text\": \"Олеже, у тебе є лист від KOOPERATIVA щодо страхування ав",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист про сплату страхування автомобіля EČV LE066BI від KOOPERATIVA. Також є лист з подякою за сплату. ",
     "ts": "2026-11-23T18:58:33.495240"
-  },
-  "bills|2026-11-23t18_52_05_672498": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-23T18:52:05.672498"
   }
 }
