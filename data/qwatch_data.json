@@ -2339,5 +2339,14 @@
     "sleep_hours": 9.3,
     "weight_kg": 83.4,
     "vo2max": 43.8
+  },
+  "2026-11-23": {
+    "hr_avg": 53,
+    "spo2": 96,
+    "body_battery": 27,
+    "stress": 34,
+    "date": "2026-11-23",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-23 05:00"
   }
 }
