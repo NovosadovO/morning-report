@@ -1,9 +1,9 @@
 {
-  "label": "👌 Прийняв",
-  "action": "close",
-  "kind": "notify_ack",
-  "title": "Підтвердження оплати замовлення",
-  "about": "Підтвердження оплати замовлення",
-  "means": "прийняв і закрив тему",
-  "ts": "2026-11-23T23:55:41"
+  "label": "💡 Корисно",
+  "action": "useful",
+  "kind": "report",
+  "title": "📬 Останні 10 листів (🔴 непрочитані)",
+  "about": "📬 Останні 10 листів (🔴 непрочитані)\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n🔴 Informácie k objednávke č. 261123443: Platba prijatá — TonerDepot.sk\n▫️ Informácie k objednávke č. 261123443: Čakanie na platbu — TonerDepot.sk\n🔴 Your Garmin Connect Weekly Wellness Report for 16-22 No — Garmin Connect Summary Repor\n🔴 \r\nAdministrátor vám resetoval heslo k účtu Google pro d — The Google Workspace Team\n🔴 Poďakovanie za úhradu poistného - povinného zmluvného p — Notifikácie KOOPERATIVA\n🔴 Analýzy pre Olexiho :) — Maroš Sivák\n▫️ you",
+  "means": "назвав корисним",
+  "ts": "2026-11-24T00:10:34"
 }
