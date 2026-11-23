@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-23t12_00_56_477369": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2023-11-23\", \"action_time\": null, \"action_summary\": \"Поміняти колеса в м",
+    "ts": "2026-11-23T12:00:56.477369"
+  },
   "selfact|2026-11-23t11_56_55_830914": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування авто\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо обов'язкового",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні о 08:00 тобі потрібно поміняти колеса в ",
     "ts": "2026-11-23T07:33:14.229117"
-  },
-  "action_detect|2026-11-23t07_30_55_898547": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Заміна коліс\",   \"action_date\": null,   \"action_time\": \"09:00\",   \"action_summary\": \"Замінити колеса, ",
-    "ts": "2026-11-23T07:30:55.898547"
   }
 }
