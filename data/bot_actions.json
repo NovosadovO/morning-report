@@ -3,13 +3,6 @@
     {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-19",
-      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-19T05:30:40"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-19",
       "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-19T06:00:51"
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-11-23T23:38:03"
+    },
+    {
+      "kind": "notify",
+      "what": "Підтвердження оплати замовлення",
+      "detail": "Олеже, твоя оплата за замовлення № 261123443 від TonerDepot.sk прийнята. Деталі замовлення можна переглянути в листі.",
+      "module": "selfact",
+      "ts": "2026-11-23T23:55:29"
     }
   ]
 }
