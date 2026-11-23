@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T21:31:08.024583+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-09-12T21:31:16.216256+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14617,6 +14611,16 @@
       "answer": "Перевірити пошту про страхування",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-23"
+      }
+    },
+    {
+      "ts": "2026-11-23T01:30:26.889924+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák щодо аналізів",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-23"
       }
     }
