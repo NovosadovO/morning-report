@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T09:03:33.322155+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути вакансії на Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-14"
-      }
-    },
-    {
       "ts": "2026-09-13T09:05:17.691913+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14607,6 +14597,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_794a481fee"
+    },
+    {
+      "ts": "2026-11-24T00:09:13.775312+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_fc07796917"
     }
   ]
 }
