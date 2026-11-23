@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T21:35:22.894271+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "rw_mute_today"
-    },
-    {
       "ts": "2026-09-12T22:33:18.824786+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14632,6 +14626,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-11-23T16:26:14.591823+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
