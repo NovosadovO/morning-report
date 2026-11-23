@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-23t03_09_29_099867": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Потрібно замінити колеса\",     \"text\": \"Олеже, нагадую, що сьогодні о 08:00 тобі потрібно поміняти колеса в ма",
+    "ts": "2026-11-23T03:09:29.099867"
+  },
+  "action_detect|2026-11-23t03_01_23_901189": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати в ",
+    "ts": "2026-11-23T03:01:23.901189"
+  },
+  "action_detect|2026-11-23t03_01_12_735043": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Церква на ранню\", \"action_date\": \"2024-11-29\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календар: до ц",
+    "ts": "2026-11-23T03:01:12.735043"
+  },
+  "action_detect|2026-11-23t03_01_02_217426": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Записати до церкви на ранню\",   \"action_date\": \"2026-11-28\",   \"action_time\": \"08:00\",   \"action_summa",
+    "ts": "2026-11-23T03:01:02.217426"
+  },
   "proactive_actions|2026-11-23t03_00_11_574977": {
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"calendar\",     \"title\": \"Поміняти колеса в машині\",     \"date\": \"2026-11-23\",     \"time\": \"09:00\",     \"message\": \"Олеже, сьогодні о 09:00 за",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"До церкви на ранню\", \"action_date\": \"2026-10-23\", \"action_time\": null, \"action_summary\": \"Записати в календар: до ц",
     "ts": "2026-11-22T21:01:57.208212"
-  },
-  "action_detect|2026-11-22t21_01_46_258383": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-23\",   \"action_time\": \"18:00\",   \"action_summary\": \"Підготуват",
-    "ts": "2026-11-22T21:01:46.258383"
-  },
-  "briefing|2026-11-22t21_01_36_358375": {
-    "topic": "briefing",
-    "gist": "🧭 **Сьогодні, 22.11.2026, в Кошице:** Твоя фізична активність залишається на високому рівні: 17 356 кроків сьогодні — це чудово. Водночас, \"готовність до бігу\" ",
-    "ts": "2026-11-22T21:01:36.358375"
-  },
-  "themes_ai|2026-11-22t21_01_26_841841": {
-    "topic": "themes_ai",
-    "gist": "💰 ФІНАНСИ  У листопаді твої витрати поки що мінімальні – лише 16.95€. Це чудовий старт, але ще потрібно погасити 475.10€ і врахувати місячні підписки на 138.82€",
-    "ts": "2026-11-22T21:01:26.841841"
-  },
-  "action_detect|2026-11-22t21_01_00_813895": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запис до церкви\",   \"action_date\": \"2026-11-27\",   \"action_time\": null,   \"action_summary\": \"Записати ",
-    "ts": "2026-11-22T21:01:00.813895"
   }
 }
