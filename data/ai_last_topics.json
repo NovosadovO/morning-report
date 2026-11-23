@@ -1,4 +1,9 @@
 {
+  "money|2026-11-23t23_36_50_605472": {
+    "topic": "money",
+    "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"date\": \"2026-11-23\",     \"kind\": \"shop\",     \"not",
+    "ts": "2026-11-23T23:36:50.605472"
+  },
   "action_detect|2026-11-23t23_30_51_532508": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -293,10 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Стабільність сну сьогодні нерівна — розкид ±2.31 год, що може впливати на відновлення. Поки що зафіксовано 3.7 год сну, хоча середній показник за 7 днів — 7.0",
     "ts": "2026-11-23T19:06:01.838498"
-  },
-  "selfact|2026-11-23t18_58_33_495240": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист про сплату страхування автомобіля EČV LE066BI від KOOPERATIVA. Також є лист з подякою за сплату. ",
-    "ts": "2026-11-23T18:58:33.495240"
   }
 }
