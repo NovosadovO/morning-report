@@ -1,4 +1,24 @@
 {
+  "people|2026-11-23t19_35_32_127222": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [       \"аналізи для Олега\",     ",
+    "ts": "2026-11-23T19:35:32.127222"
+  },
+  "action_detect|2026-11-23t19_33_25_765787": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Навчання інвестиціям\",   \"action_date\": null,   \"action_time\": \"20:30\",   \"action_summary\": \"Запланова",
+    "ts": "2026-11-23T19:33:25.765787"
+  },
+  "msg_event_soon_truthfix|2026-11-23t19_33_15_192596": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "⏰ 19:32, нічна зміна триває. Олег, ти на роботі, тому головне – провести ці години продуктивно.  **Нагадування:** *   **Навчання інвестиціям:** о 20:30. Незважа",
+    "ts": "2026-11-23T19:33:15.192596"
+  },
+  "msg_event_soon|2026-11-23t19_33_03_883966": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "⏰ 19:32, нічна зміна триває. Ти фізично на роботі, тож зараз твоя пріоритетна задача — ефективно провести ці години.  **Що взяти:** *   **Їжа та напої:** Переко",
+    "ts": "2026-11-23T19:33:03.883966"
+  },
   "selfact|2026-11-23t19_30_16_507867": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про страхування\",     \"text\": \"Сьогодні, 23.11, ти отримав сповіщення від KOOPERATIVA про сплату о",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Сон поки що зафіксовано 8.0 годин, що є хорошим показником, але тренд за останні 14 днів падає (-0.5 год). Це може вплинути на відновлення під час твоєї нічно",
     "ts": "2026-11-23T15:05:06.644429"
-  },
-  "action_detect|2026-11-23t15_02_46_403252": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2023-12-15\",   \"action_time\": null,   \"action_summary\": \"Запланува",
-    "ts": "2026-11-23T15:02:46.403252"
-  },
-  "action_detect|2026-11-23t15_02_35_372578": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-23T15:02:35.372578"
-  },
-  "action_detect|2026-11-23t15_02_24_290303": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-23T15:02:24.290303"
-  },
-  "action_detect|2026-11-23t15_02_13_388649": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Поміняти колеса в машині\",   \"action_date\": \"2026-11-23\",   \"action_time\": null,   \"action_summary\": \"",
-    "ts": "2026-11-23T15:02:13.388649"
   }
 }
