@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-23t09_37_48_456232": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні заплановано поміняти колеса в машині. Це вже час",
+    "ts": "2026-11-23T09:37:48.456232"
+  },
   "openloop_promises|2026-11-23t09_32_45_984534": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-23T06:01:17.986746"
-  },
-  "action_detect|2026-11-23t06_01_17_630773": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати в ",
-    "ts": "2026-11-23T06:01:17.630773"
   }
 }
