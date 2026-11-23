@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-23t09_32_45_984534": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-23T09:32:45.984534"
+  },
+  "action_detect|2026-11-23t09_25_28_100167": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-23T09:25:28.100167"
+  },
   "context_ask_ai|2026-11-23t09_25_18_422631": {
     "topic": "context_ask_ai",
     "gist": "Зрозумів, Олеже. Буду уважний до всіх деталей.",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати в ",
     "ts": "2026-11-23T06:01:17.630773"
-  },
-  "action_detect|2026-11-23t06_00_55_749244": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2024-11-23\", \"action_time\": null, \"action_summary\": \"Поміняти ко",
-    "ts": "2026-11-23T06:00:55.749244"
-  },
-  "selfact|2026-11-23t06_00_01_883372": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Наближається нічна зміна о 17:00. Не забудь підготуватися.\",     \"why\": \"У Олега сьогодні о 17:00 нічна зміна.\"",
-    "ts": "2026-11-23T06:00:01.883372"
   }
 }
