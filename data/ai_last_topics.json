@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-23t04_12_41_215063": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні о 08:00 тобі потрібно поміняти колеса в машині.\"",
+    "ts": "2026-11-23T04:12:41.215063"
+  },
   "selfact|2026-11-23t03_56_21_853539": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, сьогодні о 08:00 тобі потрібно поміняти колеса в машині.\",   ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-22T21:31:06.019795"
-  },
-  "openloop_promises|2026-11-22t21_28_02_198422": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-22T21:28:02.198422"
   }
 }
