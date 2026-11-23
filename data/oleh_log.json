@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "dl_skip_ba5ae3badd",
-      "label": "❌ Не актуально",
-      "ts": "2026-10-20T10:35:20"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_shower",
       "label": "✅ Так",
       "ts": "2026-10-20T10:35:32"
@@ -7199,6 +7193,12 @@
       "kind": "cmd",
       "text": "/звички",
       "ts": "2026-11-23T16:26:49"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌",
+      "ts": "2026-11-23T16:26:57"
     }
   ]
 }
