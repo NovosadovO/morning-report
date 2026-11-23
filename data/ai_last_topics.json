@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-11-23t22_33_47_998339": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "⚠️ Ринок рухнувся, але є проблиски.  Сьогодні, понеділок, 23 листопада 2026 року, 22:33 за місцевим часом, ти на нічній зміні. Ситуація на крипторинку розвиваєт",
+    "ts": "2026-11-23T22:33:47.998339"
+  },
   "selfact|2026-11-23t22_22_08_409900": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається сьогодні о 17:00.\",     \"date\": \"20",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-23T18:02:20.915260"
-  },
-  "action_detect|2026-11-23t18_02_10_003843": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Поміняти колеса в машині\",   \"action_date\": \"2026-11-23\",   \"action_time\": \"09:00\",   \"action_summary\"",
-    "ts": "2026-11-23T18:02:10.003843"
   }
 }
