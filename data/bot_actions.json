@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-18",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-18T07:55:10"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-23T09:39:00"
+    },
+    {
+      "kind": "idea",
+      "what": "ідея здоров'я: recovery_easy",
+      "detail": "HRV 41.0 мс — нижче за тижневе середнє 46.9 мс",
+      "module": "healthai",
+      "ts": "2026-11-23T10:01:20"
     }
   ]
 }
