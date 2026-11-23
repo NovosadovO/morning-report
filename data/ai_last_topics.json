@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-23t01_30_12_318659": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"calendar\",     \"title\": \"Поміняти колеса в машині\",     \"date\": \"2026-11-23\",     \"time\": \"09:00\",     \"message\": \"Олеже, сьогодні о ",
+    "ts": "2026-11-23T01:30:12.318659"
+  },
   "selfact|2026-11-23t01_20_53_008133": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Нагадую про необхідність поміняти колеса в машині.\",     \"date\": \"2026-",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"до церкви на ранню\",   \"action_date\": \"2024-11-29\",   \"action_time\": null,   \"action_summary\": \"Записа",
     "ts": "2026-11-22T20:00:55.925302"
-  },
-  "action_detect|2026-11-22t20_00_42_424224": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": \"2026-11-27\",   \"action_time\": \"07:00\",   \"action_summary\": \"Записа",
-    "ts": "2026-11-22T20:00:42.424224"
   }
 }
