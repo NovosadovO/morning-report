@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T22:35:55.156964+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_114b0bbef9"
-    },
-    {
       "ts": "2026-09-12T22:35:55.157677+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14620,6 +14614,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_vitamins"
+    },
+    {
+      "ts": "2026-11-23T16:27:21.031281+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
     }
   ]
 }
