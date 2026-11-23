@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-23t14_18_47_195496": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від KOOPERATIVA\",     \"text\": \"Ви отримали лист від KOOPERATIVA щодо сплати обов'язкового з",
+    "ts": "2026-11-23T14:18:47.195496"
+  },
   "healthai|2026-11-23t14_05_21_590543": {
     "topic": "healthai",
     "gist": "🌙 Поки що сон зафіксовано 8.0 годин, хоча середня за 14 днів – 7.8 годин, і тренд сну падає.  *   Вага: 83.4 кг (за 22.11), до цілі +8.4 кг. *   HRV: 41 мс (тре",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Jr. Threat Hunter/Purple Team Operator-S clearance\\\" в SIXGEN та \\\"Junior ESG Consultant (m/f)\\\" в ",
     "ts": "2026-11-23T09:15:35.926343"
-  },
-  "action_detect|2026-11-23t09_11_08_310968": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": \"2026-10-24\",   \"action_time\": \"08:00\",   \"action_summary\": \"Записа",
-    "ts": "2026-11-23T09:11:08.310968"
   }
 }
