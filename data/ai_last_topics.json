@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-23t10_00_59_744099": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-23\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
+    "ts": "2026-11-23T10:00:59.744099"
+  },
   "selfact|2026-11-23t09_52_52_722133": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від KOOPERATIVA\",     \"text\": \"Олеже, ти отримав сповіщення від KOOPERATIVA щодо сплати обов'язково",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-23T06:15:31.619295"
-  },
-  "calendar|2026-11-23t06_06_14_150149": {
-    "topic": "calendar",
-    "gist": "Олеже, бачу, як ти старанно працюєш над своїми цілями! 💪 Цей тиждень видається спокійнішим, але саме це — чудова нагода сфокусуватися на найважливішому. Зверни ",
-    "ts": "2026-11-23T06:06:14.150149"
   }
 }
