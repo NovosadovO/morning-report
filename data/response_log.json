@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-12T22:33:29.119442+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Завершити звички за сьогодні",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-12"
-      }
-    },
-    {
       "ts": "2026-09-12T22:35:48.591153+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
@@ -14624,6 +14614,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-23T16:26:58.982928+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
