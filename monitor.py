@@ -9197,6 +9197,26 @@ def check_learning_streak():
 
 SMART_NOTIF_FILE = os.path.join(_DATA_DIR, "monitor_smart_notif.json")
 
+def _night_really_ended(shift_info, now_local, current_status=None):
+    """23.11: «НІЧНА ЗАВЕРШЕНА» лише якщо нічна ПОЧАЛАСЬ ВЧОРА (подія в календарі),
+    а не якщо сьогодні ввечері 18:00 буде нічна. Слово Олега (/дома) вище."""
+    try:
+        if (shift_info or {}).get("today") not in ("after_night", "night"):
+            return False
+        st = (shift_info or {}).get("today_start")
+        if st is None:
+            return False
+        if st.date() != (now_local - timedelta(days=1)).date():
+            return False
+        if st.hour < 14:
+            return False
+        if current_status == "home":
+            return False
+        return True
+    except Exception:
+        return False
+
+
 def check_smart_notifications():
     """
     🧠 SMART NOTIFICATIONS — щохвилинна перевірка.
@@ -9335,7 +9355,8 @@ def check_smart_notifications():
             mark("pre_night")
 
         # ── 4. ПІСЛЯ НІЧНОЇ (06:15) ───────────────────────────────────────
-        elif today_shift == "night" and h == 6 and 15 <= m < 20 and not sent("post_night"):
+        elif (h == 6 and 15 <= m < 20 and not sent("post_night")
+              and _night_really_ended(shift_info, now_local, current_status)):
             ai_txt = _ai_personal_message(
                 "Олег тільки що закінчив нічну зміну (18:00–06:00) і йде додому. "
                 "Скажи йому легко поїсти, лягти спати, не гортати телефон — конкретно і коротко. "

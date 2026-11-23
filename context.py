@@ -501,6 +501,23 @@ def get_status(shift_info=None):
             return "sleeping"
 
     elif today == "night":
+        # 23.11: «night» = нічна, що ПОЧИНАЄТЬСЯ СЬОГОДНІ о 18:00 (today_start — сьогодні)
+        # або почалась ВЧОРА (today_start — вчора, h<6). Раніше 06–10 ранку при вечірній
+        # нічній давало «post_shift» → бот писав «нічна завершена», хоча Олег вдома.
+        _ts = shift_info.get("today_start")
+        _tonight = False
+        try:
+            _tonight = _ts is not None and _ts.date() == now.date()
+        except Exception:
+            _tonight = False
+        if _tonight:
+            if h >= 18:
+                return "working_night"
+            elif 16 <= h < 18:
+                return "pre_shift"
+            elif h < 6:
+                return "sleeping"
+            return "home"
         if h >= 18 or h < 6:
             return "working_night"
         elif 16 <= h < 18:
