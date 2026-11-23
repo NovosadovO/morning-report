@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-17",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-17T21:54:29"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: що нового + AI",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на сьогодні заплановано 'Нічна зміна' о 17:00.",
       "module": "selfact",
       "ts": "2026-11-23T03:09:40"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: energy_low",
+      "detail": "🔋 Енергія (body battery) за тиждень у середньому 21.8 — нижче за 30, організм виснажений",
+      "module": "healthai",
+      "ts": "2026-11-23T03:22:49"
     }
   ]
 }
