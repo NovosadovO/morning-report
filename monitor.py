@@ -2419,6 +2419,29 @@ def get_emails():
             # Зберігаємо UID + тіло листа
             primary.append((subject, sender, uid, is_unread, _imap_get_body(msg)))
 
+        # 23.11 (запит Олега): окрім нових — завжди показувати останні 10 листів
+        # з Primary (прочитані теж), компактним списком.
+        recent = []
+        try:
+            for ruid in sorted(primary_all_uids, key=lambda x: int(x))[::-1]:
+                if len(recent) >= 10:
+                    break
+                _, hd = mail.uid('fetch', ruid.encode(), "(BODY.PEEK[HEADER.FIELDS (SUBJECT FROM DATE)])")
+                hmsg = email.message_from_bytes(hd[0][1])
+                r_sender = _imap_decode_header(hmsg.get("From", ""))
+                r_m = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', r_sender.lower())
+                if (r_m.group(0) if r_m else "") in _ALWAYS_SKIP:
+                    continue
+                recent.append({
+                    "subject": _imap_decode_header(hmsg.get("Subject", "(без теми)")),
+                    "sender": r_sender,
+                    "uid": ruid,
+                    "unread": ruid in primary_unread_uids,
+                    "date": hmsg.get("Date", ""),
+                })
+        except Exception as _re:
+            print(f"[get_emails] recent error: {_re}", flush=True)
+
         mail.logout()
 
         unread_count = sum(1 for _, _, _, u, _ in primary if u)
@@ -2429,7 +2452,7 @@ def get_emails():
         else:
             header = f"📬 <b>ПОШТА</b>"
 
-        if not primary:
+        if not primary and not recent:
             return header + "\n\n✅ Нових листів немає"
 
         # Повертаємо спеціальний dict щоб main() міг надіслати кожен лист з кнопками
@@ -2456,7 +2479,7 @@ def get_emails():
         except Exception as _ce:
             print(f"[get_emails] cache save error: {_ce}", flush=True)
 
-        return {"__email_block__": True, "header": header, "items": items}
+        return {"__email_block__": True, "header": header, "items": items, "recent": recent}
 
     except Exception as e:
         print(f"get_emails IMAP error: {e}")
@@ -6041,12 +6064,23 @@ def main():
                     ]
                 ]}
                 email_parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
-            if _already_shown and not _all_items:
+            if _already_shown and not _all_items and email_text.get("recent"):
+                email_parts.append(f"📬 <i>нових листів нема ({_already_shown} непрочитаних уже показував раніше)</i>")
+            elif _already_shown and not _all_items:
                 _old_lines = "\n".join(
                     f"• {esc(str(o.get('subject',''))[:55])} — {esc(str(o.get('sender',''))[:30])}"
                     for o in _old_items[:7])
                 email_parts.append(
                     f"📬 <i>нових листів нема — {_already_shown} непрочитаних уже показував раніше:</i>\n{_old_lines}")
+            _recent = email_text.get("recent") or []
+            if _recent:
+                def _short_from(_s):
+                    _n = re.sub(r'<[^>]*>', '', _s).replace('"', '').strip()
+                    return _n or _s
+                _rl = "\n".join(
+                    f"{'🔴' if r.get('unread') else '▫️'} {esc(str(r.get('subject',''))[:55])} — {esc(_short_from(str(r.get('sender','')))[:28])}"
+                    for r in _recent[:10])
+                email_parts.append(f"📬 <b>Останні {len(_recent[:10])} листів</b> (🔴 непрочитані)\n{_rl}")
             if _remaining > 0:
                 email_parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
         else:
