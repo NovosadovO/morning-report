@@ -1,4 +1,19 @@
 {
+  "healthai|2026-11-23t12_06_20_156559": {
+    "topic": "healthai",
+    "gist": "🌙 Сьогодні поки що зафіксовано 8.0 год сну, що трохи більше за середнє за 7 днів (7.6 год), але тренд сну падає (-0.5). Вага 83.4 кг — це дані за вчора, і вона ",
+    "ts": "2026-11-23T12:06:20.156559"
+  },
+  "action_detect|2026-11-23t12_01_18_506025": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-23T12:01:18.506025"
+  },
+  "action_detect|2026-11-23t12_01_07_388050": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-23T12:01:07.388050"
+  },
   "action_detect|2026-11-23t12_00_56_477369": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2023-11-23\", \"action_time\": null, \"action_summary\": \"Поміняти колеса в м",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2020-11-23\", \"action_time\": \"09:00\", \"action_summary\": \"Поміняти колеса ",
     "ts": "2026-11-23T08:00:54.202326"
-  },
-  "market_insight|2026-11-23t08_00_27_622614": {
-    "topic": "market_insight",
-    "gist": "```json {   \"text\": \"<b>LTC</b> показав незвично сильний рух за 24 години (+4.24%), що перевищує показники BTC (+3.96%). Це може свідчити про локальну активніст",
-    "ts": "2026-11-23T08:00:27.622614"
-  },
-  "selfact|2026-11-23t07_48_49_977701": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування\",     \"text\": \"Олеже, отримав два сповіщення від KOOPERATIVA щодо страхуван",
-    "ts": "2026-11-23T07:48:49.977701"
-  },
-  "selfact|2026-11-23t07_33_14_229117": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні о 08:00 тобі потрібно поміняти колеса в ",
-    "ts": "2026-11-23T07:33:14.229117"
   }
 }
