@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-23t10_55_52_282758": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо страхування авто\",     \"text\": \"Олеже, ти отримав лист від KOOPERATIVA щодо сплати страхового ",
+    "ts": "2026-11-23T10:55:52.282758"
+  },
   "bills|2026-11-23t10_51_45_743433": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
     "ts": "2026-11-23T06:51:33.410368"
-  },
-  "selfact|2026-11-23t06_46_23_367731": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення від KOOPERATIVA\",     \"text\": \"Отримав два сповіщення від KOOPERATIVA щодо страхування авто",
-    "ts": "2026-11-23T06:46:23.367731"
   }
 }
