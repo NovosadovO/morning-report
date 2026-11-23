@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-11-23t09_15_35_926343": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Jr. Threat Hunter/Purple Team Operator-S clearance\\\" в SIXGEN та \\\"Junior ESG Consultant (m/f)\\\" в ",
+    "ts": "2026-11-23T09:15:35.926343"
+  },
   "action_detect|2026-11-23t09_11_08_310968": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Церква на ранню\",   \"action_date\": \"2026-10-24\",   \"action_time\": \"08:00\",   \"action_summary\": \"Записа",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, сьогодні о 08:00 тобі потрібно поміняти колеса в машині.\",   ",
     "ts": "2026-11-23T05:29:23.993765"
-  },
-  "selfact|2026-11-23t05_13_20_751075": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Потрібно поміняти колеса в машині.\",     \"date\": \"2026-11-23\",     \"tim",
-    "ts": "2026-11-23T05:13:20.751075"
   }
 }
