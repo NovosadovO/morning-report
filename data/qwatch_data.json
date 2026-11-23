@@ -2343,18 +2343,19 @@
   "2026-11-23": {
     "hr_avg": 50,
     "spo2": 97,
-    "body_battery": 60,
+    "body_battery": 61,
     "stress": 29,
     "date": "2026-11-23",
     "source": "qwatch_auto",
-    "saved_at": "2026-11-23 16:09",
-    "steps": 1125,
-    "sleep_total_min": 481,
-    "sleep_deep_min": 74,
-    "sleep_rem_min": 102,
-    "sleep_light_min": 305,
-    "sleep_awake_min": 15,
+    "saved_at": "2026-11-23 16:39",
+    "steps": 1291,
+    "sleep_total_min": 220,
+    "sleep_deep_min": 35,
+    "sleep_rem_min": 0,
+    "sleep_light_min": 185,
+    "sleep_awake_min": 13,
     "hrv": 41,
-    "sleep_hours": 8.02
+    "sleep_hours": 3.67,
+    "weight_kg": 84.3
   }
 }
