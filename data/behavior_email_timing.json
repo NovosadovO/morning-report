@@ -1,9 +1,4 @@
 {
-  "81504": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-10-28T09:03:50.840250+00:00"
-  },
   "81511": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-11-23T18:56:21.900626+00:00"
+  },
+  "84014": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-11-23T20:15:31.716636+00:00"
   }
 }
