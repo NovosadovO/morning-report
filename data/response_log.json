@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T03:03:19.874792+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії на Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-13"
-      }
-    },
-    {
       "ts": "2026-09-13T04:35:26.253304+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14603,6 +14593,16 @@
       "category": "event_done",
       "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 19:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-24T00:00:36.967144+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про оплату замовлення",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-24"
+      }
     }
   ]
 }
