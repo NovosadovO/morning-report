@@ -2074,5 +2074,11 @@
     "subject": "Informácie k objednávke č. 261123443: Platba prijatá",
     "answer": "yes",
     "ts": "2026-11-23T23:50:21.895240+00:00"
+  },
+  "gate_pa_skip|_лист_чекає_на_відповідь|2026-11-24t00_09_02_": {
+    "action": "gate_pa_skip",
+    "subject": "✉️ Лист чекає на відповідь",
+    "answer": "yes",
+    "ts": "2026-11-24T00:09:02.140387+00:00"
   }
 }
