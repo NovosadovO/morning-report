@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-23t08_04_39_668450": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Поміняти колеса в машині\",     \"text\": \"Олеже, нагадую, що сьогодні, 23 листопада, потрібно поміняти колеса ",
+    "ts": "2026-11-23T08:04:39.668450"
+  },
+  "openloop_promises|2026-11-23t08_02_07_536904": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-23T08:02:07.536904"
+  },
+  "action_detect|2026-11-23t08_00_54_202326": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2020-11-23\", \"action_time\": \"09:00\", \"action_summary\": \"Поміняти колеса ",
+    "ts": "2026-11-23T08:00:54.202326"
+  },
   "market_insight|2026-11-23t08_00_27_622614": {
     "topic": "market_insight",
     "gist": "```json {   \"text\": \"<b>LTC</b> показав незвично сильний рух за 24 години (+4.24%), що перевищує показники BTC (+3.96%). Це може свідчити про локальну активніст",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"До церкви на ранню\",   \"action_date\": null,   \"action_time\": \"08:00\",   \"action_summary\": \"Записати в ",
     "ts": "2026-11-23T03:01:23.901189"
-  },
-  "action_detect|2026-11-23t03_01_12_735043": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Церква на ранню\", \"action_date\": \"2024-11-29\", \"action_time\": \"08:00\", \"action_summary\": \"Записати в календар: до ц",
-    "ts": "2026-11-23T03:01:12.735043"
-  },
-  "action_detect|2026-11-23t03_01_02_217426": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Записати до церкви на ранню\",   \"action_date\": \"2026-11-28\",   \"action_time\": \"08:00\",   \"action_summa",
-    "ts": "2026-11-23T03:01:02.217426"
-  },
-  "proactive_actions|2026-11-23t03_00_11_574977": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"calendar\",     \"title\": \"Поміняти колеса в машині\",     \"date\": \"2026-11-23\",     \"time\": \"09:00\",     \"message\": \"Олеже, сьогодні о 09:00 за",
-    "ts": "2026-11-23T03:00:11.574977"
   }
 }
