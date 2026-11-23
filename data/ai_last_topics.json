@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-23t13_31_18_151467": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Завтра, 24.11, у тебе нічна зміна о 17:00. Нагадую, що сьогодні о 17:00 також нічна зміна.\",     \"why\": \"Календ",
+    "ts": "2026-11-23T13:31:18.151467"
+  },
+  "selfact|2026-11-23t13_15_53_265400": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування\",     \"text\": \"Олеже, ти отримав сповіщення від KOOPERATIVA про сплату обов",
+    "ts": "2026-11-23T13:15:53.265400"
+  },
   "email_ai_item|2026-11-23t13_14_26_399642": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Це сповіщення про вакансію від LinkedIn для позиції \\\"Domain Specialist – Clinical Data Science\\\" в компанії Arcondis Group у місті Кошице. Ком",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг, астрологію та пам'",
     "ts": "2026-11-23T09:01:53.977006"
-  },
-  "action_detect|2026-11-23t09_01_42_992949": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса в машині\", \"action_date\": \"2023-11-23\", \"action_time\": null, \"action_summary\": \"Поміняти ко",
-    "ts": "2026-11-23T09:01:42.992949"
-  },
-  "briefing_truthfix|2026-11-23t09_01_35_157043": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 **ГОЛОВНЕ** Твоє здоров'я потребує уваги: показники Body Battery становлять 27/100, що є значно нижче за показники вихідних.  🎯 ДІЇ: * Перевір, чи достатньо г",
-    "ts": "2026-11-23T09:01:35.157043"
   }
 }
