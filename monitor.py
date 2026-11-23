@@ -5993,6 +5993,7 @@ def main():
             email_parts.append(email_text["header"])
             _all_items = email_text.get("items", [])
             _already_shown = 0
+            _old_items = []
             try:
                 import mail_seen as _ms
                 _all_items, _old_items = _ms.split(_all_items)
@@ -6041,7 +6042,11 @@ def main():
                 ]}
                 email_parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
             if _already_shown and not _all_items:
-                email_parts.append(f"📬 <i>нових листів нема — {_already_shown} непрочитаних уже показував раніше</i>")
+                _old_lines = "\n".join(
+                    f"• {esc(str(o.get('subject',''))[:55])} — {esc(str(o.get('sender',''))[:30])}"
+                    for o in _old_items[:7])
+                email_parts.append(
+                    f"📬 <i>нових листів нема — {_already_shown} непрочитаних уже показував раніше:</i>\n{_old_lines}")
             if _remaining > 0:
                 email_parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
         else:

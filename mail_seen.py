@@ -9,7 +9,9 @@ mail_seen.py — кожен лист у звіті показується кар
 from datetime import datetime, timedelta
 
 FILE = "mail_seen.json"
-TTL_DAYS = 3
+# 23.11: було 3 доби → 5 старих непрочитаних листів через 3 доби знову виїжджали
+# як «НОВЕ». Тримаємо 14 діб.
+TTL_DAYS = 14
 
 
 def _load():
