@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-19",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-19T14:26:40"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-19",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-19T14:56:10"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-24T12:10:36"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-24",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-24T12:40:32"
     }
   ]
 }
