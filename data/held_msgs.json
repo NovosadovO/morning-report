@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T11:14:15.631975",
-      "kind": "offer",
-      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Head of Operations / COO – Right hand of Founder в Accelerate Finance »\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union            \r\nHead of Operations / COO – Right hand of Founder\r\nAccelerate Finance &amp; Legal Recruitment\r\nSliema, Malta\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: http...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_84103"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_84103"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_84103"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_84103"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_84103"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_84103"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-24T11:36:28.415864",
       "kind": "people",
       "text": "🧠 <b>ПАМ'ЯТЬ ПРО ЛЮДЕЙ</b>\n━━━━━━━━━━━━━━━━━━━━\n⭐ 👤 <b>MARTIN.KOVAC</b>  ·  робота\n📧 martin.kovac@nmb-minebea.com\n🕐 останній контакт: <b>80 дн. тому</b>\n💬 Про що говорили: Hhh\n\n➡️ <b>Далі:</b> Написати MARTIN.KOVAC, оскільки минуло 20 днів без відповіді.\n\n<i>Чому пишу: час пінгувати, тиша 80 дн.</i>",
@@ -214,6 +175,12 @@
       "ts": "2026-11-24T14:45:05.003704",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T14:50:03.830450",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
