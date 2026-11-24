@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-24t07_28_37_114411": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-24T07:28:37.114411"
+  },
+  "selfact|2026-11-24t07_10_18_642945": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення\",     \"text\": \"Привіт, Олеже! Твоє замовлення № 261123443 в TonerDepot.sk оплачено. ",
+    "ts": "2026-11-24T07:10:18.642945"
+  },
   "money|2026-11-24t07_09_51_594941": {
     "topic": "money",
     "gist": "[{\"uid\":\"84029\",\"vendor\":\"TonerDepot.sk\",\"amount\":\"\",\"currency\":\"\",\"date\":\"2026-11-24\",\"kind\":\"shop\",\"note\":\"Підтвердження отримання оплати за замовлення № 2611",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Планування бігу\",   \"action_date\": \"2026-11-14\",   \"action_time\": \"09:00\",   \"action_summary\": \"Заноту",
     "ts": "2026-11-24T02:52:22.667853"
-  },
-  "action_detect|2026-11-24t02_52_11_647035": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Дані про астрономічне явище \\\"опозиція Сонця та Місяц",
-    "ts": "2026-11-24T02:52:11.647035"
-  },
-  "context_ask_ai_truthfix|2026-11-24t02_52_00_650172": {
-    "topic": "context_ask_ai/truthfix",
-    "gist": "Олеже, дані про астрономічне явище \"опозиція Сонця та Місяця\" є застарілими. Наразі немає актуальної інформації для аналізу цього аспекту у твоїй натальній карт",
-    "ts": "2026-11-24T02:52:00.650172"
   }
 }
