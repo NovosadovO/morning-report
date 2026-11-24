@@ -1,9 +1,4 @@
 {
-  "81589": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-10-29T13:55:18.939154+00:00"
-  },
   "81597": {
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@blockworks.com",
     "sender_raw": "Blockworks <events@blockworks.com>",
     "seen_ts": "2026-11-24T18:32:49.048502+00:00"
+  },
+  "84189": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-11-24T20:14:11.418901+00:00"
   }
 }
