@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-24t18_51_41_705463": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі почалася о 17:00. Залишилося ще багато часу до її завершення.\",     \"why\": \"С",
+    "ts": "2026-11-24T18:51:41.705463"
+  },
   "openloop_promises|2026-11-24t18_42_49_891366": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Планування бігу\",   \"action_date\": \"2026-11-14\",   \"action_time\": \"09:00\",   \"action_summary\": \"Заплан",
     "ts": "2026-11-24T06:01:37.218290"
-  },
-  "action_detect|2026-11-24t06_01_26_095197": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-24T06:01:26.095197"
   }
 }
