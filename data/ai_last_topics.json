@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-24t21_00_45_104605": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-24T21:00:45.104605"
+  },
   "selfact|2026-11-24t20_55_38_141618": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про замовлення\",     \"text\": \"Привіт, Олеже! Твоє замовлення № 261123443 в TonerDepot.sk оплачене. ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Нічна зміна\",   \"action_date\": \"2026-11-20\",   \"action_time\": \"18:00\",   \"action_summary\": \"Початок ні",
     "ts": "2026-11-24T16:34:06.958104"
-  },
-  "healthai_truthfix|2026-11-24t16_33_56_871306": {
-    "topic": "healthai/truthfix",
-    "gist": "Вага 84.3 кг зафіксована 23 листопада, що на 1 день старіше. Це на 9.3 кг вище за цільові 75 кг.  Зараз рекомендовано відпочити.",
-    "ts": "2026-11-24T16:33:56.871306"
   }
 }
