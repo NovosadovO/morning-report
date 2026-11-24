@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-24t06_06_11_184077": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00. Не забудь підготуватися.\",     \"why\": \"Календар на 7 дні",
+    "ts": "2026-11-24T06:06:11.184077"
+  },
+  "action_detect|2026-11-24t06_01_37_218290": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Планування бігу\",   \"action_date\": \"2026-11-14\",   \"action_time\": \"09:00\",   \"action_summary\": \"Заплан",
+    "ts": "2026-11-24T06:01:37.218290"
+  },
+  "action_detect|2026-11-24t06_01_26_095197": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-24T06:01:26.095197"
+  },
   "action_detect|2026-11-24t06_01_15_119044": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -283,20 +298,5 @@
     "topic": "money",
     "gist": "[{\"uid\":\"84029\",\"vendor\":\"TonerDepot.sk\",\"amount\":\"\",\"currency\":\"\",\"date\":\"\",\"kind\":\"shop\",\"note\":\"Підтвердження отримання оплати за замовлення № 261123443.\"}]",
     "ts": "2026-11-24T02:07:53.525461"
-  },
-  "openloop_promises|2026-11-24t02_06_18_949419": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-24T02:06:18.949419"
-  },
-  "healthai|2026-11-24t02_02_25_786525": {
-    "topic": "healthai",
-    "gist": "Сон за тиждень у середньому 7.1 год — стабільно добре, це чудовий результат, який допоможе закріпити витривалість.",
-    "ts": "2026-11-24T02:02:25.786525"
-  },
-  "healthai_truthfix|2026-11-24t02_02_14_926321": {
-    "topic": "healthai/truthfix",
-    "gist": "Стабільність сну сьогодні нерівна — розкид ±2.31 год, що може впливати на відновлення. Вага 84.3 кг зафіксована 2026-11-23, що на 9.3 кг більше за цільову. Зара",
-    "ts": "2026-11-24T02:02:14.926321"
   }
 }
