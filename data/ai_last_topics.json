@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-24t03_36_53_787959": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-24T03:36:53.787959"
+  },
+  "people|2026-11-24t03_35_44_436569": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"obchod@soft-tech.sk\",     \"name\": \"TonerDepot.sk\",     \"relation\": \"сервіс\",     \"topics\": [       \"Інформація про замовлення\",     ",
+    "ts": "2026-11-24T03:35:44.436569"
+  },
   "selfact|2026-11-24t03_31_54_124874": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00. Не забудь підготуватися.\",     \"why\": \"Календар на 7 дні",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про здоров'я, біговий трекер та астрологічний",
     "ts": "2026-11-24T00:01:20.870401"
-  },
-  "action_detect|2026-11-24t00_01_09_740481": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-24T00:01:09.740481"
-  },
-  "proactive_actions|2026-11-24t00_00_09_660445": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист про оплату замовлення\",     \"date\": \"2026-11-24\",     \"time\": \"\",     \"message\": \"Олеже, отримав лис",
-    "ts": "2026-11-24T00:00:09.660445"
   }
 }
