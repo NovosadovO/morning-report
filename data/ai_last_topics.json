@@ -298,5 +298,10 @@
     "topic": "healthideas",
     "gist": "HRV 38.0 мс, нижче за тижневе середнє 45.7 мс, вказує на недостатнє відновлення. Поки що зафіксовано 5.5 год сну, що менше за середнє за 14 днів (7.2 год). Зваж",
     "ts": "2026-11-24T19:37:27.401212"
+  },
+  "action_detect|2026-11-25t00_16_29_050807": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-25T00:16:29.050807"
   }
 }
