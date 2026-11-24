@@ -2374,5 +2374,15 @@
     "sleep_awake_min": 21,
     "hrv": 38,
     "sleep_hours": 5.48
+  },
+  "2026-11-25": {
+    "steps": 539,
+    "hr_avg": 53,
+    "spo2": 97,
+    "body_battery": 26,
+    "stress": 19,
+    "date": "2026-11-25",
+    "source": "qwatch_auto",
+    "saved_at": "2026-11-25 00:30"
   }
 }
