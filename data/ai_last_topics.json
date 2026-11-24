@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-24t20_13_46_258655": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-24T20:13:46.258655"
+  },
   "selfact|2026-11-24t20_08_38_886803": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшов лист з TonerDepot.sk щодо замовлення № 261123443. Плата успішно отримана, очікуйте на відправку",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-24T07:28:37.114411"
-  },
-  "selfact|2026-11-24t07_10_18_642945": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення\",     \"text\": \"Привіт, Олеже! Твоє замовлення № 261123443 в TonerDepot.sk оплачено. ",
-    "ts": "2026-11-24T07:10:18.642945"
   }
 }
