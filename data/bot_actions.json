@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-19",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-19T09:26:39"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-19",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-19T09:56:17"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів вказує на нічну зміну 24.11 о 17:00.",
       "module": "selfact",
       "ts": "2026-11-24T06:06:20"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-24",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-24T06:08:40"
     }
   ]
 }
