@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-24t22_46_59_190857": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі почалася о 17:00. Залишилося ще багато годин до її завершення. Не забудь про ",
+    "ts": "2026-11-24T22:46:59.190857"
+  },
+  "action_detect|2026-11-24t22_35_13_896529": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-24T22:35:13.896529"
+  },
   "msg_event_soon|2026-11-24t22_35_02_508121": {
     "topic": "MSG_EVENT_SOON",
     "gist": "⏰ 22:34 — Нічна зміна триває. Олег, зосередься на найважливішому:  **На роботі:** *   **Ключове завдання:** Протримати зміну до 06:00. *   **Що взяти з собою:**",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-24T18:02:38.293937"
-  },
-  "action_detect|2026-11-24t18_02_27_297351": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-24T18:02:27.297351"
-  },
-  "action_detect|2026-11-24t18_02_16_168535": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-24T18:02:16.168535"
   }
 }
