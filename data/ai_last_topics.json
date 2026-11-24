@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-24t20_24_25_653710": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення\",     \"text\": \"Ваша оплата за замовлення № 261123443 від TonerDepot.sk була успішно ",
+    "ts": "2026-11-24T20:24:25.653710"
+  },
   "openloop_promises|2026-11-24t20_13_46_258655": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00. Не запізнись!\",     \"why\": \"Календар на 7 днів вказує на",
     "ts": "2026-11-24T07:28:49.310035"
-  },
-  "action_detect|2026-11-24t07_28_37_114411": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-24T07:28:37.114411"
   }
 }
