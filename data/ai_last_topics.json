@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-24t02_30_04_448202": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"why\":",
+    "ts": "2026-11-24T02:30:04.448202"
+  },
   "selfact|2026-11-24t02_14_56_054906": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 24 листопада, о 17:00 у тебе нічна зміна на заводі. Успіхів!\",     \"why\": \"Наявність н",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-23T21:01:57.016363"
-  },
-  "action_detect|2026-11-23t21_01_46_093232": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Поміняти колеса в машині\",   \"action_date\": \"2023-11-23\",   \"action_time\": null,   \"action_summary\": \"",
-    "ts": "2026-11-23T21:01:46.093232"
   }
 }
