@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-24t18_42_49_891366": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-24T18:42:49.891366"
+  },
   "selfact|2026-11-24t18_35_45_303419": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Ти сьогодні на нічній зміні, яка починається о 17:00.\",     \"why\": \"Календар на 7 днів вказує на нічну зміну сь",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-24T06:01:26.095197"
-  },
-  "action_detect|2026-11-24t06_01_15_119044": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-24T06:01:15.119044"
   }
 }
