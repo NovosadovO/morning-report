@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T15:27:51.831901",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -10.2% за 24г</b>\n\nЗараз: 0.2819 $\n24г тому: 0.3140 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-24T15:27:52.728446",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -10.2% за 24г\n\nЗараз: 0.2819 $\n24г тому: 0.3140 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-11-24T15:37:16.897262",
       "kind": "chunk",
       "text": "📊 <b>ETF алерт!</b>\n\n💥 <b>ETHA</b> -3.4% за ~1г\n   Зараз: <code>$38.10</code>  Було: <code>$39.43</code>\n\n💥 <b>VAVA</b> -5.8% за ~1г\n   Зараз: <code>$0.63</code>  Було: <code>$0.67</code>\n\n💥 <b>NVDA</b> -6.2% за ~1г\n   Зараз: <code>$154.72</code>  Було: <code>$164.94</code>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T15:37:48.553821",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -9.8% за 24г</b>\n\nЗараз: 0.2814 $\n24г тому: 0.3118 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
