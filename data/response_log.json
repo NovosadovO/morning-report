@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T20:01:32.387663+00:00",
-      "category": "event_done",
-      "question": "📅 💧 Вода (2л+) ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-13T20:03:03.119755+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14627,6 +14621,12 @@
       "extra": {
         "shift": "night"
       }
+    },
+    {
+      "ts": "2026-11-24T17:01:40.946774+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
