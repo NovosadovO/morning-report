@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T15:50:04.781189",
-      "kind": "offer",
-      "text": "📩 Лист від <b>LinkedIn</b>\n📋 Тема: «Не пропустіть обговорення в Technology Leadership Community 🟥»\n\n<i>«Не пропустіть обговорення в Technology Leadership Community 🟥\r\n\r\n.....................................Technology Leadership Community 🟥\r\nTech Leadership Community is a professional group for CIOs, CTOs, CDOs, CAIOs, technology executives, engineering leaders, IT leaders, architects, product leaders,...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_84141"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_84141"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_84141"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_84141"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_84141"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_84141"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-24T15:50:17.396985",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -181,6 +142,12 @@
       "ts": "2026-11-24T16:01:04.355494",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -8.6% за 24г\n\nЗараз: 69.74 $\n24г тому: 76.30 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T16:02:14.835863",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>SOL -8.8% за 24г</b>\n\nЗараз: 69.81 $\n24г тому: 76.58 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
