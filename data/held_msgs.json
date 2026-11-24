@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-11-24T08:00:52.846907",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Jana Vasilková / Soft-Tech, s.r.o.</b>\n📋 Тема: «(без теми)»\n\n<i>«Dobrý deň prajem,\r\n\r\nmáte u nás objednávku na náhradné náplne do pera 5 kusov. Žiaľ, skladom \r\nsú posledné 4 kusy. Pošleme aspoň tieto a za 1.40€ Vám doplníme niečo do \r\nobjednávky?\r\n\r\nĎakujeme za odpoveď\r\n\r\n-- \r\nS pozdravom\r\n\r\nJana Vasilková\r\nSoft-Tech, s.r.o.\r\nHrnčiarska 1620/41\r\n091 01 Stropkov...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_84074"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_84074"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_84074"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_84074"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_84074"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_84074"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
