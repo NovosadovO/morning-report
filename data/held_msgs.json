@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T15:36:37.932924",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>SOL -9.6% за 24г</b>\n\nЗараз: 69.93 $\n24г тому: 77.32 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-24T15:36:38.800117",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -9.6% за 24г\n\nЗараз: 69.93 $\n24г тому: 77.32 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-11-24T15:46:07.205110",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -9.2% за 24г\n\nЗараз: 0.2811 $\n24г тому: 0.3094 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T15:46:09.130860",
+      "kind": "chunk",
+      "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних\n\n📬 <i>нових листів нема (7 непрочитаних уже показував раніше)</i>\n\n📬 <b>Останні 10 листів</b> (🔴 непрочитані)\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Win €500,000 — Kraken\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ 🚨 ЧЕРВОНА ТРИВОГА. ЗНИЖКА 40 %. — carVertical\n▫️ Business Analyst (44363) в CoolPeople Technology — Сповіщення про вакансії Link\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ 📉 Bitcoin ETFs bleed — The Daily Bone\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Target's Agent Doubles Conversions — MyClaw Newsletter",
       "keyboard": null
     }
   ]
