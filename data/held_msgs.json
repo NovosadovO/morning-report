@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T16:07:06.167048",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ SOL -9.1% за 24г\n\nЗараз: 69.61 $\n24г тому: 76.56 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-24T16:07:25.207131",
       "kind": "chunk",
       "text": "📊 <b>ETF алерт!</b>\n\n💥 <b>GAVA</b> -5.0% за ~1г\n   Зараз: <code>$15.98</code>  Було: <code>$16.83</code>",
@@ -148,6 +142,12 @@
       "ts": "2026-11-24T16:19:45.657282",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -9.4% за 24г</b>\n\nЗараз: 0.2757 $\n24г тому: 0.3043 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T16:19:46.553502",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -9.4% за 24г\n\nЗараз: 0.2757 $\n24г тому: 0.3043 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
