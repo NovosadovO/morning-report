@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-24t02_38_26_732617": {
+    "topic": "healthai",
+    "gist": "🏃 Олег на нічній зміні, яка триває до 06:00. 🔥 VO2max становить 43.8, показник зафіксовано 2 дні тому (22.11). 😴 Зафіксовано 3 год 40 хв сну (23.11), що є значн",
+    "ts": "2026-11-24T02:38:26.732617"
+  },
   "selfact|2026-11-24t02_30_04_448202": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про нічну зміну\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"why\":",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити квартиру\",   \"action_date\": \"2026-12-15\",   \"action_time\": null,   \"action_summary\": \"Оплатит",
     "ts": "2026-11-23T21:02:08.118642"
-  },
-  "action_detect|2026-11-23t21_01_57_016363": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-23T21:01:57.016363"
   }
 }
