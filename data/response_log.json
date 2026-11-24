@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T20:05:31.383598+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Записати нові цілі",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-13T20:05:33.394689+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14629,6 +14623,16 @@
       "answer": "Перевірити оплату страхування KOOPERATIVA",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-25"
+      }
+    },
+    {
+      "ts": "2026-11-25T00:00:28.238698+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від TonerDepot.sk",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-25"
       }
     }
