@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-24t03_47_33_123089": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі розпочнеться о 17:00.\",     \"mail_uid\": \"84029\"   },   {     \"type\": \"notify\"",
+    "ts": "2026-11-24T03:47:33.123089"
+  },
   "openloop_promises|2026-11-24t03_36_53_787959": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "📬 від TonerDepot.sk → Підтвердження оплати замовлення № 261123443. <b>Підтверджено.</b> 📬 від Notifikácie KOOPERATIVA → Нагадування про сплату автостраховки (EČ",
     "ts": "2026-11-24T00:01:25.715711"
-  },
-  "action_detect|2026-11-24t00_01_20_870401": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це звіт про здоров'я, біговий трекер та астрологічний",
-    "ts": "2026-11-24T00:01:20.870401"
   }
 }
