@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-24T09:27:07.490119",
-      "kind": "offer",
-      "text": "📩 Лист від <b>Reserved</b>\n📋 Тема: «Párty večer, ale prichádzate gondolou»\n\n<i>«Email nálada: Benátky‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_84087"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_84087"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_84087"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_84087"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_84087"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_84087"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-11-24T09:30:52.013394",
       "kind": "chunk",
       "text": "🌅\n<b>ЗВІТ  ·  Вт 24.11  ·  09:30</b>\n🏠 Вдома\n<i>Кожен кілометр бігу — крок до 75кг і нової версії себе 🏃💰</i>\n\n⚡ <b>День: ✨☆☆☆☆ 12/100</b>  ↓17 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>1°C</b>\n<i>🧥 Прохолодно — куртка обов'язкова</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:56   🌇 15:46  10:00 🌤2°  │  11:00 ☁️3°  │  12:00 ☁️3°  │  13:00 🌤3°  │  14:00 ⛅️4°  │  15:00 ☁️4°  09:00 ☀️1°  │  12:00 ☁️2°  │  15:00 ☁️2°  │  18:00 ☁️0°  │  21:00 ☁️1°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻-1°  /  🔺2°\n<code>09:00</code> ☀️1°  │  <code>12:00</code> ☁️2°  │  <code>15:00</code> ☁️2°  │  <code>18:00</code> ☁️0°  │  <code>21:00</code> ☁️1°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n<i>🚧 5 довготривалих перекриттів — без змін від минулого разу:</i>\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Svornosti\n<i>+ ще 3</i>\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$60,052.54</code>  -0.20%\n🔻 <b>ETH</b> <code>$1,689.49</code>  -0.24%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$34.62</code>  <i>+4.85% за день</i>\n🟢 <b>ETHA</b>  <code>$38.99</code>  <i>+8.01% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.63</code>\n🟢 <b>GAVA</b>  <code>$16.52</code>  <i>+5.49% за день</i>\n🟢 <b>QQQ</b>  <code>$651.03</code>  <i>+7.00% за день</i>\n\n🔄 ",
@@ -214,6 +175,12 @@
       "ts": "2026-11-24T12:45:38.983978",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 7 непрочитаних\n\n📬 <i>нових листів нема (7 непрочитаних уже показував раніше)</i>\n\n📬 <b>Останні 10 листів</b> (🔴 непрочитані)\n▫️ Amazon’s World Product Graph is its Plan B against AI S — Linas from Linas's Newslette\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Head of Operations / COO – Right hand of Founder в Acce — Сповіщення про вакансії Link\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T13:00:25.195908",
+      "kind": "chunk",
+      "text": "🥗 <b>Обід!</b>\n\nЧас заправитись 🍽\n• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n• Не переїдай — вечеря ще буде\n\n<i>Слідкуй за порціями → 75 кг реальні!</i>",
       "keyboard": null
     }
   ]
