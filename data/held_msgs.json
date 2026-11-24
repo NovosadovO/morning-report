@@ -104,6 +104,45 @@
       "kind": "chunk",
       "text": "💹 <b>КРИПТО ДАШБОРД</b> · 11-24\n\n🔴 <b>BTC</b>  <b>$60,266.52</b>\n   24г: -1.65%  7д: -6.8%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ETH</b>  <b>$1,694.66</b>\n   24г: -1.51%  7д: -7.5%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>BNB</b>  <b>$550.60</b>\n   24г: -0.78%  7д: -7.2%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>XRP</b>  <b>$0.94</b>\n   24г: +0.53%  7д: -2.0%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>SOL</b>  <b>$71.38</b>\n   24г: -0.65%  7д: -1.9%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>TRX</b>  <b>$0.31</b>\n   24г: +1.49%  7д: +1.1%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🔴 <b>FIGR_HELOC</b>  <b>$1.04</b>\n   24г: 0.00%  7д: +0.3%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>HYPE</b>  <b>$63.92</b>\n   24г: +1.96%  7д: -8.2%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🔴 <b>ZEC</b>  <b>$754.72</b>\n   24г: -2.94%  7д: -18.6%\n   <code>[🔴🔴⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>XMR</b>  <b>$498.69</b>\n   24г: +0.08%  7д: -0.6%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>DOGE</b>  <b>$0.06</b>\n   24г: +1.34%  7д: -4.9%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🟢 <b>LEO</b>  <b>$9.14</b>\n   24г: +0.08%  7д: -1.5%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>WBT</b>  <b>$57.13</b>\n   24г: -2.81%  7д: -8.8%\n   <code>[🔴🔴⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>LINK</b>  <b>$9.05</b>\n   24г: +1.73%  7д: -1.4%\n   <cod",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-24T09:14:31.579729",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Manažer в Kosice IT Valley»\n\n<i>«Сповіщення про вакансії в Kosice            \r\nManažer\r\nKosice IT Valley\r\nKosice, Slovakia\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4492399138/?trackingId=EhhVezuc8T2WkmlL1fCaSA%3D%3D&amp;refId=pR3WW...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_84084"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_84084"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_84084"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_84084"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_84084"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_84084"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
