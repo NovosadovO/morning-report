@@ -840,5 +840,167 @@
       1,
       2588
     ]
+  },
+  "2026-11-24": {
+    "proactive_actions": [
+      4,
+      10869
+    ],
+    "action_detect": [
+      36,
+      64635
+    ],
+    "foresight": [
+      3,
+      33076
+    ],
+    "foresight/truthfix": [
+      2,
+      21156
+    ],
+    "selfact": [
+      57,
+      452475
+    ],
+    "openloop_promises": [
+      10,
+      13370
+    ],
+    "bills": [
+      8,
+      25373
+    ],
+    "email_ai_item": [
+      7,
+      20647
+    ],
+    "healthai": [
+      30,
+      354381
+    ],
+    "healthai/truthfix": [
+      6,
+      60860
+    ],
+    "money": [
+      6,
+      10428
+    ],
+    "astro_ai": [
+      2,
+      31979
+    ],
+    "astro_ai/truthfix": [
+      3,
+      32275
+    ],
+    "context_ask_ai": [
+      9,
+      150429
+    ],
+    "context_ask_ai/truthfix": [
+      2,
+      21231
+    ],
+    "people": [
+      2,
+      6537
+    ],
+    "MSG_CRYPTO_MOVE": [
+      2,
+      27917
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      4,
+      81928
+    ],
+    "calendar": [
+      2,
+      22077
+    ],
+    "calendar/truthfix": [
+      2,
+      20836
+    ],
+    "MORNING_AI": [
+      2,
+      23874
+    ],
+    "MORNING_AI/truthfix": [
+      1,
+      10382
+    ],
+    "proactive_ai": [
+      1,
+      10565
+    ],
+    "hcoach": [
+      5,
+      67983
+    ],
+    "hcoach/truthfix": [
+      1,
+      10571
+    ],
+    "assistant": [
+      1,
+      10766
+    ],
+    "assistant/truthfix": [
+      2,
+      20191
+    ],
+    "healthideas": [
+      7,
+      82426
+    ],
+    "run_insight": [
+      1,
+      2417
+    ],
+    "garmin_insight": [
+      1,
+      2398
+    ],
+    "market_insight": [
+      1,
+      1616
+    ],
+    "day_mode": [
+      1,
+      1982
+    ],
+    "healthideas/truthfix": [
+      3,
+      30527
+    ],
+    "defi_digest": [
+      1,
+      10844
+    ],
+    "MSG_EVENT_SOON": [
+      2,
+      26358
+    ],
+    "EVENING_AI": [
+      1,
+      11330
+    ],
+    "themes_ai": [
+      2,
+      23193
+    ],
+    "themes_ai/truthfix": [
+      1,
+      10558
+    ],
+    "briefing": [
+      1,
+      13608
+    ],
+    "briefing/truthfix": [
+      2,
+      20535
+    ]
   }
 }
