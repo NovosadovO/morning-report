@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-25t06_49_10_970586": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-25T06:49:10.970586"
+  },
+  "selfact|2026-11-25t06_35_04_900702": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Наближається твоя рання зміна на заводі. Потрібно бути на місці о 05:00.\",     \"mail_uid\": null   },   {     \"t",
+    "ts": "2026-11-25T06:35:04.900702"
+  },
   "morning_ai|2026-11-25t06_32_17_002690": {
     "topic": "MORNING_AI",
     "gist": "Після нічної зміни – час для відновлення. 😴  Сьогоднішній день – це пауза, щоб набратися сил. Немає запланованих подій, тож зосередься на відпочинку.  Ринок кри",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить сповіщення про дві вакансії: \\\"Manažer\\\" в Kosice IT Valley та \\\"ASISTENT/KA PREDAJA V PREDAJNI JYSK\\\" в JYSK. Обидві компанії акт",
     "ts": "2026-11-25T01:14:53.449693"
-  },
-  "email_ai_item|2026-11-25t01_10_42_895345": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Free Online Courses через LinkedIn інформує про новий онлайн-курс \\\"Learn Excel From Zero with AI with Copilot\\\". Курс розрахований на",
-    "ts": "2026-11-25T01:10:42.895345"
-  },
-  "bills|2026-11-25t01_10_31_263038": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-25T01:10:31.263038"
   }
 }
