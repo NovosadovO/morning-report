@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-11-25t06_15_35_075637": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-25T06:15:35.075637"
+  },
+  "selfact|2026-11-25t06_03_43_980090": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо замовлення\",     \"text\": \"Надійшов лист від TonerDepot.sk про те, що оплату за замовле",
+    "ts": "2026-11-25T06:03:43.980090"
+  },
+  "action_detect|2026-11-25t06_01_58_659193": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-25T06:01:58.659193"
+  },
+  "action_detect|2026-11-25t06_01_47_757316": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-25T06:01:47.757316"
+  },
+  "action_detect|2026-11-25t06_01_36_752237": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-25T06:01:36.752237"
+  },
   "email_ai_item|2026-11-25t05_56_13_393177": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від Олега Новосадова з темою \\\"report 2\\\" містить посилання на Gemini та стандартну підпис з контактною інформацією. Також присутня інформ",
@@ -273,35 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Початок нічної зміни\",     \"text\": \"Олеже, твоя нічна зміна на заводі починається о 17:00.\",     \"date\": \"20",
     "ts": "2026-11-25T00:52:06.749568"
-  },
-  "openloop_promises|2026-11-25t00_45_52_687730": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-25T00:45:52.687730"
-  },
-  "money|2026-11-25t00_43_19_921278": {
-    "topic": "money",
-    "gist": "[{\"uid\":\"84029\",\"vendor\":\"TonerDepot.sk\",\"amount\":\"\",\"currency\":\"\",\"date\":\"\",\"kind\":\"shop\",\"note\":\"Підтвердження отримання оплати за замовлення № 261123443.\"}]",
-    "ts": "2026-11-25T00:43:19.921278"
-  },
-  "selfact|2026-11-25t00_36_10_330986": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Сьогодні, 25 листопада, у тебе нічна зміна на заводі, яка починається о 17:00.\",     \"why\": \"КАЛЕНДАР НА 7 ДНІВ",
-    "ts": "2026-11-25T00:36:10.330986"
-  },
-  "selfact|2026-11-25t00_20_56_968158": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні, 25 листопада, у тебе нічна зміна на заводі, яка починається о 17:00. Не забудь про це!",
-    "ts": "2026-11-25T00:20:56.968158"
-  },
-  "action_detect|2026-11-25t00_16_51_025467": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-25T00:16:51.025467"
-  },
-  "action_detect|2026-11-25t06_01_36_752237": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-25T06:01:36.752237"
   }
 }
