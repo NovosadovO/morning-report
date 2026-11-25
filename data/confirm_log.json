@@ -2104,5 +2104,11 @@
     "subject": "Сплата страхування автомобіля",
     "answer": "yes",
     "ts": "2026-11-25T15:25:04.196717+00:00"
+  },
+  "calrem_skip|o_3_dni_kon_platnos_v_ho_k_du_|2026-11-25t2": {
+    "action": "calrem_skip",
+    "subject": "O 3 dni končí platnosť vášho kódu ⏳",
+    "answer": "yes",
+    "ts": "2026-11-25T21:04:23.001661+00:00"
   }
 }
