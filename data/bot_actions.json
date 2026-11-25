@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-20T09:06:09"
-    },
-    {
       "kind": "notify",
       "what": "Потрібно відповісти на лист",
       "detail": "У календарі зазначено '🔔 Лист від потребує відповіді'.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T02:39:55"
+    },
+    {
+      "kind": "garmin_periodic",
+      "what": "Garmin: що нового + AI",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-25T02:40:29"
     }
   ]
 }
