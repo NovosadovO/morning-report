@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T20:05:37.941350+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_fa2106d507"
-    },
-    {
       "ts": "2026-09-13T21:04:20.666595+00:00",
       "category": "confirm",
       "question": "gate_dl_due_done: 🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
@@ -14635,6 +14629,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-25"
+      }
+    },
+    {
+      "ts": "2026-11-25T01:30:30.645107+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про оплату замовлення",
       "extra": {
         "kind": "reply",
         "date": "2026-11-25"
