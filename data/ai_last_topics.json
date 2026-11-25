@@ -1,4 +1,19 @@
 {
+  "bills|2026-11-25t03_11_02_235066": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-25T03:11:02.235066"
+  },
+  "action_detect|2026-11-25t03_01_49_290339": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-25T03:01:49.290339"
+  },
+  "action_detect|2026-11-25t03_01_38_315391": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-25T03:01:38.315391"
+  },
   "action_detect|2026-11-25t03_01_27_277613": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "🌙 Сьогоднішня нічна зміна триває, і поки що зафіксовано 5.5 годин сну, що на 1.4 години менше від середнього за останні 7 днів (6.9 год). Вага 84.3 кг — вимір в",
     "ts": "2026-11-24T22:06:29.226178"
-  },
-  "selfact|2026-11-24t22_00_13_211407": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшла інформація про оплату замовлення №261123443 від TonerDepot.sk. Плату отримано.\",     \"mail_uid\": \"uid=",
-    "ts": "2026-11-24T22:00:13.211407"
-  },
-  "selfact|2026-11-24t21_44_12_608399": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег оплатив рахунок від TonerDepot.sk за замовлення № 261123443.\",     \"mail_uid\": \"84029\"   },   {     \"type\": ",
-    "ts": "2026-11-24T21:44:12.608399"
-  },
-  "openloop_promises|2026-11-24t21_43_55_293495": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-24T21:43:55.293495"
   }
 }
