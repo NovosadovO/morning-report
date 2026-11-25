@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T03:46:39.601575+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Перевірити статус Strava API",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T03:46:50.971273+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14637,6 +14631,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_f35d4aac5b"
+    },
+    {
+      "ts": "2026-11-25T21:31:03.224209+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😊 Добре",
+      "extra": {
+        "score": 4
+      }
     }
   ]
 }
