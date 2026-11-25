@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-21",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-21T07:25:55"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, перевір, будь ласка, чи сплачено страховку на автомоб",
       "detail": "СВІЖІ ЛИСТИ: uid=82462 | від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> | Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI; uid=80711 | від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> | Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T20:43:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, наближається твоя рання зміна на заводі 28 листопада",
+      "detail": "Календар показує ранкову зміну 28.11 о 05:00. Зараз 20:52, тому це актуальне сповіщення.",
+      "module": "selfact",
+      "ts": "2026-11-25T20:52:15"
     }
   ]
 }
