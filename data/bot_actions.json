@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: weight_up",
-      "detail": "⚖️ Вага йде вгору: +0.7 кг за період, зараз 84.7 кг (до цілі 9.7 кг)",
-      "module": "healthai",
-      "ts": "2026-11-20T16:27:04"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: energy_low",
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 27.0 — нижче за 30, організм виснажений",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T10:14:18"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-25",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-25T10:44:55"
     }
   ]
 }
