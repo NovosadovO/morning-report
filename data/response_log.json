@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T00:38:02.499005+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_ff12444c7e"
-    },
-    {
       "ts": "2026-09-14T00:38:16.719901+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
@@ -14648,6 +14642,12 @@
     },
     {
       "ts": "2026-11-25T21:01:18.599030+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
+    },
+    {
+      "ts": "2026-11-25T21:01:29.806601+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_invest"
