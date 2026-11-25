@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T23:12:57.371684+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Переглянути виплатні відомості Minebea",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-13T23:13:00.189208+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14651,6 +14645,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_8cce51ab70"
+    },
+    {
+      "ts": "2026-11-25T02:09:30.208054+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_befda87e12"
     }
   ]
 }
