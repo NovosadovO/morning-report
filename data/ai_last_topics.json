@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-25t02_25_50_326090": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, нагадую, що 27 листопада о 05:00 у тебе ранкова зміна. Потрібно підготуватися.\",     \"why\": \"Наступна зміна 27.1",
+    "ts": "2026-11-25T02:25:50.326090"
+  },
   "openloop_promises|2026-11-25t02_16_19_327135": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-24T21:02:42.679462"
-  },
-  "action_detect|2026-11-24t21_02_31_858418": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз повідомлень та збереженої інформації про Ол",
-    "ts": "2026-11-24T21:02:31.858418"
   }
 }
