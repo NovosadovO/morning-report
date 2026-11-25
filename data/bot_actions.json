@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Потрібно відновити платіжну інформацію для Runable",
-      "detail": "У розділі 'ПІДПИСКИ' вказано, що платіж до Runable був невдалим і потребує оновлення платіжної інформації.",
-      "module": "selfact",
-      "ts": "2026-11-20T11:57:14"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-20",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T06:10:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, 1 грудня у тебе нічна зміна на заводі о 17:00. Потрібн",
+      "detail": "Календар на 7 днів вказує на нічну зміну 01.12 о 17:00.",
+      "module": "selfact",
+      "ts": "2026-11-25T06:19:33"
     }
   ]
 }
