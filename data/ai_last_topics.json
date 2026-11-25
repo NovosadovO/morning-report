@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-25t03_01_27_277613": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-25T03:01:27.277613"
+  },
+  "proactive_actions|2026-11-25t03_00_10_294821": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист про оплату страхування\",     \"date\": \"2026-11-25\",     \"time\": \"\",     \"message\": \"Олеже, отримав ли",
+    "ts": "2026-11-25T03:00:10.294821"
+  },
   "selfact|2026-11-25t02_56_20_896489": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Нагадую, що 27 листопада о 05:00 у тебе ранкова зміна. Потрібно підготуватися.\",     \"why\": \"Календар на 7 днів",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-11-24T21:43:55.293495"
-  },
-  "selfact|2026-11-24t21_28_10_940914": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, у тебе є неоплачений рахунок від GASTROMILA, spol. s r.o. на суму 4680.00 EUR.\",     \"why\": \"Наявність н",
-    "ts": "2026-11-24T21:28:10.940914"
-  },
-  "email_ai_item|2026-11-24t21_14_10_699801": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист містить сповіщення про дві вакансії: \\\"Manažer\\\" від Kosice IT Valley та \\\"ASISTENT/KA PREDAJA V PREDAJNI\\\" від JYSK. Обидві ко",
-    "ts": "2026-11-24T21:14:10.699801"
   }
 }
