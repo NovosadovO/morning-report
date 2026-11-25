@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, перевір, будь ласка, чи сплачено страховку на автомоб",
-      "detail": "СВІЖІ ЛИСТИ: uid=82462 | від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> | Poďakovanie za úhradu poistného - povinného zmluvného poistenia, EČV LE066BI; uid=80711 | від Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk> | Avízo na zaplatenie poistného PZ 6641172176 – povinného zmluvného",
-      "module": "selfact",
-      "ts": "2026-11-21T07:51:58"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, отримав від Maroš Sivák аналізи для Olexiho. Потрібно",
       "detail": "СВІЖІ ЛИСТИ: uid=82454 | від Maroš Sivák <maros.sivak.sro@gmail.com> | Analýzy pre Olexiho :)",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар показує ранкову зміну 28.11 о 05:00. Зараз 20:52, тому це актуальне сповіщення.",
       "module": "selfact",
       "ts": "2026-11-25T20:52:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, наближається твоя рання зміна на заводі 29 листопада",
+      "detail": "Календар показує ранкову зміну 29.11 о 05:00. Зараз 20:52, тому це актуальне сповіщення.",
+      "module": "selfact",
+      "ts": "2026-11-25T20:52:19"
     }
   ]
 }
