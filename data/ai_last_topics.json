@@ -1,4 +1,9 @@
 {
+  "people|2026-11-25t03_36_00_029889": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"obchod@soft-tech.sk\",     \"name\": \"TonerDepot.sk\",     \"relation\": \"сервіс\",     \"topics\": [       \"інформація про замовлення\",     ",
+    "ts": "2026-11-25T03:36:00.029889"
+  },
   "selfact|2026-11-25t03_27_42_635788": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про оплату замовлення\",     \"text\": \"Ваша оплата за замовлення № 261123443 від TonerDepot.sk була у",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-24T22:35:13.896529"
-  },
-  "msg_event_soon|2026-11-24t22_35_02_508121": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "⏰ 22:34 — Нічна зміна триває. Олег, зосередься на найважливішому:  **На роботі:** *   **Ключове завдання:** Протримати зміну до 06:00. *   **Що взяти з собою:**",
-    "ts": "2026-11-24T22:35:02.508121"
   }
 }
