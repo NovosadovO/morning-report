@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-25t17_28_31_998053": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Підготовка до ранкової зміни\",     \"text\": \"Олеже, завтра, 27 листопада, о 05:00 починається ранкова зміна. ",
+    "ts": "2026-11-25T17:28:31.998053"
+  },
   "openloop_promises|2026-11-25t17_22_14_373342": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-25T06:01:58.659193"
-  },
-  "action_detect|2026-11-25t06_01_47_757316": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-25T06:01:47.757316"
   }
 }
