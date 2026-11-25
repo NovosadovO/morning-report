@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-11-25t05_56_13_393177": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від Олега Новосадова з темою \\\"report 2\\\" містить посилання на Gemini та стандартну підпис з контактною інформацією. Також присутня інформ",
+    "ts": "2026-11-25T05:56:13.393177"
+  },
+  "selfact|2026-11-25t05_48_21_297110": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Наближається твоя рання зміна на заводі. Потрібно бути на місці о 05:00 27.11.2026. Не забудь підготуватися.\",     \"why",
+    "ts": "2026-11-25T05:48:21.297110"
+  },
   "money|2026-11-25t05_44_32_214753": {
     "topic": "money",
     "gist": "[{\"uid\":\"84029\",\"vendor\":\"TonerDepot.sk\",\"amount\":\"\",\"currency\":\"\",\"date\":\"\",\"kind\":\"shop\",\"note\":\"Підтвердження отримання оплати за замовлення № 261123443.\"}]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-25T00:16:51.025467"
-  },
-  "action_detect|2026-11-25t00_16_40_095320": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-25T00:16:40.095320"
-  },
-  "action_detect|2026-11-25t00_16_29_050807": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-25T00:16:29.050807"
   }
 }
