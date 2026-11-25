@@ -1,4 +1,9 @@
 {
+  "msg_crypto_move|2026-11-25t03_40_11_907818": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "📈 Ринок криптовалют демонструє помітне зниження, причому найбільше постраждали HYPE (-7.5%), ZEC (-5.7%), XLM (-6.7%) та CC (-6.9%) за останні 24 години. Це ста",
+    "ts": "2026-11-25T03:40:11.907818"
+  },
   "people|2026-11-25t03_36_00_029889": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"obchod@soft-tech.sk\",     \"name\": \"TonerDepot.sk\",     \"relation\": \"сервіс\",     \"topics\": [       \"інформація про замовлення\",     ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя нічна зміна на заводі почалася о 17:00. Залишилося ще багато годин до її завершення. Не забудь про ",
     "ts": "2026-11-24T22:46:59.190857"
-  },
-  "action_detect|2026-11-24t22_35_13_896529": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-24T22:35:13.896529"
   }
 }
