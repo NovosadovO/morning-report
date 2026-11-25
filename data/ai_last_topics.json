@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-25t02_16_19_327135": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-25T02:16:19.327135"
+  },
   "selfact|2026-11-25t02_10_14_109001": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшла інформація про успішну оплату замовлення № 261123443 від TonerDepot.sk. Відправлення буде здійснено як",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз повідомлень та збереженої інформації про Ол",
     "ts": "2026-11-24T21:02:31.858418"
-  },
-  "action_detect|2026-11-24t21_02_20_864848": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астролог",
-    "ts": "2026-11-24T21:02:20.864848"
   }
 }
