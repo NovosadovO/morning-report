@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-11-25t20_02_45_305093": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запланований біг\",   \"action_date\": \"2026-11-14\",   \"action_time\": \"09:00\",   \"action_summary\": \"Запла",
+    "ts": "2026-11-25T20:02:45.305093"
+  },
+  "hcoach_truthfix|2026-11-25t20_01_15_858986": {
+    "topic": "hcoach/truthfix",
+    "gist": "Олеже, дані за останні 14 днів показують тренд до зниження ваги на 0.4 кг, що суперечить загальному тренду зростання (+1.2 кг за 162 дні). Це може свідчити про ",
+    "ts": "2026-11-25T20:01:15.858986"
+  },
+  "hcoach|2026-11-25t20_01_07_772685": {
+    "topic": "hcoach",
+    "gist": "Олеже, дивлюся твої дані за останній тиждень і бачу певну стагнацію, яка може заважати досягненню твоєї мети — 75 кг. Зараз твоя вага становить 86.2 кг, що на 1",
+    "ts": "2026-11-25T20:01:07.772685"
+  },
   "email_ai_item|2026-11-25t19_57_35_840603": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії: \\\"Marketingový špecialista\\\" в Vivantina та \\\"Forward Deployed Engineer\\\" в S",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-25T15:31:52.256894"
-  },
-  "action_detect|2026-11-25t15_31_41_257902": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-25T15:31:41.257902"
-  },
-  "action_detect|2026-11-25t15_31_30_192483": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-25T15:31:30.192483"
-  },
-  "briefing_truthfix|2026-11-25t15_31_22_713127": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 **ГОЛОВНЕ** Твоя нічна зміна триває. Дані Garmin свідчать про низьку готовність організму: HRV становить 40 мс (нижче норми 46.21), а пульс спокою — 53 уд/хв ",
-    "ts": "2026-11-25T15:31:22.713127"
   }
 }
