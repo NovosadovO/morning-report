@@ -1,4 +1,9 @@
 {
+  "bills|2026-11-25t05_12_49_052029": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"261123443\",     \"due\": \"\",     \"alread",
+    "ts": "2026-11-25T05:12:49.052029"
+  },
   "selfact|2026-11-25t05_01_07_211415": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя наступна зміна на заводі — нічна, 1 грудня о 17:00. Варто підготуватися.\",     \"mail_uid\": \"82462\" ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-25T00:01:33.842481"
-  },
-  "proactive_actions|2026-11-25t00_00_14_295979": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити оплату страхування KOOPERATIVA\",     \"date\": \"2026-11-25\",     \"time\": \"\",     \"message\": \"Олеже,",
-    "ts": "2026-11-25T00:00:14.295979"
   }
 }
