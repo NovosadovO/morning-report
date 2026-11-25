@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T01:53:08.329752+00:00",
-      "category": "confirm",
-      "question": "gate_dl_cal: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T01:53:16.458760+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14649,6 +14643,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_shower"
+    },
+    {
+      "ts": "2026-11-25T21:02:23.276844+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
