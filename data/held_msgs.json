@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-25T09:16:05.842234",
-      "kind": "chunk",
-      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 3 ДН. ТОМУ (22.11 17:53): 10.05 км за 62.0 хв, темп 6:14 хв/км. ВАЖЛИВО: довіряй лише слову '3 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 75 кг (тренд -0.4 кг за останні 5 замірів). Кроки: 8141 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 7 непрочитаних\n📅 Календар: нічого не заплановано",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-25T09:16:40.836474",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.1% за 24г</b>\n\nЗараз: 67.80 $\n24г тому: 71.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 3 ДН. ТОМУ (22.11 17:53): 10.05 км за 62.0 хв, темп 6:14 хв/км. ВАЖЛИВО: довіряй лише слову '3 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 75 кг (тренд -0.4 кг за останні 5 замірів). Кроки: 8141 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 7 непрочитаних\n📅 Календар: нічого не заплановано",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-25T10:40:57.470098",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Edenred Pulse</b>\n📋 Тема: «Odporučili by ste Edenred?»\n\n<i>«Logo\r\n  \r\n  Hello,\r\n  \r\n  To help us with our ongoing innovation and service improvement at\r\n  Edenred, we would appreciate receiving your feedback.\r\n  \r\n  We will use your responses to better understand your experiences with our\r\n  solutions and support services.\r\n  \r\n  The survey is designed to ta...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_84272"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_84272"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_84272"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_84272"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_84272"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_84272"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
