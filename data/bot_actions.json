@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, у тебе сьогодні день відновлення, без бігу. Також є дв",
-      "detail": "Календар на 7 днів та свіжі листи",
-      "module": "selfact",
-      "ts": "2026-11-21T00:22:38"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що сьогодні, 21 листопада, у тебе день відно",
       "detail": "Календар: 21.11: Відновлення — день без бігу; 07:00 До церкви",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T19:10:14"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, нагадую, що 27 листопада о 05:00 починається ранкова",
+      "detail": "Наближається рання зміна 27 листопада о 05:00.",
+      "module": "selfact",
+      "ts": "2026-11-25T19:33:02"
     }
   ]
 }
