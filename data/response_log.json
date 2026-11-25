@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T03:00:21.270767+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути виплатну відомість за серпень",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-14"
-      }
-    },
-    {
       "ts": "2026-09-14T03:46:39.601575+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Перевірити статус Strava API",
@@ -14641,6 +14631,12 @@
       "category": "confirm",
       "question": "calrem_skip: O 3 dni končí platnosť vášho kódu ⏳",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-25T21:04:30.394077+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_f35d4aac5b"
     }
   ]
 }
