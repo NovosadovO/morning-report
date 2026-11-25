@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T00:38:02.498693+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "lc_add_613490081c"
-    },
-    {
       "ts": "2026-09-14T00:38:02.499005+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14651,6 +14645,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_812690f998"
+    },
+    {
+      "ts": "2026-11-25T21:01:18.599030+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
     }
   ]
 }
