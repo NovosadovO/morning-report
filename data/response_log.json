@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T21:04:29.390457+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_76d662d35f"
-    },
-    {
       "ts": "2026-09-13T21:35:30.532790+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14651,6 +14645,12 @@
         "kind": "reply",
         "date": "2026-11-25"
       }
+    },
+    {
+      "ts": "2026-11-25T02:09:22.313033+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
