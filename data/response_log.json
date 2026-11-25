@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-13T23:13:00.189208+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_40a2dbf4b5"
-    },
-    {
       "ts": "2026-09-13T23:45:56.757914+00:00",
       "category": "ai_button",
       "question": "general",
@@ -14651,6 +14645,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_befda87e12"
+    },
+    {
+      "ts": "2026-11-25T03:00:15.384444+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про оплату страхування",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-25"
+      }
     }
   ]
 }
