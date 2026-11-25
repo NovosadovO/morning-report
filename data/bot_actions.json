@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-20T11:06:33"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-20",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Календар показує нічну зміну 01.12 о 17:00, а зараз 25.11 05:32, тобто до зміни залишилось менше 7 діб.",
       "module": "selfact",
       "ts": "2026-11-25T05:32:53"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-25",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-25T05:40:36"
     }
   ]
 }
