@@ -1,18 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T01:53:16.458760+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "dl_cal_7105c48157"
-    },
-    {
-      "ts": "2026-09-14T01:53:16.463004+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_a0d7939f92"
-    },
-    {
       "ts": "2026-09-14T03:00:11.873558+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14649,6 +14637,18 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-25T21:02:32.376148+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-25T21:02:45.583635+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
