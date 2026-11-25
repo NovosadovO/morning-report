@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "t": "btn",
+      "data": "habit_no_invest",
+      "label": "❌",
+      "ts": "2026-10-21T22:02:58"
+    },
+    {
       "t": "msg",
       "kind": "cmd",
       "text": "/звички",
