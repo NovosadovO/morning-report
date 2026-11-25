@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-20",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-20T20:54:38"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 01.12: 17:00 Нічна зміна",
       "module": "selfact",
       "ts": "2026-11-25T17:59:26"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається рання зміна 27 листопада о 05:00. Пам'ятай про",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 27.11: 05:00 Рання зміна",
+      "module": "selfact",
+      "ts": "2026-11-25T17:59:32"
     }
   ]
 }
