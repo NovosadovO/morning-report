@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-20",
-      "detail": "автосинк з годинника: sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-20T10:01:04"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T05:00:47"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається твоя нічна зміна 1 грудня о 17:00. Не забудь пі",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 01.12: 17:00 Нічна зміна",
+      "module": "selfact",
+      "ts": "2026-11-25T05:17:00"
     }
   ]
 }
