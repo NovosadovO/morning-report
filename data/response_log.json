@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T01:30:13.827567+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити виплатні листи",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-14"
-      }
-    },
-    {
       "ts": "2026-09-14T01:35:19.233910+00:00",
       "category": "deadline_found",
       "question": "Підписка Apple — закінчення терміну дії",
@@ -14656,6 +14646,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-25T21:01:56.228111+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_water"
     }
   ]
 }
