@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-11-25T23:14:00.385323",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Electrical &amp; Automation Supervisor в Crown Holdings, Inc.»\n\n<i>«Сповіщення про вакансії за запитом Лінійний менеджер в Kosice            \r\nElectrical &amp; Automation Supervisor\r\nCrown Holdings, Inc.\r\nKechnec\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4478377977/?trackingId=2OoVPlOCKyIwyl%2BgWU021g%3D%3D&amp;ref...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_84369"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_84369"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_84369"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_84369"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_84369"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_84369"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
