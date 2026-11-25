@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-21",
-      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-21T01:54:39"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-20",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "Наближається рання зміна 28 листопада о 05:00.",
       "module": "selfact",
       "ts": "2026-11-25T19:33:07"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, нагадую, що 29 листопада о 05:00 починається ранкова",
+      "detail": "Наближається рання зміна 29 листопада о 05:00.",
+      "module": "selfact",
+      "ts": "2026-11-25T19:33:14"
     }
   ]
 }
