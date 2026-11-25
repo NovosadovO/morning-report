@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-20T21:06:48"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-20",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 27.11: 05:00 Рання зміна",
       "module": "selfact",
       "ts": "2026-11-25T17:59:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається рання зміна 28 листопада о 05:00. Пам'ятай про",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.11: 05:00 Рання зміна",
+      "module": "selfact",
+      "ts": "2026-11-25T17:59:36"
     }
   ]
 }
