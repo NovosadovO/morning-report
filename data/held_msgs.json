@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-25T08:44:42.793428",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ SOL -5.1% за 24г\n\nЗараз: 67.85 $\n24г тому: 71.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-25T08:47:07.422057",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.0% за 24г</b>\n\nЗараз: 67.96 $\n24г тому: 71.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-11-25T09:01:48.676481",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 67.72 $\n24г тому: 71.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-11-25T09:01:49.616042",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ SOL -5.2% за 24г\n\nЗараз: 67.72 $\n24г тому: 71.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
