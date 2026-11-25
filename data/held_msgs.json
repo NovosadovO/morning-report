@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-11-25T09:17:54.461616",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ SOL -5.3% за 24г\n\nЗараз: 67.80 $\n24г тому: 71.59 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-11-25T09:19:03.586418",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>SOL -5.2% за 24г</b>\n\nЗараз: 67.80 $\n24г тому: 71.48 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -215,6 +209,45 @@
       "kind": "chunk",
       "text": "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n\nЗваж себе зараз.\n\nВага підтягнеться з Garmin Connect, або надішли її мені, наприклад:\n<code>82.5</code>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-11-25T11:13:54.023253",
+      "kind": "offer",
+      "text": "📩 Лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Marketingový špecialista в Vivantina | Online marketingová agentúra»\n\n<i>«Сповіщення про вакансії в Slovakia            \r\nMarketingový špecialista\r\nVivantina | Online marketingová agentúra\r\nKosice Old Town\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4493005948/?trackingId=zeeNR%2Fhje13b4UjHd40NPA%3D%3D&amp;refId=...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_84277"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_84277"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_84277"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_84277"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_84277"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_84277"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
