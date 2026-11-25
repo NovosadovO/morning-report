@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Необхідно сплатити страховку",
-      "detail": "Отримано листи від Notifikácie KOOPERATIVA щодо сплати страхування (uid=82462, uid=80711).",
-      "module": "selfact",
-      "ts": "2026-11-20T16:38:15"
-    },
-    {
-      "kind": "notify",
       "what": "Необхідно переглянути рахунок",
       "detail": "Отримано лист від Mariia Ovsiienko з рахунком (uid=80646).",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-25T13:15:53"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-25",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-25T13:45:34"
     }
   ]
 }
