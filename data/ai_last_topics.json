@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-25t05_32_41_788271": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Наближається твоя рання зміна на заводі. Потрібно бути на місці о 05:00.\",     \"why\": \"Календар показує ранню з",
+    "ts": "2026-11-25T05:32:41.788271"
+  },
+  "openloop_promises|2026-11-25t05_18_25_509986": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-25T05:18:25.509986"
+  },
   "selfact|2026-11-25t05_16_52_865277": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Наближається твоя нічна зміна 1 грудня о 17:00. Не забудь підготуватися.\",     \"why\": \"КАЛЕНДАР НА 7 ДНІВ: 01.12: 17:00",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про нові листи та ",
     "ts": "2026-11-25T00:01:56.023287"
-  },
-  "foresight_truthfix|2026-11-25t00_01_55_184671": {
-    "topic": "foresight/truthfix",
-    "gist": "📬 від Notifikácie KOOPERATIVA — нагадування про сплату обов'язкового страхування автомобіля (EČV LE066BI).  🎯 ЗАРАЗ: оплатити страхування автомобіля.",
-    "ts": "2026-11-25T00:01:55.184671"
-  },
-  "action_detect|2026-11-25t00_01_44_818453": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-25T00:01:44.818453"
   }
 }
