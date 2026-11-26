@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-26t06_12_06_404335": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Ви отримали лист про підтвердження оплати замовлення № 261123443 від TonerDepot.sk.\",     \"mail_uid\": \"84029\"  ",
+    "ts": "2026-11-26T06:12:06.404335"
+  },
+  "action_detect|2026-11-26t06_01_23_118343": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз непрочитаних листів та збереженої інфо",
+    "ts": "2026-11-26T06:01:23.118343"
+  },
+  "action_detect|2026-11-26t06_01_12_058215": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
+    "ts": "2026-11-26T06:01:12.058215"
+  },
   "action_detect|2026-11-26t06_01_01_012066": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, прийшла оплата за замовлення № 261123443 від TonerDepot.sk. Деталі в листі.\",     \"why\": \"Отримано лист ",
     "ts": "2026-11-25T20:04:23.913639"
-  },
-  "action_detect|2026-11-25t20_02_45_305093": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Запланований біг\",   \"action_date\": \"2026-11-14\",   \"action_time\": \"09:00\",   \"action_summary\": \"Запла",
-    "ts": "2026-11-25T20:02:45.305093"
-  },
-  "hcoach_truthfix|2026-11-25t20_01_15_858986": {
-    "topic": "hcoach/truthfix",
-    "gist": "Олеже, дані за останні 14 днів показують тренд до зниження ваги на 0.4 кг, що суперечить загальному тренду зростання (+1.2 кг за 162 дні). Це може свідчити про ",
-    "ts": "2026-11-25T20:01:15.858986"
-  },
-  "hcoach|2026-11-25t20_01_07_772685": {
-    "topic": "hcoach",
-    "gist": "Олеже, дивлюся твої дані за останній тиждень і бачу певну стагнацію, яка може заважати досягненню твоєї мети — 75 кг. Зараз твоя вага становить 86.2 кг, що на 1",
-    "ts": "2026-11-25T20:01:07.772685"
   }
 }
