@@ -1,4 +1,9 @@
 {
+  "money|2026-11-26t21_52_45_607395": {
+    "topic": "money",
+    "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"date\": \"\",     \"kind\": \"shop\",     \"note\": \"Підтверд",
+    "ts": "2026-11-26T21:52:45.607395"
+  },
   "selfact|2026-11-26t21_38_40_045527": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про оплату страхування\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо оплати обов",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
     "ts": "2026-11-26T18:02:15.028240"
-  },
-  "action_detect|2026-11-26t18_02_04_206211": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
-    "ts": "2026-11-26T18:02:04.206211"
   }
 }
