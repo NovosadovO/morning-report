@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-26t22_56_42_978179": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо замовлення\",     \"text\": \"Ваша оплата за замовлення № 261123443 від TonerDepot.sk прий",
+    "ts": "2026-11-26T22:56:42.978179"
+  },
   "selfact|2026-11-26t22_40_41_985980": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про замовлення\",     \"text\": \"Вашу оплату за замовлення № 261123443 в TonerDepot.sk прийнят",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення TonerDepot.sk\",     \"text\": \"Ваша оплата за замовлення № 261123443 в TonerDepot.sk б",
     "ts": "2026-11-26T18:48:07.015580"
-  },
-  "action_detect|2026-11-26t18_34_00_520645": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Переглянути деталі збою Vercel\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Пе",
-    "ts": "2026-11-26T18:34:00.520645"
   }
 }
