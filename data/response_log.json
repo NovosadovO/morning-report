@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T14:36:21.404210+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "XLM виріс на 8.0% за 24 години (зараз $0.19240); весь сектор RWA додав 51.5% за 24 години (капіталізація $70.39B)"
-    },
-    {
       "ts": "2026-09-14T17:36:38.290785+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14640,6 +14634,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_54da5f6145"
+    },
+    {
+      "ts": "2026-11-26T04:46:07.664171+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_0196c1a037"
     }
   ]
 }
