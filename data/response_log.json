@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:01:38.822263+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Не треба",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T21:01:47.466178+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14651,6 +14645,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_later_dec2a48510"
+    },
+    {
+      "ts": "2026-11-26T20:48:23.759508+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_spray"
     }
   ]
 }
