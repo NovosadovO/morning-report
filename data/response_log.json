@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T04:35:46.197857+00:00",
-      "category": "deadline_found",
-      "question": "Підписка Apple — закінчення",
-      "answer": "2026-09-14",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-09-14T06:00:18.057592+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14651,6 +14642,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_ac031ddced"
+    },
+    {
+      "ts": "2026-11-26T04:45:52.199142+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: Аналізи для Olexiho :)",
+      "answer": "yes"
     }
   ]
 }
