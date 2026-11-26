@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-26t07_46_09_685836": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, платіж за твоє замовлення №261123443 від TonerDepot.sk успішно отримано. Очікуй на відправку.\",     \"mai",
+    "ts": "2026-11-26T07:46:09.685836"
+  },
+  "selfact|2026-11-26t07_30_28_598085": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про страхування\",     \"text\": \"Олеже, нагадую, що твоє обов'язкове страхування автомобіля (",
+    "ts": "2026-11-26T07:30:28.598085"
+  },
+  "proactive_actions|2026-11-26t07_30_16_692549": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист про оплату страхування\",     \"date\": \"2026-11-26\",     \"time\": \"\",     \"message\": \"Олеже, от",
+    "ts": "2026-11-26T07:30:16.692549"
+  },
   "proactive_ai|2026-11-26t07_30_05_228820": {
     "topic": "proactive_ai",
     "gist": "Олеже, як ти сьогодні? Бачу, сьогодні в тебе вихідний, тож можна розслабитись. Чи є якісь плани на сьогодні, може, щось хочеш зробити?",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-25T21:02:53.667102"
-  },
-  "action_detect|2026-11-25t21_02_42_502741": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-25T21:02:42.502741"
-  },
-  "action_detect|2026-11-25t21_02_31_618712": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-25T21:02:31.618712"
-  },
-  "action_detect|2026-11-25t21_02_20_716120": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-25T21:02:20.716120"
   }
 }
