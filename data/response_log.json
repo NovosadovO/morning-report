@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:02:12.603355+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Не треба",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T21:02:19.483257+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14651,6 +14645,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-11-26T20:48:51.469847+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Переглянути деталі збою Vercel",
+      "answer": "yes"
     }
   ]
 }
