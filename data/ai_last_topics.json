@@ -1,4 +1,24 @@
 {
+  "healthai|2026-11-26t13_06_27_668633": {
+    "topic": "healthai",
+    "gist": "🏋️‍♂️ Поки що фіксується 6.1 години сну (це часткове значення, воно може змінитися), а середня за 7 днів становить 7.0 год. Тренд сну падає (-0.3), що в сукупно",
+    "ts": "2026-11-26T13:06:27.668633"
+  },
+  "selfact|2026-11-26t13_01_27_105802": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшла інформація про успішну оплату замовлення № 261123443 від TonerDepot.sk. Деталі замовлення досту",
+    "ts": "2026-11-26T13:01:27.105802"
+  },
+  "action_detect|2026-11-26t13_00_46_845640": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Заплановано біг на 9:00 р",
+    "ts": "2026-11-26T13:00:46.845640"
+  },
+  "action_detect|2026-11-26t13_00_12_888190": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Пробіжка\",   \"action_date\": \"2026-11-20\",   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв",
+    "ts": "2026-11-26T13:00:12.888190"
+  },
   "openloop_promises|2026-11-26t12_59_50_070510": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Олег планує біг на 9:00 ранку",
     "ts": "2026-11-26T09:00:34.627449"
-  },
-  "action_detect|2026-11-26t09_00_23_479918": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-26T09:00:23.479918"
-  },
-  "selfact|2026-11-26t08_48_53_218275": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Тобі прийшов лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату вже прийнято.\",     \"mail_uid\": \"8",
-    "ts": "2026-11-26T08:48:53.218275"
-  },
-  "selfact|2026-11-26t08_33_20_746558": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від TonerDepot.sk з підтвердженням оплати замовлення № 261123443. Замовлення буде відправлено най",
-    "ts": "2026-11-26T08:33:20.746558"
-  },
-  "openloop_promises|2026-11-26t08_29_24_109030": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-26T08:29:24.109030"
   }
 }
