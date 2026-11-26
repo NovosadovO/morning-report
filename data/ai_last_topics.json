@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-26t21_38_40_045527": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливе сповіщення про оплату страхування\",     \"text\": \"Олеже, надійшов лист від KOOPERATIVA щодо оплати обов",
+    "ts": "2026-11-26T21:38:40.045527"
+  },
   "action_detect|2026-11-26t21_31_01_913551": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
     "ts": "2026-11-26T18:02:04.206211"
-  },
-  "action_detect|2026-11-26t18_01_53_038373": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-26T18:01:53.038373"
   }
 }
