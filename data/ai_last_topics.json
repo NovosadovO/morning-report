@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-11-26t09_15_26_503005": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про дві вакансії від компанії GymBeam у місті Кошице, Словаччина: \\\"Junior Autonomous AI System",
+    "ts": "2026-11-26T09:15:26.503005"
+  },
+  "bills|2026-11-26t09_13_16_183986": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"261123443\",     \"due\": \"\",     \"alread",
+    "ts": "2026-11-26T09:13:16.183986"
+  },
   "action_detect|2026-11-26t09_10_37_000392": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Заплановано біг на 9:00 р",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олег, твоя рання зміна на заводі починається завтра, 27 листопада, о 05:00. Не забудь про неї.\",     \"why\": \"КАЛЕНДАР Н",
     "ts": "2026-11-26T04:54:24.345042"
-  },
-  "action_detect|2026-11-26t04_46_13_498901": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-26T04:46:13.498901"
-  },
-  "action_detect|2026-11-26t04_46_00_703229": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом попередніх відповідей та збереже",
-    "ts": "2026-11-26T04:46:00.703229"
   }
 }
