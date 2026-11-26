@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-26t17_12_11_799997": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олег, у тебе є лист від Maroš Sivák з аналізами для Olexiho. Потрібно виконати завдання по цьому листу. Нагадування про",
+    "ts": "2026-11-26T17:12:11.799997"
+  },
   "healthai|2026-11-26t17_05_53_222110": {
     "topic": "healthai",
     "gist": "💪 На тлі падіння середньої тривалості сну за 7 днів (-0.3 год) та зниження кроків (-1577.2 за 7 днів), твоя енергія (body battery) зростає (+5.0 за 14 днів), ал",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить аналіз даних про здоров'я, біг, аст",
     "ts": "2026-11-26T12:01:29.139855"
-  },
-  "action_detect|2026-11-26t12_01_17_797931": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-26T12:01:17.797931"
   }
 }
