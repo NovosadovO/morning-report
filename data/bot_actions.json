@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-21",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-21T11:26:36"
-    },
-    {
       "kind": "idea",
       "what": "ідея здоров'я: run_ready",
       "detail": "HRV 45.0 мс (тижнева норма 45.0 мс), сон 8.3 год, body battery 60.0",
@@ -2799,6 +2792,13 @@
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 01.12: 17:00 Нічна зміна",
       "module": "selfact",
       "ts": "2026-11-26T04:54:33"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую про нічну зміну на заводі 2 грудня о 17:00.",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 02.12: 17:00 Нічна зміна",
+      "module": "selfact",
+      "ts": "2026-11-26T04:54:38"
     }
   ]
 }
