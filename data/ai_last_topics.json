@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-26t04_54_24_345042": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олег, твоя рання зміна на заводі починається завтра, 27 листопада, о 05:00. Не забудь про неї.\",     \"why\": \"КАЛЕНДАР Н",
+    "ts": "2026-11-26T04:54:24.345042"
+  },
+  "action_detect|2026-11-26t04_46_13_498901": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-26T04:46:13.498901"
+  },
+  "action_detect|2026-11-26t04_46_00_703229": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом попередніх відповідей та збереже",
+    "ts": "2026-11-26T04:46:00.703229"
+  },
   "action_detect|2026-11-26t04_45_40_634928": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -283,20 +298,5 @@
     "topic": "healthai",
     "gist": "📈 Вага 86.2 кг — це поки що +11.2 кг до цілі 75 кг, але тренд падає (-0.4) за 7 днів, що позитивно. 😴 Тим часом, сон становить 5.3 години (зафіксовано сьогодні ",
     "ts": "2026-11-25T19:06:28.678913"
-  },
-  "selfact|2026-11-25t19_02_24_227615": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про оплату страхування\",     \"text\": \"Надійшов лист від KOOPERATIVA щодо страхування автомо",
-    "ts": "2026-11-25T19:02:24.227615"
-  },
-  "openloop_promises|2026-11-25t18_52_27_385164": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-25T18:52:27.385164"
-  },
-  "selfact|2026-11-25t18_46_25_941477": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Наближається рання зміна 27 листопада о 05:00. Пам'ятай про неї.\",     \"why\": \"Календар на 7 днів: 27.11: 05:00",
-    "ts": "2026-11-25T18:46:25.941477"
   }
 }
