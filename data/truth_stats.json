@@ -173,7 +173,7 @@
     "healthai": {
       "checked": 1217,
       "issues": 689,
-      "fixed": 300,
+      "fixed": 301,
       "cut": 41
     },
     "AFTERNOON_AI": {
@@ -811,6 +811,7 @@
   },
   "2026-11-26": {
     "checked": 11,
-    "issues": 5
+    "issues": 5,
+    "fixed": 1
   }
 }
