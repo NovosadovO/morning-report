@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-26t10_38_18_172366": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"title\": \"Підтвердження оплати замовлення\",     \"text\": \"Вашу оплату за замовлення № 261123443 від TonerDepot.sk прийнято. Очіку",
+    "ts": "2026-11-26T10:38:18.172366"
+  },
   "selfact|2026-11-26t10_22_29_946865": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя оплата за замовлення № 261123443 в TonerDepot.sk пройшла успішно. Дякуємо за покупку!\",     \"why\": ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-26T06:01:01.012066"
-  },
-  "proactive_actions|2026-11-26t06_00_13_166864": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Відповісти на лист про оплату тонера\",     \"date\": \"2026-11-26\",     \"time\": \"\",     \"message\": \"Олеже, лист від TonerD",
-    "ts": "2026-11-26T06:00:13.166864"
   }
 }
