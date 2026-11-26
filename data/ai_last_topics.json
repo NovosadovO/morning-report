@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-26t09_00_23_479918": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-26T09:00:23.479918"
+  },
   "selfact|2026-11-26t08_48_53_218275": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Тобі прийшов лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату вже прийнято.\",     \"mail_uid\": \"8",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Режим сну увімкнено до 04:00.\"}",
     "ts": "2026-11-25T21:31:18.165997"
-  },
-  "action_detect|2026-11-25t21_31_07_108967": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-25T21:31:07.108967"
   }
 }
