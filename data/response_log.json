@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T20:47:23.213769+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-09-14T20:50:54.898662+00:00",
       "category": "ai_button",
       "question": "run",
@@ -14640,6 +14634,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_54da5f6145"
+    },
+    {
+      "ts": "2026-11-26T06:00:18.363870+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про оплату тонера",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-26"
+      }
     }
   ]
 }
