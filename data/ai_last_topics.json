@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-26t14_19_17_027629": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Отримано лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату прийнято.\",     \"mail_uid\": \"84029\"   ",
+    "ts": "2026-11-26T14:19:17.027629"
+  },
+  "astro_ai_truthfix|2026-11-26t14_12_20_646933": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Сьогодні, 26 листопада 2026 року, твій сон тривав 6 годин 8 хвилин. Це менше за середнє значення за останні 7 днів, яке становить 7.0 годин.  Згідно з даними, н",
+    "ts": "2026-11-26T14:12:20.646933"
+  },
   "astro_ai|2026-11-26t14_12_07_971410": {
     "topic": "astro_ai",
     "gist": "Твоє самопочуття сьогодні, 26 листопада 2026 року, позначене певними емоційними коливаннями. Місяць у квадраті до натального Марса може проявлятися як підвищена",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-12-15\",   \"action_time\": null,   \"action_summary\": \"Додай до ",
     "ts": "2026-11-26T09:02:31.217616"
-  },
-  "action_detect|2026-11-26t09_02_20_356669": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз повідомлень, що показує кількість непрочита",
-    "ts": "2026-11-26T09:02:20.356669"
-  },
-  "action_detect|2026-11-26t09_02_09_018038": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-26T09:02:09.018038"
   }
 }
