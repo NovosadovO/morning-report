@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T17:36:38.290785+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA додав 52.5% за 24 години (капіталізація $70.97B)"
-    },
-    {
       "ts": "2026-09-14T20:47:06.801997+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14640,6 +14634,12 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_0196c1a037"
+    },
+    {
+      "ts": "2026-11-26T04:46:07.664475+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_ac031ddced"
     }
   ]
 }
