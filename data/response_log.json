@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T06:00:21.988055+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити виправлену розрахункову відомість",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-14"
-      }
-    },
-    {
       "ts": "2026-09-14T14:36:21.404210+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14644,6 +14634,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-26T04:45:59.975929+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_54da5f6145"
     }
   ]
 }
