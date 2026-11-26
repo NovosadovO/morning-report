@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T20:50:54.898662+00:00",
-      "category": "ai_button",
-      "question": "run",
-      "answer": "run_plan",
-      "extra": {
-        "trigger": "idle_timeout",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-09-14T20:51:00.418371+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14642,6 +14632,16 @@
       "answer": "Відповісти на лист про оплату тонера",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-26"
+      }
+    },
+    {
+      "ts": "2026-11-26T06:00:22.770313+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити сплату страхування",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-26"
       }
     }
