@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:01:49.606906+00:00",
-      "category": "confirm",
-      "question": "calrem_skip: Перевірити налаштування Strava",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T21:01:52.410736+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14651,6 +14645,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-26T20:48:33.779437+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
