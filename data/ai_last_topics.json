@@ -1,4 +1,9 @@
 {
+  "money|2026-11-26t14_23_42_528859": {
+    "topic": "money",
+    "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"date\": \"\",     \"kind\": \"shop\",     \"note\": \"Підтверд",
+    "ts": "2026-11-26T14:23:42.528859"
+  },
   "selfact|2026-11-26t14_19_17_027629": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Отримано лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату прийнято.\",     \"mail_uid\": \"84029\"   ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це астрологічний аналіз для Олега, який включає порад",
     "ts": "2026-11-26T09:02:42.153877"
-  },
-  "action_detect|2026-11-26t09_02_31_217616": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплата квартири\",   \"action_date\": \"2026-12-15\",   \"action_time\": null,   \"action_summary\": \"Додай до ",
-    "ts": "2026-11-26T09:02:31.217616"
   }
 }
