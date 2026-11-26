@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-26t08_48_53_218275": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Тобі прийшов лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату вже прийнято.\",     \"mail_uid\": \"8",
+    "ts": "2026-11-26T08:48:53.218275"
+  },
+  "selfact|2026-11-26t08_33_20_746558": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від TonerDepot.sk з підтвердженням оплати замовлення № 261123443. Замовлення буде відправлено най",
+    "ts": "2026-11-26T08:33:20.746558"
+  },
   "openloop_promises|2026-11-26t08_29_24_109030": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-25T21:31:07.108967"
-  },
-  "selfact|2026-11-25t21_23_59_825860": {
-    "topic": "selfact",
-    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшла інформація про успішну оплату замовлення № 261123443 від TonerDepot.sk.\",     \"why\": \"Надійшов лист від",
-    "ts": "2026-11-25T21:23:59.825860"
-  },
-  "bills|2026-11-25t21_12_50_502007": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-25T21:12:50.502007"
   }
 }
