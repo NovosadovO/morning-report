@@ -1,4 +1,14 @@
 {
+  "healthai|2026-11-26t11_06_09_326911": {
+    "topic": "healthai",
+    "gist": "🤔 Стабільність твого сну зараз дуже нерівна, з розкидом ±2.31 години, а середня тривалість сну за 7 днів становить 7.0 год, що нижче за 14-денну середню (7.2 го",
+    "ts": "2026-11-26T11:06:09.326911"
+  },
+  "action_detect|2026-11-26t11_00_36_717861": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом стану Олега, який включає тривож",
+    "ts": "2026-11-26T11:00:36.717861"
+  },
   "selfact|2026-11-26t10_53_43_196583": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо замовлення\",     \"text\": \"Ваша оплата за замовлення № 261123443 від TonerDepot.sk була",
@@ -288,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Ви отримали лист про підтвердження оплати замовлення № 261123443 від TonerDepot.sk.\",     \"mail_uid\": \"84029\"  ",
     "ts": "2026-11-26T06:12:06.404335"
-  },
-  "action_detect|2026-11-26t06_01_23_118343": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз непрочитаних листів та збереженої інфо",
-    "ts": "2026-11-26T06:01:23.118343"
-  },
-  "action_detect|2026-11-26t06_01_12_058215": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз даних про здоров'я, біг та астрологічні тра",
-    "ts": "2026-11-26T06:01:12.058215"
-  },
-  "action_detect|2026-11-26t11_00_36_717861": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом стану Олега, який включає тривож",
-    "ts": "2026-11-26T11:00:36.717861"
   }
 }
