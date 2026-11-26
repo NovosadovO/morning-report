@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_useful_a4944940c5",
-      "label": "💡 Корисно",
-      "ts": "2026-10-22T19:24:09"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_5081d31476",
       "label": "🙈 Не нагадуй",
       "ts": "2026-10-22T19:24:31"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_v13rk788nqhreotjln1dffvj4g_2026-11-26",
       "label": "✅ Виконано",
       "ts": "2026-11-26T13:56:14"
+    },
+    {
+      "t": "btn",
+      "data": "rx_useful_c0e0cdee3b",
+      "label": "💡 Корисно",
+      "ts": "2026-11-26T13:57:12"
     }
   ]
 }
