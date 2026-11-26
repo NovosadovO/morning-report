@@ -1,4 +1,24 @@
 {
+  "healthai|2026-11-26t04_01_03_396914": {
+    "topic": "healthai",
+    "gist": "Сон Олега дуже нерівномірний (розкид ±2.38 год), тіло не встигає адаптуватися. Це впливає на енергію: Body Battery сьогодні 44.0, а середнє за 7 днів – 30.1. Ва",
+    "ts": "2026-11-26T04:01:03.396914"
+  },
+  "email_ai_item|2026-11-25t21_32_00_528734": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від Reserved інформує про початок розпродажу \\\"BLACK FRIDAY\\\" та пропонує ексклюзивні знижки до -20% на всі уцінені товари, доступні лише ",
+    "ts": "2026-11-25T21:32:00.528734"
+  },
+  "action_detect|2026-11-25t21_31_29_156034": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Стабільно — і це вже добре.\"}",
+    "ts": "2026-11-25T21:31:29.156034"
+  },
+  "action_detect|2026-11-25t21_31_18_165997": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Режим сну увімкнено до 04:00.\"}",
+    "ts": "2026-11-25T21:31:18.165997"
+  },
   "action_detect|2026-11-25t21_31_07_108967": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-25T18:02:25.916477"
-  },
-  "action_detect|2026-11-25t18_02_14_997669": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-25T18:02:14.997669"
-  },
-  "action_detect|2026-11-25t18_02_03_993089": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-25T18:02:03.993089"
-  },
-  "astro_ai|2026-11-25t18_01_53_156996": {
-    "topic": "astro_ai",
-    "gist": "Цікаво, Олег, ти зараз на нічній зміні в Кошице, і астрологічний фон сьогодні такий:  **Енергія дій, яка потребує спрямування:** Зовнішні події зараз підштовхую",
-    "ts": "2026-11-25T18:01:53.156996"
-  },
-  "action_detect|2026-11-25t18_00_53_895205": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це нагадування про вечерю для тих, хто практикує інте",
-    "ts": "2026-11-25T18:00:53.895205"
   }
 }
