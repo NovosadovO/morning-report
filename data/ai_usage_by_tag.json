@@ -1148,5 +1148,171 @@
       2,
       21915
     ]
+  },
+  "2026-11-26": {
+    "healthai": [
+      37,
+      440590
+    ],
+    "healthai/truthfix": [
+      12,
+      124078
+    ],
+    "foresight": [
+      2,
+      21284
+    ],
+    "foresight/truthfix": [
+      1,
+      10217
+    ],
+    "selfact": [
+      76,
+      606962
+    ],
+    "money": [
+      8,
+      14194
+    ],
+    "proactive_actions": [
+      3,
+      8278
+    ],
+    "MSG_CRYPTO_MOVE": [
+      3,
+      42016
+    ],
+    "MSG_CRYPTO_MOVE/truthfix": [
+      5,
+      119889
+    ],
+    "action_detect": [
+      49,
+      88335
+    ],
+    "bills": [
+      10,
+      31516
+    ],
+    "calendar": [
+      2,
+      22193
+    ],
+    "openloop_promises": [
+      13,
+      20066
+    ],
+    "MORNING_AI": [
+      1,
+      11979
+    ],
+    "hcoach": [
+      4,
+      52875
+    ],
+    "hcoach/truthfix": [
+      1,
+      11231
+    ],
+    "assistant": [
+      3,
+      32469
+    ],
+    "proactive_ai": [
+      3,
+      33202
+    ],
+    "market_insight": [
+      2,
+      3268
+    ],
+    "astro_ai": [
+      3,
+      48061
+    ],
+    "assistant/truthfix": [
+      2,
+      20835
+    ],
+    "astro_ai/truthfix": [
+      5,
+      54526
+    ],
+    "themes_ai": [
+      5,
+      59544
+    ],
+    "themes_ai/truthfix": [
+      3,
+      32584
+    ],
+    "briefing": [
+      4,
+      55608
+    ],
+    "briefing/truthfix": [
+      3,
+      31027
+    ],
+    "email_ai_item": [
+      10,
+      30463
+    ],
+    "garmin_insight": [
+      1,
+      2393
+    ],
+    "people": [
+      2,
+      6366
+    ],
+    "LUNCH_AI": [
+      1,
+      12213
+    ],
+    "LUNCH_AI/truthfix": [
+      2,
+      21770
+    ],
+    "healthideas": [
+      5,
+      59098
+    ],
+    "healthideas/truthfix": [
+      3,
+      30845
+    ],
+    "defi_digest": [
+      1,
+      10977
+    ],
+    "MSG_VIP_EMAIL": [
+      2,
+      26617
+    ],
+    "MSG_VIP_EMAIL/truthfix": [
+      1,
+      10690
+    ],
+    "proactive_ai/truthfix": [
+      1,
+      10644
+    ],
+    "calendar/truthfix": [
+      1,
+      10454
+    ],
+    "MSG_IDLE_TIMEOUT": [
+      3,
+      39266
+    ],
+    "planner": [
+      1,
+      1291
+    ],
+    "MSG_EVENT_SOON": [
+      1,
+      12984
+    ]
   }
 }
