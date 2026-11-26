@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:57:56.071654+00:00",
-      "category": "confirm",
-      "question": "gate_shop_add: Купити гель",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T21:58:03.862541+00:00",
       "category": "shopping_confirm",
       "question": "Купити гель",
@@ -14652,6 +14646,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-27"
+      }
+    },
+    {
+      "ts": "2026-11-27T00:00:29.814333+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити сповіщення про сплату страхування",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-27"
