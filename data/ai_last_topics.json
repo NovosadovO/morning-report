@@ -1,4 +1,49 @@
 {
+  "healthai|2026-11-26t18_05_05_936963": {
+    "topic": "healthai",
+    "gist": "💪 На фоні падіння середньої тривалості сну за 7 днів (-0.3 год), твоя енергія (body battery) зростає (+4.5 за 14 днів), а рівень стресу знижується (-1.1 за 14 д",
+    "ts": "2026-11-26T18:05:05.936963"
+  },
+  "action_detect|2026-11-26t18_02_15_028240": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-26T18:02:15.028240"
+  },
+  "action_detect|2026-11-26t18_02_04_206211": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
+    "ts": "2026-11-26T18:02:04.206211"
+  },
+  "action_detect|2026-11-26t18_01_53_038373": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-26T18:01:53.038373"
+  },
+  "action_detect|2026-11-26t18_01_42_061483": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-26T18:01:42.061483"
+  },
+  "astro_ai_truthfix|2026-11-26t18_01_33_190200": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Твої кроки сьогодні, 26 листопада, сягнули 15462. Це показник, що наближається до цілі у 15812.4 кроків за день. Однак, тренд за останні 14 днів показує зниженн",
+    "ts": "2026-11-26T18:01:33.190200"
+  },
+  "astro_ai|2026-11-26t18_01_29_559511": {
+    "topic": "astro_ai",
+    "gist": "Твої кроки сьогодні, 26 листопада, сягнули 15462. Це хороший показник, якщо врахувати, що доба ще не завершена, і ціль у 15812.4 кроків за день є досяжною. Одна",
+    "ts": "2026-11-26T18:01:29.559511"
+  },
+  "action_detect|2026-11-26t18_01_02_348153": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це рекомендації щодо вечері для тих, хто практикує ін",
+    "ts": "2026-11-26T18:01:02.348153"
+  },
+  "action_detect|2026-11-26t18_00_30_088757": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Олег планує біг на 9:00 р",
+    "ts": "2026-11-26T18:00:30.088757"
+  },
   "selfact|2026-11-26t18_00_21_243278": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо замовлення\",     \"text\": \"Отримано підтвердження оплати замовлення № 261123443 від Ton",
@@ -253,50 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Тобі надійшов лист від TonerDepot.sk щодо замовлення № 261123443. Плату за нього прийнято.\",     \"mail_uid\": \"84029\"   ",
     "ts": "2026-11-26T13:17:07.036920"
-  },
-  "healthideas_truthfix|2026-11-26t13_16_46_097689": {
-    "topic": "healthideas/truthfix",
-    "gist": "Сон за сьогодні, 26 листопада, триває 6 годин 8 хвилин. Це менше за середнє значення за останні 7 днів, яке становить 7.0 годин.  Вага становить 84.2 кг, що на ",
-    "ts": "2026-11-26T13:16:46.097689"
-  },
-  "healthideas|2026-11-26t13_16_35_185868": {
-    "topic": "healthideas",
-    "gist": "Твій сон поки що триває 6.1 години, що нижче за середнє значення за останні 7 днів (7.0 год). Це може пояснювати, чому твоя енергія (body battery) зараз станови",
-    "ts": "2026-11-26T13:16:35.185868"
-  },
-  "email_ai_item|2026-11-26t13_15_05_341693": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист містить сповіщення про вакансії від LinkedIn. Запити стосуються посад Director, Digital Assets в Tradeweb (Амстердам) та Director of Opera",
-    "ts": "2026-11-26T13:15:05.341693"
-  },
-  "bills|2026-11-26t13_13_28_668119": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"EUR\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"alre",
-    "ts": "2026-11-26T13:13:28.668119"
-  },
-  "healthai|2026-11-26t13_06_27_668633": {
-    "topic": "healthai",
-    "gist": "🏋️‍♂️ Поки що фіксується 6.1 години сну (це часткове значення, воно може змінитися), а середня за 7 днів становить 7.0 год. Тренд сну падає (-0.3), що в сукупно",
-    "ts": "2026-11-26T13:06:27.668633"
-  },
-  "selfact|2026-11-26t13_01_27_105802": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшла інформація про успішну оплату замовлення № 261123443 від TonerDepot.sk. Деталі замовлення досту",
-    "ts": "2026-11-26T13:01:27.105802"
-  },
-  "action_detect|2026-11-26t13_00_46_845640": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Заплановано біг на 9:00 р",
-    "ts": "2026-11-26T13:00:46.845640"
-  },
-  "action_detect|2026-11-26t13_00_12_888190": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Пробіжка\",   \"action_date\": \"2026-11-20\",   \"action_time\": \"14:00\",   \"action_summary\": \"Зробити 20 хв",
-    "ts": "2026-11-26T13:00:12.888190"
-  },
-  "openloop_promises|2026-11-26t12_59_50_070510": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-11-26T12:59:50.070510"
   }
 }
