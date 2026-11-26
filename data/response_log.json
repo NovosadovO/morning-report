@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:02:19.483257+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_f52cbd7e56"
-    },
-    {
       "ts": "2026-09-14T21:06:24.892240+00:00",
       "category": "diary",
       "question": "3 питання про день",
@@ -14651,6 +14645,12 @@
       "category": "confirm",
       "question": "calrem_skip: Переглянути деталі збою Vercel",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-26T20:48:57.821463+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_2033f3995d"
     }
   ]
 }
