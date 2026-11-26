@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T04:30:51.568837+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-14T04:30:56.794444+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14643,6 +14637,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист про замовлення",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-26"
+      }
+    },
+    {
+      "ts": "2026-11-26T04:30:37.271753+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути аналізи",
       "extra": {
         "kind": "reply",
         "date": "2026-11-26"
