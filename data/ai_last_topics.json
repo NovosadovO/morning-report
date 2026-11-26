@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-26t21_31_01_913551": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-11-26T21:31:01.913551"
+  },
+  "selfact|2026-11-26t21_23_21_338769": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Платіж за замовлення № 261123443 від TonerDepot.sk прийнято. Очікуйте відправку.\",     \"why\": \"Отримано лист пр",
+    "ts": "2026-11-26T21:23:21.338769"
+  },
   "hcoach|2026-11-26t21_20_34_962397": {
     "topic": "hcoach",
     "gist": "Олеже, щоб досягти цілі 75 кг, варто звернути увагу на зв'язок між твоїм режимом роботи та якістю відпочинку.  Сьогоднішня оцінка дня — 81/100. Це добре, але тр",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-26T18:01:53.038373"
-  },
-  "action_detect|2026-11-26t18_01_42_061483": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-26T18:01:42.061483"
-  },
-  "astro_ai_truthfix|2026-11-26t18_01_33_190200": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Твої кроки сьогодні, 26 листопада, сягнули 15462. Це показник, що наближається до цілі у 15812.4 кроків за день. Однак, тренд за останні 14 днів показує зниженн",
-    "ts": "2026-11-26T18:01:33.190200"
   }
 }
