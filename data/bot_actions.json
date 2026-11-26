@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-22",
-      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-22T08:31:46"
-    },
-    {
       "kind": "idea",
       "what": "ідея здоров'я: run_ready",
       "detail": "HRV 45.0 мс (тижнева норма 45.7 мс), сон 8.3 год, body battery 82.0",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-26T23:14:08"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-26",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-26T23:44:06"
     }
   ]
 }
