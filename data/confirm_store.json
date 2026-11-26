@@ -21106,7 +21106,24 @@
     "action": "calrem_skip",
     "pid": "vip_email_1795714438",
     "subject": "Переглянути деталі збою Vercel",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 127800,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_vip_email_1795714438"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_vip_email_1795714438"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-11-26T20:34:10.013438+00:00"
   }
 }
