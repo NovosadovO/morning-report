@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T20:59:00.067615+00:00",
-      "category": "calendar_confirm",
-      "question": "Біг",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Біг"
-        ]
-      }
-    },
-    {
       "ts": "2026-09-14T20:59:02.980404+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14656,6 +14645,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-11-26T20:34:43.879751+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_invest"
     }
   ]
 }
