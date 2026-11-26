@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-26t14_30_01_514334": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-11-26T14:30:01.514334"
+  },
   "money|2026-11-26t14_23_42_528859": {
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"date\": \"\",     \"kind\": \"shop\",     \"note\": \"Підтверд",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшла інформація про успішну оплату замовлення № 261123443 від TonerDepot.sk. Залишилося відправити товар.\",     \"ma",
     "ts": "2026-11-26T09:04:04.754933"
-  },
-  "action_detect|2026-11-26t09_02_42_153877": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це астрологічний аналіз для Олега, який включає порад",
-    "ts": "2026-11-26T09:02:42.153877"
   }
 }
