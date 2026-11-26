@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-26t09_10_37_000392": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Заплановано біг на 9:00 р",
+    "ts": "2026-11-26T09:10:37.000392"
+  },
+  "healthai_truthfix|2026-11-26t09_05_35_514473": {
+    "topic": "healthai/truthfix",
+    "gist": "Твій сон за сьогодні, 6 год 8 хв, поки що неповний. Body Battery становить 58/100. Тренд кроків за 14 днів падає на 3082.6.",
+    "ts": "2026-11-26T09:05:35.514473"
+  },
   "healthai|2026-11-26t09_05_24_823810": {
     "topic": "healthai",
     "gist": "🤔 Твій сон за сьогодні, 6.1 години, поки що неповний, що може впливати на показники енергії, як-от Body Battery, яка зараз 58%. Зверни увагу на тренд зниження к",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом попередніх відповідей та збереже",
     "ts": "2026-11-26T04:46:00.703229"
-  },
-  "action_detect|2026-11-26t04_45_40_634928": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-26T04:45:40.634928"
-  },
-  "selfact|2026-11-26t04_38_45_179795": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Оплату за замовлення № 261123443 від TonerDepot.sk отримано. Замовлення буде відправлено найближчим часом.\",   ",
-    "ts": "2026-11-26T04:38:45.179795"
   }
 }
