@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-27t13_44_31_703766": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя рання зміна на заводі закінчується о 13:00. Залишилось 16 хвилин.\",     \"why\": \"Поточний час 13:44,",
+    "ts": "2026-11-27T13:44:31.703766"
+  },
+  "action_detect|2026-11-27t13_36_28_354918": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Заповнення пробілів у звіті Vercel\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\":",
+    "ts": "2026-11-27T13:36:28.354918"
+  },
   "msg_event_soon|2026-11-27t13_36_15_094373": {
     "topic": "MSG_EVENT_SOON",
     "gist": "✅ Під час ранкової зміни, яка триває до 18:00, зосередься на **продуктивності та оптимізації робочих процесів**. Це ключовий час для виконання поставлених завда",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-27T09:03:02.331886"
-  },
-  "action_detect|2026-11-27t09_02_51_461574": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування бігу\", \"action_date\": \"2026-11-14\", \"action_time\": \"09:00\", \"action_summary\": \"Олег планує біг на 9:00 р",
-    "ts": "2026-11-27T09:02:51.461574"
-  },
-  "action_detect|2026-11-27t09_02_25_090876": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T09:02:25.090876"
   }
 }
