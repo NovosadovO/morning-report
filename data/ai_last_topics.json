@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-11-27t03_00_12_486842": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Перевірити інформацію щодо замовлення tonerdepot.sk\",     \"date\": \"2026-11-27\",     \"time\": \"\",     \"message\": \"Олеж",
+    "ts": "2026-11-27T03:00:12.486842"
+  },
   "money|2026-11-27t02_54_19_170664": {
     "topic": "money",
     "gist": "[{\"uid\":\"84029\",\"vendor\":\"TonerDepot.sk\",\"amount\":\"\",\"currency\":\"\",\"date\":\"\",\"kind\":\"shop\",\"note\":\"Підтвердження отримання оплати за замовлення № 261123443.\"}]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-26T21:01:46.621167"
-  },
-  "healthideas|2026-11-26t21_01_40_850196": {
-    "topic": "healthideas",
-    "gist": "Твоя енергія (body battery) зараз на рівні 22.0, що значно нижче за пік, і це може впливати на твої рішення. Враховуючи, що сон за сьогодні поки що зафіксовано ",
-    "ts": "2026-11-26T21:01:40.850196"
   }
 }
