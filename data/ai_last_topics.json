@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-27t04_45_16_377560": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"None\"}",
+    "ts": "2026-11-27T04:45:16.377560"
+  },
   "selfact|2026-11-27t04_36_08_493943": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про зміну\",     \"text\": \"Олеже, твоя ранкова зміна на заводі починається о 05:00. Не забудь вийти ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Ранкова зміна\", \"action_date\": \"2026-11-21\", \"action_time\": null, \"action_summary\": \"Завтра рано у тебе ранкова змі",
     "ts": "2026-11-26T22:34:40.629827"
-  },
-  "msg_idle_timeout|2026-11-26t22_34_24_638670": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "🚶 Вночі — час для відновлення. Як пройшов день? *   18,541 кроків. *   84.2 кг — вага стабільно знижується. *   6.1 год сну — поки що.  Нагадую: завтра рано, у ",
-    "ts": "2026-11-26T22:34:24.638670"
   }
 }
