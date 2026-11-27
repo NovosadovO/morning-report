@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_going_43efd26d30",
-      "label": "👌 Буду",
-      "ts": "2026-10-23T23:40:12"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-10-24T01:19:22"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-11-27T19:31:23"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-11-27T19:31:24"
     }
   ]
 }
