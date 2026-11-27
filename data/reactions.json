@@ -9987,5 +9987,16 @@
     "about": "",
     "state": "closed",
     "ts": "2026-11-27T19:32:05"
+  },
+  "notify_ack|t|наближається дедлайн для socios com": {
+    "kind": "notify_ack",
+    "key": "",
+    "tkey": "наближається дедлайн для socios com",
+    "title": "Наближається дедлайн для Socios.com",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Наближається дедлайн для Socios.com",
+    "state": "closed",
+    "ts": "2026-11-27T19:32:22"
   }
 }
