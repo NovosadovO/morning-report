@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T12:28:15.346769+00:00",
-      "category": "confirm",
-      "question": "gate_cal_skip: Зареєструватися до дерматолога",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-15T12:28:29.082264+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14648,6 +14642,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7b3712c76d"
+    },
+    {
+      "ts": "2026-11-27T19:31:54.517070+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
