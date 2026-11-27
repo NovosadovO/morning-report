@@ -298,5 +298,10 @@
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reply\",     \"title\": \"Перевірити інформацію про оплату замовлення\",     \"date\": \"2026-11-27\",     \"time\": \"\",     \"message\": \"Олеже, отримав ",
     "ts": "2026-11-27T00:00:11.336620"
+  },
+  "action_detect|2026-11-27t06_00_56_537177": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-27T06:00:56.537177"
   }
 }
