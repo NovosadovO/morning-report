@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T04:30:21.141515+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Біг",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-09-15"
-      }
-    },
-    {
       "ts": "2026-09-15T04:30:26.969117+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14663,6 +14653,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити інформацію щодо замовлення tonerdepot.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-27"
+      }
+    },
+    {
+      "ts": "2026-11-27T03:00:27.743213+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути сповіщення від KOOPERATIVA",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-27"
