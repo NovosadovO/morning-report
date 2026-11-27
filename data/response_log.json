@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T12:28:29.082264+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_4806567147"
-    },
-    {
       "ts": "2026-09-15T13:01:35.098889+00:00",
       "category": "chat",
       "question": "чому ти пишеш 7 днів без пробіжки, якщо я сьогодні бігав",
@@ -14648,6 +14642,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-11-27T19:31:58.105558+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
