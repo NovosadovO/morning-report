@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T20:55:07.309251+00:00",
-      "category": "event_done",
-      "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-09-15T20:55:14.078452+00:00",
       "category": "confirm",
       "question": "gate_cal_skip: Початок серії ранніх змін",
@@ -14649,6 +14643,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_spray"
+    },
+    {
+      "ts": "2026-11-27T20:39:43.807287+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_vitamins"
     }
   ]
 }
