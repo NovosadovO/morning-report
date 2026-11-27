@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-22",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-22T13:31:55"
-    },
-    {
       "kind": "idea",
       "what": "ідея здоров'я: weight_move",
       "detail": "Вага 83.4 кг (-0.7 кг за період), до цілі 75 кг — 8.4 кг",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T06:16:05"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-27",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-27T06:46:08"
     }
   ]
 }
