@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-23",
-      "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-23T06:38:38"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T19:45:00"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-11-27T20:01:13"
     }
   ]
 }
