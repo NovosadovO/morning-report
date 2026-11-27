@@ -2490,6 +2490,7 @@ HELP_TEXT = """
 /перевір_справи — перевірити реєстр і попередити про закінчення
 /тиша — увімкнути тишу до 04:00 (о 04:00 сам відновлюсь)
 /тиша_статус — чи зараз тиша і скільки в черзі
+/голос — вмикати/вимикати голосові відповіді (на твоє голосове)
 /покажи_відкладене — віддати те, що я притримав поки ти спав
 
 <b>⌚ Здоров'я (тільки Garmin Connect)</b>
@@ -4252,6 +4253,22 @@ def handle_command(chat_id, text):
     # ─── РЕЖИМ ТИШІ (ТІЛЬКИ ВРУЧНУ, авто-вихід о 04:00) ──────────────────────
     # Олег: «тиша працює тільки коли я введу /тиша, а о 04:00 бот сам
     # відновлюється». Ніякої автоматики за графіком змін.
+    elif text.lower() in ["/голос", "/голос_так", "/голос_ні", "/voice"]:
+        try:
+            import voice as _vv
+            if text.lower() == "/голос_так":
+                on = True
+            elif text.lower() == "/голос_ні":
+                on = False
+            else:
+                on = not _vv.reply_enabled()
+            _vv.set_reply(on)
+            send(chat_id, ("🔊 <b>Голосові відповіді УВІМКНЕНО</b> — на твоє голосове я відповім текстом "
+                           "і голосом.\n<i>Вимкнути: /голос</i>") if on else
+                          "🔇 Голосові відповіді вимкнено — відповідаю лише текстом. <i>Увімкнути: /голос</i>")
+        except Exception as _ve:
+            send(chat_id, f"⚠️ Помилка: {_ve}")
+
     elif text in ["/тиша", "тиша", "/розумна_тиша"]:
         try:
             import quiet as _q
@@ -4652,6 +4669,7 @@ def handle_command(chat_id, text):
             from context import ask_ai
             answer = ask_ai(text, include_calendar=True)
             send(chat_id, answer)
+            _maybe_voice_reply(chat_id, answer)
         except Exception as e:
             send(chat_id, f"⚠️ AI помилка: {e}")
     
@@ -6978,9 +6996,51 @@ def _dispatch_callback_async(cb):
 # ─── Єдина обробка одного апдейта: спільна для polling І webhook ─────────────
 # Раніше вся логіка жила прямо в polling-циклі, тому webhook було неможливо
 # підключити без дублювання коду. Тепер обидва входи викликають цю функцію.
-def _handle_audio(chat_id, aud):
-    """Розшифровує аудіо Олега. Повертає текст для звичайного конвеєра
-    або None, якщо відповідь уже надіслана (довгий запис / помилка)."""
+import threading as _vthreading
+_VOICE_CTX = _vthreading.local()
+
+
+def send_audio_bytes(chat_id, data: bytes, filename="answer.wav", mime="audio/wav", caption=None):
+    try:
+        try:
+            import requests as _rq
+        except ImportError:
+            import httpreq as _rq
+        import io as _io
+        d = {"chat_id": str(chat_id)}
+        if caption:
+            d["caption"] = caption
+        r = _rq.post(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAudio", data=d,
+                     files={"audio": (filename, _io.BytesIO(data), mime)}, timeout=60)
+        if not r.ok:
+            print(f"[send_audio] error {r.status_code}: {r.text[:200]}", flush=True)
+            return False
+        return True
+    except Exception as e:
+        print(f"[send_audio] error: {e}", flush=True)
+        return False
+
+
+def _maybe_voice_reply(chat_id, answer):
+    """Якщо Олег написав ГОЛОСОМ і ввімкнено /голос — дублюємо відповідь голосом."""
+    try:
+        if not getattr(_VOICE_CTX, "on", False):
+            return
+        import voice as _v
+        if not _v.reply_enabled():
+            return
+        wav = _v.speak(answer)
+        if wav:
+            send_audio_bytes(chat_id, wav, caption="🔊")
+        else:
+            print("[voice] TTS не вдалось — залишаю лише текст", flush=True)
+    except Exception as e:
+        print(f"[voice] voice reply error: {e}", flush=True)
+
+
+def _audio_flow(chat_id, msg, aud, retry=False):
+    """Фоновий потік: аудіо -> текст -> звичайний конвеєр (відповідь AI).
+    Працює в окремому потоці, щоб довга розшифровка не блокувала polling."""
     import voice as _v
     file_id, mime, kind, dur = aud
     try:
@@ -6997,24 +7057,68 @@ def _handle_audio(chat_id, aud):
         raw = _download_telegram_file(file_id)
     except Exception as e:
         print(f"[voice] download error: {e}", flush=True)
-        send(chat_id, "⚠️ Не зміг завантажити аудіо з Telegram (ліміт ботів 20 МБ). Спробуй коротше.")
-        return None
+        if retry:
+            _v.bump(file_id)
+        else:
+            send(chat_id, "⚠️ Не зміг завантажити аудіо з Telegram (ліміт ботів 20 МБ). Спробуй коротше.")
+        return
     if len(raw) > _v.MAX_BYTES:
         send(chat_id, "⚠️ Аудіо завелике (>18 МБ) — розріж на частини.")
-        return None
+        if retry:
+            _v.done(file_id)
+        return
     tr = _v.transcribe(raw, mime)
+    if tr is None:                   # збій AI — НЕ губимо запис
+        if retry:
+            _v.bump(file_id)
+        else:
+            _v.enqueue(chat_id, aud)
+            send(chat_id, "⏳ AI зараз не відповідає. Запис я зберіг — розшифрую і відповім сам, "
+                          "щойно запрацює (пробую кожні кілька хвилин, до 24 год).")
+        return
+    if retry:
+        _v.done(file_id)
     if not tr:
-        send(chat_id, "🎤 Не розібрав мовлення. Скажи ще раз або напиши текстом "
-                      "(якщо AI недоступний — теж спробуй пізніше).")
-        return None
+        send(chat_id, "🎤 Не розібрав мовлення. Скажи ще раз або напиши текстом.")
+        return
     if _v.is_long(kind, dur, tr):
         summ = _v.summarize(tr)
         send(chat_id, "🎧 <b>Запис розшифровано</b>\n\n" + (summ or "Резюме зараз недоступне — нижче повний текст."))
         for i, ch in enumerate(_v.chunks(tr)[:6], 1):
             send(chat_id, ("🗒 <b>Розшифровка</b>\n\n" if i == 1 else "") + ch.replace("<", "&lt;"))
-        return None
-    send(chat_id, "🎤 <i>" + tr[:900].replace("<", "&lt;") + "</i>")
-    return tr
+        return
+    send(chat_id, ("🎤 <i>(відкладений запис)</i> " if retry else "🎤 ") + "<i>" + tr[:900].replace("<", "&lt;") + "</i>")
+    m2 = {k: v for k, v in (msg or {}).items()
+          if k not in ("voice", "audio", "video_note", "document", "photo", "caption")}
+    m2["chat"] = {"id": chat_id}
+    m2["text"] = tr
+    _VOICE_CTX.on = True
+    try:
+        process_update({"update_id": 0, "message": m2})
+    finally:
+        _VOICE_CTX.on = False
+
+
+def _voice_retry_loop():
+    """Повторює розшифровку записів, які не вдалось обробити (AI був недоступний)."""
+    import voice as _v
+    while True:
+        try:
+            time.sleep(60)
+            if not _is_leader:
+                continue
+            run, dead = _v.due()
+            for it in dead:
+                try:
+                    send(it["chat_id"], "⚠️ Один твій запис так і не вдалось розшифрувати за добу — "
+                                        "надішли його ще раз.")
+                except Exception:
+                    pass
+            for it in run:
+                _audio_flow(it["chat_id"], {}, (it["file_id"], it["mime"], it["kind"], it.get("dur", 0)),
+                            retry=True)
+        except Exception as e:
+            print(f"[voice] retry loop error: {e}", flush=True)
 
 
 def process_update(update):
@@ -7049,10 +7153,9 @@ def process_update(update):
             print(f"[voice] extract error: {_ave}", flush=True)
             _aud = None
         if _aud:
-            _vt = _handle_audio(chat_id, _aud)
-            if not _vt:
-                return
-            text = _vt
+            _vthreading.Thread(target=_audio_flow, args=(chat_id, msg, _aud),
+                               daemon=True, name="voice_flow").start()
+            return
 
         # Обробка фото (документ з підписом "поясни"/"переклад" АБО скрін Health Score за замовчуванням)
         if msg.get("photo"):
@@ -7239,6 +7342,9 @@ def main():
         _threading.Thread(target=_shift_schedule_reminder_loop, daemon=True,
                           name="shift_schedule_reminder").start()
         print("=== Starting shift schedule reminder (last day of month) ===", flush=True)
+
+    if not _thread_already_running("voice_retry"):
+        _threading.Thread(target=_voice_retry_loop, daemon=True, name="voice_retry").start()
 
     if not _thread_already_running("heartbeat_leader"):
         _threading.Thread(target=_heartbeat_leader, daemon=True, name="heartbeat_leader").start()

@@ -59,15 +59,15 @@ def _norm_mime(mime: str) -> str:
 
 def _gem_audio(audio: bytes, mime: str, prompt: str, max_tokens: int = 8000,
                temperature: float = 0.1) -> str:
-    """Один виклик Gemini з аудіо. '' при будь-якому збої (нічого не вигадуємо)."""
+    """Один виклик Gemini з аудіо. None при збої (нічого не вигадуємо)."""
     if not K.GEMINI_KEY:
         K.log(TAG, "GEMINI_API_KEY відсутній")
-        return ""
+        return None
     try:
         from monitor import _gem_post
     except Exception as e:
         K.log(TAG, f"no _gem_post: {e}")
-        return ""
+        return None
     body = json.dumps({
         "contents": [{"parts": [
             {"inline_data": {"mime_type": _norm_mime(mime),
@@ -85,7 +85,7 @@ def _gem_audio(audio: bytes, mime: str, prompt: str, max_tokens: int = 8000,
         return "".join(p.get("text", "") for p in parts).strip()
     except Exception as e:
         K.log(TAG, f"gemini error: {e}")
-        return ""
+        return None
 
 
 _TRANSCRIBE_PROMPT = (
@@ -99,10 +99,15 @@ _TRANSCRIBE_PROMPT = (
 UNCLEAR = "[нерозбірливо]"
 
 
-def transcribe(audio: bytes, mime: str) -> str:
+def transcribe(audio: bytes, mime: str):
+    """Текст розшифровки; "" — мовлення нерозбірливе/немає; None — ЗБІЙ AI (треба повторити)."""
     t = _gem_audio(audio, mime, _TRANSCRIBE_PROMPT)
+    if t is None:
+        return None
     t = re.sub(r"^```\w*\s*|\s*```$", "", t).strip()
-    if not t or t.strip().lower().startswith(UNCLEAR) or len(t) < 2:
+    if not t:
+        return None            # порожня відповідь моделі = збій, не «тиша»
+    if t.strip().lower().startswith(UNCLEAR) or len(t) < 2:
         return ""
     return t
 
@@ -141,3 +146,139 @@ def is_long(kind: str, duration: int, transcript: str) -> bool:
     if kind == "voice" or kind == "video_note":
         return duration >= LONG_SECONDS or len(transcript) >= LONG_CHARS * 2
     return duration >= LONG_SECONDS or len(transcript) >= LONG_CHARS
+
+
+# ─── ЧЕРГА: аудіо, яке не вдалось розшифрувати (AI впав) — не губимо ──────────
+import time as _time
+
+PENDING_FILE = "voice_pending.json"
+RETRY_EVERY = 240            # c між спробами
+MAX_TRIES = 12
+MAX_AGE_H = 24
+
+
+def _pload():
+    try:
+        import durable
+        d = durable.load(PENDING_FILE) or {}
+    except Exception:
+        d = {}
+    return d if isinstance(d.get("items"), list) else {"items": []}
+
+
+def _psave(d):
+    try:
+        import durable
+        durable.save(PENDING_FILE, d)
+    except Exception as e:
+        K.log(TAG, f"pending save: {e}")
+
+
+def enqueue(chat_id, aud):
+    file_id, mime, kind, dur = aud
+    d = _pload()
+    if any(i.get("file_id") == file_id for i in d["items"]):
+        return False
+    d["items"].append({"chat_id": chat_id, "file_id": file_id, "mime": mime, "kind": kind,
+                       "dur": dur, "ts": _time.time(), "tries": 0, "last": _time.time()})
+    _psave(d)
+    return True
+
+
+def due(now=None):
+    """Елементи черги, які пора повторити; прострочені викидає і повертає окремо."""
+    now = now or _time.time()
+    d = _pload()
+    keep, run, dead = [], [], []
+    for i in d["items"]:
+        if i.get("tries", 0) >= MAX_TRIES or now - i.get("ts", now) > MAX_AGE_H * 3600:
+            dead.append(i)
+            continue
+        keep.append(i)
+        if now - i.get("last", 0) >= RETRY_EVERY:
+            run.append(i)
+    if dead:
+        d["items"] = keep
+        _psave(d)
+    return run, dead
+
+
+def done(file_id):
+    d = _pload()
+    d["items"] = [i for i in d["items"] if i.get("file_id") != file_id]
+    _psave(d)
+
+
+def bump(file_id):
+    d = _pload()
+    for i in d["items"]:
+        if i.get("file_id") == file_id:
+            i["tries"] = i.get("tries", 0) + 1
+            i["last"] = _time.time()
+    _psave(d)
+
+
+# ─── ГОЛОСОВА ВІДПОВІДЬ (/голос) ─────────────────────────────────────────────
+SETTINGS_FILE = "voice_settings.json"
+TTS_MODEL = "gemini-2.5-flash-preview-tts"
+TTS_VOICE = "Kore"
+
+
+def reply_enabled() -> bool:
+    try:
+        import durable
+        return bool((durable.load(SETTINGS_FILE) or {}).get("reply_voice"))
+    except Exception:
+        return False
+
+
+def set_reply(on: bool) -> bool:
+    try:
+        import durable
+        return durable.save(SETTINGS_FILE, {"reply_voice": bool(on)})
+    except Exception:
+        return False
+
+
+def _speakable(text: str) -> str:
+    t = re.sub(r"<[^>]+>", " ", text or "")
+    t = re.sub(r"[*_`#>|]+", " ", t)
+    t = re.sub(r"[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F]", "", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t[:1200]
+
+
+def speak(text: str):
+    """(wav_bytes) або None. Gemini TTS -> PCM 24 кГц -> WAV (без ffmpeg)."""
+    t = _speakable(text)
+    if not K.GEMINI_KEY or len(t) < 2:
+        return None
+    import urllib.request, io, wave
+    body = json.dumps({
+        "contents": [{"parts": [{"text": "Прочитай природно, тепло і спокійно українською: " + t}]}],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": TTS_VOICE}}},
+        },
+    }).encode()
+    url = ("https://generativelanguage.googleapis.com/v1beta/models/"
+           f"{TTS_MODEL}:generateContent?key={K.GEMINI_KEY}")
+    try:
+        req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            resp = json.loads(r.read())
+        part = resp["candidates"][0]["content"]["parts"][0]
+        inl = part.get("inlineData") or part.get("inline_data")
+        pcm = base64.b64decode(inl["data"])
+        m = re.search(r"rate=(\d+)", inl.get("mimeType") or inl.get("mime_type") or "")
+        rate = int(m.group(1)) if m else 24000
+        buf = io.BytesIO()
+        with wave.open(buf, "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(rate)
+            w.writeframes(pcm)
+        return buf.getvalue()
+    except Exception as e:
+        K.log(TAG, f"tts error: {e}")
+        return None
