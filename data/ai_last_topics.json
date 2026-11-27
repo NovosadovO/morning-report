@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-27t18_15_41_212820": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Доволенка під монітором\",   \"action_date\": \"2023-11-28\",   \"action_time\": null,   \"action_summary\": \"З",
+    "ts": "2026-11-27T18:15:41.212820"
+  },
   "selfact|2026-11-27t18_10_16_809820": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення TonerDepot.sk\",     \"text\": \"Ваша оплата за замовлення № 261123443 від TonerDepot.sk",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз динаміки цін криптовалют HYPE та Monero (XMR) ",
     "ts": "2026-11-27T14:36:15.086314"
-  },
-  "msg_crypto_move|2026-11-27t14_36_02_762284": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "💹 HYPE злетів на 7.2%, а Monero (XMR) просів на 11.7% за останні 24 години, демонструючи різкі контрасти на ринку.  Така значна розбіжність у динаміці цін між H",
-    "ts": "2026-11-27T14:36:02.762284"
   }
 }
