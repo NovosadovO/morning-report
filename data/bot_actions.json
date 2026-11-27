@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нагадую про необхідність поміняти колеса в машині. Це заплан",
-      "detail": "У Олега сьогодні о 08:00 запланована заміна коліс.",
-      "module": "selfact",
-      "ts": "2026-11-23T06:00:15"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-23",
       "detail": "автосинк з годинника: hr_avg, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T19:14:22"
+    },
+    {
+      "kind": "idea",
+      "what": "ідея здоров'я: steps_streak",
+      "detail": "Ціль 8000 кроків виконана 6 дні(в) підряд",
+      "module": "healthai",
+      "ts": "2026-11-27T19:39:05"
     }
   ]
 }
