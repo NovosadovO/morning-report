@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-27t14_00_29_867979": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя рання зміна на заводі закінчується о 13:00. Залишилось 30 хвилин.\",     \"why\": \"Поточний час 14:00,",
+    "ts": "2026-11-27T14:00:29.867979"
+  },
   "selfact|2026-11-27t13_44_31_703766": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя рання зміна на заводі закінчується о 13:00. Залишилось 16 хвилин.\",     \"why\": \"Поточний час 13:44,",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега, що опис",
     "ts": "2026-11-27T09:03:13.585209"
-  },
-  "action_detect|2026-11-27t09_03_02_331886": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T09:03:02.331886"
   }
 }
