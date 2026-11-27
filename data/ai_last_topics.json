@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-27t18_26_18_726760": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про замовлення\",     \"text\": \"Отримано підтвердження про оплату замовлення № 261123443 від ",
+    "ts": "2026-11-27T18:26:18.726760"
+  },
+  "defi_digest|2026-11-27t18_16_17_569863": {
+    "topic": "defi_digest",
+    "gist": "За останні 24 години ринок DeFi демонструє значну волатильність, з помітними зростаннями у Euler V2 (+15.4%), тоді як Figure Markets Prime (-12.5%) та Dolomite ",
+    "ts": "2026-11-27T18:16:17.569863"
+  },
   "action_detect|2026-11-27t18_15_41_212820": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Доволенка під монітором\",   \"action_date\": \"2023-11-28\",   \"action_time\": null,   \"action_summary\": \"З",
@@ -288,15 +298,5 @@
     "topic": "healthideas",
     "gist": "Твій сон за сьогодні поки що становить 7.3 години, що краще за середні показники за 7 (6.5 год) та 14 днів (6.9 год). Однак, загальний тренд сну падає (-0.8 год",
     "ts": "2026-11-27T14:47:13.669770"
-  },
-  "openloop_promises|2026-11-27t14_41_50_882895": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"послати мені ті 4 kusy náplní, ktoré máte skladom\",     \"to\": \"Jana Vasilková\",     \"date\": null   },   {     \"what\": \"доповнити решт",
-    "ts": "2026-11-27T14:41:50.882895"
-  },
-  "action_detect|2026-11-27t14_36_15_086314": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз динаміки цін криптовалют HYPE та Monero (XMR) ",
-    "ts": "2026-11-27T14:36:15.086314"
   }
 }
