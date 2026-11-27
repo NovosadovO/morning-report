@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_mute_32c4abcda7",
-      "label": "🙈 Не нагадуй",
-      "ts": "2026-10-23T23:03:53"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-10-23T23:08:11"
@@ -7199,6 +7193,12 @@
       "data": "planner_confirm",
       "label": "✅ Так, записати",
       "ts": "2026-11-27T17:15:24"
+    },
+    {
+      "t": "btn",
+      "data": "planner_confirm",
+      "label": "✅ Так, записати",
+      "ts": "2026-11-27T17:17:20"
     }
   ]
 }
