@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T21:31:23.641032+00:00",
-      "category": "mood",
-      "question": "Оцінка настрою",
-      "answer": "😐 Нормально",
-      "extra": {
-        "score": 3
-      }
-    },
-    {
       "ts": "2026-09-16T04:06:48.709127+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14651,6 +14642,16 @@
       "answer": "Перевірити оплату страхування",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T00:00:29.899258+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від TonerDepot.sk",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-28"
       }
     }
