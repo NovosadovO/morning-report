@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "pa_skip_fd09005c3d",
-      "label": "❌ Не треба",
-      "ts": "2026-10-24T01:38:31"
-    },
-    {
-      "t": "btn",
       "data": "pa_skip_064fbec9ad",
       "label": "",
       "ts": "2026-10-24T01:38:42"
@@ -7198,6 +7192,12 @@
       "t": "btn",
       "data": "habit_yes_tea",
       "label": "✅ Так",
+      "ts": "2026-11-27T19:31:53"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
       "ts": "2026-11-27T19:31:53"
     }
   ]
