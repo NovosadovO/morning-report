@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-11-27t19_31_47_214546": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення є аналізом попередніх дій та ",
+    "ts": "2026-11-27T19:31:47.214546"
+  },
+  "selfact|2026-11-27t19_29_58_641797": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, у тебе надійшов лист про те, що плату за замовлення № 261123443 прийнято. Дякуємо за покупку!\",     \"why\"",
+    "ts": "2026-11-27T19:29:58.641797"
+  },
   "bills|2026-11-27t19_27_17_986573": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
     "ts": "2026-11-27T15:02:39.125432"
-  },
-  "action_detect|2026-11-27t15_02_27_977810": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T15:02:27.977810"
-  },
-  "action_detect|2026-11-27t15_02_17_084343": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-27T15:02:17.084343"
   }
 }
