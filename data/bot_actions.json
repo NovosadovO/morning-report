@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-22",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-22T15:33:53"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: energy_low",
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 28.4 — нижче за 30, організм виснажений",
@@ -2799,6 +2792,13 @@
       "detail": "HRV 57.0 мс проти тижневої норми 45.1 мс",
       "module": "healthai",
       "ts": "2026-11-27T09:01:26"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-27T09:05:55"
     }
   ]
 }
