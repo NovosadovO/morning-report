@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, сьогодні ввечері (22.11) о 21:42. Вже пізно для актив",
-      "detail": "Поточний час 21:42, Олег працює на заводі, завтра ранкова зміна.",
-      "module": "selfact",
-      "ts": "2026-11-22T21:42:35"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-22",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі зазначено 🧖 Сауна ❌ на сьогодні.",
       "module": "selfact",
       "ts": "2026-11-27T14:48:14"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-11-27T15:06:37"
     }
   ]
 }
