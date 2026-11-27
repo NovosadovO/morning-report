@@ -1,9 +1,4 @@
 {
-  "81746": {
-    "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
-    "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "seen_ts": "2026-11-01T09:06:36.355390+00:00"
-  },
   "81748": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "paula@carvertical.com",
     "sender_raw": "carVertical <paula@carvertical.com>",
     "seen_ts": "2026-11-27T13:55:37.002926+00:00"
+  },
+  "84662": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-11-27T15:40:35.053660+00:00"
   }
 }
