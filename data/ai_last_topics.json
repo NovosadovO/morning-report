@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-27t08_14_40_304957": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя сауна сьогодні запланована на 18:10, але в тебе вихідний від сауни. Перевір, чи дійсно хочеш відвід",
+    "ts": "2026-11-27T08:14:40.304957"
+  },
+  "healthai_truthfix|2026-11-27t08_05_35_174469": {
+    "topic": "healthai/truthfix",
+    "gist": "Твій пульс спокою становить 48 уд/хв. За останню ніч показник HRV досяг 57 мс.",
+    "ts": "2026-11-27T08:05:35.174469"
+  },
   "healthai|2026-11-27t08_05_24_403731": {
     "topic": "healthai",
     "gist": "☀️ Олег, бачу, твій пульс спокою наразі 48 уд/хв, що є низьким показником. Це добре, бо середня кількість твоїх кроків за останні 7 днів (13434) є високою, а по",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення містить інформацію про непрочитані ли",
     "ts": "2026-11-27T03:01:16.106150"
-  },
-  "action_detect|2026-11-27t03_01_04_957026": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T03:01:04.957026"
-  },
-  "action_detect|2026-11-27t03_00_54_273830": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Списання підписок\", \"action_date\": \"2026-12-01\", \"action_time\": null, \"action_summary\": \"Цього тижня спишуть підпис",
-    "ts": "2026-11-27T03:00:54.273830"
   }
 }
