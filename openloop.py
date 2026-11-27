@@ -286,14 +286,38 @@ _PROMPT = """Ти читаєш листи, які Олег НАПИСАВ САМ
 """
 
 
+_QUOTE_START = re.compile(
+    r"^\s*(On .{5,120}wrote:|Dňa .{5,120}napísal.*|Le .{5,120}a écrit.*|"
+    r"-{2,}\s*(Original|Forwarded|Пересл).*|Від:.*|From:.*)$", re.I)
+
+
+def _own_text(body) -> str:
+    """Лише те, що Олег написав САМ: без цитованої гілки (рядки '>' і все після
+    'On ... wrote:'). Інакше прохання співрозмовника («пошліть нам 4 шт»)
+    потрапляло в «обіцянки Олега» (26.11, лист Jany)."""
+    out = []
+    for ln in str(body or "").splitlines():
+        if _QUOTE_START.match(ln):
+            break
+        if ln.lstrip().startswith(">"):
+            continue
+        out.append(ln)
+    return "\n".join(out).strip()
+
+
 def _promises(sent):
     if not sent:
         return []
     blob = []
     for s in sent[:12]:
+        own = _own_text(s.get("body"))
+        if len(own) < 15:
+            continue
         blob.append("— Кому: " + str(s.get("to") or "")[:60] +
                     " | Тема: " + str(s.get("subject") or "")[:80] +
-                    "\n" + str(s.get("body") or "")[:700])
+                    "\n" + own[:700])
+    if not blob:
+        return []
     try:
         res = K.gemini_json(_PROMPT + "\n\n".join(blob),
                             tag="openloop_promises", want="list")

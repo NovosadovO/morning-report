@@ -6719,6 +6719,21 @@ def _route_callback(cb, confirmed: bool = False):
             except Exception as _e_mc_cb:
                 print(f"[mailcal] callback error: {_e_mc_cb}", flush=True)
                 cb_notify(cb["id"], chat_id, "⚠️ Помилка mailcal", alert=True)
+        elif data.startswith("mr_"):
+            # «Лист чекає на відповідь» (mailreply.py): mr_done_ / mr_no_
+            try:
+                import mailreply as _mr_cb
+                _r = _mr_cb.handle(data, cb) or {}
+                api("answerCallbackQuery", {"callback_query_id": cb["id"],
+                                            "text": (_r.get("text") or "Готово")[:190]})
+                if _r.get("keyboard") is not None:
+                    api("editMessageReplyMarkup", {
+                        "chat_id": chat_id,
+                        "message_id": cb["message"]["message_id"],
+                        "reply_markup": {"inline_keyboard": _r["keyboard"]}})
+            except Exception as _e_mr_cb:
+                print(f"[mailreply] callback error: {_e_mr_cb}", flush=True)
+                cb_notify(cb["id"], chat_id, "⚠️ Помилка mailreply", alert=True)
         elif (data.startswith("bill_") or data.startswith("rp_") or
               data.startswith("shf_") or data.startswith("fu_") or
               data.startswith("wr_") or data.startswith("dl_") or

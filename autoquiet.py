@@ -29,8 +29,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 TAG = "autoquiet"
 QUEUE_FILE = "held_msgs.json"
-MAX_QUEUE = 25          # більше — вже не дайджест, а спам
+MAX_QUEUE = 40          # більше — вже не дайджест, а спам
 MAX_HOLD_HOURS = 10     # старіше не віддаємо: неактуальне
+MAX_HOLD_HOURS_MAIL = 40  # лист від людини/пропозиція з кнопками живуть довше: /тиша може тривати ~20г
 _CACHE_TTL = 300        # с — визначення сну кешуємо (Calendar API дорогий)
 _cache = {"data": None, "ts": 0.0}
 
@@ -114,6 +115,26 @@ def should_hold(text: str = "") -> bool:
 
 # ─── ЧЕРГА ───────────────────────────────────────────────────────────────────
 
+def _norm(text: str) -> str:
+    """Ключ для дедупу: без HTML і чисел — «SOL -8.2%» і «SOL -8.5%» це те саме."""
+    import re
+    t = re.sub(r"<[^>]+>", "", str(text or "")).lower()
+    t = re.sub(r"[\d.,+\-:%$€]+", "#", t)
+    return re.sub(r"\s+", " ", t).strip()[:300]
+
+
+def _priority(item: dict) -> int:
+    """3 — лист від людини, 2 — пропозиція з кнопками, 1 — решта.
+    Чергу чистимо з найнижчого пріоритету, щоб повторні звіти/крипто-алерти
+    не витісняли листа (так загубився лист Jany 24.11)."""
+    t = str(item.get("text") or "")[:60]
+    if "📩" in t or "Лист від" in t:
+        return 3
+    if item.get("keyboard") or item.get("kind") == "offer":
+        return 2
+    return 1
+
+
 def hold(text: str, kind: str = "msg", keyboard=None) -> bool:
     """Відкладає повідомлення. keyboard зберігаємо разом з текстом — інакше
     після пробудження Олег отримав би пропозицію без кнопок і не міг би її
@@ -124,10 +145,23 @@ def hold(text: str, kind: str = "msg", keyboard=None) -> bool:
         items = q.get("items") if isinstance(q, dict) else None
         if not isinstance(items, list):
             items = []
-        items.append({"ts": _now().isoformat(), "kind": kind,
-                      "text": str(text or "")[:1200],
-                      "keyboard": keyboard if keyboard else None})
-        K.save(QUEUE_FILE, {"items": items[-MAX_QUEUE:]})
+        new = {"ts": _now().isoformat(), "kind": kind,
+               "text": str(text or "")[:1200],
+               "keyboard": keyboard if keyboard else None}
+        # Дедуп: той самий текст (з точністю до чисел) вдруге не складаємо —
+        # оновлюємо наявний запис. Викликачі, які не бачать що повідомлення
+        # «відкладено», ретраять щохвилини й заливали чергу.
+        nk = _norm(new["text"])
+        items = [i for i in items if isinstance(i, dict)
+                 and not (i.get("kind") == kind and _norm(i.get("text")) == nk)]
+        items.append(new)
+        while len(items) > MAX_QUEUE:
+            low = min(_priority(i) for i in items)
+            for idx, i in enumerate(items):      # найстаріший з найнижчим пріоритетом
+                if _priority(i) == low:
+                    del items[idx]
+                    break
+        K.save(QUEUE_FILE, {"items": items})
         st = state()
         print(f"[{TAG}] 💤 відкладено ({st.get('reason')}, до "
               f"{str(st.get('until'))[11:16]}): {str(text)[:60]}", flush=True)
@@ -164,7 +198,8 @@ def flush(force: bool = False) -> int:
                 age = (now - datetime.fromisoformat(str(it.get("ts")))).total_seconds() / 3600
             except Exception:
                 age = 0
-            if age <= MAX_HOLD_HOURS:
+            lim = MAX_HOLD_HOURS_MAIL if _priority(it) >= 2 else MAX_HOLD_HOURS
+            if age <= lim:
                 fresh.append(it)
         K.save(QUEUE_FILE, {"items": []})
         if not fresh:
@@ -187,7 +222,8 @@ def flush(force: bool = False) -> int:
             K.send_card("\n".join(parts)[:3900])
         elif with_kb:
             K.send_card(head)
-        for it in with_kb[:8]:
+        with_kb.sort(key=lambda i: -_priority(i))   # листи від людей — першими
+        for it in with_kb[:12]:
             t = str(it.get("ts") or "")[11:16]
             kb = it.get("keyboard")
             kb = kb.get("inline_keyboard") if isinstance(kb, dict) else kb

@@ -1227,6 +1227,12 @@ def run_assistant_watcher():
                 _mc_w.run()
             except Exception as _e_mcw:
                 print(f"[mailcal] watcher error: {_e_mcw}", flush=True)
+            # Листи ЛЮДЕЙ з питанням, на які Олег не відповів (24.11: Jana).
+            try:
+                import mailreply as _mr_w
+                _mr_w.run()
+            except Exception as _e_mrw:
+                print(f"[mailreply] watcher error: {_e_mrw}", flush=True)
             # Самоприбирання реєстрів раз на добу (мертві записи).
             try:
                 import tidy as _td_w
