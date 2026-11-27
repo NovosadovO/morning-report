@@ -1,4 +1,9 @@
 {
+  "healthai|2026-11-27t22_06_35_726381": {
+    "topic": "healthai",
+    "gist": "☀️ Олеже, твоя вага 85.6 кг — це все ще +10.6 кг до цілі 75 кг, хоча за останні 7 днів спостерігається тренд до зниження (-0.1 кг). Сон за останні 7 днів у сере",
+    "ts": "2026-11-27T22:06:35.726381"
+  },
   "action_detect|2026-11-27t22_00_42_019576": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Ранкова зміна\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\": \"Завтра ранкова з",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Проаналізувати фінансові цілі\",   \"action_date\": \"2026-11-27\",   \"action_time\": null,   \"action_summar",
     "ts": "2026-11-27T18:02:00.671284"
-  },
-  "action_detect|2026-11-27t18_01_49_544814": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Доволенка під монітором\", \"action_date\": \"2023-11-28\", \"action_time\": null, \"action_summary\": \"Записати, що",
-    "ts": "2026-11-27T18:01:49.544814"
   }
 }
