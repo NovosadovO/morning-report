@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-11-27t14_41_50_882895": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"послати мені ті 4 kusy náplní, ktoré máte skladom\",     \"to\": \"Jana Vasilková\",     \"date\": null   },   {     \"what\": \"доповнити решт",
+    "ts": "2026-11-27T14:41:50.882895"
+  },
+  "action_detect|2026-11-27t14_36_15_086314": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз динаміки цін криптовалют HYPE та Monero (XMR) ",
+    "ts": "2026-11-27T14:36:15.086314"
+  },
   "msg_crypto_move|2026-11-27t14_36_02_762284": {
     "topic": "MSG_CRYPTO_MOVE",
     "gist": "💹 HYPE злетів на 7.2%, а Monero (XMR) просів на 11.7% за останні 24 години, демонструючи різкі контрасти на ринку.  Така значна розбіжність у динаміці цін між H",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні 27.11, ти на ранковій зміні з 05:00. Також, сьогодні о 18:10 була запланована сауна, але в тебе",
     "ts": "2026-11-27T09:16:48.750725"
-  },
-  "bills|2026-11-27t09_14_56_685421": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-27T09:14:56.685421"
-  },
-  "action_detect|2026-11-27t09_10_12_869431": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати думки про фінансові можливості\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни,",
-    "ts": "2026-11-27T09:10:12.869431"
   }
 }
