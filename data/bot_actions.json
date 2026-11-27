@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, сьогодні, 22 листопада, о 17:31, у Кошице. Не забудь,",
-      "detail": "Календар на 7 днів: 23.11: 17:00 Нічна зміна",
-      "module": "selfact",
-      "ts": "2026-11-22T17:32:08"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-22",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Сьогодні 27.11, і Олег на ранковій зміні з 05:00. Зміна закінчується о 13:00, що дає вільний час до вечора.",
       "module": "selfact",
       "ts": "2026-11-27T11:06:29"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-27",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-27T11:16:04"
     }
   ]
 }
