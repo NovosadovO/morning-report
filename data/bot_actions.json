@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: що нового + AI",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-23T05:38:55"
-    },
-    {
       "kind": "notify",
       "what": "Наближається нічна зміна о 17:00. Не забудь підготуватися.",
       "detail": "У Олега сьогодні о 17:00 нічна зміна.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T19:06:37"
+    },
+    {
+      "kind": "notify",
+      "what": "Наближається дедлайн для Socios.com",
+      "detail": "ДЕДЛАЙНИ: {\"socios_com_зміна_способу_входу|2026-08-27\": {\"kind\": \"other\", \"title\": \"Socios.com: зміна способу входу\", \"org\": \"Socios.com\", \"deadline\": \"2026-08-27\", \"action\": \"Переконатися, що обліковий запис Socios.com налаштований на вхід за допомогою Passkey, і перевірити еле…(обрізано)\"}}",
+      "module": "selfact",
+      "ts": "2026-11-27T19:14:07"
     }
   ]
 }
