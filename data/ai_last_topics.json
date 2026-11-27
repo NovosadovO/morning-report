@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-27t16_37_11_070944": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Інформація про замовлення TonerDepot.sk\",     \"text\": \"Отримано лист від TonerDepot.sk про те, що оплату за за",
+    "ts": "2026-11-27T16:37:11.070944"
+  },
   "market_insight|2026-11-27t16_31_56_927644": {
     "topic": "market_insight",
     "gist": "```json { \"text\": \"HYPE демонструє незвично сильний рух +6.77% за 24 години, значно перевищуючи падіння BTC (-0.79%). Це може свідчити про значну привабливість ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-27T12:01:24.600481"
-  },
-  "action_detect|2026-11-27t12_01_13_648926": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T12:01:13.648926"
   }
 }
