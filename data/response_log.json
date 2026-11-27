@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T04:30:17.189448+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-15"
-      }
-    },
-    {
       "ts": "2026-09-15T04:30:21.141515+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -14665,6 +14655,16 @@
       "answer": "Відповісти на аналізи від Maroš Sivák",
       "extra": {
         "kind": "reply",
+        "date": "2026-11-27"
+      }
+    },
+    {
+      "ts": "2026-11-27T03:00:20.862316+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити інформацію щодо замовлення tonerdepot.sk",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-11-27"
       }
     }
