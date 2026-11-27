@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T20:54:56.852996+00:00",
-      "category": "event_done",
-      "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-09-15T20:55:07.309251+00:00",
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
@@ -14649,6 +14643,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_aa47d384f0"
+    },
+    {
+      "ts": "2026-11-27T20:39:30.017025+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_spray"
     }
   ]
 }
