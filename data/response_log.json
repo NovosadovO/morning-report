@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T20:54:45.768128+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ✅\nПланувалась до 20:40 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-15T20:54:47.376938+00:00",
       "category": "event_done",
       "question": "📅 💧 Вода (2л+) ❌\nПланувалась до 20:40 — виконано?",
@@ -14645,6 +14639,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_invest"
+    },
+    {
+      "ts": "2026-11-27T20:39:19.407087+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
