@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-11-27t13_36_15_094373": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "✅ Під час ранкової зміни, яка триває до 18:00, зосередься на **продуктивності та оптимізації робочих процесів**. Це ключовий час для виконання поставлених завда",
+    "ts": "2026-11-27T13:36:15.094373"
+  },
   "selfact|2026-11-27t13_28_34_259305": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя рання зміна на заводі закінчується о 13:00. Залишилось 2 хвилини.\",     \"why\": \"Поточний час 13:28, зміна з",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-27T09:02:25.090876"
-  },
-  "action_detect|2026-11-27t09_02_14_160595": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-27T09:02:14.160595"
   }
 }
