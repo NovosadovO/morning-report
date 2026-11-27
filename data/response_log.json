@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T04:30:26.969117+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Зареєструватися до дерматолога",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-16"
-      }
-    },
-    {
       "ts": "2026-09-15T05:36:31.777784+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14667,6 +14657,12 @@
         "kind": "reminder",
         "date": "2026-11-27"
       }
+    },
+    {
+      "ts": "2026-11-27T04:49:21.606114+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
