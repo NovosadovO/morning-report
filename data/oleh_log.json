@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_shower",
-      "label": "✅ Зробив",
-      "ts": "2026-10-23T17:00:07"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_1aonp3nlqre3ifteuc0gtu5s1o_2026-10-23",
       "label": "✅ Виконано",
       "ts": "2026-10-23T17:25:19"
@@ -7199,6 +7193,12 @@
       "data": "planner_min_11_00",
       "label": "11:00",
       "ts": "2026-11-27T17:14:44"
+    },
+    {
+      "t": "btn",
+      "data": "planner_confirm",
+      "label": "✅ Так, записати",
+      "ts": "2026-11-27T17:14:48"
     }
   ]
 }
