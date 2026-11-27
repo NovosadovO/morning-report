@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-11-27t22_00_42_019576": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Ранкова зміна\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\": \"Завтра ранкова з",
+    "ts": "2026-11-27T22:00:42.019576"
+  },
   "selfact|2026-11-27t21_51_01_089070": {
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав лист про оплату замовлення № 261123443 від TonerDepot.sk. Плату успішно прийнято.\",     \"mail_uid\": \"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Доволенка під монітором\", \"action_date\": \"2023-11-28\", \"action_time\": null, \"action_summary\": \"Записати, що",
     "ts": "2026-11-27T18:01:49.544814"
-  },
-  "action_detect|2026-11-27t18_01_40_005914": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-11-27T18:01:40.005914"
   }
 }
