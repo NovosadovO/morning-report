@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: що нового + AI",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-22T20:32:55"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-22",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
@@ -2799,6 +2792,13 @@
       "detail": "Поточний час 14:31, Олег на ранковій зміні, яка закінчилася о 13:00. Це сповіщення надає актуальну інформацію про завершення зміни.",
       "module": "selfact",
       "ts": "2026-11-27T14:31:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, твоя сауна на сьогодні, 27 листопада, скасована (позн",
+      "detail": "У календарі на 27.11 вказано '🧖 Сауна ❌'.",
+      "module": "selfact",
+      "ts": "2026-11-27T14:31:54"
     }
   ]
 }
