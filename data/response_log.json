@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:58:11.546293+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_fc243709bc"
-    },
-    {
       "ts": "2026-09-14T21:58:15.444411+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -14655,6 +14649,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити статус замовлення TonerDepot.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-27"
+      }
+    },
+    {
+      "ts": "2026-11-27T01:30:19.907909+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страхування KOOPERATIVA",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-27"
