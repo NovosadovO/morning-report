@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T13:36:21.803366+00:00",
-      "category": "deadline_found",
-      "question": "Підписка Apple — закінчення",
-      "answer": "2026-09-30",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-09-15T20:36:45.039686+00:00",
       "category": "rwa_move",
       "question": "RWA",
@@ -14648,6 +14639,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_cardio_np"
+    },
+    {
+      "ts": "2026-11-27T19:32:20.492296+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
