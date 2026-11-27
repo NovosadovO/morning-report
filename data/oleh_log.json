@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_all_done_today",
-      "label": "✅ Виконано",
-      "ts": "2026-10-23T23:08:11"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-10-23T23:08:13"
@@ -7199,6 +7193,12 @@
       "data": "planner_confirm",
       "label": "✅ Так, записати",
       "ts": "2026-11-27T17:17:20"
+    },
+    {
+      "t": "btn",
+      "data": "planner_confirm",
+      "label": "✅ Так, записати",
+      "ts": "2026-11-27T17:44:56"
     }
   ]
 }
