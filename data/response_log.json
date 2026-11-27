@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-14T21:58:03.862541+00:00",
-      "category": "shopping_confirm",
-      "question": "Купити гель",
-      "answer": "✅ Додано",
-      "extra": {
-        "items": [
-          "Купити гель"
-        ]
-      }
-    },
-    {
       "ts": "2026-09-14T21:58:11.546293+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14656,6 +14645,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити сповіщення про сплату страхування",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-27"
+      }
+    },
+    {
+      "ts": "2026-11-27T01:30:14.994830+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити статус замовлення TonerDepot.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-27"
