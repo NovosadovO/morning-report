@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T05:36:31.777784+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "весь сектор RWA додав 50.5% за 24 години (капіталізація $70.71B)"
-    },
-    {
       "ts": "2026-09-15T07:30:16.578539+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -14663,6 +14657,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-11-27T09:10:50.681447+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Записати думки про фінансові можливості",
+      "answer": "yes"
     }
   ]
 }
