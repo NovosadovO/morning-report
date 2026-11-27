@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-16T04:06:48.709127+00:00",
-      "category": "rwa_move",
-      "question": "RWA",
-      "answer": "XLM впав на 10.5% за 24 години (зараз $0.17430); ONDO (твоя позиція) впав на 8.6% за 24 години (зараз $0.32374)"
-    },
-    {
       "ts": "2026-09-16T04:30:17.309476+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14650,6 +14644,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист від TonerDepot.sk",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T00:00:38.954609+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути аналізи від Maroš Sivák",
       "extra": {
         "kind": "reply",
         "date": "2026-11-28"
