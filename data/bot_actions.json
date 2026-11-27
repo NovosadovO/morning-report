@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-22",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress, vo2max",
-      "module": "qwsync",
-      "ts": "2026-11-22T20:32:49"
-    },
-    {
       "kind": "garmin_periodic",
       "what": "Garmin: що нового + AI",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T14:18:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Шановний Олеже, нагадую, що сьогодні, 27 листопада, ти працю",
+      "detail": "Поточний час 14:31, Олег на ранковій зміні, яка закінчилася о 13:00. Це сповіщення надає актуальну інформацію про завершення зміни.",
+      "module": "selfact",
+      "ts": "2026-11-27T14:31:49"
     }
   ]
 }
