@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Наближається твоя нічна зміна о 17:00. Не забудь підготувати",
-      "detail": "Календар на 7 днів: 23.11: 17:00 Нічна зміна",
-      "module": "selfact",
-      "ts": "2026-11-23T10:25:17"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-11-23",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-27T22:14:27"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-27",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-27T22:44:43"
     }
   ]
 }
