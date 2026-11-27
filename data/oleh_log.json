@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_sauna",
-      "label": "❌ Ні",
-      "ts": "2026-10-24T19:23:05"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-10-24T19:23:06"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_vitamins",
       "label": "✅ 💊 Вітаміни",
       "ts": "2026-11-27T20:39:42"
+    },
+    {
+      "t": "msg",
+      "kind": "cmd",
+      "text": "/звички",
+      "ts": "2026-11-27T20:39:55"
     }
   ]
 }
