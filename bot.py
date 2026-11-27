@@ -6978,6 +6978,45 @@ def _dispatch_callback_async(cb):
 # ─── Єдина обробка одного апдейта: спільна для polling І webhook ─────────────
 # Раніше вся логіка жила прямо в polling-циклі, тому webhook було неможливо
 # підключити без дублювання коду. Тепер обидва входи викликають цю функцію.
+def _handle_audio(chat_id, aud):
+    """Розшифровує аудіо Олега. Повертає текст для звичайного конвеєра
+    або None, якщо відповідь уже надіслана (довгий запис / помилка)."""
+    import voice as _v
+    file_id, mime, kind, dur = aud
+    try:
+        import quiet as _q_v
+        _q_v.mark_user_thread()      # потік Олега: режим сну AI не глушить
+        _q_v.touch_user()
+    except Exception:
+        pass
+    try:
+        api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
+    except Exception:
+        pass
+    try:
+        raw = _download_telegram_file(file_id)
+    except Exception as e:
+        print(f"[voice] download error: {e}", flush=True)
+        send(chat_id, "⚠️ Не зміг завантажити аудіо з Telegram (ліміт ботів 20 МБ). Спробуй коротше.")
+        return None
+    if len(raw) > _v.MAX_BYTES:
+        send(chat_id, "⚠️ Аудіо завелике (>18 МБ) — розріж на частини.")
+        return None
+    tr = _v.transcribe(raw, mime)
+    if not tr:
+        send(chat_id, "🎤 Не розібрав мовлення. Скажи ще раз або напиши текстом "
+                      "(якщо AI недоступний — теж спробуй пізніше).")
+        return None
+    if _v.is_long(kind, dur, tr):
+        summ = _v.summarize(tr)
+        send(chat_id, "🎧 <b>Запис розшифровано</b>\n\n" + (summ or "Резюме зараз недоступне — нижче повний текст."))
+        for i, ch in enumerate(_v.chunks(tr)[:6], 1):
+            send(chat_id, ("🗒 <b>Розшифровка</b>\n\n" if i == 1 else "") + ch.replace("<", "&lt;"))
+        return None
+    send(chat_id, "🎤 <i>" + tr[:900].replace("<", "&lt;") + "</i>")
+    return tr
+
+
 def process_update(update):
     try:
         # Обробка кнопок (callback_query)
@@ -7001,6 +7040,19 @@ def process_update(update):
         if str(chat_id) != str(TELEGRAM_CHAT):
             send(chat_id, "⛔ Немає доступу.")
             return
+
+        # Голосове / аудіо / кружечок: розшифровуємо й далі це звичайний текст Олега
+        try:
+            import voice as _voice
+            _aud = _voice.extract(msg)
+        except Exception as _ave:
+            print(f"[voice] extract error: {_ave}", flush=True)
+            _aud = None
+        if _aud:
+            _vt = _handle_audio(chat_id, _aud)
+            if not _vt:
+                return
+            text = _vt
 
         # Обробка фото (документ з підписом "поясни"/"переклад" АБО скрін Health Score за замовчуванням)
         if msg.get("photo"):
