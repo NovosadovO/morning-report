@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-27t04_51_20_456081": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зараз 04:51, а твоя ранкова зміна на заводі починається о 05:00. Не забудь одягнутися і вийти.\",     \"wh",
+    "ts": "2026-11-27T04:51:20.456081"
+  },
   "action_detect|2026-11-27t04_45_16_377560": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"None\"}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про замовлення\",     \"text\": \"Вашу оплату за замовлення № 261123443 в TonerDepot.sk прийнят",
     "ts": "2026-11-26T22:40:41.985980"
-  },
-  "action_detect|2026-11-26t22_34_40_629827": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Ранкова зміна\", \"action_date\": \"2026-11-21\", \"action_time\": null, \"action_summary\": \"Завтра рано у тебе ранкова змі",
-    "ts": "2026-11-26T22:34:40.629827"
   }
 }
