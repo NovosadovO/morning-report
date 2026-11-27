@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-15T07:30:16.578539+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Переглянути нові вакансії на Profesia.sk",
-      "extra": {
-        "kind": "note",
-        "date": "2026-09-15"
-      }
-    },
-    {
       "ts": "2026-09-15T09:00:18.602688+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14663,6 +14653,12 @@
       "category": "confirm",
       "question": "calrem_skip: Записати думки про фінансові можливості",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-11-27T09:10:56.844014+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_197cb86bb3"
     }
   ]
 }
