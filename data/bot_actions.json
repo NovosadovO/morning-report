@@ -5,13 +5,6 @@
       "what": "Записав дані здоров'я за 2026-11-23",
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
-      "ts": "2026-11-23T12:09:05"
-    },
-    {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-23",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
       "ts": "2026-11-23T12:39:28"
     },
     {
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-28T00:55:17"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, у тебе сьогодні, 28 листопада, о 05:00 починається ран",
+      "detail": "Сьогодні, 28.11, о 05:00 починається рання зміна, а о 08:00 заплановані вітаміни та холодний душ.",
+      "module": "selfact",
+      "ts": "2026-11-28T00:58:01"
     }
   ]
 }
