@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-23",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-23T13:39:38"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег має завдання 'Доваленка під монітором' сьогодні, 28.11, о 08:00.",
       "module": "selfact",
       "ts": "2026-11-28T02:00:21"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_low",
+      "detail": "😴 Сон за тиждень у середньому 6.2 год — нижче за 6.5",
+      "module": "healthai",
+      "ts": "2026-11-28T02:01:54"
     }
   ]
 }
