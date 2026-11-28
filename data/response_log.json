@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-16T04:30:21.119194+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Переглянути нові вакансії на Profesia.sk",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-16"
-      }
-    },
-    {
       "ts": "2026-09-16T04:49:42.657239+00:00",
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
@@ -14654,6 +14644,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Відповісти на лист про платіж TonerDepot.sk",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T01:30:33.390061+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Maroš Sivák",
       "extra": {
         "kind": "reply",
         "date": "2026-11-28"
