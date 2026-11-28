@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-28T03:01:15.816088"
+  },
+  "selfact|2026-11-28t08_42_32_412628": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, ти отримав лист від TonerDepot.sk щодо твоєї замовлення № 261123443. Оплата прийнята, відправлення буде ",
+    "ts": "2026-11-28T08:42:32.412628"
   }
 }
