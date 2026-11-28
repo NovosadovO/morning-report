@@ -2430,13 +2430,20 @@
     "weight_kg": 85.6
   },
   "2026-11-28": {
-    "steps": 37,
-    "hr_avg": 53,
-    "spo2": 97,
-    "body_battery": 36,
-    "stress": 26,
+    "steps": 61,
+    "hr_avg": 50,
+    "spo2": 96,
+    "body_battery": 62,
+    "stress": 20,
     "date": "2026-11-28",
     "source": "qwatch_auto",
-    "saved_at": "2026-11-28 04:15"
+    "saved_at": "2026-11-28 05:00",
+    "sleep_total_min": 427,
+    "sleep_deep_min": 87,
+    "sleep_rem_min": 103,
+    "sleep_light_min": 237,
+    "sleep_awake_min": 34,
+    "hrv": 45,
+    "sleep_hours": 7.12
   }
 }
