@@ -1,4 +1,14 @@
 {
+  "proactive_actions|2026-11-28t03_00_16_621692": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Перевірити інформацію про замовлення TonerDepot.sk\",     \"date\": \"2026-11-28\",     \"time\": \"\",     \"message\"",
+    "ts": "2026-11-28T03:00:16.621692"
+  },
+  "selfact|2026-11-28t02_45_54_361268": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про оплату\",     \"text\": \"Отримав підтвердження про оплату замовлення № 261123443 від Toner",
+    "ts": "2026-11-28T02:45:54.361268"
+  },
   "openloop_promises|2026-11-28t02_45_38_710582": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"надіслати графік тренд\",     \"to\": \"AI\",     \"date\": null   } ] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-11-27T21:02:20.590841"
-  },
-  "action_detect|2026-11-27t21_02_09_558582": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T21:02:09.558582"
-  },
-  "action_detect|2026-11-27t21_01_58_459510": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-27T21:01:58.459510"
   }
 }
