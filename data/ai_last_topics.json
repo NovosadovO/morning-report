@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-28t06_06_58_513703": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Твоя рання зміна на заводі сьогодні, 28 листопада, починається о 05:00. Також о 08:00 тобі потрі",
+    "ts": "2026-11-28T06:06:58.513703"
+  },
+  "action_detect|2026-11-28t06_01_32_377147": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-28T06:01:32.377147"
+  },
+  "action_detect|2026-11-28t06_01_21_427803": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-28T06:01:21.427803"
+  },
   "action_detect|2026-11-28t06_01_10_427795": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-28T00:01:15.238889"
-  },
-  "foresight_truthfix|2026-11-28t00_01_02_010663": {
-    "topic": "foresight/truthfix",
-    "gist": "📬 від TonerDepot.sk: платіж за замовлення № 261123443 прийнято.  🎯 ЗАРАЗ: сплатити страхування автомобіля до 28.11. 📩 Очікує на обробку: аналітика від Maroš Siv",
-    "ts": "2026-11-28T00:01:02.010663"
-  },
-  "foresight|2026-11-28t00_00_50_343736": {
-    "topic": "foresight",
-    "gist": "📬 від TonerDepot.sk → підтвердження оплати замовлення № 261123443, діяти не треба. 📬 від Notifikácie KOOPERATIVA → сповіщення про оплату страхування авто, діяти",
-    "ts": "2026-11-28T00:00:50.343736"
-  },
-  "foresight|2026-11-28t00_00_25_029609": {
-    "topic": "foresight",
-    "gist": "🌙 <b>БЛОК НІЧНИХ</b> Ці зміни означають, що твій режим сну та активності буде змінений. Нічні зміни вимагають особливої уваги до відновлення, щоб бути в формі. ",
-    "ts": "2026-11-28T00:00:25.029609"
   }
 }
