@@ -1,4 +1,14 @@
 {
+  "selfact|2026-11-28t03_32_08_927379": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, твоя рання зміна на заводі сьогодні, 28.11, починається о 05:00. ",
+    "ts": "2026-11-28T03:32:08.927379"
+  },
+  "action_detect|2026-11-28t03_28_56_762902": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз погоди та нагадування про одяг для дороги д",
+    "ts": "2026-11-28T03:28:56.762902"
+  },
   "bills|2026-11-28t03_27_49_641998": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, оплата страховки автомобіля (EČV LE066BI) є актуальною. Незважаючи на те, що лист від KOOPERATIVA з подя",
     "ts": "2026-11-27T21:35:09.632554"
-  },
-  "action_detect|2026-11-27t21_30_31_154787": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-11-27T21:30:31.154787"
-  },
-  "bills|2026-11-27t21_27_19_256119": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-27T21:27:19.256119"
   }
 }
