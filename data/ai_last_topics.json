@@ -1,4 +1,19 @@
 {
+  "selfact|2026-11-28t13_40_18_562101": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від TonerDepot.sk з підтвердженням оплати замовлення № 261123443. Очікується відправка товару.\", ",
+    "ts": "2026-11-28T13:40:18.562101"
+  },
+  "action_detect|2026-11-28t13_34_47_649042": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-28T13:34:47.649042"
+  },
+  "msg_event_soon_truthfix|2026-11-28t13_34_37_090158": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "⏰ 13:34. Олег, ти на ранковій зміні на Minebea Mitsumi, яка триває до 18:00.  **Підсумки поточного моменту:**  *   **Робота:** Залишилось 4.5 години зміни. *   ",
+    "ts": "2026-11-28T13:34:37.090158"
+  },
   "msg_event_soon|2026-11-28t13_34_25_805956": {
     "topic": "MSG_EVENT_SOON",
     "gist": "⏰ 13:34. Олег, ти зараз на ранковій зміні на Minebea Mitsumi, яка триває до 18:00.  **Підготовка до наступних годин:** *   **Фокус:** Залишилось 4.5 години робо",
@@ -283,20 +298,5 @@
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"date\": \"\",     \"kind\": \"shop\",     \"note\": \"Підтверд",
     "ts": "2026-11-28T09:02:23.485667"
-  },
-  "action_detect|2026-11-28t09_02_13_778478": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-28T09:02:13.778478"
-  },
-  "action_detect|2026-11-28t09_02_02_705891": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-28T09:02:02.705891"
-  },
-  "action_detect|2026-11-28t09_01_51_772885": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Заміна шин на літні\", \"action_date\": \"2023-12-05\", \"action_time\": null, \"action_summary\": \"Замінити шини на літні д",
-    "ts": "2026-11-28T09:01:51.772885"
   }
 }
