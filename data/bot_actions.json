@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "garmin_periodic",
-      "what": "Garmin: що нового + AI",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-11-24T02:38:32"
-    },
-    {
       "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "Опиши більше про опозицію яка зарас є між Сонцем та Місяцем",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-28T13:45:04"
+    },
+    {
+      "kind": "idea",
+      "what": "ідея здоров'я: steps_done",
+      "detail": "Сьогодні 9606 кроків при цілі 8000",
+      "module": "healthai",
+      "ts": "2026-11-28T13:48:49"
     }
   ]
 }
