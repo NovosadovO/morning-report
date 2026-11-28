@@ -91,7 +91,7 @@
     "assistant": {
       "checked": 128,
       "issues": 38,
-      "fixed": 18,
+      "fixed": 19,
       "cut": 2
     },
     "proactive_ai": {
@@ -819,6 +819,7 @@
   },
   "2026-11-28": {
     "checked": 12,
-    "issues": 5
+    "issues": 5,
+    "fixed": 1
   }
 }
