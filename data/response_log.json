@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-16T04:30:17.309476+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-09-16"
-      }
-    },
-    {
       "ts": "2026-09-16T04:30:21.119194+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -14654,6 +14644,16 @@
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
       "answer": "Переглянути аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T01:30:28.848068+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про платіж TonerDepot.sk",
       "extra": {
         "kind": "reply",
         "date": "2026-11-28"
