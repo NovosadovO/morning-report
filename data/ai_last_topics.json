@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-11-28t04_45_19_429254": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зваж себе зараз. Вага підтягнеться з Garmin Connect, ",
+    "ts": "2026-11-28T04:45:19.429254"
+  },
+  "selfact|2026-11-28t04_34_04_243466": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, вітаю з успішною оплатою замовлення № 261123443 від TonerDepot.sk. Очікуй на відправку найближчим часом.",
+    "ts": "2026-11-28T04:34:04.243466"
+  },
+  "action_detect|2026-11-28t04_31_12_988788": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Ранкова зміна на Minebea Mitsumi\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\"",
+    "ts": "2026-11-28T04:31:12.988788"
+  },
+  "msg_event_soon|2026-11-28t04_31_03_445152": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "⏰ 06:00 – твоя ранкова зміна на Minebea Mitsumi розпочинається за годину.  **Що взяти з собою:** *   **Телефон** (повністю заряджений) – для зв'язку та доступу ",
+    "ts": "2026-11-28T04:31:03.445152"
+  },
   "action_detect|2026-11-28t04_30_27_232240": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\": \"Початок ранкової з",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз ринку криптовалют та рекомендації для обережно",
     "ts": "2026-11-27T22:33:14.236956"
-  },
-  "msg_crypto_move_truthfix|2026-11-27t22_33_01_649098": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "📉 Ринок криптовалют демонструє значні коливання: FIGR_HELOC впав на 5.4%, а Monero (XMR) — на 9.5% за останні 24 години.  Загальний спад охопив і BTC (зниження ",
-    "ts": "2026-11-27T22:33:01.649098"
-  },
-  "msg_crypto_move|2026-11-27t22_32_46_851538": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "⚠️ Ринок криптовалют демонструє значні коливання, з падінням на 5.4% у FIGR_HELOC та 9.5% у Monero (XMR) за останні 24 години.  На тлі загального спаду, де BTC ",
-    "ts": "2026-11-27T22:32:46.851538"
-  },
-  "selfact|2026-11-27t22_22_26_199615": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важлива інформація про замовлення\",     \"text\": \"Отримано підтвердження оплати замовлення № 261123443 від Tone",
-    "ts": "2026-11-27T22:22:26.199615"
-  },
-  "openloop_promises|2026-11-27t22_14_10_947050": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"надіслати графік тренд\",     \"to\": \"AI\",     \"date\": null   } ] ```",
-    "ts": "2026-11-27T22:14:10.947050"
   }
 }
