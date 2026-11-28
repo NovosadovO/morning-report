@@ -1,4 +1,24 @@
 {
+  "healthai|2026-11-28t12_05_46_595438": {
+    "topic": "healthai",
+    "gist": "☀️ Вага 85.3 кг — це на 10.3 кг більше за ціль 75 кг, а середня за 7 днів становить 84.8 кг. Тренд зростає, тому варто звернути увагу на харчування.",
+    "ts": "2026-11-28T12:05:46.595438"
+  },
+  "action_detect|2026-11-28t12_01_28_968772": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
+    "ts": "2026-11-28T12:01:28.968772"
+  },
+  "action_detect|2026-11-28t12_01_17_855510": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-28T12:01:17.855510"
+  },
+  "action_detect|2026-11-28t12_01_06_946748": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-11-28T12:01:06.946748"
+  },
   "action_detect|2026-11-28t12_00_55_917270": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Доваленка під монітором\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\": \"Зустріч \\\"Доваленка під м",
     "ts": "2026-11-28T07:31:57.576603"
-  },
-  "msg_event_soon|2026-11-28t07_31_46_778425": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "✅ 07:31. Олег, твоя ранкова зміна на Minebea Mitsumi триває. Сьогодні о 09:00 — \"Доваленка під монітором\".  **Що взяти:** *   **Вода**: на зміні завжди потрібна",
-    "ts": "2026-11-28T07:31:46.778425"
-  },
-  "bills|2026-11-28t07_27_54_851278": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
-    "ts": "2026-11-28T07:27:54.851278"
-  },
-  "selfact|2026-11-28t07_24_50_928227": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя наступна зміна — нічна, 01.12, о 17:00. Враховуй це при плануванні.\",     \"why\": \"Запланована насту",
-    "ts": "2026-11-28T07:24:50.928227"
-  },
-  "openloop_promises|2026-11-28t07_17_18_968410": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"надіслати графік тренд\",     \"to\": \"AI\",     \"date\": null   } ] ```",
-    "ts": "2026-11-28T07:17:18.968410"
   }
 }
