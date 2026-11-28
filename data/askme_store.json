@@ -25106,5 +25106,30 @@
       "desc": "Зараз ранкова зміна, що триває до 18:00. Після завершення зміни, о 18:00, займися переглядом даних Apple Health за сьогодні."
     },
     "ts": "2026-11-28T09:49:13.597501+00:00"
+  },
+  "e082a23d45": {
+    "key": "q|все ще ні",
+    "q": "Все ще ні?",
+    "kind": "confirm",
+    "opts": [
+      [
+        "yes",
+        "✅ Так"
+      ],
+      [
+        "no",
+        "❌ Ні"
+      ],
+      [
+        "later",
+        "⏰ Пізніше"
+      ]
+    ],
+    "meta": {
+      "summary": "📬 ПОШТА  🔴 7 непрочитаних",
+      "desc": "📬 ПОШТА  🔴 7 непрочитаних\n\n📬 нових листів нема (7 непрочитаних уже показував раніше)\n\n📬 Останні 10 листів (🔴 непрочитані)\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ Preview deployment failed for morning-report — Vercel\n▫️ 📰 AI",
+      "tag": "report"
+    },
+    "ts": "2026-11-28T15:02:01.032719+00:00"
   }
 }
