@@ -38,6 +38,9 @@ _gp = monitor._gem_post; monitor._gem_post = boom
 ok(V.transcribe(b"abc", "audio/ogg") is None, "збій Gemini -> None")
 monitor._gem_post = _gp
 
+ok(V._strip_timecodes("00:00 00:01 видали всі нагадування") == "видали всі нагадування", "таймкоди прибрано")
+ok(V._strip_timecodes("[00:03] привіт\n00:05 - як справи") == "привіт\nяк справи", "таймкоди по рядках")
+ok(V._strip_timecodes("зустріч о 10:30 завтра") == "зустріч о 10:30 завтра", "час у середині речення не чіпає")
 print("3) is_long / chunks")
 ok(not V.is_long("voice", 20, "коротко"), "коротке голосове — не довге")
 ok(V.is_long("audio", 400, "x"), "аудіо 400с — довге")
@@ -65,7 +68,7 @@ for name in ("handle_interview_answer", "handle_draft_request"):
 bot._handle_note_reply = lambda *a, **k: False
 FAKE = "Запиши, що завтра о десятій я їду до лікаря."
 bot.process_update({"message": {"chat": {"id": 1}, "voice": {"file_id": "a", "duration": 5, "mime_type": "audio/ogg"}}}); join_all()
-ok(any("🎤" in s and "лікаря" in s for s in sent), "ехо розшифровки")
+ok(not any("🎤" in x for x in sent), "розшифровку в чат НЕ дублює")
 ok(handled and "лікаря" in handled[-1], "текст пішов у handle_command")
 sent.clear(); handled.clear()
 FAKE = "[нерозбірливо]"

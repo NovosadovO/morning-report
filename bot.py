@@ -7087,7 +7087,13 @@ def _audio_flow(chat_id, msg, aud, retry=False):
         for i, ch in enumerate(_v.chunks(tr)[:6], 1):
             send(chat_id, ("🗒 <b>Розшифровка</b>\n\n" if i == 1 else "") + ch.replace("<", "&lt;"))
         return
-    send(chat_id, ("🎤 <i>(відкладений запис)</i> " if retry else "🎤 ") + "<i>" + tr[:900].replace("<", "&lt;") + "</i>")
+    # Пряме спілкування: для звичайного голосового НЕ дублюємо розшифровку в чат —
+    # одразу відповідь. Розшифровку показуємо лише для відкладеного запису (відповідь
+    # прийде пізніше, треба нагадати, про що мова).
+    if retry:
+        send(chat_id, "🎤 <i>(відкладений запис)</i> <i>" + tr[:600].replace("<", "&lt;") + "</i>")
+    else:
+        print(f"[voice] розшифровано ({len(tr)} симв.): {tr[:120]}", flush=True)
     m2 = {k: v for k, v in (msg or {}).items()
           if k not in ("voice", "audio", "video_note", "document", "photo", "caption")}
     m2["chat"] = {"id": chat_id}
