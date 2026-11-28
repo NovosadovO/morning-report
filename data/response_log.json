@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-16T04:49:45.923998+00:00",
-      "category": "confirm",
-      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-09-16T04:49:52.407287+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -14658,6 +14652,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Перевірити сповіщення про страхування KOOPERATIVA",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T03:00:25.024999+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити інформацію про замовлення TonerDepot.sk",
       "extra": {
         "kind": "reminder",
         "date": "2026-11-28"
