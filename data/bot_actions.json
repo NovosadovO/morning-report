@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Підтвердження оплати замовлення",
-      "detail": "Олеже, твоя оплата за замовлення № 261123443 від TonerDepot.sk прийнята. Деталі замовлення можна переглянути в листі.",
-      "module": "selfact",
-      "ts": "2026-11-23T23:55:29"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, твоя нічна зміна на заводі починається о 17:00.",
       "detail": "Календар: 24.11: 17:00 Нічна зміна",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
       "module": "qwsync",
       "ts": "2026-11-28T12:15:39"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-28",
+      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, weight_kg, hrv, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-28T12:45:44"
     }
   ]
 }
