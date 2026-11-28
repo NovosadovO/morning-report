@@ -1,4 +1,24 @@
 {
+  "selfact|2026-11-28t09_14_01_401052": {
+    "topic": "selfact",
+    "gist": "[   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від TonerDepot.sk щодо вашої замовлення № 261123443. Плату було успішно отримано. Замовлення буде відправ",
+    "ts": "2026-11-28T09:14:01.401052"
+  },
+  "healthai|2026-11-28t09_06_10_420919": {
+    "topic": "healthai",
+    "gist": "☀️ Вага 85.6 кг (вимір від 27.11) — це на 10.6 кг більше за ціль 75 кг. Середній сон за 7 днів — 6.3 години, тренд падає (-0.7 год).",
+    "ts": "2026-11-28T09:06:10.420919"
+  },
+  "action_detect|2026-11-28t09_02_35_842071": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поміняти колеса на літні\", \"action_date\": \"2026-12-05\", \"action_time\": null, \"action_summary\": \"Поміняти ко",
+    "ts": "2026-11-28T09:02:35.842071"
+  },
+  "action_detect|2026-11-28t09_02_25_091717": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано стан справ за різними сферами життя, в",
+    "ts": "2026-11-28T09:02:25.091717"
+  },
   "money|2026-11-28t09_02_23_485667": {
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"84029\",     \"vendor\": \"TonerDepot.sk\",     \"amount\": \"\",     \"currency\": \"\",     \"date\": \"\",     \"kind\": \"shop\",     \"note\": \"Підтверд",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зваж себе зараз. Вага підтягнеться з Garmin Connect, ",
     "ts": "2026-11-28T04:45:19.429254"
-  },
-  "selfact|2026-11-28t04_34_04_243466": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, вітаю з успішною оплатою замовлення № 261123443 від TonerDepot.sk. Очікуй на відправку найближчим часом.",
-    "ts": "2026-11-28T04:34:04.243466"
-  },
-  "action_detect|2026-11-28t04_31_12_988788": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Ранкова зміна на Minebea Mitsumi\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\"",
-    "ts": "2026-11-28T04:31:12.988788"
-  },
-  "msg_event_soon|2026-11-28t04_31_03_445152": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "⏰ 06:00 – твоя ранкова зміна на Minebea Mitsumi розпочинається за годину.  **Що взяти з собою:** *   **Телефон** (повністю заряджений) – для зв'язку та доступу ",
-    "ts": "2026-11-28T04:31:03.445152"
-  },
-  "action_detect|2026-11-28t04_30_27_232240": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Рання зміна\",   \"action_date\": null,   \"action_time\": \"06:00\",   \"action_summary\": \"Початок ранкової з",
-    "ts": "2026-11-28T04:30:27.232240"
   }
 }
