@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-28t14_50_15_184267": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"надіслати графік тренувань\",     \"to\": null,     \"date\": null   } ] ```",
+    "ts": "2026-11-28T14:50:15.184267"
+  },
   "selfact|2026-11-28t14_43_32_660482": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Вам надійшов лист від TonerDepot.sk щодо замовлення № 261123443. Плату за нього вже отримано.\",     \"mail_uid\":",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Надійшов лист від TonerDepot.sk про те, що оплату за замовлення № 261123443 успішно прийнято. \",     \"mail_uid\"",
     "ts": "2026-11-28T09:45:22.489826"
-  },
-  "action_detect|2026-11-28t09_45_10_483237": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Ранкова зміна\",   \"action_date\": \"2023-11-29\",   \"action_time\": \"06:00\",   \"action_summary\": \"Завтра, ",
-    "ts": "2026-11-28T09:45:10.483237"
   }
 }
