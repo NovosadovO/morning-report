@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-11-28t02_45_38_710582": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"надіслати графік тренд\",     \"to\": \"AI\",     \"date\": null   } ] ```",
+    "ts": "2026-11-28T02:45:38.710582"
+  },
   "selfact|2026-11-28t02_30_36_648200": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про ранкову зміну\",     \"text\": \"Олеже, твоя рання зміна на заводі сьогодні, 28.11, починається о ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-27T21:01:58.459510"
-  },
-  "briefing_truthfix|2026-11-27t21_01_50_295675": {
-    "topic": "briefing/truthfix",
-    "gist": "🧭 **Зараз 21:01, Олег вдома після ранкової зміни.**  Твій показник \"Body Battery\" становить 20/100. Це свідчить про потребу у відновленні.  Здоров'я: Вага сього",
-    "ts": "2026-11-27T21:01:50.295675"
   }
 }
