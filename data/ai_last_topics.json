@@ -1,4 +1,9 @@
 {
+  "bills|2026-11-28t15_29_02_287359": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"80711\",     \"vendor\": \"KOOPERATIVA\",     \"amount\": \"\",     \"currency\": \"\",     \"invoice_no\": \"6641172176\",     \"due\": \"\",     \"already",
+    "ts": "2026-11-28T15:29:02.287359"
+  },
   "selfact|2026-11-28t15_14_24_544771": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансію Junior Sales Specialist with Slovak в WhitePress® Polska.\",     \"mail_uid\": ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "[   {     \"type\": \"notify\",     \"title\": \"Важлива інформація щодо замовлення\",     \"text\": \"Олеже, твоє замовлення № 261123443 успішно оплачене. Очікуй на відпр",
     "ts": "2026-11-28T10:48:04.977574"
-  },
-  "action_detect|2026-11-28t10_33_40_270579": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оплатити квартиру\",   \"action_date\": \"2026-11-28\",   \"action_time\": null,   \"action_summary\": \"Потрібн",
-    "ts": "2026-11-28T10:33:40.270579"
   }
 }
