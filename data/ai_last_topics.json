@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-28t04_50_09_890327": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоя рання зміна на заводі сьогодні, 28.11, починається о 05:00. Зараз 04:50, тож час виходити.\",     \"w",
+    "ts": "2026-11-28T04:50:09.890327"
+  },
   "action_detect|2026-11-28t04_45_19_429254": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зваж себе зараз. Вага підтягнеться з Garmin Connect, ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплата страховки\",     \"text\": \"Олеже, зверни увагу, що ти отримував сповіщення про необхідність сплати страху",
     "ts": "2026-11-27T22:37:36.980521"
-  },
-  "action_detect|2026-11-27t22_33_14_236956": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз ринку криптовалют та рекомендації для обережно",
-    "ts": "2026-11-27T22:33:14.236956"
   }
 }
