@@ -1,4 +1,9 @@
 {
+  "morning_ai|2026-11-28t06_30_50_831479": {
+    "topic": "MORNING_AI",
+    "gist": "Ти на ранковій зміні, Олег, тож час максимально сфокусуватися на роботі. Твоя продуктивність сьогодні – це ключ до успіху.  Сьогодні у тебе заплановано \"Довален",
+    "ts": "2026-11-28T06:30:50.831479"
+  },
   "selfact|2026-11-28t06_22_44_932632": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, твоя рання зміна на заводі сьогодні, 28.11, починається о 05:00. ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це аналіз повідомлень електронної пошти та збережених",
     "ts": "2026-11-28T00:01:37.267892"
-  },
-  "action_detect|2026-11-28t00_01_26_259403": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-28T00:01:26.259403"
   }
 }
