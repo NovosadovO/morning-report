@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Записав дані здоров'я за 2026-11-23",
-      "detail": "автосинк з годинника: steps, sleep_total_min, sleep_deep_min, sleep_rem_min, sleep_light_min, sleep_awake_min, hr_avg, hrv, spo2, body_battery, stress",
-      "module": "qwsync",
-      "ts": "2026-11-23T12:39:28"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: energy_low",
       "detail": "🔋 Енергія (body battery) за тиждень у середньому 26.9 — нижче за 30, організм виснажений",
@@ -2799,6 +2792,13 @@
       "detail": "Сьогодні, 28.11, о 05:00 починається рання зміна, а о 08:00 заплановані вітаміни та холодний душ.",
       "module": "selfact",
       "ts": "2026-11-28T00:58:01"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-11-28",
+      "detail": "автосинк з годинника: steps, hr_avg, spo2, body_battery, stress",
+      "module": "qwsync",
+      "ts": "2026-11-28T01:14:31"
     }
   ]
 }
