@@ -1,4 +1,9 @@
 {
+  "selfact|2026-11-28t06_22_44_932632": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Початок ранкової зміни\",     \"text\": \"Олеже, твоя рання зміна на заводі сьогодні, 28.11, починається о 05:00. ",
+    "ts": "2026-11-28T06:22:44.932632"
+  },
   "selfact|2026-11-28t06_06_58_513703": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Твоя рання зміна на заводі сьогодні, 28 листопада, починається о 05:00. Також о 08:00 тобі потрі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-11-28T00:01:26.259403"
-  },
-  "action_detect|2026-11-28t00_01_15_238889": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-11-28T00:01:15.238889"
   }
 }
