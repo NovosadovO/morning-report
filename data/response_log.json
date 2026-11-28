@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-09-16T04:49:52.407287+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_2844231792"
-    },
-    {
       "ts": "2026-09-16T04:49:52.407522+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -14664,6 +14658,16 @@
       "answer": "Перевірити інформацію про замовлення TonerDepot.sk",
       "extra": {
         "kind": "reminder",
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "ts": "2026-11-28T03:00:29.972469+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на аналізи від Maroš Sivák",
+      "extra": {
+        "kind": "reply",
         "date": "2026-11-28"
       }
     }
